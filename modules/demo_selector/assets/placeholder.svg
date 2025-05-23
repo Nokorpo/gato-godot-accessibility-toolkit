@@ -26,13 +26,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.0368618"
-     inkscape:cx="186.62082"
-     inkscape:cy="200.12311"
-     inkscape:window-width="1920"
+     inkscape:zoom="0.17172223"
+     inkscape:cx="-122.29052"
+     inkscape:cy="759.94821"
+     inkscape:window-width="1871"
      inkscape:window-height="1052"
-     inkscape:window-x="0"
-     inkscape:window-y="1080"
+     inkscape:window-x="49"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -40,8 +40,8 @@
     <rect
        x="87.764832"
        y="213.14316"
-       width="344.06198"
-       height="177.45856"
+       width="408.84187"
+       height="195.66822"
        id="rect1" />
   </defs>
   <g
@@ -50,21 +50,21 @@
      id="layer1">
     <text
        xml:space="preserve"
-       transform="matrix(0.19350314,-0.18044631,0.18044631,0.19350314,-47.904708,44.148787)"
+       transform="matrix(0.19350314,-0.18044631,0.18044631,0.19350314,-53.008249,53.939579)"
        id="text1"
        style="font-weight:600;font-size:64px;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#dfd68b;stroke-width:5.99811;stroke-linecap:round;paint-order:stroke fill markers"
        x="170.39062"
        y="0"><tspan
-         x="88.045898"
+         x="114.87463"
          y="272.3839"
-         id="tspan3"><tspan
-           style="text-align:center;text-anchor:middle;fill:#ff597a"
-           id="tspan2">Placeholder
+         id="tspan2"><tspan
+           style="font-weight:normal;font-family:sans-serif;-inkscape-font-specification:Normal;text-align:center;text-anchor:middle;fill:#ff597a"
+           id="tspan1">Placeholder
 </tspan></tspan><tspan
-         x="170.76465"
-         y="352.3839"
+         x="198.33057"
+         y="353.39321"
          id="tspan5"><tspan
-           style="text-align:center;text-anchor:middle;fill:#ff597a"
+           style="font-weight:normal;font-family:sans-serif;-inkscape-font-specification:Normal;text-align:center;text-anchor:middle;fill:#ff597a"
            id="tspan4">image</tspan></tspan></text>
     <rect
        style="fill:#ff597a;fill-opacity:1;stroke-width:1.587;stroke-linecap:round;paint-order:stroke fill markers"

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://vooeq5ose2br"]
+
+[node name="DemoSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DemoContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="Label" type="Label" parent="DemoContainer"]
+layout_mode = 2
+text = "demo"
+
+[node name="Label2" type="Label" parent="DemoContainer"]
+layout_mode = 2
+text = "demo"
+
+[node name="Label3" type="Label" parent="DemoContainer"]
+layout_mode = 2
+text = "demo"
+
+[node name="Label4" type="Label" parent="DemoContainer"]
+layout_mode = 2
+text = "demo"
+
+[node name="Label5" type="Label" parent="DemoContainer"]
+layout_mode = 2
+text = "demo"
+
+[node name="Label6" type="Label" parent="DemoContainer"]
+layout_mode = 2
+text = "demo"

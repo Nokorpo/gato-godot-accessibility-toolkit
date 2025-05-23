@@ -1,8 +1,24 @@
-[gd_resource type="Resource" script_class="DemoList" load_steps=2 format=3 uid="uid://bp2riebrip8wu"]
+[gd_resource type="Resource" script_class="DemoList" load_steps=6 format=3 uid="uid://doxub3jvr747g"]
 
+[ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_p5mn1"]
 [ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]
+
+[sub_resource type="Resource" id="Resource_g6obd"]
+script = ExtResource("1_p5mn1")
+title = "Demo 1"
+metadata/_custom_type_script = "uid://dx7paoh7iir8m"
+
+[sub_resource type="Resource" id="Resource_52e3n"]
+script = ExtResource("1_p5mn1")
+title = "Demo 2"
+metadata/_custom_type_script = "uid://dx7paoh7iir8m"
+
+[sub_resource type="Resource" id="Resource_ysq4b"]
+script = ExtResource("1_p5mn1")
+title = "Demo 3"
+metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [resource]
 script = ExtResource("1_tfvdt")
-demos = [null, null, null, null, null]
+demos = Array[ExtResource("1_p5mn1")]([SubResource("Resource_g6obd"), SubResource("Resource_52e3n"), SubResource("Resource_ysq4b")])
 metadata/_custom_type_script = "uid://cpkos20tvikpp"

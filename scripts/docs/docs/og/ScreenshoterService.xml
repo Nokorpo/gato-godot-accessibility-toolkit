@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ScreenshoterService" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_init">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="take_screenshot">
+			<return type="Image" />
+			<param index="0" name="shot_name" type="String" />
+			<param index="1" name="viewport" type="Viewport" />
+			<description>
+			</description>
+		</method>
+		<method name="update_base_screenshot">
+			<return type="void" />
+			<param index="0" name="shot_name" type="String" />
+			<param index="1" name="screenshot" type="Image" />
+			<description>
+			</description>
+		</method>
+		<method name="_store_screenshot">
+			<return type="void" />
+			<param index="0" name="image" type="Image" />
+			<param index="1" name="path" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="load_base_screenshot">
+			<return type="Image" />
+			<param index="0" name="shot_name" type="String" />
+			<description>
+			</description>
+		</method>
+	</methods>
+</class>

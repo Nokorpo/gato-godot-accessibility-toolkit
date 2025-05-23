@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="DiffParams" inherits="Node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_init">
+			<return type="void" />
+			<param index="0" name="_original" type="PackedByteArray" />
+			<param index="1" name="_new_shot" type="PackedByteArray" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="original" type="PackedByteArray" setter="" getter="" default="PackedByteArray()">
+		</member>
+		<member name="new_shot" type="PackedByteArray" setter="" getter="" default="PackedByteArray()">
+		</member>
+	</members>
+</class>

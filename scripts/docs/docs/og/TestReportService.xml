@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="TestReportService" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="on_test_begin">
+			<return type="void" />
+			<param index="0" name="test" type="ScreenshotTest" />
+			<description>
+			</description>
+		</method>
+		<method name="on_test_end">
+			<return type="void" />
+			<param index="0" name="test" type="ScreenshotTest" />
+			<param index="1" name="diff_result" type="ComparisonResult" />
+			<description>
+			</description>
+		</method>
+		<method name="generate_results_file">
+			<return type="StringName" />
+			<description>
+			</description>
+		</method>
+		<method name="generate_test_suite_summary">
+			<return type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="generate_test_case_list">
+			<return type="PackedStringArray" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="_results" type="Dictionary" setter="" getter="" default="{}">
+		</member>
+	</members>
+</class>

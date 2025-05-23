@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="GDSnap" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_init_services">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="update_base_screenshot" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="shot_name" type="String" />
+			<param index="1" name="viewport" type="Viewport" />
+			<description>
+				Updates the base screenshot for the given screenshot name parameter.
+			</description>
+		</method>
+		<method name="take_screenshot" qualifiers="static">
+			<return type="ComparisonResult" />
+			<param index="0" name="shot_name" type="String" />
+			<param index="1" name="viewport" type="Viewport" />
+			<description>
+				Takes a screenshot and compares it with the given screenshot name. [br]Returns a ComparisonResult object with the comparison data, such as how different from the original it is.
+			</description>
+		</method>
+		<method name="on_test_begin" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="test" type="ScreenshotTest" />
+			<description>
+			</description>
+		</method>
+		<method name="on_test_end" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="test" type="ScreenshotTest" />
+			<param index="1" name="diff_result" type="ComparisonResult" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="_running_tests" type="ScreenshotTest[]" setter="" getter="" default="[]">
+		</member>
+		<member name="report" type="TestReportService" setter="" getter="" default="new()">
+		</member>
+		<member name="screenshoter_service" type="ScreenshoterService" setter="" getter="">
+		</member>
+		<member name="screenshoter_comparison_service" type="ScreenshotComparisonService" setter="" getter="">
+		</member>
+		<member name="instance" type="GDSnap" setter="" getter="@instance_getter">
+		</member>
+	</members>
+</class>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ScreenshotTest" inherits="Node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		This script shows an example of how to use the built-in ScreenshotTest node to run a screenshot test on your game.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_exit">
+			<return type="void" />
+			<param index="0" name="result" type="ComparisonResult" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="test_name" type="String" setter="" getter="" default="&quot;default_screenshot_test&quot;">
+		</member>
+		<member name="update_base_shot" type="bool" setter="" getter="" default="false">
+		</member>
+		<member name="_timeout_timer" type="Timer" setter="" getter="">
+		</member>
+	</members>
+	<signals>
+		<signal name="test_begin">
+			<param index="0" name="test" type="ScreenshotTest" />
+			<description>
+			</description>
+		</signal>
+		<signal name="test_end">
+			<param index="0" name="test" type="ScreenshotTest" />
+			<param index="1" name="result" type="ComparisonResult" />
+			<description>
+			</description>
+		</signal>
+	</signals>
+</class>

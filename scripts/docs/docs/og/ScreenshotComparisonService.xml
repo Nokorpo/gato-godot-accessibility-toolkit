@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ScreenshotComparisonService" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="compare">
+			<return type="ComparisonResult" />
+			<param index="0" name="original" type="Image" />
+			<param index="1" name="new_shot" type="Image" />
+			<param index="2" name="shot_name" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_can_run">
+			<return type="bool" />
+			<param index="0" name="original" type="Image" />
+			<param index="1" name="new_shot" type="Image" />
+			<description>
+			</description>
+		</method>
+		<method name="_compare_img">
+			<return type="DiffData" />
+			<param index="0" name="original" type="PackedByteArray" />
+			<param index="1" name="new_shot" type="PackedByteArray" />
+			<description>
+			</description>
+		</method>
+		<method name="_generate_image">
+			<return type="Image" />
+			<param index="0" name="original" type="Image" />
+			<param index="1" name="bytes" type="PackedByteArray" />
+			<description>
+			</description>
+		</method>
+	</methods>
+</class>

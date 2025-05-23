@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;addons/gdsnap/view/cli.gd&quot;" inherits="SceneTree" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_init">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_append_path" qualifiers="static">
+			<return type="String" />
+			<param index="0" name="path" type="String" />
+			<param index="1" name="file" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_get_all_scene_files">
+			<return type="PackedStringArray" />
+			<param index="0" name="path" type="String" />
+			<param index="1" name="ignored_paths" type="PackedStringArray" default="[]" />
+			<param index="2" name="file_ext" type="String" default="&quot;.tscn&quot;" />
+			<param index="3" name="files" type="Array" default="[]" />
+			<description>
+			</description>
+		</method>
+		<method name="_get_scene_root_script">
+			<return type="Variant" />
+			<param index="0" name="scene" type="PackedScene" />
+			<description>
+				Returns a String with the class name of the root's node in an uninstantiated scene. If the script doesn't define a `"class_name"`, it returns an empty string `""`. If the script has no script, it return `null`.
+			</description>
+		</method>
+		<method name="_check_if_screenshot_test">
+			<return type="bool" />
+			<param index="0" name="script" type="Script" />
+			<description>
+				Recursively checks if a node inherits from the ScreenshotTest class. Returns true if it does, false otherwise
+			</description>
+		</method>
+	</methods>
+	<constants>
+		<constant name="EXCLUDED_PATHS" value="[&quot;res://addons&quot;]">
+		</constant>
+	</constants>
+</class>

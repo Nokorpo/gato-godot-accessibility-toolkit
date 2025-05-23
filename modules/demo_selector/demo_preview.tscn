@@ -1,16 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq544odefoqpb"]
+[gd_scene load_steps=6 format=3 uid="uid://bq544odefoqpb"]
 
 [ext_resource type="Script" uid="uid://dnt0dclo16dur" path="res://modules/demo_selector/demo_preview.gd" id="1_0hnp5"]
+[ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_1f5f7"]
 [ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="2_01pek"]
+[ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="2_tghuj"]
+
+[sub_resource type="Resource" id="Resource_571ta"]
+script = ExtResource("2_tghuj")
+title = "Placeholder"
+image = ExtResource("2_1f5f7")
+metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [node name="DemoPreview" type="Control"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_0hnp5")
+data = SubResource("Resource_571ta")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

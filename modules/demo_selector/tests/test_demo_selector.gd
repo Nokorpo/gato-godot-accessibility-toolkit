@@ -20,14 +20,17 @@ class TestDemoSelectorScene extends GutTest:
 	func test_demo_container_children_are_demo_previews():
 		var scene: Node = add_child_autofree(demo_selector_scene.instantiate())
 		var demo_container: Container = scene.find_child("DemoContainer")
-
+		var demo_list_resource: DemoList = load("res://modules/demo_selector/demo_list.tres")
 		assert_gt(demo_container.get_child_count(), 0, "the demo container is empty")
-		for preview: DemoPreview in demo_container.get_children():
+		
+		for i: int in range(demo_container.get_child_count()):
+			var preview = demo_container.get_child(i)
 			assert_typeof(preview, typeof(DemoPreview), "a child of demo container is not of type DemoPreview")
+			assert_eq(preview.data, demo_list_resource.demos[i], "The preview data %d matches with demo list data %d" % [i , i]) 
 
 class TestDemoListResource extends GutTest:
 
-	var demo_list_resource: Resource = load("res://modules/demo_selector/demo_list.tres")
+	var demo_list_resource: DemoList = load("res://modules/demo_selector/demo_list.tres")
 
 	func test_demo_list_resource_exist():
 		assert_not_null(demo_list_resource, "Demo list resource doesn't exist")

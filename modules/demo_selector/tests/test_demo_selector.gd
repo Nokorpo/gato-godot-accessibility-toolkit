@@ -13,3 +13,13 @@ class TestDemoSelectorScene extends GutTest:
 
 		assert_gte(demo_container.get_child_count(), 1, "demo container has no demos")
 		assert_lte(demo_container.get_child_count(), 6, "demo container has more than 6 children")
+		var demo_list_resource: Resource = load("res://modules/demo_selector/demo_list.tres")
+		assert_true(demo_container.get_child_count() == demo_list_resource.demos.size(),
+			"The child count doesn't match with de quantity of demos of the demo list resource")
+
+class TestDemoListResource extends GutTest:
+
+	func test_demo_list_resource_exist():
+		var demo_list_resource: Resource = load("res://modules/demo_selector/demo_list.tres")
+		assert_not_null(demo_list_resource, "Demo list resource doesn't exist")
+		assert_not_null(demo_list_resource.get("demos"), "The demo list resource doesn't have the demos array")

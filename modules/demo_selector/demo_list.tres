@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DemoList" load_steps=2 format=3 uid="uid://bp2riebrip8wu"]
+
+[ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]
+
+[resource]
+script = ExtResource("1_tfvdt")
+demos = [null, null, null, null, null]
+metadata/_custom_type_script = "uid://cpkos20tvikpp"

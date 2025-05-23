@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://vooeq5ose2br"]
+[gd_scene load_steps=2 format=3 uid="uid://vooeq5ose2br"]
+
+[ext_resource type="Script" uid="uid://dxucdon17jm50" path="res://modules/demo_selector/demo_container.gd" id="1_xsipc"]
 
 [node name="DemoSelector" type="Control"]
 layout_mode = 3
@@ -13,27 +15,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 columns = 3
-
-[node name="Label" type="Label" parent="DemoContainer"]
-layout_mode = 2
-text = "demo"
-
-[node name="Label2" type="Label" parent="DemoContainer"]
-layout_mode = 2
-text = "demo"
-
-[node name="Label3" type="Label" parent="DemoContainer"]
-layout_mode = 2
-text = "demo"
-
-[node name="Label4" type="Label" parent="DemoContainer"]
-layout_mode = 2
-text = "demo"
-
-[node name="Label5" type="Label" parent="DemoContainer"]
-layout_mode = 2
-text = "demo"
-
-[node name="Label6" type="Label" parent="DemoContainer"]
-layout_mode = 2
-text = "demo"
+script = ExtResource("1_xsipc")

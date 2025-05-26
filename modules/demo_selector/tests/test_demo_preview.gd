@@ -13,8 +13,7 @@ class TestDemoPreviewScene extends GutTest:
 
 	func test_demo_preview_image_matches_with_demo_data_image():
 		var preview: DemoPreview = add_child_autofree(demo_preview_scene.instantiate())
-		var image: TextureRect = preview.find_child("TextureRect")
-		assert_not_null(image.texture, "the preview has no image")
+		assert_not_null(preview.texture_normal, "the preview has no image")
 		assert_not_null(preview.data, "The preview doesn't have demo data")
 		if preview.data:
-			assert_eq(image.texture, preview.data.image, "The preview image doesnt match with demo data image") 
+			assert_eq(preview.texture_normal, preview.data.image, "The preview image doesnt match with demo data image")

@@ -1,25 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq544odefoqpb"]
+[gd_scene load_steps=5 format=3 uid="uid://bq544odefoqpb"]
 
 [ext_resource type="Script" uid="uid://dnt0dclo16dur" path="res://modules/demo_selector/demo_preview.gd" id="1_0hnp5"]
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_1f5f7"]
-[ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="2_01pek"]
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="2_tghuj"]
 
-[sub_resource type="Resource" id="Resource_571ta"]
+[sub_resource type="Resource" id="Resource_tghuj"]
 script = ExtResource("2_tghuj")
-title = "Placeholder"
+title = "debug"
 image = ExtResource("2_1f5f7")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
-[node name="DemoPreview" type="Control"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 3
-anchors_preset = 0
+[node name="Button" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -752.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("2_1f5f7")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("1_0hnp5")
-data = SubResource("Resource_571ta")
+data = SubResource("Resource_tghuj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_01pek")
+[node name="DemoPreview" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

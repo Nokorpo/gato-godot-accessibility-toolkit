@@ -1,7 +1,7 @@
 class_name DemoPreview
-extends Control
+extends TextureButton
 
 @export var data: DemoData
 
 func _ready() -> void:
-	$TextureRect.texture = data.image
+	texture_normal = data.image

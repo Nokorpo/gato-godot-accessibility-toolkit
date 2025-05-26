@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://vooeq5ose2br"]
+[gd_scene load_steps=4 format=3 uid="uid://vooeq5ose2br"]
 
 [ext_resource type="Script" uid="uid://dxucdon17jm50" path="res://modules/demo_selector/demo_container.gd" id="1_xsipc"]
+[ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="2_1ehge"]
+[ext_resource type="Script" uid="uid://q86veoh6ebcx" path="res://modules/demo_selector/mouse.gd" id="2_vc04c"]
 
 [node name="DemoSelector" type="Control"]
 layout_mode = 3
@@ -19,3 +21,9 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 script = ExtResource("1_xsipc")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+editor_description = "Metí un cursor que sigue al ratón para poder ver dónde tenemos el ratón al hacer stream"
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_1ehge")
+script = ExtResource("2_vc04c")

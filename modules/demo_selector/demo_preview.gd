@@ -1,10 +1,10 @@
 class_name DemoPreview
-extends TextureButton
+extends Control
 
 @export var data: DemoData
 
 func _ready() -> void:
-	texture_normal = data.image
+	$PreviewImage.texture = data.image
 
 func _on_pressed() -> void:
 	print("click")

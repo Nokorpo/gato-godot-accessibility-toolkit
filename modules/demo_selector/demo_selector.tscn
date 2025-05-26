@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://vooeq5ose2br"]
+[gd_scene load_steps=6 format=3 uid="uid://vooeq5ose2br"]
 
 [ext_resource type="Script" uid="uid://dxucdon17jm50" path="res://modules/demo_selector/demo_container.gd" id="1_xsipc"]
+[ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="2_1ehge"]
+[ext_resource type="Script" uid="uid://q86veoh6ebcx" path="res://modules/demo_selector/mouse.gd" id="2_vc04c"]
 
 [node name="DemoSelector" type="Control"]
 layout_mode = 3
@@ -43,3 +45,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Nokorpo 2025"
 horizontal_alignment = 1
+
+[node name="Cursor" type="Sprite2D" parent="."]
+editor_description = "Metí un cursor que sigue al ratón para poder ver dónde tenemos el ratón al hacer stream"
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_1ehge")
+script = ExtResource("2_vc04c")

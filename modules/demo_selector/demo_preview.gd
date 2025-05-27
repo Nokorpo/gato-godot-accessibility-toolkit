@@ -26,8 +26,10 @@ func _on_focus_entered() -> void:
 	_show_hover()
 
 func _on_focus_exited() -> void:
-	%FocusPanel.self_modulate.a = 0
-	_hide_hover()
+	var panel: Control = get_node_or_null("%FocusPanel")
+	if is_instance_valid(panel) and not panel.is_queued_for_deletion():
+		panel.self_modulate.a = 0
+		_hide_hover()
 
 func _on_mouse_entered() -> void:
 	grab_focus()

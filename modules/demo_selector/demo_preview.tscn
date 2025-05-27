@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq544odefoqpb"]
+[gd_scene load_steps=5 format=3 uid="uid://bq544odefoqpb"]
 
 [ext_resource type="Script" uid="uid://dnt0dclo16dur" path="res://modules/demo_selector/demo_preview.gd" id="1_0hnp5"]
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_1f5f7"]
-[ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="2_571ta"]
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="2_tghuj"]
 
 [sub_resource type="Resource" id="Resource_1f5f7"]
@@ -11,28 +10,43 @@ title = "Debug title"
 image = ExtResource("2_1f5f7")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
-[node name="DemoPreview" type="AspectRatioContainer"]
+[node name="DemoPreview" type="VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+offset_right = 300.0
+offset_bottom = 300.0
+script = ExtResource("1_0hnp5")
+data = SubResource("Resource_1f5f7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PreviewImage" type="TextureRect" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_0hnp5")
-data = SubResource("Resource_1f5f7")
-
-[node name="PreviewImage" type="TextureRect" parent="."]
-layout_mode = 2
 mouse_filter = 0
 texture = ExtResource("2_1f5f7")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="Hover" type="Control" parent="."]
+[node name="Hover" type="Control" parent="Control"]
+unique_name_in_owner = true
 visible = false
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Hover"]
+[node name="TextureRect" type="ColorRect" parent="Control/Hover"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,10 +55,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 mouse_default_cursor_shape = 2
-texture = ExtResource("2_571ta")
-stretch_mode = 5
+color = Color(0, 0, 0, 0.784314)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Hover"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Hover"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,23 +65,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-alignment = 1
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
 
-[node name="Title" type="Label" parent="Hover/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 36
-text = "Nombre demo"
-horizontal_alignment = 1
-
-[node name="Description" type="Label" parent="Hover/VBoxContainer"]
+[node name="Description" type="Label" parent="Control/Hover/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "Esto es una descripcion
-Esto es una descripcion
-Esto es una descripcion
-Esto es una descripcion"
-horizontal_alignment = 1
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+autowrap_mode = 2
 
-[connection signal="mouse_entered" from="PreviewImage" to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PreviewImage" to="." method="_on_mouse_exited"]
+[node name="DemoTitle" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Demo title"
+
+[connection signal="mouse_entered" from="Control/PreviewImage" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/PreviewImage" to="." method="_on_mouse_exited"]

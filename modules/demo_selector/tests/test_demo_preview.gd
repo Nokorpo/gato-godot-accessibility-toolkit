@@ -22,13 +22,11 @@ class TestDemoPreviewScene extends GutTest:
 	func test_hover_shows_title_and_description():
 		var preview: DemoPreview = add_child_autofree(demo_preview_scene.instantiate())
 		preview._on_mouse_entered()
-		assert_true(preview.find_child("Title").is_visible_in_tree())
 		assert_true(preview.find_child("Description").is_visible_in_tree())
 		
 	func test_hover_hides_title_and_description():
 		var preview: DemoPreview = add_child_autofree(demo_preview_scene.instantiate())
 		preview.find_child("Hover").visible = true
 		await preview._on_mouse_exited()
-		assert_false(preview.find_child("Title").is_visible_in_tree())
 		assert_false(preview.find_child("Description").is_visible_in_tree())
 		

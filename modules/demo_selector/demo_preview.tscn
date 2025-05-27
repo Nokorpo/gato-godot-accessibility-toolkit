@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq544odefoqpb"]
+[gd_scene load_steps=6 format=3 uid="uid://bq544odefoqpb"]
 
 [ext_resource type="Script" uid="uid://dnt0dclo16dur" path="res://modules/demo_selector/demo_preview.gd" id="1_0hnp5"]
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_1f5f7"]
@@ -10,18 +10,39 @@ title = "Debug title"
 image = ExtResource("2_1f5f7")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
-[node name="DemoPreview" type="VBoxContainer"]
-custom_minimum_size = Vector2(300, 300)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tghuj"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="DemoPreview" type="CenterContainer"]
 offset_right = 300.0
 offset_bottom = 300.0
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
 script = ExtResource("1_0hnp5")
 data = SubResource("Resource_1f5f7")
 
-[node name="Control" type="Control" parent="."]
+[node name="FocusPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tghuj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FocusPanel"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="FocusPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
-[node name="PreviewImage" type="TextureRect" parent="Control"]
+[node name="PreviewImage" type="TextureRect" parent="FocusPanel/VBoxContainer/Control"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -30,12 +51,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-mouse_filter = 0
 texture = ExtResource("2_1f5f7")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Hover" type="Control" parent="Control"]
+[node name="Hover" type="Control" parent="FocusPanel/VBoxContainer/Control"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -46,7 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="ColorRect" parent="Control/Hover"]
+[node name="TextureRect" type="ColorRect" parent="FocusPanel/VBoxContainer/Control/Hover"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,7 +77,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 2
 color = Color(0, 0, 0, 0.784314)
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/Hover"]
+[node name="MarginContainer" type="MarginContainer" parent="FocusPanel/VBoxContainer/Control/Hover"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,17 +88,14 @@ mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
-[node name="Description" type="Label" parent="Control/Hover/MarginContainer"]
+[node name="Description" type="Label" parent="FocusPanel/VBoxContainer/Control/Hover/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 autowrap_mode = 2
 
-[node name="DemoTitle" type="Label" parent="."]
+[node name="DemoTitle" type="Label" parent="FocusPanel/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Demo title"
-
-[connection signal="mouse_entered" from="Control/PreviewImage" to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Control/PreviewImage" to="." method="_on_mouse_exited"]

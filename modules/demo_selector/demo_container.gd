@@ -8,3 +8,4 @@ func _ready() -> void:
 		var new_preview = demo_preview.instantiate()
 		new_preview.data = demo_data
 		add_child(new_preview)
+	get_child(0).grab_focus()

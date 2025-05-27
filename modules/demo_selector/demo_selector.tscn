@@ -40,9 +40,6 @@ columns = 3
 script = ExtResource("1_xsipc")
 demo_list_resource = ExtResource("2_xqaix")
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
-layout_mode = 2
-
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12

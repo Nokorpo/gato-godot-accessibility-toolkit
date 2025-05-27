@@ -8,11 +8,31 @@ func _ready() -> void:
 	%PreviewImage.texture = data.image
 	%DemoTitle.text = data.title
 	%Hover.modulate = Color.TRANSPARENT
+	_on_focus_exited()
+	mouse_entered.connect(_on_mouse_entered)
+	focus_entered.connect(_on_focus_entered)
+	focus_exited.connect(_on_focus_exited)
+	gui_input.connect(_on_gui_input)
 
 func _on_pressed() -> void:
-	print("click")
+	grab_focus()
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		_on_pressed()
+
+func _on_focus_entered() -> void:
+	%FocusPanel.self_modulate.a = 1
+	_show_hover()
+
+func _on_focus_exited() -> void:
+	%FocusPanel.self_modulate.a = 0
+	_hide_hover()
 
 func _on_mouse_entered() -> void:
+	grab_focus()
+
+func _show_hover() -> void:
 	if _hover_tween != null:
 		_hover_tween.kill()
 	var hover: Control = %Hover
@@ -20,7 +40,7 @@ func _on_mouse_entered() -> void:
 	_hover_tween = create_tween()
 	_hover_tween.tween_property(hover, "modulate", Color.WHITE, .2)
 
-func _on_mouse_exited() -> void:
+func _hide_hover() -> void:
 	if _hover_tween != null:
 		_hover_tween.kill()
 	var hover: Control = %Hover

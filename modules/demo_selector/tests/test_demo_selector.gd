@@ -27,6 +27,24 @@ class TestDemoSelectorScene extends GutTest:
 			assert_typeof(preview, typeof(DemoPreview), "a child of demo container is not of type DemoPreview")
 			assert_eq(preview.data, demo_list.demos[i], "The preview data %d matches with demo list data %d" % [i , i]) 
 
+	func test_demo_selector_loads_demo():
+		# GIVEN
+		var scene: Node = add_child_autofree(demo_selector_scene.instantiate())
+		var demo_container: Container = scene.find_child("DemoContainer")
+		var new_scene_path: String = NodePath(str(scene.get_path().slice(0, -1))+"/TestScene")
+
+		var data := DemoData.new()
+		data.title = "test"
+		data.scene = load("res://modules/demo_selector/tests/test_scene.tscn")
+
+		# WHEN
+		var coso: SceneLoader = demo_container.load_demo(data)
+		await coso.tree_exited
+
+		# THEN
+		assert_false(is_instance_valid(scene))
+		assert_true(get_node_or_null(new_scene_path) != null)
+
 class TestDemoListResource extends GutTest:
 
 	var demo_list: DemoList = load("res://modules/demo_selector/assets/demo_list.tres")

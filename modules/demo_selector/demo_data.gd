@@ -3,3 +3,4 @@ extends Resource
 
 @export var title: String
 @export var image: Texture
+@export var scene: PackedScene

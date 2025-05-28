@@ -29,4 +29,14 @@ class TestDemoPreviewScene extends GutTest:
 		preview.find_child("Hover").visible = true
 		await preview._on_focus_exited()
 		assert_false(preview.find_child("Description").is_visible_in_tree())
-		
+
+	func test_click_is_detected():
+		var preview: DemoPreview = add_child_autofree(partial_double(demo_preview_scene).instantiate())
+
+		var _sender = InputSender.new(preview)
+		_sender.mouse_left_button_down(preview.position).wait_frames(10)
+		await(_sender.idle)
+
+		assert_called(preview, "_on_pressed")
+		_sender.release_all()
+		_sender.clear()

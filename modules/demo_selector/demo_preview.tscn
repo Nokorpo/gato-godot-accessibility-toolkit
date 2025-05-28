@@ -20,6 +20,7 @@ expand_margin_bottom = 5.0
 [node name="DemoPreview" type="CenterContainer"]
 offset_right = 300.0
 offset_bottom = 300.0
+pivot_offset = Vector2(150, 150)
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 2

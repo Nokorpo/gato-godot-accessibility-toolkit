@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://chasmy8nr3vi6"]
+
+[ext_resource type="Script" uid="uid://47bdgcd8foyr" path="res://modules/acorn/acorn.gd" id="1_0jmtj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g54xt"]
+radius = 0.510378
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m35ly"]
+albedo_color = Color(0.729412, 0.447059, 0.101961, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vu7jj"]
+material = SubResource("StandardMaterial3D_m35ly")
+
+[node name="Acorn" type="RigidBody3D"]
+script = ExtResource("1_0jmtj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_g54xt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_vu7jj")
+skeleton = NodePath("")

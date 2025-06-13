@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8xwqrnepveww"]
+
+[ext_resource type="PackedScene" uid="uid://chasmy8nr3vi6" path="res://modules/acorn/acorn.tscn" id="1_6yfmb"]
+[ext_resource type="Script" uid="uid://cefekdaqef8o6" path="res://modules/tree/tree.gd" id="1_vqqx7"]
+[ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="3_ul8ep"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vqqx7"]
+height = 3.91406
+radius = 0.550781
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqqx7"]
+albedo_color = Color(0.709804, 0.376471, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ul8ep"]
+material = SubResource("StandardMaterial3D_vqqx7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8or7"]
+albedo_color = Color(0, 0.4, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m57jo"]
+material = SubResource("StandardMaterial3D_l8or7")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ul8ep"]
+height = 0.981659
+radius = 5.93457
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8or7"]
+size = Vector3(21.5061, 1, 16.5544)
+
+[node name="Tree" type="StaticBody3D"]
+script = ExtResource("1_vqqx7")
+
+[node name="LogShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97009, 0)
+shape = SubResource("CylinderShape3D_vqqx7")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Log" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 2.17267, 0, 0, 0, 1, 0, 2.18201, 0.0225763)
+mesh = SubResource("CylinderMesh_ul8ep")
+skeleton = NodePath("")
+
+[node name="Leaves" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(3.36871, 0, 0, 0, 1.71777, 0, 0, 0, 3.36871, 0, 4.78618, 0)
+mesh = SubResource("BoxMesh_m57jo")
+
+[node name="AcornContainer" type="Node3D" parent="."]
+
+[node name="Acorn" parent="AcornContainer" instance=ExtResource("1_6yfmb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.60057, 1.1586)
+
+[node name="Acorn2" parent="AcornContainer" instance=ExtResource("1_6yfmb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09566, 3.60057, -1.14684)
+
+[node name="Acorn3" parent="AcornContainer" instance=ExtResource("1_6yfmb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996329, 3.60057, -1.14684)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568388, 3.38813, 5.45008)
+
+[node name="AcornFallArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AcornFallArea"]
+transform = Transform3D(1.00047, 0, 0, 0, 1.00047, 0, 0, 0, 1.00047, 0, 0.490097, 0)
+shape = SubResource("CylinderShape3D_ul8ep")
+debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l8or7")
+
+[node name="Gato" parent="." instance=ExtResource("3_ul8ep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17737, 0.372526, -1.25603)
+
+[connection signal="body_entered" from="AcornFallArea" to="." method="_on_acorn_fall_area_body_entered"]

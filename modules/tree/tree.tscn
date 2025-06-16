@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8xwqrnepveww"]
+[gd_scene load_steps=9 format=3 uid="uid://c8xwqrnepveww"]
 
 [ext_resource type="PackedScene" uid="uid://chasmy8nr3vi6" path="res://modules/acorn/acorn.tscn" id="1_6yfmb"]
 [ext_resource type="Script" uid="uid://cefekdaqef8o6" path="res://modules/tree/tree.gd" id="1_vqqx7"]
@@ -23,9 +23,6 @@ material = SubResource("StandardMaterial3D_l8or7")
 height = 0.981659
 radius = 5.93457
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_l8or7"]
-size = Vector3(21.5061, 1, 16.5544)
-
 [node name="Tree" type="StaticBody3D"]
 script = ExtResource("1_vqqx7")
 
@@ -46,14 +43,21 @@ mesh = SubResource("BoxMesh_m57jo")
 
 [node name="AcornContainer" type="Node3D" parent="."]
 
-[node name="Acorn" parent="AcornContainer" instance=ExtResource("1_6yfmb")]
+[node name="Acorn" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.60057, 1.1586)
+player = NodePath("")
 
-[node name="Acorn2" parent="AcornContainer" instance=ExtResource("1_6yfmb")]
+[node name="Acorn2" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09566, 3.60057, -1.14684)
+player = NodePath("")
 
-[node name="Acorn3" parent="AcornContainer" instance=ExtResource("1_6yfmb")]
+[node name="Acorn3" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996329, 3.60057, -1.14684)
+player = NodePath("")
+
+[node name="Acorn4" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996329, 8.71319, -1.14684)
+player = NodePath("")
 
 [node name="AcornFallArea" type="Area3D" parent="."]
 
@@ -61,8 +65,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996329, 3.60057, -1.14684)
 transform = Transform3D(1.00047, 0, 0, 0, 1.00047, 0, 0, 0, 1.00047, 0, 0.490097, 0)
 shape = SubResource("CylinderShape3D_ul8ep")
 debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_l8or7")
 
 [connection signal="body_entered" from="AcornFallArea" to="." method="_on_acorn_fall_area_body_entered"]

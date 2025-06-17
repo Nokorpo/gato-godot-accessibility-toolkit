@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpnrowe7ifpjh"
-path="res://.godot/imported/gato_face_neutral.png-434ecbe496cce4a45bd798aff5c539cd.ctex"
+uid="uid://db1ogumfci1xf"
+path="res://.godot/imported/acorn_acorn.png-0307b8f627e85a5ff4739b2484b22c8e.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "5bda40da17f65ba0e6a1938db6a7f31d"
+"md5": "589c77fc9723062b31969114eb04c813"
 }
 
 [deps]
 
-source_file="res://modules/characters/gato/mesh/gato_face_neutral.png"
-dest_files=["res://.godot/imported/gato_face_neutral.png-434ecbe496cce4a45bd798aff5c539cd.ctex"]
+source_file="res://modules/acorn/acorn_acorn.png"
+dest_files=["res://.godot/imported/acorn_acorn.png-0307b8f627e85a5ff4739b2484b22c8e.ctex"]
 
 [params]
 
@@ -24,7 +24,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

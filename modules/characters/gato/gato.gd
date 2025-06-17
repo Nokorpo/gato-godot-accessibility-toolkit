@@ -7,8 +7,6 @@ func _on_item_entered(body: Node3D) -> void:
 		var acorn: Acorn = body
 		acorn.get_parent().remove_child(acorn)
 		call_deferred("move_acorn_to_container", acorn)
-		var collision: CollisionShape3D = acorn.find_child("CollisionShape3D")
-		collision.disabled = true
 		acorn.follow_the_player()
 
 func move_acorn_to_container(acorn: Acorn):
@@ -16,3 +14,9 @@ func move_acorn_to_container(acorn: Acorn):
 
 func get_item_carried_count() -> int:
 	return $ItemContainer.get_child_count()
+	
+func get_item_position(item : Acorn) -> int:
+	for i:Acorn in $ItemContainer.get_children():
+		if i == item:
+			return i.get_index()
+	return 0

@@ -25,6 +25,7 @@ radius = 5.93457
 
 [node name="Tree" type="StaticBody3D"]
 script = ExtResource("1_vqqx7")
+acorn_scene = ExtResource("1_6yfmb")
 
 [node name="LogShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97009, 0)
@@ -41,23 +42,18 @@ skeleton = NodePath("")
 transform = Transform3D(3.36871, 0, 0, 0, 1.71777, 0, 0, 0, 3.36871, 0, 4.78618, 0)
 mesh = SubResource("BoxMesh_m57jo")
 
-[node name="AcornContainer" type="Node3D" parent="."]
+[node name="AcornPositions" type="Node3D" parent="."]
 
-[node name="Acorn" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
+[node name="AcornPosition" type="Marker3D" parent="AcornPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.60057, 1.1586)
-player = NodePath("")
 
-[node name="Acorn2" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
+[node name="AcornPosition2" type="Marker3D" parent="AcornPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09566, 3.60057, -1.14684)
-player = NodePath("")
 
-[node name="Acorn3" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
+[node name="AcornPosition3" type="Marker3D" parent="AcornPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996329, 3.60057, -1.14684)
-player = NodePath("")
 
-[node name="Acorn4" parent="AcornContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_6yfmb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996329, 8.71319, -1.14684)
-player = NodePath("")
+[node name="AcornContainer" type="Node3D" parent="."]
 
 [node name="AcornFallArea" type="Area3D" parent="."]
 
@@ -67,3 +63,4 @@ shape = SubResource("CylinderShape3D_ul8ep")
 debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
 
 [connection signal="body_entered" from="AcornFallArea" to="." method="_on_acorn_fall_area_body_entered"]
+[connection signal="body_exited" from="AcornFallArea" to="." method="_on_acorn_fall_area_body_exited"]

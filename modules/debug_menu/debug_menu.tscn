@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlxmuv21g68kk"]
+
+[ext_resource type="Script" uid="uid://bmkvg5tkmroqd" path="res://modules/debug_menu/debug_ui.gd" id="1_7mpk5"]
+[ext_resource type="Shader" uid="uid://cbpt1hplefxxy" path="res://modules/debug_menu/shaders/black_and_white.gdshader" id="6_nt6gv"]
+
+[sub_resource type="Theme" id="Theme_7mpk5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl6p2"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvf0y"]
+shader = ExtResource("6_nt6gv")
+shader_parameter/black_and_white_constant = Color(0.298039, 0.588235, 0.113725, 1)
+
+[node name="UIContainer" type="Node"]
+
+[node name="DebugUI" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("1_7mpk5")
+
+[node name="Panel" type="PanelContainer" parent="DebugUI"]
+offset_right = 629.0
+offset_bottom = 295.0
+mouse_filter = 2
+theme = SubResource("Theme_7mpk5")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gl6p2")
+
+[node name="MarginContainer" type="MarginContainer" parent="DebugUI/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="VBoxContainer" parent="DebugUI/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="ToggleBWFilter" type="Button" parent="DebugUI/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Toggle black and white filter"
+
+[node name="GameSpeed" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/HBoxContainer/GameSpeed"]
+layout_mode = 2
+text = "game_speed:"
+
+[node name="Value" type="Label" parent="DebugUI/Panel/MarginContainer/HBoxContainer/GameSpeed"]
+layout_mode = 2
+text = "1.00"
+
+[node name="GameSpeedSlider" type="HSlider" parent="DebugUI/Panel/MarginContainer/HBoxContainer/GameSpeed"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 2.0
+step = 0.05
+value = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="FPSCounter" type="RichTextLabel" parent="DebugUI/Panel/MarginContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FPS"
+fit_content = true
+
+[node name="Version" type="RichTextLabel" parent="DebugUI/Panel/MarginContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Version"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="DebugUI"]
+visible = false
+material = SubResource("ShaderMaterial_cvf0y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Version" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.6)
+
+[connection signal="pressed" from="DebugUI/Panel/MarginContainer/HBoxContainer/ToggleBWFilter" to="DebugUI" method="_on_toggle_bw_filter_pressed"]
+[connection signal="value_changed" from="DebugUI/Panel/MarginContainer/HBoxContainer/GameSpeed/GameSpeedSlider" to="DebugUI" method="_on_game_speed_slider_value_changed"]

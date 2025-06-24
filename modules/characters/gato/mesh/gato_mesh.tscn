@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://lfdv7nvfw25m"]
+[gd_scene load_steps=4 format=3 uid="uid://lfdv7nvfw25m"]
 
 [ext_resource type="PackedScene" uid="uid://bbooh5fy7gvyg" path="res://modules/characters/gato/mesh/gato.glb" id="1_6pu3j"]
 [ext_resource type="Script" uid="uid://bslirxx4p3c7b" path="res://modules/characters/gato/mesh/gato_mesh.gd" id="2_v13qw"]
+[ext_resource type="Script" uid="uid://qi0d1n7oknb3" path="res://scripts/apply_graphics_settings_to_mesh.gd" id="5_25ort"]
 
 [node name="Gato" instance=ExtResource("1_6pu3j")]
 script = ExtResource("2_v13qw")
@@ -157,3 +158,6 @@ settings/6/gravity/damping_curve = null
 settings/6/gravity/direction = Vector3(0, -1, 0)
 settings/6/enable_all_child_collisions = true
 settings/6/exclude_collision_count = 0
+
+[node name="ApplyGraphicsSettings" type="Node" parent="." index="2"]
+script = ExtResource("5_25ort")

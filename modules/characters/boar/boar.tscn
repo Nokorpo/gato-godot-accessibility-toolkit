@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/state_machine/state_machine.gd" id="1_q5ai3"]
 [ext_resource type="Script" uid="uid://b6ayrw6exwhl6" path="res://modules/characters/boar/following_acorn_state.gd" id="2_q5ai3"]
 [ext_resource type="Script" uid="uid://dskqwhajk2r" path="res://modules/characters/boar/eating_state.gd" id="3_puyul"]
-[ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/boar.glb" id="5_puyul"]
+[ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/mesh/boar.glb" id="5_puyul"]
 [ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="6_d5hix"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5hix"]

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DebugMenu="*res://modules/debug_menu/debug_menu.tscn"
+FeatureFlags="*res://modules/settings/feature_flags.gd"
 
 [display]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcm523tkm8wvt"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/showcase/environment.tres" id="1_6d34o"]
-[ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/boar.glb" id="1_qewax"]
 [ext_resource type="PackedScene" uid="uid://bswf3xbl752" path="res://modules/acorn/acorn.glb" id="2_t68yl"]
-[ext_resource type="PackedScene" uid="uid://bbooh5fy7gvyg" path="res://modules/characters/gato/mesh/gato.glb" id="3_6d34o"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_yq3y4"]
 [ext_resource type="Script" uid="uid://givm1sf3b057" path="res://modules/showcase/choose_default_animation.gd" id="3_yq3y4"]
+[ext_resource type="PackedScene" uid="uid://olsa5oic45g3" path="res://modules/characters/boar/mesh/boar_mesh.tscn" id="4_6d34o"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qewax"]
 size = Vector2(20, 10)
@@ -33,25 +33,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00634867, -0.0689021, 0.000
 mesh = SubResource("PlaneMesh_qewax")
 surface_material_override/0 = SubResource("StandardMaterial3D_t68yl")
 
-[node name="Gato" parent="." instance=ExtResource("3_6d34o")]
+[node name="Gato" parent="." instance=ExtResource("2_yq3y4")]
 
 [node name="ChooseDefaultAnimation" type="Node" parent="Gato"]
 script = ExtResource("3_yq3y4")
 animation_name = "idle"
 
-[node name="Boar" parent="." instance=ExtResource("1_qewax")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.969231, 0, 0)
+[node name="Boar" parent="." instance=ExtResource("4_6d34o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="ChooseDefaultAnimation" type="Node" parent="Boar"]
+[node name="ChooseDefaultAnimation2" type="Node" parent="Boar"]
 script = ExtResource("3_yq3y4")
 animation_name = "idle"
 
-[node name="Boar2" parent="." instance=ExtResource("1_qewax")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82004, 0, 0)
+[node name="Boar2" parent="." instance=ExtResource("4_6d34o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="ChooseDefaultAnimation" type="Node" parent="Boar2"]
+[node name="ChooseDefaultAnimation3" type="Node" parent="Boar2"]
 script = ExtResource("3_yq3y4")
 animation_name = "eat"
 
 [node name="Acorn" parent="." instance=ExtResource("2_t68yl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.822959, 0.22983, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.23, 0)

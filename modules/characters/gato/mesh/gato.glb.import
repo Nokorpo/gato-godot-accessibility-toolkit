@@ -21622,6 +21622,20 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 }
+},
+"materials": {
+"accessories": {
+"use_external/enabled": true,
+"use_external/path": "res://modules/characters/gato/mesh/accessories.tres"
+},
+"face": {
+"use_external/enabled": true,
+"use_external/path": "res://modules/characters/gato/mesh/face.tres"
+},
+"gato": {
+"use_external/enabled": true,
+"use_external/path": "res://modules/characters/gato/mesh/gato.tres"
+}
 }
 }
 gltf/naming_version=1

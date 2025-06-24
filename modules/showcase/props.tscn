@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://debsy1fv3sm1b"]
+
+[ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/showcase/environment.tres" id="1_5ldq4"]
+[ext_resource type="PackedScene" uid="uid://76tobu24ib4r" path="res://modules/oak/oak.glb" id="2_jq4l3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1hp43"]
+size = Vector2(20, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bg4i"]
+albedo_color = Color(0.482353, 0.858824, 0.678431, 1)
+
+[node name="Props" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_5ldq4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
+light_volumetric_fog_energy = 2.0
+light_specular = 0.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0713, 3.48235)
+visible = false
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00634867, -0.0689021, 0.00013876)
+mesh = SubResource("PlaneMesh_1hp43")
+surface_material_override/0 = SubResource("StandardMaterial3D_7bg4i")
+
+[node name="Oak" parent="." instance=ExtResource("2_jq4l3")]

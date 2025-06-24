@@ -1,21 +1,9 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bxbj33ig5caty"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bxbj33ig5caty"]
 
 [ext_resource type="Texture2D" uid="uid://c0t1cgc63xqng" path="res://modules/characters/boar/boar_body.png" id="1_7bwe5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bwe5"]
-cull_mode = 1
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.249721, 0.179733, 0.0901795, 1)
-grow = true
-grow_amount = 0.03
-proximity_fade_enabled = true
-proximity_fade_distance = 0.4
-
 [resource]
 resource_name = "body"
-next_pass = SubResource("StandardMaterial3D_7bwe5")
 cull_mode = 2
 albedo_texture = ExtResource("1_7bwe5")
 roughness = 0.5

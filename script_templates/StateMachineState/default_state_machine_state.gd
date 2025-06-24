@@ -1,5 +1,5 @@
-extends StateMachineState
 class_name _CLASS_
+extends StateMachineState
 
 
 # Called when the node enters the scene tree for the first time.

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://biviod71dmsyt"
-path="res://.godot/imported/boar.glb-ac06b53f71302157143122dbe3d251b9.scn"
+path="res://.godot/imported/boar.glb-329591f045e494b5357269d54a5bd524.scn"
 
 [deps]
 
-source_file="res://modules/characters/boar/boar.glb"
-dest_files=["res://.godot/imported/boar.glb-ac06b53f71302157143122dbe3d251b9.scn"]
+source_file="res://modules/characters/boar/mesh/boar.glb"
+dest_files=["res://.godot/imported/boar.glb-329591f045e494b5357269d54a5bd524.scn"]
 
 [params]
 

@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vatyx4lwn02q"
-path="res://.godot/imported/boar_face.png-4b07670ed2ac6616585a36b8a5a630a4.ctex"
+uid="uid://c0t1cgc63xqng"
+path="res://.godot/imported/boar_body.png-95539584e2c8073ed539ef987c7b8354.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "1caa2e08c7ecc6cce1f5a6fe977c5a36"
+"md5": "a818eb242d63691dff3898d0852acaba"
 }
 
 [deps]
 
-source_file="res://modules/characters/boar/boar_face.png"
-dest_files=["res://.godot/imported/boar_face.png-4b07670ed2ac6616585a36b8a5a630a4.ctex"]
+source_file="res://modules/characters/boar/mesh/boar_body.png"
+dest_files=["res://.godot/imported/boar_body.png-95539584e2c8073ed539ef987c7b8354.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4clv0pqh00jt"]
 
-[ext_resource type="Texture2D" uid="uid://vatyx4lwn02q" path="res://modules/characters/boar/boar_face.png" id="1_bix02"]
+[ext_resource type="Texture2D" uid="uid://vatyx4lwn02q" path="res://modules/characters/boar/mesh/boar_face.png" id="1_bix02"]
 
 [resource]
 resource_name = "face"

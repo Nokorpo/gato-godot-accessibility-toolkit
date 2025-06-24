@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsxqjrv4vntoh"]
+[gd_scene load_steps=9 format=3 uid="uid://bsxqjrv4vntoh"]
 
 [ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/acorn/acorn.tscn" id="1_j4h7w"]
+[ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="1_yy6wf"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="2_yy6wf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_waq5o"]
@@ -24,6 +25,9 @@ glow_enabled = true
 
 [node name="Map" type="Node3D"]
 
+[node name="Gato" parent="." instance=ExtResource("1_yy6wf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241118, 0)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -44,10 +48,10 @@ transform = Transform3D(-0.733671, 0, -0.679505, 0, 1, 0, 0.679505, 0, -0.733671
 
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(-4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, 1, 0.0595447, 0)
-current = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.819712, 0.572775, 0, -0.572775, 0.819712, 0, 0.815088, 1.36568)
+transform = Transform3D(1, 0, 0, 0, 0.819712, 0.572775, 0, -0.572775, 0.819712, 0, 2.81509, 4.36568)
+current = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
 environment = SubResource("Environment_waq5o")

@@ -1,4 +1,4 @@
-class_name GatoIdleState
+class_name GatoWalkState
 extends StateMachineState
 
 
@@ -25,5 +25,5 @@ func _process(delta: float) -> void:
 # Called every physics frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if active:
-		if node.velocity.length() >= 0.2:
-			state_machine.change_state(GatoWalkState)
+		if node.velocity.length() < 0.2:
+			state_machine.change_state(GatoIdleState)

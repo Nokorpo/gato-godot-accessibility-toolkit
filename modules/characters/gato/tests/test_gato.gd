@@ -32,3 +32,17 @@ class TestGatoInput extends GutTest:
 		var state_machine: StateMachine = gato.find_child("StateMachine")
 		var walk_state: GatoWalkState = state_machine.find_child("WalkState")
 		assert_eq(state_machine.current_state, walk_state, "Gato is not in Walk state")
+
+	func test_player_jump_state():
+		#GIVEN
+		var gato: Node = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
+
+		#WHEN
+		_sender.action_down("jump")
+		await(_sender.idle)
+
+		#THEN
+		var state_machine: StateMachine = gato.find_child("StateMachine")
+		var jump_state: GatoJumpState = state_machine.find_child("JumpState")
+		assert_eq(state_machine.current_state, jump_state, "Gato is not in Jump state")
+		

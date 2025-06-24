@@ -1,5 +1,5 @@
-class_name GatoWalkState
 extends StateMachineState
+class_name GatoJumpState
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called when the state machine changes to this state.
 func _on_enter_state() -> void:
-	pass # Replace with function body.
+	node.jump()
 
 # Called when the state machine changes from this state to another one.
 func _on_exit_state() -> void:
@@ -25,7 +25,5 @@ func _process(delta: float) -> void:
 # Called every physics frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if active:
-		if Input.is_action_just_pressed("jump"):
-			state_machine.change_state(GatoJumpState)
-		if node.velocity.length() < 0.2:
+		if node.is_on_floor():
 			state_machine.change_state(GatoIdleState)

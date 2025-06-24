@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://fi43o1qrjkvt"]
+[gd_scene load_steps=9 format=3 uid="uid://fi43o1qrjkvt"]
 
 [ext_resource type="Script" uid="uid://rm488hf1f3uc" path="res://modules/characters/gato/gato.gd" id="1_5kfaa"]
 [ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_7mldg"]
 [ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/state_machine/state_machine.gd" id="2_f3pdk"]
 [ext_resource type="Script" uid="uid://b3jti78ctq7ku" path="res://modules/characters/gato/idle_state.gd" id="3_7mldg"]
 [ext_resource type="Script" uid="uid://c7nhbbapx3716" path="res://modules/characters/gato/walk_state.gd" id="4_pbfhj"]
+[ext_resource type="Script" uid="uid://cqw6xey20fxnq" path="res://modules/characters/gato/jump_state.gd" id="6_ve5e5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbfhj"]
 radius = 0.275845
@@ -41,5 +42,8 @@ script = ExtResource("3_7mldg")
 
 [node name="WalkState" type="Node" parent="StateMachine"]
 script = ExtResource("4_pbfhj")
+
+[node name="JumpState" type="Node" parent="StateMachine"]
+script = ExtResource("6_ve5e5")
 
 [connection signal="body_entered" from="ItemDetectionArea" to="." method="_on_item_entered"]

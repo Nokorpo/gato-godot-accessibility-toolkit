@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var speed: float = 2.0
+@export var jump_force: float = 6
 @export_range(0, 1) var smoothing: float = 0.875
 
 func _physics_process(delta: float) -> void:
@@ -12,3 +13,6 @@ func _physics_process(delta: float) -> void:
 	velocity = lerp(velocity, direction.normalized() * speed, 1-smoothing)
 	
 	move_and_slide()
+
+func jump() -> void:
+	velocity.y = jump_force

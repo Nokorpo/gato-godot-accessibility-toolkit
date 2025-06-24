@@ -25,5 +25,7 @@ func _process(delta: float) -> void:
 # Called every physics frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if active:
+		if Input.is_action_just_pressed("jump"):
+			state_machine.change_state(GatoJumpState)
 		if node.velocity.length() >= 0.2:
 			state_machine.change_state(GatoWalkState)

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsxqjrv4vntoh"]
+
+[ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/acorn/acorn.tscn" id="1_j4h7w"]
+[ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="2_yy6wf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_waq5o"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gfipf"]
+size = Vector2(5, 5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j4h7w"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_yy6wf"]
+sky_material = SubResource("ProceduralSkyMaterial_j4h7w")
+
+[sub_resource type="Environment" id="Environment_waq5o"]
+background_mode = 2
+sky = SubResource("Sky_yy6wf")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Map" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_waq5o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_gfipf")
+skeleton = NodePath("../..")
+
+[node name="Acorn" parent="." instance=ExtResource("1_j4h7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.841, 0)
+visible = false
+
+[node name="Boar" parent="." instance=ExtResource("2_yy6wf")]
+transform = Transform3D(-0.733671, 0, -0.679505, 0, 1, 0, 0.679505, 0, -0.733671, -1, 0, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(-4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, 1, 0.0595447, 0)
+current = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819712, 0.572775, 0, -0.572775, 0.819712, 0, 0.815088, 1.36568)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
+environment = SubResource("Environment_waq5o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0.159373, 0.23486, 0.958875, -0.473924, 0.870251, -0.134383, 0, 0.0389278, -3.7989)
+shadow_enabled = true

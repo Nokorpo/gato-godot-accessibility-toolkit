@@ -36,7 +36,10 @@ func change_state(state_type: Variant) -> void:
 			current_state.get_script().get_global_name(),
 			state_type.get_global_name()
 		])
-		var stack = get_stack().slice(1)[0]
+		var stack_frames = get_stack().slice(0)
+		var stack = { "source":"unknown", "line":-1}
+		if stack_frames.size() > 1:
+			stack = stack_frames[1]
 		var string_format: String = "[color=66CCFF]%-12s - Caller %s:%s"
 		print_rich(string_format % [_get_time(), stack["source"], stack["line"]])
 

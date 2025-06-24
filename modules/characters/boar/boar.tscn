@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvawh86pyq2d1"]
+
+[ext_resource type="Script" uid="uid://b8lat2nfgffpw" path="res://modules/characters/boar/idle_state.gd" id="1_2jkah"]
+[ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/state_machine/state_machine.gd" id="1_q5ai3"]
+[ext_resource type="Script" uid="uid://b6ayrw6exwhl6" path="res://modules/characters/boar/following_acorn_state.gd" id="2_q5ai3"]
+[ext_resource type="Script" uid="uid://dskqwhajk2r" path="res://modules/characters/boar/eating_state.gd" id="3_puyul"]
+[ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/boar.glb" id="5_puyul"]
+[ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="6_d5hix"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5hix"]
+radius = 0.243
+height = 0.867009
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iqywv"]
+height = 0.6
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5hix"]
+albedo_color = Color(0.81, 0.6615, 0.405, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_chhcr"]
+material = SubResource("StandardMaterial3D_d5hix")
+size = Vector2(0.1, 0.1)
+
+[node name="Boar" type="CharacterBody3D"]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_q5ai3")
+metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("1_2jkah")
+
+[node name="FollowingAcornState" type="Node" parent="StateMachine"]
+script = ExtResource("2_q5ai3")
+
+[node name="EatingState" type="Node" parent="StateMachine"]
+script = ExtResource("3_puyul")
+
+[node name="SimulationTicker" type="Timer" parent="StateMachine"]
+wait_time = 3.0
+autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.243101, 0)
+shape = SubResource("CapsuleShape3D_d5hix")
+
+[node name="boar" parent="." instance=ExtResource("5_puyul")]
+
+[node name="AcornDetection" type="Area3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_d5hix")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AcornDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CylinderShape3D_iqywv")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18116, 0.444876)
+emitting = false
+mesh = SubResource("QuadMesh_chhcr")
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+
+[connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://fi43o1qrjkvt"]
+[gd_scene load_steps=6 format=3 uid="uid://fi43o1qrjkvt"]
 
 [ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_7mldg"]
-[ext_resource type="Script" uid="uid://rm488hf1f3uc" path="res://modules/characters/gato/gato.gd" id="2_f3pdk"]
+[ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/state_machine/state_machine.gd" id="2_f3pdk"]
+[ext_resource type="Script" uid="uid://b3jti78ctq7ku" path="res://modules/characters/gato/idle_state.gd" id="3_7mldg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbfhj"]
 radius = 0.275845
@@ -12,7 +13,6 @@ height = 1.4127
 radius = 1.04248
 
 [node name="Gato" type="CharacterBody3D"]
-script = ExtResource("2_f3pdk")
 
 [node name="Mesh" parent="." instance=ExtResource("2_7mldg")]
 
@@ -28,5 +28,12 @@ shape = SubResource("CylinderShape3D_5kfaa")
 debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
 
 [node name="ItemContainer" type="Node3D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_f3pdk")
+metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("3_7mldg")
 
 [connection signal="body_entered" from="ItemDetectionArea" to="." method="_on_item_entered"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://lfdv7nvfw25m"]
+[gd_scene load_steps=3 format=3 uid="uid://lfdv7nvfw25m"]
 
 [ext_resource type="PackedScene" uid="uid://bbooh5fy7gvyg" path="res://modules/characters/gato/mesh/gato.glb" id="1_6pu3j"]
+[ext_resource type="Script" uid="uid://bslirxx4p3c7b" path="res://modules/characters/gato/mesh/gato_mesh.gd" id="2_v13qw"]
 
 [node name="Gato" instance=ExtResource("1_6pu3j")]
+script = ExtResource("2_v13qw")
 
 [node name="Glasses" parent="rig/Skeleton3D" index="0"]
 transform = Transform3D(1, 6.09552e-16, -4.26326e-14, -4.16225e-15, 1, -7.54979e-08, 2.84217e-14, 7.54979e-08, 1, 1.49012e-08, 0.925974, -3.72529e-09)

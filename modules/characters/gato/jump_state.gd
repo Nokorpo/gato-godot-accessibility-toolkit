@@ -1,6 +1,7 @@
 extends StateMachineState
 class_name GatoJumpState
 
+@export var mesh: GatoMesh
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +10,7 @@ func _ready() -> void:
 # Called when the state machine changes to this state.
 func _on_enter_state() -> void:
 	node.jump()
+	mesh.play_animation("jump")
 
 # Called when the state machine changes from this state to another one.
 func _on_exit_state() -> void:

@@ -39,13 +39,16 @@ debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
 script = ExtResource("2_f3pdk")
 metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
 
-[node name="IdleState" type="Node" parent="StateMachine"]
+[node name="IdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("3_7mldg")
+mesh = NodePath("../../RotationPivot/Mesh")
 
-[node name="WalkState" type="Node" parent="StateMachine"]
+[node name="WalkState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("4_pbfhj")
+mesh = NodePath("../../RotationPivot/Mesh")
 
-[node name="JumpState" type="Node" parent="StateMachine"]
+[node name="JumpState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("6_ve5e5")
+mesh = NodePath("../../RotationPivot/Mesh")
 
 [connection signal="body_entered" from="ItemDetectionArea" to="." method="_on_item_entered"]

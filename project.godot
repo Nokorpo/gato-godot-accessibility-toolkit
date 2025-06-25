@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 DebugMenu="*res://modules/debug_menu/debug_menu.tscn"
 FeatureFlags="*res://modules/settings/feature_flags.gd"
+Cursor="*res://modules/debug_menu/cursor.tscn"
 
 [display]
 

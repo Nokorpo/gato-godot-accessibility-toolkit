@@ -19,10 +19,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
-text = "Godot Accesibility TOolkit"
+text = "Godot Accesibility Toolkit (GATO)"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
@@ -38,7 +38,7 @@ columns = 3
 script = ExtResource("1_xsipc")
 demo_list_resource = ExtResource("2_xqaix")
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="Footer" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Nokorpo 2025"

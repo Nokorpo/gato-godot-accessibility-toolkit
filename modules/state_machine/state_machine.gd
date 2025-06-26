@@ -4,7 +4,7 @@ class_name StateMachine
 
 const PRINT_DEBUG_MESSAGES: bool = false
 
-@onready var node: Node = $".."
+@onready var node: Node = get_parent()
 var states: Array[StateMachineState]
 var current_state: StateMachineState = null
 

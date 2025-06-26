@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/state_machine/state_machine.gd" id="1_q5ai3"]
 [ext_resource type="Script" uid="uid://b6ayrw6exwhl6" path="res://modules/characters/boar/following_acorn_state.gd" id="2_q5ai3"]
 [ext_resource type="Script" uid="uid://dskqwhajk2r" path="res://modules/characters/boar/eating_state.gd" id="3_puyul"]
-[ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/mesh/boar.glb" id="5_puyul"]
+[ext_resource type="PackedScene" uid="uid://olsa5oic45g3" path="res://modules/characters/boar/mesh/boar_mesh.tscn" id="5_d5hix"]
 [ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="6_d5hix"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5hix"]
@@ -29,14 +29,17 @@ size = Vector2(0.1, 0.1)
 script = ExtResource("1_q5ai3")
 metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
 
-[node name="IdleState" type="Node" parent="StateMachine"]
+[node name="IdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_2jkah")
+mesh = NodePath("../../Boar")
 
-[node name="FollowingAcornState" type="Node" parent="StateMachine"]
+[node name="FollowingAcornState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("2_q5ai3")
+mesh = NodePath("../../Boar")
 
-[node name="EatingState" type="Node" parent="StateMachine"]
+[node name="EatingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("3_puyul")
+mesh = NodePath("../../Boar")
 
 [node name="SimulationTicker" type="Timer" parent="StateMachine"]
 wait_time = 3.0
@@ -46,7 +49,7 @@ autostart = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.243101, 0)
 shape = SubResource("CapsuleShape3D_d5hix")
 
-[node name="boar" parent="." instance=ExtResource("5_puyul")]
+[node name="Boar" parent="." instance=ExtResource("5_d5hix")]
 
 [node name="AcornDetection" type="Area3D" parent="."]
 unique_name_in_owner = true

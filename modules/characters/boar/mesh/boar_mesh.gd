@@ -1,20 +1,11 @@
-class_name GatoMesh
+class_name BoarMesh
 extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-enum Animations {
+enum Animations { 
 	IDLE,
-	JUMP,
-	JUMP_AIR,
-	JUMP_FALL,
-	JUMP_LAND,
-	TALK_HAPPY,
-	TALK_NEUTRAL,
-	TALK_SIDE_EYE,
-	TALK_SURPRISED,
-	TALK_WORRIED,
-	THROW,
+	EAT,
 	WALK,
 }
 

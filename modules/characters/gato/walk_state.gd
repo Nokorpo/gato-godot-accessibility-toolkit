@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called when the state machine changes to this state.
 func _on_enter_state() -> void:
-	mesh.play_animation("walk")
+	mesh.play_animation(GatoMesh.Animations.WALK)
 
 # Called when the state machine changes from this state to another one.
 func _on_exit_state() -> void:

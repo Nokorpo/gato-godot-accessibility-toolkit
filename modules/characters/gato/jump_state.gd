@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called when the state machine changes to this state.
 func _on_enter_state() -> void:
 	node.jump()
-	mesh.play_animation("jump")
+	mesh.play_animation(GatoMesh.Animations.JUMP)
 
 # Called when the state machine changes from this state to another one.
 func _on_exit_state() -> void:

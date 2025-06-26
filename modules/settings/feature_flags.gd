@@ -10,6 +10,7 @@ var graphics_quality: GraphicsQualityOptions = GraphicsQualityOptions.NORMAL
 
 func _ready() -> void:
 	if not FileAccess.file_exists(CONFIG_FILE_PATH):
+		print("Feature flag config file does not exist. Creating a file with the default configuration in \"%s\"" % CONFIG_FILE_PATH)
 		var default_file = FileAccess.open(DEFAULT_CONFIG_FILE_PATH, FileAccess.READ)
 		var content = default_file.get_as_text()
 		var config = FileAccess.open(CONFIG_FILE_PATH, FileAccess.WRITE)

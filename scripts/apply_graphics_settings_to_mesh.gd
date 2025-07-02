@@ -5,13 +5,11 @@ extends Node
 var button: Callable = func(): _ready()
 
 func _enter_tree() -> void:
-	if Engine.is_editor_hint() and is_inside_tree():
-		_update_materials.call_deferred()
+	_update_materials.call_deferred()
 
 func _exit_tree() -> void:
-	if Engine.is_editor_hint() and is_inside_tree():
-		for node in get_parent().find_children("", "MeshInstance3D"):
-			_remove_overriden_material(node)
+	for node in get_parent().find_children("", "MeshInstance3D"):
+		_remove_overriden_material(node)
 
 func _update_materials():
 	for node in get_parent().find_children("", "MeshInstance3D"):

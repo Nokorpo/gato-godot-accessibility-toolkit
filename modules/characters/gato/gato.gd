@@ -6,13 +6,15 @@ extends CharacterBody3D
 @export var rotation_speed: float = 10.0
 
 @onready var pivot: Node3D = $RotationPivot
+@onready var camera: Camera3D = get_viewport().get_camera_3d()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var direction := (transform.basis * Vector3(input.x, 0, input.y)).normalized()
+	var direction := (camera.global_transform.basis * Vector3(input.x, 0, input.y)).normalized()
 	velocity.x = lerp(velocity.x, direction.normalized().x * speed, 1-smoothing)
 	velocity.z = lerp(velocity.z, direction.normalized().z * speed, 1-smoothing)
 

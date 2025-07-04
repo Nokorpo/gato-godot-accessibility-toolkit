@@ -22,6 +22,39 @@ EXAMPLES
 HEREDOC
 }
 
+function parse_arguments {
+	while getopts ":he:" opt; do
+		case $opt in
+			h) # display help
+				print_usage
+				exit 0
+				;;
+			e) # read exclusions file
+				if [ -z "${OPTARG}"]; then
+					printf "yes"
+				fi
+				read_exclusions_from_file "${OPTARG}"
+				;;
+			*) # parse extra arguments
+				echo "${OPTARG}" >&2
+				EXCLUSIONS+=("${OPTARG}")
+				;;
+			\?)
+				echo "Error: Invalid option -$OPTARG"
+				print_usage
+				exit 1
+				;;
+			:)
+				echo "Error: Option -$OPTARG requires an argument."
+				print_usage
+				exit 1
+				;;
+		esac
+	done
+	shift $(( OPTIND - 1 ))
+	EXCLUSIONS+=$*
+}
+
 ## Reads excluded file list from the file passed with the -e option
 function read_exclusions_from_file {
 	EXCLUSIONS=()
@@ -95,39 +128,6 @@ function run {
 
 	echo "Run finished with message: $MESSAGE" >&2
 	store_env_var "DISCORD_MESSAGE" "$MESSAGE"
-}
-
-function parse_arguments {
-	while getopts ":he:" opt; do
-		case $opt in
-			h) # display help
-				print_usage
-				exit 0
-				;;
-			e) # read exclusions file
-				if [ -z "${OPTARG}"]; then
-					printf "yes"
-				fi
-				read_exclusions_from_file "${OPTARG}"
-				;;
-			*) # parse extra arguments
-				echo "${OPTARG}" >&2
-				EXCLUSIONS+=("${OPTARG}")
-				;;
-			\?)
-				echo "Error: Invalid option -$OPTARG"
-				print_usage
-				exit 1
-				;;
-			:)
-				echo "Error: Option -$OPTARG requires an argument."
-				print_usage
-				exit 1
-				;;
-		esac
-	done
-	shift $(( OPTIND - 1 ))
-	EXCLUSIONS+=$*
 }
 
 function main {

@@ -7,6 +7,8 @@ extends CharacterBody3D
 
 @onready var pivot: Node3D = $RotationPivot
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
+@onready var mesh: GatoMesh = $RotationPivot/Mesh
+
 
 func _physics_process(delta: float) -> void:
 	if not camera:
@@ -14,6 +16,9 @@ func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		mesh.is_grounded = false
+	else:
+		mesh.is_grounded = true
 
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (camera.global_transform.basis * Vector3(input.x, 0, input.y)).normalized()
@@ -23,6 +28,9 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		var target_angle := Vector3.BACK.signed_angle_to(direction, Vector3.UP)
 		pivot.rotation.y = lerp_angle(pivot.rotation.y, target_angle, rotation_speed * delta)
+		mesh.is_moving = true
+	else:
+		mesh.is_moving = false
 
 	move_and_slide()
 

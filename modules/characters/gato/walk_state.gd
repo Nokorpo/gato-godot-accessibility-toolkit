@@ -30,3 +30,5 @@ func _physics_process(delta: float) -> void:
 			state_machine.change_state(GatoJumpState)
 		if node.velocity.length() < 0.2:
 			state_machine.change_state(GatoIdleState)
+		if abs(node.velocity.y) >= 0.2:
+			mesh.play_animation(GatoMesh.Animations.JUMP_FALL)

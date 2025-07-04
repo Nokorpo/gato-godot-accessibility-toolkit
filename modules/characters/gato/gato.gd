@@ -1,3 +1,4 @@
+class_name Gato
 extends CharacterBody3D
 
 @export var speed: float = 2.0
@@ -36,3 +37,6 @@ func _physics_process(delta: float) -> void:
 
 func jump() -> void:
 	velocity.y = jump_force
+
+func _on_item_entered(body: Node3D) -> void:
+	pass

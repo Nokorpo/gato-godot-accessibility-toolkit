@@ -2,6 +2,9 @@ extends StateMachineState
 class_name GatoJumpState
 
 @export var mesh: GatoMesh
+@export var max_jumps: int = 2
+
+var remaining_jumps: int = max_jumps
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +12,8 @@ func _ready() -> void:
 
 # Called when the state machine changes to this state.
 func _on_enter_state() -> void:
+	if not DebugMenu.enable_infinite_jumps:
+		remaining_jumps -= 1
 	node.jump()
 	mesh.play_animation(GatoMesh.Animations.JUMP)
 
@@ -26,7 +31,7 @@ func _process(delta: float) -> void:
 
 # Called every physics frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and remaining_jumps > 0:
 		state_machine.change_state(GatoJumpState)
 	if active:
 		if node.velocity.y <= 0:

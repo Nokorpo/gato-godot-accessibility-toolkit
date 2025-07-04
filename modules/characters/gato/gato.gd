@@ -9,10 +9,12 @@ extends CharacterBody3D
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 
 func _physics_process(delta: float) -> void:
+	if not camera:
+		return
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (camera.global_transform.basis * Vector3(input.x, 0, input.y)).normalized()
 	velocity.x = lerp(velocity.x, direction.normalized().x * speed, 1-smoothing)

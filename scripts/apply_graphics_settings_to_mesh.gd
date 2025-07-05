@@ -1,8 +1,11 @@
 @tool
 extends Node
 
-@export_tool_button("asdf")
-var button: Callable = func(): _ready()
+@export
+var enabled: bool = true:
+	set(value):
+		enabled = value
+		_update_materials.call_deferred()
 
 func _enter_tree() -> void:
 	_update_materials.call_deferred()
@@ -13,7 +16,7 @@ func _exit_tree() -> void:
 
 func _update_materials():
 	for node in get_parent().find_children("", "MeshInstance3D"):
-		if FeatureFlags.get("graphics_quality") == FeatureFlags.GraphicsQualityOptions.LOW:
+		if enabled and FeatureFlags.get("graphics_quality") == FeatureFlags.GraphicsQualityOptions.LOW:
 			_add_overriden_material(node)
 		else:
 			_remove_overriden_material(node)
@@ -23,6 +26,7 @@ func _add_overriden_material(mesh: MeshInstance3D) -> void:
 	var path := _get_low_graphics_version(material.resource_path)
 	if FileAccess.file_exists(path):
 		mesh.set_surface_override_material(0, load(path).duplicate())
+		mesh.notify_property_list_changed()
 
 func _get_low_graphics_version(path: String) -> StringName:
 	var path_parts: PackedStringArray = path.split("/")
@@ -35,5 +39,6 @@ func _get_low_graphics_version(path: String) -> StringName:
 
 func _remove_overriden_material(mesh: MeshInstance3D) -> void:
 	var material := mesh.get_surface_override_material(0)
-	if material != null and material.resource_path.ends_with("_low.tres"):
+	if material != null and material.resource_name.ends_with("_low"):
 		mesh.set_surface_override_material(0, null)
+		mesh.notify_property_list_changed()

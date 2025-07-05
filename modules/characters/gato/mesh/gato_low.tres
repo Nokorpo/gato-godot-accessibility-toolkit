@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cjoktppe7l4wk" path="res://modules/characters/gato/mesh/gato_body.png" id="1_huv4h"]
 
 [resource]
-resource_name = "gato"
+resource_name = "gato_low"
 cull_mode = 2
 shading_mode = 0
 diffuse_mode = 3

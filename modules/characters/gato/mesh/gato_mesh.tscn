@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://lfdv7nvfw25m"]
+[gd_scene load_steps=5 format=3 uid="uid://lfdv7nvfw25m"]
 
 [ext_resource type="PackedScene" uid="uid://bbooh5fy7gvyg" path="res://modules/characters/gato/mesh/gato.glb" id="1_6pu3j"]
 [ext_resource type="Script" uid="uid://bslirxx4p3c7b" path="res://modules/characters/gato/mesh/gato_mesh.gd" id="2_v13qw"]

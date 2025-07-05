@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmv6ou0brsgd" path="res://modules/characters/gato/mesh/gato_accessories.png" id="1_f6tnh"]
 
 [resource]
-resource_name = "accessories"
+resource_name = "accessories_low"
 cull_mode = 2
 diffuse_mode = 3
 specular_mode = 1

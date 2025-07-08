@@ -4,16 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_7mldg"]
 [ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/state_machine/state_machine.gd" id="2_f3pdk"]
 [ext_resource type="Script" uid="uid://b3jti78ctq7ku" path="res://modules/characters/gato/idle_state.gd" id="3_7mldg"]
+[ext_resource type="PackedScene" uid="uid://dsydd8kmsg0gs" path="res://modules/characters/gato/item_detection_area.tscn" id="3_obe3c"]
 [ext_resource type="Script" uid="uid://c7nhbbapx3716" path="res://modules/characters/gato/walk_state.gd" id="4_pbfhj"]
 [ext_resource type="Script" uid="uid://cqw6xey20fxnq" path="res://modules/characters/gato/jump_state.gd" id="6_ve5e5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbfhj"]
 radius = 0.275845
 height = 1.32502
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_5kfaa"]
-height = 1.4127
-radius = 1.04248
 
 [node name="Gato" type="CharacterBody3D"]
 script = ExtResource("1_5kfaa")
@@ -22,18 +19,11 @@ script = ExtResource("1_5kfaa")
 
 [node name="Mesh" parent="RotationPivot" instance=ExtResource("2_7mldg")]
 
+[node name="ItemDetectionArea" parent="RotationPivot" instance=ExtResource("3_obe3c")]
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663, 0)
 shape = SubResource("CapsuleShape3D_pbfhj")
-
-[node name="ItemDetectionArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemDetectionArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70562, 0)
-shape = SubResource("CylinderShape3D_5kfaa")
-debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
-
-[node name="ItemContainer" type="Node3D" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_f3pdk")
@@ -50,5 +40,3 @@ mesh = NodePath("../../RotationPivot/Mesh")
 [node name="JumpState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("6_ve5e5")
 mesh = NodePath("../../RotationPivot/Mesh")
-
-[connection signal="body_entered" from="ItemDetectionArea" to="." method="_on_item_entered"]

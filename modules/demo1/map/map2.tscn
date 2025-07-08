@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwdws0164lhxw"]
+[gd_scene load_steps=11 format=3 uid="uid://cwdws0164lhxw"]
 
 [ext_resource type="Environment" uid="uid://bkbcn5mdwt1wm" path="res://modules/demo1/map/main-environment.tres" id="1_dpmng"]
 [ext_resource type="Script" uid="uid://cilxftnh4fvbh" path="res://modules/demo1/view.gd" id="2_3m36i"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://modules/demo1/objects/cloud.tscn" id="7_w1sql"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="8_ddlgx"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="9_t58fl"]
+[ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/acorn/acorn.tscn" id="10_t58fl"]
 
 [node name="Main" type="Node3D"]
 
@@ -119,6 +120,15 @@ transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241,
 
 [node name="cube14" parent="World" instance=ExtResource("7_w1sql")]
 transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241, -0.974547, 1.4522, 2.05595, -15.866, 2.03819, 7.83702)
+
+[node name="Acorn" parent="World" instance=ExtResource("10_t58fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67559, 0.65, 0.572272)
+
+[node name="Acorn2" parent="World" instance=ExtResource("10_t58fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25932, 0.647158, 3.1893)
+
+[node name="Acorn3" parent="World" instance=ExtResource("10_t58fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79765, 1.0474, 4.50347)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)

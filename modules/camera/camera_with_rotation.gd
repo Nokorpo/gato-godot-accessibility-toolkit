@@ -2,23 +2,23 @@ extends Node3D
 
 @export_group("Properties")
 @export var target: Node
+@export var camera_speed: float = 10
 
 @export_group("Zoom")
 @export var zoom_minimum = 16
 @export var zoom_maximum = 4
 @export var zoom_speed = 10
 
-@export_group("Rotation (buttons)")
-@export var rotation_speed: float = 120
+@export_group("Rotation (joystick)")
+@export var joystick_rotation_sensitivity: float = 2
 var camera_rotation: Vector3
 var zoom: float = 10
 
 @export_group("Rotation (mouse)")
-@export var camera_speed: float = 10
-@export var sensitivity: float = .15
+@export var mouse_rotation_sensitivity: float = .15
 var target_basis: Basis = Basis.IDENTITY
 var second_basis: Basis = Basis.IDENTITY
-const _threshold: float = 0.00001
+const _threshold: float = .8
 var mouse_delta: Vector2 = Vector2.ZERO
 
 @onready var camera = $Camera
@@ -34,32 +34,31 @@ func init_mouse_rotation_variables() -> void:
 	second_basis = Basis(Quaternion.from_euler(Vector3(0, original_rotation.y, 0)))
 
 func _process(delta: float) -> void:
-	# TODO switch between one or the other depending on whether the player uses controller or mouse
 	if using_mouse:
 		_handle_rotation_from_mouse(delta)
 	else:
 		_handle_rotation_from_buttons(delta)
+	transform.basis = transform.basis.slerp(target_basis, delta * camera_speed)
 
 func _physics_process(delta: float) -> void:
 	self.position = self.position.lerp(target.position, delta * 4)
 	camera.position = camera.position.lerp(Vector3(0, 0, zoom), 8 * delta)
 
 func _handle_rotation_from_buttons(delta):
-	var input := Vector3.ZERO
+	var input := Vector2.ZERO
 
-	# TODO adaptar esto a usar un joystick o el ratón con el inputremapper
-	input.y = Input.get_axis("camera_left", "camera_right")
-	input.x = Input.get_axis("camera_up", "camera_down")
+	input.x = Input.get_axis("camera_right", "camera_left")
+	input.y = Input.get_axis("camera_up", "camera_down")
 
-	camera_rotation += input.limit_length(1.0) * rotation_speed * delta
-	camera_rotation.x = clamp(camera_rotation.x, -80, -10)
-
-	zoom += Input.get_axis("zoom_in", "zoom_out") * zoom_speed * delta
-	zoom = clamp(zoom, zoom_maximum, zoom_minimum)
+	mouse_delta = input
+	rotate_in_direction(input * delta * joystick_rotation_sensitivity)
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
+		using_mouse = true
+	if event is InputEventJoypadMotion:
+		using_mouse = false
 
 	if event is InputEventMouseButton:
 		match event.button_index:
@@ -69,13 +68,14 @@ func _input(event):
 ## Original code from: https://forum.godotengine.org/t/fps-camera-quaternions-movement-slows-down-when-looking-up-and-down/93458/4
 func _handle_rotation_from_mouse(delta):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		mouse_delta = -mouse_delta * delta * sensitivity
-		var delta_y_max = (-target_basis.z).angle_to(Vector3.UP * sign(mouse_delta.y))
-		mouse_delta.y = clamp(abs(mouse_delta.y), 0.0, delta_y_max - _threshold) * sign(mouse_delta.y)
-		var horz_quat = Quaternion(Vector3.UP * target_basis, mouse_delta.x)
-		var horz_quat_no_pitch = Quaternion(Vector3.UP * second_basis, mouse_delta.x)
-		var vert_quat = Quaternion(Vector3.RIGHT, mouse_delta.y)
-		target_basis *= Basis(horz_quat * vert_quat)
-		second_basis *= Basis(horz_quat_no_pitch)
-		target_basis = target_basis.orthonormalized()
-	transform.basis = transform.basis.slerp(target_basis, delta * camera_speed)
+		rotate_in_direction(-mouse_delta * delta * mouse_rotation_sensitivity)
+
+func rotate_in_direction(mouse_delta: Vector2) -> void:
+	var delta_y_max = (-target_basis.z).angle_to(Vector3.UP * sign(mouse_delta.y))
+	mouse_delta.y = clamp(abs(mouse_delta.y), 0.0, delta_y_max - _threshold) * sign(mouse_delta.y)
+	var horz_quat = Quaternion(Vector3.UP * target_basis, mouse_delta.x)
+	var horz_quat_no_pitch = Quaternion(Vector3.UP * second_basis, mouse_delta.x)
+	var vert_quat = Quaternion(Vector3.RIGHT, mouse_delta.y)
+	target_basis *= Basis(horz_quat * vert_quat)
+	second_basis *= Basis(horz_quat_no_pitch)
+	target_basis = target_basis.orthonormalized()

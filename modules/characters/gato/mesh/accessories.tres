@@ -5,7 +5,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdp55"]
 cull_mode = 1
 shading_mode = 0
-albedo_color = Color(0.140447, 0.140447, 0.140447, 1)
+albedo_color = Color(0.262745, 0.211765, 0.490196, 1)
 grow = true
 grow_amount = 0.03
 proximity_fade_enabled = true

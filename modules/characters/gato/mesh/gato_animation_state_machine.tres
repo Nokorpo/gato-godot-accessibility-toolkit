@@ -26,13 +26,14 @@ advance_condition = &"is_grounded"
 xfade_time = 0.29
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5s3rc"]
+xfade_time = 0.2
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ymkgu"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_43ce3"]
-xfade_time = 0.17
+xfade_time = 0.2
 advance_mode = 2
 advance_expression = "self[\"parameters/conditions/is_grounded\"] && not self[\"parameters/conditions/is_moving\"]"
 
@@ -67,6 +68,7 @@ advance_mode = 2
 advance_expression = "not self[\"parameters/conditions/is_grounded\"]"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ju6w"]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p7dr4"]
 
@@ -86,4 +88,4 @@ states/jump_land/position = Vector2(648, 88)
 states/walk/node = SubResource("AnimationNodeAnimation_7ucyw")
 states/walk/position = Vector2(479, 239.16)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7ucyw"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_wvx21"), "jump", "jump_air", SubResource("AnimationNodeStateMachineTransition_5s3rc"), "jump_air", "jump_fall", SubResource("AnimationNodeStateMachineTransition_ymkgu"), "jump_fall", "jump_land", SubResource("AnimationNodeStateMachineTransition_43ce3"), "jump_land", "idle", SubResource("AnimationNodeStateMachineTransition_00blv"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_3i0m2"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_m77tm"), "jump_fall", "walk", SubResource("AnimationNodeStateMachineTransition_p7byk"), "walk", "jump_fall", SubResource("AnimationNodeStateMachineTransition_rjkq3"), "idle", "jump_fall", SubResource("AnimationNodeStateMachineTransition_25ort"), "jump_air", "jump", SubResource("AnimationNodeStateMachineTransition_5ju6w"), "jump_fall", "jump", SubResource("AnimationNodeStateMachineTransition_p7dr4")]
-graph_offset = Vector2(-24.7117, -89.8398)
+graph_offset = Vector2(-24.7117, -82.6793)

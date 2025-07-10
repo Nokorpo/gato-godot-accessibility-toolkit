@@ -7,6 +7,7 @@ height = 1.4127
 radius = 1.04248
 
 [node name="ItemDetectionArea" type="Area3D"]
+script = ExtResource("1_3r1vw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70562, 0)
@@ -15,6 +16,5 @@ debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
 
 [node name="ItemContainer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-script = ExtResource("1_3r1vw")
 
-[connection signal="body_entered" from="." to="ItemContainer" method="_on_item_detection_area_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

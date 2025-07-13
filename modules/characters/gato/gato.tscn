@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://fi43o1qrjkvt"]
+[gd_scene load_steps=10 format=3 uid="uid://fi43o1qrjkvt"]
 
 [ext_resource type="Script" uid="uid://rm488hf1f3uc" path="res://modules/characters/gato/gato.gd" id="1_5kfaa"]
 [ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_7mldg"]
 [ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/state_machine/state_machine.gd" id="2_f3pdk"]
 [ext_resource type="Script" uid="uid://b3jti78ctq7ku" path="res://modules/characters/gato/idle_state.gd" id="3_7mldg"]
 [ext_resource type="PackedScene" uid="uid://dsydd8kmsg0gs" path="res://modules/characters/gato/item_detection_area.tscn" id="3_obe3c"]
+[ext_resource type="Script" uid="uid://cw24rtcy63cly" path="res://modules/characters/gato/item_launcher.gd" id="4_fyq4e"]
 [ext_resource type="Script" uid="uid://c7nhbbapx3716" path="res://modules/characters/gato/walk_state.gd" id="4_pbfhj"]
 [ext_resource type="Script" uid="uid://cqw6xey20fxnq" path="res://modules/characters/gato/jump_state.gd" id="6_ve5e5"]
 
@@ -13,6 +14,8 @@ radius = 0.275845
 height = 1.32502
 
 [node name="Gato" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_5kfaa")
 
 [node name="RotationPivot" type="Node3D" parent="."]
@@ -20,6 +23,11 @@ script = ExtResource("1_5kfaa")
 [node name="Mesh" parent="RotationPivot" instance=ExtResource("2_7mldg")]
 
 [node name="ItemDetectionArea" parent="RotationPivot" instance=ExtResource("3_obe3c")]
+
+[node name="ItemLauncher" type="Node3D" parent="RotationPivot" node_paths=PackedStringArray("item_detection")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.738809, 0.463744)
+script = ExtResource("4_fyq4e")
+item_detection = NodePath("../ItemDetectionArea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663, 0)

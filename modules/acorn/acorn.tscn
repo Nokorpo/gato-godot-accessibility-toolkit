@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://brl80a1hiwsoq"]
+[gd_scene load_steps=8 format=3 uid="uid://brl80a1hiwsoq"]
 
 [ext_resource type="Script" uid="uid://i2np7666k2dl" path="res://modules/acorn/acorn.gd" id="1_0jmtj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0jmtj"]
+rough = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvhaj"]
 albedo_color = Color(0.78, 0.37986, 0.1482, 1)
@@ -20,6 +23,8 @@ height = 1.0
 radius = 0.15
 
 [node name="Acorn" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_0jmtj")
+angular_damp = 6.0
 script = ExtResource("1_0jmtj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

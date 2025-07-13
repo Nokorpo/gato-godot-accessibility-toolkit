@@ -20,6 +20,10 @@ var _items_floating_toward_container: Array[Node3D] = []
 
 func _physics_process(delta: float) -> void:
 	for i in range(items.size()):
+		if not is_instance_valid(items[i]):
+			# if an acorn is picked while a boar eats it, it might be removed while following the player, so we have to remove it from the list
+			items.remove_at(i)
+			continue
 		var diff := item_container.global_position - items[i].global_position
 		var expected_distance: float = (i+1) * item_separation
 		if diff.length() >= expected_distance:
@@ -36,6 +40,14 @@ func _disable_item_physics(item: PhysicsBody3D) -> void:
 	item.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 	item.freeze = true
 
+## Makes the collected item collide with other items
+func _enable_item_physics(item: PhysicsBody3D) -> void:
+	item.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+	item.freeze = false
+	await get_tree().create_timer(.5).timeout
+	item.set_collision_mask_value(1, true)
+	item.set_collision_layer_value(1, true)
+
 ## Plays a short animation that moves the collected item behind the container
 func _float_item_toward_container(item: Node3D) -> Tween:
 	_items_floating_toward_container.append(item)
@@ -44,6 +56,14 @@ func _float_item_toward_container(item: Node3D) -> Tween:
 	tween.tween_property(item, "global_position", item_container.global_position - item_container.global_basis.z.normalized() * items.size() * item_separation, .5 * DebugMenu.animation_speed)
 	tween.tween_callback(_items_floating_toward_container.erase.bind(item))
 	return tween
+
+## Removes the first item from the item list and returns it.[br]
+## Returns [code]null[/code] if it has collected no items.
+func pop_item() -> Node3D:
+	var item: RigidBody3D = items.pop_front()
+	if item:
+		_enable_item_physics(item)
+	return item
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Acorn:

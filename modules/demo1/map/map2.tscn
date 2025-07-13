@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwdws0164lhxw"]
+[gd_scene load_steps=14 format=3 uid="uid://cwdws0164lhxw"]
 
 [ext_resource type="Environment" uid="uid://bkbcn5mdwt1wm" path="res://modules/demo1/map/main-environment.tres" id="1_dpmng"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://modules/demo1/map/platform/platform.tscn" id="3_ddlgx"]
@@ -10,6 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="8_ddlgx"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="9_t58fl"]
 [ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/acorn/acorn.tscn" id="10_t58fl"]
+[ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/button/button.tscn" id="11_6hox7"]
+[ext_resource type="Script" uid="uid://ce3512irlhpu3" path="res://modules/demo1/map/indicator.gd" id="12_g421f"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6hox7"]
+radius = 0.125
+height = 0.25
 
 [node name="Main" type="Node3D"]
 
@@ -123,7 +129,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25932, 0.647158, 3.1893)
 [node name="Acorn3" parent="World" instance=ExtResource("10_t58fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79765, 1.0474, 4.50347)
 
+[node name="Button" parent="World" instance=ExtResource("11_6hox7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -2)
+
+[node name="Indicator" type="MeshInstance3D" parent="World/Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("SphereMesh_6hox7")
+script = ExtResource("12_g421f")
+
+[node name="Button2" parent="World" instance=ExtResource("11_6hox7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
+
+[node name="Indicator" type="MeshInstance3D" parent="World/Button2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("SphereMesh_6hox7")
+skeleton = NodePath("../../Button")
+script = ExtResource("12_g421f")
+
+[node name="Button3" parent="World" instance=ExtResource("11_6hox7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 4)
+
+[node name="Indicator" type="MeshInstance3D" parent="World/Button3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("SphereMesh_6hox7")
+skeleton = NodePath("../../Button")
+script = ExtResource("12_g421f")
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.75
+
+[connection signal="button_toggled" from="World/Button" to="World/Button/Indicator" method="_on_button_button_toggled"]
+[connection signal="button_toggled" from="World/Button2" to="World/Button2/Indicator" method="_on_button_button_toggled"]
+[connection signal="button_toggled" from="World/Button3" to="World/Button3/Indicator" method="_on_button_button_toggled"]

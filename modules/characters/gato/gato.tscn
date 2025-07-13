@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fi43o1qrjkvt"]
+[gd_scene load_steps=11 format=3 uid="uid://fi43o1qrjkvt"]
 
 [ext_resource type="Script" uid="uid://rm488hf1f3uc" path="res://modules/characters/gato/gato.gd" id="1_5kfaa"]
 [ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_7mldg"]
@@ -9,12 +9,15 @@
 [ext_resource type="Script" uid="uid://c7nhbbapx3716" path="res://modules/characters/gato/walk_state.gd" id="4_pbfhj"]
 [ext_resource type="Script" uid="uid://cqw6xey20fxnq" path="res://modules/characters/gato/jump_state.gd" id="6_ve5e5"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fyq4e"]
+points = PackedVector3Array(-0.5, -1, 0, 0.5, -1, 0, 0.5, 1, 0, -0.5, 1, 0, -3, 1, 5, 3, 1, 5, 3, -1, 5, -3, -1, 5)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbfhj"]
 radius = 0.275845
 height = 1.32502
 
 [node name="Gato" type="CharacterBody3D"]
-collision_layer = 2
+collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_5kfaa")
 
@@ -28,6 +31,14 @@ script = ExtResource("1_5kfaa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.738809, 0.463744)
 script = ExtResource("4_fyq4e")
 item_detection = NodePath("../ItemDetectionArea")
+
+[node name="ItemLandingSpotDetector" type="Area3D" parent="RotationPivot/ItemLauncher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationPivot/ItemLauncher/ItemLandingSpotDetector"]
+shape = SubResource("ConvexPolygonShape3D_fyq4e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663, 0)

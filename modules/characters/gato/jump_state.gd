@@ -26,11 +26,11 @@ func tick() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass # Replace with function body.
 
 # Called every physics frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and remaining_jumps > 0:
 		state_machine.change_state(GatoJumpState)
 	if active:

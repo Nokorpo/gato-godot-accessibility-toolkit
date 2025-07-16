@@ -15,7 +15,11 @@ signal item_collected(item: Node3D)
 
 @onready var item_container: Node3D = $ItemContainer
 
+## The list of items currently contained by this container. They will follow the
+## container around as it moves.
 var items: Array[Node3D] = []
+## When an item is initially collected, it floats to the back of this container.
+## Items playing this animation are stored here before moving to the [code]items[/code] array.
 var _items_floating_toward_container: Array[Node3D] = []
 
 func _physics_process(delta: float) -> void:
@@ -65,6 +69,9 @@ func pop_item() -> Node3D:
 		_enable_item_physics(item)
 	return item
 
+## When a pickable item is detected, its added to the item list.[br][br]
+## [b]Note:[/b] Addition is not instantaneous. The item is tweened to the back of
+## the character and it won't be added to the list until the animation is finished.
 func _on_body_entered(body: Node3D) -> void:
 	if body is Acorn:
 		if body in items or body in _items_floating_toward_container:

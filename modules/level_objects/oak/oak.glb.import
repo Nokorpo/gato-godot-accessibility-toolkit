@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bswf3xbl752"
-path="res://.godot/imported/acorn.glb-52e989da26b0f105da6ea9f41e0e968b.scn"
+uid="uid://76tobu24ib4r"
+path="res://.godot/imported/oak.glb-07dc83e8ae4cff589e7aa6f0f641b97a.scn"
 
 [deps]
 
-source_file="res://modules/acorn/acorn.glb"
-dest_files=["res://.godot/imported/acorn.glb-52e989da26b0f105da6ea9f41e0e968b.scn"]
+source_file="res://modules/level_objects/oak/oak.glb"
+dest_files=["res://.godot/imported/oak.glb-07dc83e8ae4cff589e7aa6f0f641b97a.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Acorn"
+nodes/root_name="Oak"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

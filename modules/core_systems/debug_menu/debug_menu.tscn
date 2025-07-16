@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dlxmuv21g68kk"]
 
-[ext_resource type="Script" uid="uid://bmkvg5tkmroqd" path="res://modules/debug_menu/debug_ui.gd" id="1_7mpk5"]
-[ext_resource type="Script" uid="uid://cndvxgm0400gt" path="res://modules/debug_menu/debug_menu.gd" id="1_q31e8"]
-[ext_resource type="Shader" uid="uid://cbpt1hplefxxy" path="res://modules/debug_menu/shaders/black_and_white.gdshader" id="6_nt6gv"]
+[ext_resource type="Script" uid="uid://bmkvg5tkmroqd" path="res://modules/core_systems/debug_menu/debug_ui.gd" id="1_7mpk5"]
+[ext_resource type="Script" uid="uid://cndvxgm0400gt" path="res://modules/core_systems/debug_menu/debug_menu.gd" id="1_q31e8"]
+[ext_resource type="Shader" uid="uid://cbpt1hplefxxy" path="res://modules/core_systems/debug_menu/shaders/black_and_white.gdshader" id="6_nt6gv"]
 
 [sub_resource type="Theme" id="Theme_7mpk5"]
 default_font_size = 24

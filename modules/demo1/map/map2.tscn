@@ -2,14 +2,14 @@
 
 [ext_resource type="Environment" uid="uid://bkbcn5mdwt1wm" path="res://modules/demo1/map/main-environment.tres" id="1_dpmng"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://modules/demo1/map/platform/platform.tscn" id="3_ddlgx"]
-[ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/camera/camera_with_rotation.tscn" id="4_6hox7"]
+[ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_6hox7"]
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://modules/demo1/map/platform/platform_medium.tscn" id="4_t58fl"]
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://modules/demo1/map/platform/platform_grass_large_round.tscn" id="5_6hox7"]
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://modules/demo1/objects/cloud.tscn" id="7_w1sql"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="8_ddlgx"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="9_t58fl"]
-[ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/acorn/acorn.tscn" id="10_t58fl"]
-[ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/button/button.tscn" id="11_6hox7"]
+[ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/level_objects/acorn/acorn.tscn" id="10_t58fl"]
+[ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/button.tscn" id="11_6hox7"]
 [ext_resource type="Script" uid="uid://ce3512irlhpu3" path="res://modules/demo1/map/indicator.gd" id="12_g421f"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_6hox7"]

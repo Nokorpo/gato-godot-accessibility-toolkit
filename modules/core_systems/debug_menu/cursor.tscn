@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu0re1os4x2m3"]
 
-[ext_resource type="Texture2D" uid="uid://b4a4wgjces1au" path="res://modules/debug_menu/sprites/hand_pointing.png" id="1_3nxy8"]
-[ext_resource type="Script" uid="uid://q86veoh6ebcx" path="res://modules/debug_menu/cursor.gd" id="2_fekj6"]
+[ext_resource type="Texture2D" uid="uid://b4a4wgjces1au" path="res://modules/core_systems/debug_menu/sprites/hand_pointing.png" id="1_3nxy8"]
+[ext_resource type="Script" uid="uid://q86veoh6ebcx" path="res://modules/core_systems/debug_menu/cursor.gd" id="2_fekj6"]
 
 [node name="Cursor" type="Node2D"]
 top_level = true

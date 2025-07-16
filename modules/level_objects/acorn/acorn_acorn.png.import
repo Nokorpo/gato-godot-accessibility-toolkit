@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc7u3hxpel8xa"
-path.s3tc="res://.godot/imported/oak_oak.png-6bd0fcb2895712f31d65c2042648efec.s3tc.ctex"
+uid="uid://db1ogumfci1xf"
+path="res://.godot/imported/acorn_acorn.png-f54331cccfe278690b6ed6aded658eae.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "fbca3f2c2fba9ad9548ac373224b4cc1"
+"md5": "589c77fc9723062b31969114eb04c813"
 }
 
 [deps]
 
-source_file="res://modules/oak/oak_oak.png"
-dest_files=["res://.godot/imported/oak_oak.png-6bd0fcb2895712f31d65c2042648efec.s3tc.ctex"]
+source_file="res://modules/level_objects/acorn/acorn_acorn.png"
+dest_files=["res://.godot/imported/acorn_acorn.png-f54331cccfe278690b6ed6aded658eae.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

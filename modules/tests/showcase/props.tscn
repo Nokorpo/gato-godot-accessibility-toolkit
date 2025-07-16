@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://debsy1fv3sm1b"]
 
-[ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/showcase/environment.tres" id="1_5ldq4"]
-[ext_resource type="PackedScene" uid="uid://76tobu24ib4r" path="res://modules/oak/oak.glb" id="2_jq4l3"]
+[ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_5ldq4"]
+[ext_resource type="PackedScene" uid="uid://76tobu24ib4r" path="res://modules/level_objects/oak/oak.glb" id="2_jq4l3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1hp43"]
 size = Vector2(20, 10)

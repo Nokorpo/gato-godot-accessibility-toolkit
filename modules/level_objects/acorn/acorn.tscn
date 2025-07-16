@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://brl80a1hiwsoq"]
 
-[ext_resource type="Script" uid="uid://i2np7666k2dl" path="res://modules/acorn/acorn.gd" id="1_0jmtj"]
+[ext_resource type="Script" uid="uid://i2np7666k2dl" path="res://modules/level_objects/acorn/acorn.gd" id="1_0jmtj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0jmtj"]
 rough = true

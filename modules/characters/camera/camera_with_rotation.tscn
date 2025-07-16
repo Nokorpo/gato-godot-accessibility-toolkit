@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2nha7p8avoto"]
 
-[ext_resource type="Script" uid="uid://cilxftnh4fvbh" path="res://modules/camera/camera_with_rotation.gd" id="1_csd3t"]
+[ext_resource type="Script" uid="uid://cilxftnh4fvbh" path="res://modules/characters/camera/camera_with_rotation.gd" id="1_csd3t"]
 
 [node name="CameraWithRotation" type="Node3D" node_paths=PackedStringArray("target")]
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)

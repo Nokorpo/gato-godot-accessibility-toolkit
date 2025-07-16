@@ -22,7 +22,6 @@ const _threshold: float = .8
 var mouse_delta: Vector2 = Vector2.ZERO
 
 @onready var camera = $Camera
-var using_mouse: bool = true
 
 func _ready():
 	init_mouse_rotation_variables()
@@ -34,10 +33,8 @@ func init_mouse_rotation_variables() -> void:
 	second_basis = Basis(Quaternion.from_euler(Vector3(0, original_rotation.y, 0)))
 
 func _process(delta: float) -> void:
-	if using_mouse:
-		_handle_rotation_from_mouse(delta)
-	else:
-		_handle_rotation_from_buttons(delta)
+	_handle_rotation_from_mouse(delta)
+	_handle_rotation_from_buttons(delta)
 	transform.basis = transform.basis.slerp(target_basis, delta * camera_speed)
 
 func _physics_process(delta: float) -> void:
@@ -51,14 +48,12 @@ func _handle_rotation_from_buttons(delta):
 	input.y = Input.get_axis("camera_up", "camera_down")
 
 	mouse_delta = input
-	rotate_in_direction(input * delta * joystick_rotation_sensitivity)
+	if not input.is_equal_approx(Vector2.ZERO):
+		rotate_in_direction(input * delta * joystick_rotation_sensitivity)
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
-		using_mouse = true
-	if event is InputEventJoypadMotion:
-		using_mouse = false
 
 	if event is InputEventMouseButton:
 		match event.button_index:

@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwdws0164lhxw"]
+[gd_scene load_steps=13 format=3 uid="uid://cwdws0164lhxw"]
 
 [ext_resource type="Environment" uid="uid://bkbcn5mdwt1wm" path="res://modules/demo1/map/main-environment.tres" id="1_dpmng"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://modules/demo1/map/platform/platform.tscn" id="3_ddlgx"]
 [ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/camera/camera_with_rotation.tscn" id="4_6hox7"]
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://modules/demo1/map/platform/platform_medium.tscn" id="4_t58fl"]
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://modules/demo1/map/platform/platform_grass_large_round.tscn" id="5_6hox7"]
-[ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://modules/demo1/objects/coin.tscn" id="6_g421f"]
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://modules/demo1/objects/cloud.tscn" id="7_w1sql"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="8_ddlgx"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="9_t58fl"]
@@ -69,36 +68,6 @@ transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -1
 [node name="platform-grass-large-round" parent="World" instance=ExtResource("5_6hox7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -2)
 
-[node name="coin" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.635, 0)
-
-[node name="coin10" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.635, 4)
-
-[node name="coin2" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0437, 1.97005, -0.33003)
-
-[node name="coin3" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0437, 1.97005, -1.33003)
-
-[node name="coin5" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7731, 2.54941, -2.28223)
-
-[node name="coin6" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8111, 1.6888, 0.328574)
-
-[node name="coin7" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8111, 2.6888, 0.328574)
-
-[node name="coin8" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9647, 0.801836, 3.99354)
-
-[node name="coin9" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -6)
-
-[node name="coin4" parent="World" instance=ExtResource("6_g421f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0437, 1.97005, -2.33003)
-
 [node name="cube8" parent="World" instance=ExtResource("7_w1sql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5495, 1.10741, -2.666)
 
@@ -120,36 +89,38 @@ transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241,
 [node name="cube14" parent="World" instance=ExtResource("7_w1sql")]
 transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241, -0.974547, 1.4522, 2.05595, -15.866, 2.03819, 7.83702)
 
-[node name="Acorn" parent="World" instance=ExtResource("10_t58fl")]
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Acorn" parent="Objects" instance=ExtResource("10_t58fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67559, 0.65, 0.572272)
 
-[node name="Acorn2" parent="World" instance=ExtResource("10_t58fl")]
+[node name="Acorn2" parent="Objects" instance=ExtResource("10_t58fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25932, 0.647158, 3.1893)
 
-[node name="Acorn3" parent="World" instance=ExtResource("10_t58fl")]
+[node name="Acorn3" parent="Objects" instance=ExtResource("10_t58fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79765, 1.0474, 4.50347)
 
-[node name="Button" parent="World" instance=ExtResource("11_6hox7")]
+[node name="Button" parent="Objects" instance=ExtResource("11_6hox7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -2)
 
-[node name="Indicator" type="MeshInstance3D" parent="World/Button"]
+[node name="Indicator" type="MeshInstance3D" parent="Objects/Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 mesh = SubResource("SphereMesh_6hox7")
 script = ExtResource("12_g421f")
 
-[node name="Button2" parent="World" instance=ExtResource("11_6hox7")]
+[node name="Button2" parent="Objects" instance=ExtResource("11_6hox7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
 
-[node name="Indicator" type="MeshInstance3D" parent="World/Button2"]
+[node name="Indicator" type="MeshInstance3D" parent="Objects/Button2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 mesh = SubResource("SphereMesh_6hox7")
 skeleton = NodePath("../../Button")
 script = ExtResource("12_g421f")
 
-[node name="Button3" parent="World" instance=ExtResource("11_6hox7")]
+[node name="Button3" parent="Objects" instance=ExtResource("11_6hox7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 4)
 
-[node name="Indicator" type="MeshInstance3D" parent="World/Button3"]
+[node name="Indicator" type="MeshInstance3D" parent="Objects/Button3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 mesh = SubResource("SphereMesh_6hox7")
 skeleton = NodePath("../../Button")
@@ -160,6 +131,6 @@ transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -
 shadow_enabled = true
 shadow_opacity = 0.75
 
-[connection signal="button_toggled" from="World/Button" to="World/Button/Indicator" method="_on_button_button_toggled"]
-[connection signal="button_toggled" from="World/Button2" to="World/Button2/Indicator" method="_on_button_button_toggled"]
-[connection signal="button_toggled" from="World/Button3" to="World/Button3/Indicator" method="_on_button_button_toggled"]
+[connection signal="button_toggled" from="Objects/Button" to="Objects/Button/Indicator" method="_on_button_button_toggled"]
+[connection signal="button_toggled" from="Objects/Button2" to="Objects/Button2/Indicator" method="_on_button_button_toggled"]
+[connection signal="button_toggled" from="Objects/Button3" to="Objects/Button3/Indicator" method="_on_button_button_toggled"]

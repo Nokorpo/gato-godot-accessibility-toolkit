@@ -23,7 +23,7 @@ billboard_mode = 1
 material = SubResource("StandardMaterial3D_d5hix")
 size = Vector2(0.1, 0.1)
 
-[node name="Boar" type="CharacterBody3D"]
+[node name="Boar" type="CharacterBody3D" groups=["heavy_weight"]]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("1_q5ai3")

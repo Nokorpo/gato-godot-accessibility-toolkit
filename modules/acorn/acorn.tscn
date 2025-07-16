@@ -22,9 +22,9 @@ height = 1.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_nvhaj"]
 radius = 0.15
 
-[node name="Acorn" type="RigidBody3D"]
+[node name="Acorn" type="RigidBody3D" groups=["light_weight"]]
 physics_material_override = SubResource("PhysicsMaterial_0jmtj")
-angular_damp = 6.0
+angular_damp = 60.0
 script = ExtResource("1_0jmtj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

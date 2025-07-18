@@ -86,7 +86,7 @@ function filter_not_useful_errors {
 		exit 1
 	fi
 	grep "ERROR" "$1" |\
-	grep -vE 'Condition "!is_inside_tree\(\)" is true'
+	grep -v 'ERROR: Condition "!is_inside_tree\(\)'
 	#grep -vE "(leaked|still in use)" |\
 	#grep -vE '(Parameter "m" is null|RID allocations)' |\
 }

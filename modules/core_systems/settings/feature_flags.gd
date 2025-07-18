@@ -2,7 +2,7 @@
 extends Node
 
 const CONFIG_FILE_PATH: StringName = "user://feature_flags.cfg"
-const DEFAULT_CONFIG_FILE_PATH: StringName = "res://modules/settings/feature_flags.cfg"
+const DEFAULT_CONFIG_FILE_PATH: StringName = "res://modules/core_systems/settings/feature_flags.cfg"
 var config_file: ConfigFile
 
 enum GraphicsQualityOptions { NORMAL, LOW }

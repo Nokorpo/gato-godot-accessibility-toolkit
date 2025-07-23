@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkaux4wn52qf1"]
+
+[ext_resource type="Script" uid="uid://611fp47fdxra" path="res://addons/input_remapper/ui/control_scheme_selector.gd" id="1_c4d4j"]
+[ext_resource type="Texture2D" uid="uid://b0kktw465ra47" path="res://addons/input_remapper/ui/sprites/left_arrow.svg" id="1_r7dch"]
+[ext_resource type="Texture2D" uid="uid://cyqbfmrgoyyex" path="res://addons/input_remapper/ui/sprites/right_arrow.svg" id="2_c4d4j"]
+
+[node name="ControlSchemeSelector" type="HBoxContainer"]
+offset_right = 570.0
+offset_bottom = 99.0
+theme_override_constants/separation = 20
+script = ExtResource("1_c4d4j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoBackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("1_r7dch")
+
+[node name="CurrentScheme" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "default"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("2_c4d4j")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Reset controls to default"
+alignment = 0
+
+[node name="NextScheme" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.666667)
+text = "left hand"
+uppercase = true
+
+[node name="NextScheme2" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.333333)
+text = "right hand"
+uppercase = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GoBackButton" to="." method="_load_last_scheme"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_load_next_scheme"]

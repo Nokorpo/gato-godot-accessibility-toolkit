@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://x1b45m56mm2l"]
+
+[ext_resource type="Script" uid="uid://cv34roeqss7e5" path="res://addons/input_remapper/ui/joystick_toggle.gd" id="1_st12y"]
+[ext_resource type="Script" uid="uid://cth8aq3xd04di" path="res://addons/input_remapper/ui/joystick_selector.gd" id="2_a6iv7"]
+
+[node name="2DInputMap" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="JoystickToggle" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("1_st12y")
+
+[node name="Button" type="Button" parent="JoystickToggle"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+
+[node name="Label" type="Label" parent="JoystickToggle"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Keyboard"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="JoystickToggle"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">"
+
+[node name="ActionContainer" type="GridContainer" parent="."]
+editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "move_up"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "W"
+
+[node name="Label2" type="Label" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "move_down"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "S"
+
+[node name="Label3" type="Label" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "move_left"
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A"
+
+[node name="Label4" type="Label" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "move_right"
+horizontal_alignment = 1
+
+[node name="Button4" type="Button" parent="ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "W"
+
+[node name="JoystickSelector" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("2_a6iv7")
+
+[node name="Button" type="Button" parent="JoystickSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+
+[node name="Label" type="Label" parent="JoystickSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Left"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="JoystickSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">"
+
+[connection signal="pressed" from="JoystickToggle/Button" to="JoystickToggle" method="_on_button_pressed"]
+[connection signal="pressed" from="JoystickToggle/Button2" to="JoystickToggle" method="_on_button_pressed"]
+[connection signal="pressed" from="JoystickSelector/Button" to="JoystickSelector" method="_on_button_pressed"]
+[connection signal="pressed" from="JoystickSelector/Button2" to="JoystickSelector" method="_on_button_pressed"]

@@ -1,0 +1,53 @@
+extends RefCounted
+## This class loads and stores control schemes and input configuration defined in InputRemapper. It
+## stores all data in "user://input.data" by default.[br][br]
+##
+## The format is a mix of custom JSON and Godot's native to json conversion (for more information, see
+## [url=https://docs.godotengine.org/en/stable/classes/class_json.html#class-json-method-from-native]this link[/url]).
+
+const DEFAULT_EVENTS := ["ui_accept", "ui_select", "ui_cancel", "ui_focus_next", "ui_focus_prev", "ui_left", "ui_right", "ui_up", "ui_down", "ui_page_up", "ui_page_down", "ui_home", "ui_end", "ui_cut", "ui_copy", "ui_paste", "ui_undo", "ui_redo", "ui_text_completion_query", "ui_text_completion_accept", "ui_text_completion_replace", "ui_text_newline", "ui_text_newline_blank", "ui_text_newline_above", "ui_text_indent", "ui_text_dedent", "ui_text_backspace", "ui_text_backspace_word", "ui_text_backspace_word.macos", "ui_text_backspace_all_to_left", "ui_text_backspace_all_to_left.macos", "ui_text_delete", "ui_text_delete_word", "ui_text_delete_word.macos", "ui_text_delete_all_to_right", "ui_text_delete_all_to_right.macos", "ui_text_caret_left", "ui_text_caret_word_left", "ui_text_caret_word_left.macos", "ui_text_caret_right", "ui_text_caret_word_right", "ui_text_caret_word_right.macos", "ui_text_caret_up", "ui_text_caret_down", "ui_text_caret_line_start", "ui_text_caret_line_start.macos", "ui_text_caret_line_end", "ui_text_caret_line_end.macos", "ui_text_caret_page_up", "ui_text_caret_page_down", "ui_text_caret_document_start", "ui_text_caret_document_start.macos", "ui_text_caret_document_end", "ui_text_caret_document_end.macos", "ui_text_caret_add_below", "ui_text_caret_add_below.macos", "ui_text_caret_add_above", "ui_text_caret_add_above.macos", "ui_text_scroll_up", "ui_text_scroll_up.macos", "ui_text_scroll_down", "ui_text_scroll_down.macos", "ui_text_select_all", "ui_text_select_word_under_caret", "ui_text_select_word_under_caret.macos", "ui_text_add_selection_for_next_occurrence", "ui_text_skip_selection_for_next_occurrence", "ui_text_clear_carets_and_selection", "ui_text_toggle_insert_mode", "ui_menu", "ui_text_submit", "ui_unicode_start", "ui_graph_duplicate", "ui_graph_delete", "ui_filedialog_up_one_level", "ui_filedialog_refresh", "ui_filedialog_show_hidden", "ui_swap_input_direction"]
+const SETTINGS_FILE := "user://input.data"
+
+var control_scheme_script: Script = load("res://addons/input_remapper/model/control_scheme.gd")
+
+## Loads the input map configuration from a file. If no argument is passed, it will load the
+## configuration from "user://input.data".
+func load_input_config_from_file(file_path: Variant = null) -> Array[GatoControlScheme]:
+	var config_file := SETTINGS_FILE
+	if file_path != null:
+		config_file = file_path
+
+	var file = FileAccess.open(config_file, FileAccess.READ)
+	var file_contents := file.get_as_text()
+	var json: Dictionary = JSON.parse_string(file_contents)
+	var data = load_input_config_from_json(json)
+	file.close()
+	return data
+
+## Loads the input map configuration from a json dictionary.
+func load_input_config_from_json(json: Dictionary) -> Array[GatoControlScheme]:
+	var schemes: Array[GatoControlScheme] = []
+	for item in json["control_schemes"]:
+		if not item["type"] == "control_scheme":
+			printerr("The stored input configuration has a broken control scheme.")
+			continue
+		var scheme: GatoControlScheme = control_scheme_script.new_from_dict(item)
+		schemes.append(scheme)
+	return schemes
+
+## Stores the control schemes modified by the user in a file. If no argument for the file is passed,
+## it will store the configuration in "user://input.data".
+func store_input_config(input_config: Variant, file_path: Variant = null):
+	var config_file := SETTINGS_FILE
+	if file_path != null:
+		config_file = file_path
+
+	if not DirAccess.dir_exists_absolute(config_file.get_base_dir()):
+		DirAccess.make_dir_recursive_absolute(config_file.get_base_dir())
+
+	var dict: Dictionary = { "control_schemes": [input_config.get_as_dict()] }
+
+	var text: String = JSON.stringify(dict)
+	var file := FileAccess.open(config_file, FileAccess.WRITE)
+	file.store_string(text)
+	file.close()

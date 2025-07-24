@@ -43,7 +43,9 @@ class TestDemoSelectorScene extends GutTest:
 
 		# THEN
 		assert_false(is_instance_valid(scene))
-		assert_true(get_node_or_null(new_scene_path) != null)
+		var new_scene = get_node_or_null(new_scene_path)
+		assert_true(new_scene != null)
+		new_scene.free()
 
 class TestDemoListResource extends GutTest:
 

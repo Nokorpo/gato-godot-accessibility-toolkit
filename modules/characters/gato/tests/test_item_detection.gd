@@ -5,7 +5,7 @@ class TestItemDetection extends GutTest:
 	## sut is short for "system under test"
 	var sut: PackedScene = load("res://modules/characters/gato/item_detection_area.tscn")
 
-	var acorn_scene: PackedScene = load("res://modules/acorn/acorn.tscn")
+	var acorn_scene: PackedScene = load("res://modules/level_objects/acorn/acorn.tscn")
 
 	func test_item_detection_and_item_container_exists():
 		#GIVEN
@@ -34,44 +34,41 @@ class TestItemDetection extends GutTest:
 		#GIVEN
 		DebugMenu.animation_speed = 0
 		var item_detection: Area3D = add_child_autofree(sut.instantiate())
-		var item_container: Node3D = item_detection.find_child("ItemContainer")
 		var acorn: Node3D = add_child_autofree(acorn_scene.instantiate())
 
 		#WHEN
-		item_container._on_item_detection_area_body_entered(acorn)
-		await wait_for_signal(item_container.item_collected, 2, "item detection wasn't signaled")
+		item_detection._on_body_entered(acorn)
+		await wait_for_signal(item_detection.item_collected, 2, "item detection wasn't signaled")
 
 		#THEN
-		assert_eq(item_container.items.size(), 1, "The acorn is not stored in the item list")
-		assert_eq(item_container.items[0], acorn, "The acorn is not stored in the item list")
+		assert_eq(item_detection.items.size(), 1, "The acorn is not stored in the item list")
+		assert_eq(item_detection.items[0], acorn, "The acorn is not stored in the item list")
 
 	func test_item_container_doesnt_store_same_item_twice():
 		#GIVEN
 		DebugMenu.animation_speed = 0
 		var item_detection: Area3D = add_child_autofree(sut.instantiate())
-		var item_container: Node3D = item_detection.find_child("ItemContainer")
 		var acorn: Node3D = add_child_autofree(acorn_scene.instantiate())
 
 		#WHEN
-		item_container._on_item_detection_area_body_entered(acorn)
-		item_container._on_item_detection_area_body_entered(acorn)
-		await wait_for_signal(item_container.item_collected, 2, "item detection wasn't signaled")
+		item_detection._on_body_entered(acorn)
+		item_detection._on_body_entered(acorn)
+		await wait_for_signal(item_detection.item_collected, 2, "item detection wasn't signaled")
 
 		#THEN
-		assert_eq(item_container.items.size(), 1, "The acorn is not stored in the item list")
-		assert_eq(item_container.items[0], acorn, "The acorn is not stored in the item list")
+		assert_eq(item_detection.items.size(), 1, "The acorn is not stored in the item list")
+		assert_eq(item_detection.items[0], acorn, "The acorn is not stored in the item list")
 
 	func test_stored_acorn_follows_item_container():
 		#GIVEN
 		DebugMenu.animation_speed = 0
 		var item_detection: Area3D = add_child_autofree(sut.instantiate())
-		var item_container: Node3D = item_detection.find_child("ItemContainer")
 		var acorn: Node3D = add_child_autofree(acorn_scene.instantiate())
-		item_container._on_item_detection_area_body_entered(acorn)
+		item_detection._on_body_entered(acorn)
 
 		#WHEN
-		item_container.global_position = Vector3(10,0,0)
-		await wait_for_signal(item_container.item_collected, 2, "item detection wasn't signaled")
+		item_detection.global_position = Vector3(10,0,0)
+		await wait_for_signal(item_detection.item_collected, 2, "item detection wasn't signaled")
 
 		#THEN
 		assert_almost_eq(acorn.global_position, Vector3(10,0,0), Vector3.ONE, "the acorn didn't follow the item container when it moved")

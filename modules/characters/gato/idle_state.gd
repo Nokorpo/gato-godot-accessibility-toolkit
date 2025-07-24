@@ -29,5 +29,7 @@ func _physics_process(_delta: float) -> void:
 	if active:
 		if Input.is_action_just_pressed("jump"):
 			state_machine.change_state(GatoJumpState)
-		if node.velocity.length() >= 0.2:
+
+		var horizontal_velocity := Vector2(node.velocity.x, node.velocity.z)
+		if horizontal_velocity.length() >= 0.2:
 			state_machine.change_state(GatoWalkState)

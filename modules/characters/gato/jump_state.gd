@@ -38,7 +38,8 @@ func _physics_process(_delta: float) -> void:
 			mesh.play_animation(GatoMesh.Animations.JUMP_FALL)
 		if node.is_on_floor():
 			remaining_jumps = max_jumps
-			if node.velocity.length() >= 0.2:
+			var horizontal_velocity := Vector2(node.velocity.x, node.velocity.z)
+			if horizontal_velocity.length() >= 0.2:
 				state_machine.change_state(GatoWalkState)
 			else:
 				state_machine.change_state(GatoIdleState)

@@ -22,7 +22,7 @@ class TestGatoInput extends GutTest:
 
 	func test_player_walk_state():
 		#GIVEN
-		var gato: Node = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
+		var gato: Node3D = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
 
 		#WHEN
 		_sender.action_down("move_down").hold_for(1)

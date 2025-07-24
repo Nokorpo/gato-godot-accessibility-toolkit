@@ -6,4 +6,11 @@
 *.tmp
 ~*
 *.translation
+
+# Generated builds
 build
+
+# Test generated files
+build_log.txt
+log.txt
+

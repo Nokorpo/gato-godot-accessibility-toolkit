@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+set -e
+
+
+## Stores an environment variable so it can be used from a later step in Github Actions
+function store_env_var {
+	if [ "$#" -ne 2 ]; then
+		echo "Error: 'store_env_var' function called with $# arguments." >&2
+		echo "The function should be called with 2 arguments, a key and its value." >&2
+		exit 1
+	fi
+	echo "Storing $1=$2 in GITHUB_ENV" >&2
+	if [ -n "$GITHUB_ENV" ]; then
+		echo "$1=$2" >> $GITHUB_ENV
+	else
+		echo "GITHUB_ENV is not set. Is this script running locally?" >&2
+	fi
+}
+
+function get_total_tests {
+	if (( $# != 1 )); then
+		echo "Error: 'get_total_tests' function called with $# arguments." >&2
+		echo "The function should be called with 1 arguments, the log file to filter warnings from." >&2
+		exit 1
+	fi
+	grep -E "Tests" "$1" | awk '{print $2}'
+}
+
+function get_warnings {
+	if (( $# != 1 )); then
+		echo "Error: 'get_warnings' function called with $# arguments." >&2
+		echo "The function should be called with 1 arguments, the log file to filter warnings from." >&2
+		exit 1
+	fi
+	WARNINGS="$(grep -E "Warnings" "$1" | awk '{print $2}')"
+	if ! [[ "$WARNINGS" =~ ^[0-9]+$ ]]; then
+		WARNINGS=0
+	fi
+	echo "$WARNINGS"
+}
+
+function get_errors {
+	if (( $# != 1 )); then
+		echo "Error: 'get_errors' function called with $# arguments." >&2
+		echo "The function should be called with 1 arguments, the log file to filter warnings from." >&2
+		exit 1
+	fi
+	ERRORS=$(grep -E "(Failing|Pending)" "$1" | awk '{ sum += $2; } END { print sum; }')
+	if ! [[ "$ERRORS" =~ ^[0-9]+$ ]]; then
+		 ERRORS=0
+	fi
+	echo "$ERRORS"	
+}
+
+function has_errors {
+	if (( $# != 2 )); then
+		echo "Error: 'has_errors' function called with $# arguments." >&2
+		echo "The function should be called with 2 arguments: the number of errors, and the number of warnings." >&2
+		exit 1
+	fi
+	ERRORS="$1"
+	WARNINGS="$2"
+
+	if [ "$ERRORS" -gt "0" ] || [ "$WARNINGS" -gt "0" ]; then
+		return 1
+	else
+		return 0
+	fi
+}
+
+function run {
+	echo "--- GODOT IMPORT ---"
+	godot --import --headless > build_log.txt 2>&1
+	IMPORT_RESULT="$?"
+
+	if [ $IMPORT_RESULT -eq 0 ]; then
+		echo "--- RUN TESTS ---"
+		godot --headless -s addons/gut/gut_cmdln.gd --path $PWD -glog=1 -gexit | tee log.txt
+
+		echo "--- GET RESULTS ---"
+		ERRORS="$(get_errors "log.txt")"
+		WARNINGS="$(get_warnings "log.txt")"
+		TOTAL="$(get_total_tests "log.txt")"
+		MESSAGE="Integration tests execution found $ERRORS errors :no_entry: and $WARNINGS warnings :warning:. Total tests run: $TOTAL"
+		if has_errors "$ERRORS" "$WARNINGS"; then
+			store_env_var "SHOULD_SEND_DISCORD_MESSAGE" "true"
+		fi
+
+	else
+		echo "Godot import failed"
+		cat build_log.txt
+		MESSAGE="Project import failed. Could not run tests."
+		store_env_var "SHOULD_SEND_DISCORD_MESSAGE" "true"
+	fi
+
+	echo "Run finished with message: $MESSAGE" >&2
+	store_env_var "DISCORD_MESSAGE" "$MESSAGE"
+}
+
+function main {
+	# here we would normally parse arguments, but since this script is so
+	# small it isn't necessary. We just run the tests
+	run
+}
+
+main

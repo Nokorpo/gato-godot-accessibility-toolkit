@@ -9,7 +9,7 @@ env:
   GODOT_VERSION: 4.4
 
 jobs:
-  web:
+  smoke-test:
     name: Run smoke test
     runs-on: ubuntu-latest
     container:
@@ -25,6 +25,34 @@ jobs:
         run: |
           ./scripts/run_smoke_test.sh "res://addons/gut"
 
+      - name: Get job ID
+        uses: austenstone/job-id@v1
+        id: job-id
+
+      - name: Discord notification
+        if: ${{ env.SHOULD_SEND_DISCORD_MESSAGE == 'true' }}
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "${{ env.DISCORD_MESSAGE }}. Check the results in [this url](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
+
+  integration-test:
+    name: Run integration tests
+    runs-on: ubuntu-latest
+    needs: smoke-test
+    container:
+      image: barichello/godot-ci:4.4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Run test
+        id: smoke-test
+        run: |
+          ./scripts/run_integration_tests.sh
       - name: Get job ID
         uses: austenstone/job-id@v1
         id: job-id

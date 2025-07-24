@@ -25,10 +25,6 @@ jobs:
         run: |
           ./scripts/run_smoke_test.sh "res://addons/gut"
 
-      - name: Get job ID
-        uses: austenstone/job-id@v1
-        id: job-id
-
       - name: Discord notification
         if: ${{ env.SHOULD_SEND_DISCORD_MESSAGE == 'true' }}
         env:
@@ -53,9 +49,6 @@ jobs:
         id: smoke-test
         run: |
           ./scripts/run_integration_tests.sh
-      - name: Get job ID
-        uses: austenstone/job-id@v1
-        id: job-id
 
       - name: Discord notification
         if: ${{ env.SHOULD_SEND_DISCORD_MESSAGE == 'true' }}

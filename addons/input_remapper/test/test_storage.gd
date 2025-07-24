@@ -53,10 +53,7 @@ class TestStorage extends GutTest:
 		Helper.check_scheme(schemes[0], self)
 
 	const TEMP_FILE := "user://temp.txt"
-	const FILE_CONTENTS := '{"control_schemes":[
-		{"input_actions":[{"action_name":"act","category":"test","input_key":"{\\"props\\":[\\"resource_local_to_scene\\",false,\\"resource_name\\",\\"s:\\",\\"device\\",\\"i:0\\",\\"window_id\\",\\"i:0\\",\\"alt_pressed\\",false,\\"shift_pressed\\",false,\\"ctrl_pressed\\",false,\\"meta_pressed\\",false,\\"pressed\\",false,\\"keycode\\",\\"i:48\\",\\"physical_keycode\\",\\"i:0\\",\\"key_label\\",\\"i:0\\",\\"unicode\\",\\"i:0\\",\\"location\\",\\"i:0\\",\\"echo\\",false,\\"script\\",null],\\"type\\":\\"InputEventKey\\"}","type":"input_action"},{"action_name":"act","category":"test","input_map_config":{"invert_joystick":false,"type":"input_action2d_joystick","use_right_joystick":false},"type":"input_action2d"}],"toggle_joystick":false,"type":"control_scheme"},
-		{"input_actions":[{"action_name":"act","category":"test","input_key":"{\\"props\\":[\\"resource_local_to_scene\\",false,\\"resource_name\\",\\"s:\\",\\"device\\",\\"i:0\\",\\"window_id\\",\\"i:0\\",\\"alt_pressed\\",false,\\"shift_pressed\\",false,\\"ctrl_pressed\\",false,\\"meta_pressed\\",false,\\"pressed\\",false,\\"keycode\\",\\"i:48\\",\\"physical_keycode\\",\\"i:0\\",\\"key_label\\",\\"i:0\\",\\"unicode\\",\\"i:0\\",\\"location\\",\\"i:0\\",\\"echo\\",false,\\"script\\",null],\\"type\\":\\"InputEventKey\\"}","type":"input_action"},{"action_name":"act","category":"test","input_map_config":{"invert_joystick":false,"type":"input_action2d_joystick","use_right_joystick":false},"type":"input_action2d"}],"toggle_joystick":false,"type":"control_scheme"}
-		]}'
+	const FILE_CONTENTS := '{"control_schemes":[{"input_actions":[{"action_name":"act","category":"test","input_key":"{\\"props\\":[\\"resource_local_to_scene\\",false,\\"resource_name\\",\\"s:\\",\\"device\\",\\"i:0\\",\\"window_id\\",\\"i:0\\",\\"alt_pressed\\",false,\\"shift_pressed\\",false,\\"ctrl_pressed\\",false,\\"meta_pressed\\",false,\\"pressed\\",false,\\"keycode\\",\\"i:48\\",\\"physical_keycode\\",\\"i:0\\",\\"key_label\\",\\"i:0\\",\\"unicode\\",\\"i:0\\",\\"location\\",\\"i:0\\",\\"echo\\",false,\\"script\\",null],\\"type\\":\\"InputEventKey\\"}","type":"input_action"},{"action_name":"act","category":"test","input_map_config":{"invert_joystick":false,"type":"input_action2d_joystick","use_right_joystick":false},"type":"input_action2d"}],"toggle_joystick":false,"type":"control_scheme"}]}'
 	func test_store() -> void:
 		var input_config := Helper.create_scheme()
 
@@ -65,7 +62,8 @@ class TestStorage extends GutTest:
 
 		assert_file_exists(TEMP_FILE)
 		var temp_file := FileAccess.open(TEMP_FILE, FileAccess.READ)
-		assert_eq(FileAccess.get_file_as_string(TEMP_FILE), FILE_CONTENTS)
+		var text := FileAccess.get_file_as_string(TEMP_FILE)
+		assert_eq(text, FILE_CONTENTS)
 
 		DirAccess.remove_absolute(TEMP_FILE)
 

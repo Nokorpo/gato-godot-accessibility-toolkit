@@ -62,9 +62,9 @@ function has_errors {
 	WARNINGS="$2"
 
 	if [ "$ERRORS" -gt "0" ] || [ "$WARNINGS" -gt "0" ]; then
-		return 1
-	else
 		return 0
+	else
+		return 1
 	fi
 }
 

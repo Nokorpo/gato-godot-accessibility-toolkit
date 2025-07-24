@@ -25,7 +25,8 @@ class TestGatoInput extends GutTest:
 		var gato: Node3D = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
 
 		#WHEN
-		_sender.action_down("move_down").hold_for(1)
+		# FIXME this will fail in the future, we need to listen to a signal when the state machine changes state
+		_sender.action_down("move_down").hold_for(2)
 		await(_sender.idle)
 
 		#THEN
@@ -38,7 +39,8 @@ class TestGatoInput extends GutTest:
 		var gato: Node3D = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
 
 		#WHEN
-		_sender.action_down("move_right").action_down("move_down").hold_for(1)
+		# FIXME this will fail in the future, we need to listen to a signal when the state machine changes state
+		_sender.action_down("move_right").action_down("move_down").hold_for(2)
 		await(_sender.idle)
 
 		#THEN

@@ -1,23 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://brl80a1hiwsoq"]
+[gd_scene load_steps=5 format=3 uid="uid://brl80a1hiwsoq"]
 
 [ext_resource type="Script" uid="uid://i2np7666k2dl" path="res://modules/level_objects/acorn/acorn.gd" id="1_0jmtj"]
+[ext_resource type="PackedScene" uid="uid://bswf3xbl752" path="res://modules/level_objects/acorn/acorn.glb" id="2_afr2q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0jmtj"]
 rough = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvhaj"]
-albedo_color = Color(0.78, 0.37986, 0.1482, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_nvhaj"]
-material = SubResource("StandardMaterial3D_nvhaj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jmtj"]
-albedo_color = Color(0.42, 0.2562, 0.0924, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_m35ly"]
-material = SubResource("StandardMaterial3D_0jmtj")
-radius = 0.425
-height = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nvhaj"]
 radius = 0.15
@@ -27,13 +14,7 @@ physics_material_override = SubResource("PhysicsMaterial_0jmtj")
 angular_damp = 60.0
 script = ExtResource("1_0jmtj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-mesh = SubResource("SphereMesh_nvhaj")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0696931, 0)
-mesh = SubResource("CapsuleMesh_m35ly")
+[node name="Acorn" parent="." instance=ExtResource("2_afr2q")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_nvhaj")

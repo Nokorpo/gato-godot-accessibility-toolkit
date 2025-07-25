@@ -14,11 +14,10 @@ class Helper:
 	const ACTION_NAME := "act"
 	const CATEGORY := "test"
 	static func create_scheme() -> GatoControlScheme:
-		var input_action = load("res://addons/input_remapper/model/input_action.gd")\
+		var input_action = load("res://addons/input_remapper/model/input_action_button.gd")\
 			.new(ACTION_NAME, create_input_event(KEY_0), CATEGORY)
-		var input_action_2d = load("res://addons/input_remapper/model/input_action_2d.gd")\
-			.new(ACTION_NAME, CATEGORY)
-		input_action_2d.use_joystick(false, false)
+		var input_action_2d = load("res://addons/input_remapper/model/joystick_input_action_2d.gd")\
+			.new(ACTION_NAME, false, false, CATEGORY)
 
 		var scheme := GatoControlScheme.new()
 		scheme.input_actions.append(input_action)
@@ -35,8 +34,16 @@ class Helper:
 		test.assert_eq(input_action.input.keycode, KEY_0)
 		var input_action_2d = scheme.input_actions[1]
 		test.assert_not_null(input_action_2d)
-		test.assert_eq(input_action_2d.input_map_config.invert_joystick, false)
-		test.assert_eq(input_action_2d.input_map_config.use_right_joystick, false)
+		test.assert_eq(input_action_2d.invert_joystick, false)
+		test.assert_eq(input_action_2d.use_right_joystick, false)
+
+	const TEMP_FILE := "user://temp.txt"
+	static func generate_file_content(scheme_list: Array) -> String:
+		var storage = load("res://addons/input_remapper/service/storage_service.gd").new()
+		storage.store_input_config(scheme_list, TEMP_FILE)
+		var text := FileAccess.get_file_as_string(TEMP_FILE)
+		DirAccess.remove_absolute(TEMP_FILE)
+		return text
 
 class TestStorage extends GutTest:
 	var sut := load("res://addons/input_remapper/service/storage_service.gd")
@@ -53,9 +60,9 @@ class TestStorage extends GutTest:
 		Helper.check_scheme(schemes[0], self)
 
 	const TEMP_FILE := "user://temp.txt"
-	const FILE_CONTENTS := '{"control_schemes":[{"input_actions":[{"action_name":"act","category":"test","input_key":"{\\"props\\":[\\"resource_local_to_scene\\",false,\\"resource_name\\",\\"s:\\",\\"device\\",\\"i:0\\",\\"window_id\\",\\"i:0\\",\\"alt_pressed\\",false,\\"shift_pressed\\",false,\\"ctrl_pressed\\",false,\\"meta_pressed\\",false,\\"pressed\\",false,\\"keycode\\",\\"i:48\\",\\"physical_keycode\\",\\"i:0\\",\\"key_label\\",\\"i:0\\",\\"unicode\\",\\"i:0\\",\\"location\\",\\"i:0\\",\\"echo\\",false,\\"script\\",null],\\"type\\":\\"InputEventKey\\"}","type":"input_action"},{"action_name":"act","category":"test","input_map_config":{"invert_joystick":false,"type":"input_action2d_joystick","use_right_joystick":false},"type":"input_action2d"}],"toggle_joystick":false,"type":"control_scheme"}]}'
+	const FILE_CONTENTS := r'{"control_schemes":[{"input_actions":[{"category":"test","input_key":"{\"props\":[\"resource_local_to_scene\",false,\"resource_name\",\"s:\",\"device\",\"i:0\",\"window_id\",\"i:0\",\"alt_pressed\",false,\"shift_pressed\",false,\"ctrl_pressed\",false,\"meta_pressed\",false,\"pressed\",false,\"keycode\",\"i:48\",\"physical_keycode\",\"i:0\",\"key_label\",\"i:0\",\"unicode\",\"i:0\",\"location\",\"i:0\",\"echo\",false,\"script\",null],\"type\":\"InputEventKey\"}","name":"act","type":"input_action_button"},{"category":"test","invert_joystick":false,"name":"act","type":"input_action2d_joystick","use_right_joystick":false}],"name":"Custom","toggle_joystick":false,"type":"control_scheme"}]}'
 	func test_store() -> void:
-		var input_config := Helper.create_scheme()
+		var input_config := [Helper.create_scheme()]
 
 		var storage_service = sut.new()
 		storage_service.store_input_config(input_config, TEMP_FILE)
@@ -68,7 +75,7 @@ class TestStorage extends GutTest:
 		DirAccess.remove_absolute(TEMP_FILE)
 
 	func test_store_then_load():
-		var input_config := Helper.create_scheme()
+		var input_config := [Helper.create_scheme()]
 
 		var storage_service = sut.new()
 		storage_service.store_input_config(input_config, TEMP_FILE)

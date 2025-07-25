@@ -21,6 +21,7 @@ config/icon="res://icon.jpg"
 DebugMenu="*res://modules/core_systems/debug_menu/debug_menu.tscn"
 FeatureFlags="*res://modules/core_systems/settings/feature_flags.gd"
 Cursor="*res://modules/core_systems/debug_menu/cursor.tscn"
+InputRemapper="*res://addons/input_remapper/service/input_remapper_service.gd"
 
 [display]
 
@@ -33,7 +34,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/input_remapper/plugin.cfg")
 
 [global_group]
 

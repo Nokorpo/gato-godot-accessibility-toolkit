@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c484b2uoo1e42"]
+
+[ext_resource type="Script" uid="uid://dsjfduxmmdkoh" path="res://addons/input_remapper/test/create_default_schemes/create_default_schemes.gd" id="1_c3c0s"]
+
+[node name="Test" type="Node"]
+script = ExtResource("1_c3c0s")

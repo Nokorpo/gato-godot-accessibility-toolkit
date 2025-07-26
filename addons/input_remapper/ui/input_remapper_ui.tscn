@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6u5d6udex1v1"]
+[gd_scene load_steps=9 format=3 uid="uid://b6u5d6udex1v1"]
 
+[ext_resource type="Script" uid="uid://bcf5a6truj2k7" path="res://addons/input_remapper/ui/input_remapper_ui.gd" id="1_05ple"]
 [ext_resource type="PackedScene" uid="uid://dkaux4wn52qf1" path="res://addons/input_remapper/ui/control_scheme_selector.tscn" id="1_yg0ao"]
 [ext_resource type="PackedScene" uid="uid://b7qloakgx7etx" path="res://addons/input_remapper/ui/category.tscn" id="3_yg0ao"]
 [ext_resource type="PackedScene" uid="uid://x1b45m56mm2l" path="res://addons/input_remapper/ui/2d_input_map.tscn" id="4_mreui"]
+[ext_resource type="Script" uid="uid://dnohs380c7c7s" path="res://addons/input_remapper/ui/action_container.gd" id="5_2gebx"]
+[ext_resource type="PackedScene" uid="uid://bw8doo3b01x73" path="res://addons/input_remapper/ui/press_key_dialog.tscn" id="5_6fg7x"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_yg0ao"]
 grow_begin = -10.0
@@ -22,6 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_yg0ao")
+script = ExtResource("1_05ple")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -58,8 +62,10 @@ layout_mode = 2
 size_flags_horizontal = 1
 title = "movement"
 
-[node name="2DInputMap" parent="PanelContainer/MarginContainer/VBoxContainer/Movement" instance=ExtResource("4_mreui")]
+[node name="2DInputMap" parent="PanelContainer/MarginContainer/VBoxContainer/Movement" node_paths=PackedStringArray("press_key_dialog") instance=ExtResource("4_mreui")]
 layout_mode = 2
+action_name = &"move"
+press_key_dialog = NodePath("../../../../../PressKeyDialog")
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -69,18 +75,39 @@ layout_mode = 2
 size_flags_horizontal = 1
 title = "interactions"
 
-[node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction"]
+[node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction" node_paths=PackedStringArray("press_key_dialog")]
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
 layout_mode = 2
 columns = 2
+script = ExtResource("5_2gebx")
+press_key_dialog = NodePath("../../../../../PressKeyDialog")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "throw_acorn"
+text = "launch_item"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 text = "Z"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "jump"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Space"
+
+[node name="PressKeyDialog" parent="." instance=ExtResource("5_6fg7x")]
+layout_mode = 1
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/Button" to="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["launch_item"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/Button2" to="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["jump"]]

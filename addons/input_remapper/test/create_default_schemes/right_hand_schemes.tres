@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="GatoControlScheme" load_steps=16 format=3 uid="uid://duovvwe1crubj"]
+
+[ext_resource type="Script" uid="uid://bvd7amftuy0aq" path="res://addons/input_remapper/model/input_action.gd" id="1_geugl"]
+[ext_resource type="Script" uid="uid://ctgokt75j2t0k" path="res://addons/input_remapper/model/input_action_button.gd" id="2_a3noo"]
+[ext_resource type="Script" uid="uid://jfhe3oy4t0v6" path="res://addons/input_remapper/model/joystick_input_action_2d.gd" id="3_oyk4o"]
+[ext_resource type="Script" uid="uid://bra3mf6x4mptc" path="res://addons/input_remapper/model/keys_input_action_2d.gd" id="4_ra8po"]
+[ext_resource type="Script" uid="uid://coiheovm2u2si" path="res://addons/input_remapper/model/control_scheme.gd" id="5_8d0lb"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_x6uj4"]
+device = -1
+keycode = 90
+unicode = 122
+
+[sub_resource type="Resource" id="Resource_ebna3"]
+script = ExtResource("2_a3noo")
+input = SubResource("InputEventKey_x6uj4")
+category = &"interactions"
+name = &"launch_item"
+metadata/_custom_type_script = "uid://ctgokt75j2t0k"
+
+[sub_resource type="InputEventKey" id="InputEventKey_eyyyi"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Resource" id="Resource_lxy7y"]
+script = ExtResource("2_a3noo")
+input = SubResource("InputEventKey_eyyyi")
+category = &"movement"
+name = &"jump"
+metadata/_custom_type_script = "uid://ctgokt75j2t0k"
+
+[sub_resource type="Resource" id="Resource_x8el1"]
+script = ExtResource("3_oyk4o")
+use_right_joystick = false
+invert_joystick = false
+category = &"movement"
+name = &"move"
+metadata/_custom_type_script = "uid://jfhe3oy4t0v6"
+
+[sub_resource type="InputEventKey" id="InputEventKey_lxy7y"]
+device = -1
+keycode = 83
+unicode = 115
+
+[sub_resource type="InputEventKey" id="InputEventKey_x8el1"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id="InputEventKey_d2t68"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="InputEventKey" id="InputEventKey_1ohf1"]
+device = -1
+keycode = 87
+unicode = 119
+
+[sub_resource type="Resource" id="Resource_p56w4"]
+script = ExtResource("4_ra8po")
+up = SubResource("InputEventKey_1ohf1")
+down = SubResource("InputEventKey_lxy7y")
+left = SubResource("InputEventKey_x8el1")
+right = SubResource("InputEventKey_d2t68")
+category = &"movement"
+name = &"move"
+metadata/_custom_type_script = "uid://bra3mf6x4mptc"
+
+[resource]
+script = ExtResource("5_8d0lb")
+toggle_joystick = false
+input_actions = Array[ExtResource("1_geugl")]([SubResource("Resource_ebna3"), SubResource("Resource_lxy7y"), SubResource("Resource_x8el1"), SubResource("Resource_p56w4")])
+name = &"Right hand"
+metadata/_custom_type_script = "uid://coiheovm2u2si"

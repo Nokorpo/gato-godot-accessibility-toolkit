@@ -1,0 +1,10 @@
+extends HBoxContainer
+
+var input_action: JoystickInputAction2D
+
+func update_ui(_input_action: JoystickInputAction2D) -> void:
+	input_action = _input_action
+	$Button.button_pressed = input_action.invert_joystick
+
+func _on_button_toggled(toggled_on: bool) -> void:
+	input_action.invert_joystick = toggled_on

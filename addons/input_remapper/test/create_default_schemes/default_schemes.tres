@@ -1,76 +1,76 @@
 [gd_resource type="Resource" script_class="GatoControlScheme" load_steps=16 format=3 uid="uid://dthvysutx5m1e"]
 
-[ext_resource type="Script" uid="uid://bvd7amftuy0aq" path="res://addons/input_remapper/model/input_action.gd" id="1_vcna5"]
-[ext_resource type="Script" uid="uid://ctgokt75j2t0k" path="res://addons/input_remapper/model/input_action_button.gd" id="2_5wby6"]
-[ext_resource type="Script" uid="uid://jfhe3oy4t0v6" path="res://addons/input_remapper/model/joystick_input_action_2d.gd" id="3_ho5fp"]
-[ext_resource type="Script" uid="uid://bra3mf6x4mptc" path="res://addons/input_remapper/model/keys_input_action_2d.gd" id="4_kwig2"]
-[ext_resource type="Script" uid="uid://coiheovm2u2si" path="res://addons/input_remapper/model/control_scheme.gd" id="5_fwbjg"]
+[ext_resource type="Script" uid="uid://bvd7amftuy0aq" path="res://addons/input_remapper/model/input_action.gd" id="1_quedq"]
+[ext_resource type="Script" uid="uid://ctgokt75j2t0k" path="res://addons/input_remapper/model/input_action_button.gd" id="2_cuxu4"]
+[ext_resource type="Script" uid="uid://jfhe3oy4t0v6" path="res://addons/input_remapper/model/joystick_input_action_2d.gd" id="3_w5007"]
+[ext_resource type="Script" uid="uid://bra3mf6x4mptc" path="res://addons/input_remapper/model/keys_input_action_2d.gd" id="4_j5apx"]
+[ext_resource type="Script" uid="uid://coiheovm2u2si" path="res://addons/input_remapper/model/control_scheme.gd" id="5_60wn0"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_x6uj4"]
+[sub_resource type="InputEventKey" id="InputEventKey_quedq"]
 device = -1
 keycode = 90
 unicode = 122
 
-[sub_resource type="Resource" id="Resource_ebna3"]
-script = ExtResource("2_5wby6")
-input = SubResource("InputEventKey_x6uj4")
+[sub_resource type="Resource" id="Resource_cuxu4"]
+script = ExtResource("2_cuxu4")
+input = SubResource("InputEventKey_quedq")
 category = &"interactions"
-name = &"throw_acorn"
+name = &"launch_item"
 metadata/_custom_type_script = "uid://ctgokt75j2t0k"
 
-[sub_resource type="InputEventKey" id="InputEventKey_eyyyi"]
+[sub_resource type="InputEventKey" id="InputEventKey_w5007"]
 device = -1
 keycode = 32
 unicode = 32
 
-[sub_resource type="Resource" id="Resource_lxy7y"]
-script = ExtResource("2_5wby6")
-input = SubResource("InputEventKey_eyyyi")
+[sub_resource type="Resource" id="Resource_j5apx"]
+script = ExtResource("2_cuxu4")
+input = SubResource("InputEventKey_w5007")
 category = &"movement"
 name = &"jump"
 metadata/_custom_type_script = "uid://ctgokt75j2t0k"
 
-[sub_resource type="Resource" id="Resource_x8el1"]
-script = ExtResource("3_ho5fp")
+[sub_resource type="Resource" id="Resource_60wn0"]
+script = ExtResource("3_w5007")
 use_right_joystick = false
 invert_joystick = false
 category = &"movement"
 name = &"move"
 metadata/_custom_type_script = "uid://jfhe3oy4t0v6"
 
-[sub_resource type="InputEventKey" id="InputEventKey_lxy7y"]
+[sub_resource type="InputEventKey" id="InputEventKey_r7xgm"]
 device = -1
 keycode = 83
 unicode = 115
 
-[sub_resource type="InputEventKey" id="InputEventKey_x8el1"]
+[sub_resource type="InputEventKey" id="InputEventKey_cg266"]
 device = -1
 keycode = 65
 unicode = 97
 
-[sub_resource type="InputEventKey" id="InputEventKey_d2t68"]
+[sub_resource type="InputEventKey" id="InputEventKey_dp3t0"]
 device = -1
 keycode = 68
 unicode = 100
 
-[sub_resource type="InputEventKey" id="InputEventKey_1ohf1"]
+[sub_resource type="InputEventKey" id="InputEventKey_5ayay"]
 device = -1
 keycode = 87
 unicode = 119
 
-[sub_resource type="Resource" id="Resource_p56w4"]
-script = ExtResource("4_kwig2")
-up = SubResource("InputEventKey_1ohf1")
-down = SubResource("InputEventKey_lxy7y")
-left = SubResource("InputEventKey_x8el1")
-right = SubResource("InputEventKey_d2t68")
+[sub_resource type="Resource" id="Resource_hd1uw"]
+script = ExtResource("4_j5apx")
+up = SubResource("InputEventKey_5ayay")
+down = SubResource("InputEventKey_r7xgm")
+left = SubResource("InputEventKey_cg266")
+right = SubResource("InputEventKey_dp3t0")
 category = &"movement"
 name = &"move"
 metadata/_custom_type_script = "uid://bra3mf6x4mptc"
 
 [resource]
-script = ExtResource("5_fwbjg")
+script = ExtResource("5_60wn0")
 toggle_joystick = false
-input_actions = Array[ExtResource("1_vcna5")]([SubResource("Resource_ebna3"), SubResource("Resource_lxy7y"), SubResource("Resource_x8el1"), SubResource("Resource_p56w4")])
+input_actions = Array[ExtResource("1_quedq")]([SubResource("Resource_cuxu4"), SubResource("Resource_j5apx"), SubResource("Resource_60wn0"), SubResource("Resource_hd1uw")])
 name = &"default"
 metadata/_custom_type_script = "uid://coiheovm2u2si"

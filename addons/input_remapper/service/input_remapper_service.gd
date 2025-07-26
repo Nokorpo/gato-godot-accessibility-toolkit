@@ -1,5 +1,7 @@
 extends Node
 
+signal control_scheme_changed(new_scheme: GatoControlScheme)
+
 # Services
 var storage_service
 
@@ -20,10 +22,12 @@ func get_current_scheme() -> GatoControlScheme:
 func load_next_scheme() -> void:
 	current_control_scheme_index = (current_control_scheme_index + 1) % control_schemes.size()
 	apply_control_scheme(control_schemes[current_control_scheme_index])
+	control_scheme_changed.emit(control_schemes[current_control_scheme_index])
 
 func load_previous_scheme() -> void:
 	current_control_scheme_index = (current_control_scheme_index - 1) % control_schemes.size()
 	apply_control_scheme(control_schemes[current_control_scheme_index])
+	control_scheme_changed.emit(control_schemes[current_control_scheme_index])
 
 func apply_control_scheme(control_scheme: GatoControlScheme) -> void:
 	for action in control_scheme.input_actions:

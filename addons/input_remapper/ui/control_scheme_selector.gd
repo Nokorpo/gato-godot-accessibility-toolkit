@@ -5,20 +5,20 @@ extends Container
 @onready var second_next_scheme_label: Label = $NextScheme2
 
 var schemes := ["default", "left hand", "right hand"]
-var current_scheme := 0
 
 func _ready() -> void:
+	schemes = InputRemapper.control_schemes
 	_update_ui()
 
 func _update_ui() -> void:
-	current_scheme_label.text = schemes[current_scheme]
-	next_scheme_label.text = schemes[(current_scheme + 1) % schemes.size()]
-	second_next_scheme_label.text = schemes[(current_scheme + 2) % schemes.size()]
+	current_scheme_label.text = schemes[InputRemapper.current_control_scheme_index].name
+	next_scheme_label.text = schemes[(InputRemapper.current_control_scheme_index + 1) % schemes.size()].name
+	second_next_scheme_label.text = schemes[(InputRemapper.current_control_scheme_index + 2) % schemes.size()].name
 
 func _load_next_scheme() -> void:
-	current_scheme = (current_scheme + 1) % schemes.size()
+	InputRemapper.load_next_scheme()
 	_update_ui()
 
 func _load_last_scheme() -> void:
-	current_scheme = (current_scheme - 1) % schemes.size()
+	InputRemapper.load_previous_scheme()
 	_update_ui()

@@ -8,16 +8,16 @@ func _init(_name: StringName, _category: StringName = "") -> void:
 	category = _category
 
 func apply_config() -> void:
-	printerr("Error: method \"apply_config()\" not implemented")
+	push_error("Error: method \"apply_config()\" not implemented")
 	return
 
 func get_category() -> StringName:
 	return category
 
 func get_as_dict() -> Dictionary:
-	printerr("Error: method \"get_as_dict()\" not implemented")
+	push_error("Error: method \"get_as_dict()\" not implemented")
 	return {}
 
 static func new_from_dict(dict: Dictionary) -> InputAction:
-	printerr("Error: method \"new_from_dict()\" not implemented")
+	push_error("Error: method \"new_from_dict()\" not implemented")
 	return null

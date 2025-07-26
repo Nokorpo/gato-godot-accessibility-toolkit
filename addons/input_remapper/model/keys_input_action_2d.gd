@@ -41,7 +41,7 @@ func apply_config() -> void:
 	for direction: StringName in Direction.keys():
 		var direction_action := "%s_%s" % [name, direction.to_lower()]
 		if not InputMap.has_action(direction_action):
-			printerr("Tried to remap action %s with GATO, but the action %s does not exist in the project's Input Map" % [direction_action, direction_action])
+			push_error("Tried to remap action %s with GATO Input Remapper, but the action %s does not exist in the project's Input Map" % [direction_action, direction_action])
 			return
 		# TODO just generate a list of action -> input and return it
 		# actually handling the inputmap should happen in a service
@@ -50,7 +50,7 @@ func apply_config() -> void:
 
 static func new_from_dict(dict: Dictionary) -> InputAction:
 	if dict["type"] != "input_action2d_keys":
-		printerr("Tried to initialize an input action 2d with values that aren't of type 'input_action2d_keys' or 'input_action2d_joystick'.")
+		push_error("Tried to initialize an input action 2d with values that aren't of type 'input_action2d_keys' or 'input_action2d_joystick'.")
 		return
 
 	var _up: InputEventKey = JSON.to_native(JSON.parse_string(dict["up"]), true)

@@ -39,11 +39,11 @@ func load_input_config_from_file(file_path: Variant = null) -> Array[GatoControl
 func load_input_config_from_json(json: Dictionary) -> Array[GatoControlScheme]:
 	var schemes: Array[GatoControlScheme] = []
 	if not json.has("control_schemes"):
-		printerr("The stored input configuration is not valid. It should start with a list a of control schemes.")
+		push_error("The stored input configuration is not valid. It should start with a list a of control schemes.")
 		return []
 	for item in json["control_schemes"]:
 		if not item["type"] == "control_scheme":
-			printerr("The stored input configuration has a broken control scheme.")
+			push_error("The stored input configuration has a broken control scheme.")
 			continue
 		var scheme: GatoControlScheme = control_scheme_script.new_from_dict(item)
 		schemes.append(scheme)

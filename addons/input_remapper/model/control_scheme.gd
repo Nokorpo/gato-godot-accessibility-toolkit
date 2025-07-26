@@ -17,7 +17,7 @@ func get_as_dict() -> Dictionary:
 
 static func new_from_dict(dict: Dictionary) -> InputConfig:
 	if dict["type"] != "control_scheme":
-		printerr("Tried to initialize a control scheme with values that aren't of type 'control_scheme'.")
+		push_error("Tried to initialize a control scheme with values that aren't of type 'control_scheme'.")
 		return
 	var instance: GatoControlScheme = new()
 	instance.name = dict["name"]

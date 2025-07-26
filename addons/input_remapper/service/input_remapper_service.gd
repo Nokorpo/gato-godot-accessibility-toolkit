@@ -28,7 +28,7 @@ func load_previous_scheme() -> void:
 func apply_control_scheme(control_scheme: GatoControlScheme) -> void:
 	for action in control_scheme.input_actions:
 		if not action.has_method("apply_config"):
-			printerr("Tried to apply a control scheme with an object without an \"apply_config()\" method.")
+			push_error("Tried to apply a control scheme with an object without an \"apply_config()\" method.")
 			continue
 		action.apply_config()
 

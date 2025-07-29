@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://q86veoh6ebcx" path="res://modules/core_systems/debug_menu/cursor.gd" id="2_fekj6"]
 
 [node name="Cursor" type="Node2D"]
+process_mode = 3
 top_level = true
 z_index = 1000
 z_as_relative = false

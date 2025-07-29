@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwdws0164lhxw"]
+[gd_scene load_steps=14 format=3 uid="uid://cwdws0164lhxw"]
 
 [ext_resource type="Environment" uid="uid://bkbcn5mdwt1wm" path="res://modules/demo1/map/main-environment.tres" id="1_dpmng"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://modules/demo1/map/platform/platform.tscn" id="3_ddlgx"]
@@ -11,12 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/level_objects/acorn/acorn.tscn" id="10_t58fl"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/button.tscn" id="11_6hox7"]
 [ext_resource type="Script" uid="uid://ce3512irlhpu3" path="res://modules/demo1/map/indicator.gd" id="12_g421f"]
+[ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="12_w1sql"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_6hox7"]
 radius = 0.125
 height = 0.25
 
 [node name="Main" type="Node3D"]
+process_mode = 1
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_dpmng")
@@ -130,6 +132,9 @@ script = ExtResource("12_g421f")
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.75
+
+[node name="GameMenu" parent="." instance=ExtResource("12_w1sql")]
+visible = false
 
 [connection signal="button_toggled" from="Objects/Button" to="Objects/Button/Indicator" method="_on_button_button_toggled"]
 [connection signal="button_toggled" from="Objects/Button2" to="Objects/Button2/Indicator" method="_on_button_button_toggled"]

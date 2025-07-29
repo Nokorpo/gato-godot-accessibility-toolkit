@@ -1,20 +1,24 @@
-[gd_resource type="Resource" script_class="DemoList" load_steps=10 format=3 uid="uid://doxub3jvr747g"]
+[gd_resource type="Resource" script_class="DemoList" load_steps=12 format=3 uid="uid://doxub3jvr747g"]
 
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_p5mn1"]
 [ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_52e3n"]
+[ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="3_0qcei"]
 [ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="3_ysq4b"]
+[ext_resource type="PackedScene" uid="uid://cwdws0164lhxw" path="res://modules/demo1/map/map2.tscn" id="5_jxat0"]
 
 [sub_resource type="Resource" id="Resource_g6obd"]
 script = ExtResource("1_p5mn1")
-title = "Demo 1"
+title = "Prop showcase"
 image = ExtResource("2_52e3n")
+scene = ExtResource("3_0qcei")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_52e3n"]
 script = ExtResource("1_p5mn1")
-title = "Demo 2"
+title = "Debug map 2"
 image = ExtResource("3_ysq4b")
+scene = ExtResource("5_jxat0")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_ysq4b"]

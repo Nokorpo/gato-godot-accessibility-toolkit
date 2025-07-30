@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://debsy1fv3sm1b"]
+[gd_scene load_steps=24 format=3 uid="uid://debsy1fv3sm1b"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_5ldq4"]
+[ext_resource type="Script" uid="uid://dy5bs7w5wb8ba" path="res://modules/tests/showcase/postprocess/post_process_bnw.gd" id="2_4thdg"]
 [ext_resource type="PackedScene" uid="uid://76tobu24ib4r" path="res://modules/level_objects/oak/oak.glb" id="2_jq4l3"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/FloorGrass.gltf" id="2_x84rj"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/FloorSand.gltf" id="3_kubfn"]
@@ -21,10 +22,24 @@
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/MovingBoarPlatform.gltf" id="19_duu18"]
 [ext_resource type="PackedScene" uid="uid://cjyapjiy2cyjv" path="res://modules/demo1/map/props/oak.gltf" id="20_duu18"]
 
+[sub_resource type="CompositorEffect" id="CompositorEffect_x4cod"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = false
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("2_4thdg")
+metadata/_custom_type_script = "uid://dy5bs7w5wb8ba"
+
+[sub_resource type="Compositor" id="Compositor_duu18"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_x4cod")])
+
 [node name="Props" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_5ldq4")
+compositor = SubResource("Compositor_duu18")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
@@ -125,7 +140,6 @@ transform = Transform3D(0.578271, 0, 0.815845, 0, 1, 0, -0.815845, 0, 0.578271, 
 transform = Transform3D(0.578271, 0, 0.815845, 0, 1, 0, -0.815845, 0, 0.578271, -4.24769, -0.219784, -1.08858)
 
 [node name="AcornButton2" parent="Test" instance=ExtResource("13_su0od")]
-transform = Transform3D(0.979494, 0, 0.201471, 0, 1, 0, -0.201471, 0, 0.979494, -1.60145, 0.318471, 1.57719)
 
 [node name="PlatformWood2" parent="Test" instance=ExtResource("14_qojuu")]
 transform = Transform3D(-0.297858, 0, -0.95461, 0, 1, 0, 0.95461, 0, -0.297858, -1.70278, -0.143822, 2.76423)

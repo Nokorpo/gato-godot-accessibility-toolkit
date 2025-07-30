@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cgdec8gp6rgm6"
+path="res://.godot/imported/bnw_shader.glsl-0e5bd5407cc1ac8d49a7ef7a3b11ed65.res"
+
+[deps]
+
+source_file="res://modules/tests/showcase/postprocess/bnw_shader.glsl"
+dest_files=["res://.godot/imported/bnw_shader.glsl-0e5bd5407cc1ac8d49a7ef7a3b11ed65.res"]
+
+[params]
+

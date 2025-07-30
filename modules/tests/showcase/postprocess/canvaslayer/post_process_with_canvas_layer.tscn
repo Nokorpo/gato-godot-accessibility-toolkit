@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfsjjkmayexod"]
+
+[ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="1_baw88"]
+[ext_resource type="Shader" uid="uid://217ybxh0cwlt" path="res://modules/tests/showcase/postprocess/canvaslayer/black_and_white.gdshader" id="2_n2jnr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mlg4u"]
+shader = ExtResource("2_n2jnr")
+shader_parameter/black_and_white_constant = Color(0.299, 0.587, 0.114, 1)
+
+[sub_resource type="Theme" id="Theme_n2jnr"]
+default_font_size = 64
+
+[node name="PostProcessCanvasLayer" type="Node"]
+
+[node name="Props" parent="." instance=ExtResource("1_baw88")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_mlg4u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EjemploUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="EjemploUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n2jnr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EjemploUI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -50.5
+offset_right = 42.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="EjemploUI/Control/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="Button2" type="Button" parent="EjemploUI/Control/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Button3" type="Button" parent="EjemploUI/Control/VBoxContainer"]
+layout_mode = 2
+text = "Exit game"

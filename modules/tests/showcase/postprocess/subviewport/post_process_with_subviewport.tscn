@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0qsjylamrkt6"]
+
+[ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="1_2pn6i"]
+[ext_resource type="Shader" uid="uid://ch5pstb0bppq0" path="res://modules/tests/showcase/postprocess/subviewport/outline.gdshader" id="2_xyah3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ux8tm"]
+shader = ExtResource("2_xyah3")
+shader_parameter/maxLineWidth = 20.0
+shader_parameter/minLineWidth = 5.0
+shader_parameter/speed = 6.0
+shader_parameter/blockSize = 20.0
+shader_parameter/color = Color(1, 1, 0.121569, 1)
+shader_parameter/tolerance = 0.0
+
+[sub_resource type="GDScript" id="GDScript_xyah3"]
+resource_name = "fix_border_increase_size"
+script/source = "extends SubViewportContainer
+
+func _process(delta) -> void:
+	var max_line_width = material.get_shader_parameter(\"maxLineWidth\")
+	var min_line_width = material.get_shader_parameter(\"minLineWidth\")
+	var line_width: float = max(max_line_width, min_line_width)
+	if line_width != null:
+		position = Vector2(-line_width, -line_width)
+"
+
+[node name="PostProcessSubviewport" type="Node3D"]
+
+[node name="Props" parent="." instance=ExtResource("1_2pn6i")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_ux8tm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = SubResource("GDScript_xyah3")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 793)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.920634, 0.172889, -0.35006, 3.72529e-09, 0.89661, 0.442821, 0.390426, -0.407676, 0.82545, -10.3476, 2.11773, 7.7008)
+cull_mask = 1047554
+current = true

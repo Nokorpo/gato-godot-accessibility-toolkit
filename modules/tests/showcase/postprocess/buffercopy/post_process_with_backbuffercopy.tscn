@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://j4l0fxyxe5bw"]
+
+[ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="1_j5ifn"]
+[ext_resource type="Shader" uid="uid://217ybxh0cwlt" path="res://modules/tests/showcase/postprocess/canvaslayer/black_and_white.gdshader" id="2_7qp8y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnrdw"]
+shader = ExtResource("2_7qp8y")
+shader_parameter/black_and_white_constant = Color(0.299, 0.587, 0.114, 1)
+
+[node name="PostProcessBackBufferCopy" type="Node"]
+
+[node name="Props" parent="." instance=ExtResource("1_j5ifn")]
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+material = SubResource("ShaderMaterial_xnrdw")
+rect = Rect2(0, 0, 1920, 1080)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

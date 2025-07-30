@@ -30,7 +30,7 @@ func _initialize_compute() -> void:
 		return
 
 	# Compile our shader.
-	var shader_file := load("res://modules/tests/showcase/postprocess/bnw_shader.glsl")
+	var shader_file := load("res://modules/tests/showcase/postprocess/compositor/bnw_shader.glsl")
 	var shader_spirv: RDShaderSPIRV = shader_file.get_spirv()
 
 	shader = rd.shader_create_from_spirv(shader_spirv)

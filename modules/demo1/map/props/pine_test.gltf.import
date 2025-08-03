@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ca52kdqut8mg8"
-path="res://.godot/imported/pine_test.gltf-f36d3b469312bdf589d0d68482e8603a.scn"
+valid=false
 
 [deps]
 
 source_file="res://modules/demo1/map/props/pine_test.gltf"
-dest_files=["res://.godot/imported/pine_test.gltf-f36d3b469312bdf589d0d68482e8603a.scn"]
 
 [params]
 

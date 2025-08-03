@@ -1,5 +1,7 @@
 extends GridContainer
 
+var input_remapper_ui: InputRemapperUI
+var action_name: StringName
 var input_action: KeysInputAction2D
 var reading_input: bool = false
 var press_key_dialog: Control
@@ -15,18 +17,26 @@ func _on_button_up_pressed() -> void:
 	press_key_dialog.start_reading_input()
 	var event = await press_key_dialog.input_read
 	$ButtonUp.text = event.as_text_keycode()
+	input_action.up = event
+	input_remapper_ui.set_action2d(action_name, input_action)
 
 func _on_button_down_pressed() -> void:
 	press_key_dialog.start_reading_input()
 	var event = await press_key_dialog.input_read
 	$ButtonDown.text = event.as_text_keycode()
+	input_action.down = event
+	input_remapper_ui.set_action2d(action_name, input_action)
 
 func _on_button_left_pressed() -> void:
 	press_key_dialog.start_reading_input()
 	var event = await press_key_dialog.input_read
 	$ButtonLeft.text = event.as_text_keycode()
+	input_action.left = event
+	input_remapper_ui.set_action2d(action_name, input_action)
 
 func _on_button_right_pressed() -> void:
 	press_key_dialog.start_reading_input()
 	var event = await press_key_dialog.input_read
 	$ButtonRight.text = event.as_text_keycode()
+	input_action.right = event
+	input_remapper_ui.set_action2d(action_name, input_action)

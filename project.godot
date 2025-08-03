@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/input_rem
 
 heavy_weight=""
 light_weight=""
+has_leafs=""
 
 [input]
 
@@ -111,3 +112,8 @@ game_menu={
 
 3d_physics/layer_1="World"
 3d_physics/layer_2="Player"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

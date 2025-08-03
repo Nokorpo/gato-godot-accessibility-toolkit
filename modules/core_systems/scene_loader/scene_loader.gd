@@ -8,8 +8,6 @@ signal scene_loaded(new_scene: Node)
 ## Load a new scene and delete another
 func load_scene(old_scene: Node, new_scene: String) -> void:
 	set_process_mode(PROCESS_MODE_ALWAYS)
-	var loaded_scene := load(new_scene)
-	var new_loaded_scene: Node = loaded_scene.instantiate()
 
 	$Transition.modulate = Color.TRANSPARENT
 	var transition: Tween = create_tween()
@@ -18,6 +16,8 @@ func load_scene(old_scene: Node, new_scene: String) -> void:
 
 	await transition.finished
 
+	var loaded_scene := load(new_scene)
+	var new_loaded_scene: Node = loaded_scene.instantiate()
 	old_scene.queue_free()
 	old_scene.add_sibling(new_loaded_scene)
 	scene_loaded.emit(new_scene)

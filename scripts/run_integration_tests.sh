@@ -74,6 +74,10 @@ function run {
 	IMPORT_RESULT="$?"
 
 	if [ $IMPORT_RESULT -eq 0 ]; then
+		echo "--- TEST SETUP ---"
+		echo "Copying default Gato Input Remapper config"
+		cp "./scripts/default_input.data" "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
+
 		echo "--- RUN TESTS ---"
 		godot --headless -s addons/gut/gut_cmdln.gd --path $PWD -glog=1 -gexit | tee log.txt
 

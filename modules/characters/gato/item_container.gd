@@ -46,9 +46,13 @@ func _disable_item_physics(item: PhysicsBody3D) -> void:
 
 ## Makes the collected item collide with other items
 func _enable_item_physics(item: PhysicsBody3D) -> void:
+	if not is_instance_valid(item):
+		return
 	item.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 	item.freeze = false
 	await get_tree().create_timer(.5).timeout
+	if not is_instance_valid(item):
+		return
 	item.set_collision_mask_value(1, true)
 	item.set_collision_layer_value(1, true)
 

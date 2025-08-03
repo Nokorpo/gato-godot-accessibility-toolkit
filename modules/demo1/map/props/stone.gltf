@@ -15,7 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Fence"
+			"name":"Stone"
 		}
 	],
 	"materials":[
@@ -32,7 +32,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.010",
+			"name":"Cylinder.003",
 			"primitives":[
 				{
 					"attributes":{
@@ -63,61 +63,61 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":606,
+			"count":222,
 			"max":[
-				0.5550528168678284,
-				1,
-				0.1386498361825943
+				0.48718392848968506,
+				0.2498394101858139,
+				0.6161396503448486
 			],
 			"min":[
-				-0.553602397441864,
-				-5.835294723510742e-05,
-				-0.13950538635253906
+				-0.26282569766044617,
+				0.0003704913833644241,
+				-0.19358694553375244
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":606,
+			"count":222,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":606,
+			"count":222,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":1656,
+			"count":840,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":7272,
+			"byteLength":2664,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":7272,
-			"byteOffset":7272,
+			"byteLength":2664,
+			"byteOffset":2664,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":4848,
-			"byteOffset":14544,
+			"byteLength":1776,
+			"byteOffset":5328,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":3312,
-			"byteOffset":19392,
+			"byteLength":1680,
+			"byteOffset":7104,
 			"target":34963
 		}
 	],
@@ -129,8 +129,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":22704,
-			"uri":"Fence.bin"
+			"byteLength":8784,
+			"uri":"stone.bin"
 		}
 	]
 }

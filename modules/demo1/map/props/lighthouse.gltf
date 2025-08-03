@@ -15,24 +15,25 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Grass"
+			"name":"Cylinder"
 		}
 	],
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"interactables",
+			"name":"Lighthouse",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
 				},
-				"metallicFactor":0
+				"metallicFactor":0,
+				"roughnessFactor":0.5
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Icosphere",
+			"name":"Cylinder",
 			"primitives":[
 				{
 					"attributes":{
@@ -55,82 +56,82 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"interactables",
-			"uri":"interactables.png"
+			"name":"lighthouse",
+			"uri":"lighthouse.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":127,
+			"count":527,
 			"max":[
-				0.06635968387126923,
-				0.4223743677139282,
-				0.07024362683296204
+				2.6857051849365234,
+				10.750345230102539,
+				2.6857051849365234
 			],
 			"min":[
-				-0.06725216656923294,
-				0.0008718967437744141,
-				-0.07024400681257248
+				-2.6857051849365234,
+				0.0028486251831054688,
+				-2.6857051849365234
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":127,
+			"count":527,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":127,
+			"count":527,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":624,
+			"count":1326,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":1524,
+			"byteLength":6324,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1524,
-			"byteOffset":1524,
+			"byteLength":6324,
+			"byteOffset":6324,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1016,
-			"byteOffset":3048,
+			"byteLength":4216,
+			"byteOffset":12648,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1248,
-			"byteOffset":4064,
+			"byteLength":2652,
+			"byteOffset":16864,
 			"target":34963
 		}
 	],
 	"samplers":[
 		{
-			"magFilter":9728,
-			"minFilter":9984
+			"magFilter":9729,
+			"minFilter":9987
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":5312,
-			"uri":"Grass.bin"
+			"byteLength":19516,
+			"uri":"lighthouse.bin"
 		}
 	]
 }

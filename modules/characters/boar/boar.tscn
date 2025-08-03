@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvawh86pyq2d1"]
+[gd_scene load_steps=16 format=3 uid="uid://bvawh86pyq2d1"]
 
 [ext_resource type="Script" uid="uid://b8lat2nfgffpw" path="res://modules/characters/boar/idle_state.gd" id="1_2jkah"]
 [ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/core_systems/state_machine/state_machine.gd" id="1_q5ai3"]
@@ -6,14 +6,18 @@
 [ext_resource type="Script" uid="uid://dskqwhajk2r" path="res://modules/characters/boar/eating_state.gd" id="3_puyul"]
 [ext_resource type="PackedScene" uid="uid://olsa5oic45g3" path="res://modules/characters/boar/mesh/boar_mesh.tscn" id="5_d5hix"]
 [ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="6_d5hix"]
+[ext_resource type="Texture2D" uid="uid://b1d0cvmyi08cb" path="res://modules/demo1/map/sprites/heart.png" id="7_chhcr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5hix"]
 radius = 0.243
 height = 0.867009
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5hix"]
+size = Vector3(0.305664, 0.643555, 0.0831451)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_iqywv"]
 height = 0.6
-radius = 2.0
+radius = 2.92383
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5hix"]
 albedo_color = Color(0.81, 0.6615, 0.405, 1)
@@ -22,6 +26,31 @@ billboard_mode = 1
 [sub_resource type="QuadMesh" id="QuadMesh_chhcr"]
 material = SubResource("StandardMaterial3D_d5hix")
 size = Vector2(0.1, 0.1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08g3y"]
+emission_shape_scale = Vector3(0.2, 0.2, 0.2)
+angle_min = -20.0
+angle_max = 20.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ox46n"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("7_chhcr")
+backlight_enabled = true
+backlight = Color(0.74978, 0.74978, 0.74978, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ch3xj"]
+material = SubResource("StandardMaterial3D_ox46n")
+size = Vector2(0.2, 0.2)
 
 [node name="Boar" type="CharacterBody3D" groups=["heavy_weight"]]
 
@@ -49,6 +78,10 @@ autostart = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.243101, 0)
 shape = SubResource("CapsuleShape3D_d5hix")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.473425, 1.00678e-08)
+shape = SubResource("BoxShape3D_d5hix")
+
 [node name="Boar" parent="." instance=ExtResource("5_d5hix")]
 
 [node name="AcornDetection" type="Area3D" parent="."]
@@ -66,5 +99,14 @@ mesh = SubResource("QuadMesh_chhcr")
 direction = Vector3(0, 1, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 2.0
+
+[node name="HeartParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.586733, 0.260659)
+emitting = false
+amount = 3
+lifetime = 0.8
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_08g3y")
+draw_pass_1 = SubResource("QuadMesh_ch3xj")
 
 [connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

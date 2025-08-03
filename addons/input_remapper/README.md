@@ -8,9 +8,14 @@ play a game they couldn't have otherwise.
 
 ## Usage example
 
+### TODO exlpain how to create "user://input.data" config
 ### TODO explain how to call the UI
 ### TODO explain how to theme the UI
 ### TODO explain how to use the autoload via code
 
 ## How it works
 ### TODO explain the model and how it's stored
+
+## TODO
+- [ ] Create a custom dock to modify the "user://input.data" file, instead of
+  having to use the Resources UI.

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/grass_pile.gltf-36b914f618ece478d598d67c3d1e8
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="BounceOnTouch"
 nodes/root_name="GrassPile"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -32,6 +32,16 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:GrassPile": {
+"generate/physics": true,
+"physics/shape_type": 4,
+"primitive/position": Vector3(0.05, 0.2, 0),
+"primitive/radius": 0.3,
+"primitive/size": Vector3(1, 1, 1)
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

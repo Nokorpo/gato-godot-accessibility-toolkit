@@ -42,6 +42,14 @@ func _physics_process(delta: float) -> void:
 		mesh.is_moving = false
 
 	move_and_slide()
+	_collide_with_objects_that_react()
+
+func _collide_with_objects_that_react() -> void:
+	for i in range(get_slide_collision_count()):
+		var collision := get_slide_collision(i)
+		var object: Node = collision.get_collider().owner
+		if object != null and object.has_method("react_to_player_collision"):
+			object.react_to_player_collision()
 
 func jump() -> void:
 	velocity.y = jump_force

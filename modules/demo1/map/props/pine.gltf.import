@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/pine.gltf-525acbf5397e47efb6a0c3ef3beb40c0.sc
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="BounceOnTouch"
 nodes/root_name="Pine"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

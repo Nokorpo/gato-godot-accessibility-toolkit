@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwdws0164lhxw"]
+[gd_scene load_steps=17 format=3 uid="uid://cwdws0164lhxw"]
 
-[ext_resource type="Environment" uid="uid://bkbcn5mdwt1wm" path="res://modules/demo1/map/main-environment.tres" id="1_dpmng"]
+[ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_g421f"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://modules/demo1/map/platform/platform.tscn" id="3_ddlgx"]
 [ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_6hox7"]
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://modules/demo1/map/platform/platform_medium.tscn" id="4_t58fl"]
@@ -8,10 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://modules/demo1/objects/cloud.tscn" id="7_w1sql"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="8_ddlgx"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="9_t58fl"]
+[ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/demo1/objects/bounce_on_touch.gd" id="10_t1red"]
 [ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/level_objects/acorn/acorn.tscn" id="10_t58fl"]
-[ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/button.tscn" id="11_6hox7"]
+[ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="11_6hox7"]
 [ext_resource type="Script" uid="uid://ce3512irlhpu3" path="res://modules/demo1/map/indicator.gd" id="12_g421f"]
+[ext_resource type="PackedScene" uid="uid://b3ge6hkxcuwqt" path="res://modules/demo1/map/props/pine_small.gltf" id="12_t1red"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="12_w1sql"]
+[ext_resource type="PackedScene" uid="uid://cwp1ql6gjtok7" path="res://modules/level_objects/oak/oak.tscn" id="15_3rnm0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_6hox7"]
 radius = 0.125
@@ -21,7 +24,7 @@ height = 0.25
 process_mode = 1
 
 [node name="Environment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_dpmng")
+environment = ExtResource("1_g421f")
 
 [node name="Gato" parent="." instance=ExtResource("8_ddlgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511161, 0)
@@ -93,6 +96,14 @@ transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241,
 
 [node name="Objects" type="Node3D" parent="."]
 
+[node name="PineSmall" parent="Objects" instance=ExtResource("12_t1red")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8191, 0.552063, 0.35402)
+script = ExtResource("10_t1red")
+
+[node name="PineSmall2" parent="Objects" instance=ExtResource("12_t1red")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4823, 0.502062, 5.2231)
+script = ExtResource("10_t1red")
+
 [node name="Acorn" parent="Objects" instance=ExtResource("10_t58fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67559, 0.65, 0.572272)
 
@@ -104,6 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79765, 1.0474, 4.50347)
 
 [node name="Button" parent="Objects" instance=ExtResource("11_6hox7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -2)
+can_detect_light_weights = false
 
 [node name="Indicator" type="MeshInstance3D" parent="Objects/Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
@@ -112,6 +124,7 @@ script = ExtResource("12_g421f")
 
 [node name="Button2" parent="Objects" instance=ExtResource("11_6hox7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
+can_detect_light_weights = false
 
 [node name="Indicator" type="MeshInstance3D" parent="Objects/Button2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
@@ -135,6 +148,9 @@ shadow_opacity = 0.75
 
 [node name="GameMenu" parent="." instance=ExtResource("12_w1sql")]
 visible = false
+
+[node name="Oak" parent="." instance=ExtResource("15_3rnm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06273, 1.5, -1.94409)
 
 [connection signal="button_toggled" from="Objects/Button" to="Objects/Button/Indicator" method="_on_button_button_toggled"]
 [connection signal="button_toggled" from="Objects/Button2" to="Objects/Button2/Indicator" method="_on_button_button_toggled"]

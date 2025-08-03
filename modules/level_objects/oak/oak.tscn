@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwp1ql6gjtok7"]
+
+[ext_resource type="Script" uid="uid://dodp0ku0lw76g" path="res://modules/level_objects/oak/oak.gd" id="1_0g256"]
+[ext_resource type="PackedScene" uid="uid://cjyapjiy2cyjv" path="res://modules/demo1/map/props/oak.gltf" id="2_0g256"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t8r8f"]
+height = 3.06145
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0g256"]
+radius = 3.22852
+
+[node name="Oak" type="Node3D"]
+script = ExtResource("1_0g256")
+metadata/_custom_type_script = "uid://bh28do1i5hkni"
+
+[node name="Oak" parent="." instance=ExtResource("2_0g256")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Oak"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Oak/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CapsuleShape3D_t8r8f")
+
+[node name="PlayerDetectionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_0g256")
+
+[node name="AcornSpawners" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="AcornSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618082, 2, 1)
+
+[node name="Marker3D2" type="Marker3D" parent="AcornSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44657, 2, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="AcornSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.305741, 2, -1.197)
+
+[node name="SpawnerCooldown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_body_entered"]

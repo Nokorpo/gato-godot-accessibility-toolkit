@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1kna58wiqdat"]
+
+[ext_resource type="Texture2D" uid="uid://dr72sfn58w6i7" path="res://modules/demo1/map/sprites/leaf.png" id="1_3880u"]
+[ext_resource type="Script" uid="uid://b7wybaapouj6t" path="res://modules/demo1/map/vfx/leaf_particles.gd" id="2_hujxa"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hujxa"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 120.0
+gravity = Vector3(0, -7, 0)
+damping_min = 5.0
+damping_max = 7.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayora"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_3880u")
+
+[sub_resource type="QuadMesh" id="QuadMesh_x5btd"]
+material = SubResource("StandardMaterial3D_ayora")
+size = Vector2(0.2, 0.2)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+amount = 6
+lifetime = 2.0
+one_shot = true
+randomness = 0.5
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_hujxa")
+draw_pass_1 = SubResource("QuadMesh_x5btd")
+script = ExtResource("2_hujxa")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

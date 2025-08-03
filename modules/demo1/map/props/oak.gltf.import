@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/oak.gltf-11691831679c92845c154cc38fb511b4.scn
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="BounceOnTouch"
 nodes/root_name="Oak"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -37,6 +37,11 @@ _subresources={
 "interactables": {
 "use_external/enabled": true,
 "use_external/path": "res://modules/demo1/map/props/interactables.tres"
+}
+},
+"nodes": {
+"PATH:oak": {
+"physics/shape_type": 2
 }
 }
 }

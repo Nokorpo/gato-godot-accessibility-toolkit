@@ -1,5 +1,6 @@
 extends GridContainer
 
+@export var input_remapper_ui: InputRemapperUI
 @export var press_key_dialog: Control
 
 var input_actions: Array[InputActionButton] = []
@@ -13,9 +14,12 @@ func update_ui(_input_actions: Array[InputActionButton]) -> void:
 	for input_action in input_actions:
 		var label := Label.new()
 		label.text = input_action.name
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		var button := Button.new()
 		button.text = input_action.input.as_text_keycode()
 		button.focus_mode = Control.FOCUS_NONE
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.pressed.connect(_on_button_pressed.bind(input_action.name))
 		add_child(label)
 		add_child(button)
@@ -38,3 +42,4 @@ func _on_button_pressed(action_name: String) -> void:
 	if button == null:
 			return
 	button.text = event.as_text_keycode()
+	input_remapper_ui.set_action(action_name, event)

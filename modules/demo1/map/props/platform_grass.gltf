@@ -32,7 +32,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.004",
+			"name":"PlatformGrass",
 			"primitives":[
 				{
 					"attributes":{

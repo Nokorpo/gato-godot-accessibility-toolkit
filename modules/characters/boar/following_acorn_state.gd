@@ -2,7 +2,7 @@ extends StateMachineState
 class_name BoarFollowingAcornState
 
 
-const EAT_RANGE: float = .6
+const EAT_RANGE: float = .7
 const BOAR_FOLLOWING_ACORN_SPEED: float = .5
 
 var boar: CharacterBody3D
@@ -24,8 +24,8 @@ func _on_enter_state() -> void:
 
 func detection_animation() -> Tween:
 	var tween := create_tween()
-	tween.tween_property(boar, "scale", Vector3.ONE * 1.1, .4)
-	tween.tween_property(boar, "scale", Vector3.ONE, .4)
+	tween.tween_property(boar, "scale", boar.scale * 1.1, .4)
+	tween.tween_property(boar, "scale", boar.scale, .4)
 	return tween
 
 func look_at_acorn(delta: float):

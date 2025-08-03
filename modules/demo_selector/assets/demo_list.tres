@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_52e3n"]
 script = ExtResource("1_p5mn1")
-title = "Debug map 2"
+title = "Demo 2"
 image = ExtResource("3_ysq4b")
 scene = ExtResource("5_jxat0")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"

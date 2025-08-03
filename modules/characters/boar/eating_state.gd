@@ -2,7 +2,9 @@ extends StateMachineState
 class_name BoarEatingState
 
 @onready var particles: CPUParticles3D = $"../../CPUParticles3D"
+@onready var heart_particles: GPUParticles3D = $"../../HeartParticles"
 var target = null
+var boar: CharacterBody3D
 @export var mesh: BoarMesh
 @export var eating_time: float = 1.5
 
@@ -22,5 +24,9 @@ func animate_acorn_disappearance():
 	await tween.finished
 
 func _on_exit_state() -> void:
+	boar = (node as CharacterBody3D)
+	boar.scale = Vector3(1.5,1.5,1.5)
+	boar.rotate(Vector3.UP, .1)
+	heart_particles.emitting = true
 	particles.emitting = false
 	target = null

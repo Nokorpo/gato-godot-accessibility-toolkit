@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgntlhkoeu81e"]
+
+[ext_resource type="Script" uid="uid://dn1mu76pbawjl" path="res://modules/level_objects/button/button.gd" id="1_q5228"]
+[ext_resource type="PackedScene" uid="uid://byarb3le21bcc" path="res://modules/demo1/map/props/boar_button.gltf" id="2_q5228"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q5228"]
+size = Vector3(1, 0.26748, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glvl7"]
+size = Vector3(1.4, 0.0624727, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vunl"]
+size = Vector3(1.07, 0.0771313, 1)
+
+[sub_resource type="Animation" id="Animation_5v165"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ButtonCollision")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0836267, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoarButton/BoarButton/Buttonn")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_fljgd"]
+resource_name = "activate"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ButtonCollision")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0836267, 0, 0.15, 1, 0, 0.00241577, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoarButton/BoarButton/Buttonn")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.15, 1, 0, -0.0807828, 0)
+
+[sub_resource type="Animation" id="Animation_lk2fu"]
+resource_name = "deactivate"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ButtonCollision")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.002, 0, 0.2, 1, 0, 0.084, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoarButton/BoarButton/Buttonn")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -0.081, 0, 0.2, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lk2fu"]
+_data = {
+&"RESET": SubResource("Animation_5v165"),
+&"activate": SubResource("Animation_fljgd"),
+&"deactivate": SubResource("Animation_lk2fu")
+}
+
+[node name="BoarButton" type="StaticBody3D" groups=["button", "heavy_weight"]]
+collision_layer = 7
+collision_mask = 0
+script = ExtResource("1_q5228")
+can_detect_light_weights = false
+
+[node name="BoarButton" parent="." instance=ExtResource("2_q5228")]
+
+[node name="ActivationArea" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206835, 0)
+shape = SubResource("BoxShape3D_q5228")
+
+[node name="BaseCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0093689, 0.0283968, 0)
+shape = SubResource("BoxShape3D_glvl7")
+
+[node name="ButtonCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0836267, 0)
+shape = SubResource("BoxShape3D_2vunl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lk2fu")
+}
+
+[connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
+[connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_exited"]
+
+[editable path="BoarButton"]

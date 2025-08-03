@@ -1,11 +1,50 @@
+class_name InputRemapperUI
 extends Control
 
 
 @onready var pressed_key_dialog := $PressKeyDialog
 
-func _ready() -> void:
-	populate_ui()
+var _schemes: Array[GatoControlScheme] = []
+var _current_scheme: int = 0
 
-func populate_ui() -> void:
-	# TODO implement, this is fake
-	pass
+func _ready() -> void:
+	InputRemapper.control_scheme_changed.connect(populate_ui)
+	_schemes = InputRemapper.control_schemes
+	if _schemes.size() == 0:
+		push_error("Error: tried to initialize GATO Input Mapper UI without any control scheme defined. Did you configure the control scheme file?")
+		queue_free()
+		return
+	populate_ui(_schemes[InputRemapper.current_control_scheme_index])
+
+func _get_scheme_index(scheme: GatoControlScheme) -> int:
+	return _schemes.find_custom(
+		func (it: GatoControlScheme): return it.name == scheme.name
+	)
+
+func populate_ui(scheme: GatoControlScheme) -> void:
+	var index := _get_scheme_index(scheme)
+	var current_scheme := _schemes[index]
+	$PanelContainer/MarginContainer/VBoxContainer/ControlSchemeSelector._update_ui(_schemes, index)
+	$"PanelContainer/MarginContainer/VBoxContainer/Movement/2DInputMap".update_ui(current_scheme)
+	var inputs: Array[InputActionButton] = []
+	for input in current_scheme.input_actions:
+		if input is InputActionButton:
+			inputs.append(input)
+	$PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer.update_ui(inputs)
+
+func set_action(action_name: StringName, event: InputEvent) -> void:
+	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]
+	var action_index := current_scheme.input_actions.find_custom(
+		func(it): return it.name == action_name
+	)
+	current_scheme.input_actions[action_index].input = event
+
+func set_action2d(action_name: StringName, new_input_action2d: InputAction) -> void:
+	if new_input_action2d is not KeysInputAction2D and new_input_action2d is not JoystickInputAction2D:
+		push_error("Error: tried to set action \"%s\" with an InputAction object that isn't an Input Action 2D." % action_name)
+		return
+	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]
+	var action_index := current_scheme.input_actions.find_custom(
+		func(it): return it.name == action_name
+	)
+	current_scheme.input_actions[action_index] = new_input_action2d

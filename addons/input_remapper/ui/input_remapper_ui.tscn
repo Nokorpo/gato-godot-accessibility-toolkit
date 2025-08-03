@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6u5d6udex1v1"]
+[gd_scene load_steps=10 format=3 uid="uid://b6u5d6udex1v1"]
 
 [ext_resource type="Script" uid="uid://bcf5a6truj2k7" path="res://addons/input_remapper/ui/input_remapper_ui.gd" id="1_05ple"]
 [ext_resource type="PackedScene" uid="uid://dkaux4wn52qf1" path="res://addons/input_remapper/ui/control_scheme_selector.tscn" id="1_yg0ao"]
@@ -12,10 +12,14 @@ grow_begin = -10.0
 grow_end = -10.0
 thickness = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gebx"]
+bg_color = Color(0.233925, 0.233925, 0.233925, 1)
+
 [sub_resource type="Theme" id="Theme_yg0ao"]
 default_font_size = 36
 HSeparator/constants/separation = 30
 HSeparator/styles/separator = SubResource("StyleBoxLine_yg0ao")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_2gebx")
 
 [node name="InputRemapperUi" type="Control"]
 layout_mode = 3
@@ -62,8 +66,9 @@ layout_mode = 2
 size_flags_horizontal = 1
 title = "movement"
 
-[node name="2DInputMap" parent="PanelContainer/MarginContainer/VBoxContainer/Movement" node_paths=PackedStringArray("press_key_dialog") instance=ExtResource("4_mreui")]
+[node name="2DInputMap" parent="PanelContainer/MarginContainer/VBoxContainer/Movement" node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog") instance=ExtResource("4_mreui")]
 layout_mode = 2
+input_remapper_ui = NodePath("../../../../..")
 action_name = &"move"
 press_key_dialog = NodePath("../../../../../PressKeyDialog")
 
@@ -75,11 +80,12 @@ layout_mode = 2
 size_flags_horizontal = 1
 title = "interactions"
 
-[node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction" node_paths=PackedStringArray("press_key_dialog")]
+[node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction" node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog")]
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
 layout_mode = 2
 columns = 2
 script = ExtResource("5_2gebx")
+input_remapper_ui = NodePath("../../../../..")
 press_key_dialog = NodePath("../../../../../PressKeyDialog")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer"]

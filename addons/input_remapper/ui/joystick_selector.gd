@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+var input_remapper_ui: InputRemapperUI
+var action_name: StringName
 var input_action: JoystickInputAction2D
 var use_right_joystick := false
 
@@ -15,7 +17,9 @@ func set_stick(use_right: bool) -> void:
 		use_right_joystick = false
 		input_action.use_right_joystick = false
 		$Label.text = "Right"
+		input_remapper_ui.set_action2d(action_name, input_action)
 	else:
 		use_right_joystick = true
 		input_action.use_right_joystick = false
 		$Label.text = "Left"
+		input_remapper_ui.set_action2d(action_name, input_action)

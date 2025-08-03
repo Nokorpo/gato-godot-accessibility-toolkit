@@ -33,6 +33,12 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"interactables": {
+"use_external/enabled": false,
+"use_external/path": "uid://08orbybb5x2j"
+}
+},
 "nodes": {
 "PATH:PlatformGrass": {
 "generate/physics": true,

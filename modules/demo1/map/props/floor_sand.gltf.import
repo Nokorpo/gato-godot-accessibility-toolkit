@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3bc7vpyxfakx"
-path="res://.godot/imported/DarkerGrass.gltf-9a6076953e7b7612023c601f756bcfd3.scn"
+uid="uid://d037at1i5qtcc"
+path="res://.godot/imported/floor_sand.gltf-88b69a71298b4967879816c210a76de3.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/DarkerGrass.gltf"
-dest_files=["res://.godot/imported/DarkerGrass.gltf-9a6076953e7b7612023c601f756bcfd3.scn"]
+source_file="res://modules/demo1/map/props/floor_sand.gltf"
+dest_files=["res://.godot/imported/floor_sand.gltf-88b69a71298b4967879816c210a76de3.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="FloorSand"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:FloorSand": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c7xdmnnm7purx"
-path="res://.godot/imported/AcornButton.gltf-9ed5209d8f4d428bf9cc60380a6c5cbe.scn"
+path="res://.godot/imported/acorn_button.gltf-90cb11c72d60c87d417b6b72aa0708a3.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/AcornButton.gltf"
-dest_files=["res://.godot/imported/AcornButton.gltf-9ed5209d8f4d428bf9cc60380a6c5cbe.scn"]
+source_file="res://modules/demo1/map/props/acorn_button.gltf"
+dest_files=["res://.godot/imported/acorn_button.gltf-90cb11c72d60c87d417b6b72aa0708a3.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="AcornButton"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

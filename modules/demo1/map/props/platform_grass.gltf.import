@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bm6gt8oxjo807"
-path="res://.godot/imported/GrassPile.gltf-d1a2efaefd2a4af8fdff5df5c817a50e.scn"
+uid="uid://5wqsk0tnrs3f"
+path="res://.godot/imported/platform_grass.gltf-3b889ccdc02d8d950e933c4620433df2.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/GrassPile.gltf"
-dest_files=["res://.godot/imported/GrassPile.gltf-d1a2efaefd2a4af8fdff5df5c817a50e.scn"]
+source_file="res://modules/demo1/map/props/platform_grass.gltf"
+dest_files=["res://.godot/imported/platform_grass.gltf-3b889ccdc02d8d950e933c4620433df2.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="PlatformGrass"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:PlatformGrass": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

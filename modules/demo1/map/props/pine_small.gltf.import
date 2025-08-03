@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chiqiuu3em46f"
-path="res://.godot/imported/MovingBoarPlatform.gltf-4b05319d99fad2ed3fa039c5dd6375a2.scn"
+uid="uid://b3ge6hkxcuwqt"
+path="res://.godot/imported/pine_small.gltf-6df2c4cccfca79a82736286ac6e87ab4.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/MovingBoarPlatform.gltf"
-dest_files=["res://.godot/imported/MovingBoarPlatform.gltf-4b05319d99fad2ed3fa039c5dd6375a2.scn"]
+source_file="res://modules/demo1/map/props/pine_small.gltf"
+dest_files=["res://.godot/imported/pine_small.gltf-6df2c4cccfca79a82736286ac6e87ab4.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="PineSmall"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:PineSmall": {
+"generate/physics": true,
+"physics/shape_type": 0
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

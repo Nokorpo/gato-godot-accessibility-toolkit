@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://byhsfvrmf7nyq"
-path="res://.godot/imported/FloorGrass.gltf-dbcd119644c41fa386a3441341f4f37b.scn"
+uid="uid://d3bc7vpyxfakx"
+path="res://.godot/imported/darker_grass.gltf-19b741d14e660cea2418dc8b831d71f8.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/FloorGrass.gltf"
-dest_files=["res://.godot/imported/FloorGrass.gltf-dbcd119644c41fa386a3441341f4f37b.scn"]
+source_file="res://modules/demo1/map/props/darker_grass.gltf"
+dest_files=["res://.godot/imported/darker_grass.gltf-19b741d14e660cea2418dc8b831d71f8.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="FloorGrass"
+nodes/root_name="DarkerGrass"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

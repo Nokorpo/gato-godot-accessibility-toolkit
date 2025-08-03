@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bb3haljhc606v"
-path="res://.godot/imported/rock.gltf-9963a1f9afce4a5190d4b90e003b1206.scn"
+uid="uid://ca52kdqut8mg8"
+path="res://.godot/imported/pine_test.gltf-f36d3b469312bdf589d0d68482e8603a.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/rock.gltf"
-dest_files=["res://.godot/imported/rock.gltf-9963a1f9afce4a5190d4b90e003b1206.scn"]
+source_file="res://modules/demo1/map/props/pine_test.gltf"
+dest_files=["res://.godot/imported/pine_test.gltf-f36d3b469312bdf589d0d68482e8603a.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Rock"
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -31,14 +31,7 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Rock": {
-"generate/physics": true,
-"physics/shape_type": 0
-}
-}
-}
+import_script/path="uid://b17jl03tbd2a5"
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

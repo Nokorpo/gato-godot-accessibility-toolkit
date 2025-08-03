@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://i166axlbpy7g"
-path="res://.godot/imported/Fence.gltf-e1677bbe81be691eec545adc2bda2bc7.scn"
+path="res://.godot/imported/fence.gltf-00c4764fdd4b9db6ea116dcf86237d38.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/Fence.gltf"
-dest_files=["res://.godot/imported/Fence.gltf-e1677bbe81be691eec545adc2bda2bc7.scn"]
+source_file="res://modules/demo1/map/props/fence.gltf"
+dest_files=["res://.godot/imported/fence.gltf-00c4764fdd4b9db6ea116dcf86237d38.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Fence"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

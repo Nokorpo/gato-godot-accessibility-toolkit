@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://byarb3le21bcc"
-path="res://.godot/imported/BoarButton.gltf-cfef749a85bb4b811bc73042e09c4b93.scn"
+uid="uid://cvhe5spjd2wbo"
+path="res://.godot/imported/platform_bridge.gltf-f6ff82131ca9cb3e71e383e408192095.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/BoarButton.gltf"
-dest_files=["res://.godot/imported/BoarButton.gltf-cfef749a85bb4b811bc73042e09c4b93.scn"]
+source_file="res://modules/demo1/map/props/platform_bridge.gltf"
+dest_files=["res://.godot/imported/platform_bridge.gltf-f6ff82131ca9cb3e71e383e408192095.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="PlatformBridge"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

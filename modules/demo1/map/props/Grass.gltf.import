@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dl6ode0o8eo5a"
-path="res://.godot/imported/Grass.gltf-0bb0da3555e65d01c0a0af32723cce68.scn"
+path="res://.godot/imported/grass.gltf-563677e5a6f782be476d0f4bfe59c9fe.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/Grass.gltf"
-dest_files=["res://.godot/imported/Grass.gltf-0bb0da3555e65d01c0a0af32723cce68.scn"]
+source_file="res://modules/demo1/map/props/grass.gltf"
+dest_files=["res://.godot/imported/grass.gltf-563677e5a6f782be476d0f4bfe59c9fe.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Grass"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

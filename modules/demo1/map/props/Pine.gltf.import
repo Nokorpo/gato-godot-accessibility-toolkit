@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bdovvfnqsoptp"
-path="res://.godot/imported/Pine.gltf-5c7343ccde168af3f50185d943e7624b.scn"
+path="res://.godot/imported/pine.gltf-525acbf5397e47efb6a0c3ef3beb40c0.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/Pine.gltf"
-dest_files=["res://.godot/imported/Pine.gltf-5c7343ccde168af3f50185d943e7624b.scn"]
+source_file="res://modules/demo1/map/props/pine.gltf"
+dest_files=["res://.godot/imported/pine.gltf-525acbf5397e47efb6a0c3ef3beb40c0.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Pine"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Pine": {
+"generate/physics": true,
+"physics/shape_type": 0
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

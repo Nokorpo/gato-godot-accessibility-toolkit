@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dpedfmuyu50ig"
-path="res://.godot/imported/Stone.gltf-5aa03eaa5a5fdeccc5933e9d9274a4de.scn"
+path="res://.godot/imported/stone.gltf-05d58049ceb751056d8e5124de467f2b.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/Stone.gltf"
-dest_files=["res://.godot/imported/Stone.gltf-5aa03eaa5a5fdeccc5933e9d9274a4de.scn"]
+source_file="res://modules/demo1/map/props/stone.gltf"
+dest_files=["res://.godot/imported/stone.gltf-05d58049ceb751056d8e5124de467f2b.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Stone"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

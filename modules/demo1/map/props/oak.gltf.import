@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/oak.gltf-11691831679c92845c154cc38fb511b4.scn
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Oak"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"interactables": {
+"use_external/enabled": true,
+"use_external/path": "res://modules/demo1/map/props/interactables.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

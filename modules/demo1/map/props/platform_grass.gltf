@@ -15,7 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Pine"
+			"name":"PlatformGrass"
 		}
 	],
 	"materials":[
@@ -32,7 +32,7 @@
 	],
 	"meshes":[
 		{
-			"name":"tree-pine",
+			"name":"Cylinder.004",
 			"primitives":[
 				{
 					"attributes":{
@@ -63,61 +63,61 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":892,
+			"count":482,
 			"max":[
-				0.9150822162628174,
-				3.6862924098968506,
-				0.9150822162628174
+				4.408083915710449,
+				1.5232439041137695,
+				2.902165412902832
 			],
 			"min":[
-				-0.9150821566581726,
-				0,
-				-0.9150822162628174
+				-4.445205211639404,
+				0.01794491708278656,
+				-3.87593674659729
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":892,
+			"count":482,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":892,
+			"count":482,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":4488,
+			"count":2100,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":10704,
+			"byteLength":5784,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":10704,
-			"byteOffset":10704,
+			"byteLength":5784,
+			"byteOffset":5784,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":7136,
-			"byteOffset":21408,
+			"byteLength":3856,
+			"byteOffset":11568,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":8976,
-			"byteOffset":28544,
+			"byteLength":4200,
+			"byteOffset":15424,
 			"target":34963
 		}
 	],
@@ -129,8 +129,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":37520,
-			"uri":"pine.bin"
+			"byteLength":19624,
+			"uri":"platform_grass.bin"
 		}
 	]
 }

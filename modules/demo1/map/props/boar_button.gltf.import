@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bckenvh5w3j2p"
-path="res://.godot/imported/RockGroup.gltf-316f6b5f05d492be536b26ccd1596b7e.scn"
+uid="uid://byarb3le21bcc"
+path="res://.godot/imported/boar_button.gltf-3fd10df14c7e39ad4da9b7e8a6805867.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/RockGroup.gltf"
-dest_files=["res://.godot/imported/RockGroup.gltf-316f6b5f05d492be536b26ccd1596b7e.scn"]
+source_file="res://modules/demo1/map/props/boar_button.gltf"
+dest_files=["res://.godot/imported/boar_button.gltf-3fd10df14c7e39ad4da9b7e8a6805867.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="BoarButton"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

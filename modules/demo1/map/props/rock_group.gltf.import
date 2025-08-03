@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b3ge6hkxcuwqt"
-path="res://.godot/imported/PineSmall.gltf-558b697cdb7f251ababa25c8cb4d9e70.scn"
+uid="uid://bckenvh5w3j2p"
+path="res://.godot/imported/rock_group.gltf-2c6d84932b320f11cd16ac7e215dde34.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/PineSmall.gltf"
-dest_files=["res://.godot/imported/PineSmall.gltf-558b697cdb7f251ababa25c8cb4d9e70.scn"]
+source_file="res://modules/demo1/map/props/rock_group.gltf"
+dest_files=["res://.godot/imported/rock_group.gltf-2c6d84932b320f11cd16ac7e215dde34.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="RockGroup"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:RockGroup": {
+"generate/physics": true,
+"physics/shape_type": 0
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

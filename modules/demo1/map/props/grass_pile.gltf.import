@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bb3haljhc606v"
-path="res://.godot/imported/rock.gltf-9963a1f9afce4a5190d4b90e003b1206.scn"
+uid="uid://bm6gt8oxjo807"
+path="res://.godot/imported/grass_pile.gltf-36b914f618ece478d598d67c3d1e8c6b.scn"
 
 [deps]
 
-source_file="res://modules/demo1/map/props/rock.gltf"
-dest_files=["res://.godot/imported/rock.gltf-9963a1f9afce4a5190d4b90e003b1206.scn"]
+source_file="res://modules/demo1/map/props/grass_pile.gltf"
+dest_files=["res://.godot/imported/grass_pile.gltf-36b914f618ece478d598d67c3d1e8c6b.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Rock"
+nodes/root_name="GrassPile"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,13 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Rock": {
-"generate/physics": true,
-"physics/shape_type": 0
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

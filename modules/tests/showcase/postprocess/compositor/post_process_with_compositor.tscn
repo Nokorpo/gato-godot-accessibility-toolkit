@@ -242,5 +242,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66855, 0, 0)
 
 [node name="MovingBoarPlatform2" parent="Props/Interactables" instance=ExtResource("21_f62f7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.372, 0, 0)
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="."]

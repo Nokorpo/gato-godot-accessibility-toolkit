@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://debsy1fv3sm1b"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_5ldq4"]
-[ext_resource type="Script" uid="uid://dy5bs7w5wb8ba" path="res://modules/tests/showcase/postprocess/post_process_bnw.gd" id="2_4thdg"]
+[ext_resource type="Script" uid="uid://dy5bs7w5wb8ba" path="res://modules/tests/showcase/postprocess/compositor/post_process_bnw.gd" id="2_4thdg"]
 [ext_resource type="PackedScene" uid="uid://76tobu24ib4r" path="res://modules/level_objects/oak/oak.glb" id="2_jq4l3"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/FloorGrass.gltf" id="2_x84rj"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/FloorSand.gltf" id="3_kubfn"]
@@ -43,6 +43,7 @@ compositor = SubResource("Compositor_duu18")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
+layers = 3
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 

@@ -107,6 +107,11 @@ function run {
 	IMPORT_RESULT="$?"
 
 	if [ $IMPORT_RESULT -eq 0 ]; then
+		echo "--- TEST SETUP ---"
+		echo "Copying default Gato Input Remapper config"
+		mkdir -p "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
+		cp "./scripts/default_input.data" "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
+
 		echo "--- RUN TESTS ---"
 		chmod +x "$SMOKE_TEST_FILE"
 		godot --headless -s "$SMOKE_TEST_FILE" -- $(echo "${EXCLUSIONS[*]}") 2>&1 | tee log.txt

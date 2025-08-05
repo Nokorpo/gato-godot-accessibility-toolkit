@@ -76,6 +76,7 @@ function run {
 	if [ $IMPORT_RESULT -eq 0 ]; then
 		echo "--- TEST SETUP ---"
 		echo "Copying default Gato Input Remapper config"
+		mkdir -p "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
 		cp "./scripts/default_input.data" "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
 
 		echo "--- RUN TESTS ---"

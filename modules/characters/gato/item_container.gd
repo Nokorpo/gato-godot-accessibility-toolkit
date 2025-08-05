@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 			items[i].global_position = lerp(
 				items[i].global_position,
 				item_container.global_position - direction * expected_distance,
-				DebugMenu.adjust_to_animation_speed(item_follow_speed * delta))
+				DebugOptions.adjust_to_animation_speed(item_follow_speed * delta))
 
 ## Makes the collected item go through other items so the player isn't blocked by it
 func _disable_item_physics(item: PhysicsBody3D) -> void:
@@ -61,7 +61,7 @@ func _float_item_toward_container(item: Node3D) -> Tween:
 	_items_floating_toward_container.append(item)
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(item, "global_position", item_container.global_position - item_container.global_basis.z.normalized() * items.size() * item_separation, .5 * DebugMenu.animation_speed)
+	tween.tween_property(item, "global_position", item_container.global_position - item_container.global_basis.z.normalized() * items.size() * item_separation, .5 * DebugOptions.animation_speed)
 	tween.tween_callback(_items_floating_toward_container.erase.bind(item))
 	return tween
 

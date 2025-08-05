@@ -91,6 +91,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
+[node name="PerformanceOverlayButton" type="Button" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Toggle performance overlay"
+
 [node name="ColorRect" type="ColorRect" parent="DebugUI"]
 visible = false
 material = SubResource("ShaderMaterial_cvf0y")
@@ -112,3 +116,4 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.6)
 [connection signal="pressed" from="DebugUI/Panel/MarginContainer/VBoxContainer/ToggleBWFilter" to="DebugUI" method="_on_toggle_bw_filter_pressed"]
 [connection signal="value_changed" from="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/GameSpeedSlider" to="DebugUI" method="_on_game_speed_slider_value_changed"]
 [connection signal="toggled" from="DebugUI/Panel/MarginContainer/VBoxContainer/InfiniteJump/Value" to="." method="toggle_infinite_jumps"]
+[connection signal="pressed" from="DebugUI/Panel/MarginContainer/VBoxContainer/PerformanceOverlayButton" to="DebugUI" method="_on_performance_overlay_button_pressed"]

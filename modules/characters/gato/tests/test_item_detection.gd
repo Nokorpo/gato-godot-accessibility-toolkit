@@ -32,7 +32,7 @@ class TestItemDetection extends GutTest:
 
 	func test_item_container_stores_acorn():
 		#GIVEN
-		DebugMenu.animation_speed = 0
+		DebugOptions.animation_speed = 0
 		var item_detection: Area3D = add_child_autofree(sut.instantiate())
 		var acorn: Node3D = add_child_autofree(acorn_scene.instantiate())
 
@@ -46,7 +46,7 @@ class TestItemDetection extends GutTest:
 
 	func test_item_container_doesnt_store_same_item_twice():
 		#GIVEN
-		DebugMenu.animation_speed = 0
+		DebugOptions.animation_speed = 0
 		var item_detection: Area3D = add_child_autofree(sut.instantiate())
 		var acorn: Node3D = add_child_autofree(acorn_scene.instantiate())
 
@@ -61,7 +61,7 @@ class TestItemDetection extends GutTest:
 
 	func test_stored_acorn_follows_item_container():
 		#GIVEN
-		DebugMenu.animation_speed = 0
+		DebugOptions.animation_speed = 0
 		var item_detection: Area3D = add_child_autofree(sut.instantiate())
 		var acorn: Node3D = add_child_autofree(acorn_scene.instantiate())
 		item_detection._on_body_entered(acorn)

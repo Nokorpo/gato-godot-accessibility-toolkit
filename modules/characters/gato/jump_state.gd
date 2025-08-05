@@ -12,7 +12,7 @@ func _ready() -> void:
 
 # Called when the state machine changes to this state.
 func _on_enter_state() -> void:
-	if not DebugMenu.enable_infinite_jumps:
+	if not DebugOptions.enable_infinite_jumps:
 		remaining_jumps -= 1
 	node.jump()
 	mesh.play_animation(GatoMesh.Animations.JUMP)

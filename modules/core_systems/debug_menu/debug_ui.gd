@@ -28,3 +28,6 @@ func toggle_visibility() -> void:
 
 func _get_current_version() -> String:
 	return ProjectSettings.get_setting("application/config/version")
+
+func _on_performance_overlay_button_pressed() -> void:
+	DebugMenu.style = wrapi(DebugMenu.style + 1, 0, DebugMenu.Style.MAX) as DebugMenu.Style

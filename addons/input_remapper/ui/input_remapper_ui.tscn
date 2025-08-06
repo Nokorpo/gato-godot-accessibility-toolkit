@@ -112,8 +112,13 @@ size_flags_horizontal = 3
 focus_mode = 0
 text = "Space"
 
+[node name="SaveChangesButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save changes"
+
 [node name="PressKeyDialog" parent="." instance=ExtResource("5_6fg7x")]
 layout_mode = 1
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/Button" to="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["launch_item"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/Button2" to="PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["jump"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/SaveChangesButton" to="." method="save_changes"]

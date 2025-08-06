@@ -48,3 +48,8 @@ func set_action2d(action_name: StringName, new_input_action2d: InputAction) -> v
 		func(it): return it.name == action_name
 	)
 	current_scheme.input_actions[action_index] = new_input_action2d
+
+func save_changes() -> void:
+	InputRemapper.control_schemes = _schemes
+	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]
+	InputRemapper.apply_control_scheme(current_scheme)

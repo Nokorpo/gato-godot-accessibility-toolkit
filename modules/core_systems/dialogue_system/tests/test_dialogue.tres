@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogueContainer" load_steps=7 format=3 uid="uid://qlbtvjrr5ijj"]
+
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_gtyqs"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="2_lso7b"]
+[ext_resource type="PackedScene" uid="uid://wkilnau3nri8" path="res://modules/core_systems/dialogue_system/tests/test_mesh.tscn" id="2_wxb03"]
+
+[sub_resource type="Resource" id="Resource_hjjya"]
+script = ExtResource("1_gtyqs")
+message = "Hi there!"
+name = "Test"
+animation_name = ""
+face = ""
+mesh = ExtResource("2_wxb03")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_uag35"]
+script = ExtResource("1_gtyqs")
+message = "This is a test dialogue."
+name = "Test"
+animation_name = ""
+face = ""
+mesh = ExtResource("2_wxb03")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_5xj25"]
+script = ExtResource("1_gtyqs")
+message = "That's it. Good day."
+name = "Test"
+animation_name = ""
+face = ""
+mesh = ExtResource("2_wxb03")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[resource]
+script = ExtResource("2_lso7b")
+messages = Array[ExtResource("1_gtyqs")]([SubResource("Resource_hjjya"), SubResource("Resource_uag35"), SubResource("Resource_5xj25")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

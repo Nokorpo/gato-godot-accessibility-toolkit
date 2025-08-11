@@ -24,7 +24,7 @@ jobs:
       - name: Run test
         id: smoke-test
         run: |
-          ./scripts/run_smoke_test.sh "res://addons/gut" "res://addons/input_remapper/test/create_default_schemes"
+          ./scripts/run_smoke_test.sh "res://addons/gut" "res://addons/debug_menu" "res://addons/input_remapper/test/create_default_schemes"
 
       - name: Discord notification
         if: ${{ env.SHOULD_SEND_DISCORD_MESSAGE == 'true' }}

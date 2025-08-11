@@ -76,8 +76,8 @@ function run {
 	if [ $IMPORT_RESULT -eq 0 ]; then
 		echo "--- TEST SETUP ---"
 		echo "Copying default Gato Input Remapper config"
-		mkdir -p "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
-		cp "./scripts/default_input.data" "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
+		mkdir -p "$home_dir/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
+		cp "./scripts/default_input.data" "$home_dir/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
 
 		echo "--- RUN TESTS ---"
 		godot --headless -s addons/gut/gut_cmdln.gd --path $PWD -glog=1 -gexit | tee log.txt
@@ -102,9 +102,11 @@ function run {
 	store_env_var "DISCORD_MESSAGE" "$MESSAGE"
 }
 
+home_dir="$HOME"
 function main {
-	# here we would normally parse arguments, but since this script is so
-	# small it isn't necessary. We just run the tests
+	if [ -n "$GITHUB_WORKSPACE" ]; then
+		home_dir="$GITHUB_WORKSPACE"
+	fi
 	run
 }
 

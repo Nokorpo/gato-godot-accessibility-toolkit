@@ -109,8 +109,8 @@ function run {
 	if [ $IMPORT_RESULT -eq 0 ]; then
 		echo "--- TEST SETUP ---"
 		echo "Copying default Gato Input Remapper config"
-		mkdir -p "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
-		cp "./scripts/default_input.data" "~/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
+		mkdir -p "$home_dir/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
+		cp "./scripts/default_input.data" "$home_dir/.local/share/godot/app_userdata/Godot Accessibility Toolkit/"
 
 		echo "--- RUN TESTS ---"
 		chmod +x "$SMOKE_TEST_FILE"
@@ -135,10 +135,15 @@ function run {
 	store_env_var "DISCORD_MESSAGE" "$MESSAGE"
 }
 
+home_dir="$HOME"
 function main {
 	if [ "$#" -gt "0" ]; then
 		parse_arguments $*
 	fi
+	if [ -n "$GITHUB_WORKSPACE" ]; then
+		home_dir="$GITHUB_WORKSPACE"
+	fi
+
 	run
 }
 

@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @export var speed: float = 2.0
 @export var jump_force: float = 3
-@export_range(0, 1) var smoothing: float = 0.875
+@export_range(0, 1) var smoothing: float = 0.75
 @export var rotation_speed: float = 10.0
 
 @onready var pivot: Node3D = $RotationPivot

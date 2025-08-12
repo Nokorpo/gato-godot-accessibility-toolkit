@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b0xcaouncmmm6"]
+[gd_scene load_steps=31 format=3 uid="uid://b0xcaouncmmm6"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_koe00"]
 [ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/characters/camera/camera_with_rotation.tscn" id="2_koe00"]
@@ -27,16 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://bwhm2vtstl7ju" path="res://modules/demo1/map/props/platform_wood.gltf" id="25_c1iym"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="26_c1iym"]
 [ext_resource type="PackedScene" uid="uid://bqe8vij7tmoqy" path="res://modules/demo1/map/props/lighthouse.gltf" id="27_q7c8o"]
-[ext_resource type="Shader" uid="uid://14fg84rj3cs6" path="res://modules/demo1/map/outline.gdshader" id="28_obsxv"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjs5i"]
-render_priority = 0
-shader = ExtResource("28_obsxv")
-
-[sub_resource type="QuadMesh" id="QuadMesh_a04ft"]
-material = SubResource("ShaderMaterial_vjs5i")
-flip_faces = true
-size = Vector2(2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q7c8o"]
 size = Vector3(1.28125, 2.70898, 1.87631)
@@ -62,10 +52,6 @@ environment = ExtResource("1_koe00")
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
-
-[node name="OutlineShader" type="MeshInstance3D" parent="."]
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_a04ft")
 
 [node name="Gato" parent="." instance=ExtResource("2_wt2qj")]
 speed = 3.5

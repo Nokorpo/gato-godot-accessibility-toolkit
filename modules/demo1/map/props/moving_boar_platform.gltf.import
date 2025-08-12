@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chiqiuu3em46f"
-path="res://.godot/imported/moving_boar_platform.gltf-8246393e0adc54e8b00d92a468907605.scn"
+valid=false
 
 [deps]
 
 source_file="res://modules/demo1/map/props/moving_boar_platform.gltf"
-dest_files=["res://.godot/imported/moving_boar_platform.gltf-8246393e0adc54e8b00d92a468907605.scn"]
 
 [params]
 

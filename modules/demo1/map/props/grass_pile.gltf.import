@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bm6gt8oxjo807"
-valid=false
+path="res://.godot/imported/grass_pile.gltf-36b914f618ece478d598d67c3d1e8c6b.scn"
 
 [deps]
 
 source_file="res://modules/demo1/map/props/grass_pile.gltf"
+dest_files=["res://.godot/imported/grass_pile.gltf-36b914f618ece478d598d67c3d1e8c6b.scn"]
 
 [params]
 

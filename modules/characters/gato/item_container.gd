@@ -24,6 +24,7 @@ var _items_floating_toward_container: Array[Node3D] = []
 
 func _physics_process(delta: float) -> void:
 	for i in range(items.size()):
+		# FIXME check if has item.size, not out of bounds
 		if not is_instance_valid(items[i]):
 			# if an acorn is picked while a boar eats it, it might be removed while following the player, so we have to remove it from the list
 			items.remove_at(i)

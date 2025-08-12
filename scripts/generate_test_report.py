@@ -5,6 +5,7 @@ import re
 import argparse
 import os
 import sys
+import html
 
 def remove_newlines(lines):
     return [line.rstrip() for line in lines]
@@ -33,6 +34,8 @@ def remove_lines_after_test_report(lines):
 def delete_empty_tests(lines):
     new_lines = []
     for i in range(len(lines)):
+        if re.search("^ - Testing", lines[i]) and i == len(lines) - 1:
+            break
         if re.search("^ - Testing", lines[i]) and re.search("^ - Testing", lines[i+1]):
             continue
         else:
@@ -80,6 +83,9 @@ def parse_arguments():
     parser.add_argument("--unique-errors",
                         action="store_true",
                         help="Filter unique error messages")
+    parser.add_argument("--web",
+                        action="store_true",
+                        help="If true, escapes newline and other non web friendly characters")
 
     parser.add_argument("input_file",
                         help="Path to the log file to process")
@@ -90,6 +96,10 @@ def parse_arguments():
         sys.exit(f"Error: Input file '{args.input_file}' not found or is not a file")
 
     return args
+
+def escape_json_characters(lines):
+    new_lines = [line.replace('"', '\\"') for line in lines]
+    return ["\\n".join(new_lines)]
 
 def main():
     args = parse_arguments()
@@ -107,6 +117,8 @@ def main():
         lines = get_unique_errors(lines)
     if args.unique_scenes:
         lines = get_failing_scenes(lines)
+    if args.web:
+        lines = escape_json_characters(lines)
 
     for line in lines:
         print(line)

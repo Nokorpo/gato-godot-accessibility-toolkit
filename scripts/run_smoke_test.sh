@@ -78,6 +78,23 @@ function store_env_var {
 	fi
 }
 
+## Stores a multiline environment variable so it can be used from a later step in Github Actions
+function store_multiline_env_var {
+	if [ "$#" -ne 2 ]; then
+		echo "Error: 'store_env_var' function called with $# arguments." >&2
+		echo "The function should be called with 2 arguments, a key and its value." >&2
+		exit 1
+	fi
+	echo "Storing $1=$2 in GITHUB_ENV" >&2
+	if [ -n "$GITHUB_ENV" ]; then
+		echo "$1<<EOF" >> $GITHUB_ENV
+		echo "$2" >> $GITHUB_ENV
+		echo "EOF" >> $GITHUB_ENV
+	else
+		echo "GITHUB_ENV is not set. Is this script running locally?" >&2
+	fi
+}
+
 ## Filters error messages that we don't care about
 function filter_not_useful_errors {
 	if [ "$#" -ne 1 ]; then
@@ -121,12 +138,12 @@ function run {
 		WARNINGS="$(filter_not_useful_warnings "log.txt" | wc -l)"
 		MESSAGE="Smoke test execution found $ERRORS errors :no_entry: and $WARNINGS warnings :warning:"
 
-		failing_scenes="$(./scripts/generate_test_report.py --unique-scenes log.txt)"
-		unique_errors="$(./scripts/generate_test_report.py --unique-errors log.txt)"
-		EMBEDS="{\"embeds\": [
+		failing_scenes="$(python3 ./scripts/generate_test_report.py --unique-scenes --web log.txt)"
+		unique_errors="$(python3 ./scripts/generate_test_report.py --unique-errors --web log.txt)"
+		EMBEDS="[
 				{ \"title\": \"Failing scenes\", \"description\": \"$failing_scenes\" },
 				{ \"title\": \"Unique errors\", \"description\": \"$unique_errors\" }
-			]}"
+			]"
 		if [ "$ERRORS" -gt "0" -o "$WARNINGS" -gt "0" ]; then
 			store_env_var "SHOULD_SEND_DISCORD_MESSAGE" "true"
 		fi
@@ -140,7 +157,7 @@ function run {
 
 	echo "Run finished with message: $MESSAGE" >&2
 	store_env_var "DISCORD_MESSAGE" "$MESSAGE"
-	store_env_var "DISCORD_EMBEDS" "$EMBEDS"
+	store_multiline_env_var "DISCORD_EMBEDS" "$EMBEDS"
 }
 
 home_dir="$HOME"

@@ -24,14 +24,6 @@ func _ready() -> void:
 	if destination_node != null:
 		destination = destination_node.global_position
 
-func _ready() -> void:
-	if get_parent() is Node3D:
-		# This condition is used to avoid errors when launching this scene alone
-		node_to_move = get_parent()
-		origin = node_to_move.global_position
-	if destination_node != null:
-		destination_node.global_position
-
 ## If the node is currently in the origin or moving towards the origin, it will
 ## travel towards the destination. If it is in the destination or traveling
 ## towards the destination, it will travel towards the origin instead.

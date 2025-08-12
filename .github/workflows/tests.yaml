@@ -30,6 +30,7 @@ jobs:
         if: ${{ env.SHOULD_SEND_DISCORD_MESSAGE == 'true' }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
         uses: Ilshidur/action-discord@master
         with:
           args: "${{ env.DISCORD_MESSAGE }}. Check the results in [this url](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."

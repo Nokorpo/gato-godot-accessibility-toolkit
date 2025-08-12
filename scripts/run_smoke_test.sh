@@ -120,6 +120,13 @@ function run {
 		ERRORS="$(filter_not_useful_errors "log.txt" | wc -l)"
 		WARNINGS="$(filter_not_useful_warnings "log.txt" | wc -l)"
 		MESSAGE="Smoke test execution found $ERRORS errors :no_entry: and $WARNINGS warnings :warning:"
+
+		failing_scenes="$(./scripts/generate_test_report.py --unique-scenes log.txt)"
+		unique_errors="$(./scripts/generate_test_report.py --unique-errors log.txt)"
+		EMBEDS="{\"embeds\": [
+				{ \"title\": \"Failing scenes\", \"description\": \"$failing_scenes\" },
+				{ \"title\": \"Unique errors\", \"description\": \"$unique_errors\" }
+			]}"
 		if [ "$ERRORS" -gt "0" -o "$WARNINGS" -gt "0" ]; then
 			store_env_var "SHOULD_SEND_DISCORD_MESSAGE" "true"
 		fi
@@ -133,6 +140,7 @@ function run {
 
 	echo "Run finished with message: $MESSAGE" >&2
 	store_env_var "DISCORD_MESSAGE" "$MESSAGE"
+	store_env_var "DISCORD_EMBEDS" "$EMBEDS"
 }
 
 home_dir="$HOME"

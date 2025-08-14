@@ -11,9 +11,9 @@ signal fall_from_height
 @onready var pivot: Node3D = $RotationPivot
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 @onready var mesh: GatoMesh = $RotationPivot/Mesh
+@onready var items: Array = $RotationPivot/ItemDetectionArea.items
 
 var previous_y_velocity: float = 0.0
-
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

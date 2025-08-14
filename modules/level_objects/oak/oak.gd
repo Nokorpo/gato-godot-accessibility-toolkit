@@ -8,6 +8,8 @@ static var acorn_scene: PackedScene = load("res://modules/level_objects/acorn/ac
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Gato and spawn_cooldown.is_stopped():
+		if (body as Gato).items.size() >= 3:
+			return
 		spawn_acorns()
 		spawn_cooldown.start(spawn_cooldown_time)
 

@@ -1,6 +1,8 @@
 class_name Gato
 extends CharacterBody3D
 
+signal fall_from_height
+
 @export var speed: float = 2.0
 @export var jump_force: float = 3
 @export_range(0, 1) var smoothing: float = 0.75
@@ -10,13 +12,18 @@ extends CharacterBody3D
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 @onready var mesh: GatoMesh = $RotationPivot/Mesh
 
+var previous_y_velocity: float = 0.0
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
+		previous_y_velocity = velocity.y
 		velocity += get_gravity() * delta
 		mesh.is_grounded = false
 	else:
 		mesh.is_grounded = true
+		if previous_y_velocity <= -5.0:
+			fall_from_height.emit()
 
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction: Vector3

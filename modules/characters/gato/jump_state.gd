@@ -3,7 +3,6 @@ class_name GatoJumpState
 
 @export var mesh: GatoMesh
 @export var max_jumps: int = 2
-@export var landing_partricles: GPUParticles3D
 
 var remaining_jumps: int = max_jumps
 
@@ -42,7 +41,5 @@ func _physics_process(_delta: float) -> void:
 			var horizontal_velocity := Vector2(node.velocity.x, node.velocity.z)
 			if horizontal_velocity.length() >= 0.2:
 				state_machine.change_state(GatoWalkState)
-				landing_partricles.emitting = true
 			else:
 				state_machine.change_state(GatoIdleState)
-				landing_partricles.emitting = true

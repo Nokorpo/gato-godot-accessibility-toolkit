@@ -68,6 +68,10 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_t654d")
 size = Vector2(0.3, 0.3)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbfhj"]
+radius = 0.275845
+height = 1.32502
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d7yls"]
 emission_shape_scale = Vector3(0.5, 0, 0.5)
 emission_shape = 6
@@ -97,10 +101,6 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_fcelm"]
 material = SubResource("StandardMaterial3D_d7yls")
 size = Vector2(0.5, 0.5)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbfhj"]
-radius = 0.275845
-height = 1.32502
 
 [node name="Gato" type="CharacterBody3D" groups=["heavy_weight"]]
 collision_layer = 3
@@ -137,18 +137,6 @@ trail_lifetime = 0.01
 process_material = SubResource("ParticleProcessMaterial_fcelm")
 draw_pass_1 = SubResource("QuadMesh_q2twd")
 
-[node name="LandingDust" type="GPUParticles3D" parent="RotationPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239751, 0)
-emitting = false
-amount = 20
-lifetime = 0.2
-one_shot = true
-explosiveness = 1.0
-use_fixed_seed = true
-seed = 874316874
-process_material = SubResource("ParticleProcessMaterial_d7yls")
-draw_pass_1 = SubResource("QuadMesh_fcelm")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663, 0)
 shape = SubResource("CapsuleShape3D_pbfhj")
@@ -166,7 +154,20 @@ script = ExtResource("4_pbfhj")
 mesh = NodePath("../../RotationPivot/Mesh")
 walk_partricles = NodePath("../../RotationPivot/WalkDust")
 
-[node name="JumpState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh", "landing_partricles")]
+[node name="JumpState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
 script = ExtResource("6_ve5e5")
 mesh = NodePath("../../RotationPivot/Mesh")
-landing_partricles = NodePath("../../RotationPivot/LandingDust")
+
+[node name="LandingDust" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239751, 0)
+emitting = false
+amount = 20
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+use_fixed_seed = true
+seed = 874316874
+process_material = SubResource("ParticleProcessMaterial_d7yls")
+draw_pass_1 = SubResource("QuadMesh_fcelm")
+
+[connection signal="fall_from_height" from="." to="LandingDust" method="set_emitting" binds= [true]]

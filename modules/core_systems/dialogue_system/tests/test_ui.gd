@@ -24,9 +24,17 @@ class TestDialogueUI extends GutTest:
 		assert_gt(ui.find_child("CharacterContainer").size.y, 0,
 			"the character viewport is not visible")
 
-	func test_character_mesh_change() -> void:
+	func test_message_change_on_click() -> void:
 		var ui: Control = add_child_autofree(sut.instantiate())
-		var character: Node3D = ui.find_child("CharacterMesh")
+		DialogueSystem.load_dialogue(test_dialog)
+
+		var click := InputEventMouseButton.new()
+		click.button_index = MOUSE_BUTTON_LEFT
+		click.pressed = true
+		ui._input(click)
+
+		assert_eq(ui.name_label.text, "Test", "the text didn't change")
+		assert_eq(ui.message_label.text, "This is a test dialogue.", "the text didn't change")
 
 class TestDialogueAvatarUI extends GutTest:
 

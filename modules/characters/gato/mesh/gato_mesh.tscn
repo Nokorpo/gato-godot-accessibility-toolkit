@@ -164,7 +164,7 @@ settings/6/exclude_collision_count = 0
 tree_root = ExtResource("5_rjkq3")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_grounded = true
-parameters/conditions/is_moving = true
+parameters/conditions/is_moving = false
 
 [node name="ApplyGraphicsSettings" type="Node" parent="." index="3"]
 script = ExtResource("5_25ort")

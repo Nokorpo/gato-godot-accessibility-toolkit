@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://fnh8oa0bccvr"]
+
+[ext_resource type="Script" uid="uid://di6cwd6xv1tta" path="res://modules/core_systems/dialogue_system/view/character_avatar_ui.gd" id="1_akc3h"]
+
+[node name="CharacterContainer" type="SubViewportContainer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 960.0
+grow_vertical = 2
+stretch = true
+script = ExtResource("1_akc3h")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(960, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.937725, 0.0934926, -0.33456, -0.0352072, 0.983721, 0.176219, 0.345589, -0.153467, 0.925752, -0.666378, 1.39974, 1.98618)
+fov = 41.3325
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 1, 2, 2)
+
+[node name="Characters" type="Node3D" parent="SubViewport"]

@@ -32,7 +32,10 @@ enum Animations {
 }
 
 func play_animation(animation: Animations) -> void:
-	animation_tree["parameters/playback"].travel(_map_animation_enum_to_stringname(animation))
+	play_animation_name(_map_animation_enum_to_stringname(animation))
+
+func play_animation_name(animation: StringName) -> void:
+	animation_tree["parameters/playback"].travel(animation)
 
 func _map_animation_enum_to_stringname(animation: Animations) -> StringName:
 	return Animations.keys()[animation].to_lower()

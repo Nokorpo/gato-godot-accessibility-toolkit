@@ -20,3 +20,5 @@ func _input(event: InputEvent) -> void:
 		var next_message := DialogueSystem.advance()
 		if next_message:
 			set_message(next_message)
+		else:
+			hide()

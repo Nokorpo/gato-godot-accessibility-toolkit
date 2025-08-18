@@ -24,6 +24,7 @@ class TestDialogueUI extends GutTest:
 
 	func test_message_change_on_click() -> void:
 		var ui: Control = add_child_autofree(sut.instantiate())
+		DialogueSystem.ui = ui
 		DialogueSystem.load_dialogue(test_dialog)
 
 		var click := InputEventMouseButton.new()
@@ -33,6 +34,38 @@ class TestDialogueUI extends GutTest:
 
 		assert_eq(ui.name_label.text, "Two", "the text didn't change")
 		assert_eq(ui.message_label.text, "Second message", "the text didn't change")
+
+	func test_ui_is_hidden_when_clicking_on_last_message() -> void:
+		var ui: Control = add_child_autofree(sut.instantiate())
+		DialogueSystem.ui = ui
+		DialogueSystem.load_dialogue(test_dialog)
+		DialogueSystem.current_message_index = 2
+
+		var click := InputEventMouseButton.new()
+		click.button_index = MOUSE_BUTTON_LEFT
+		click.pressed = true
+		ui._input(click)
+
+		assert_false(ui.visible)
+
+	func test_ui_is_visible_when_loading_first_dialog():
+		DialogueSystem.load_dialogue(test_dialog)
+
+		var ui: Control = DialogueSystem.find_child("DialogueUI", true, false)
+		assert_not_null(ui)
+		assert_true(ui.visible)
+
+	func test_ui_is_reused_when_loading_second_dialog():
+		DialogueSystem.ui = add_child_autofree(sut.instantiate())
+		DialogueSystem.load_dialogue(test_dialog)
+		var first_ui := DialogueSystem.ui
+		DialogueSystem.ui.hide()
+
+		DialogueSystem.load_dialogue(test_dialog)
+
+		var second_ui: Control = DialogueSystem.ui
+		assert_eq(first_ui, second_ui)
+		assert_true(second_ui.visible)
 
 class TestDialogueAvatarUI extends GutTest:
 

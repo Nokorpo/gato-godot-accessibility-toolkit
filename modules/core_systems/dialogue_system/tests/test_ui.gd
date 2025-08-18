@@ -17,11 +17,9 @@ class TestDialogueUI extends GutTest:
 	func test_viewport_size() -> void:
 		var ui: Control = add_child_autofree(sut.instantiate())
 
-		var window_size := get_window().size
-
-		assert_gt(ui.find_child("CharacterContainer").size.x, 0,
+		assert_gt(ui.find_child("CharacterContainer").size.x, 0.0,
 			"the character viewport is not visible")
-		assert_gt(ui.find_child("CharacterContainer").size.y, 0,
+		assert_gt(ui.find_child("CharacterContainer").size.y, 0.0,
 			"the character viewport is not visible")
 
 	func test_message_change_on_click() -> void:
@@ -49,7 +47,6 @@ class TestDialogueAvatarUI extends GutTest:
 		return dialogue
 
 	func test_mesh_is_instantiatied() -> void:
-		var dialogue := _get_example_message()
 		var character_ui: Control = add_child_autofree(sut.instantiate())
 		character_ui.set_avatar(example_avatar, "talk_neutral")
 
@@ -60,7 +57,6 @@ class TestDialogueAvatarUI extends GutTest:
 		assert_typeof(character_ui._cached_characters[example_avatar], typeof(Node3D))
 
 	func test_mesh_has_right_animation() -> void:
-		var dialogue := _get_example_message()
 		var character_ui: Control = add_child_autofree(sut.instantiate())
 		character_ui.set_avatar(example_avatar, "talk_neutral")
 

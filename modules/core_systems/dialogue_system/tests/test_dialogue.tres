@@ -6,8 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_hjjya"]
 script = ExtResource("1_gtyqs")
-message = "Hi there!"
-name = "Test"
+message = "First message"
+name = "One"
 animation_name = ""
 face = ""
 mesh = ExtResource("2_wxb03")
@@ -15,8 +15,8 @@ metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
 [sub_resource type="Resource" id="Resource_uag35"]
 script = ExtResource("1_gtyqs")
-message = "This is a test dialogue."
-name = "Test"
+message = "Second message"
+name = "Two"
 animation_name = ""
 face = ""
 mesh = ExtResource("2_wxb03")
@@ -24,8 +24,8 @@ metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
 [sub_resource type="Resource" id="Resource_5xj25"]
 script = ExtResource("1_gtyqs")
-message = "That's it. Good day."
-name = "Test"
+message = "Third message"
+name = "Three"
 animation_name = ""
 face = ""
 mesh = ExtResource("2_wxb03")

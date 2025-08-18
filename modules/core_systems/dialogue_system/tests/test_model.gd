@@ -36,7 +36,7 @@ class TestResources extends GutTest:
 
 	func test_load_messages() -> void:
 		var container: DialogueContainer = load("res://modules/core_systems/dialogue_system/tests/test_dialogue.tres")
-		assert_eq(container.messages[0].message, "Hi there!")
-		assert_eq(container.messages[1].message, "This is a test dialogue.")
-		assert_eq(container.messages[2].message, "That's it. Good day.")
+		assert_eq(container.messages[0].message, "First message")
+		assert_eq(container.messages[1].message, "Second message")
+		assert_eq(container.messages[2].message, "Third message")
 		assert_eq(container.get_all_meshes().size(), 1, "multiple meshes show up when only one is used across multiple meshes")

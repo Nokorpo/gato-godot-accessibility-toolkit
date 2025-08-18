@@ -33,8 +33,8 @@ class TestDialogueUI extends GutTest:
 		click.pressed = true
 		ui._input(click)
 
-		assert_eq(ui.name_label.text, "Test", "the text didn't change")
-		assert_eq(ui.message_label.text, "This is a test dialogue.", "the text didn't change")
+		assert_eq(ui.name_label.text, "Two", "the text didn't change")
+		assert_eq(ui.message_label.text, "Second message", "the text didn't change")
 
 class TestDialogueAvatarUI extends GutTest:
 

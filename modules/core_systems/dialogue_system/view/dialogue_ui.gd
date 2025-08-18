@@ -18,4 +18,5 @@ func set_avatar(message: DialogueMessage) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		var next_message := DialogueSystem.advance()
-		set_message(next_message)
+		if next_message:
+			set_message(next_message)

@@ -17,6 +17,8 @@ func load_dialogue(new_dialogue: DialogueContainer) -> DialogueMessage:
 
 func advance() -> DialogueMessage:
 	current_message_index += 1
+	if dialogue.messages.size() <= current_message_index:
+		return null
 	var current_message := dialogue.messages[current_message_index]
 	dialogue_changed.emit(current_message)
 	return current_message

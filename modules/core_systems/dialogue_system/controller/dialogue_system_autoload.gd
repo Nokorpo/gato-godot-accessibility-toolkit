@@ -1,6 +1,7 @@
 extends Node
 
 signal dialogue_changed(message: DialogueMessage)
+signal dialogue_started
 signal dialogue_finished
 
 var ui: Control
@@ -16,6 +17,7 @@ func load_dialogue(new_dialogue: DialogueContainer) -> DialogueMessage:
 	current_message_index = 0
 	var current_message := dialogue.messages[current_message_index]
 	dialogue_changed.emit(current_message)
+	dialogue_started.emit()
 	return current_message
 
 func _load_ui() -> void:

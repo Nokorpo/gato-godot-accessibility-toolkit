@@ -44,6 +44,15 @@ func _get_or_instantiate(mesh: PackedScene) -> Node3D:
 		return _cached_characters[mesh]
 	else:
 		var instance = mesh.instantiate()
+		_make_visible_only_in_dialogue_ui(instance)
 		_character_container.add_child(instance)
 		_cached_characters.set(mesh, instance)
 		return instance
+
+## The only meshes drawn to the Character Container viewport are those in layer
+## 10 ("Dialogue"). Therefore, this mesh must be added to it and removed from
+## the default layer 1.
+func _make_visible_only_in_dialogue_ui(node: Node3D):
+	for mesh: MeshInstance3D in node.find_children("*", "MeshInstance3D"):
+		mesh.set_layer_mask_value(1, false)
+		mesh.set_layer_mask_value(10, true)

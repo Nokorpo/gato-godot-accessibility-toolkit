@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnv2y4ff8dux7"]
+
+[ext_resource type="Script" uid="uid://klhbhpjyqome" path="res://modules/characters/random_timer/random_timer.gd" id="1_bwybn"]
+
+[node name="RandomTimer" type="Timer"]
+script = ExtResource("1_bwybn")

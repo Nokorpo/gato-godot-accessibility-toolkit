@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv34hoyi5rdp2"]
+[gd_scene load_steps=6 format=3 uid="uid://cv34hoyi5rdp2"]
 
 [ext_resource type="Script" uid="uid://dha1wph3ea65n" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.gd" id="1_oqsou"]
 [ext_resource type="PackedScene" uid="uid://fnh8oa0bccvr" path="res://modules/core_systems/dialogue_system/view/character_container_ui.tscn" id="2_nh633"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="3_0imcl"]
+[ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="4_xcu6i"]
 
 [sub_resource type="Theme" id="Theme_n3u28"]
 default_font_size = 42
@@ -65,3 +67,11 @@ theme_override_constants/margin_bottom = 16
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 text = "Sample message"
+
+[node name="NextMessageAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0imcl")
+volume_db = -4.0
+
+[node name="CloseDialogueAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xcu6i")
+volume_db = -2.0

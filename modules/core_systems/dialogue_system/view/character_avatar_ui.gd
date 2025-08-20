@@ -13,6 +13,8 @@ func set_avatar(mesh: PackedScene, animation: StringName) -> void:
 	_set_animation(character, animation)
 
 func _set_animation(character: Node3D, animation: StringName) -> void:
+	if animation.is_empty():
+		return
 	if character.has_method("play_animation_name"):
 		character.play_animation_name(animation)
 	else:
@@ -26,7 +28,7 @@ func _set_animation(character: Node3D, animation: StringName) -> void:
 		elif anim_player:
 			anim_player.play(animation)
 		else:
-			push_error("ERROR: Character in dialog has no way to set animations.")
+			push_error("ERROR: Cannot set animation with name '%s' on character '%s'. It has no way to set animations." % [animation, character])
 
 func _get_or_instantiate(mesh: PackedScene) -> Node3D:
 	if mesh in _cached_characters:

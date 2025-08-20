@@ -21636,6 +21636,23 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://modules/characters/gato/mesh/gato.tres"
 }
+},
+"nodes": {
+"PATH:rig/Skeleton3D/Bandana/Bandana": {
+"mesh_instance/layers": 513
+},
+"PATH:rig/Skeleton3D/Body": {
+"mesh_instance/layers": 513
+},
+"PATH:rig/Skeleton3D/Face": {
+"mesh_instance/layers": 513
+},
+"PATH:rig/Skeleton3D/Glasses/Glasses": {
+"mesh_instance/layers": 513
+},
+"PATH:rig/Skeleton3D/Head": {
+"mesh_instance/layers": 513
+}
 }
 }
 gltf/naming_version=1

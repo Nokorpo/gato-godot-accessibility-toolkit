@@ -18,9 +18,11 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
 transform = Transform3D(0.937725, 0.0934926, -0.33456, -0.0352072, 0.983721, 0.176219, 0.345589, -0.153467, 0.925752, -0.666378, 1.39974, 1.98618)
+cull_mask = 512
 fov = 41.3325
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
 transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 1, 2, 2)
+layers = 512
 
 [node name="Characters" type="Node3D" parent="SubViewport"]

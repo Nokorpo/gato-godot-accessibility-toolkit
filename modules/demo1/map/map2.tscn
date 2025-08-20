@@ -28,7 +28,7 @@ script = ExtResource("16_5ncco")
 message = "¡Mírate, Gato!"
 name = "Gato"
 animation_name = "idle"
-face = ""
+face = "happy"
 mesh = ExtResource("17_urt40")
 metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
@@ -37,7 +37,7 @@ script = ExtResource("16_5ncco")
 message = "Has llegado a lo más alto..."
 name = "Gato"
 animation_name = "talk_happy"
-face = "happy"
+face = "wow"
 mesh = ExtResource("17_urt40")
 metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 

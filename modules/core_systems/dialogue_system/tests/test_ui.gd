@@ -81,7 +81,7 @@ class TestDialogueAvatarUI extends GutTest:
 
 	func test_mesh_is_instantiatied() -> void:
 		var character_ui: Control = add_child_autofree(sut.instantiate())
-		character_ui.set_avatar(example_avatar, "talk_neutral")
+		character_ui.set_avatar(example_avatar, "talk_neutral", "neutral")
 
 		await wait_frames(8, "wait for AnimationTree state machine to change state")
 
@@ -91,7 +91,7 @@ class TestDialogueAvatarUI extends GutTest:
 
 	func test_mesh_has_right_animation() -> void:
 		var character_ui: Control = add_child_autofree(sut.instantiate())
-		character_ui.set_avatar(example_avatar, "talk_neutral")
+		character_ui.set_avatar(example_avatar, "talk_neutral", "neutral")
 
 		await wait_frames(8, "wait for AnimationTree state machine to change state")
 

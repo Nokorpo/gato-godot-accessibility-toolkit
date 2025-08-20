@@ -27,7 +27,7 @@ func set_message(message: DialogueMessage) -> void:
 
 func set_avatar(message: DialogueMessage) -> void:
 	if message.mesh != null and message.animation_name != null:
-		character_avatar.set_avatar(message.mesh, message.animation_name)
+		character_avatar.set_avatar(message.mesh, message.animation_name, message.face)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():

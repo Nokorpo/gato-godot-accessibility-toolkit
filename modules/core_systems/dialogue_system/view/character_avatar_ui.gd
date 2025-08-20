@@ -4,13 +4,14 @@ extends SubViewportContainer
 
 var _cached_characters: Dictionary[PackedScene, Node3D] = {}
 
-func set_avatar(mesh: PackedScene, animation: StringName) -> void:
+func set_avatar(mesh: PackedScene, animation: StringName, face: StringName) -> void:
 	for character: Node3D in _cached_characters.values():
 		character.hide()
 
 	var character := _get_or_instantiate(mesh)
 	character.show()
 	_set_animation(character, animation)
+	_set_face(character, face)
 
 func _set_animation(character: Node3D, animation: StringName) -> void:
 	if animation.is_empty():
@@ -29,6 +30,14 @@ func _set_animation(character: Node3D, animation: StringName) -> void:
 			anim_player.play(animation)
 		else:
 			push_error("ERROR: Cannot set animation with name '%s' on character '%s'. It has no way to set animations." % [animation, character])
+
+func _set_face(character: Node3D, face: StringName) -> void:
+	if face.is_empty():
+		return
+	if character.has_method("set_face"):
+		character.set_face_name(face)
+	else:
+		push_error("ERROR: Cannot set face with name '%s' on character '%s'. It has no way to set its face." % [face, character])
 
 func _get_or_instantiate(mesh: PackedScene) -> Node3D:
 	if mesh in _cached_characters:

@@ -1,12 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://lfdv7nvfw25m"]
+[gd_scene load_steps=16 format=3 uid="uid://lfdv7nvfw25m"]
 
 [ext_resource type="PackedScene" uid="uid://bbooh5fy7gvyg" path="res://modules/characters/gato/mesh/gato.glb" id="1_6pu3j"]
 [ext_resource type="Script" uid="uid://bslirxx4p3c7b" path="res://modules/characters/gato/mesh/gato_mesh.gd" id="2_v13qw"]
+[ext_resource type="Texture2D" uid="uid://c06u7wst2s46w" path="res://modules/characters/gato/faces/face_neutral.png" id="3_5ju6w"]
+[ext_resource type="Texture2D" uid="uid://ddww2bao7dupn" path="res://modules/characters/gato/faces/face_happy.png" id="4_p7dr4"]
+[ext_resource type="Texture2D" uid="uid://b8flexv0pmc24" path="res://modules/characters/gato/faces/face_side_eye.png" id="5_5s3rc"]
 [ext_resource type="Script" uid="uid://qi0d1n7oknb3" path="res://scripts/apply_graphics_settings_to_mesh.gd" id="5_25ort"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://pur6sfljt6o7" path="res://modules/characters/gato/mesh/gato_animation_state_machine.tres" id="5_rjkq3"]
+[ext_resource type="Texture2D" uid="uid://cbx702mu1kgcn" path="res://modules/characters/gato/faces/face_surprised.png" id="6_ymkgu"]
+[ext_resource type="Texture2D" uid="uid://rnte33266nuh" path="res://modules/characters/gato/faces/face_worried.png" id="7_43ce3"]
+[ext_resource type="Texture2D" uid="uid://erj84is0ypkp" path="res://modules/characters/gato/faces/face_wow.png" id="8_00blv"]
+[ext_resource type="Texture2D" uid="uid://d054sej3nm7c0" path="res://modules/characters/gato/faces/face_neutral_blink.png" id="9_3i0m2"]
+[ext_resource type="Texture2D" uid="uid://bwdvo5ul0b76e" path="res://modules/characters/gato/faces/face_happy_blink.png" id="10_m77tm"]
+[ext_resource type="Texture2D" uid="uid://qeftjyo1wnkb" path="res://modules/characters/gato/faces/face_surprised_blink.png" id="11_h5qsk"]
+[ext_resource type="Texture2D" uid="uid://ckvkvtix751da" path="res://modules/characters/gato/faces/face_worried_blink.png" id="12_rxcos"]
+[ext_resource type="Script" uid="uid://klhbhpjyqome" path="res://modules/characters/random_timer/random_timer.gd" id="15_00blv"]
 
 [node name="Gato" instance=ExtResource("1_6pu3j")]
 script = ExtResource("2_v13qw")
+face_images = Dictionary[int, Texture]({
+0: ExtResource("3_5ju6w"),
+1: ExtResource("4_p7dr4"),
+2: ExtResource("5_5s3rc"),
+3: ExtResource("6_ymkgu"),
+4: ExtResource("7_43ce3"),
+5: ExtResource("8_00blv")
+})
+face_blinking_images = Dictionary[int, Texture]({
+0: ExtResource("9_3i0m2"),
+1: ExtResource("10_m77tm"),
+3: ExtResource("11_h5qsk"),
+4: ExtResource("12_rxcos")
+})
+minimum_blink_time = 1.0
+maximum_blink_time = 2.0
 
 [node name="Glasses" parent="rig/Skeleton3D" index="0"]
 transform = Transform3D(1, 6.09552e-16, -4.26326e-14, -4.16225e-15, 1, -7.54979e-08, 2.84217e-14, 7.54979e-08, 1, 1.49012e-08, 0.925974, -3.72529e-09)
@@ -168,3 +195,11 @@ parameters/conditions/is_moving = false
 
 [node name="ApplyGraphicsSettings" type="Node" parent="." index="3"]
 script = ExtResource("5_25ort")
+
+[node name="BlinkTimer" type="Timer" parent="." index="4"]
+script = ExtResource("15_00blv")
+minimum_wait_time = 2.0
+maximum_wait_time = 5.0
+metadata/_custom_type_script = "uid://klhbhpjyqome"
+
+[connection signal="timeout" from="BlinkTimer" to="." method="blink"]

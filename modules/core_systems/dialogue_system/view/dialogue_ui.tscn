@@ -1,12 +1,59 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv34hoyi5rdp2"]
+[gd_scene load_steps=15 format=3 uid="uid://cv34hoyi5rdp2"]
 
 [ext_resource type="Script" uid="uid://dha1wph3ea65n" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.gd" id="1_oqsou"]
 [ext_resource type="PackedScene" uid="uid://fnh8oa0bccvr" path="res://modules/core_systems/dialogue_system/view/character_container_ui.tscn" id="2_nh633"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="3_0imcl"]
+[ext_resource type="Texture2D" uid="uid://bhvy86n4oewsq" path="res://modules/core_systems/dialogue_system/textures/checker.svg" id="3_no6vj"]
 [ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="4_xcu6i"]
+[ext_resource type="Shader" uid="uid://bul20vyd70yky" path="res://modules/core_systems/dialogue_system/view/image_mask.gdshader" id="5_xcu6i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no6vj"]
+bg_color = Color(0.147047, 0.0645466, 0.372474, 0.901961)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8y5m"]
+bg_color = Color(0.870588, 0.698039, 0.184314, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="Theme" id="Theme_n3u28"]
 default_font_size = 42
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_no6vj")
+name_tag/base_type = &"PanelContainer"
+name_tag/styles/panel = SubResource("StyleBoxFlat_y8y5m")
+name_tag_label/base_type = &"Label"
+name_tag_label/colors/font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_xcu6i"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.290196, 0.290196, 0.290196, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_no6vj"]
+gradient = SubResource("Gradient_xcu6i")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_no6vj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.516746, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.287025, 0.287025, 0.287025, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y8y5m"]
+gradient = SubResource("Gradient_no6vj")
+width = 128
+height = 128
+fill_from = Vector2(0.517094, 0.508547)
+fill_to = Vector2(0.568376, 0.679487)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kwqsu"]
+shader = ExtResource("5_xcu6i")
+shader_parameter/mask = SubResource("GradientTexture2D_y8y5m")
+shader_parameter/horizontal_speed = 0.05
+shader_parameter/vertical_speed = 0.05
 
 [node name="DialogueUI" type="Control"]
 layout_mode = 3
@@ -18,55 +65,100 @@ grow_vertical = 2
 theme = SubResource("Theme_n3u28")
 script = ExtResource("1_oqsou")
 
-[node name="CharacterContainer" parent="." instance=ExtResource("2_nh633")]
+[node name="TransparentBackground" type="TextureRect" parent="."]
 layout_mode = 1
-offset_right = 1022.0
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -446.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_no6vj")
+
+[node name="CheckerBackground" type="TextureRect" parent="TransparentBackground"]
+material = SubResource("ShaderMaterial_kwqsu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_no6vj")
+stretch_mode = 1
+
+[node name="AvatarContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterContainer" parent="AvatarContainer" instance=ExtResource("2_nh633")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EmptySpace" type="Control" parent="AvatarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmptySpace" type="Control" parent="TextContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TextContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer"]
-layout_mode = 2
-text = "name"
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="MessageLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 256)
+[node name="MessageLabel" type="RichTextLabel" parent="TextContainer/MarginContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 text = "Sample message"
+
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = -50
+
+[node name="PanelContainer" type="PanelContainer" parent="TextContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"name_tag"
+
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="NameLabel" type="Label" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"name_tag_label"
+text = "name"
 
 [node name="NextMessageAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_0imcl")

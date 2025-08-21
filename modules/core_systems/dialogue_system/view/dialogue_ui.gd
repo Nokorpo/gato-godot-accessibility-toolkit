@@ -1,8 +1,8 @@
 extends Control
 
-@onready var name_label: Label = $MarginContainer/VBoxContainer/Panel/MarginContainer/NameLabel
-@onready var message_label: RichTextLabel = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/MessageLabel
-@onready var character_avatar: Control = $CharacterContainer
+@onready var name_label: Label = $TextContainer/MarginContainer/MarginContainer/PanelContainer/MarginContainer/NameLabel
+@onready var message_label: RichTextLabel = $TextContainer/MarginContainer/PanelContainer/MarginContainer/MessageLabel
+@onready var character_avatar: Control = $AvatarContainer/CharacterContainer
 
 var character_mesh: Node3D
 var character_animation_player: AnimationPlayer

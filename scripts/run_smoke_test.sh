@@ -131,7 +131,8 @@ function run {
 
 		echo "--- RUN TESTS ---"
 		chmod +x "$SMOKE_TEST_FILE"
-		godot --headless -s "$SMOKE_TEST_FILE" -- $(echo "${EXCLUSIONS[*]}") 2>&1 | tee log.txt
+		godot --headless -s "$SMOKE_TEST_FILE" -- $(echo "${EXCLUSIONS[*]}") 2>&1 | tee log.txt \
+			| grep -v 'ERROR: Condition "!is_inside_tree\(\)' | grep -vE '.*at: get_global_transform \(scene/3d/node_3d\.cpp:466\)'
 
 		echo "--- GET RESULTS ---"
 		ERRORS="$(filter_not_useful_errors "log.txt" | wc -l)"

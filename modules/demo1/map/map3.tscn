@@ -273,7 +273,7 @@ transform = Transform3D(-2.57415, 0, 1.81618, 0, 2.6209, 0, -2.47413, 0, -1.8896
 transform = Transform3D(0.911342, 0, -2.45735, 0, 2.6209, 0, 2.45735, 0, 0.911342, 24.442, 2.52493, -5.07154)
 
 [node name="RockGroup27" parent="Props/Rocks" instance=ExtResource("8_okfmo")]
-transform = Transform3D(0.911342, 0, -2.45735, 0, 2.6209, 0, 2.45735, 0, 0.911342, 34.6792, 3.34483, -9.69421)
+transform = Transform3D(0.911342, 0, -2.45735, 0, 2.6209, 0, 2.45735, 0, 0.911342, 34.6792, 4.13366, -9.69421)
 
 [node name="RockGroup33" parent="Props/Rocks" instance=ExtResource("8_okfmo")]
 transform = Transform3D(-1.60977, 0, -2.7417, 0, 2.6209, 0, 3.0208, 0, -1.46105, 39.2667, 2.30217, -3.03651)
@@ -426,6 +426,12 @@ transform = Transform3D(-0.827022, 0, 0.56217, 0, 1, 0, -0.56217, 0, -0.827022, 
 
 [node name="Fence20" parent="Props/Fences" instance=ExtResource("17_e7su5")]
 transform = Transform3D(-0.89323, 0, 0.449599, 0, 1, 0, -0.449599, 0, -0.89323, 1.89711, 3.07951, -9.03842)
+
+[node name="Fence36" parent="Props/Fences" instance=ExtResource("17_e7su5")]
+transform = Transform3D(-0.9979, 0, 0.0647756, 0, 1, 0, -0.0647756, 0, -0.9979, 9.60476, 3.07951, -7.77837)
+
+[node name="Fence37" parent="Props/Fences" instance=ExtResource("17_e7su5")]
+transform = Transform3D(-0.986234, 0, 0.165357, 0, 1, 0, -0.165357, 0, -0.986234, 8.50205, 3.07951, -7.89612)
 
 [node name="Fence16" parent="Props/Fences" instance=ExtResource("17_e7su5")]
 transform = Transform3D(0.99526, 0, -0.0972529, 0, 1, 0, 0.0972529, 0, 0.99526, 8.97205, 5.94375, -20.3819)

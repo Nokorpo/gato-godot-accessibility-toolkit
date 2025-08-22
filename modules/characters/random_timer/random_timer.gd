@@ -1,8 +1,8 @@
 class_name RandomTimer
 extends Timer
 
-@export var minimum_wait_time: float
-@export var maximum_wait_time: float
+@export var minimum_wait_time: float = 1
+@export var maximum_wait_time: float = 1
 
 func _ready() -> void:
 	timeout.connect(_set_next_random_wait_time)

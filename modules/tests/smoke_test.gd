@@ -45,7 +45,8 @@ func test_scene(path: String) -> Error:
 	root.add_child(instantiated_scene)
 	await self.process_frame
 	root.remove_child(instantiated_scene)
-	instantiated_scene.queue_free()
+	if is_instance_valid(instantiated_scene) and not instantiated_scene.is_queued_for_deletion():
+		instantiated_scene.queue_free()
 	return Error.OK
 
 

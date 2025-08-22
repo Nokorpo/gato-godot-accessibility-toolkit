@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://lfdv7nvfw25m"]
+[gd_scene load_steps=15 format=3 uid="uid://lfdv7nvfw25m"]
 
 [ext_resource type="PackedScene" uid="uid://bbooh5fy7gvyg" path="res://modules/characters/gato/mesh/gato.glb" id="1_6pu3j"]
 [ext_resource type="Script" uid="uid://bslirxx4p3c7b" path="res://modules/characters/gato/mesh/gato_mesh.gd" id="2_v13qw"]
 [ext_resource type="Texture2D" uid="uid://c06u7wst2s46w" path="res://modules/characters/gato/faces/face_neutral.png" id="3_5ju6w"]
 [ext_resource type="Texture2D" uid="uid://ddww2bao7dupn" path="res://modules/characters/gato/faces/face_happy.png" id="4_p7dr4"]
 [ext_resource type="Texture2D" uid="uid://b8flexv0pmc24" path="res://modules/characters/gato/faces/face_side_eye.png" id="5_5s3rc"]
-[ext_resource type="Script" uid="uid://qi0d1n7oknb3" path="res://scripts/apply_graphics_settings_to_mesh.gd" id="5_25ort"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://pur6sfljt6o7" path="res://modules/characters/gato/mesh/gato_animation_state_machine.tres" id="5_rjkq3"]
 [ext_resource type="Texture2D" uid="uid://cbx702mu1kgcn" path="res://modules/characters/gato/faces/face_surprised.png" id="6_ymkgu"]
 [ext_resource type="Texture2D" uid="uid://rnte33266nuh" path="res://modules/characters/gato/faces/face_worried.png" id="7_43ce3"]
@@ -193,10 +192,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_grounded = true
 parameters/conditions/is_moving = false
 
-[node name="ApplyGraphicsSettings" type="Node" parent="." index="3"]
-script = ExtResource("5_25ort")
-
-[node name="BlinkTimer" type="Timer" parent="." index="4"]
+[node name="BlinkTimer" type="Timer" parent="." index="3"]
 script = ExtResource("15_00blv")
 minimum_wait_time = 2.0
 maximum_wait_time = 5.0

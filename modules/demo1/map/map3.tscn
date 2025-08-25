@@ -90,7 +90,7 @@ destination_node = NodePath("Destination")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="AcornButton2" parent="ButtonsAndPlatforms" instance=ExtResource("17_22vvs")]
-transform = Transform3D(0.93824, 0, 0.345986, 0, 1, 0, -0.345986, 0, 0.93824, 3.52914, 0.424615, -7.29533)
+transform = Transform3D(0.93824, 0, 0.345986, 0, 1, 0, -0.345986, 0, 0.93824, 3.52914, 0.397134, -7.29533)
 
 [node name="MovingBoarPlatform" parent="ButtonsAndPlatforms" instance=ExtResource("22_22vvs")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.5896, 5.21019, 6.17775)
@@ -460,7 +460,7 @@ transform = Transform3D(-0.490905, 0.102186, -0.722487, 0.126801, 0.869473, 0.03
 transform = Transform3D(-0.214117, -0.0658691, -0.85043, -0.00630048, 0.876914, -0.0663342, 0.852955, -0.0100574, -0.213974, 8.94169, 0.313929, -6.97059)
 
 [node name="PineSmall" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("16_1806k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173646, 0.392881, -5.64882)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173646, 0.350936, -5.64882)
 
 [node name="Pine13" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("15_n8764")]
 transform = Transform3D(0.447962, 0, -0.894053, 0, 1, 0, 0.894053, 0, 0.447962, 18.7709, 0.673711, -3.41614)
@@ -1216,6 +1216,27 @@ texture = ExtResource("27_obsxv")
 transform = Transform3D(0.859888, 0, 0.510483, 0, 1, 0, -0.510483, 0, 0.859888, 3.65255, 4.64155, -16.1731)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.986965, 0.160932, 0, -0.160932, 0.986965, 0, 0.978271, -0.0391235)
+shape = SubResource("BoxShape3D_q7c8o")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Boundaries"]
+transform = Transform3D(0.0974091, 0, 0.995245, 0, 1, 0, -0.995245, 0, 0.0974091, 9.87916, 1.13592, -6.98391)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/StaticBody3D9"]
+transform = Transform3D(1, 0, 0, 0, 0.986965, 0.160932, 0, -0.160932, 0.986965, 0, 0.978271, -0.0391235)
+shape = SubResource("BoxShape3D_q7c8o")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Boundaries"]
+transform = Transform3D(0.0974091, 0, 0.995245, 0, 1, 0, -0.995245, 0, 0.0974091, 34.1559, 5.92985, -7.54562)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/StaticBody3D10"]
+transform = Transform3D(1, 0, 0, 0, 0.986965, 0.160932, 0, -0.160932, 0.986965, 0, 0.978271, -0.0391235)
+shape = SubResource("BoxShape3D_q7c8o")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="Boundaries"]
+transform = Transform3D(-0.512059, 0.45641, 0.727658, -0.0546001, 0.828139, -0.557858, -0.857213, -0.325386, -0.399136, 21.4963, 0.978071, -0.108599)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/StaticBody3D11"]
 transform = Transform3D(1, 0, 0, 0, 0.986965, 0.160932, 0, -0.160932, 0.986965, 0, 0.978271, -0.0391235)
 shape = SubResource("BoxShape3D_q7c8o")
 

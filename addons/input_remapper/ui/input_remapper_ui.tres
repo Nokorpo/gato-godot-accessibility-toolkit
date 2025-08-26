@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cwy34ps7k0g02"]
+
+[ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="1_d5smo"]
+[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="2_1ka4n"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yg0ao"]
+grow_begin = -10.0
+grow_end = -10.0
+thickness = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gebx"]
+bg_color = Color(0.0869583, 0.0225, 0.25, 0.94902)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.18952, 0.0736, 0.46, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sty5u"]
+bg_color = Color(1, 0.827451, 0, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+expand_margin_left = 40.0
+expand_margin_top = 20.0
+expand_margin_right = 40.0
+expand_margin_bottom = 20.0
+
+[resource]
+default_font = ExtResource("2_1ka4n")
+default_font_size = 36
+CategoryTitle/base_type = &"Label"
+CategoryTitle/font_sizes/font_size = 45
+CategoryTitle/fonts/font = ExtResource("1_d5smo")
+HSeparator/constants/separation = 30
+HSeparator/styles/separator = SubResource("StyleBoxLine_yg0ao")
+InputButton/base_type = &"Button"
+MenuTitle/base_type = &"Label"
+MenuTitle/colors/font_color = Color(0.0980392, 0.0352941, 0.254902, 1)
+MenuTitle/font_sizes/font_size = 60
+MenuTitle/fonts/font = ExtResource("1_d5smo")
+MenuTitle/styles/normal = null
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_2gebx")
+TitleBackground/base_type = &"PanelContainer"
+TitleBackground/styles/panel = SubResource("StyleBoxFlat_sty5u")

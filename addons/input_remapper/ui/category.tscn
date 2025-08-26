@@ -8,5 +8,6 @@ script = ExtResource("1_omixo")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 2
+theme_type_variation = &"CategoryTitle"
 text = "MOVEMENT"
 uppercase = true

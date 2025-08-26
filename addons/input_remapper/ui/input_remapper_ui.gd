@@ -24,13 +24,13 @@ func _get_scheme_index(scheme: GatoControlScheme) -> int:
 func populate_ui(scheme: GatoControlScheme) -> void:
 	var index := _get_scheme_index(scheme)
 	var current_scheme := _schemes[index]
-	$PanelContainer/MarginContainer/VBoxContainer/ControlSchemeSelector._update_ui(_schemes, index)
-	$"PanelContainer/MarginContainer/VBoxContainer/Movement/2DInputMap".update_ui(current_scheme)
+	$PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ControlSchemeSelector._update_ui(_schemes, index)
+	$"PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Movement/2DInputMap".update_ui(current_scheme)
 	var inputs: Array[InputActionButton] = []
 	for input in current_scheme.input_actions:
 		if input is InputActionButton:
 			inputs.append(input)
-	$PanelContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer.update_ui(inputs)
+	$PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer.update_ui(inputs)
 
 func set_action(action_name: StringName, event: InputEvent) -> void:
 	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]

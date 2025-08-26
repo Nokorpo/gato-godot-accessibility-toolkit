@@ -129,6 +129,7 @@ shape = SubResource("ConvexPolygonShape3D_fyq4e")
 
 [node name="WalkDust" type="GPUParticles3D" parent="RotationPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143277, -0.426232)
+emitting = false
 amount = 3
 lifetime = 0.5
 explosiveness = 0.5

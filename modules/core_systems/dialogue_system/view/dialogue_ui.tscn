@@ -1,33 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv34hoyi5rdp2"]
+[gd_scene load_steps=13 format=3 uid="uid://cv34hoyi5rdp2"]
 
 [ext_resource type="Script" uid="uid://dha1wph3ea65n" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.gd" id="1_oqsou"]
+[ext_resource type="Theme" uid="uid://cocjiykavhucl" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.tres" id="1_y8y5m"]
 [ext_resource type="PackedScene" uid="uid://fnh8oa0bccvr" path="res://modules/core_systems/dialogue_system/view/character_container_ui.tscn" id="2_nh633"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="3_0imcl"]
 [ext_resource type="Texture2D" uid="uid://bhvy86n4oewsq" path="res://modules/core_systems/dialogue_system/textures/checker.svg" id="3_no6vj"]
 [ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="4_xcu6i"]
 [ext_resource type="Shader" uid="uid://bul20vyd70yky" path="res://modules/core_systems/dialogue_system/view/image_mask.gdshader" id="5_xcu6i"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no6vj"]
-bg_color = Color(0.147047, 0.0645466, 0.372474, 0.901961)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8y5m"]
-bg_color = Color(0.870588, 0.698039, 0.184314, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_n3u28"]
-default_font_size = 42
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_no6vj")
-name_tag/base_type = &"PanelContainer"
-name_tag/styles/panel = SubResource("StyleBoxFlat_y8y5m")
-name_tag_label/base_type = &"Label"
-name_tag_label/colors/font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_xcu6i"]
 offsets = PackedFloat32Array(0)
@@ -62,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_n3u28")
+theme = ExtResource("1_y8y5m")
 script = ExtResource("1_oqsou")
 
 [node name="TransparentBackground" type="TextureRect" parent="."]
@@ -135,6 +114,7 @@ theme_override_constants/margin_bottom = 64
 [node name="MessageLabel" type="RichTextLabel" parent="TextContainer/MarginContainer/PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
+bbcode_enabled = true
 text = "Sample message"
 
 [node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer"]
@@ -146,7 +126,7 @@ theme_override_constants/margin_top = -50
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_type_variation = &"name_tag"
+theme_type_variation = &"NameTag"
 
 [node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -157,7 +137,7 @@ theme_override_constants/margin_bottom = 24
 
 [node name="NameLabel" type="Label" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_type_variation = &"name_tag_label"
+theme_type_variation = &"NameTagLabel"
 text = "name"
 
 [node name="NextMessageAudio" type="AudioStreamPlayer" parent="."]

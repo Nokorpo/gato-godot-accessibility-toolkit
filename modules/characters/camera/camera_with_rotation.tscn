@@ -9,5 +9,6 @@ target = NodePath(".")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+cull_mask = 1048063
 current = true
 fov = 40.0

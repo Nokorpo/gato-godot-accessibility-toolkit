@@ -30,3 +30,4 @@ func _on_exit_state() -> void:
 	heart_particles.emitting = true
 	particles.emitting = false
 	target = null
+	node.finished_feeding.emit()

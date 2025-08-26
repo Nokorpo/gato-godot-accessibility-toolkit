@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="DialogueContainer" load_steps=9 format=3 uid="uid://dpni6wmjemu3w"]
+
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_ojelq"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_cgomf"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="3_682cn"]
+
+[sub_resource type="Resource" id="Resource_ojelq"]
+script = ExtResource("1_ojelq")
+message = "¡Yay ¡Trabajo completado!"
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("2_cgomf")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_cgomf"]
+script = ExtResource("1_ojelq")
+message = "Algunos jugadores necesitan ajustar la experiencia a sus necesidades."
+name = "Gato"
+animation_name = "talk_neutral"
+face = "neutral"
+mesh = ExtResource("2_cgomf")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_682cn"]
+script = ExtResource("1_ojelq")
+message = "Ofrecer la opción de modificar los controles es imprescindible."
+name = "Gato"
+animation_name = "talk_neutral"
+face = "neutral"
+mesh = ExtResource("2_cgomf")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_eijob"]
+script = ExtResource("1_ojelq")
+message = "Si quieres implementar tu propio Input Remapper, visita la documentación."
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("2_cgomf")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_4gxuu"]
+script = ExtResource("1_ojelq")
+message = "Puedes encontrarla en el botón \"Documentación\" en el menú principal."
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("2_cgomf")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[resource]
+script = ExtResource("3_682cn")
+messages = Array[ExtResource("1_ojelq")]([SubResource("Resource_ojelq"), SubResource("Resource_cgomf"), SubResource("Resource_682cn"), SubResource("Resource_eijob"), SubResource("Resource_4gxuu")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

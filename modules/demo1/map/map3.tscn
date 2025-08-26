@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b0xcaouncmmm6"]
+[gd_scene load_steps=41 format=3 uid="uid://b0xcaouncmmm6"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_koe00"]
 [ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/characters/camera/camera_with_rotation.tscn" id="2_koe00"]
@@ -9,13 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="5_52fav"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="6_ch6wn"]
 [ext_resource type="PackedScene" uid="uid://bckenvh5w3j2p" path="res://modules/demo1/map/props/rock_group.gltf" id="8_okfmo"]
+[ext_resource type="Script" uid="uid://cv2pio2355wvl" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_ready.gd" id="10_obsxv"]
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="10_wnlqp"]
+[ext_resource type="Resource" uid="uid://04odm6qkfamm" path="res://modules/demo1/dialogues/demo1_dialogue01.tres" id="11_vjs5i"]
+[ext_resource type="Script" uid="uid://dpspj0riekybm" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_trying_all_input.gd" id="12_a04ft"]
 [ext_resource type="PackedScene" uid="uid://bb3haljhc606v" path="res://modules/demo1/map/props/rock.gltf" id="13_law68"]
+[ext_resource type="Resource" uid="uid://b5smyqlupced5" path="res://modules/demo1/dialogues/demo1_dialogue02.tres" id="13_x5irf"]
 [ext_resource type="PackedScene" uid="uid://dpedfmuyu50ig" path="res://modules/demo1/map/props/stone.gltf" id="14_xmbmo"]
+[ext_resource type="Script" uid="uid://b73h5g6ysew1m" path="res://modules/demo1/dialogues/triggers/acorn_for_buttons_dialogue.gd" id="15_ir0f6"]
 [ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="15_n8764"]
+[ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="16_78qc6"]
 [ext_resource type="PackedScene" uid="uid://b3ge6hkxcuwqt" path="res://modules/demo1/map/props/pine_small.gltf" id="16_1806k"]
+[ext_resource type="Resource" uid="uid://hsef7m3itdq1" path="res://modules/demo1/dialogues/demo1_dialogue04.tres" id="16_dxve8"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="16_kg8y1"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="17_22vvs"]
+[ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="17_78qc6"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="17_1806k"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="17_e7su5"]
 [ext_resource type="Shader" uid="uid://ddi1hqt7u5d54" path="res://modules/demo1/map/water.gdshader" id="17_w6881"]
@@ -107,6 +115,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.1976, 0)
 
 [node name="BoarButton" parent="ButtonsAndPlatforms" instance=ExtResource("22_kg8y1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8894, 5.57737, 4.4429)
+
+[node name="Dialogue" type="Node3D" parent="."]
+
+[node name="StartingDialogue" type="Node" parent="Dialogue"]
+script = ExtResource("10_obsxv")
+dialogue = ExtResource("11_vjs5i")
+
+[node name="AllMovesUsedDialogue" type="Node" parent="Dialogue"]
+script = ExtResource("12_a04ft")
+dialogue = ExtResource("13_x5irf")
+
+[node name="AcornForButtonsDialogue" type="Node" parent="Dialogue" node_paths=PackedStringArray("player", "first_button")]
+script = ExtResource("15_ir0f6")
+player = NodePath("../../Gato")
+first_button = NodePath("../../ButtonsAndPlatforms/AcornButton2")
+dialogue = ExtResource("16_dxve8")
+
+[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" node_paths=PackedStringArray("scene_root", "boar_list")]
+script = ExtResource("16_78qc6")
+scene_root = NodePath("../..")
+boar_list = NodePath("../../Boars")
+dialogue = ExtResource("17_78qc6")
 
 [node name="Props" type="Node3D" parent="."]
 

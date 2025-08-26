@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvawh86pyq2d1"]
+[gd_scene load_steps=17 format=3 uid="uid://bvawh86pyq2d1"]
 
 [ext_resource type="Script" uid="uid://b8lat2nfgffpw" path="res://modules/characters/boar/idle_state.gd" id="1_2jkah"]
+[ext_resource type="Script" uid="uid://dxsjc4ctsii3s" path="res://modules/characters/boar/boar.gd" id="1_piglh"]
 [ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/core_systems/state_machine/state_machine.gd" id="1_q5ai3"]
 [ext_resource type="Script" uid="uid://b6ayrw6exwhl6" path="res://modules/characters/boar/following_acorn_state.gd" id="2_q5ai3"]
 [ext_resource type="Script" uid="uid://dskqwhajk2r" path="res://modules/characters/boar/eating_state.gd" id="3_puyul"]
@@ -53,6 +54,7 @@ material = SubResource("StandardMaterial3D_ox46n")
 size = Vector2(0.2, 0.2)
 
 [node name="Boar" type="CharacterBody3D" groups=["heavy_weight"]]
+script = ExtResource("1_piglh")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("1_q5ai3")

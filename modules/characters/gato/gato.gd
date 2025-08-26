@@ -2,6 +2,7 @@ class_name Gato
 extends CharacterBody3D
 
 signal fall_from_height
+signal item_collected(item: Node3D)
 
 @export var speed: float = 2.0
 @export var jump_force: float = 3
@@ -11,9 +12,13 @@ signal fall_from_height
 @onready var pivot: Node3D = $RotationPivot
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 @onready var mesh: GatoMesh = $RotationPivot/Mesh
-@onready var items: Array = $RotationPivot/ItemDetectionArea.items
+@onready var item_detection: Node3D = $RotationPivot/ItemDetectionArea
+@onready var items: Array = item_detection.items
 
 var previous_y_velocity: float = 0.0
+
+func _ready() -> void:
+	item_detection.item_collected.connect(func(it): item_collected.emit(it))
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

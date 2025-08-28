@@ -22,6 +22,9 @@ const _threshold: float = .8
 var mouse_delta: Vector2 = Vector2.ZERO
 
 @onready var camera = $Camera
+@onready var camera_collision_raycast = $RayCast3D
+
+var collision_zoom: Vector3 = Vector3(0,1,0)
 
 func _ready():
 	init_mouse_rotation_variables()
@@ -36,6 +39,7 @@ func _process(delta: float) -> void:
 	_handle_rotation_from_mouse(delta)
 	_handle_rotation_from_buttons(delta)
 	transform.basis = transform.basis.slerp(target_basis, delta * camera_speed)
+	handle_camera_collision()
 
 func _physics_process(delta: float) -> void:
 	self.position = self.position.lerp(target.position, delta * 4)
@@ -74,3 +78,11 @@ func rotate_in_direction(mouse_delta: Vector2) -> void:
 	target_basis *= Basis(horz_quat * vert_quat)
 	second_basis *= Basis(horz_quat_no_pitch)
 	target_basis = target_basis.orthonormalized()
+
+func handle_camera_collision():
+	if camera_collision_raycast.is_colliding():
+		var camera_initial_transform = camera.global_position
+		var collider = camera_collision_raycast.get_collider()
+		if collider.is_in_group("CameraCollider"):
+			camera.global_transform.origin = camera_collision_raycast.get_collision_point() + collision_zoom
+			print(camera_collision_raycast.get_collider().to_string())

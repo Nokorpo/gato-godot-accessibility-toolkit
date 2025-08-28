@@ -43,6 +43,7 @@ enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/gu
 heavy_weight=""
 light_weight=""
 has_leafs=""
+CameraCollider=""
 
 [input]
 

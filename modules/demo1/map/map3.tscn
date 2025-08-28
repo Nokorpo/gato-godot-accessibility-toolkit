@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b0xcaouncmmm6"]
+[gd_scene load_steps=56 format=3 uid="uid://b0xcaouncmmm6"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_koe00"]
 [ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/characters/camera/camera_with_rotation.tscn" id="2_koe00"]
@@ -40,6 +40,51 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q7c8o"]
 size = Vector3(1.28125, 2.70898, 1.87631)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lm0b1"]
+size = Vector3(43.7924, 2.09485, 41.3404)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5nab"]
+size = Vector3(39.7, 14.9701, 13.7451)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xbm83"]
+size = Vector3(16.7143, 14.9701, 6.01416)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0pm6"]
+size = Vector3(11.4219, 13.2839, 6.01416)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gqle"]
+size = Vector3(4.23438, 9.30634, 4.33936)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m8e5g"]
+size = Vector3(2.70117, 9.30634, 2.52686)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wsd4a"]
+size = Vector3(16.7079, 9.62505, 7.90735)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1otmt"]
+size = Vector3(28.9302, 9.62505, 11.5681)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dalv7"]
+size = Vector3(28.9302, 9.62505, 11.5681)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_31vs4"]
+size = Vector3(21.0709, 9.04885, 22.0369)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mswe0"]
+size = Vector3(17.1953, 9.04885, 3.91745)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_175cy"]
+size = Vector3(13.8936, 9.04885, 3.91745)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3rkg"]
+size = Vector3(14.229, 9.04885, 6.87963)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4l5s"]
+size = Vector3(3.277, 9.94777, 10.1546)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8lorg"]
+size = Vector3(3.277, 9.94777, 17.21)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kg8y1"]
 
@@ -1322,6 +1367,158 @@ transform = Transform3D(-0.483741, 0, 0.875211, 0, 1, 0, -0.875211, 0, -0.483741
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/StaticBody3D8"]
 transform = Transform3D(0.880659, 0.118501, 0.458694, 0.078575, 0.918267, -0.388088, -0.46719, 0.377815, 0.799373, 0.246659, -2.04499, -0.864002)
 shape = SubResource("BoxShape3D_q7c8o")
+
+[node name="CameraColliders" type="Node3D" parent="."]
+
+[node name="CameraCollider" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84374, -1.53438, -0.635763)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42373, 0.69631, 5.88909)
+shape = SubResource("BoxShape3D_lm0b1")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider2" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4856, -1.53438, -18.6361)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider2" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46992, -1.77568, 3.84418)
+shape = SubResource("BoxShape3D_k5nab")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider3" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.930264, 0, -0.366891, 0, 1, 0, 0.366891, 0, 0.930264, 27.9029, -1.53438, -10.9147)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider3" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02295, -1.77568, 7.70965)
+shape = SubResource("BoxShape3D_xbm83")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider4" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.529564, 0, -0.84827, 0, 1, 0, 0.84827, 0, 0.529564, 36.1329, -1.53438, 4.56401)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider4" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02295, -2.61878, 7.70966)
+shape = SubResource("BoxShape3D_n0pm6")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider5" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844164, 3.27644, -13.1401)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider5" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.83188, -0.177002)
+shape = SubResource("BoxShape3D_0gqle")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider6" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70396, 3.61394, -13.7153)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider6" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57251, -2.83188, -0.0756836)
+shape = SubResource("BoxShape3D_m8e5g")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider7" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70396, 4.24627, -18.8106)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider7" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40512, -2.67252, -1.289)
+shape = SubResource("BoxShape3D_wsd4a")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider8" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.924413, 0, -0.381393, 0, 1, 0, 0.381393, 0, 0.924413, 25.666, 4.24627, -10.975)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider8" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.546488, -2.67252, -1.289)
+shape = SubResource("BoxShape3D_1otmt")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider9" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.861275, 0, -0.50814, 0, 1, 0, 0.50814, 0, 0.861275, 23.9457, 9.12942, -18.4752)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider9" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.546488, -2.67252, -1.289)
+shape = SubResource("BoxShape3D_dalv7")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider10" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1008, 4.24627, -5.99241)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider10" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76038, -2.96062, -1.289)
+shape = SubResource("BoxShape3D_31vs4")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider11" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.988931, 0, 0.148379, 0, 1, 0, -0.148379, 0, 0.988931, 31.1008, 4.24627, 1.91605)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider11" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3898, -2.96062, 0.769792)
+shape = SubResource("BoxShape3D_mswe0")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider12" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.972215, 0, -0.23409, 0, 1, 0, 0.23409, 0, 0.972215, 33.5439, 3.11342, 4.80021)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider12" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738911, -2.96062, 0.769793)
+shape = SubResource("BoxShape3D_175cy")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider13" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.995686, 0, 0.0927877, 0, 1, 0, -0.0927877, 0, 0.995686, 31.9192, 1.60111, 6.68868)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider13" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.906626, -2.96062, 0.748672)
+shape = SubResource("BoxShape3D_x3rkg")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider14" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.919225, 0, 0.393733, 0, 1, 0, -0.393733, 0, 0.919225, 23.8565, 6.2762, -7.3262)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider14" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875195, -2.51116, 0.198934)
+shape = SubResource("BoxShape3D_m4l5s")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="CameraCollider15" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+transform = Transform3D(0.960391, 0, 0.278656, 0, 1, 0, -0.278656, 0, 0.960391, 37.8609, 6.2762, -4.74841)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider15" groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875195, -2.51116, 0.198933)
+shape = SubResource("BoxShape3D_8lorg")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 16.2716, -0.41976, -5.93962)

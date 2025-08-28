@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://x1b45m56mm2l"]
+[gd_scene load_steps=8 format=3 uid="uid://x1b45m56mm2l"]
 
 [ext_resource type="Script" uid="uid://cv34roeqss7e5" path="res://addons/input_remapper/ui/joystick_toggle.gd" id="1_st12y"]
 [ext_resource type="Script" uid="uid://dbhxpwpye5w7h" path="res://addons/input_remapper/ui/2d_input_map.gd" id="1_uo2cf"]
 [ext_resource type="Script" uid="uid://cth8aq3xd04di" path="res://addons/input_remapper/ui/joystick_selector.gd" id="2_a6iv7"]
+[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="3_4v8tm"]
 [ext_resource type="Script" uid="uid://ciu2ae46ncvtp" path="res://addons/input_remapper/ui/action2d_container.gd" id="3_tb1qo"]
+[ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="4_nyq3o"]
 [ext_resource type="Script" uid="uid://bg4knulolkblw" path="res://addons/input_remapper/ui/invert_joystick_direction.gd" id="5_o01t1"]
 
 [node name="2DInputMap" type="VBoxContainer"]
@@ -13,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 30
 script = ExtResource("1_uo2cf")
 
 [node name="JoystickToggle" type="HBoxContainer" parent="."]
@@ -20,10 +23,14 @@ layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("1_st12y")
 
-[node name="Button" type="Button" parent="JoystickToggle"]
+[node name="Button" type="TextureButton" parent="JoystickToggle"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "<"
+texture_normal = ExtResource("3_4v8tm")
+texture_hover = ExtResource("4_nyq3o")
+texture_focused = ExtResource("4_nyq3o")
+stretch_mode = 3
+flip_h = true
 
 [node name="Label" type="Label" parent="JoystickToggle"]
 layout_mode = 2
@@ -31,10 +38,13 @@ size_flags_horizontal = 3
 text = "Keyboard"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="JoystickToggle"]
+[node name="Button2" type="TextureButton" parent="JoystickToggle"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = ">"
+texture_normal = ExtResource("3_4v8tm")
+texture_hover = ExtResource("4_nyq3o")
+texture_focused = ExtResource("4_nyq3o")
+stretch_mode = 5
 
 [node name="ActionContainer" type="GridContainer" parent="."]
 unique_name_in_owner = true
@@ -47,7 +57,6 @@ script = ExtResource("3_tb1qo")
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_up"
-horizontal_alignment = 1
 
 [node name="ButtonUp" type="Button" parent="ActionContainer"]
 layout_mode = 2
@@ -60,7 +69,6 @@ text = "W"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_down"
-horizontal_alignment = 1
 
 [node name="ButtonDown" type="Button" parent="ActionContainer"]
 layout_mode = 2
@@ -73,7 +81,6 @@ text = "S"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_left"
-horizontal_alignment = 1
 
 [node name="ButtonLeft" type="Button" parent="ActionContainer"]
 layout_mode = 2
@@ -86,7 +93,6 @@ text = "A"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_right"
-horizontal_alignment = 1
 
 [node name="ButtonRight" type="Button" parent="ActionContainer"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cwy34ps7k0g02"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cwy34ps7k0g02"]
 
 [ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="1_d5smo"]
 [ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="2_1ka4n"]
@@ -7,6 +7,38 @@
 grow_begin = -10.0
 grow_end = -10.0
 thickness = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ka4n"]
+bg_color = Color(1, 0.827451, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28gtb"]
+bg_color = Color(0.0313726, 0, 0.109804, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5smo"]
+bg_color = Color(0.0313726, 0, 0.109804, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g18fo"]
+bg_color = Color(0.0313726, 0, 0.109804, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gebx"]
 bg_color = Color(0.0869583, 0.0225, 0.25, 0.94902)
@@ -41,6 +73,11 @@ CategoryTitle/fonts/font = ExtResource("1_d5smo")
 HSeparator/constants/separation = 30
 HSeparator/styles/separator = SubResource("StyleBoxLine_yg0ao")
 InputButton/base_type = &"Button"
+InputButton/colors/font_hover_color = Color(0.0901961, 0.0235294, 0.254902, 1)
+InputButton/styles/hover = SubResource("StyleBoxFlat_1ka4n")
+InputButton/styles/hover_pressed = SubResource("StyleBoxFlat_28gtb")
+InputButton/styles/normal = SubResource("StyleBoxFlat_d5smo")
+InputButton/styles/pressed = SubResource("StyleBoxFlat_g18fo")
 MenuTitle/base_type = &"Label"
 MenuTitle/colors/font_color = Color(0.0980392, 0.0352941, 0.254902, 1)
 MenuTitle/font_sizes/font_size = 60

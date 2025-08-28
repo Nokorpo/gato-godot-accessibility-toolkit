@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkaux4wn52qf1"]
+[gd_scene load_steps=5 format=3 uid="uid://dkaux4wn52qf1"]
 
 [ext_resource type="Script" uid="uid://611fp47fdxra" path="res://addons/input_remapper/ui/control_scheme_selector.gd" id="1_c4d4j"]
 [ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="2_q2ind"]
+[ext_resource type="Theme" uid="uid://cocjiykavhucl" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.tres" id="2_t8a7v"]
+[ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="4_8b17j"]
 
 [node name="ControlSchemeSelector" type="HBoxContainer"]
 offset_right = 570.0
@@ -20,7 +22,10 @@ size_flags_horizontal = 3
 [node name="GoBackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("2_t8a7v")
 texture_normal = ExtResource("2_q2ind")
+texture_hover = ExtResource("4_8b17j")
+texture_focused = ExtResource("4_8b17j")
 flip_h = true
 
 [node name="CurrentScheme" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -35,9 +40,12 @@ uppercase = true
 layout_mode = 2
 size_flags_vertical = 0
 texture_normal = ExtResource("2_q2ind")
+texture_hover = ExtResource("4_8b17j")
+texture_focused = ExtResource("4_8b17j")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"InputButton"
 text = "Reset controls to default"
 alignment = 0
 

@@ -301,6 +301,9 @@ transform = Transform3D(1.79586, 0, -1.90892, 0, 2.6209, 0, 1.90892, 0, 1.79586,
 transform = Transform3D(-1.41618, 0, -2.20534, 0, 2.6209, 0, 2.20534, 0, -1.41618, -4.92518, -2.50252, -10.2801)
 
 [node name="RockGroup13" parent="Props/Rocks" instance=ExtResource("8_okfmo")]
+transform = Transform3D(-2.5146, 0, -3.9837, 0, 4.71096, 0, 3.9837, 0, -2.5146, 11.3109, -2.64168, -24.7592)
+
+[node name="RockGroup36" parent="Props/Rocks" instance=ExtResource("8_okfmo")]
 transform = Transform3D(2.5915, 0, -0.391419, 0, 2.6209, 0, 0.391419, 0, 2.5915, 13.8611, 5.03399, -23.1494)
 
 [node name="RockGroup14" parent="Props/Rocks" instance=ExtResource("8_okfmo")]

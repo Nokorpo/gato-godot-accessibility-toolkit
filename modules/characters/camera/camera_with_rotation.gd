@@ -85,4 +85,3 @@ func handle_camera_collision():
 		var collider = camera_collision_raycast.get_collider()
 		if collider.is_in_group("CameraCollider"):
 			camera.global_transform.origin = camera_collision_raycast.get_collision_point() + collision_zoom
-			print(camera_collision_raycast.get_collider().to_string())

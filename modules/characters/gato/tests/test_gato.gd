@@ -5,10 +5,10 @@ class TestGato extends GutTest:
 	func test_state_machine_exists():
 		#GIVEN
 		var gato: Node = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
-		
+
 		#WHEN
 		var state_machine: Node = gato.find_child("StateMachine")
-		
+
 		#THEN
 		assert_not_null(state_machine, "Gato StateMachine does not exists")
 
@@ -26,7 +26,7 @@ class TestGatoInput extends GutTest:
 
 		#WHEN
 		# FIXME this will fail in the future, we need to listen to a signal when the state machine changes state
-		_sender.action_down("move_down").hold_for(2)
+		_sender.action_down("move_down").hold_for(.5)
 		await(_sender.idle)
 
 		#THEN
@@ -40,13 +40,13 @@ class TestGatoInput extends GutTest:
 
 		#WHEN
 		# FIXME this will fail in the future, we need to listen to a signal when the state machine changes state
-		_sender.action_down("move_right").action_down("move_down").hold_for(2)
+		_sender.action_down("move_right").action_down("move_down").hold_for(1)
 		await(_sender.idle)
 
 		#THEN
 		var horizontal_movement := Vector2(gato.global_position.x, gato.global_position.z)
 		assert_gte(horizontal_movement, Vector2(1.0, 1.0), "Gato didn't move to the bottom right")
-		
+
 		var rotation_pivot: Node3D = gato.find_child("RotationPivot")
 		var gato_forward := rotation_pivot.global_transform.basis.z
 		var down_right := Vector3(1.0, 0.0, 1.0).normalized()
@@ -64,4 +64,3 @@ class TestGatoInput extends GutTest:
 		var state_machine: StateMachine = gato.find_child("StateMachine")
 		var jump_state: GatoJumpState = state_machine.find_child("JumpState")
 		assert_eq(state_machine.current_state, jump_state, "Gato is not in Jump state")
-		

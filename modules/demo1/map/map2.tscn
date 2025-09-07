@@ -141,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25932, 0.647158, 3.1893)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79765, 1.0474, 4.50347)
 
 [node name="Button" parent="Objects" instance=ExtResource("11_6hox7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -2)
 can_detect_light_weights = false
 
 [node name="Indicator" type="MeshInstance3D" parent="Objects/Button"]
@@ -150,7 +150,7 @@ mesh = SubResource("SphereMesh_6hox7")
 script = ExtResource("12_g421f")
 
 [node name="Button2" parent="Objects" instance=ExtResource("11_6hox7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, -1)
 can_detect_light_weights = false
 
 [node name="Indicator" type="MeshInstance3D" parent="Objects/Button2"]
@@ -160,7 +160,7 @@ skeleton = NodePath("../../Button")
 script = ExtResource("12_g421f")
 
 [node name="Button3" parent="Objects" instance=ExtResource("11_6hox7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, 4)
 
 [node name="Indicator" type="MeshInstance3D" parent="Objects/Button3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)

@@ -23,11 +23,11 @@ func animate_acorn_disappearance():
 	tween.tween_callback(target.queue_free)
 	await tween.finished
 
-func _animate_boar_growing_up(boar: Node3D):
+func _animate_boar_growing_up(_boar: Node3D):
 	var tween := get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(boar, "scale", Vector3(1.5,1.5,1.5), .4)
-	boar.rotate(Vector3.UP, .1)
+	tween.tween_property(_boar, "scale", Vector3(1.5,1.5,1.5), .4)
+	_boar.rotate(Vector3.UP, .1)
 
 func _on_exit_state() -> void:
 	_animate_boar_growing_up(node as CharacterBody3D)

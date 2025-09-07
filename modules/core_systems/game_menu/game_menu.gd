@@ -20,12 +20,10 @@ func _toggle_visibility() -> void:
 		_settings_menu.queue_free()
 
 func open_settings() -> void:
-	## TODO open setting
-	print("this would open the settings, but not yet")
 	var coso: PackedScene = load("res://addons/input_remapper/ui/input_remapper_ui.tscn")
 	_settings_menu = coso.instantiate()
 	add_child(_settings_menu)
 
 func quit_and_go_to_menu() -> void:
 	get_tree().paused = false
-	var coso: SceneLoader = SceneLoader.create_scene_loader(parent_scene, DEMO_SECTOR_PATH)
+	var _coso: SceneLoader = SceneLoader.create_scene_loader(parent_scene, DEMO_SECTOR_PATH)

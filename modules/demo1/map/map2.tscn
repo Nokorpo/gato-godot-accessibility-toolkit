@@ -2,7 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_g421f"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://modules/demo1/map/platform/platform.tscn" id="3_ddlgx"]
-[ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_6hox7"]
+[ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_5ncco"]
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://modules/demo1/map/platform/platform_medium.tscn" id="4_t58fl"]
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://modules/demo1/map/platform/platform_grass_large_round.tscn" id="5_6hox7"]
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://modules/demo1/objects/cloud.tscn" id="7_w1sql"]
@@ -61,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511161, 0)
 [node name="Boar" parent="." instance=ExtResource("9_t58fl")]
 transform = Transform3D(-0.733671, 0, -0.679505, 0, 1, 0, 0.679505, 0, -0.733671, -6.15305, 1.49819, -1.46023)
 
-[node name="CameraWithRotation" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_6hox7")]
+[node name="CameraWithRotation" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_5ncco")]
 target = NodePath("../Gato")
 
 [node name="World" type="Node3D" parent="."]

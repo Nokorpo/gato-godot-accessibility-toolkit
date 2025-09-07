@@ -15,30 +15,19 @@ var camera_rotation: Vector3
 var zoom: float = 10
 
 @export_group("Rotation (mouse)")
-@export var mouse_rotation_sensitivity: float = .15
-var target_basis: Basis = Basis.IDENTITY
-var second_basis: Basis = Basis.IDENTITY
-const _threshold: float = .8
+@export var mouse_rotation_sensitivity: float = .05
 var mouse_delta: Vector2 = Vector2.ZERO
 
-@onready var camera = $Camera
-@onready var camera_collision_raycast = $RayCast3D
+@onready var camera = $Node3D/Camera
+@onready var horizontal_axis: Node3D = self
+@onready var vertical_axis: Node3D = $Node3D
+@onready var camera_collision_raycast = $Node3D/RayCast3D
 
 var collision_zoom: Vector3 = Vector3(0,1,0)
-
-func _ready():
-	init_mouse_rotation_variables()
-
-func init_mouse_rotation_variables() -> void:
-	camera_rotation = rotation_degrees
-	target_basis = transform.basis
-	var original_rotation: Vector3 = transform.basis.get_rotation_quaternion().get_euler()
-	second_basis = Basis(Quaternion.from_euler(Vector3(0, original_rotation.y, 0)))
 
 func _process(delta: float) -> void:
 	_handle_rotation_from_mouse(delta)
 	_handle_rotation_from_buttons(delta)
-	transform.basis = transform.basis.slerp(target_basis, delta * camera_speed)
 	handle_camera_collision()
 
 func _physics_process(delta: float) -> void:
@@ -64,24 +53,21 @@ func _input(event):
 			MOUSE_BUTTON_RIGHT:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if event.pressed else Input.MOUSE_MODE_VISIBLE)
 
-## Original code from: https://forum.godotengine.org/t/fps-camera-quaternions-movement-slows-down-when-looking-up-and-down/93458/4
 func _handle_rotation_from_mouse(delta):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_in_direction(-mouse_delta * delta * mouse_rotation_sensitivity)
 
-func rotate_in_direction(mouse_delta: Vector2) -> void:
-	var delta_y_max = (-target_basis.z).angle_to(Vector3.UP * sign(mouse_delta.y))
-	mouse_delta.y = clamp(abs(mouse_delta.y), 0.0, delta_y_max - _threshold) * sign(mouse_delta.y)
-	var horz_quat = Quaternion(Vector3.UP * target_basis, mouse_delta.x)
-	var horz_quat_no_pitch = Quaternion(Vector3.UP * second_basis, mouse_delta.x)
-	var vert_quat = Quaternion(Vector3.RIGHT, mouse_delta.y)
-	target_basis *= Basis(horz_quat * vert_quat)
-	second_basis *= Basis(horz_quat_no_pitch)
-	target_basis = target_basis.orthonormalized()
+func rotate_in_direction(movement_delta: Vector2) -> void:
+	horizontal_axis.rotate_y(movement_delta.x)
+	vertical_axis.rotate_x(movement_delta.y)
+	if vertical_axis.rotation.x >= 2 * PI/5:
+		vertical_axis.rotation.x = 2 * PI/5
+	elif vertical_axis.rotation.x <= -2 * PI/5:
+		vertical_axis.rotation.x = -2 * PI/5
 
 func handle_camera_collision():
 	if camera_collision_raycast.is_colliding():
-		var camera_initial_transform = camera.global_position
+		var _camera_initial_transform = camera.global_position
 		var collider = camera_collision_raycast.get_collider()
 		if collider.is_in_group("CameraCollider"):
 			camera.global_transform.origin = camera_collision_raycast.get_collision_point() + collision_zoom

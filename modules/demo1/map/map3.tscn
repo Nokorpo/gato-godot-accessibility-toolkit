@@ -1,7 +1,7 @@
 [gd_scene load_steps=56 format=3 uid="uid://b0xcaouncmmm6"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_koe00"]
-[ext_resource type="PackedScene" uid="uid://d2nha7p8avoto" path="res://modules/characters/camera/camera_with_rotation.tscn" id="2_koe00"]
+[ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="2_koe00"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_obsxv"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="2_wt2qj"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="4_koe00"]

@@ -31,23 +31,16 @@ func _physics_process(delta: float) -> void:
 			fall_from_height.emit()
 
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var direction: Vector3
-	# TODO the reference to the camera parent's "second_basis" variable is very prone to errors.
-	# A different camera without rotation might be set up for an animation, in which case the
-	# variable won't exist. We should make this more resilient somehow. Standardize cameras or smth.
-	if camera:
-		if camera.get_parent().has_meta("second_basis"):
-			var camera_basis_without_pitch: Basis = camera.get_parent().second_basis
-			direction = (camera_basis_without_pitch * Vector3(input.x, 0, input.y)).normalized()
-		else:
-			direction = (camera.global_transform.basis * Vector3(input.x, 0, input.y)).normalized()
+	var direction: Vector2
+	if camera and camera.has_method("get_horizontal_rotation"):
+		direction = input.rotated(-camera.get_horizontal_rotation()).normalized()
 	else:
-		direction = Vector3(input.x, 0, input.y)
+		direction = Vector2(input.x, input.y)
 	velocity.x = lerp(velocity.x, direction.normalized().x * speed, 1-smoothing)
-	velocity.z = lerp(velocity.z, direction.normalized().z * speed, 1-smoothing)
+	velocity.z = lerp(velocity.z, direction.normalized().y * speed, 1-smoothing)
 
 	if direction:
-		var target_angle := Vector3.BACK.signed_angle_to(direction, Vector3.UP)
+		var target_angle := Vector3.BACK.signed_angle_to(Vector3(direction.x, 0, direction.y), Vector3.UP)
 		pivot.rotation.y = lerp_angle(pivot.rotation.y, target_angle, rotation_speed * delta)
 		mesh.is_moving = true
 	else:

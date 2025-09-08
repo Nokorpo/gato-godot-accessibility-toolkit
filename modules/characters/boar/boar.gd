@@ -3,3 +3,18 @@ extends CharacterBody3D
 
 @warning_ignore("unused_signal")
 signal finished_feeding
+
+@onready var raycast: RayCast3D = $RayCast3D
+@onready var _original_parent: Node = get_parent()
+var _is_on_platform: bool = false
+
+func _ready() -> void:
+	raycast.add_exception(self)
+
+func _physics_process(delta: float) -> void:
+	if not _is_on_platform and raycast.is_colliding():
+		var collider := raycast.get_collider()
+		if collider is Node3D and (collider as Node3D).is_in_group("moving_platform"):
+			self.reparent(collider)
+	elif _is_on_platform and not raycast.is_colliding():
+		self.reparent(_original_parent)

@@ -21,6 +21,10 @@ func _ready() -> void:
 		# This condition is used to avoid errors when launching this scene alone
 		node_to_move = get_parent()
 		origin = node_to_move.global_position
+		var bodies: Array = node_to_move.find_children("", "PhysicsBody3D", true, false)
+		for body: Node in bodies:
+			body.add_to_group("moving_platform")
+
 	if destination_node != null:
 		destination = destination_node.global_position
 

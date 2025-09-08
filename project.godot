@@ -44,6 +44,7 @@ heavy_weight=""
 light_weight=""
 has_leafs=""
 CameraCollider=""
+moving_platform="Applied to platforms that move, so physics objects know they need to stick to them when they step on them"
 
 [input]
 

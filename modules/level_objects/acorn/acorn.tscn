@@ -18,3 +18,5 @@ script = ExtResource("1_0jmtj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_nvhaj")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]

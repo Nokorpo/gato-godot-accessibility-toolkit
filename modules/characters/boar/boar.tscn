@@ -111,4 +111,7 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_08g3y")
 draw_pass_1 = SubResource("QuadMesh_ch3xj")
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
 [connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

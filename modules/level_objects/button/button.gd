@@ -23,6 +23,8 @@ func _on_activation_area_body_entered(body: Node3D) -> void:
 			button_toggled.emit(active)
 
 func _on_activation_area_body_exited(body: Node3D) -> void:
+	if body is StaticBody3D:
+		return
 	if body.is_in_group("heavy_weight") or (can_detect_light_weights and body.is_in_group("light_weight")):
 		items -= 1
 		item_list.erase(body)

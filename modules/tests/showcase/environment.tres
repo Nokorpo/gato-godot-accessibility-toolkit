@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=5 format=3 uid="uid://l5cljf1asbvp"]
+[gd_resource type="Environment" load_steps=7 format=3 uid="uid://l5cljf1asbvp"]
 
 [sub_resource type="Gradient" id="Gradient_t68yl"]
 offsets = PackedFloat32Array(0, 0.155172, 0.853448, 1)
@@ -7,12 +7,24 @@ colors = PackedColorArray(0, 0, 0, 1, 0.0918, 0.10503, 0.18, 1, 0.88, 0.8272, 0.
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6d34o"]
 gradient = SubResource("Gradient_t68yl")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dbbcn"]
+noise_type = 3
+frequency = 0.03
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dbbcn"]
+seamless = true
+seamless_blend_skirt = 0.2
+noise = SubResource("FastNoiseLite_dbbcn")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qewax"]
-sky_top_color = Color(0.258824, 0.709804, 0.815686, 1)
-sky_horizon_color = Color(0.258824, 0.709804, 0.815686, 1)
+sky_top_color = Color(2.88785e-06, 0.868176, 0.887091, 1)
+sky_horizon_color = Color(0.656171, 0.911098, 0.999622, 1)
 sky_energy_multiplier = 1.1
-ground_bottom_color = Color(0.258824, 0.709804, 0.815686, 1)
-ground_horizon_color = Color(0.666667, 0.894118, 1, 1)
+sky_cover = SubResource("NoiseTexture2D_dbbcn")
+sky_cover_modulate = Color(0.281187, 0.281187, 0.281187, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.916955, 0.977534, 1, 1)
 
 [sub_resource type="Sky" id="Sky_t68yl"]
 sky_material = SubResource("ProceduralSkyMaterial_qewax")
@@ -39,9 +51,13 @@ glow_intensity = 0.1
 glow_bloom = 0.1
 glow_blend_mode = 1
 fog_enabled = true
-fog_light_color = Color(0.43, 0.5915, 1, 1)
+fog_mode = 1
+fog_light_color = Color(0.630661, 0.887843, 0.993028, 1)
 fog_sun_scatter = 0.01
+fog_density = 1.0
 fog_sky_affect = 0.0
+fog_height = 0.01
+fog_height_density = 0.2
 volumetric_fog_density = 0.02
 volumetric_fog_length = 15.0
 volumetric_fog_sky_affect = 0.1

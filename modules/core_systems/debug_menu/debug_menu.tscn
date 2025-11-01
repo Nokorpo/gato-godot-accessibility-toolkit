@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmkvg5tkmroqd" path="res://modules/core_systems/debug_menu/debug_ui.gd" id="1_7mpk5"]
 [ext_resource type="Script" uid="uid://cndvxgm0400gt" path="res://modules/core_systems/debug_menu/debug_menu.gd" id="1_q31e8"]
-[ext_resource type="Shader" uid="uid://cbpt1hplefxxy" path="res://modules/core_systems/debug_menu/shaders/black_and_white.gdshader" id="6_nt6gv"]
+[ext_resource type="Shader" uid="uid://bps6vn8kojyg6" path="res://modules/core_systems/debug_menu/shaders/color_blindness.gdshader" id="3_ualx8"]
 
 [sub_resource type="Theme" id="Theme_7mpk5"]
 default_font_size = 24
@@ -10,18 +10,18 @@ default_font_size = 24
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl6p2"]
 bg_color = Color(0, 0, 0, 0.392157)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvf0y"]
-shader = ExtResource("6_nt6gv")
-shader_parameter/black_and_white_constant = Color(0.298039, 0.588235, 0.113725, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ualx8"]
+shader = ExtResource("3_ualx8")
+shader_parameter/type = 0
 
 [node name="UIContainer" type="Node"]
 script = ExtResource("1_q31e8")
 
 [node name="DebugUI" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_7mpk5")
 
 [node name="Panel" type="PanelContainer" parent="DebugUI"]
+visible = false
 offset_right = 629.0
 offset_bottom = 295.0
 mouse_filter = 2
@@ -38,19 +38,27 @@ theme_override_constants/margin_bottom = 8
 [node name="VBoxContainer" type="VBoxContainer" parent="DebugUI/Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="ToggleBWFilter" type="Button" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_mode = 0
-text = "Toggle black and white filter"
+text = "Debug menu"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="GameSpeed" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed"]
 layout_mode = 2
-text = "game_speed:"
+size_flags_horizontal = 3
 
-[node name="GameSpeedValue" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed"]
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/HBoxContainer"]
+layout_mode = 2
+text = "Game speed: "
+
+[node name="GameSpeedValue" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "1.00"
@@ -76,7 +84,7 @@ text = "FPS"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Version"
+text = "0"
 
 [node name="InfiniteJump" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -91,9 +99,39 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
+[node name="ColorBlindness" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Color blindness"
+
+[node name="OptionButton" type="OptionButton" parent="DebugUI/Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 9
+popup/item_0/text = "Normal vision"
+popup/item_0/id = 0
+popup/item_1/text = "Protanopia"
+popup/item_1/id = 1
+popup/item_2/text = "Protanomaly"
+popup/item_2/id = 2
+popup/item_3/text = "Deuteranopia"
+popup/item_3/id = 3
+popup/item_4/text = "Deuteranomaly"
+popup/item_4/id = 4
+popup/item_5/text = "Tritanopia"
+popup/item_5/id = 5
+popup/item_6/text = "Tritanomaly"
+popup/item_6/id = 6
+popup/item_7/text = "Achromatopsia"
+popup/item_7/id = 7
+popup/item_8/text = "Achromatomaly"
+popup/item_8/id = 8
+
 [node name="ColorRect" type="ColorRect" parent="DebugUI"]
-visible = false
-material = SubResource("ShaderMaterial_cvf0y")
+material = SubResource("ShaderMaterial_ualx8")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -109,6 +147,6 @@ offset_right = 40.0
 offset_bottom = 13.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.6)
 
-[connection signal="pressed" from="DebugUI/Panel/MarginContainer/VBoxContainer/ToggleBWFilter" to="DebugUI" method="_on_toggle_bw_filter_pressed"]
 [connection signal="value_changed" from="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/GameSpeedSlider" to="DebugUI" method="_on_game_speed_slider_value_changed"]
 [connection signal="toggled" from="DebugUI/Panel/MarginContainer/VBoxContainer/InfiniteJump/Value" to="." method="toggle_infinite_jumps"]
+[connection signal="item_selected" from="DebugUI/Panel/MarginContainer/VBoxContainer/ColorBlindness/OptionButton" to="DebugUI" method="_on_option_button_item_selected"]

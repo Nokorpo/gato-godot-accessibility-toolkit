@@ -1,0 +1,3 @@
+build/gen
+build/html
+**/__pycache__

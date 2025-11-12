@@ -31,7 +31,8 @@ func _process(delta: float) -> void:
 	handle_camera_collision()
 
 func _physics_process(delta: float) -> void:
-	self.position = self.position.lerp(target.position, delta * 4)
+	if target != null:
+		self.position = self.position.lerp(target.position, delta * 4)
 	camera.position = camera.position.lerp(Vector3(0, 0, zoom), 8 * delta)
 
 func _handle_rotation_from_buttons(delta):

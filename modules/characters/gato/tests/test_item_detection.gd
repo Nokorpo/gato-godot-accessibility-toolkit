@@ -69,6 +69,7 @@ class TestItemDetection extends GutTest:
 		#WHEN
 		item_detection.global_position = Vector3(10,0,0)
 		await wait_for_signal(item_detection.item_collected, 2, "item detection wasn't signaled")
+		await wait_physics_frames(1)
 
 		#THEN
 		assert_almost_eq(acorn.global_position, Vector3(10,0,0), Vector3.ONE, "the acorn didn't follow the item container when it moved")

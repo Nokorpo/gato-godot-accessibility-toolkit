@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://14lvyt4uefey"]
+
+[ext_resource type="Script" uid="uid://bmkvg5tkmroqd" path="res://modules/core_systems/debug_menu/debug_ui.gd" id="1_q0d6r"]
+[ext_resource type="PackedScene" uid="uid://br28c4jlnwdwd" path="res://addons/gato_screen_filters/view/filter.tscn" id="2_q0d6r"]
+
+[sub_resource type="Theme" id="Theme_7x7q6"]
+default_font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kap5a"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[node name="DebugUI" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_q0d6r")
+
+[node name="Panel" type="PanelContainer" parent="."]
+offset_right = 416.0
+offset_bottom = 116.0
+size_flags_vertical = 0
+mouse_filter = 2
+theme = SubResource("Theme_7x7q6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kap5a")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "GATO Screen Filters"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ColorBlindness" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Color blindness"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+item_count = 9
+popup/item_0/text = "Normal vision"
+popup/item_0/id = 0
+popup/item_1/text = "Protanopia"
+popup/item_1/id = 1
+popup/item_2/text = "Protanomaly"
+popup/item_2/id = 2
+popup/item_3/text = "Deuteranopia"
+popup/item_3/id = 3
+popup/item_4/text = "Deuteranomaly"
+popup/item_4/id = 4
+popup/item_5/text = "Tritanopia"
+popup/item_5/id = 5
+popup/item_6/text = "Tritanomaly"
+popup/item_6/id = 6
+popup/item_7/text = "Achromatopsia"
+popup/item_7/id = 7
+popup/item_8/text = "Achromatomaly"
+popup/item_8/id = 8
+
+[node name="Filter" parent="." instance=ExtResource("2_q0d6r")]
+
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/ColorBlindness/OptionButton" to="." method="_on_option_button_item_selected"]

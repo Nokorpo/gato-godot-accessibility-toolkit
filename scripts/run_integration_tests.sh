@@ -20,52 +20,23 @@ function store_env_var {
 function get_total_tests {
 	if (( $# != 1 )); then
 		echo "Error: 'get_total_tests' function called with $# arguments." >&2
-		echo "The function should be called with 1 arguments, the log file to filter warnings from." >&2
+		echo "The function should be called with 1 arguments, the log file from the test execution." >&2
 		exit 1
 	fi
-	grep -E "Tests" "$1" | awk '{print $2}'
-}
-
-function get_warnings {
-	if (( $# != 1 )); then
-		echo "Error: 'get_warnings' function called with $# arguments." >&2
-		echo "The function should be called with 1 arguments, the log file to filter warnings from." >&2
-		exit 1
-	fi
-	WARNINGS="$(grep -E "Warnings" "$1" | awk '{print $2}')"
-	if ! [[ "$WARNINGS" =~ ^[0-9]+$ ]]; then
-		WARNINGS=0
-	fi
-	echo "$WARNINGS"
+	grep -E "^Tests" "$1" | awk '{print $2}'
 }
 
 function get_errors {
 	if (( $# != 1 )); then
 		echo "Error: 'get_errors' function called with $# arguments." >&2
-		echo "The function should be called with 1 arguments, the log file to filter warnings from." >&2
+		echo "The function should be called with 1 arguments, the log file to filter errors from." >&2
 		exit 1
 	fi
-	ERRORS=$(grep -E "(Failing|Pending)" "$1" | awk '{ sum += $2; } END { print sum; }')
+	ERRORS=$(grep -E "^(Failing Tests|Risky)" "$1" | awk -F '[ ]{2,}' '{ sum += $2; } END { print sum; }')
 	if ! [[ "$ERRORS" =~ ^[0-9]+$ ]]; then
 		 ERRORS=0
 	fi
 	echo "$ERRORS"	
-}
-
-function has_errors {
-	if (( $# != 2 )); then
-		echo "Error: 'has_errors' function called with $# arguments." >&2
-		echo "The function should be called with 2 arguments: the number of errors, and the number of warnings." >&2
-		exit 1
-	fi
-	ERRORS="$1"
-	WARNINGS="$2"
-
-	if [ "$ERRORS" -gt "0" ] || [ "$WARNINGS" -gt "0" ]; then
-		return 0
-	else
-		return 1
-	fi
 }
 
 function run {
@@ -84,10 +55,9 @@ function run {
 
 		echo "--- GET RESULTS ---"
 		ERRORS="$(get_errors "log.txt")"
-		WARNINGS="$(get_warnings "log.txt")"
 		TOTAL="$(get_total_tests "log.txt")"
-		MESSAGE="Integration tests execution found $ERRORS errors :no_entry: and $WARNINGS warnings :warning:. Total tests run: $TOTAL"
-		if has_errors "$ERRORS" "$WARNINGS"; then
+		MESSAGE="Integration tests execution found $ERRORS errors :no_entry:. Total tests run: $TOTAL"
+		if [ "$ERRORS" -gt "0" ]; then
 			store_env_var "SHOULD_SEND_DISCORD_MESSAGE" "true"
 		fi
 

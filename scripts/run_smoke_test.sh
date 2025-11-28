@@ -159,6 +159,9 @@ function run {
 	echo "Run finished with message: $MESSAGE" >&2
 	store_env_var "DISCORD_MESSAGE" "$MESSAGE"
 	store_multiline_env_var "DISCORD_EMBEDS" "$EMBEDS"
+	if [ "$ERRORS" -gt "0" -o "$WARNINGS" -gt "0" ]; then
+		exit 1
+	fi
 }
 
 home_dir="$HOME"

@@ -24,6 +24,7 @@ Cursor="*res://modules/core_systems/debug_menu/cursor.tscn"
 InputRemapper="*res://addons/input_remapper/service/input_remapper_service.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 DialogueSystem="*res://modules/core_systems/dialogue_system/controller/dialogue_system_autoload.gd"
+GatoScreenFilters="*res://addons/gato_screen_filters/controller/ui_injector_service.gd"
 
 [display]
 
@@ -36,7 +37,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/input_remapper/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/gato_screen_filters/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/input_remapper/plugin.cfg")
 
 [global_group]
 

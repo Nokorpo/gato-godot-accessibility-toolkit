@@ -1,0 +1,11 @@
+extends Node
+## This service creates the Screen Filters UI and injects it in the running
+## game.
+
+const UI_SCENE_UID: StringName = "uid://14lvyt4uefey"
+var ui: CanvasLayer = null
+
+func _ready() -> void:
+	ui = (load(UI_SCENE_UID) as PackedScene).instantiate()
+	ui.keycode_to_toggle_visibility = OS.find_keycode_from_string("F6")
+	get_tree().root.add_child.call_deferred(ui)

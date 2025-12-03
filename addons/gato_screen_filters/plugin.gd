@@ -1,9 +1,10 @@
 @tool
 extends EditorPlugin
 
+const SINGLETON_SCENE_FILE: StringName = "controller/ui_injector_service.gd"
 
 func _enter_tree():
-	add_autoload_singleton("GatoScreenFilters", "res://addons/input_remapper/service/input_remapper_service.gd")
+	add_autoload_singleton("GatoScreenFilters", SINGLETON_SCENE_FILE)
 
 func _exit_tree():
 	remove_autoload_singleton("GatoScreenFilters")

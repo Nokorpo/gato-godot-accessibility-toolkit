@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://14lvyt4uefey"]
+[gd_scene load_steps=5 format=3 uid="uid://14lvyt4uefey"]
 
+[ext_resource type="Script" uid="uid://b5bp5qocv8ed0" path="res://addons/gato_screen_filters/view/ui.gd" id="1_q0d6r"]
 [ext_resource type="PackedScene" uid="uid://br28c4jlnwdwd" path="res://addons/gato_screen_filters/view/filter.tscn" id="2_q0d6r"]
 
 [sub_resource type="Theme" id="Theme_7x7q6"]
@@ -10,6 +11,7 @@ bg_color = Color(0, 0, 0, 0.392157)
 
 [node name="DebugUI" type="CanvasLayer"]
 layer = 100
+script = ExtResource("1_q0d6r")
 
 [node name="Panel" type="PanelContainer" parent="."]
 offset_right = 416.0
@@ -74,4 +76,4 @@ popup/item_8/id = 8
 
 [node name="Filter" parent="." instance=ExtResource("2_q0d6r")]
 
-[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/ColorBlindness/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/ColorBlindness/OptionButton" to="." method="_on_filter_selected"]

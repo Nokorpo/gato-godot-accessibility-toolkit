@@ -1,0 +1,127 @@
+[gd_scene load_steps=12 format=3 uid="uid://d67xo88xjrfm"]
+
+[ext_resource type="PackedScene" uid="uid://dlgjam44ucftj" path="res://modules/level_objects/acorn/gold_acorn.gltf" id="1_i3kmj"]
+[ext_resource type="Script" uid="uid://cuqenjv6o6em7" path="res://modules/level_objects/acorn/gold_acorn.gd" id="1_puj2h"]
+[ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="2_vhraj"]
+
+[sub_resource type="Animation" id="Animation_puj2h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gold_acorn:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.2560747, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gold_acorn:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vhraj"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gold_acorn")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1.76667, 1, 0, 0.1, 0, 4.03333, 1, 0, -0.05, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gold_acorn:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.41886157, 0, 0), Vector3(-0.41887903, 6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i3kmj"]
+resource_name = "pick_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gold_acorn:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6r8r"]
+_data = {
+&"RESET": SubResource("Animation_puj2h"),
+&"idle": SubResource("Animation_vhraj"),
+&"pick_up": SubResource("Animation_i3kmj")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puj2h"]
+transparency = 1
+albedo_texture = ExtResource("2_vhraj")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_n6r8r"]
+material = SubResource("StandardMaterial3D_puj2h")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_8lt4b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n6r8r"]
+radius = 0.35444814
+
+[node name="GoldAcorn" type="Area3D"]
+script = ExtResource("1_puj2h")
+
+[node name="gold_acorn" parent="." instance=ExtResource("1_i3kmj")]
+transform = Transform3D(1, 0, 0, 0, 0.96739167, 0.2532852, 0, -0.2532852, 0.96739167, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n6r8r")
+}
+autoplay = "idle"
+
+[node name="PickUpDust" type="CPUParticles3D" parent="."]
+emitting = false
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.5
+mesh = SubResource("QuadMesh_n6r8r")
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 1, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_8lt4b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_n6r8r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="PickUpDust" to="." method="_on_pick_up_dust_finished"]

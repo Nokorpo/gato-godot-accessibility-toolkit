@@ -1,5 +1,7 @@
 extends Area3D
 
+signal goldacorn_collected
+
 @onready var pick_up_dust: CPUParticles3D = $PickUpDust
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -8,6 +10,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_body_entered(_body: Gato) -> void:
+	emit_signal("goldacorn_collected")
 	pick_up_dust.emitting = true
 	animation_player.play("pick_up")
 

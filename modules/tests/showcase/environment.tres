@@ -13,9 +13,9 @@ frequency = 0.03
 fractal_type = 3
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dbbcn"]
+noise = SubResource("FastNoiseLite_dbbcn")
 seamless = true
 seamless_blend_skirt = 0.2
-noise = SubResource("FastNoiseLite_dbbcn")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qewax"]
 sky_top_color = Color(2.88785e-06, 0.868176, 0.887091, 1)

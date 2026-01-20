@@ -1,57 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://14lvyt4uefey"]
+[gd_scene load_steps=8 format=3 uid="uid://14lvyt4uefey"]
 
 [ext_resource type="Script" uid="uid://b5bp5qocv8ed0" path="res://addons/gato_screen_filters/view/ui.gd" id="1_q0d6r"]
 [ext_resource type="PackedScene" uid="uid://br28c4jlnwdwd" path="res://addons/gato_screen_filters/view/filter.tscn" id="2_q0d6r"]
+[ext_resource type="Shader" uid="uid://bps6vn8kojyg6" path="res://modules/core_systems/debug_menu/shaders/color_blindness.gdshader" id="3_x6pym"]
+[ext_resource type="Shader" uid="uid://r0quysv7dkop" path="res://addons/gato_screen_filters/view/compositor/shaders/color_blindness.gdshader" id="4_7x7q6"]
+[ext_resource type="Script" uid="uid://uvfeswta37ds" path="res://addons/gato_screen_filters/view/follow_camera.gd" id="5_kap5a"]
 
-[sub_resource type="Theme" id="Theme_7x7q6"]
-default_font_size = 24
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7x7q6"]
+shader = ExtResource("3_x6pym")
+shader_parameter/type = 0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kap5a"]
-bg_color = Color(0, 0, 0, 0.392157)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kap5a"]
+shader = ExtResource("4_7x7q6")
+shader_parameter/type = 0
 
-[node name="DebugUI" type="CanvasLayer"]
-layer = 100
-visible = false
+[node name="ColorBlindnessOptions" type="VBoxContainer"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 408.0
+offset_bottom = 108.0
+size_flags_vertical = 0
 script = ExtResource("1_q0d6r")
 
-[node name="Panel" type="PanelContainer" parent="."]
-offset_right = 416.0
-offset_bottom = 116.0
-size_flags_vertical = 0
-mouse_filter = 2
-theme = SubResource("Theme_7x7q6")
-theme_override_styles/panel = SubResource("StyleBoxFlat_kap5a")
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "GATO Screen Filters"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="."]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="ColorBlindness" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="ColorBlindness" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+[node name="Label" type="Label" parent="ColorBlindness"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Color blindness"
 
-[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+[node name="OptionButton" type="OptionButton" parent="ColorBlindness"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -76,6 +64,29 @@ popup/item_7/id = 7
 popup/item_8/text = "Achromatomaly"
 popup/item_8/id = 8
 
-[node name="Filter" parent="." instance=ExtResource("2_q0d6r")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
 
-[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/ColorBlindness/OptionButton" to="." method="_on_filter_selected"]
+[node name="Filter" parent="CanvasLayer" instance=ExtResource("2_q0d6r")]
+visible = false
+material = SubResource("ShaderMaterial_7x7q6")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_kap5a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+script = ExtResource("5_kap5a")

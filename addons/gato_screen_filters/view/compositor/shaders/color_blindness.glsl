@@ -1,23 +1,35 @@
-shader_type canvas_item;
+#[compute]
+#version 450
+
+// Invocations in the (x, y, z) dimension
+layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
+
+layout(rgba16f, set = 0, binding = 0) uniform image2D color_image;
+
+// Our push constant
+layout(push_constant, std430) uniform Params {
+	/**
+	Selects the type of color blindness filter to apply. The numbers translate to the following:
+
+	0 = Normal vision (92% of people)
+	1 = Protanopia    (0.59% of people)
+	2 = Protanomaly   (0.66% of people)
+	3 = Deuteranopia  (0.56% of people)
+	4 = Deuteranomaly (2.7% of people)
+	5 = Tritanopia    (0.016% of people)
+	6 = Tritanomaly   (0.01% of people)
+	7 = Achromatopsia (<0.001% of people)
+	8 = Achromatomaly (<0.001% of people)
+	*/
+	int color_blindness_type;
+} params;
+
 /**
 Shader script based on Alan Zucconi's blog post "Accessibility Design: Color
 Blindness". Link: https://www.alanzucconi.com/2015/12/16/color-blindness/
 */
 
-/**
-Selects the type of color blindness filter to apply. The numbers translate to the following:
 
-0 = Normal vision (92% of people)
-1 = Protanopia    (0.59% of people)
-2 = Protanomaly   (0.66% of people)
-3 = Deuteranopia  (0.56% of people)
-4 = Deuteranomaly (2.7% of people)
-5 = Tritanopia    (0.016% of people)
-6 = Tritanomaly   (0.01% of people)
-7 = Achromatopsia (<0.001% of people)
-8 = Achromatomaly (<0.001% of people)
-*/
-uniform int type: hint_range(0, 8) = 0;
 
 /**
 Represents how much each color weights in the final mix for each color channel. Each variable
@@ -46,13 +58,29 @@ const ColorWeightForChannel color_translation[9] = {
 	ColorWeightForChannel(vec3(.618, .32, .062),    vec3(.163, .775, .062),   vec3(.163, .32, .516))     // Achromatomaly (<0.001% of people)
 };
 
-uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
-uniform sampler2D screen_texture2 : hint_screen_texture, repeat_disable, filter_nearest;
+// The code we want to execute in each invocation
+void main() {
+	ivec2 uv = ivec2(gl_GlobalInvocationID.xy);
+	/*ivec2 size = ivec2(params.raster_size);
 
-void fragment() {
-	vec4 screen = texture(TEXTURE, SCREEN_UV);
-	ColorWeightForChannel weight = color_translation[type];
-	COLOR.r = weight.r.r * screen.r + weight.r.g * screen.g + weight.r.b * screen.b;
-	COLOR.g = weight.g.r * screen.r + weight.g.g * screen.g + weight.g.b * screen.b;
-	COLOR.b = weight.b.r * screen.r + weight.b.g * screen.g + weight.b.b * screen.b;
+	// Prevent reading/writing out of bounds.
+	if (uv.x >= size.x || uv.y >= size.y) {
+		return;
+	}*/
+
+	// Read from our color buffer.
+	vec4 color = imageLoad(color_image, uv);
+
+	// Apply our changes.
+	// float gray = color.r * 0.2125 + color.g * 0.7154 + color.b * 0.0721;
+	// color.rgb = vec3(gray);
+
+	ColorWeightForChannel weight = color_translation[params.color_blindness_type];
+
+	color.r = weight.r.r * color.r + weight.r.g * color.g + weight.r.b * color.b;
+	color.g = weight.g.r * color.r + weight.g.g * color.g + weight.g.b * color.b;
+	color.b = weight.b.r * color.r + weight.b.g * color.g + weight.b.b * color.b;
+
+	// Write back to our color buffer.
+	imageStore(color_image, uv, color);
 }

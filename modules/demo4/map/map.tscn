@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dvs14kxa77pp2"]
+[gd_scene load_steps=43 format=3 uid="uid://dvs14kxa77pp2"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bgbm422tw75f2" path="res://modules/demo4/map/gold_acorn_manager.gd" id="3_vm6ot"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_8ni72"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_cf3k0"]
-[ext_resource type="Shader" uid="uid://ddi1hqt7u5d54" path="res://modules/demo1/map/water.gdshader" id="6_a6plf"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="7_ohoif"]
 [ext_resource type="PackedScene" uid="uid://cvhe5spjd2wbo" path="res://modules/demo1/map/props/platform_bridge.gltf" id="8_cf3k0"]
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="9_a6plf"]
@@ -30,17 +29,11 @@
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qtbex"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
+albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0heq0"]
-render_priority = 0
-shader = ExtResource("6_a6plf")
-shader_parameter/WATER_COL = Color(0.137242, 0.722232, 0.860396, 1)
-shader_parameter/WATER2_COL = Color(0.203807, 0.528839, 0.637076, 1)
-shader_parameter/FOAM_COL = Color(0.666667, 0.894118, 1, 1)
-shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(50, 50)
-shader_parameter/wave_speed = 1.5
+[sub_resource type="PlaneMesh" id="PlaneMesh_qtbex"]
+material = SubResource("StandardMaterial3D_0721d")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ykkph"]
 size = Vector3(1, 2.89233, 6.49792)
@@ -938,7 +931,6 @@ texture = ExtResource("27_ykkph")
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_qtbex")
-surface_material_override/0 = SubResource("ShaderMaterial_0heq0")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 visible = false

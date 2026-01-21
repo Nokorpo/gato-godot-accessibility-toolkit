@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://b0xcaouncmmm6"]
+[gd_scene load_steps=55 format=3 uid="uid://b0xcaouncmmm6"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_koe00"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="2_koe00"]
@@ -26,7 +26,6 @@
 [ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="17_78qc6"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="17_1806k"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="17_e7su5"]
-[ext_resource type="Shader" uid="uid://ddi1hqt7u5d54" path="res://modules/demo1/map/water.gdshader" id="17_w6881"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="18_e7su5"]
 [ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="19_w6881"]
 [ext_resource type="PackedScene" uid="uid://cwp1ql6gjtok7" path="res://modules/level_objects/oak/oak.tscn" id="20_e7su5"]
@@ -86,17 +85,11 @@ size = Vector3(3.277, 9.94777, 10.1546)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8lorg"]
 size = Vector3(3.277, 9.94777, 17.21)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kg8y1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78qc6"]
+albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kg8y1"]
-render_priority = 0
-shader = ExtResource("17_w6881")
-shader_parameter/WATER_COL = Color(0.137242, 0.722232, 0.860396, 1)
-shader_parameter/WATER2_COL = Color(0.203807, 0.528839, 0.637076, 1)
-shader_parameter/FOAM_COL = Color(0.666667, 0.894118, 1, 1)
-shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(50, 50)
-shader_parameter/wave_speed = 1.5
+[sub_resource type="PlaneMesh" id="PlaneMesh_kg8y1"]
+material = SubResource("StandardMaterial3D_78qc6")
 
 [node name="Map3" type="Node3D"]
 
@@ -1535,7 +1528,6 @@ debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 16.2716, -0.41976, -5.93962)
 mesh = SubResource("PlaneMesh_kg8y1")
-surface_material_override/0 = SubResource("ShaderMaterial_kg8y1")
 
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]

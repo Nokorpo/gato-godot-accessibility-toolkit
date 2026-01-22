@@ -115,9 +115,19 @@ game_menu={
 
 [layer_names]
 
-3d_render/layer_10="Dialogue"
+3d_render/layer_1="Vision normal"
+3d_render/layer_2="Mundo (blanco y negro)"
+3d_render/layer_3="Player (azul)"
+3d_render/layer_4="NPCs (azul)"
+3d_render/layer_5="Obstáculos (morado)"
+3d_render/layer_6="Interactuables (amarillo)"
+3d_render/layer_7="Layer 7"
+3d_render/layer_9="UI"
+3d_render/layer_10="Dialogue meshes"
 3d_physics/layer_1="World"
 3d_physics/layer_2="Player"
+3d_physics/layer_3="Item launcher landing spot detection"
+3d_physics/layer_5="Camera collision"
 
 [physics]
 

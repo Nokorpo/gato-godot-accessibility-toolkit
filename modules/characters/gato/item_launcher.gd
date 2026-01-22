@@ -22,7 +22,7 @@ func _launch_item() -> void:
 			var distance: Vector3 = landing_spot - global_position
 			horizontal_velocity = distance.normalized() * distance.length()/time_to_land
 		else:
-			horizontal_velocity = acorn.basis.z.normalized() * distance_on_land/time_to_land
+			horizontal_velocity = acorn.global_basis.z.normalized() * distance_on_land/time_to_land
 		var vertical_velocity: float = 2*(height_at_peak-position.y)+0.25*9.8
 		acorn.linear_velocity = Vector3(horizontal_velocity.x, vertical_velocity, horizontal_velocity.z)
 

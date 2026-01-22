@@ -30,7 +30,7 @@ func detection_animation() -> Tween:
 
 func look_at_acorn(delta: float):
 	var diff := (_target.global_position - boar.global_position).normalized()
-	boar.rotation.y = lerp_angle(boar.rotation.y, atan2(diff.x, diff.z), 2 * delta)
+	boar.global_rotation.y = lerp_angle(boar.global_rotation.y, atan2(diff.x, diff.z), 2 * delta)
 
 func short_angle_dist(from, to) -> float:
 	var max_angle := TAU

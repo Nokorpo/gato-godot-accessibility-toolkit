@@ -48,5 +48,5 @@ render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.920634, 0.172889, -0.35006, 3.72529e-09, 0.89661, 0.442821, 0.390426, -0.407676, 0.82545, -10.3476, 2.11773, 7.7008)
-cull_mask = 1047554
+cull_mask = 1047584
 current = true

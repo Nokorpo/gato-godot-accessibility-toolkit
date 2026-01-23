@@ -43,7 +43,7 @@ compositor = SubResource("Compositor_duu18")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
-layers = 3
+layers = 1023
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 

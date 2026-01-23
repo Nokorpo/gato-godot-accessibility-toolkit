@@ -110,7 +110,10 @@ void fragment() {
 			size *= get_line_width(world_pos, timeStep);
 			vec4 finalColor = step(1.0 - tolerance, in_range(size, TEXTURE, uv)) * color;
 			newColor = finalColor;
+			COLOR = newColor;
+		} else {
+			float color_strength = (COLOR.r + COLOR.g + COLOR.b)/3.;
+			COLOR = color * color_strength;
 		}
-		COLOR = newColor;
 	}
 }

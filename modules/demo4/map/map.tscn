@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dvs14kxa77pp2"]
+[gd_scene load_steps=44 format=3 uid="uid://dvs14kxa77pp2"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
@@ -28,6 +28,9 @@
 [ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/demo1/objects/bounce_on_touch.gd" id="25_hd4lb"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0721d"]
+radius = 0.10625537
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
 albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
@@ -147,7 +150,7 @@ transform = Transform3D(0.994693, 0, -0.102879, 0, 1, 0, 0.102879, 0, 0.994693, 
 transform = Transform3D(-0.124647, 0.0486341, -0.991008, -0.0159193, 0.998571, 0.0510075, 0.992073, 0.0221341, -0.123694, 7.84753, -0.225655, -18.9433)
 
 [node name="PineSmall24" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
-transform = Transform3D(-0.124647, 0.0486341, -0.991008, -0.0159193, 0.998571, 0.0510075, 0.992073, 0.0221341, -0.123694, 12.6771, 0.343655, -20.9671)
+transform = Transform3D(0.95796967, 0.029845882, -0.28531054, -0.015919298, 0.998571, 0.0510075, 0.286426, -0.044321746, 0.9570762, 12.960221, 0.343655, -20.9671)
 
 [node name="Pine15" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.403572, -0.04769, 0.913704, 0.0616708, 0.994952, 0.0791699, -0.912867, 0.0882996, -0.398594, 18.3956, 1.86325, -38.4601)
@@ -237,7 +240,7 @@ transform = Transform3D(-0.123247, 0.0863051, -0.988616, 0.0616708, 0.994952, 0.
 transform = Transform3D(-0.202565, 0, -0.979268, 0, 1, 0, 0.979268, 0, -0.202565, -15.9435, -0.0846436, -35.1803)
 
 [node name="PineSmall10" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
-transform = Transform3D(-0.974469, -0.0269211, 0.222903, -0.0159193, 0.998572, 0.0510075, -0.223958, 0.0461568, -0.973505, -9.70939, -0.0505898, -23.2937)
+transform = Transform3D(-0.44106287, 0.038769294, -0.89663833, -0.0159193, 0.998572, 0.051007498, 0.89733523, 0.03677142, -0.43981522, -9.70939, -0.0505898, -23.2937)
 
 [node name="Pine8" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.994621, -0.0242076, 0.100716, 0.0258392, 0.999555, -0.0149267, -0.10031, 0.0174488, 0.994803, 12.5823, 0.375732, -28.9568)
@@ -254,13 +257,13 @@ transform = Transform3D(-0.833336, 0, 0.552766, 0, 1, 0, -0.552766, 0, -0.833336
 [node name="Rocks" type="Node3D" parent="Props"]
 
 [node name="RockGroup" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
-transform = Transform3D(0.443988, 0, 1.62752, 0, 1.68699, 0, -1.62752, 0, 0.443988, -3.72026, -0.346461, -10.211)
+transform = Transform3D(0.443988, 0, 1.62752, 0, 1.68699, 0, -1.62752, 0, 0.443988, -3.8520677, -0.91605186, -10.211)
 
 [node name="RockGroup2" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
 transform = Transform3D(-0.734153, 0, 1.51887, 0, 1.68699, 0, -1.51887, 0, -0.734153, -6.05748, 0.357821, -11.9887)
 
 [node name="RockGroup6" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
-transform = Transform3D(-0.734153, 0, 1.51887, 0, 1.68699, 0, -1.51887, 0, -0.734153, -3.90145, -1.60435, -12.4566)
+transform = Transform3D(-0.734153, 0, 1.51887, 0, 1.68699, 0, -1.51887, 0, -0.734153, -3.90145, -1.5884529, -12.4566)
 
 [node name="RockGroup7" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
 transform = Transform3D(1.6175, 0, -0.479217, 0, 1.68699, 0, 0.479217, 0, 1.6175, -6.1462, -1.35135, -13.6528)
@@ -269,7 +272,7 @@ transform = Transform3D(1.6175, 0, -0.479217, 0, 1.68699, 0, 0.479217, 0, 1.6175
 transform = Transform3D(2.52966, 0, -0.893068, 0, 2.68268, 0, 0.893068, 0, 2.52966, -12.6932, -1.50291, -0.581812)
 
 [node name="RockGroup8" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
-transform = Transform3D(-2.63816, 0, -0.486669, 0, 2.68268, 0, 0.486669, 0, -2.63816, 14.469, -4.08093, -20.9064)
+transform = Transform3D(-2.63816, 0, -0.486669, 0, 2.68268, 0, 0.486669, 0, -2.63816, 14.469, -4.467196, -20.9064)
 
 [node name="RockGroup9" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
 transform = Transform3D(0.467917, 0, -2.64155, 0, 2.68268, 0, 2.64155, 0, 0.467917, 21.7909, -2.19393, -24.9978)
@@ -657,7 +660,7 @@ transform = Transform3D(1.0933, 0, 1.15097, 0, 1.36579, 0, -0.970851, 0, 1.29614
 transform = Transform3D(-0.136684, 0, -0.61605, 0, 2.85938, 0, 0.519642, 0, -0.162043, 14.7457, -1.66975, -23.1912)
 
 [node name="PlatformGrass7" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
-transform = Transform3D(-0.225788, 0, -0.578035, 0, 3.80793, 0, 0.487576, 0, -0.267677, 20.4076, -1.94477, -19.2463)
+transform = Transform3D(-0.225788, 0, -0.578035, 0, 3.80793, 0, 0.487576, 0, -0.267677, 20.4076, -1.94477, -19.65166)
 
 [node name="PlatformGrass2" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
 transform = Transform3D(-1.36615, 0, -0.361931, 0, 3.21709, 0, 0.316431, 0, -1.56259, -10.0959, -2.79503, -6.81624)
@@ -746,7 +749,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0123, -0.6823405, -31.4351
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5359, 0.6577796, -28.441)
 
 [node name="GoldAcorn4" parent="Props/GoldAcorns" instance=ExtResource("22_vm6ot")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5828, 4.4749274, -18.9219)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5828, 4.4749274, -19.347015)
 
 [node name="ButtonsAndPlatforms" type="Node3D" parent="."]
 
@@ -762,6 +765,15 @@ destination_node = NodePath("Destination")
 [node name="Destination" type="Marker3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41278, 0, 0.610415)
 
+[node name="CornTarget" type="StaticBody3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" groups=["button", "light_weight"]]
+transform = Transform3D(1.0000012, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000012, -0.029281616, 0.30554694, -0.3258705)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform/CornTarget" groups=["button"]]
+shape = SubResource("SphereShape3D_0721d")
+debug_fill = false
+
 [node name="MovingAcornPlatform2" parent="ButtonsAndPlatforms" instance=ExtResource("9_a6plf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95581, 0.201571, -6.25993)
 
@@ -769,7 +781,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95581, 0.201571, -6.25993)
 destination_node = NodePath("Destination")
 
 [node name="Destination" type="Marker3D" parent="ButtonsAndPlatforms/MovingAcornPlatform2/MovingPlatform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96405, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8512957, 0)
 
 [node name="AcornButton2" parent="ButtonsAndPlatforms" instance=ExtResource("19_uo75g")]
 transform = Transform3D(-0.0569717, 0, -0.998376, 0, 1, 0, 0.998376, 0, -0.0569717, 15.5377, 2.65083, -21.9664)
@@ -897,11 +909,11 @@ transform = Transform3D(0.380193, 0.444755, -3.79008e-09, 2.1689e-08, -1.35543e-
 texture = ExtResource("27_ykkph")
 
 [node name="Flowers21" type="Sprite3D" parent="Sprites"]
-transform = Transform3D(0.581827, -0.0618918, -2.3001e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.0618918, -0.581827, -1.11841e-08, 20.3071, 3.86762, -20.1318)
+transform = Transform3D(0.581827, -0.0618918, -2.3001e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.0618918, -0.581827, -1.11841e-08, 20.3071, 3.86762, -20.57636)
 texture = ExtResource("27_ykkph")
 
 [node name="Flowers22" type="Sprite3D" parent="Sprites"]
-transform = Transform3D(0.581827, -0.0618918, -2.3001e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.0618918, -0.581827, -1.11841e-08, 20.7303, 3.86762, -17.7893)
+transform = Transform3D(0.581827, -0.0618918, -2.3001e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.0618918, -0.581827, -1.11841e-08, 20.7303, 3.86762, -18.233862)
 texture = ExtResource("27_ykkph")
 
 [node name="Flowers20" type="Sprite3D" parent="Sprites"]

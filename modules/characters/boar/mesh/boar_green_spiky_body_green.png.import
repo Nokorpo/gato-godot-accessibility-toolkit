@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bswxctlwvujla"
-path="res://.godot/imported/boar_body_red.png-9c349340061dcf6fb220d3d58f1f6449.ctex"
+uid="uid://dmuvmkfgf08c"
+path.s3tc="res://.godot/imported/boar_green_spiky_body_green.png-197e6e13c6973c484865330afab1698d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "f8a90adb9d4466b31a00ab815b64cbbc"
 }
 
 [deps]
 
-source_file="res://modules/characters/boar/mesh/boar_body_red.png"
-dest_files=["res://.godot/imported/boar_body_red.png-9c349340061dcf6fb220d3d58f1f6449.ctex"]
+source_file="res://modules/characters/boar/mesh/boar_green_spiky_body_green.png"
+dest_files=["res://.godot/imported/boar_green_spiky_body_green.png-197e6e13c6973c484865330afab1698d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://prpat20s5vct"
-path="res://.godot/imported/boar_body_yellow.png-e59cff1f4dc1a956a27fa6f10af9042c.ctex"
+uid="uid://bswxctlwvujla"
+path.s3tc="res://.godot/imported/body_red.png-1664f03bea8fa0d8b9c7ba43ba0052c1.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://modules/characters/boar/mesh/boar_body_yellow.png"
-dest_files=["res://.godot/imported/boar_body_yellow.png-e59cff1f4dc1a956a27fa6f10af9042c.ctex"]
+source_file="res://modules/characters/boar/mesh/body_red.png"
+dest_files=["res://.godot/imported/body_red.png-1664f03bea8fa0d8b9c7ba43ba0052c1.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

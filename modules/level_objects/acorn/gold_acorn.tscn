@@ -80,6 +80,7 @@ _data = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puj2h"]
 transparency = 1
+shading_mode = 0
 albedo_texture = ExtResource("2_vhraj")
 billboard_mode = 1
 billboard_keep_scale = true

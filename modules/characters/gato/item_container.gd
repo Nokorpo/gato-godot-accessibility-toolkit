@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 			continue
 		if not is_instance_valid(items[i]):
 			# if an acorn is picked while a boar eats it, it might be removed while following the player, so we have to remove it from the list
-			items.remove_at(i)
+			items.remove_at.call_deferred(i)
 			continue
 		var diff := item_container.global_position - items[i].global_position
 		var expected_distance: float = (i+1) * item_separation

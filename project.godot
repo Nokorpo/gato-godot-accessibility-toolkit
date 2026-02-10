@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Godot Accessibility Toolkit"
 config/version="0.1"
 run/main_scene="uid://vooeq5ose2br"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.jpg"
 
 [autoload]
@@ -21,10 +25,10 @@ config/icon="res://icon.jpg"
 DebugOptions="*res://modules/core_systems/debug_menu/debug_menu.tscn"
 FeatureFlags="*res://modules/core_systems/settings/feature_flags.gd"
 Cursor="*res://modules/core_systems/debug_menu/cursor.tscn"
-InputRemapper="*res://addons/input_remapper/service/input_remapper_service.gd"
+InputRemapper="*uid://r58sbk2t1lft"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 DialogueSystem="*res://modules/core_systems/dialogue_system/controller/dialogue_system_autoload.gd"
-GatoScreenFilters="*res://addons/gato_screen_filters/controller/ui_injector_service.gd"
+GatoScreenFilters="*uid://da558lwadhp5b"
 
 [display]
 

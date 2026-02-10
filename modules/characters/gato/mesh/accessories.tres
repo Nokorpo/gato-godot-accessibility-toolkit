@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c53c3p6mno41b"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c53c3p6mno41b"]
 
 [ext_resource type="Texture2D" uid="uid://dmv6ou0brsgd" path="res://modules/characters/gato/mesh/gato_accessories.png" id="1_jdp55"]
 

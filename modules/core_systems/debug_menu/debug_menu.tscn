@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlxmuv21g68kk"]
+[gd_scene format=3 uid="uid://dlxmuv21g68kk"]
 
 [ext_resource type="Script" uid="uid://bmkvg5tkmroqd" path="res://modules/core_systems/debug_menu/debug_ui.gd" id="1_7mpk5"]
 [ext_resource type="Script" uid="uid://cndvxgm0400gt" path="res://modules/core_systems/debug_menu/debug_menu.gd" id="1_q31e8"]
@@ -14,14 +14,14 @@ bg_color = Color(0, 0, 0, 0.392157)
 shader = ExtResource("3_ualx8")
 shader_parameter/type = 0
 
-[node name="UIContainer" type="Node"]
+[node name="UIContainer" type="Node" unique_id=633970345]
 script = ExtResource("1_q31e8")
 
-[node name="DebugUI" type="CanvasLayer" parent="."]
+[node name="DebugUI" type="CanvasLayer" parent="." unique_id=2042059654]
 layer = 100
 script = ExtResource("1_7mpk5")
 
-[node name="Panel" type="PanelContainer" parent="DebugUI"]
+[node name="Panel" type="PanelContainer" parent="DebugUI" unique_id=1871364387]
 visible = false
 offset_right = 629.0
 offset_bottom = 295.0
@@ -29,42 +29,42 @@ mouse_filter = 2
 theme = SubResource("Theme_7mpk5")
 theme_override_styles/panel = SubResource("StyleBoxFlat_gl6p2")
 
-[node name="MarginContainer" type="MarginContainer" parent="DebugUI/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="DebugUI/Panel" unique_id=885059786]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugUI/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugUI/Panel/MarginContainer" unique_id=494044907]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer" unique_id=864694133]
 layout_mode = 2
 text = "Debug menu"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="DebugUI/Panel/MarginContainer/VBoxContainer" unique_id=1924252432]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="GameSpeed" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="GameSpeed" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer" unique_id=1445221192]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed" unique_id=1038202530]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/HBoxContainer"]
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/HBoxContainer" unique_id=2017775553]
 layout_mode = 2
 text = "Game speed: "
 
-[node name="GameSpeedValue" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/HBoxContainer"]
+[node name="GameSpeedValue" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed/HBoxContainer" unique_id=484565540]
 unique_name_in_owner = true
 layout_mode = 2
 text = "1.00"
 
-[node name="GameSpeedSlider" type="HSlider" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed"]
+[node name="GameSpeedSlider" type="HSlider" parent="DebugUI/Panel/MarginContainer/VBoxContainer/GameSpeed" unique_id=145784650]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -73,42 +73,42 @@ max_value = 2.0
 step = 0.05
 value = 1.0
 
-[node name="FPSCounter" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="FPSCounter" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer" unique_id=1209046965]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/FPSCounter"]
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/FPSCounter" unique_id=1890657730]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "FPS"
 
-[node name="FPSCounterValue" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/FPSCounter"]
+[node name="FPSCounterValue" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/FPSCounter" unique_id=452831365]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="InfiniteJump" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="InfiniteJump" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer" unique_id=966470058]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/InfiniteJump"]
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/InfiniteJump" unique_id=2085829638]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Infinite jumps"
 
-[node name="Value" type="CheckBox" parent="DebugUI/Panel/MarginContainer/VBoxContainer/InfiniteJump"]
+[node name="Value" type="CheckBox" parent="DebugUI/Panel/MarginContainer/VBoxContainer/InfiniteJump" unique_id=636412125]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
-[node name="ColorBlindness" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="ColorBlindness" type="HBoxContainer" parent="DebugUI/Panel/MarginContainer/VBoxContainer" unique_id=939289624]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+[node name="Label" type="Label" parent="DebugUI/Panel/MarginContainer/VBoxContainer/ColorBlindness" unique_id=1229450714]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Color blindness"
 
-[node name="OptionButton" type="OptionButton" parent="DebugUI/Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+[node name="OptionButton" type="OptionButton" parent="DebugUI/Panel/MarginContainer/VBoxContainer/ColorBlindness" unique_id=1881123005]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -133,12 +133,12 @@ popup/item_7/id = 7
 popup/item_8/text = "Achromatomaly"
 popup/item_8/id = 8
 
-[node name="PerformanceOverlayButton" type="Button" parent="DebugUI/Panel/MarginContainer/VBoxContainer"]
+[node name="PerformanceOverlayButton" type="Button" parent="DebugUI/Panel/MarginContainer/VBoxContainer" unique_id=89716199]
 layout_mode = 2
 focus_mode = 0
 text = "Toggle performance overlay"
 
-[node name="ColorRect" type="ColorRect" parent="DebugUI"]
+[node name="ColorRect" type="ColorRect" parent="DebugUI" unique_id=1757015192]
 material = SubResource("ShaderMaterial_ualx8")
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,7 +149,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="Version" type="Label" parent="."]
+[node name="Version" type="Label" parent="." unique_id=790912184]
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 13.0

@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=7 format=3 uid="uid://l5cljf1asbvp"]
+[gd_resource type="Environment" format=3 uid="uid://l5cljf1asbvp"]
 
 [sub_resource type="Gradient" id="Gradient_t68yl"]
 offsets = PackedFloat32Array(0, 0.155172, 0.853448, 1)
@@ -13,9 +13,9 @@ frequency = 0.03
 fractal_type = 3
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dbbcn"]
+noise = SubResource("FastNoiseLite_dbbcn")
 seamless = true
 seamless_blend_skirt = 0.2
-noise = SubResource("FastNoiseLite_dbbcn")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qewax"]
 sky_top_color = Color(2.88785e-06, 0.868176, 0.887091, 1)
@@ -49,7 +49,6 @@ glow_levels/7 = 1.0
 glow_normalized = true
 glow_intensity = 0.1
 glow_bloom = 0.1
-glow_blend_mode = 1
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.630661, 0.887843, 0.993028, 1)

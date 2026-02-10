@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dvs14kxa77pp2"]
+[gd_scene format=3 uid="uid://dvs14kxa77pp2"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dpedfmuyu50ig" path="res://modules/demo1/map/props/stone.gltf" id="22_vyjgi"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="23_vyjgi"]
 [ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="24_l68g0"]
-[ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/demo1/objects/bounce_on_touch.gd" id="25_hd4lb"]
+[ext_resource type="Script" path="res://modules/demo1/objects/bounce_on_touch.gd" id="25_hd4lb"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
 
@@ -74,1194 +74,1194 @@ size = Vector3(1, 5.01953, 7.54199)
 [sub_resource type="BoxShape3D" id="BoxShape3D_spi3t"]
 size = Vector3(21.8416, 1.15234, 23.9082)
 
-[node name="Map" type="Node3D"]
+[node name="Map" type="Node3D" unique_id=675758072]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2064162423]
 environment = ExtResource("1_6sohf")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=186145150]
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 
-[node name="GameMenu" parent="." instance=ExtResource("2_ohoif")]
+[node name="GameMenu" parent="." unique_id=2053610931 instance=ExtResource("2_ohoif")]
 visible = false
 
-[node name="GoldAcornManager" type="Node3D" parent="."]
+[node name="GoldAcornManager" type="Node3D" parent="." unique_id=1637768729]
 script = ExtResource("3_vm6ot")
 
-[node name="Gato" parent="." instance=ExtResource("3_3clr6")]
+[node name="Gato" parent="." unique_id=314867085 instance=ExtResource("3_3clr6")]
 speed = 3.5
 
-[node name="CameraWithRotation" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_8ni72")]
+[node name="CameraWithRotation" parent="." unique_id=833798013 node_paths=PackedStringArray("target") instance=ExtResource("4_8ni72")]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906307, 0, 0, 0)
 target = NodePath("../Gato")
 
-[node name="Boar" parent="." instance=ExtResource("15_tk8fx")]
+[node name="Boar" parent="." unique_id=818332652 instance=ExtResource("15_tk8fx")]
 transform = Transform3D(0.619025, 0, -0.785371, 0, 1, 0, 0.785371, 0, 0.619025, 11.0078, 0.443848, -42.1938)
 
-[node name="Props" type="Node3D" parent="."]
+[node name="Props" type="Node3D" parent="." unique_id=1606805648]
 
-[node name="Oak" parent="Props" instance=ExtResource("19_tmiu8")]
+[node name="Oak" parent="Props" unique_id=1590561041 instance=ExtResource("19_tmiu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4882, 0.401593, -24.0903)
 
-[node name="Pines" type="Node3D" parent="Props"]
+[node name="Pines" type="Node3D" parent="Props" unique_id=719723413]
 
-[node name="Pine" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine" parent="Props/Pines" unique_id=769503986 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.123751, 0, 0.896071, 0, 0.904576, 0, -0.896071, 0, -0.123751, -8.55341, 2.04082, -9.56052)
 
-[node name="Pine4" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine4" parent="Props/Pines" unique_id=151257452 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.136805, 0, 0.990598, 0, 1, 0, -0.990598, 0, -0.136805, 2.91668, -0.123471, -8.02252)
 
-[node name="Pine5" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine5" parent="Props/Pines" unique_id=1654800224 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.136805, 0, 0.990598, 0, 1, 0, -0.990598, 0, -0.136805, -5.717, -0.123471, -0.219489)
 
-[node name="Pine2" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine2" parent="Props/Pines" unique_id=150187330 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.755659, 0, -0.654965, 0, 1, 0, 0.654965, 0, 0.755659, -13.0374, 1.98736, -3.43801)
 
-[node name="Pine3" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine3" parent="Props/Pines" unique_id=1484066392 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6793, 2.41754, -7.9923)
 
-[node name="PineSmall" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall" parent="Props/Pines" unique_id=1944744566 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.833336, 0, 0.552766, 0, 1, 0, -0.552766, 0, -0.833336, -9.55898, 2.05354, -2.71226)
 
-[node name="PineSmall3" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall3" parent="Props/Pines" unique_id=1266029646 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.833336, 0, 0.552766, 0, 1, 0, -0.552766, 0, -0.833336, 4.54441, -0.155092, -7.12512)
 
-[node name="Pine6" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine6" parent="Props/Pines" unique_id=912951942 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.635259, 0.0279473, 0.771793, 0.0258392, 0.999555, -0.0149267, -0.771867, 0.0104602, -0.635698, 1.23818, 0.375732, -30.9193)
 
-[node name="Pine7" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine7" parent="Props/Pines" unique_id=359839424 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.917661, 0.0877189, -0.387561, 0.0616708, 0.994952, 0.0791699, 0.39255, 0.0487499, -0.918438, 2.89366, 0.375732, -32.0239)
 
-[node name="PineSmall4" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall4" parent="Props/Pines" unique_id=1703179609 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.947957, 0, -0.318397, 0, 1, 0, 0.318397, 0, -0.947957, 2.9459, 0.374975, -30.4748)
 
-[node name="PineSmall5" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall5" parent="Props/Pines" unique_id=2079389186 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.297499, -0.053434, 0.953225, -0.0159193, 0.998571, 0.0510075, -0.954589, 0, -0.297925, 0.689133, 0.227629, -29.4007)
 
-[node name="Pine14" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine14" parent="Props/Pines" unique_id=819135473 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.258462, -0.0211039, -0.96579, 0.0258392, 0.999555, -0.0149267, 0.965676, -0.0210973, 0.258892, 6.71875, -0.0775518, -17.7886)
 
-[node name="PineSmall13" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall13" parent="Props/Pines" unique_id=860491918 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.994693, 0, -0.102879, 0, 1, 0, 0.102879, 0, 0.994693, 5.34856, -0.0783088, -18.9005)
 
-[node name="PineSmall19" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall19" parent="Props/Pines" unique_id=346622197 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.124647, 0.0486341, -0.991008, -0.0159193, 0.998571, 0.0510075, 0.992073, 0.0221341, -0.123694, 7.84753, -0.225655, -18.9433)
 
-[node name="PineSmall24" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall24" parent="Props/Pines" unique_id=2116665431 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.95796967, 0.029845882, -0.28531054, -0.015919298, 0.998571, 0.0510075, 0.286426, -0.044321746, 0.9570762, 12.960221, 0.343655, -20.9671)
 
-[node name="Pine15" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine15" parent="Props/Pines" unique_id=1276665601 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.403572, -0.04769, 0.913704, 0.0616708, 0.994952, 0.0791699, -0.912867, 0.0882996, -0.398594, 18.3956, 1.86325, -38.4601)
 
-[node name="PineSmall11" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall11" parent="Props/Pines" unique_id=1061682957 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.329789, 0, 0.944054, 0, 1, 0, -0.944054, 0, -0.329789, 17.1885, 1.86249, -38.74)
 
-[node name="PineSmall12" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall12" parent="Props/Pines" unique_id=868827804 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.950937, -0.000643479, 0.309382, -0.0159193, 0.998572, 0.0510075, -0.308973, -0.0534301, 0.949569, 16.6596, 1.71515, -41.7657)
 
-[node name="Pine17" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine17" parent="Props/Pines" unique_id=1583122144 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.945536, 0.0836401, -0.314587, 0.0616708, 0.994952, 0.0791699, 0.319621, 0.0554571, -0.945921, 22.8995, 1.86325, -41.876)
 
-[node name="PineSmall14" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall14" parent="Props/Pines" unique_id=1553423767 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.221975, -0.0532705, 0.973596, -0.0159193, 0.998571, 0.0510075, -0.974922, -0.00417657, -0.222506, 20.4966, 1.71515, -39.4331)
 
-[node name="Pine18" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine18" parent="Props/Pines" unique_id=2098663909 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.999428, -0.0255044, 0.0221973, 0.0258392, 0.999555, -0.0149267, -0.0218067, 0.0154917, 0.999642, 15.9755, 1.86325, -44.604)
 
-[node name="Pine19" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine19" parent="Props/Pines" unique_id=1283305013 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.259085, -0.0925599, 0.961409, 0.0616708, 0.994952, 0.0791699, -0.963883, 0.0387791, 0.263486, 18.3849, 1.86325, -47.8275)
 
-[node name="PineSmall15" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall15" parent="Props/Pines" unique_id=1168029183 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.336092, 0, 0.941828, 0, 1, 0, -0.941828, 0, 0.336092, 14.57, 1.86249, -43.537)
 
-[node name="PineSmall16" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall16" parent="Props/Pines" unique_id=1116972180 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.934115, 0.0330477, -0.355438, -0.0159193, 0.998571, 0.0510075, 0.356616, -0.0419886, 0.933307, 15.1217, 1.71515, -45.9747)
 
-[node name="Pine20" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine20" parent="Props/Pines" unique_id=1710646589 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.985073, -0.0280011, -0.169846, 0.0258392, 0.999555, -0.0149267, 0.170188, 0.0103152, 0.985358, 21.1187, 1.86325, -43.69)
 
-[node name="Pine21" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine21" parent="Props/Pines" unique_id=68596987 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.439057, -0.0982772, 0.893068, 0.0616708, 0.994952, 0.0791699, -0.89634, 0.0203162, 0.442901, 21.0057, 1.86325, -47.9733)
 
-[node name="PineSmall17" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall17" parent="Props/Pines" unique_id=1290078416 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.510408, 0, 0.859932, 0, 1, 0, -0.859932, 0, 0.510408, 18.0882, 1.86249, -42.9122)
 
-[node name="PineSmall18" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall18" parent="Props/Pines" unique_id=73349458 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.848428, 0.040484, -0.52776, -0.0159193, 0.998571, 0.0510075, 0.529072, -0.0348746, 0.84786, 19.097, 1.71515, -45.199)
 
-[node name="Pine10" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine10" parent="Props/Pines" unique_id=1329178640 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.635259, 0.0279473, 0.771793, 0.0258392, 0.999555, -0.0149267, -0.771867, 0.0104602, -0.635698, -10.8144, 0.631983, -31.0326)
 
-[node name="Pine11" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine11" parent="Props/Pines" unique_id=1016484274 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.917661, 0.0877189, -0.387561, 0.0616708, 0.994952, 0.0791699, 0.39255, 0.0487499, -0.918438, -9.90986, 0.631983, -32.9513)
 
-[node name="PineSmall6" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall6" parent="Props/Pines" unique_id=1892040003 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.947957, 0, -0.318397, 0, 1, 0, 0.318397, 0, -0.947957, -9.10672, 0.631226, -30.5881)
 
-[node name="Pine24" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine24" parent="Props/Pines" unique_id=1454594493 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.910451, 0.0296965, 0.412549, 0.0258392, 0.999555, -0.0149267, -0.412809, -0.00293008, -0.910813, -17.5618, 0.0137729, -26.4207)
 
-[node name="Pine25" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine25" parent="Props/Pines" unique_id=1534560924 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.650661, 0.100226, -0.752725, 0.0616708, 0.994952, 0.0791699, 0.756861, 0.00509157, -0.653557, -18.1795, 0.0137729, -28.5417)
 
-[node name="PineSmall23" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall23" parent="Props/Pines" unique_id=3740195 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.710541, 0, -0.703655, 0, 1, 0, 0.703655, 0, -0.710541, -15.6138, 0.0130159, -26.7745)
 
-[node name="Pine23" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine23" parent="Props/Pines" unique_id=1828049701 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.917661, 0.0877189, -0.387561, 0.0616708, 0.994952, 0.0791699, 0.39255, 0.0487499, -0.918438, -9.96998, 0.631983, -38.7062)
 
-[node name="PineSmall22" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall22" parent="Props/Pines" unique_id=648615630 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.947957, 0, -0.318397, 0, 1, 0, 0.318397, 0, -0.947957, -9.91774, 0.631226, -37.1572)
 
-[node name="PineSmall8" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall8" parent="Props/Pines" unique_id=1546912470 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.297499, -0.053434, 0.953225, -0.0159193, 0.998571, 0.0510075, -0.954589, 0, -0.297925, -11.3635, 0.483881, -29.5139)
 
-[node name="Pine16" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine16" parent="Props/Pines" unique_id=2097170811 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.334566, 0.0227174, 0.942098, 0.0258392, 0.999555, -0.0149267, -0.942018, 0.0193491, -0.335004, -4.85901, 0.854121, -48.2628)
 
-[node name="Pine22" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine22" parent="Props/Pines" unique_id=1958511831 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.996484, 0.0658849, -0.0517667, 0.0616708, 0.994952, 0.0791699, 0.0567223, 0.075699, -0.995516, -2.91474, 0.852872, -48.7225)
 
-[node name="PineSmall20" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall20" parent="Props/Pines" unique_id=667741624 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.999728, 0, 0.0233152, 0, 1, 0, -0.0233152, 0, -0.999728, -3.4108, 0.853485, -47.2687)
 
-[node name="PineSmall21" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall21" parent="Props/Pines" unique_id=2091804273 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.0452227, -0.0502427, 0.997712, -0.0159193, 0.998571, 0.0510075, -0.99885, -0.0181896, 0.0443577, -5.91209, 0.705752, -47.0318)
 
-[node name="Pine12" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine12" parent="Props/Pines" unique_id=383052658 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.986801, 0.023116, -0.160278, 0.0258392, 0.999555, -0.0149267, 0.159862, -0.0188711, -0.986959, -9.62644, 0.0976913, -25.3989)
 
-[node name="Pine13" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine13" parent="Props/Pines" unique_id=614346197 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(-0.123247, 0.0863051, -0.988616, 0.0616708, 0.994952, 0.0791699, 0.990458, -0.0512113, -0.127948, -10.4505, 0.0968551, -27.6502)
 
-[node name="PineSmall9" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall9" parent="Props/Pines" unique_id=1938801684 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.202565, 0, -0.979268, 0, 1, 0, 0.979268, 0, -0.202565, -15.9435, -0.0846436, -35.1803)
 
-[node name="PineSmall10" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall10" parent="Props/Pines" unique_id=14009686 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.44106287, 0.038769294, -0.89663833, -0.0159193, 0.998572, 0.051007498, 0.89733523, 0.03677142, -0.43981522, -9.70939, -0.0505898, -23.2937)
 
-[node name="Pine8" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine8" parent="Props/Pines" unique_id=1686396752 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.994621, -0.0242076, 0.100716, 0.0258392, 0.999555, -0.0149267, -0.10031, 0.0174488, 0.994803, 12.5823, 0.375732, -28.9568)
 
-[node name="Pine9" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("11_qtbex")]
+[node name="Pine9" parent="Props/Pines" unique_id=1595154589 groups=["has_leafs"] instance=ExtResource("11_qtbex")]
 transform = Transform3D(0.157233, -0.0768685, 0.84355, 0.0531303, 0.857166, 0.068206, -0.845378, 0.0395743, 0.16118, 12.5828, 0.388445, -26.9667)
 
-[node name="PineSmall7" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall7" parent="Props/Pines" unique_id=727134737 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(0.95926, 0.0296444, -0.280965, -0.0159193, 0.998572, 0.0510075, 0.282076, -0.0444567, 0.958361, 11.6234, 0.227629, -30.2561)
 
-[node name="PineSmall2" parent="Props/Pines" groups=["has_leafs"] instance=ExtResource("12_0heq0")]
+[node name="PineSmall2" parent="Props/Pines" unique_id=561992511 groups=["has_leafs"] instance=ExtResource("12_0heq0")]
 transform = Transform3D(-0.833336, 0, 0.552766, 0, 1, 0, -0.552766, 0, -0.833336, -13.439, 2.49677, -5.10355)
 
-[node name="Rocks" type="Node3D" parent="Props"]
+[node name="Rocks" type="Node3D" parent="Props" unique_id=892413972]
 
-[node name="RockGroup" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup" parent="Props/Rocks" unique_id=46991060 instance=ExtResource("10_qtbex")]
 transform = Transform3D(0.443988, 0, 1.62752, 0, 1.68699, 0, -1.62752, 0, 0.443988, -3.8520677, -0.91605186, -10.211)
 
-[node name="RockGroup2" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup2" parent="Props/Rocks" unique_id=1721946147 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-0.734153, 0, 1.51887, 0, 1.68699, 0, -1.51887, 0, -0.734153, -6.05748, 0.357821, -11.9887)
 
-[node name="RockGroup6" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup6" parent="Props/Rocks" unique_id=1456033281 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-0.734153, 0, 1.51887, 0, 1.68699, 0, -1.51887, 0, -0.734153, -3.90145, -1.5884529, -12.4566)
 
-[node name="RockGroup7" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup7" parent="Props/Rocks" unique_id=1433568169 instance=ExtResource("10_qtbex")]
 transform = Transform3D(1.6175, 0, -0.479217, 0, 1.68699, 0, 0.479217, 0, 1.6175, -6.1462, -1.35135, -13.6528)
 
-[node name="RockGroup3" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup3" parent="Props/Rocks" unique_id=1176368107 instance=ExtResource("10_qtbex")]
 transform = Transform3D(2.52966, 0, -0.893068, 0, 2.68268, 0, 0.893068, 0, 2.52966, -12.6932, -1.50291, -0.581812)
 
-[node name="RockGroup8" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup8" parent="Props/Rocks" unique_id=474906391 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-2.63816, 0, -0.486669, 0, 2.68268, 0, 0.486669, 0, -2.63816, 14.469, -4.467196, -20.9064)
 
-[node name="RockGroup9" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup9" parent="Props/Rocks" unique_id=1562877537 instance=ExtResource("10_qtbex")]
 transform = Transform3D(0.467917, 0, -2.64155, 0, 2.68268, 0, 2.64155, 0, 0.467917, 21.7909, -2.19393, -24.9978)
 
-[node name="RockGroup4" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup4" parent="Props/Rocks" unique_id=1014496114 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-1.58308, 0, -2.16578, 0, 2.68268, 0, 2.16578, 0, -1.58308, -11.6991, 0.289883, -10.8709)
 
-[node name="RockGroup13" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup13" parent="Props/Rocks" unique_id=880458772 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-1.56637, 0.22943, -2.16578, 0.38879, 2.65436, 1.49012e-08, 2.14291, -0.313879, -1.58308, -13.1199, -0.677023, -24.8742)
 
-[node name="RockGroup14" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup14" parent="Props/Rocks" unique_id=1479742058 instance=ExtResource("10_qtbex")]
 transform = Transform3D(2.53406, -0.0350137, 0.879803, -0.0486524, 2.67089, 0.246425, -0.879155, -0.24873, 2.52229, -16.0592, -2.42865, -22.8081)
 
-[node name="RockGroup16" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup16" parent="Props/Rocks" unique_id=1608788650 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-2.65297, 0.388588, -1.25823, 0.429246, 2.93056, -1.79702e-08, 1.24494, -0.182351, -2.68128, -12.9151, -0.677023, -40.1196)
 
-[node name="RockGroup18" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup18" parent="Props/Rocks" unique_id=388326292 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-2.15927, 0.0784152, -2.39863, 0.0306953, 2.75078, 0.0863112, 2.98604, 0.0284278, -1.73538, -18.7038, -2.36979, -32.1727)
 
-[node name="RockGroup17" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup17" parent="Props/Rocks" unique_id=36750634 instance=ExtResource("10_qtbex")]
 transform = Transform3D(1.24435, -0.195863, 2.36854, -0.0486524, 2.67089, 0.246425, -2.37612, -0.157259, 1.23533, -8.69965, -0.682733, -42.4981)
 
-[node name="RockGroup10" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup10" parent="Props/Rocks" unique_id=928382101 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-3.47069, 0, -1.36295, 0, 3.72872, 0, 1.36295, 0, -3.47069, 11.5869, 0.963581, -53.0123)
 
-[node name="RockGroup11" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup11" parent="Props/Rocks" unique_id=1101575941 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-3.52756, 0, 1.20817, 0, 3.72872, 0, -1.20817, 0, -3.52756, 8.64716, -2.76514, -51.2976)
 
-[node name="RockGroup12" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup12" parent="Props/Rocks" unique_id=726498576 instance=ExtResource("10_qtbex")]
 transform = Transform3D(3.70282, 0, 0.438716, 0, 3.72872, 0, -0.438716, 0, 3.70282, 14.4552, -3.89749, -49.3084)
 
-[node name="RockGroup5" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup5" parent="Props/Rocks" unique_id=1773908111 instance=ExtResource("10_qtbex")]
 transform = Transform3D(-2.44742, 0, 1.09858, 0, 2.68268, 0, -1.09858, 0, -2.44742, -9.66806, -2.89208, -12.974)
 
-[node name="RockGroup15" parent="Props/Rocks" instance=ExtResource("10_qtbex")]
+[node name="RockGroup15" parent="Props/Rocks" unique_id=1400288283 instance=ExtResource("10_qtbex")]
 transform = Transform3D(2.5838, 0, 0.721605, 0, 2.68268, 0, -0.721605, 0, 2.5838, -13.4808, -3.37688, -12.974)
 
-[node name="Rock" parent="Props/Rocks" instance=ExtResource("13_0heq0")]
+[node name="Rock" parent="Props/Rocks" unique_id=683877091 instance=ExtResource("13_0heq0")]
 transform = Transform3D(1.00051, 0, 0.992859, 0, 0.970428, 0, -0.992859, 0, 1.00051, -13.6848, 2.59733, -6.44902)
 
-[node name="Rock2" parent="Props/Rocks" instance=ExtResource("13_0heq0")]
+[node name="Rock2" parent="Props/Rocks" unique_id=481645585 instance=ExtResource("13_0heq0")]
 transform = Transform3D(1.64014, 0, -0.719256, 0, 1.83533, 0, 0.719256, 0, 1.64014, 7.31352, -1.09504, -3.29004)
 
-[node name="Rock3" parent="Props/Rocks" instance=ExtResource("13_0heq0")]
+[node name="Rock3" parent="Props/Rocks" unique_id=299619438 instance=ExtResource("13_0heq0")]
 transform = Transform3D(-0.390441, 0, -1.21834, 0, 0.983405, 0, 1.21834, 0, -0.390441, 2.14391, 0.366442, -28.5859)
 
-[node name="Rock4" parent="Props/Rocks" instance=ExtResource("13_0heq0")]
+[node name="Rock4" parent="Props/Rocks" unique_id=1093825029 instance=ExtResource("13_0heq0")]
 transform = Transform3D(-1.2054, 0, -0.428724, 0, 0.983405, 0, 0.428724, 0, -1.2054, -12.1462, 0.366442, -36.621)
 
-[node name="Rock7" parent="Props/Rocks" instance=ExtResource("13_0heq0")]
+[node name="Rock7" parent="Props/Rocks" unique_id=1866804907 instance=ExtResource("13_0heq0")]
 transform = Transform3D(-0.789528, 0, 0.686546, 0, 0.804235, 0, -0.686546, 0, -0.789528, -6.4811, 0.74194, -45.7384)
 
-[node name="Rock5" parent="Props/Rocks" instance=ExtResource("13_0heq0")]
+[node name="Rock5" parent="Props/Rocks" unique_id=1641540108 instance=ExtResource("13_0heq0")]
 transform = Transform3D(-0.051316, 0, 1.79018, 0, 1.07351, 0, -1.79018, 0, -0.051316, -11.5577, -0.314872, -21.5935)
 
-[node name="Rock6" parent="Props/Rocks" instance=ExtResource("13_0heq0")]
+[node name="Rock6" parent="Props/Rocks" unique_id=1741670415 instance=ExtResource("13_0heq0")]
 transform = Transform3D(-0.0294807, 0, 1.02845, 0, 0.503151, 0, -1.02845, 0, -0.0294807, 11.2552, 0.288775, -29.0793)
 
-[node name="Stone" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone" parent="Props/Rocks" unique_id=1423604855 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.963761, 0, 0.266767, 0, 1, 0, -0.266767, 0, 0.963761, -3.80014, -0.967456, 2.72742)
 
-[node name="Stone3" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone3" parent="Props/Rocks" unique_id=1443704422 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.963761, 0, 0.266767, 0, 1, 0, -0.266767, 0, 0.963761, 2.98674, -0.08099, -6.92909)
 
-[node name="Stone10" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone10" parent="Props/Rocks" unique_id=2146645135 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.963761, 0, 0.266767, 0, 1, 0, -0.266767, 0, 0.963761, 11.9493, -0.08099, -40.5811)
 
-[node name="Stone5" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone5" parent="Props/Rocks" unique_id=843058913 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.963761, 0, 0.266767, 0, 1, 0, -0.266767, 0, 0.963761, 2.98674, 0.413225, -28.9913)
 
-[node name="Stone6" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone6" parent="Props/Rocks" unique_id=1100244115 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.963761, 0, 0.266767, 0, 1, 0, -0.266767, 0, 0.963761, -2.15194, -0.0358454, -20.0897)
 
-[node name="Stone7" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone7" parent="Props/Rocks" unique_id=1297047426 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.963761, 0, 0.266767, 0, 0.69374, 0, -0.266767, 0, 0.963761, 14.7584, 2.66134, -24.8547)
 
-[node name="Stone2" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone2" parent="Props/Rocks" unique_id=2074864863 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(-1.50631, 0, -0.775565, 0, 1.69424, 0, 0.775565, 0, -1.50631, 6.62096, -0.85389, -1.89038)
 
-[node name="Stone4" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone4" parent="Props/Rocks" unique_id=1236783823 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.924412, 0, -0.707687, 0, 1.1642, 0, 0.707687, 0, 0.924412, -9.99627, -0.0010677, -22.236)
 
-[node name="Stone8" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone8" parent="Props/Rocks" unique_id=1775545384 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(-0.658421, 0, 0.960125, 0, 1.1642, 0, -0.960125, 0, -0.658421, -8.98356, 0.648986, -37.8055)
 
-[node name="Stone9" parent="Props/Rocks" instance=ExtResource("22_vyjgi")]
+[node name="Stone9" parent="Props/Rocks" unique_id=663529776 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.681501, 0, 0.943882, 0, 1.1642, 0, -0.943882, 0, 0.681501, -13.8042, -0.0569115, -28.2644)
 
-[node name="Grass" type="Node3D" parent="Props"]
+[node name="Grass" type="Node3D" parent="Props" unique_id=2033068217]
 
-[node name="GrassPile" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile" parent="Props/Grass" unique_id=870610547 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.977453, 0, 0.211154, 0, 1, 0, -0.211154, 0, 0.977453, -5.63593, -0.0673279, 0.342595)
 
-[node name="GrassPile27" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile27" parent="Props/Grass" unique_id=258805315 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.977453, 0, 0.211154, 0, 1, 0, -0.211154, 0, 0.977453, -9.47748, -0.0880886, -1.10076)
 
-[node name="GrassPile4" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile4" parent="Props/Grass" unique_id=1074826326 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.977453, 0, 0.211154, 0, 1, 0, -0.211154, 0, 0.977453, -3.50119, 0.119612, -8.38546)
 
-[node name="GrassPile5" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile5" parent="Props/Grass" unique_id=1677971989 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.977453, 0, 0.211154, 0, 1, 0, -0.211154, 0, 0.977453, -8.72057, 2.01785, -9.06102)
 
-[node name="GrassPile9" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile9" parent="Props/Grass" unique_id=380687095 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.131391, 0, -0.991331, 0, 1, 0, 0.991331, 0, 0.131391, -8.2046, 2.01785, -9.81779)
 
-[node name="GrassPile6" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile6" parent="Props/Grass" unique_id=975528796 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.47742, 0, 0.878675, 0, 1, 0, -0.878675, 0, -0.47742, -9.12991, 2.01785, -2.62922)
 
-[node name="GrassPile28" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile28" parent="Props/Grass" unique_id=2105131320 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.501526, 0, 0.865143, 0, 1, 0, -0.865143, 0, 0.501526, -9.55019, 1.97634, -5.04946)
 
-[node name="GrassPile7" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile7" parent="Props/Grass" unique_id=1936094480 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.147102, 0, -0.989121, 0, 1, 0, 0.989121, 0, 0.147102, -12.5761, 2.01785, -3.23847)
 
-[node name="GrassPile8" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile8" parent="Props/Grass" unique_id=1195864083 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.147102, 0, -0.989121, 0, 1, 0, 0.989121, 0, 0.147102, -13.1415, 2.54677, -5.49669)
 
-[node name="GrassPile2" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile2" parent="Props/Grass" unique_id=1337039576 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.977453, 0, 0.211154, 0, 1, 0, -0.211154, 0, 0.977453, 4.72537, -0.104442, -6.70767)
 
-[node name="GrassPile3" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile3" parent="Props/Grass" unique_id=295219885 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.953607, 0, -0.301055, 0, 1, 0, 0.301055, 0, 0.953607, 2.65084, -0.104442, -7.54455)
 
-[node name="GrassPile11" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile11" parent="Props/Grass" unique_id=1257635517 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.953607, 0, -0.301055, 0, 1, 0, 0.301055, 0, 0.953607, -1.69843, -0.0595717, -20.2119)
 
-[node name="GrassPile24" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile24" parent="Props/Grass" unique_id=1741519079 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.646031, 0, 0.763311, 0, 1, 0, -0.763311, 0, 0.646031, -11.1365, -0.0595717, -20.5422)
 
-[node name="GrassPile25" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile25" parent="Props/Grass" unique_id=394004354 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.646031, 0, 0.763311, 0, 1, 0, -0.763311, 0, 0.646031, -9.59411, -0.0595717, -24.8729)
 
-[node name="GrassPile26" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile26" parent="Props/Grass" unique_id=237380099 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.103869, 0, -0.994591, 0, 1, 0, 0.994591, 0, 0.103869, -10.0723, -0.0595717, -28.0585)
 
-[node name="GrassPile29" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile29" parent="Props/Grass" unique_id=358013410 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.103869, 0, -0.994591, 0, 1, 0, 0.994591, 0, 0.103869, -8.71707, 0.602178, -30.9152)
 
-[node name="GrassPile35" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile35" parent="Props/Grass" unique_id=823723599 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.894287, 0, 0.447494, 0, 1, 0, -0.447494, 0, -0.894287, -12.5115, 0.602178, -36.1415)
 
-[node name="GrassPile30" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile30" parent="Props/Grass" unique_id=1998783059 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.103869, 0, -0.994591, 0, 1, 0, 0.994591, 0, 0.103869, -9.26904, 0.602178, -33.3328)
 
-[node name="GrassPile36" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile36" parent="Props/Grass" unique_id=159568090 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.8567, 0, -0.515816, 0, 1, 0, 0.515816, 0, -0.8567, -9.62267, 0.602178, -36.719)
 
-[node name="GrassPile38" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile38" parent="Props/Grass" unique_id=191677119 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.606058, 0, -0.795421, 0, 1, 0, 0.795421, 0, -0.606058, -3.04419, 0.824962, -47.2259)
 
-[node name="GrassPile40" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile40" parent="Props/Grass" unique_id=193583131 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.915424, 0, -0.402491, 0, 1, 0, 0.402491, 0, -0.915424, -6.6094, 0.824962, -45.2653)
 
-[node name="GrassPile39" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile39" parent="Props/Grass" unique_id=161904855 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.463451, 0, 0.886123, 0, 1, 0, -0.886123, 0, 0.463451, -5.64633, 0.824962, -46.8385)
 
-[node name="GrassPile37" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile37" parent="Props/Grass" unique_id=1441977467 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.592857, 0, -0.805308, 0, 1, 0, 0.805308, 0, -0.592857, -9.41654, 0.602178, -38.6138)
 
-[node name="GrassPile34" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile34" parent="Props/Grass" unique_id=42036565 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.665843, 0, 0.746092, 0, 1, 0, -0.746092, 0, 0.665843, -10.4526, 0.602178, -33.0861)
 
-[node name="GrassPile31" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile31" parent="Props/Grass" unique_id=1693890826 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.27401, 0, -0.961727, 0, 1, 0, 0.961727, 0, -0.27401, -16.0191, -0.054107, -34.7028)
 
-[node name="GrassPile32" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile32" parent="Props/Grass" unique_id=361398701 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.696815, 0, 0.717251, 0, 1, 0, -0.717251, 0, -0.696815, -17.6494, -0.054107, -28.3689)
 
-[node name="GrassPile33" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile33" parent="Props/Grass" unique_id=1134341508 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.975373, 0, 0.220561, 0, 1, 0, -0.220561, 0, 0.975373, -16.0699, -0.054107, -26.8776)
 
-[node name="GrassPile23" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile23" parent="Props/Grass" unique_id=1972903684 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.79692, 0, -0.604085, 0, 1, 0, 0.604085, 0, 0.79692, -0.798768, -0.0595717, -27.4886)
 
-[node name="GrassPile13" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile13" parent="Props/Grass" unique_id=1613132606 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.701096, 0, -0.713067, 0, 1, 0, 0.713067, 0, 0.701096, 14.2879, 2.6094, -24.9569)
 
-[node name="GrassPile14" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile14" parent="Props/Grass" unique_id=935163346 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.215468, 0, 0.976511, 0, 1, 0, -0.976511, 0, 0.215468, 15.0243, 2.6094, -21.6231)
 
-[node name="GrassPile15" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile15" parent="Props/Grass" unique_id=254457024 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.680056, 0, 0.73316, 0, 1, 0, -0.73316, 0, -0.680056, 15.8011, 2.51784, -22.4418)
 
-[node name="GrassPile10" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile10" parent="Props/Grass" unique_id=595956322 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.953607, 0, -0.301055, 0, 1, 0, 0.301055, 0, 0.953607, 4.90479, -0.0475194, -18.6716)
 
-[node name="GrassPile16" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile16" parent="Props/Grass" unique_id=1463750100 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.533659, 0, -0.8457, 0, 1, 0, 0.8457, 0, 0.533659, 3.75432, 0.357257, -23.8389)
 
-[node name="GrassPile21" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile21" parent="Props/Grass" unique_id=153664297 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.704027, 0, -0.710173, 0, 1, 0, 0.710173, 0, 0.704027, 1.58403, 0.357257, -28.3318)
 
-[node name="GrassPile22" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile22" parent="Props/Grass" unique_id=1438536272 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.658834, 0, 0.752288, 0, 1, 0, -0.752288, 0, -0.658834, 3.93068, 0.357257, -29.3077)
 
-[node name="GrassPile17" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile17" parent="Props/Grass" unique_id=1747741634 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.876113, 0, -0.482105, 0, 1, 0, 0.482105, 0, -0.876113, 4.98081, 0.357257, -23.7506)
 
-[node name="GrassPile18" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile18" parent="Props/Grass" unique_id=1230920224 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.974315, 0, -0.225189, 0, 1, 0, 0.225189, 0, -0.974315, 4.51652, 0.357257, -24.5943)
 
-[node name="GrassPile12" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile12" parent="Props/Grass" unique_id=630780453 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.697553, 0, 0.716533, 0, 1, 0, -0.716533, 0, -0.697553, 6.59275, -0.0475194, -17.3013)
 
-[node name="GrassPile19" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile19" parent="Props/Grass" unique_id=1345575740 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(-0.697553, 0, 0.716533, 0, 1, 0, -0.716533, 0, -0.697553, 12.1233, 0.376993, -26.8995)
 
-[node name="GrassPile20" parent="Props/Grass" instance=ExtResource("23_vyjgi")]
+[node name="GrassPile20" parent="Props/Grass" unique_id=1413191359 instance=ExtResource("23_vyjgi")]
 transform = Transform3D(0.762804, 0, -0.64663, 0, 1, 0, 0.64663, 0, 0.762804, 12.3515, 0.353767, -28.4726)
 
-[node name="Grass" parent="Props/Grass" instance=ExtResource("24_l68g0")]
+[node name="Grass" parent="Props/Grass" unique_id=1561003290 instance=ExtResource("24_l68g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0432, 2.49137, -8.14129)
 script = ExtResource("25_hd4lb")
 
-[node name="Grass2" parent="Props/Grass" instance=ExtResource("24_l68g0")]
+[node name="Grass2" parent="Props/Grass" unique_id=661866813 instance=ExtResource("24_l68g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47147, -0.0985655, -10.0725)
 script = ExtResource("25_hd4lb")
 
-[node name="Grass3" parent="Props/Grass" instance=ExtResource("24_l68g0")]
+[node name="Grass3" parent="Props/Grass" unique_id=1255619113 instance=ExtResource("24_l68g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73158, -0.0985655, 0.853012)
 script = ExtResource("25_hd4lb")
 
-[node name="Grass5" parent="Props/Grass" instance=ExtResource("24_l68g0")]
+[node name="Grass5" parent="Props/Grass" unique_id=562583780 instance=ExtResource("24_l68g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90575, -0.126018, -2.07288)
 script = ExtResource("25_hd4lb")
 
-[node name="Grass4" parent="Props/Grass" instance=ExtResource("24_l68g0")]
+[node name="Grass4" parent="Props/Grass" unique_id=612311010 instance=ExtResource("24_l68g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88515, -0.196787, 0.681587)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass" parent="Props/Grass" unique_id=1146130824 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86943, -0.0610295, 1.56355)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass3" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass3" parent="Props/Grass" unique_id=2088726249 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.40418, -0.0610295, -22.9348)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass6" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass6" parent="Props/Grass" unique_id=1913699597 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0683, 0.624763, -29.2194)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass9" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass9" parent="Props/Grass" unique_id=1762192227 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9913, -0.0158046, -27.7558)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass10" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass10" parent="Props/Grass" unique_id=424609588 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(0.999981, 0, 0.00623079, 0, 1, 0, -0.00623079, 0, 0.999981, -13.7949, -0.0910753, -27.757)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass7" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass7" parent="Props/Grass" unique_id=1696001278 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6787, 0.640623, -30.5113)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass8" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass8" parent="Props/Grass" unique_id=9259077 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3598, 0.573401, -30.5113)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass5" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass5" parent="Props/Grass" unique_id=487445268 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.489, -0.0124644, -22.2046)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass4" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass4" parent="Props/Grass" unique_id=675509722 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33167, -0.0171221, -23.0773)
 script = ExtResource("25_hd4lb")
 
-[node name="Grass6" parent="Props/Grass" instance=ExtResource("24_l68g0")]
+[node name="Grass6" parent="Props/Grass" unique_id=432454875 instance=ExtResource("24_l68g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.66389, 2.04028, -7.56192)
 script = ExtResource("25_hd4lb")
 
-[node name="DarkerGrass2" parent="Props/Grass" instance=ExtResource("26_hd4lb")]
+[node name="DarkerGrass2" parent="Props/Grass" unique_id=344981343 instance=ExtResource("26_hd4lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3607, 2.05065, -2.31735)
 script = ExtResource("25_hd4lb")
 
-[node name="Fences" type="Node3D" parent="Props"]
+[node name="Fences" type="Node3D" parent="Props" unique_id=1423442050]
 
-[node name="Fence" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence" parent="Props/Fences" unique_id=1274410853 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6884, 2.09334, -1.77412)
 
-[node name="Fence2" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence2" parent="Props/Fences" unique_id=1464359055 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58081, 2.09334, -1.77412)
 
-[node name="Fence3" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence3" parent="Props/Fences" unique_id=620137785 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.45735, 2.09334, -1.77412)
 
-[node name="Fence4" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence4" parent="Props/Fences" unique_id=649446388 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.992321, 0, 0.123688, 0, 1, 0, -0.123688, 0, 0.992321, -7.3834, 2.09334, -1.82943)
 
-[node name="Fence5" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence5" parent="Props/Fences" unique_id=619249532 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.871556, 0, 0.490295, 0, 1, 0, -0.490295, 0, 0.871556, -6.35603, 2.09334, -2.20401)
 
-[node name="Fence7" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence7" parent="Props/Fences" unique_id=1618948134 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.321258, 0, -0.946992, 0, 1, 0, 0.946992, 0, 0.321258, 14.5129, 1.80714, -41.9493)
 
-[node name="Fence14" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence14" parent="Props/Fences" unique_id=1463877809 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.49873, 0, -0.866757, 0, 1, 0, 0.866757, 0, 0.49873, 14.0728, 1.80714, -42.9261)
 
-[node name="Fence15" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence15" parent="Props/Fences" unique_id=613682347 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.340183, 0, -0.940359, 0, 1, 0, 0.940359, 0, 0.340183, 13.6238, 1.80714, -43.9215)
 
-[node name="Fence16" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence16" parent="Props/Fences" unique_id=1345383098 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(-0.0492681, 0, -0.998786, 0, 1, 0, 0.998786, 0, -0.0492681, 13.5313, 1.80714, -44.9873)
 
-[node name="Fence17" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence17" parent="Props/Fences" unique_id=916605464 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(-0.653896, 0, -0.756584, 0, 1, 0, 0.756584, 0, -0.653896, 13.9498, 1.80714, -45.9661)
 
-[node name="Fence18" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence18" parent="Props/Fences" unique_id=9043101 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(-0.838157, 0, -0.545429, 0, 1, 0, 0.545429, 0, -0.838157, 14.7886, 1.80714, -46.6451)
 
-[node name="Fence19" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence19" parent="Props/Fences" unique_id=2015271961 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(-0.956834, 0, -0.290635, 0, 1, 0, 0.290635, 0, -0.956834, 15.7718, 1.80714, -47.1364)
 
-[node name="Fence20" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence20" parent="Props/Fences" unique_id=779370143 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(-0.956834, 0, -0.290635, 0, 1, 0, 0.290635, 0, -0.956834, 16.833, 1.80714, -47.4587)
 
-[node name="Fence8" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence8" parent="Props/Fences" unique_id=1008318856 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.237855, 0, -0.971301, 0, 1, 0, 0.971301, 0, 0.237855, 14.8336, 1.80714, -40.8929)
 
-[node name="Fence9" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence9" parent="Props/Fences" unique_id=514126515 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.237855, 0, -0.971301, 0, 1, 0, 0.971301, 0, 0.237855, 15.1008, 1.80714, -39.8017)
 
-[node name="Fence10" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence10" parent="Props/Fences" unique_id=1817821985 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.356167, 0, -0.934422, 0, 1, 0, 0.934422, 0, 0.356167, 15.41, 1.80714, -38.7717)
 
-[node name="Fence11" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence11" parent="Props/Fences" unique_id=505928462 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.683529, 0, -0.729924, 0, 1, 0, 0.729924, 0, 0.683529, 16.0182, 1.80714, -37.863)
 
-[node name="Fence12" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence12" parent="Props/Fences" unique_id=843287499 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.972508, 0, -0.232868, 0, 1, 0, 0.232868, 0, 0.972508, 16.9541, 1.80714, -37.3795)
 
-[node name="Fence13" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence13" parent="Props/Fences" unique_id=635045725 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.99061, 0, -0.136718, 0, 1, 0, 0.136718, 0, 0.99061, 18.0521, 1.80714, -37.1684)
 
-[node name="Fence21" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence21" parent="Props/Fences" unique_id=269560588 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.980015, 0, 0.198923, 0, 1, 0, -0.198923, 0, 0.980015, 19.0746, 1.80714, -37.2)
 
-[node name="Fence22" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence22" parent="Props/Fences" unique_id=344123901 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.914523, 0, 0.404535, 0, 1, 0, -0.404535, 0, 0.914523, 20.1341, 1.80714, -37.5007)
 
-[node name="Fence23" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence23" parent="Props/Fences" unique_id=335472866 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.755796, 0, 0.654807, 0, 1, 0, -0.654807, 0, 0.755796, 21.0206, 1.80714, -38.1006)
 
-[node name="Fence24" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence24" parent="Props/Fences" unique_id=403721985 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.778999, 0, 0.627025, 0, 1, 0, -0.627025, 0, 0.778999, 21.8308, 1.80714, -38.8556)
 
-[node name="Fence25" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence25" parent="Props/Fences" unique_id=406974111 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.8281, 0, 0.560581, 0, 1, 0, -0.560581, 0, 0.8281, 22.7336, 1.80714, -39.491)
 
-[node name="Fence26" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence26" parent="Props/Fences" unique_id=1710124211 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.824235, 0, 0.566248, 0, 1, 0, -0.566248, 0, 0.824235, 23.6721, 1.80714, -40.0985)
 
-[node name="Fence27" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence27" parent="Props/Fences" unique_id=1121682554 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.747543, 0, 0.664213, 0, 1, 0, -0.664213, 0, 0.747543, 24.5178, 1.80714, -40.7832)
 
-[node name="Fence28" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence28" parent="Props/Fences" unique_id=714676719 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.410878, 0, 0.91169, 0, 1, 0, -0.91169, 0, 0.410878, 25.1247, 1.80714, -41.6688)
 
-[node name="Fence6" parent="Props/Fences" instance=ExtResource("20_tmiu8")]
+[node name="Fence6" parent="Props/Fences" unique_id=1375850140 instance=ExtResource("20_tmiu8")]
 transform = Transform3D(0.378051, 0, 0.925785, 0, 1, 0, -0.925785, 0, 0.378051, -5.69723, 2.09334, -3.00697)
 
-[node name="Floor" type="Node3D" parent="Props"]
+[node name="Floor" type="Node3D" parent="Props" unique_id=823253400]
 
-[node name="PlatformGrass" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass" parent="Props/Floor" unique_id=1068115903 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(-1.98427, 0, 0.244359, 0, 1.23525, 0, -0.256479, 0, -1.8905, -1.81351, -1.91385, -4.80047)
 
-[node name="PlatformGrass3" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass3" parent="Props/Floor" unique_id=307997012 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(1.60766, 0, -0.0337008, 0, 1.23525, 0, 0.0284268, 0, 1.90593, 3.54635, -1.84688, -22.5547)
 
-[node name="PlatformGrass8" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass8" parent="Props/Floor" unique_id=2146591144 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(1.63629, 0, 1.62882, 0, 1.81099, 0, -2.04923, 0, 1.30059, -6.32521, -2.06126, -38.8516)
 
-[node name="PlatformGrass9" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass9" parent="Props/Floor" unique_id=540514622 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(0.495966, 0, 2.04675, 0, 1.23525, 0, -2.57503, 0, 0.394217, -10.6569, -1.84688, -31.2871)
 
-[node name="PlatformGrass5" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass5" parent="Props/Floor" unique_id=1314868069 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(0.609693, 0, -2.01761, 0, 1.3888, 0, 1.70187, 0, 0.722807, 6.01346, -1.66975, -25.9002)
 
-[node name="PlatformGrass10" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass10" parent="Props/Floor" unique_id=828346231 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(1.56734, 0, -1.06799, 0, 1.3888, 0, 0.900858, 0, 1.85812, 17.6489, -1.66975, -42.0688)
 
-[node name="PlatformGrass11" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass11" parent="Props/Floor" unique_id=1037058559 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(1.0933, 0, 1.15097, 0, 1.36579, 0, -0.970851, 0, 1.29614, 19.7572, -0.206468, -42.7302)
 
-[node name="PlatformGrass6" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass6" parent="Props/Floor" unique_id=349360911 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(-0.136684, 0, -0.61605, 0, 2.85938, 0, 0.519642, 0, -0.162043, 14.7457, -1.66975, -23.1912)
 
-[node name="PlatformGrass7" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass7" parent="Props/Floor" unique_id=1046309860 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(-0.225788, 0, -0.578035, 0, 3.80793, 0, 0.487576, 0, -0.267677, 20.4076, -1.94477, -19.65166)
 
-[node name="PlatformGrass2" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass2" parent="Props/Floor" unique_id=929241688 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(-1.36615, 0, -0.361931, 0, 3.21709, 0, 0.316431, 0, -1.56259, -10.0959, -2.79503, -6.81624)
 
-[node name="PlatformGrass4" parent="Props/Floor" instance=ExtResource("5_cf3k0")]
+[node name="PlatformGrass4" parent="Props/Floor" unique_id=1462197309 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(-0.464126, 0, 0.637886, 0, 3.5645, 0, -0.557694, 0, -0.530863, -12.2373, -2.83176, -7.02488)
 
-[node name="PlatformBridge" parent="Props/Floor" instance=ExtResource("8_cf3k0")]
+[node name="PlatformBridge" parent="Props/Floor" unique_id=1683834921 instance=ExtResource("8_cf3k0")]
 transform = Transform3D(4.80959, 0, -1.36669, 0, 5, 0, 1.36669, 0, 4.80959, -1.24953, -0.606606, -14.2136)
 
-[node name="PlatformBridge3" parent="Props/Floor" instance=ExtResource("8_cf3k0")]
+[node name="PlatformBridge3" parent="Props/Floor" unique_id=1212971345 instance=ExtResource("8_cf3k0")]
 transform = Transform3D(-1.36669, 0, -4.80959, 0, 5, 0, 4.80959, 0, -1.36669, -1.04934, -0.606606, -27.1455)
 
-[node name="PlatformBridge2" parent="Props/Floor" instance=ExtResource("8_cf3k0")]
+[node name="PlatformBridge2" parent="Props/Floor" unique_id=1233776540 instance=ExtResource("8_cf3k0")]
 transform = Transform3D(4.80959, 0, -1.36669, 0, 5, 0, 1.36669, 0, 4.80959, 0.0210624, -0.606606, -18.685)
 
-[node name="PlatformBridge4" parent="Props/Floor" instance=ExtResource("8_cf3k0")]
+[node name="PlatformBridge4" parent="Props/Floor" unique_id=528793088 instance=ExtResource("8_cf3k0")]
 transform = Transform3D(0.156364, 0, 1.49422, 0, 1.50238, 0, -1.49422, 0, 0.156364, 9.65687, -1.0992, -18.0289)
 
-[node name="PlatformBridge6" parent="Props/Floor" instance=ExtResource("8_cf3k0")]
+[node name="PlatformBridge6" parent="Props/Floor" unique_id=599079998 instance=ExtResource("8_cf3k0")]
 transform = Transform3D(0.149402, 0.443315, 1.42769, -0.046139, 1.43549, -0.440907, -1.49422, 0, 0.156364, 11.0404, -1.07136, -17.8768)
 
-[node name="PlatformBridge5" parent="Props/Floor" instance=ExtResource("8_cf3k0")]
+[node name="PlatformBridge5" parent="Props/Floor" unique_id=1466501915 instance=ExtResource("8_cf3k0")]
 transform = Transform3D(-0.156364, 0, -1.49422, 0, 1.50238, 0, 1.49422, 0, -0.156364, 9.95626, -1.0992, -19.296)
 
-[node name="FloorSand" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand" parent="Props/Floor" unique_id=419144505 instance=ExtResource("7_ohoif")]
 transform = Transform3D(2.24123, 0, -0.797714, 0, 2.37896, 0, 0.797714, 0, 2.24123, -5.04882, -1.88619, -4.2881)
 
-[node name="FloorSand2" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand2" parent="Props/Floor" unique_id=1991340250 instance=ExtResource("7_ohoif")]
 transform = Transform3D(2.37896, 0, 0, 0, 2.37896, 0, 0, 0, 2.37896, 0.488454, -1.88619, -1.52374)
 
-[node name="FloorSand13" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand13" parent="Props/Floor" unique_id=1322884545 instance=ExtResource("7_ohoif")]
 transform = Transform3D(0.821607, 0, 2.23258, 0, 2.37896, 0, -2.23258, 0, 0.821607, -10.9969, -2.15333, -28.8444)
 
-[node name="FloorSand14" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand14" parent="Props/Floor" unique_id=1297038643 instance=ExtResource("7_ohoif")]
 transform = Transform3D(1.52929, 0, 1.86115, 0, 2.37896, 0, -2.21196, 0, 1.28675, -4.21982, -2.15333, -40.159)
 
-[node name="FloorSand3" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand3" parent="Props/Floor" unique_id=2128342140 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.879732, 0, -0.475471, 0, 1, 0, 0.475471, 0, -0.879732, 4.08645, -1.22557, -1.55135)
 
-[node name="FloorSand5" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand5" parent="Props/Floor" unique_id=1282708317 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.879732, 0, -0.475471, 0, 1, 0, 0.475471, 0, -0.879732, 10.4057, -1.69452, -19.2314)
 
-[node name="FloorSand7" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand7" parent="Props/Floor" unique_id=1105292016 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-1.04719, 0, -0.100298, 0, 1.05198, 0, 0.100298, 0, -1.04719, 15.9829, -1.72113, -20.7945)
 
-[node name="FloorSand9" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand9" parent="Props/Floor" unique_id=1989023143 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.372485, 0, 0.983832, 0, 1.05198, 0, -0.983832, 0, -0.372485, 15.9829, -1.72113, -25.1068)
 
-[node name="FloorSand10" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand10" parent="Props/Floor" unique_id=157112041 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.372485, 0, 0.983832, 0, 1.05198, 0, -0.983832, 0, -0.372485, 14.097, -1.72113, -29.6417)
 
-[node name="FloorSand11" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand11" parent="Props/Floor" unique_id=291002285 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.948435, 0, 0.980145, 0, 1.3639, 0, -0.980145, 0, -0.948435, 9.89957, -1.77434, -50.0292)
 
-[node name="FloorSand12" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand12" parent="Props/Floor" unique_id=866096514 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.789982, 0, 1.11182, 0, 1.3639, 0, -1.11182, 0, -0.789982, 13.2745, -1.68762, -43.926)
 
-[node name="FloorSand8" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand8" parent="Props/Floor" unique_id=1375626124 instance=ExtResource("7_ohoif")]
 transform = Transform3D(0.0301072, 0, 1.05155, 0, 1.05198, 0, -1.05155, 0, 0.0301072, 22.4405, -1.72113, -23.7066)
 
-[node name="FloorSand15" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand15" parent="Props/Floor" unique_id=84019209 instance=ExtResource("7_ohoif")]
 transform = Transform3D(0.487589, 0, 0.847943, 0, 0.978135, 0, -0.847943, 0, 0.487589, 21.1097, -1.72113, -19.8307)
 
-[node name="FloorSand6" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand6" parent="Props/Floor" unique_id=1338287532 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.999971, 0, 0.00767925, 0, 1, 0, -0.00767925, 0, -0.999971, 5.40458, -1.57155, -19.2314)
 
-[node name="FloorSand4" parent="Props/Floor" instance=ExtResource("7_ohoif")]
+[node name="FloorSand4" parent="Props/Floor" unique_id=522380983 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.480407, 0, 0.877046, 0, 1, 0, -0.877046, 0, -0.480407, -12.5249, -1.59268, -2.21779)
 
-[node name="FloorGrass" parent="Props/Floor" instance=ExtResource("21_rfxh8")]
+[node name="FloorGrass" parent="Props/Floor" unique_id=670130207 instance=ExtResource("21_rfxh8")]
 transform = Transform3D(0.954848, 0, -0.91794, 0, 1.32452, 0, 0.91794, 0, 0.954848, -5.98623, -0.316985, -5.463)
 
-[node name="FloorGrass2" parent="Props/Floor" instance=ExtResource("21_rfxh8")]
+[node name="FloorGrass2" parent="Props/Floor" unique_id=1826726876 instance=ExtResource("21_rfxh8")]
 transform = Transform3D(0.96408, 0, 0.333748, 0, 1.02021, 0, -0.333748, 0, 0.96408, -4.82543, 0.552338, -45.338)
 
-[node name="GoldAcorns" type="Node3D" parent="Props"]
+[node name="GoldAcorns" type="Node3D" parent="Props" unique_id=1747555328]
 
-[node name="GoldAcorn" parent="Props/GoldAcorns" instance=ExtResource("22_vm6ot")]
+[node name="GoldAcorn" parent="Props/GoldAcorns" unique_id=1792166140 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8327, 3.1887155, -5.93187)
 
-[node name="GoldAcorn2" parent="Props/GoldAcorns" instance=ExtResource("22_vm6ot")]
+[node name="GoldAcorn2" parent="Props/GoldAcorns" unique_id=1827941968 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0123, -0.6823405, -31.4351)
 
-[node name="GoldAcorn3" parent="Props/GoldAcorns" instance=ExtResource("22_vm6ot")]
+[node name="GoldAcorn3" parent="Props/GoldAcorns" unique_id=420172930 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5359, 0.6577796, -28.441)
 
-[node name="GoldAcorn4" parent="Props/GoldAcorns" instance=ExtResource("22_vm6ot")]
+[node name="GoldAcorn4" parent="Props/GoldAcorns" unique_id=126238221 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5828, 4.4749274, -19.347015)
 
-[node name="ButtonsAndPlatforms" type="Node3D" parent="."]
+[node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=717572434]
 
-[node name="BoarButton" parent="ButtonsAndPlatforms" instance=ExtResource("16_uo75g")]
+[node name="BoarButton" parent="ButtonsAndPlatforms" unique_id=1747502302 instance=ExtResource("16_uo75g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.621805, 0.685964, -41.6088)
 
-[node name="MovingBoarPlatform" parent="ButtonsAndPlatforms" instance=ExtResource("17_tmiu8")]
+[node name="MovingBoarPlatform" parent="ButtonsAndPlatforms" unique_id=648479631 instance=ExtResource("17_tmiu8")]
 transform = Transform3D(-0.0723679, 0, 0.997378, 0, 1, 0, -0.997378, 0, -0.0723679, 8.68142, 0.0922077, -33.6432)
 
-[node name="MovingPlatform" parent="ButtonsAndPlatforms/MovingBoarPlatform" node_paths=PackedStringArray("destination_node") instance=ExtResource("18_hyq56")]
+[node name="MovingPlatform" parent="ButtonsAndPlatforms/MovingBoarPlatform" unique_id=1548984816 node_paths=PackedStringArray("destination_node") instance=ExtResource("18_hyq56")]
 destination_node = NodePath("Destination")
 
-[node name="Destination" type="Marker3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform"]
+[node name="Destination" type="Marker3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" unique_id=1192803253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41278, 0, 0.610415)
 
-[node name="CornTarget" type="StaticBody3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" groups=["button", "light_weight"]]
+[node name="CornTarget" type="StaticBody3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" unique_id=317479896 groups=["button", "light_weight"]]
 transform = Transform3D(1.0000012, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000012, -0.029281616, 0.30554694, -0.3258705)
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform/CornTarget" groups=["button"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform/CornTarget" unique_id=423082929 groups=["button"]]
 shape = SubResource("SphereShape3D_0721d")
 debug_fill = false
 
-[node name="MovingAcornPlatform2" parent="ButtonsAndPlatforms" instance=ExtResource("9_a6plf")]
+[node name="MovingAcornPlatform2" parent="ButtonsAndPlatforms" unique_id=436053462 instance=ExtResource("9_a6plf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95581, 0.201571, -6.25993)
 
-[node name="MovingPlatform" parent="ButtonsAndPlatforms/MovingAcornPlatform2" node_paths=PackedStringArray("destination_node") instance=ExtResource("18_hyq56")]
+[node name="MovingPlatform" parent="ButtonsAndPlatforms/MovingAcornPlatform2" unique_id=1785455961 node_paths=PackedStringArray("destination_node") instance=ExtResource("18_hyq56")]
 destination_node = NodePath("Destination")
 
-[node name="Destination" type="Marker3D" parent="ButtonsAndPlatforms/MovingAcornPlatform2/MovingPlatform"]
+[node name="Destination" type="Marker3D" parent="ButtonsAndPlatforms/MovingAcornPlatform2/MovingPlatform" unique_id=1296718275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8512957, 0)
 
-[node name="AcornButton2" parent="ButtonsAndPlatforms" instance=ExtResource("19_uo75g")]
+[node name="AcornButton2" parent="ButtonsAndPlatforms" unique_id=1162665974 instance=ExtResource("19_uo75g")]
 transform = Transform3D(-0.0569717, 0, -0.998376, 0, 1, 0, 0.998376, 0, -0.0569717, 15.5377, 2.65083, -21.9664)
 
-[node name="Sprites" type="Node3D" parent="."]
+[node name="Sprites" type="Node3D" parent="." unique_id=429349805]
 
-[node name="Flowers" type="Sprite3D" parent="Sprites"]
+[node name="Flowers" type="Sprite3D" parent="Sprites" unique_id=1697534033]
 transform = Transform3D(0.580414, 0.0739821, 0, 3.23386e-09, -2.53707e-08, 0.58511, 0.0739821, -0.580414, -2.5576e-08, -4.5693, -0.0127046, 0.395943)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers2" type="Sprite3D" parent="Sprites"]
+[node name="Flowers2" type="Sprite3D" parent="Sprites" unique_id=427986985]
 transform = Transform3D(0.310087, 0.496185, 0, 2.1689e-08, -1.35544e-08, 0.58511, 0.496185, -0.310087, -2.5576e-08, -3.58748, -0.0127046, -0.590154)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers6" type="Sprite3D" parent="Sprites"]
+[node name="Flowers6" type="Sprite3D" parent="Sprites" unique_id=1062946202]
 transform = Transform3D(0.310087, 0.496185, 0, 2.1689e-08, -1.35544e-08, 0.58511, 0.496185, -0.310087, -2.5576e-08, -7.20343, 2.12093, -9.64964)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers8" type="Sprite3D" parent="Sprites"]
+[node name="Flowers8" type="Sprite3D" parent="Sprites" unique_id=417945506]
 transform = Transform3D(0.310087, 0.496185, 0, 2.1689e-08, -1.35544e-08, 0.58511, 0.496185, -0.310087, -2.5576e-08, -9.37637, 2.12093, -8.5299)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers7" type="Sprite3D" parent="Sprites"]
+[node name="Flowers7" type="Sprite3D" parent="Sprites" unique_id=263225039]
 transform = Transform3D(-0.142958, 0.567377, 1.84427e-08, 2.1689e-08, -1.35544e-08, 0.58511, 0.567377, 0.142958, -1.772e-08, -5.95791, 2.12093, -9.63326)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers9" type="Sprite3D" parent="Sprites"]
+[node name="Flowers9" type="Sprite3D" parent="Sprites" unique_id=1758001530]
 transform = Transform3D(-0.192558, -0.552517, -5.66154e-09, 2.1689e-08, -1.35544e-08, 0.58511, -0.552517, 0.192558, 2.49415e-08, -6.89154, 2.12093, -3.0577)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers10" type="Sprite3D" parent="Sprites"]
+[node name="Flowers10" type="Sprite3D" parent="Sprites" unique_id=405058857]
 transform = Transform3D(0.265006, -0.521656, -2.19077e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.521656, -0.265006, 1.31979e-08, -8.10254, 2.12093, -3.34937)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers11" type="Sprite3D" parent="Sprites"]
+[node name="Flowers11" type="Sprite3D" parent="Sprites" unique_id=1908681249]
 transform = Transform3D(0.265006, -0.521656, -2.19077e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.521656, -0.265006, 1.31979e-08, -11.2901, 2.12093, -3.34937)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers3" type="Sprite3D" parent="Sprites"]
+[node name="Flowers3" type="Sprite3D" parent="Sprites" unique_id=1433112301]
 transform = Transform3D(0.310087, 0.496185, 0, 2.1689e-08, -1.35544e-08, 0.58511, 0.496185, -0.310087, -2.5576e-08, 1.75936, -0.0127046, -7.68861)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers4" type="Sprite3D" parent="Sprites"]
+[node name="Flowers4" type="Sprite3D" parent="Sprites" unique_id=546311519]
 transform = Transform3D(0.310087, 0.496185, 0, 2.1689e-08, -1.35544e-08, 0.58511, 0.496185, -0.310087, -2.5576e-08, 5.19885, -0.0268148, -4.03876)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers12" type="Sprite3D" parent="Sprites"]
+[node name="Flowers12" type="Sprite3D" parent="Sprites" unique_id=98831257]
 transform = Transform3D(0.310087, 0.496185, 0, 2.1689e-08, -1.35544e-08, 0.58511, 0.496185, -0.310087, -2.5576e-08, 2.0443, -0.0268148, 0.961741)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers13" type="Sprite3D" parent="Sprites"]
+[node name="Flowers13" type="Sprite3D" parent="Sprites" unique_id=211180297]
 transform = Transform3D(-0.504779, 0.295892, 2.55657e-08, 2.1689e-08, -1.35544e-08, 0.58511, 0.295892, 0.504779, 7.25279e-10, 0.930258, -0.0268148, 1.73877)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers5" type="Sprite3D" parent="Sprites"]
+[node name="Flowers5" type="Sprite3D" parent="Sprites" unique_id=1187220063]
 transform = Transform3D(-0.336291, 0.478813, 2.35576e-08, 2.1689e-08, -1.35544e-08, 0.58511, 0.478813, 0.336291, -9.9584e-09, 5.25374, -0.0268148, -5.69037)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers14" type="Sprite3D" parent="Sprites"]
+[node name="Flowers14" type="Sprite3D" parent="Sprites" unique_id=783698349]
 transform = Transform3D(0.557691, -0.177017, -2.47733e-08, 2.1689e-08, -1.35544e-08, 0.58511, -0.177017, -0.557691, -6.35747e-09, 5.49415, 0.0651196, -17.9948)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers15" type="Sprite3D" parent="Sprites"]
+[node name="Flowers15" type="Sprite3D" parent="Sprites" unique_id=170546586]
 transform = Transform3D(0.380193, 0.444755, -3.79008e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.444755, -0.380193, -2.52936e-08, 3.90803, 0.0651196, -18.4585)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers16" type="Sprite3D" parent="Sprites"]
+[node name="Flowers16" type="Sprite3D" parent="Sprites" unique_id=774717657]
 transform = Transform3D(0.380193, 0.444755, -3.79008e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.444755, -0.380193, -2.52936e-08, -2.6211, 0.0651196, -20.9351)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers23" type="Sprite3D" parent="Sprites"]
+[node name="Flowers23" type="Sprite3D" parent="Sprites" unique_id=1103202558]
 transform = Transform3D(0.380193, 0.444755, -3.79008e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.444755, -0.380193, -2.52936e-08, -9.48865, 0.0651196, -26.7388)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers26" type="Sprite3D" parent="Sprites"]
+[node name="Flowers26" type="Sprite3D" parent="Sprites" unique_id=523787368]
 transform = Transform3D(0.380193, 0.444755, -3.79008e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.444755, -0.380193, -2.52936e-08, -4.10061, 0.9493, -46.6523)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers30" type="Sprite3D" parent="Sprites"]
+[node name="Flowers30" type="Sprite3D" parent="Sprites" unique_id=1360437870]
 transform = Transform3D(-0.124706, 0.571666, 1.78655e-08, 2.1689e-08, -1.35543e-08, 0.58511, 0.571666, 0.124706, -1.83017e-08, -6.34601, 0.9493, -43.1817)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers31" type="Sprite3D" parent="Sprites"]
+[node name="Flowers31" type="Sprite3D" parent="Sprites" unique_id=1973537952]
 transform = Transform3D(-0.124706, 0.571666, 1.78655e-08, 2.1689e-08, -1.35543e-08, 0.58511, 0.571666, 0.124706, -1.83017e-08, -2.2856, 0.9493, -44.6629)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers34" type="Sprite3D" parent="Sprites"]
+[node name="Flowers34" type="Sprite3D" parent="Sprites" unique_id=791391138]
 transform = Transform3D(-0.585007, 0.011008, 2.19401e-08, 2.1689e-08, -1.35543e-08, 0.58511, 0.011008, 0.585007, 1.31439e-08, -4.17825, 0.9493, -45.2904)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers32" type="Sprite3D" parent="Sprites"]
+[node name="Flowers32" type="Sprite3D" parent="Sprites" unique_id=1742789198]
 transform = Transform3D(-0.575422, -0.106035, 1.88735e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.106035, 0.575422, 1.72605e-08, -3.88031, 0.9493, -44.191)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers33" type="Sprite3D" parent="Sprites"]
+[node name="Flowers33" type="Sprite3D" parent="Sprites" unique_id=2122673628]
 transform = Transform3D(0.354546, 0.465458, -2.3598e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.465458, -0.354546, -2.54669e-08, -5.59458, 0.9493, -44.6629)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers27" type="Sprite3D" parent="Sprites"]
+[node name="Flowers27" type="Sprite3D" parent="Sprites" unique_id=515026879]
 transform = Transform3D(0.129082, 0.570694, 8.43554e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.570694, -0.129082, -2.41448e-08, -2.33308, 0.9493, -47.5848)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers28" type="Sprite3D" parent="Sprites"]
+[node name="Flowers28" type="Sprite3D" parent="Sprites" unique_id=920447912]
 transform = Transform3D(0.129082, 0.570694, 8.43554e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.570694, -0.129082, -2.41448e-08, -7.59952, 0.9493, -47.2335)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers29" type="Sprite3D" parent="Sprites"]
+[node name="Flowers29" type="Sprite3D" parent="Sprites" unique_id=276148152]
 transform = Transform3D(-0.467897, 0.35132, 2.54826e-08, 2.1689e-08, -1.35543e-08, 0.58511, 0.35132, 0.467897, -2.18373e-09, -6.08131, 0.9493, -46.3212)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers24" type="Sprite3D" parent="Sprites"]
+[node name="Flowers24" type="Sprite3D" parent="Sprites" unique_id=650080254]
 transform = Transform3D(0.312819, 0.494467, -1.41056e-10, 2.1689e-08, -1.35543e-08, 0.58511, 0.494467, -0.312819, -2.55756e-08, -10.3071, 0.721761, -29.9516)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers35" type="Sprite3D" parent="Sprites"]
+[node name="Flowers35" type="Sprite3D" parent="Sprites" unique_id=828663035]
 transform = Transform3D(0.312819, 0.494467, -1.41056e-10, 2.1689e-08, -1.35543e-08, 0.58511, 0.494467, -0.312819, -2.55756e-08, -10.981, 0.721761, -32.1257)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers25" type="Sprite3D" parent="Sprites"]
+[node name="Flowers25" type="Sprite3D" parent="Sprites" unique_id=358723564]
 transform = Transform3D(0.312819, 0.494467, -1.41056e-10, 2.1689e-08, -1.35543e-08, 0.58511, 0.494467, -0.312819, -2.55756e-08, -6.44865, 0.721761, -44.3925)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers17" type="Sprite3D" parent="Sprites"]
+[node name="Flowers17" type="Sprite3D" parent="Sprites" unique_id=2062570027]
 transform = Transform3D(0.380193, 0.444755, -3.79008e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.444755, -0.380193, -2.52936e-08, 12.3646, 0.480894, -21.3366)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers21" type="Sprite3D" parent="Sprites"]
+[node name="Flowers21" type="Sprite3D" parent="Sprites" unique_id=1398777583]
 transform = Transform3D(0.581827, -0.0618918, -2.3001e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.0618918, -0.581827, -1.11841e-08, 20.3071, 3.86762, -20.57636)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers22" type="Sprite3D" parent="Sprites"]
+[node name="Flowers22" type="Sprite3D" parent="Sprites" unique_id=242640137]
 transform = Transform3D(0.581827, -0.0618918, -2.3001e-08, 2.1689e-08, -1.35543e-08, 0.58511, -0.0618918, -0.581827, -1.11841e-08, 20.7303, 3.86762, -18.233862)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers20" type="Sprite3D" parent="Sprites"]
+[node name="Flowers20" type="Sprite3D" parent="Sprites" unique_id=1834269225]
 transform = Transform3D(0.380193, 0.444755, -3.79008e-09, 2.1689e-08, -1.35543e-08, 0.58511, 0.444755, -0.380193, -2.52936e-08, 11.7237, 0.480894, -27.7624)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers18" type="Sprite3D" parent="Sprites"]
+[node name="Flowers18" type="Sprite3D" parent="Sprites" unique_id=1479823268]
 transform = Transform3D(0.575438, 0.105945, -1.88762e-08, 2.1689e-08, -1.35543e-08, 0.58511, 0.105945, -0.575438, -1.72575e-08, 11.2599, 0.480894, -20.4332)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers19" type="Sprite3D" parent="Sprites"]
+[node name="Flowers19" type="Sprite3D" parent="Sprites" unique_id=2123723448]
 transform = Transform3D(0.495323, 0.311463, -1.11455e-08, 2.1689e-08, -1.35543e-08, 0.58511, 0.311463, -0.495323, -2.30197e-08, 11.0782, 0.480894, -21.8882)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers36" type="Sprite3D" parent="Sprites"]
+[node name="Flowers36" type="Sprite3D" parent="Sprites" unique_id=350535998]
 transform = Transform3D(0.495323, 0.311463, -1.11455e-08, 2.1689e-08, -1.35543e-08, 0.58511, 0.311463, -0.495323, -2.30197e-08, 3.46708, 0.480894, -24.6936)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers37" type="Sprite3D" parent="Sprites"]
+[node name="Flowers37" type="Sprite3D" parent="Sprites" unique_id=2020023462]
 transform = Transform3D(0.582354, -0.0567308, -1.11455e-08, 8.86114e-09, -2.39919e-08, 0.58511, -0.0567308, -0.582354, -2.30197e-08, 4.09141, 0.480894, -22.8267)
 texture = ExtResource("27_ykkph")
 
-[node name="Flowers38" type="Sprite3D" parent="Sprites"]
+[node name="Flowers38" type="Sprite3D" parent="Sprites" unique_id=6504535]
 transform = Transform3D(-0.0439116, 0.58346, -1.11455e-08, 2.21184e-08, 1.28417e-08, 0.58511, 0.58346, 0.0439116, -2.30197e-08, 5.59111, 0.480894, -24.3676)
 texture = ExtResource("27_ykkph")
 
-[node name="Water" type="MeshInstance3D" parent="."]
+[node name="Water" type="MeshInstance3D" parent="." unique_id=425975453]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_qtbex")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=753433304]
 visible = false
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=588802489]
 transform = Transform3D(0.990693, 0, 0.136113, 0, 1, 0, -0.136113, 0, 0.990693, -14.0811, 2.43738, -5.99166)
 size = Vector3(1, 7.94286, 11.4565)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1435102774]
 transform = Transform3D(0.546424, 0, -0.837509, 0, 1, 0, 0.837509, 0, 0.546424, -13.8644, 2.43738, -22.5202)
 size = Vector3(1, 7.94286, 5.72778)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=646412712]
 transform = Transform3D(0.546424, 0, -0.837509, 0, 1, 0, 0.837509, 0, 0.546424, -14.6095, 2.43738, -26.012)
 size = Vector3(1, 7.94286, 5.72778)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1167945016]
 transform = Transform3D(0.314688, 0, -0.949195, 0, 1, 0, 0.949195, 0, 0.314688, -10.8849, 2.74353, -11.4616)
 size = Vector3(1, 8.55516, 9.77026)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1181272997]
 transform = Transform3D(-0.548249, 0, -0.836315, 0, 1, 0, 0.836315, 0, -0.548249, -6.40965, 1.15897, -11.5622)
 size = Vector3(1, 7.00695, 8.17957)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1555692794]
 transform = Transform3D(-0.93781, 0, -0.347149, 0, 1, 0, 0.347149, 0, -0.93781, 20.8153, 0.179941, -25.059)
 size = Vector3(1, 5.04889, 4.84612)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=621852050]
 transform = Transform3D(-0.859398, 0, 0.511308, 0, 1, 0, -0.511308, 0, -0.859398, 16.0268, -0.636325, -20.888)
 size = Vector3(1, 3.41635, 2.48634)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2139836290]
 transform = Transform3D(0.116029, 0, -0.993246, 0, 1, 0, 0.993246, 0, 0.116029, -12.9782, 1.48486, -38.5436)
 size = Vector3(1, 7.65872, 6.27316)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1896461824]
 transform = Transform3D(0.897866, 0, -0.440268, 0, 1, 0, 0.440268, 0, 0.897866, -8.4485, 1.48486, -41.1613)
 size = Vector3(1, 7.65872, 5.4511)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1098141159]
 transform = Transform3D(0.759067, 0, 0.651013, 0, 1, 0, -0.651013, 0, 0.759067, -8.41164, 1.48486, -44.9137)
 size = Vector3(1, 7.65872, 3.23912)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D" unique_id=609144839]
 transform = Transform3D(-0.801525, 0, -0.597961, 0, 1, 0, 0.597961, 0, -0.801525, 5.57108, 1.48486, -48.8723)
 size = Vector3(1, 7.65872, 9.17819)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D" unique_id=1988877843]
 
-[node name="CameraColliders" type="Node3D" parent="."]
+[node name="CameraColliders" type="Node3D" parent="." unique_id=845271198]
 
-[node name="CameraCollider" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider" type="StaticBody3D" parent="CameraColliders" unique_id=144834364 groups=["CameraCollider"]]
 transform = Transform3D(0.982382, 0, -0.186884, 0, 1, 0, 0.186884, 0, 0.982382, -4.86903, 0.355492, -6.5586)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider" unique_id=678981629 groups=["CameraCollider"]]
 transform = Transform3D(0.999991, 0, 5.36442e-07, 0, 1, 0, -5.36442e-07, 0, 0.999991, 0, 0, 0)
 shape = SubResource("BoxShape3D_ykkph")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider2" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider2" type="StaticBody3D" parent="CameraColliders" unique_id=2028649362 groups=["CameraCollider"]]
 transform = Transform3D(0.824136, 0, -0.566392, 0, 1, 0, 0.566392, 0, 0.824136, -7.72809, 0.355492, -0.0916132)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider2" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider2" unique_id=1511160656 groups=["CameraCollider"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0.941406, 0.997301)
 shape = SubResource("BoxShape3D_0721d")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider5" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider5" type="StaticBody3D" parent="CameraColliders" unique_id=794957643 groups=["CameraCollider"]]
 transform = Transform3D(0.426222, 0, -0.904619, 0, 1, 0, 0.904619, 0, 0.426222, -13.9189, 0.355492, 0.684854)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider5" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider5" unique_id=1640155503 groups=["CameraCollider"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0.941406, 0.997301)
 shape = SubResource("BoxShape3D_0721d")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider3" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider3" type="StaticBody3D" parent="CameraColliders" unique_id=982121763 groups=["CameraCollider"]]
 transform = Transform3D(0.982382, 0, -0.186884, 0, 1, 0, 0.186884, 0, 0.982382, -2.88905, 0.355492, -10.3433)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider3" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider3" unique_id=462272907 groups=["CameraCollider"]]
 transform = Transform3D(0.999991, 0, 5.36442e-07, 0, 1, 0, -5.36442e-07, 0, 0.999991, 4.76837e-07, 0.905132, 0.32381)
 shape = SubResource("BoxShape3D_vm6ot")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider4" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider4" type="StaticBody3D" parent="CameraColliders" unique_id=1798479658 groups=["CameraCollider"]]
 transform = Transform3D(0.909621, 0, 0.41544, 0, 1, 0, -0.41544, 0, 0.909621, -3.52145, 0.355492, -13.0601)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider4" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider4" unique_id=883480572 groups=["CameraCollider"]]
 transform = Transform3D(0.999991, 0, 5.66244e-07, 0, 1, 0, -5.66244e-07, 0, 0.999991, 2.38419e-07, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_iwmsy")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider6" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider6" type="StaticBody3D" parent="CameraColliders" unique_id=1451178153 groups=["CameraCollider"]]
 transform = Transform3D(0.574748, 0, -0.81833, 0, 1, 0, 0.81833, 0, 0.574748, -11.8626, 3.22746, -8.78628)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider6" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider6" unique_id=1795599314 groups=["CameraCollider"]]
 transform = Transform3D(0.999991, 0, 5.66244e-07, 0, 1, 0, -5.66244e-07, 0, 0.999991, 2.38419e-07, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_tccp5")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider7" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider7" type="StaticBody3D" parent="CameraColliders" unique_id=1207731734 groups=["CameraCollider"]]
 transform = Transform3D(-0.108312, 0, -0.994117, 0, 1, 0, 0.994117, 0, -0.108312, -7.82974, 3.22746, -9.5463)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider7" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider7" unique_id=137399729 groups=["CameraCollider"]]
 transform = Transform3D(0.999991, 0, 5.66244e-07, 0, 1, 0, -5.66244e-07, 0, 0.999991, 2.38419e-07, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_kfagj")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider8" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider8" type="StaticBody3D" parent="CameraColliders" unique_id=902778865 groups=["CameraCollider"]]
 transform = Transform3D(-0.999958, 0, -0.00919776, 0, 1, 0, 0.00919776, 0, -0.999958, 13.2185, 0.52243, -23.1099)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider8" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider8" unique_id=410608000 groups=["CameraCollider"]]
 transform = Transform3D(0.999982, 0, 4.68455e-07, 0, 1, 0, -4.68455e-07, 0, 0.999982, 0, 0, 0)
 shape = SubResource("BoxShape3D_hblto")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider9" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider9" type="StaticBody3D" parent="CameraColliders" unique_id=657888093 groups=["CameraCollider"]]
 transform = Transform3D(-0.644884, 0, 0.76428, 0, 1, 0, -0.76428, 0, -0.644884, 20.201, -0.0530281, -20.8219)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider9" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider9" unique_id=1548986245 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_qke5w")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider10" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider10" type="StaticBody3D" parent="CameraColliders" unique_id=1175133844 groups=["CameraCollider"]]
 transform = Transform3D(-0.76428, 0, -0.644884, 0, 1, 0, 0.644884, 0, -0.76428, 19.4417, -0.0530281, -18.0704)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider10" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider10" unique_id=11049639 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_qke5w")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider11" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider11" type="StaticBody3D" parent="CameraColliders" unique_id=987589880 groups=["CameraCollider"]]
 transform = Transform3D(-0.76428, 0, -0.644884, 0, 1, 0, 0.644884, 0, -0.76428, 22.6888, -0.0530281, -20.8102)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider11" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider11" unique_id=544041629 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_qke5w")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider12" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider12" type="StaticBody3D" parent="CameraColliders" unique_id=1905479957 groups=["CameraCollider"]]
 transform = Transform3D(-0.76428, 0, -0.644884, 0, 1, 0, 0.644884, 0, -0.76428, 20.7059, -0.0530281, -24.9012)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider12" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider12" unique_id=688404998 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_qke5w")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider13" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider13" type="StaticBody3D" parent="CameraColliders" unique_id=696542858 groups=["CameraCollider"]]
 transform = Transform3D(-0.544449, 0, -0.838794, 0, 1, 0, 0.838794, 0, -0.544449, 14.851, -0.0530281, -24.9898)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider13" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider13" unique_id=1100245577 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_qke5w")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider14" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider14" type="StaticBody3D" parent="CameraColliders" unique_id=1192186627 groups=["CameraCollider"]]
 transform = Transform3D(0.85624, 0, -0.516578, 0, 1, 0, 0.516578, 0, 0.85624, 15.0604, -0.0530281, -20.334)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider14" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider14" unique_id=1548814052 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
 shape = SubResource("BoxShape3D_qke5w")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider15" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider15" type="StaticBody3D" parent="CameraColliders" unique_id=145864663 groups=["CameraCollider"]]
 transform = Transform3D(0.672871, 0, -0.73976, 0, 1, 0, 0.73976, 0, 0.672871, -13.5658, -0.0530281, -21.8769)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider15" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider15" unique_id=474424514 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_3ocf3")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider16" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider16" type="StaticBody3D" parent="CameraColliders" unique_id=332178388 groups=["CameraCollider"]]
 transform = Transform3D(0.93328, 0, 0.35915, 0, 1, 0, -0.35915, 0, 0.93328, -11.6134, 0.0611551, -25.4041)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider16" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider16" unique_id=1343188176 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_nqej6")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider17" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider17" type="StaticBody3D" parent="CameraColliders" unique_id=790215163 groups=["CameraCollider"]]
 transform = Transform3D(-0.611362, 0, 0.791351, 0, 1, 0, -0.791351, 0, -0.611362, -14.2203, 0.0611551, -26.2551)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider17" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider17" unique_id=2027112865 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_nqej6")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider18" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider18" type="StaticBody3D" parent="CameraColliders" unique_id=698694691 groups=["CameraCollider"]]
 transform = Transform3D(-0.828725, 0, 0.559656, 0, 1, 0, -0.559656, 0, -0.828725, -16.7984, 0.0611551, -31.1638)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider18" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider18" unique_id=1834676387 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_nqej6")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider19" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider19" type="StaticBody3D" parent="CameraColliders" unique_id=141730522 groups=["CameraCollider"]]
 transform = Transform3D(-0.999568, 0, -0.0294048, 0, 1, 0, 0.0294048, 0, -0.999568, -16.1756, 0.0611551, -34.8339)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider19" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider19" unique_id=241353898 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_nqej6")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider20" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider20" type="StaticBody3D" parent="CameraColliders" unique_id=829586947 groups=["CameraCollider"]]
 transform = Transform3D(-0.0833471, 0, -0.996521, 0, 1, 0, 0.996521, 0, -0.0833471, -14.5784, 1.31355, -38.0107)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider20" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider20" unique_id=689988829 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_nqej6")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider21" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider21" type="StaticBody3D" parent="CameraColliders" unique_id=1257505821 groups=["CameraCollider"]]
 transform = Transform3D(0.561535, 0, -0.827453, 0, 1, 0, 0.827453, 0, 0.561535, -10.4213, 1.67502, -38.4766)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider21" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider21" unique_id=187587983 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_nqej6")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider22" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider22" type="StaticBody3D" parent="CameraColliders" unique_id=1197995638 groups=["CameraCollider"]]
 transform = Transform3D(0.97439, 0, -0.224866, 0, 1, 0, 0.224866, 0, 0.97439, -7.58776, 1.67502, -43.1832)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider22" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider22" unique_id=693711399 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668053)
 shape = SubResource("BoxShape3D_h01ac")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider23" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider23" type="StaticBody3D" parent="CameraColliders" unique_id=796149379 groups=["CameraCollider"]]
 transform = Transform3D(0.97439, 0, -0.224866, 0, 1, 0, 0.224866, 0, 0.97439, 2.16647, -1.74001, 0.971623)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider23" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider23" unique_id=1758624864 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 1.43051e-06, 1.0636, -0.668053)
 shape = SubResource("BoxShape3D_spi3t")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider24" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider24" type="StaticBody3D" parent="CameraColliders" unique_id=2123539861 groups=["CameraCollider"]]
 transform = Transform3D(0.992717, 0, 0.120466, 0, 1, 0, -0.120466, 0, 0.992717, 2.74895, -1.74631, -23.3284)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider24" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider24" unique_id=1417863543 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 1.43051e-06, 1.0636, -0.668053)
 shape = SubResource("BoxShape3D_spi3t")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider25" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider25" type="StaticBody3D" parent="CameraColliders" unique_id=55718239 groups=["CameraCollider"]]
 transform = Transform3D(0.97439, 0, -0.224866, 0, 1, 0, 0.224866, 0, 0.97439, -13.7282, -1.74631, -26.1848)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider25" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider25" unique_id=358418886 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 1.43051e-06, 1.0636, -0.668053)
 shape = SubResource("BoxShape3D_spi3t")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider26" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider26" type="StaticBody3D" parent="CameraColliders" unique_id=997576552 groups=["CameraCollider"]]
 transform = Transform3D(0.97439, 0, -0.224866, 0, 1, 0, 0.224866, 0, 0.97439, -5.07861, -1.74631, -48.1695)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider26" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider26" unique_id=1478527742 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 1.43051e-06, 1.0636, -0.668053)
 shape = SubResource("BoxShape3D_spi3t")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider27" type="StaticBody3D" parent="CameraColliders" groups=["CameraCollider"]]
+[node name="CameraCollider27" type="StaticBody3D" parent="CameraColliders" unique_id=581179323 groups=["CameraCollider"]]
 transform = Transform3D(0.97439, 0, -0.224866, 0, 1, 0, 0.224866, 0, 0.97439, 25.205, -2.85229, -24.561)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider27" groups=["CameraCollider"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider27" unique_id=1769597498 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 1.43051e-06, 1.0636, -0.668053)
 shape = SubResource("BoxShape3D_spi3t")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)

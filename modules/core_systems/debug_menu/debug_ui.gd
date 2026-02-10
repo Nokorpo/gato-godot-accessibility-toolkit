@@ -7,7 +7,7 @@ func _ready() -> void:
 	%Version.set_text(_get_current_version())
 	# FIXME the color blindness shader is broken, cannot set any color blindness
 	# or the screen turns black
-	$ColorRect.visible = false
+	$ColorRect.visible = true
 
 func _process(_delta: float) -> void:
 	%FPSCounterValue \

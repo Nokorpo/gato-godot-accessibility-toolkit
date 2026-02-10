@@ -112,6 +112,7 @@ text = "Color blindness"
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+selected = 0
 item_count = 9
 popup/item_0/text = "Normal vision"
 popup/item_0/id = 0

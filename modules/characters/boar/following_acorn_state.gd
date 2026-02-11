@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		look_at_acorn(delta)
 		if is_following:
 			var target_diff: Vector3 = Plane.PLANE_XZ.project(_target.global_position - boar.global_position)
-			if target_diff.length() <= EAT_RANGE:
+			if target_diff.length() <= EAT_RANGE * boar.scale.y:
 				state_machine.change_state(BoarEatingState)
 			else:
 				boar.velocity = lerp(boar.velocity, target_diff.normalized() * BOAR_FOLLOWING_ACORN_SPEED, .5)

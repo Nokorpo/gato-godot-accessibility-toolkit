@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsxqjrv4vntoh"]
+[gd_scene format=3 uid="uid://bsxqjrv4vntoh"]
 
 [ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/level_objects/acorn/acorn.tscn" id="1_j4h7w"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="1_yy6wf"]
@@ -23,39 +23,39 @@ sky = SubResource("Sky_yy6wf")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Map" type="Node3D"]
+[node name="Map" type="Node3D" unique_id=648802531]
 
-[node name="Gato" parent="." instance=ExtResource("1_yy6wf")]
+[node name="Gato" parent="." unique_id=967106362 instance=ExtResource("1_yy6wf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241118, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=9238958]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1397488555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_waq5o")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=331715143]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_gfipf")
 skeleton = NodePath("../..")
 
-[node name="Acorn" parent="." instance=ExtResource("1_j4h7w")]
+[node name="Acorn" parent="." unique_id=1115721574 instance=ExtResource("1_j4h7w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.841, 0)
 visible = false
 
-[node name="Boar" parent="." instance=ExtResource("2_yy6wf")]
+[node name="Boar" parent="." unique_id=1407141565 instance=ExtResource("2_yy6wf")]
 transform = Transform3D(-0.733671, 0, -0.679505, 0, 1, 0, 0.679505, 0, -0.733671, -1, 0, 0)
 
-[node name="Camera3D2" type="Camera3D" parent="."]
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=360283815]
 transform = Transform3D(-4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, 1, 0.0595447, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=445439479]
 transform = Transform3D(1, 0, 0, 0, 0.819712, 0.572775, 0, -0.572775, 0.819712, 0, 2.81509, 4.36568)
 current = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D" unique_id=8884880]
 environment = SubResource("Environment_waq5o")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1400604866]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0.159373, 0.23486, 0.958875, -0.473924, 0.870251, -0.134383, 0, 0.0389278, -3.7989)
 shadow_enabled = true

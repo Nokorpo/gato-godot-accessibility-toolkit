@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://br28c4jlnwdwd"]
+[gd_scene format=3 uid="uid://br28c4jlnwdwd"]
 
 [ext_resource type="Shader" uid="uid://bps6vn8kojyg6" path="res://modules/core_systems/debug_menu/shaders/color_blindness.gdshader" id="1_geagf"]
 
@@ -6,7 +6,7 @@
 shader = ExtResource("1_geagf")
 shader_parameter/type = 0
 
-[node name="Filter" type="ColorRect"]
+[node name="Filter" type="ColorRect" unique_id=417332123]
 material = SubResource("ShaderMaterial_vckbt")
 anchors_preset = 15
 anchor_right = 1.0

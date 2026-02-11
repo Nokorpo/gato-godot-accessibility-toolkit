@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueContainer" load_steps=5 format=3 uid="uid://hsef7m3itdq1"]
+[gd_resource type="Resource" script_class="DialogueContainer" format=3 uid="uid://hsef7m3itdq1"]
 
 [ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_eo6bj"]
 [ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_jen3y"]

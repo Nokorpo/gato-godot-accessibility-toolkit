@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c484b2uoo1e42"]
+[gd_scene format=3 uid="uid://c484b2uoo1e42"]
 
 [ext_resource type="Script" uid="uid://dsjfduxmmdkoh" path="res://addons/input_remapper/test/create_default_schemes/create_default_schemes.gd" id="1_c3c0s"]
 [ext_resource type="Script" uid="uid://coiheovm2u2si" path="res://addons/input_remapper/model/control_scheme.gd" id="2_02830"]
@@ -6,6 +6,6 @@
 [ext_resource type="Resource" uid="uid://b5dcj7dfumapq" path="res://addons/input_remapper/test/create_default_schemes/left_hand_schemes.tres" id="4_qxxyb"]
 [ext_resource type="Resource" uid="uid://duovvwe1crubj" path="res://addons/input_remapper/test/create_default_schemes/right_hand_schemes.tres" id="5_02830"]
 
-[node name="Test" type="Node"]
+[node name="Test" type="Node" unique_id=600558530]
 script = ExtResource("1_c3c0s")
 default_schemes = Array[ExtResource("2_02830")]([ExtResource("2_ca85n"), ExtResource("4_qxxyb"), ExtResource("5_02830")])

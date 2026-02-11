@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu0re1os4x2m3"]
+[gd_scene format=3 uid="uid://cu0re1os4x2m3"]
 
 [ext_resource type="Texture2D" uid="uid://b4a4wgjces1au" path="res://modules/core_systems/debug_menu/sprites/hand_pointing.png" id="1_3nxy8"]
 [ext_resource type="Script" uid="uid://q86veoh6ebcx" path="res://modules/core_systems/debug_menu/cursor.gd" id="2_fekj6"]
 
-[node name="Cursor" type="Node2D"]
+[node name="Cursor" type="Node2D" unique_id=589267301]
 process_mode = 3
 top_level = true
 z_index = 1000
 z_as_relative = false
 script = ExtResource("2_fekj6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552360127]
 editor_description = "Metí un cursor que sigue al ratón para poder ver dónde tenemos el ratón al hacer stream"
 position = Vector2(15, 17)
 texture = ExtResource("1_3nxy8")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d67xo88xjrfm"]
+[gd_scene format=3 uid="uid://d67xo88xjrfm"]
 
 [ext_resource type="PackedScene" uid="uid://dlgjam44ucftj" path="res://modules/level_objects/acorn/gold_acorn.gltf" id="1_i3kmj"]
 [ext_resource type="Script" uid="uid://cuqenjv6o6em7" path="res://modules/level_objects/acorn/gold_acorn.gd" id="1_puj2h"]
@@ -96,19 +96,17 @@ point_count = 2
 [sub_resource type="SphereShape3D" id="SphereShape3D_n6r8r"]
 radius = 0.35444814
 
-[node name="GoldAcorn" type="Area3D"]
+[node name="GoldAcorn" type="Area3D" unique_id=647902887]
 script = ExtResource("1_puj2h")
 
-[node name="gold_acorn" parent="." instance=ExtResource("1_i3kmj")]
+[node name="gold_acorn" parent="." unique_id=525752046 instance=ExtResource("1_i3kmj")]
 transform = Transform3D(1, 0, 0, 0, 0.96739167, 0.2532852, 0, -0.2532852, 0.96739167, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_n6r8r")
-}
-autoplay = "idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1768715695]
+libraries/ = SubResource("AnimationLibrary_n6r8r")
+autoplay = &"idle"
 
-[node name="PickUpDust" type="CPUParticles3D" parent="."]
+[node name="PickUpDust" type="CPUParticles3D" parent="." unique_id=2022384685]
 emitting = false
 lifetime = 0.6
 one_shot = true
@@ -120,7 +118,7 @@ initial_velocity_min = 0.1
 initial_velocity_max = 1.0
 scale_amount_curve = SubResource("Curve_8lt4b")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1831770879]
 shape = SubResource("SphereShape3D_n6r8r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

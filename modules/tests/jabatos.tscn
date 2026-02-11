@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://d1co683ie7bnj"]
+
+[ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="1_mlb1m"]
+[ext_resource type="PackedScene" uid="uid://brl80a1hiwsoq" path="res://modules/level_objects/acorn/acorn.tscn" id="2_h6w1h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3ht5c"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ju7ad"]
+sky_material = SubResource("ProceduralSkyMaterial_3ht5c")
+
+[sub_resource type="Environment" id="Environment_jevlq"]
+background_mode = 2
+sky = SubResource("Sky_ju7ad")
+tonemap_mode = 2
+
+[sub_resource type="GDScript" id="GDScript_mlb1m"]
+resource_name = "jabatos_start"
+script/source = "extends Node3D
+
+
+func _ready() -> void:
+	for child in get_children():
+		var eating_state = child.find_child(\"EatingState\", true, false)
+		eating_state._animate_boar_growing_up(child)
+"
+
+[node name="Jabatos" type="Node3D" unique_id=677886018]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1645788294]
+environment = SubResource("Environment_jevlq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1995722294]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1700073647]
+transform = Transform3D(1, 0, 0, 0, 0.8915684, 0.45288602, 0, -0.45288602, 0.8915684, 1.9868699, 4.020946, 7.444433)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=330524968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
+use_collision = true
+size = Vector3(26, 1, 5)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=52832932]
+
+[node name="Node3D" type="Node3D" parent="Node3D" unique_id=2038481703]
+script = SubResource("GDScript_mlb1m")
+
+[node name="Boar" parent="Node3D/Node3D" unique_id=668444402 instance=ExtResource("1_mlb1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.505, -0.634)
+
+[node name="Boar2" parent="Node3D/Node3D" unique_id=2075905256 instance=ExtResource("1_mlb1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505, -0.634)
+
+[node name="Boar3" parent="Node3D/Node3D" unique_id=1723434758 instance=ExtResource("1_mlb1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.505, -0.634)
+
+[node name="Boar4" parent="Node3D/Node3D" unique_id=169323478 instance=ExtResource("1_mlb1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.505, -0.634)
+
+[node name="Acorn" parent="Node3D" unique_id=501904429 instance=ExtResource("2_h6w1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.808, 1.81)
+
+[node name="Acorn2" parent="Node3D" unique_id=605047979 instance=ExtResource("2_h6w1h")]
+transform = Transform3D(1, 0, 0, 0, 0.41475675, 0.9099323, 0, -0.9099323, 0.41475675, 0, 0.808, 1.81)
+
+[node name="Acorn3" parent="Node3D" unique_id=1782087943 instance=ExtResource("2_h6w1h")]
+transform = Transform3D(0.015446779, -0.99970317, 0.018839382, 0.6338542, 0.024362374, 0.7730687, -0.77329826, 0, 0.63404244, 5, 0.808, 1.81)
+
+[node name="Acorn4" parent="Node3D" unique_id=657074561 instance=ExtResource("2_h6w1h")]
+transform = Transform3D(1, 0, 0, 0, -0.054497097, -0.99851394, 0, 0.99851394, -0.054497097, 10, 0.808, 1.81)

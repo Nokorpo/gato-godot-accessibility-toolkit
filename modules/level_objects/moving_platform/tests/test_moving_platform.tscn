@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnlqg61p5txcn"]
+[gd_scene format=3 uid="uid://dnlqg61p5txcn"]
 
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="1_ch1gd"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="2_ou4ba"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="3_g7e8y"]
 
-[node name="TestMovingPlatform" type="Node3D"]
+[node name="TestMovingPlatform" type="Node3D" unique_id=139945827]
 
-[node name="MovingAcornPlatform" parent="." instance=ExtResource("1_ch1gd")]
+[node name="MovingAcornPlatform" parent="." unique_id=29759127 instance=ExtResource("1_ch1gd")]
 
-[node name="MovingPlatform" parent="MovingAcornPlatform" node_paths=PackedStringArray("destination_node") instance=ExtResource("2_ou4ba")]
+[node name="MovingPlatform" parent="MovingAcornPlatform" unique_id=2082742167 node_paths=PackedStringArray("destination_node") instance=ExtResource("2_ou4ba")]
 destination_node = NodePath("Destination")
 
-[node name="Destination" type="Marker3D" parent="MovingAcornPlatform/MovingPlatform"]
+[node name="Destination" type="Marker3D" parent="MovingAcornPlatform/MovingPlatform" unique_id=849033452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
 
-[node name="MovingBoarPlatform" parent="." instance=ExtResource("3_g7e8y")]
+[node name="MovingBoarPlatform" parent="." unique_id=1076507844 instance=ExtResource("3_g7e8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
-[node name="MovingPlatform2" parent="MovingBoarPlatform" node_paths=PackedStringArray("destination_node") instance=ExtResource("2_ou4ba")]
+[node name="MovingPlatform2" parent="MovingBoarPlatform" unique_id=1568607178 node_paths=PackedStringArray("destination_node") instance=ExtResource("2_ou4ba")]
 destination_node = NodePath("Destination")
 
-[node name="Destination" type="Marker3D" parent="MovingBoarPlatform/MovingPlatform2"]
+[node name="Destination" type="Marker3D" parent="MovingBoarPlatform/MovingPlatform2" unique_id=357290266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)

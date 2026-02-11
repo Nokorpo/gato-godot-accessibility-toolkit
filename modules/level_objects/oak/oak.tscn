@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwp1ql6gjtok7"]
+[gd_scene format=3 uid="uid://cwp1ql6gjtok7"]
 
 [ext_resource type="Script" uid="uid://dodp0ku0lw76g" path="res://modules/level_objects/oak/oak.gd" id="1_0g256"]
 [ext_resource type="PackedScene" uid="uid://cjyapjiy2cyjv" path="res://modules/demo1/map/props/oak.gltf" id="2_0g256"]
@@ -9,36 +9,36 @@ height = 3.06145
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0g256"]
 radius = 3.22852
 
-[node name="Oak" type="Node3D"]
+[node name="Oak" type="Node3D" unique_id=2101331710]
 script = ExtResource("1_0g256")
 metadata/_custom_type_script = "uid://bh28do1i5hkni"
 
-[node name="Oak" parent="." instance=ExtResource("2_0g256")]
+[node name="Oak" parent="." unique_id=952522562 instance=ExtResource("2_0g256")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Oak"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Oak" unique_id=669930183]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Oak/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Oak/StaticBody3D" unique_id=173277040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("CapsuleShape3D_t8r8f")
 
-[node name="PlayerDetectionArea" type="Area3D" parent="."]
+[node name="PlayerDetectionArea" type="Area3D" parent="." unique_id=90917848]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" unique_id=565138505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_0g256")
 
-[node name="AcornSpawners" type="Node3D" parent="."]
+[node name="AcornSpawners" type="Node3D" parent="." unique_id=1643333534]
 
-[node name="Marker3D" type="Marker3D" parent="AcornSpawners"]
+[node name="Marker3D" type="Marker3D" parent="AcornSpawners" unique_id=329743645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618082, 2, 1)
 
-[node name="Marker3D2" type="Marker3D" parent="AcornSpawners"]
+[node name="Marker3D2" type="Marker3D" parent="AcornSpawners" unique_id=1121618980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44657, 2, 0)
 
-[node name="Marker3D3" type="Marker3D" parent="AcornSpawners"]
+[node name="Marker3D3" type="Marker3D" parent="AcornSpawners" unique_id=461471276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.305741, 2, -1.197)
 
-[node name="SpawnerCooldown" type="Timer" parent="."]
+[node name="SpawnerCooldown" type="Timer" parent="." unique_id=499317293]
 wait_time = 3.0
 one_shot = true
 

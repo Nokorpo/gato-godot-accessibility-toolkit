@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DemoList" load_steps=14 format=3 uid="uid://doxub3jvr747g"]
+[gd_resource type="Resource" script_class="DemoList" format=3 uid="uid://doxub3jvr747g"]
 
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_p5mn1"]
 [ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]

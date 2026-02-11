@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://14lvyt4uefey"]
+[gd_scene format=3 uid="uid://14lvyt4uefey"]
 
 [ext_resource type="Script" uid="uid://b5bp5qocv8ed0" path="res://addons/gato_screen_filters/view/ui.gd" id="1_q0d6r"]
 [ext_resource type="PackedScene" uid="uid://br28c4jlnwdwd" path="res://addons/gato_screen_filters/view/filter.tscn" id="2_q0d6r"]
@@ -9,12 +9,12 @@ default_font_size = 24
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kap5a"]
 bg_color = Color(0, 0, 0, 0.392157)
 
-[node name="DebugUI" type="CanvasLayer"]
+[node name="DebugUI" type="CanvasLayer" unique_id=2138196978]
 layer = 100
 visible = false
 script = ExtResource("1_q0d6r")
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="." unique_id=1611864404]
 offset_right = 416.0
 offset_bottom = 116.0
 size_flags_vertical = 0
@@ -22,7 +22,7 @@ mouse_filter = 2
 theme = SubResource("Theme_7x7q6")
 theme_override_styles/panel = SubResource("StyleBoxFlat_kap5a")
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=815520699]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/margin_left = 8
@@ -30,28 +30,28 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1187114]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=458857632]
 layout_mode = 2
 text = "GATO Screen Filters"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" unique_id=1372753293]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="ColorBlindness" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="ColorBlindness" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1959048487]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness" unique_id=1084916527]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Color blindness"
 
-[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness"]
+[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/ColorBlindness" unique_id=446756186]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -76,6 +76,6 @@ popup/item_7/id = 7
 popup/item_8/text = "Achromatomaly"
 popup/item_8/id = 8
 
-[node name="Filter" parent="." instance=ExtResource("2_q0d6r")]
+[node name="Filter" parent="." unique_id=750322596 instance=ExtResource("2_q0d6r")]
 
 [connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/ColorBlindness/OptionButton" to="." method="_on_filter_selected"]

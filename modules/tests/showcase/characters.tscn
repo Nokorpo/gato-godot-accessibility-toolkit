@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dcm523tkm8wvt"]
+[gd_scene format=4 uid="uid://dcm523tkm8wvt"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6d34o"]
 [ext_resource type="PackedScene" uid="uid://bswf3xbl752" path="res://modules/level_objects/acorn/acorn.glb" id="2_t68yl"]
@@ -942,53 +942,53 @@ _data = {
 &"walk": ExtResource("13_ngw8x")
 }
 
-[node name="Characters" type="Node3D"]
+[node name="Characters" type="Node3D" unique_id=1166712195]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=348522438]
 environment = ExtResource("1_6d34o")
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1010037230]
 visible = false
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1072938959]
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1687102024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0713, 3.48235)
 
-[node name="Floor" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=441534849]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00634867, -0.0689021, 0.00013876)
 mesh = SubResource("PlaneMesh_qewax")
 surface_material_override/0 = SubResource("StandardMaterial3D_t68yl")
 
-[node name="Gato" parent="." instance=ExtResource("2_yq3y4")]
+[node name="Gato" parent="." unique_id=803457649 instance=ExtResource("2_yq3y4")]
 
-[node name="ChooseDefaultAnimation" type="Node" parent="Gato"]
+[node name="ChooseDefaultAnimation" type="Node" parent="Gato" unique_id=44139163]
 script = ExtResource("3_yq3y4")
 animation_name = "idle"
 
-[node name="Boar" parent="." instance=ExtResource("4_6d34o")]
+[node name="Boar" parent="." unique_id=477544396 instance=ExtResource("4_6d34o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="ChooseDefaultAnimation2" type="Node" parent="Boar"]
+[node name="ChooseDefaultAnimation2" type="Node" parent="Boar" unique_id=2034478686]
 script = ExtResource("3_yq3y4")
 animation_name = "idle"
 
-[node name="Boar2" parent="." instance=ExtResource("4_6d34o")]
+[node name="Boar2" parent="." unique_id=698362325 instance=ExtResource("4_6d34o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="ChooseDefaultAnimation3" type="Node" parent="Boar2"]
+[node name="ChooseDefaultAnimation3" type="Node" parent="Boar2" unique_id=1533955706]
 script = ExtResource("3_yq3y4")
 animation_name = "eat"
 
-[node name="BoarRed" type="Node3D" parent="."]
+[node name="BoarRed" type="Node3D" parent="." unique_id=1043332697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
-[node name="rig" type="Node3D" parent="BoarRed"]
+[node name="rig" type="Node3D" parent="BoarRed" unique_id=1095947858]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="BoarRed/rig"]
+[node name="Skeleton3D" type="Skeleton3D" parent="BoarRed/rig" unique_id=1679486455]
 bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
@@ -2971,29 +2971,29 @@ bones/282/position = Vector3(0, 5.9604646e-09, 0)
 bones/282/rotation = Quaternion(0.031833775, 5.036247e-10, -0.37955907, 0.9246197)
 bones/282/scale = Vector3(1, 1, 0.99999994)
 
-[node name="Body" type="MeshInstance3D" parent="BoarRed/rig/Skeleton3D"]
+[node name="Body" type="MeshInstance3D" parent="BoarRed/rig/Skeleton3D" unique_id=1282357104]
 mesh = SubResource("ArrayMesh_ysaxf")
 skin = SubResource("Skin_5gb8v")
+skeleton = NodePath("..")
 surface_material_override/0 = SubResource("StandardMaterial3D_hhs1t")
 
-[node name="Face" type="MeshInstance3D" parent="BoarRed/rig/Skeleton3D"]
+[node name="Face" type="MeshInstance3D" parent="BoarRed/rig/Skeleton3D" unique_id=328019778]
 mesh = SubResource("ArrayMesh_culyr")
 skin = SubResource("Skin_5gb8v")
+skeleton = NodePath("..")
 surface_material_override/0 = SubResource("StandardMaterial3D_imlpo")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoarRed"]
-libraries = {
-&"": SubResource("AnimationLibrary_3hsix")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoarRed" unique_id=1663829502]
+libraries/ = SubResource("AnimationLibrary_3hsix")
 
-[node name="BoarGreen" parent="." instance=ExtResource("6_ue2a0")]
+[node name="BoarGreen" parent="." unique_id=1326085546 instance=ExtResource("6_ue2a0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 
-[node name="BoarYellow" parent="." instance=ExtResource("7_s0n6x")]
+[node name="BoarYellow" parent="." unique_id=487682815 instance=ExtResource("7_s0n6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="BoarBlue" parent="." instance=ExtResource("8_gm32d")]
+[node name="BoarBlue" parent="." unique_id=834118756 instance=ExtResource("8_gm32d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
-[node name="Acorn" parent="." instance=ExtResource("2_t68yl")]
+[node name="Acorn" parent="." unique_id=1352784715 instance=ExtResource("2_t68yl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.23, 0)

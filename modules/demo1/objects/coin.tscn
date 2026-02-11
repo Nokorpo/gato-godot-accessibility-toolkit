@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dfpisimsgf5ce"]
+[gd_scene format=4 uid="uid://dfpisimsgf5ce"]
 
 [ext_resource type="Texture2D" uid="uid://cumfbe0xmrt2c" path="res://modules/demo1/objects/meshes/Textures/colormap.png" id="2_04qt4"]
 [ext_resource type="Script" uid="uid://byisvtgdo8ei4" path="res://modules/demo1/objects/coin.gd" id="2_gaakh"]
@@ -68,20 +68,19 @@ point_count = 3
 [sub_resource type="Gradient" id="Gradient_7tsk2"]
 colors = PackedColorArray(0.996094, 0.910156, 0.351563, 1, 1, 1, 1, 1)
 
-[node name="coin" type="Area3D"]
+[node name="coin" type="Area3D" unique_id=1084583557]
 script = ExtResource("2_gaakh")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=2066783995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 mesh = SubResource("ArrayMesh_t08aw")
-skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xkafy")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2082421766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_bnkeq")
 
-[node name="Particles" type="CPUParticles3D" parent="."]
+[node name="Particles" type="CPUParticles3D" parent="." unique_id=301854237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447834, 0)
 material_override = SubResource("StandardMaterial3D_6hm51")
 mesh = SubResource("QuadMesh_744xy")

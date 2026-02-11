@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ph4lf6yiqkhj"]
+[gd_scene format=3 uid="uid://ph4lf6yiqkhj"]
 
 [ext_resource type="Script" uid="uid://dn1mu76pbawjl" path="res://modules/level_objects/button/button.gd" id="1_s6swx"]
 [ext_resource type="PackedScene" uid="uid://c7xdmnnm7purx" path="res://modules/demo1/map/props/acorn_button.gltf" id="2_fljgd"]
@@ -72,31 +72,29 @@ _data = {
 &"deactivate": SubResource("Animation_lk2fu")
 }
 
-[node name="AcornButton" type="StaticBody3D" groups=["button", "light_weight"]]
+[node name="AcornButton" type="StaticBody3D" unique_id=2032408170 groups=["button", "light_weight"]]
 collision_layer = 7
 collision_mask = 0
 script = ExtResource("1_s6swx")
 
-[node name="AcornButton" parent="." instance=ExtResource("2_fljgd")]
+[node name="AcornButton" parent="." unique_id=1142035600 instance=ExtResource("2_fljgd")]
 
-[node name="ActivationArea" type="Area3D" parent="."]
+[node name="ActivationArea" type="Area3D" parent="." unique_id=1672613630]
 collision_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationArea" unique_id=1023317072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.301635, 0)
 shape = SubResource("SphereShape3D_7l8t6")
 
-[node name="BaseCollision" type="CollisionShape3D" parent="."]
+[node name="BaseCollision" type="CollisionShape3D" parent="." unique_id=226301641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0961322, 0)
 shape = SubResource("CylinderShape3D_fljgd")
 
-[node name="ButtonCollision" type="CollisionShape3D" parent="."]
+[node name="ButtonCollision" type="CollisionShape3D" parent="." unique_id=1474332584]
 shape = SubResource("CylinderShape3D_5v165")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lk2fu")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1575177219]
+libraries/ = SubResource("AnimationLibrary_lk2fu")
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
 [connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_exited"]

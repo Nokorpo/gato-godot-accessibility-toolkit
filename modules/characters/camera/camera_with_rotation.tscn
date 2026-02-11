@@ -1,22 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3yetd8078rj2"]
+[gd_scene format=3 uid="uid://b3yetd8078rj2"]
 
 [ext_resource type="Script" uid="uid://cxx6g2dwgrtvq" path="res://modules/characters/camera/camera_with_rotation.gd" id="1_r4u81"]
 [ext_resource type="Script" uid="uid://bgxv3h7p61w0b" path="res://modules/characters/camera/camera_with_rotation_properties.gd" id="2_gxnn7"]
 
-[node name="CameraWithRotation" type="Node3D"]
+[node name="CameraWithRotation" type="Node3D" unique_id=1927378553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 script = ExtResource("1_r4u81")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=350682521]
 transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, 0, 1, 0, 0, 0)
 
-[node name="Camera" type="Camera3D" parent="Node3D"]
+[node name="Camera" type="Camera3D" parent="Node3D" unique_id=2060265098]
 transform = Transform3D(1, 0, 0, 0, 1, -4.47035e-07, 0, 0, 1, 0, 0, 10)
 cull_mask = 1048063
 current = true
 fov = 40.0
 script = ExtResource("2_gxnn7")
 
-[node name="RayCast3D" type="RayCast3D" parent="Node3D"]
+[node name="RayCast3D" type="RayCast3D" parent="Node3D" unique_id=647640561]
 target_position = Vector3(0, -1, 10)
 collision_mask = 16

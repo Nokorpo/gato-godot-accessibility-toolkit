@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgntlhkoeu81e"]
+[gd_scene format=3 uid="uid://dgntlhkoeu81e"]
 
 [ext_resource type="Script" uid="uid://dn1mu76pbawjl" path="res://modules/level_objects/button/button.gd" id="1_q5228"]
 [ext_resource type="PackedScene" uid="uid://byarb3le21bcc" path="res://modules/demo1/map/props/boar_button.gltf" id="2_q5228"]
@@ -70,33 +70,31 @@ _data = {
 &"deactivate": SubResource("Animation_lk2fu")
 }
 
-[node name="BoarButton" type="StaticBody3D" groups=["button", "heavy_weight"]]
+[node name="BoarButton" type="StaticBody3D" unique_id=1635479508 groups=["button", "heavy_weight"]]
 collision_layer = 7
 collision_mask = 0
 script = ExtResource("1_q5228")
 can_detect_light_weights = false
 
-[node name="BoarButton" parent="." instance=ExtResource("2_q5228")]
+[node name="BoarButton" parent="." unique_id=2101863310 instance=ExtResource("2_q5228")]
 
-[node name="ActivationArea" type="Area3D" parent="."]
+[node name="ActivationArea" type="Area3D" parent="." unique_id=772754028]
 collision_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationArea" unique_id=345174344]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206835, 0)
 shape = SubResource("BoxShape3D_q5228")
 
-[node name="BaseCollision" type="CollisionShape3D" parent="."]
+[node name="BaseCollision" type="CollisionShape3D" parent="." unique_id=2120671570]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0093689, 0.0283968, 0)
 shape = SubResource("BoxShape3D_glvl7")
 
-[node name="ButtonCollision" type="CollisionShape3D" parent="."]
+[node name="ButtonCollision" type="CollisionShape3D" parent="." unique_id=2136581911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0836267, 0)
 shape = SubResource("BoxShape3D_2vunl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lk2fu")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1062695461]
+libraries/ = SubResource("AnimationLibrary_lk2fu")
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
 [connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_exited"]

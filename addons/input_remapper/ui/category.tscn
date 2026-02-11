@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7qloakgx7etx"]
+[gd_scene format=3 uid="uid://b7qloakgx7etx"]
 
 [ext_resource type="Script" uid="uid://dnwphryehyd5u" path="res://addons/input_remapper/ui/category.gd" id="1_omixo"]
 
-[node name="Category" type="VBoxContainer"]
+[node name="Category" type="VBoxContainer" unique_id=1383079060]
 size_flags_horizontal = 0
 script = ExtResource("1_omixo")
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1546743593]
 layout_mode = 2
 theme_type_variation = &"CategoryTitle"
 text = "MOVEMENT"

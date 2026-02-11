@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://olsa5oic45g3"]
+[gd_scene format=3 uid="uid://olsa5oic45g3"]
 
 [ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/mesh/boar.glb" id="1_3hb2y"]
 [ext_resource type="Script" uid="uid://fwo6vfdvy13v" path="res://modules/characters/boar/mesh/boar_mesh.gd" id="2_griw2"]
 
-[node name="Boar" instance=ExtResource("1_3hb2y")]
+[node name="Boar" unique_id=440191836 instance=ExtResource("1_3hb2y")]
 script = ExtResource("2_griw2")

@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://vooeq5ose2br"]
+[gd_scene format=3 uid="uid://vooeq5ose2br"]
 
 [ext_resource type="Script" uid="uid://dxucdon17jm50" path="res://modules/demo_selector/demo_container.gd" id="1_xsipc"]
 [ext_resource type="Resource" uid="uid://doxub3jvr747g" path="res://modules/demo_selector/assets/demo_list.tres" id="2_xqaix"]
 
-[node name="DemoSelector" type="Control"]
+[node name="DemoSelector" type="Control" unique_id=911296128]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1673638603]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,16 +19,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1688154727]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Godot Accesibility Toolkit (GATO)"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1534869132]
 layout_mode = 2
 
-[node name="DemoContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="DemoContainer" type="GridContainer" parent="VBoxContainer" unique_id=1680606502]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -38,7 +38,7 @@ columns = 3
 script = ExtResource("1_xsipc")
 demo_list_resource = ExtResource("2_xqaix")
 
-[node name="Footer" type="Label" parent="VBoxContainer"]
+[node name="Footer" type="Label" parent="VBoxContainer" unique_id=954230710]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Nokorpo 2025"

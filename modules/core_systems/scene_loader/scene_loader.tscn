@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://pjr6xchvcu17"]
+[gd_scene format=3 uid="uid://pjr6xchvcu17"]
 
 [ext_resource type="Script" uid="uid://3w6wjqays5g2" path="res://modules/core_systems/scene_loader/scene_loader.gd" id="1_m0t8i"]
 [ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="2_wce2d"]
@@ -41,11 +41,11 @@ _data = {
 &"loading": SubResource("Animation_j7gem")
 }
 
-[node name="SceneLoader" type="CanvasLayer"]
+[node name="SceneLoader" type="CanvasLayer" unique_id=792164519]
 layer = 100
 script = ExtResource("1_m0t8i")
 
-[node name="Transition" type="ColorRect" parent="."]
+[node name="Transition" type="ColorRect" parent="." unique_id=897464359]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -53,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="Transition"]
+[node name="Label" type="Label" parent="Transition" unique_id=829560452]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,7 +72,7 @@ text = "loading"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LoadingIcon" type="TextureRect" parent="Transition"]
+[node name="LoadingIcon" type="TextureRect" parent="Transition" unique_id=938222796]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -90,8 +90,6 @@ pivot_offset = Vector2(16, 16)
 texture = ExtResource("2_wce2d")
 stretch_mode = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition/LoadingIcon"]
-libraries = {
-&"": SubResource("AnimationLibrary_r2lp4")
-}
-autoplay = "loading"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition/LoadingIcon" unique_id=354355268]
+libraries/ = SubResource("AnimationLibrary_r2lp4")
+autoplay = &"loading"

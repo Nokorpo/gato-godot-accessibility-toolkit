@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1kna58wiqdat"]
+[gd_scene format=3 uid="uid://b1kna58wiqdat"]
 
 [ext_resource type="Texture2D" uid="uid://dr72sfn58w6i7" path="res://modules/demo1/map/sprites/leaf.png" id="1_3880u"]
 [ext_resource type="Script" uid="uid://b7wybaapouj6t" path="res://modules/demo1/map/vfx/leaf_particles.gd" id="2_hujxa"]
@@ -26,7 +26,7 @@ albedo_texture = ExtResource("1_3880u")
 material = SubResource("StandardMaterial3D_ayora")
 size = Vector2(0.2, 0.2)
 
-[node name="GPUParticles3D" type="GPUParticles3D"]
+[node name="GPUParticles3D" type="GPUParticles3D" unique_id=2015081847]
 emitting = false
 amount = 6
 lifetime = 2.0

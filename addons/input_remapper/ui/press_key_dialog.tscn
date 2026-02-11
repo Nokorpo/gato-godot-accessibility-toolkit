@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw8doo3b01x73"]
+[gd_scene format=3 uid="uid://bw8doo3b01x73"]
 
 [ext_resource type="Script" uid="uid://c0peswbik1vq1" path="res://addons/input_remapper/ui/press_key_dialog.gd" id="1_108n5"]
 
-[node name="PressKeyDialog" type="Control"]
+[node name="PressKeyDialog" type="Control" unique_id=602646284]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_108n5")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1861139684]
 top_level = true
 layout_mode = 1
 anchors_preset = 8
@@ -27,7 +27,7 @@ offset_bottom = 261.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="PanelContainer"]
+[node name="Label" type="Label" parent="PanelContainer" unique_id=387890781]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Press a key..."

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://fi43o1qrjkvt"]
+[gd_scene format=3 uid="uid://fi43o1qrjkvt"]
 
 [ext_resource type="Script" uid="uid://rm488hf1f3uc" path="res://modules/characters/gato/gato.gd" id="1_5kfaa"]
 [ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_7mldg"]
@@ -102,32 +102,32 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_d7yls")
 size = Vector2(0.5, 0.5)
 
-[node name="Gato" type="CharacterBody3D" groups=["heavy_weight"]]
+[node name="Gato" type="CharacterBody3D" unique_id=1969310140 groups=["heavy_weight"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_5kfaa")
 jump_force = 3.5
 
-[node name="RotationPivot" type="Node3D" parent="."]
+[node name="RotationPivot" type="Node3D" parent="." unique_id=1970795476]
 
-[node name="Mesh" parent="RotationPivot" instance=ExtResource("2_7mldg")]
+[node name="Mesh" parent="RotationPivot" unique_id=545005276 instance=ExtResource("2_7mldg")]
 
-[node name="ItemDetectionArea" parent="RotationPivot" instance=ExtResource("3_obe3c")]
+[node name="ItemDetectionArea" parent="RotationPivot" unique_id=1963362453 instance=ExtResource("3_obe3c")]
 
-[node name="ItemLauncher" type="Node3D" parent="RotationPivot" node_paths=PackedStringArray("item_detection")]
+[node name="ItemLauncher" type="Node3D" parent="RotationPivot" unique_id=1485288636 node_paths=PackedStringArray("item_detection")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.738809, 0.463744)
 script = ExtResource("4_fyq4e")
 item_detection = NodePath("../ItemDetectionArea")
 
-[node name="ItemLandingSpotDetector" type="Area3D" parent="RotationPivot/ItemLauncher"]
+[node name="ItemLandingSpotDetector" type="Area3D" parent="RotationPivot/ItemLauncher" unique_id=1912211962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationPivot/ItemLauncher/ItemLandingSpotDetector"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationPivot/ItemLauncher/ItemLandingSpotDetector" unique_id=1973847818]
 shape = SubResource("ConvexPolygonShape3D_fyq4e")
 
-[node name="WalkDust" type="GPUParticles3D" parent="RotationPivot"]
+[node name="WalkDust" type="GPUParticles3D" parent="RotationPivot" unique_id=1623419724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143277, -0.426232)
 emitting = false
 amount = 3
@@ -138,28 +138,28 @@ trail_lifetime = 0.01
 process_material = SubResource("ParticleProcessMaterial_fcelm")
 draw_pass_1 = SubResource("QuadMesh_q2twd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733516403]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663, 0)
 shape = SubResource("CapsuleShape3D_pbfhj")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=222651798]
 script = ExtResource("2_f3pdk")
 metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
 
-[node name="IdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1114301813 node_paths=PackedStringArray("mesh")]
 script = ExtResource("3_7mldg")
 mesh = NodePath("../../RotationPivot/Mesh")
 
-[node name="WalkState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh", "walk_partricles")]
+[node name="WalkState" type="Node" parent="StateMachine" unique_id=559124021 node_paths=PackedStringArray("mesh", "walk_partricles")]
 script = ExtResource("4_pbfhj")
 mesh = NodePath("../../RotationPivot/Mesh")
 walk_partricles = NodePath("../../RotationPivot/WalkDust")
 
-[node name="JumpState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=803980522 node_paths=PackedStringArray("mesh")]
 script = ExtResource("6_ve5e5")
 mesh = NodePath("../../RotationPivot/Mesh")
 
-[node name="LandingDust" type="GPUParticles3D" parent="."]
+[node name="LandingDust" type="GPUParticles3D" parent="." unique_id=308969818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239751, 0)
 emitting = false
 amount = 20

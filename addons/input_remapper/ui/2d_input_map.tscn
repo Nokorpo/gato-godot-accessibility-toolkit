@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://x1b45m56mm2l"]
+[gd_scene format=3 uid="uid://x1b45m56mm2l"]
 
 [ext_resource type="Script" uid="uid://cv34roeqss7e5" path="res://addons/input_remapper/ui/joystick_toggle.gd" id="1_st12y"]
 [ext_resource type="Script" uid="uid://dbhxpwpye5w7h" path="res://addons/input_remapper/ui/2d_input_map.gd" id="1_uo2cf"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="4_nyq3o"]
 [ext_resource type="Script" uid="uid://bg4knulolkblw" path="res://addons/input_remapper/ui/invert_joystick_direction.gd" id="5_o01t1"]
 
-[node name="2DInputMap" type="VBoxContainer"]
+[node name="2DInputMap" type="VBoxContainer" unique_id=2000616933]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,12 +18,12 @@ size_flags_vertical = 3
 theme_override_constants/separation = 30
 script = ExtResource("1_uo2cf")
 
-[node name="JoystickToggle" type="HBoxContainer" parent="."]
+[node name="JoystickToggle" type="HBoxContainer" parent="." unique_id=2053278748]
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("1_st12y")
 
-[node name="Button" type="TextureButton" parent="JoystickToggle"]
+[node name="Button" type="TextureButton" parent="JoystickToggle" unique_id=1687164612]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_4v8tm")
@@ -32,13 +32,13 @@ texture_focused = ExtResource("4_nyq3o")
 stretch_mode = 3
 flip_h = true
 
-[node name="Label" type="Label" parent="JoystickToggle"]
+[node name="Label" type="Label" parent="JoystickToggle" unique_id=355206145]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Keyboard"
 horizontal_alignment = 1
 
-[node name="Button2" type="TextureButton" parent="JoystickToggle"]
+[node name="Button2" type="TextureButton" parent="JoystickToggle" unique_id=1151295962]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_4v8tm")
@@ -46,100 +46,100 @@ texture_hover = ExtResource("4_nyq3o")
 texture_focused = ExtResource("4_nyq3o")
 stretch_mode = 5
 
-[node name="ActionContainer" type="GridContainer" parent="."]
+[node name="ActionContainer" type="GridContainer" parent="." unique_id=357946398]
 unique_name_in_owner = true
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
 layout_mode = 2
 columns = 2
 script = ExtResource("3_tb1qo")
 
-[node name="LabelUp" type="Label" parent="ActionContainer"]
+[node name="LabelUp" type="Label" parent="ActionContainer" unique_id=500829702]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_up"
 
-[node name="ButtonUp" type="Button" parent="ActionContainer"]
+[node name="ButtonUp" type="Button" parent="ActionContainer" unique_id=1360517857]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"InputButton"
 text = "W"
 
-[node name="LabelDown" type="Label" parent="ActionContainer"]
+[node name="LabelDown" type="Label" parent="ActionContainer" unique_id=1319791066]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_down"
 
-[node name="ButtonDown" type="Button" parent="ActionContainer"]
+[node name="ButtonDown" type="Button" parent="ActionContainer" unique_id=358608118]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"InputButton"
 text = "S"
 
-[node name="LabelLeft" type="Label" parent="ActionContainer"]
+[node name="LabelLeft" type="Label" parent="ActionContainer" unique_id=666472320]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_left"
 
-[node name="ButtonLeft" type="Button" parent="ActionContainer"]
+[node name="ButtonLeft" type="Button" parent="ActionContainer" unique_id=1571815658]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"InputButton"
 text = "A"
 
-[node name="LabelRight" type="Label" parent="ActionContainer"]
+[node name="LabelRight" type="Label" parent="ActionContainer" unique_id=394629129]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "move_right"
 
-[node name="ButtonRight" type="Button" parent="ActionContainer"]
+[node name="ButtonRight" type="Button" parent="ActionContainer" unique_id=132343668]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"InputButton"
 text = "W"
 
-[node name="JoystickContainer" type="VBoxContainer" parent="."]
+[node name="JoystickContainer" type="VBoxContainer" parent="." unique_id=1477337798]
 visible = false
 layout_mode = 2
 
-[node name="JoystickSelector" type="HBoxContainer" parent="JoystickContainer"]
+[node name="JoystickSelector" type="HBoxContainer" parent="JoystickContainer" unique_id=1850369513]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("2_a6iv7")
 
-[node name="Button" type="Button" parent="JoystickContainer/JoystickSelector"]
+[node name="Button" type="Button" parent="JoystickContainer/JoystickSelector" unique_id=756524523]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "<"
 
-[node name="Label" type="Label" parent="JoystickContainer/JoystickSelector"]
+[node name="Label" type="Label" parent="JoystickContainer/JoystickSelector" unique_id=1570631401]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Left"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="JoystickContainer/JoystickSelector"]
+[node name="Button2" type="Button" parent="JoystickContainer/JoystickSelector" unique_id=1879522485]
 layout_mode = 2
 size_flags_horizontal = 3
 text = ">"
 
-[node name="InvertDirection" type="HBoxContainer" parent="JoystickContainer"]
+[node name="InvertDirection" type="HBoxContainer" parent="JoystickContainer" unique_id=1421744737]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("5_o01t1")
 
-[node name="Label" type="Label" parent="JoystickContainer/InvertDirection"]
+[node name="Label" type="Label" parent="JoystickContainer/InvertDirection" unique_id=1926303264]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Invert direction"
 horizontal_alignment = 1
 
-[node name="Button" type="CheckBox" parent="JoystickContainer/InvertDirection"]
+[node name="Button" type="CheckBox" parent="JoystickContainer/InvertDirection" unique_id=526978330]
 layout_mode = 2
 size_flags_horizontal = 3
 icon_alignment = 1

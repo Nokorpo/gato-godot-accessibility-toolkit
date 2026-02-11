@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://brl80a1hiwsoq"]
+[gd_scene format=3 uid="uid://brl80a1hiwsoq"]
 
 [ext_resource type="Script" uid="uid://i2np7666k2dl" path="res://modules/level_objects/acorn/acorn.gd" id="1_0jmtj"]
 [ext_resource type="PackedScene" uid="uid://bswf3xbl752" path="res://modules/level_objects/acorn/acorn.glb" id="2_afr2q"]
@@ -9,14 +9,14 @@ rough = true
 [sub_resource type="SphereShape3D" id="SphereShape3D_nvhaj"]
 radius = 0.216133
 
-[node name="Acorn" type="RigidBody3D" groups=["light_weight"]]
+[node name="Acorn" type="RigidBody3D" unique_id=1730986301 groups=["light_weight"]]
 physics_material_override = SubResource("PhysicsMaterial_0jmtj")
 angular_damp = 60.0
 script = ExtResource("1_0jmtj")
 
-[node name="Acorn" parent="." instance=ExtResource("2_afr2q")]
+[node name="Acorn" parent="." unique_id=1419149241 instance=ExtResource("2_afr2q")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=622965715]
 shape = SubResource("SphereShape3D_nvhaj")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1787479011]

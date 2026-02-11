@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv34hoyi5rdp2"]
+[gd_scene format=3 uid="uid://cv34hoyi5rdp2"]
 
 [ext_resource type="Script" uid="uid://dha1wph3ea65n" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.gd" id="1_oqsou"]
 [ext_resource type="Theme" uid="uid://cocjiykavhucl" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.tres" id="1_y8y5m"]
@@ -34,7 +34,7 @@ shader_parameter/mask = SubResource("GradientTexture2D_y8y5m")
 shader_parameter/horizontal_speed = 0.05
 shader_parameter/vertical_speed = 0.05
 
-[node name="DialogueUI" type="Control"]
+[node name="DialogueUI" type="Control" unique_id=1854054800]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,7 @@ grow_vertical = 2
 theme = ExtResource("1_y8y5m")
 script = ExtResource("1_oqsou")
 
-[node name="TransparentBackground" type="TextureRect" parent="."]
+[node name="TransparentBackground" type="TextureRect" parent="." unique_id=1019027844]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_no6vj")
 
-[node name="CheckerBackground" type="TextureRect" parent="TransparentBackground"]
+[node name="CheckerBackground" type="TextureRect" parent="TransparentBackground" unique_id=936865744]
 material = SubResource("ShaderMaterial_kwqsu")
 layout_mode = 1
 anchors_preset = 15
@@ -64,7 +64,7 @@ grow_vertical = 2
 texture = ExtResource("3_no6vj")
 stretch_mode = 1
 
-[node name="AvatarContainer" type="HBoxContainer" parent="."]
+[node name="AvatarContainer" type="HBoxContainer" parent="." unique_id=1392940553]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,15 +72,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CharacterContainer" parent="AvatarContainer" instance=ExtResource("2_nh633")]
+[node name="CharacterContainer" parent="AvatarContainer" unique_id=1206606519 instance=ExtResource("2_nh633")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EmptySpace" type="Control" parent="AvatarContainer"]
+[node name="EmptySpace" type="Control" parent="AvatarContainer" unique_id=416333723]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextContainer" type="HBoxContainer" parent="."]
+[node name="TextContainer" type="HBoxContainer" parent="." unique_id=19994173]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,12 +88,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EmptySpace" type="Control" parent="TextContainer"]
+[node name="EmptySpace" type="Control" parent="TextContainer" unique_id=1831884389]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="MarginContainer" type="MarginContainer" parent="TextContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer" unique_id=1464629648]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -101,49 +101,49 @@ theme_override_constants/margin_left = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="PanelContainer" type="PanelContainer" parent="TextContainer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TextContainer/MarginContainer" unique_id=798115268]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer/PanelContainer" unique_id=1546448150]
 layout_mode = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="MessageLabel" type="RichTextLabel" parent="TextContainer/MarginContainer/PanelContainer/MarginContainer"]
+[node name="MessageLabel" type="RichTextLabel" parent="TextContainer/MarginContainer/PanelContainer/MarginContainer" unique_id=626545273]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 bbcode_enabled = true
 text = "Sample message"
 
-[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer" unique_id=1474544147]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = -50
 
-[node name="PanelContainer" type="PanelContainer" parent="TextContainer/MarginContainer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TextContainer/MarginContainer/MarginContainer" unique_id=1986034877]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_type_variation = &"NameTag"
 
-[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer" unique_id=1344604079]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="NameLabel" type="Label" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer/MarginContainer"]
+[node name="NameLabel" type="Label" parent="TextContainer/MarginContainer/MarginContainer/PanelContainer/MarginContainer" unique_id=1183290027]
 layout_mode = 2
 theme_type_variation = &"NameTagLabel"
 text = "name"
 
-[node name="NextMessageAudio" type="AudioStreamPlayer" parent="."]
+[node name="NextMessageAudio" type="AudioStreamPlayer" parent="." unique_id=311176356]
 stream = ExtResource("3_0imcl")
 volume_db = -4.0
 
-[node name="CloseDialogueAudio" type="AudioStreamPlayer" parent="."]
+[node name="CloseDialogueAudio" type="AudioStreamPlayer" parent="." unique_id=1600640440]
 stream = ExtResource("4_xcu6i")
 volume_db = -2.0

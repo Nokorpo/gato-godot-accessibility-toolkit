@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvawh86pyq2d1"]
+[gd_scene format=3 uid="uid://bvawh86pyq2d1"]
 
 [ext_resource type="Script" uid="uid://b8lat2nfgffpw" path="res://modules/characters/boar/idle_state.gd" id="1_2jkah"]
 [ext_resource type="Script" uid="uid://dxsjc4ctsii3s" path="res://modules/characters/boar/boar.gd" id="1_piglh"]
@@ -53,48 +53,48 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_ox46n")
 size = Vector2(0.2, 0.2)
 
-[node name="Boar" type="CharacterBody3D" groups=["heavy_weight"]]
+[node name="Boar" type="CharacterBody3D" unique_id=922734642 groups=["heavy_weight"]]
 script = ExtResource("1_piglh")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=1899679971]
 script = ExtResource("1_q5ai3")
 metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
 
-[node name="IdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1160705882 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_2jkah")
 mesh = NodePath("../../Boar")
 
-[node name="FollowingAcornState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
+[node name="FollowingAcornState" type="Node" parent="StateMachine" unique_id=1059703736 node_paths=PackedStringArray("mesh")]
 script = ExtResource("2_q5ai3")
 mesh = NodePath("../../Boar")
 
-[node name="EatingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("mesh")]
+[node name="EatingState" type="Node" parent="StateMachine" unique_id=1573134787 node_paths=PackedStringArray("mesh")]
 script = ExtResource("3_puyul")
 mesh = NodePath("../../Boar")
 
-[node name="SimulationTicker" type="Timer" parent="StateMachine"]
+[node name="SimulationTicker" type="Timer" parent="StateMachine" unique_id=709805935]
 wait_time = 3.0
 autostart = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=250774375]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.243101, 0)
 shape = SubResource("CapsuleShape3D_d5hix")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1151629905]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.473425, 1.00678e-08)
 shape = SubResource("BoxShape3D_d5hix")
 
-[node name="Boar" parent="." instance=ExtResource("5_d5hix")]
+[node name="Boar" parent="." unique_id=905961501 instance=ExtResource("5_d5hix")]
 
-[node name="AcornDetection" type="Area3D" parent="."]
+[node name="AcornDetection" type="Area3D" parent="." unique_id=792997277]
 unique_name_in_owner = true
 script = ExtResource("6_d5hix")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AcornDetection"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AcornDetection" unique_id=955436468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("CylinderShape3D_iqywv")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1811087812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18116, 0.444876)
 emitting = false
 mesh = SubResource("QuadMesh_chhcr")
@@ -102,7 +102,7 @@ direction = Vector3(0, 1, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 2.0
 
-[node name="HeartParticles" type="GPUParticles3D" parent="."]
+[node name="HeartParticles" type="GPUParticles3D" parent="." unique_id=1581779955]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.586733, 0.260659)
 emitting = false
 amount = 3
@@ -111,7 +111,7 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_08g3y")
 draw_pass_1 = SubResource("QuadMesh_ch3xj")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1830242425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
 [connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

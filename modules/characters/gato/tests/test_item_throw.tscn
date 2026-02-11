@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cca20y2s7dcs0"]
+[gd_scene format=3 uid="uid://cca20y2s7dcs0"]
 
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="1_mph7q"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="2_00uir"]
@@ -15,27 +15,27 @@ background_mode = 2
 sky = SubResource("Sky_00uir")
 tonemap_mode = 2
 
-[node name="TestItemThrow" type="Node3D"]
+[node name="TestItemThrow" type="Node3D" unique_id=1943448666]
 
-[node name="Gato" parent="." instance=ExtResource("1_mph7q")]
+[node name="Gato" parent="." unique_id=1987937115 instance=ExtResource("1_mph7q")]
 
-[node name="AcornButton" parent="." instance=ExtResource("2_00uir")]
+[node name="AcornButton" parent="." unique_id=1421734253 instance=ExtResource("2_00uir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=275088335]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(10, 1, 10)
 
-[node name="VisualDebugging" type="Node" parent="."]
+[node name="VisualDebugging" type="Node" parent="." unique_id=1087694858]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="VisualDebugging"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="VisualDebugging" unique_id=1929388627]
 environment = SubResource("Environment_hamlq")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="VisualDebugging"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="VisualDebugging" unique_id=1290934486]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="VisualDebugging"]
+[node name="Camera3D" type="Camera3D" parent="VisualDebugging" unique_id=1814819003]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2, 5)
 fov = 61.1889

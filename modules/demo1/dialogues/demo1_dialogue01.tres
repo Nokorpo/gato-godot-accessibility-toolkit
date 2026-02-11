@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueContainer" load_steps=6 format=3 uid="uid://04odm6qkfamm"]
+[gd_resource type="Resource" script_class="DialogueContainer" format=3 uid="uid://04odm6qkfamm"]
 
 [ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_xr16f"]
 [ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="2_otp51"]

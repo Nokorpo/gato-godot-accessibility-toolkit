@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://fnh8oa0bccvr"]
+[gd_scene format=3 uid="uid://fnh8oa0bccvr"]
 
 [ext_resource type="Script" uid="uid://di6cwd6xv1tta" path="res://modules/core_systems/dialogue_system/view/character_avatar_ui.gd" id="1_akc3h"]
 
-[node name="CharacterContainer" type="SubViewportContainer"]
+[node name="CharacterContainer" type="SubViewportContainer" unique_id=3377097]
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 960.0
@@ -10,19 +10,19 @@ grow_vertical = 2
 stretch = true
 script = ExtResource("1_akc3h")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1695116943]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(960, 1080)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1539806956]
 transform = Transform3D(0.939715, 0.0328156, -0.340379, -0.0348995, 0.999391, -2.05831e-08, 0.340172, 0.0118791, 0.940288, -1.58132, 0.831364, 4.47459)
 cull_mask = 512
 fov = 16.3479
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=556546413]
 transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 1, 2, 2)
 layers = 512
 
-[node name="Characters" type="Node3D" parent="SubViewport"]
+[node name="Characters" type="Node3D" parent="SubViewport" unique_id=146894356]

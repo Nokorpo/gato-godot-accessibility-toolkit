@@ -10,10 +10,10 @@ var is_following: bool = false
 var _target: Node3D = null
 @export var mesh: BoarMesh
 
-	
+
 func _on_enter_state() -> void:
 	mesh.play_animation(BoarMesh.Animations.WALK)
-	
+
 	boar = (node as CharacterBody3D)
 	is_following = false
 

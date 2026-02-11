@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp1splssmfbra"]
+[gd_scene format=3 uid="uid://cp1splssmfbra"]
 
 [ext_resource type="Script" uid="uid://bmx55hmllsepu" path="res://modules/core_systems/game_menu/game_menu.gd" id="1_7ww1i"]
 
 [sub_resource type="Theme" id="Theme_qmk0e"]
 default_font_size = 56
 
-[node name="GameMenu" type="CanvasLayer"]
+[node name="GameMenu" type="CanvasLayer" unique_id=450146438]
 process_mode = 3
 script = ExtResource("1_7ww1i")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=176571196]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,8 +18,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qmk0e")
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1934098463]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_constants/margin_left = 700
@@ -27,23 +27,23 @@ theme_override_constants/margin_top = 350
 theme_override_constants/margin_right = 700
 theme_override_constants/margin_bottom = 350
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer" unique_id=461195376]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer" unique_id=1355284621]
 layout_mode = 2
 
-[node name="SettingsButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=433425188]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1803045332]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Quit demo"
 
-[node name="OpenMenuCooldown" type="Timer" parent="."]
+[node name="OpenMenuCooldown" type="Timer" parent="." unique_id=470500546]
 wait_time = 0.5
 
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/SettingsButton" to="." method="open_settings"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GatoControlScheme" load_steps=16 format=3 uid="uid://duovvwe1crubj"]
+[gd_resource type="Resource" script_class="GatoControlScheme" format=3 uid="uid://duovvwe1crubj"]
 
 [ext_resource type="Script" uid="uid://bvd7amftuy0aq" path="res://addons/input_remapper/model/input_action.gd" id="1_geugl"]
 [ext_resource type="Script" uid="uid://ctgokt75j2t0k" path="res://addons/input_remapper/model/input_action_button.gd" id="2_a3noo"]
@@ -32,8 +32,6 @@ metadata/_custom_type_script = "uid://ctgokt75j2t0k"
 
 [sub_resource type="Resource" id="Resource_x8el1"]
 script = ExtResource("3_oyk4o")
-use_right_joystick = false
-invert_joystick = false
 category = &"movement"
 name = &"move"
 metadata/_custom_type_script = "uid://jfhe3oy4t0v6"
@@ -70,7 +68,6 @@ metadata/_custom_type_script = "uid://bra3mf6x4mptc"
 
 [resource]
 script = ExtResource("5_8d0lb")
-toggle_joystick = false
 input_actions = Array[ExtResource("1_geugl")]([SubResource("Resource_ebna3"), SubResource("Resource_lxy7y"), SubResource("Resource_x8el1"), SubResource("Resource_p56w4")])
 name = &"Right hand"
 metadata/_custom_type_script = "uid://coiheovm2u2si"

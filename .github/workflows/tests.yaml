@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  GODOT_VERSION: 4.5.1
+  GODOT_VERSION: 4.6
 
 jobs:
   smoke-test:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
-      image: nokorpo/godot-tests:4.5.1
+      image: nokorpo/godot-tests:4.6
     concurrency:
       group: tests
     steps:
@@ -43,7 +43,7 @@ jobs:
     timeout-minutes: 10
     needs: smoke-test
     container:
-      image: barichello/godot-ci:4.5.1
+      image: barichello/godot-ci:4.6
     concurrency:
       group: tests
     steps:

@@ -235,20 +235,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66855, 0, 0)
 [node name="MovingBoarPlatform2" parent="Props/Interactables" unique_id=1627586630 instance=ExtResource("19_duu18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.372, 0, 0)
 
-[node name="baseball_ball2" parent="." unique_id=2146158383 instance=ExtResource("21_6m34k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.344, 0, 0)
+[node name="ThrowableItems" type="Node3D" parent="Props" unique_id=935950194]
 
-[node name="basketball_ball2" parent="." unique_id=592511572 instance=ExtResource("22_crl3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.468107, 0, 0)
+[node name="BaseballBall" parent="Props/ThrowableItems" unique_id=1939063160 instance=ExtResource("21_6m34k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.818056, 0, 0)
 
-[node name="box2" parent="." unique_id=1651877960 instance=ExtResource("23_dgpha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.752905, 0, 0)
+[node name="BasketballBall" parent="Props/ThrowableItems" unique_id=1043666953 instance=ExtResource("22_crl3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03149, 0, 0)
 
-[node name="branch2" parent="." unique_id=1889078086 instance=ExtResource("24_alyoq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.701006, 0, -0.06389713)
+[node name="Box" parent="Props/ThrowableItems" unique_id=1434850014 instance=ExtResource("23_dgpha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.133988, 0, 0)
 
-[node name="glasses2" parent="." unique_id=829004653 instance=ExtResource("25_0jyy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.782564, 0, -0.13551188)
+[node name="Branch" parent="Props/ThrowableItems" unique_id=1678581528 instance=ExtResource("24_alyoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.079595, 0, 0)
 
-[node name="wrench2" parent="." unique_id=830963711 instance=ExtResource("26_8155b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.696318, 0, 0.013465881)
+[node name="Glasses" parent="Props/ThrowableItems" unique_id=981480454 instance=ExtResource("25_0jyy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.112596, 0, 0)
+
+[node name="Wrench" parent="Props/ThrowableItems" unique_id=390634838 instance=ExtResource("26_8155b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.431393, 0, 0)

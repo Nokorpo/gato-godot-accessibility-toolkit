@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/branch.gltf-58f3c1c6313e79a1e25650fd1fd12b3a.
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Branch"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

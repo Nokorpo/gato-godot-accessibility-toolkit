@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/glasses.gltf-12e0db8b7e54030d90e05bed5f4efda3
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Glasses"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

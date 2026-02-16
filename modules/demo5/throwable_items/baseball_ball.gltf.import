@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/baseball_ball.gltf-6b4f823aa4f49bbaabbaa3e689
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="BaseballBall"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

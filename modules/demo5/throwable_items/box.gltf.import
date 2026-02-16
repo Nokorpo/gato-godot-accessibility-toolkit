@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/box.gltf-38ce169e643754b2b8a561952268b855.scn
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Box"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

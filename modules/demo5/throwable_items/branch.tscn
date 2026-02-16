@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cv8s3xqneydxw"]
+
+[ext_resource type="PackedScene" uid="uid://e71exi7sf5tm" path="res://modules/demo5/throwable_items/branch.gltf" id="1_hmh2p"]
+
+[sub_resource type="Animation" id="Animation_v3h8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("branch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("branch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jwpf7"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("branch:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.82, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.037185967, -0.05643335), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("branch:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.46597186, -2.8926346, 2.6266606), Vector3(-0.79491675, -2.261417, 2.2692573), Vector3(-0.46597186, -2.8926346, 2.6266606)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wvsl"]
+_data = {
+&"RESET": SubResource("Animation_v3h8a"),
+&"idle": SubResource("Animation_jwpf7")
+}
+
+[node name="Branch" unique_id=1678581528 instance=ExtResource("1_hmh2p")]
+
+[node name="branch" parent="." index="0" unique_id=1275475489]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1786006935]
+libraries/ = SubResource("AnimationLibrary_8wvsl")

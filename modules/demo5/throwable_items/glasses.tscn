@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dkfwr2e0hpswl"]
+
+[ext_resource type="PackedScene" uid="uid://bywncjyfg1umq" path="res://modules/demo5/throwable_items/glasses.gltf" id="1_xa0te"]
+
+[sub_resource type="Animation" id="Animation_338m3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glasses:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("glasses:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m16qt"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glasses:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3666667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.05, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("glasses:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.2532102, 0.26353917, 0.47466028), Vector3(-0.48823196, 0.12641646, 0.5247512), Vector3(-0.2532102, 0.26353917, 0.47466028)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrxx3"]
+_data = {
+&"RESET": SubResource("Animation_338m3"),
+&"idle": SubResource("Animation_m16qt")
+}
+
+[node name="Glasses" unique_id=981480454 instance=ExtResource("1_xa0te")]
+
+[node name="glasses" parent="." index="0" unique_id=189241370]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=52888647]
+libraries/ = SubResource("AnimationLibrary_qrxx3")

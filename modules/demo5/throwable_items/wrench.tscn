@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ckmkg5od8h6bm"]
+
+[ext_resource type="PackedScene" uid="uid://bp4bygve8r1mf" path="res://modules/demo5/throwable_items/wrench.gltf" id="1_mwhck"]
+
+[sub_resource type="Animation" id="Animation_jwxnb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wrench:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wrench:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s326i"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wrench:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.4131978, -0.03215723, -0.94100636)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wrench:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4333333, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.05, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mkk8f"]
+_data = {
+&"RESET": SubResource("Animation_jwxnb"),
+&"idle": SubResource("Animation_s326i")
+}
+
+[node name="Wrench" unique_id=390634838 instance=ExtResource("1_mwhck")]
+
+[node name="wrench" parent="." index="0" unique_id=1003074158]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000002, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1540502808]
+libraries/ = SubResource("AnimationLibrary_mkk8f")

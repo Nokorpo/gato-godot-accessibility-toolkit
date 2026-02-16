@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ttidbrw4r1gb"]
+
+[ext_resource type="PackedScene" uid="uid://c0bjq11qhcu4b" path="res://modules/demo5/throwable_items/baseball_ball.gltf" id="1_jo3sf"]
+
+[sub_resource type="Animation" id="Animation_jo3sf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("baseball_ball:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("baseball_ball:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cxksj"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("baseball_ball:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(6.2831855, 0, 0), Vector3(6.2831855, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("baseball_ball:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26, 0.7, 0.74999994, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.036149606, 0), Vector3(0, 0.3038129, 0), Vector3(0, 0.3038129, 0), Vector3(0, -0.08804415, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f6je8"]
+_data = {
+&"RESET": SubResource("Animation_jo3sf"),
+&"idle": SubResource("Animation_cxksj")
+}
+
+[node name="BaseballBall" unique_id=1939063160 instance=ExtResource("1_jo3sf")]
+
+[node name="baseball_ball" parent="." index="0" unique_id=1297333431]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=765297027]
+libraries/ = SubResource("AnimationLibrary_f6je8")

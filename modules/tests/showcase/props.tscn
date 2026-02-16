@@ -20,6 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="18_vi0eq"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="19_duu18"]
 [ext_resource type="PackedScene" uid="uid://cjyapjiy2cyjv" path="res://modules/demo1/map/props/oak.gltf" id="20_duu18"]
+[ext_resource type="PackedScene" uid="uid://c0bjq11qhcu4b" path="res://modules/demo5/throwable_items/baseball_ball.gltf" id="21_6m34k"]
+[ext_resource type="PackedScene" uid="uid://g885uk3kutcf" path="res://modules/demo5/throwable_items/basketball_ball.gltf" id="22_crl3f"]
+[ext_resource type="PackedScene" uid="uid://bboh2b3tjmu2g" path="res://modules/demo5/throwable_items/box.gltf" id="23_dgpha"]
+[ext_resource type="PackedScene" uid="uid://e71exi7sf5tm" path="res://modules/demo5/throwable_items/branch.gltf" id="24_alyoq"]
+[ext_resource type="PackedScene" uid="uid://bywncjyfg1umq" path="res://modules/demo5/throwable_items/glasses.gltf" id="25_0jyy4"]
+[ext_resource type="PackedScene" uid="uid://bp4bygve8r1mf" path="res://modules/demo5/throwable_items/wrench.gltf" id="26_8155b"]
 
 [node name="Props" type="Node3D" unique_id=874950120]
 
@@ -228,3 +234,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66855, 0, 0)
 
 [node name="MovingBoarPlatform2" parent="Props/Interactables" unique_id=1627586630 instance=ExtResource("19_duu18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.372, 0, 0)
+
+[node name="baseball_ball2" parent="." unique_id=2146158383 instance=ExtResource("21_6m34k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.344, 0, 0)
+
+[node name="basketball_ball2" parent="." unique_id=592511572 instance=ExtResource("22_crl3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.468107, 0, 0)
+
+[node name="box2" parent="." unique_id=1651877960 instance=ExtResource("23_dgpha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.752905, 0, 0)
+
+[node name="branch2" parent="." unique_id=1889078086 instance=ExtResource("24_alyoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.701006, 0, -0.06389713)
+
+[node name="glasses2" parent="." unique_id=829004653 instance=ExtResource("25_0jyy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.782564, 0, -0.13551188)
+
+[node name="wrench2" parent="." unique_id=830963711 instance=ExtResource("26_8155b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.696318, 0, 0.013465881)

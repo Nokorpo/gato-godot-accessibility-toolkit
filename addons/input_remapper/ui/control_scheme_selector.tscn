@@ -13,7 +13,7 @@ script = ExtResource("1_c4d4j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=802030843]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2075485578]
 layout_mode = 2
@@ -62,6 +62,10 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.333333)
 text = "right hand"
 uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1711037950]
+show_behind_parent = true
+layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/GoBackButton" to="." method="_load_last_scheme"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_load_next_scheme"]

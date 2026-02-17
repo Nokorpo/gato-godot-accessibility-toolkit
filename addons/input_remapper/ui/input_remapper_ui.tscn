@@ -9,6 +9,14 @@
 [ext_resource type="Script" uid="uid://dnohs380c7c7s" path="res://addons/input_remapper/ui/action_container.gd" id="5_2gebx"]
 [ext_resource type="PackedScene" uid="uid://bw8doo3b01x73" path="res://addons/input_remapper/ui/press_key_dialog.tscn" id="5_6fg7x"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18ywu"]
+bg_color = Color(0.03137255, 0, 0.10980392, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 20
+
 [node name="InputRemapperUi" type="Control" unique_id=718320937]
 layout_mode = 3
 anchors_preset = 15
@@ -80,83 +88,97 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=262821437]
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=54604244]
 layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/Control" unique_id=391618354]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 85.0
+offset_right = 65.58127
+offset_bottom = 135.0
+scale = Vector2(23.81, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_18ywu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/Control" unique_id=262821437]
+layout_mode = 0
+offset_right = 906.0
+offset_bottom = 1161.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="ControlScheme" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=748209293 instance=ExtResource("3_yg0ao")]
+[node name="ControlScheme" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer" unique_id=748209293 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 title = "control scheme"
 
-[node name="ControlSchemeSelector" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=513719737 instance=ExtResource("1_yg0ao")]
+[node name="ControlSchemeSelector" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer" unique_id=513719737 instance=ExtResource("1_yg0ao")]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=722715464]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer" unique_id=722715464]
 layout_mode = 2
 
-[node name="Movement" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2047251977 instance=ExtResource("3_yg0ao")]
+[node name="Movement" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer" unique_id=2047251977 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
 size_flags_horizontal = 1
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 title = "movement"
 
-[node name="2DInputMap" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Movement" unique_id=827562170 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog") instance=ExtResource("4_mreui")]
+[node name="2DInputMap" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Movement" unique_id=827562170 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog") instance=ExtResource("4_mreui")]
 layout_mode = 2
-input_remapper_ui = NodePath("../../../../../..")
+input_remapper_ui = NodePath("../../../../../../..")
 action_name = &"move"
-press_key_dialog = NodePath("../../../../../../PressKeyDialog")
+press_key_dialog = NodePath("../../../../../../../PressKeyDialog")
 
-[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=828579408]
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer" unique_id=828579408]
 layout_mode = 2
 
-[node name="Interaction" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1853740966 instance=ExtResource("3_yg0ao")]
+[node name="Interaction" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer" unique_id=1853740966 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
 size_flags_horizontal = 1
 title = "interactions"
 
-[node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction" unique_id=2079108578 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog")]
+[node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction" unique_id=2079108578 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog")]
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
 layout_mode = 2
 columns = 2
 script = ExtResource("5_2gebx")
-input_remapper_ui = NodePath("../../../../../..")
-press_key_dialog = NodePath("../../../../../../PressKeyDialog")
+input_remapper_ui = NodePath("../../../../../../..")
+press_key_dialog = NodePath("../../../../../../../PressKeyDialog")
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=674658983]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer" unique_id=674658983]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "launch_item"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=2116520438]
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer" unique_id=2116520438]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"InputButton"
 text = "Z"
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=1283069729]
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer" unique_id=1283069729]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "jump"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=1227646522]
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer" unique_id=1227646522]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"InputButton"
 text = "Space"
 
-[node name="SaveChangesButton" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=67432300]
+[node name="SaveChangesButton" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer" unique_id=67432300]
 layout_mode = 2
 text = "Save changes"
 
 [node name="PressKeyDialog" parent="." unique_id=1683379886 instance=ExtResource("5_6fg7x")]
 layout_mode = 1
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer/Button" to="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["launch_item"]]
-[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer/Button2" to="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["jump"]]
-[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/SaveChangesButton" to="." method="save_changes"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer/Button" to="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["launch_item"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer/Button2" to="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["jump"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/Control/VBoxContainer/SaveChangesButton" to="." method="save_changes"]

@@ -1,6 +1,9 @@
 class_name InputRemapperUI
 extends Control
 
+@export var _control_scheme_selector: Control
+@export var _movement_input_map: Control
+@export var _interactions_action_container: Control
 
 @onready var pressed_key_dialog := $PressKeyDialog
 
@@ -22,15 +25,18 @@ func _get_scheme_index(scheme: GatoControlScheme) -> int:
 	)
 
 func populate_ui(scheme: GatoControlScheme) -> void:
+	if scheme == null:
+		push_error("Tried to initialize Input Remapper with empty scheme")
+		return
 	var index := _get_scheme_index(scheme)
 	var current_scheme := _schemes[index]
-	$PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ControlSchemeSelector._update_ui(_schemes, index)
-	$"PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Movement/2DInputMap".update_ui(current_scheme)
+	_control_scheme_selector._update_ui(_schemes, index)
+	_movement_input_map.update_ui(current_scheme)
 	var inputs: Array[InputActionButton] = []
 	for input in current_scheme.input_actions:
 		if input is InputActionButton:
 			inputs.append(input)
-	$PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer.update_ui(inputs)
+	_interactions_action_container.update_ui(inputs)
 
 func set_action(action_name: StringName, event: InputEvent) -> void:
 	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]

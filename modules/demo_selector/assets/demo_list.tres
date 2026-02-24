@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="3_0qcei"]
 [ext_resource type="PackedScene" uid="uid://b0xcaouncmmm6" path="res://modules/demo1/map/map3.tscn" id="3_2eigo"]
 [ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="3_ysq4b"]
+[ext_resource type="Texture2D" uid="uid://bnapdvq6da0hy" path="res://modules/demo_selector/assets/demo4.png" id="6_tros2"]
 [ext_resource type="PackedScene" uid="uid://dvs14kxa77pp2" path="res://modules/demo4/map/map.tscn" id="7_p1xob"]
+[ext_resource type="Texture2D" uid="uid://b01go352cfomr" path="res://modules/demo_selector/assets/props.png" id="8_q3h6l"]
 
 [sub_resource type="Resource" id="Resource_oj4im"]
 script = ExtResource("1_p5mn1")
@@ -18,27 +20,27 @@ metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_g6obd"]
 script = ExtResource("1_p5mn1")
-title = "Demo 2"
+title = "Demo 2 (n/a)"
 image = ExtResource("2_52e3n")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_52e3n"]
 script = ExtResource("1_p5mn1")
-title = "Demo 3"
+title = "Demo 3 (n/a)"
 image = ExtResource("3_ysq4b")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_ysq4b"]
 script = ExtResource("1_p5mn1")
 title = "Demo 4"
-image = ExtResource("2_52e3n")
+image = ExtResource("6_tros2")
 scene = ExtResource("7_p1xob")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_6ghuu"]
 script = ExtResource("1_p5mn1")
 title = "Prop Showcase"
-image = ExtResource("2_52e3n")
+image = ExtResource("8_q3h6l")
 scene = ExtResource("3_0qcei")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 

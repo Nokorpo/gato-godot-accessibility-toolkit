@@ -1,7 +1,57 @@
 [gd_scene format=3 uid="uid://vooeq5ose2br"]
 
+[ext_resource type="Texture2D" uid="uid://cg3xu21lbmexl" path="res://modules/demo_selector/assets/background_pattern.png" id="1_1ehge"]
 [ext_resource type="Script" uid="uid://dxucdon17jm50" path="res://modules/demo_selector/demo_container.gd" id="1_xsipc"]
+[ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="2_827ex"]
 [ext_resource type="Resource" uid="uid://doxub3jvr747g" path="res://modules/demo_selector/assets/demo_list.tres" id="2_xqaix"]
+[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="5_827ex"]
+
+[sub_resource type="Gradient" id="Gradient_xqaix"]
+colors = PackedColorArray(0.09019608, 0.023529412, 0.25490198, 1, 0.13694337, 0.021770453, 0.19578174, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_827ex"]
+gradient = SubResource("Gradient_xqaix")
+fill_from = Vector2(0.50427353, 1)
+fill_to = Vector2(0.48290598, 0)
+
+[sub_resource type="Shader" id="Shader_1ehge"]
+code = "shader_type canvas_item;
+
+uniform float scroll_speed : hint_range(0, 2) = 0.08;
+uniform float angle_degrees : hint_range(0, 360) = 45.0;
+uniform float repeat_x : hint_range(1, 20) = 20;
+uniform float repeat_y : hint_range(1, 20) = 12;
+uniform float row_offset : hint_range(0, 1) = 1;
+uniform sampler2D texture_to_scroll;
+
+void fragment() {
+ float angle_rad = radians(angle_degrees);
+
+ vec2 direction = vec2(cos(angle_rad), sin(angle_rad));
+
+ vec2 offset_uv = UV - (TIME * scroll_speed * direction);
+
+ float offset = fract(floor(offset_uv.y * repeat_y) * 0.5) > 0.0 ? (row_offset * 0.324) : 0.0;
+
+ offset_uv.x += offset;
+
+ vec2 scaled_uv = vec2(fract(offset_uv.x * repeat_x), 
+              fract(offset_uv.y * repeat_y));
+
+ vec2 texelSize = vec2(1.0) / vec2(textureSize(texture_to_scroll, 0));
+ vec2 snappedUV = round(scaled_uv / texelSize) * texelSize;
+
+ COLOR = texture(texture_to_scroll, snappedUV);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_827ex"]
+shader = SubResource("Shader_1ehge")
+shader_parameter/scroll_speed = 0.010000000475
+shader_parameter/angle_degrees = 45.0000021375
+shader_parameter/repeat_x = 2.0000000475
+shader_parameter/repeat_y = 2.0000000475
+shader_parameter/row_offset = 0.800000038
+shader_parameter/texture_to_scroll = ExtResource("1_1ehge")
 
 [node name="DemoSelector" type="Control" unique_id=911296128]
 layout_mode = 3
@@ -10,6 +60,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1864816947]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_827ex")
+
+[node name="BackgroundPattern" type="TextureRect" parent="." unique_id=878097284]
+material = SubResource("ShaderMaterial_827ex")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1ehge")
+stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1673638603]
 layout_mode = 1
@@ -21,8 +91,10 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1688154727]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_827ex")
 theme_override_font_sizes/font_size = 72
-text = "Godot Accesibility Toolkit (GATO)"
+text = "
+Godot Accesibility Toolkit (GATO)"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1534869132]
@@ -40,6 +112,7 @@ demo_list_resource = ExtResource("2_xqaix")
 
 [node name="Footer" type="Label" parent="VBoxContainer" unique_id=954230710]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_827ex")
 theme_override_font_sizes/font_size = 12
 text = "Nokorpo 2025"
 horizontal_alignment = 1

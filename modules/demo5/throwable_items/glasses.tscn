@@ -66,8 +66,9 @@ _data = {
 
 [node name="Glasses" unique_id=981480454 instance=ExtResource("1_xa0te")]
 
-[node name="glasses" parent="." index="0" unique_id=189241370]
+[node name="glasses" parent="." index="0" unique_id=443731079]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=52888647]
 libraries/ = SubResource("AnimationLibrary_qrxx3")
+autoplay = &"idle"

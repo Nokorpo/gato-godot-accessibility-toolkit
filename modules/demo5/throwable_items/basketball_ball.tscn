@@ -68,3 +68,4 @@ _data = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=749629107]
 libraries/ = SubResource("AnimationLibrary_wpu7w")
+autoplay = &"idle"

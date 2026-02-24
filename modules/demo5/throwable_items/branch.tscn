@@ -66,8 +66,9 @@ _data = {
 
 [node name="Branch" unique_id=1678581528 instance=ExtResource("1_hmh2p")]
 
-[node name="branch" parent="." index="0" unique_id=1275475489]
+[node name="branch" parent="." index="0" unique_id=104821980]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1786006935]
 libraries/ = SubResource("AnimationLibrary_8wvsl")
+autoplay = &"idle"

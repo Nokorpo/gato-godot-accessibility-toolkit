@@ -66,8 +66,9 @@ _data = {
 
 [node name="Wrench" unique_id=390634838 instance=ExtResource("1_mwhck")]
 
-[node name="wrench" parent="." index="0" unique_id=1003074158]
+[node name="wrench" parent="." index="0" unique_id=1141585511]
 transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000002, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1540502808]
 libraries/ = SubResource("AnimationLibrary_mkk8f")
+autoplay = &"idle"

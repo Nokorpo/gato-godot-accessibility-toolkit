@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://bjkluuekkwknt"]
+
+[ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_3xldr"]
+[ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_2woxq"]
+[ext_resource type="PackedScene" uid="uid://daishhn3xlx74" path="res://modules/demo5/throwable_items/basketball_ball.tscn" id="3_0ulb0"]
+[ext_resource type="PackedScene" uid="uid://bb3haljhc606v" path="res://modules/demo1/map/props/rock.gltf" id="4_3xldr"]
+[ext_resource type="PackedScene" uid="uid://ttidbrw4r1gb" path="res://modules/demo5/throwable_items/baseball_ball.tscn" id="4_j3q1o"]
+[ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="5_2woxq"]
+[ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_5ku2k"]
+[ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="5_cyo0x"]
+[ext_resource type="PackedScene" uid="uid://cx1ifxyiknxot" path="res://modules/demo5/throwable_items/box.tscn" id="5_fykio"]
+[ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="6_4g4qy"]
+[ext_resource type="PackedScene" uid="uid://cv8s3xqneydxw" path="res://modules/demo5/throwable_items/branch.tscn" id="6_tc3uo"]
+[ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="7_kp8o8"]
+[ext_resource type="PackedScene" uid="uid://dkfwr2e0hpswl" path="res://modules/demo5/throwable_items/glasses.tscn" id="7_uov22"]
+[ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="8_5ku2k"]
+[ext_resource type="PackedScene" uid="uid://ckmkg5od8h6bm" path="res://modules/demo5/throwable_items/wrench.tscn" id="8_eqj3t"]
+[ext_resource type="PackedScene" uid="uid://btbwdsksnh62b" path="res://boar_red.tscn" id="9_d6375"]
+[ext_resource type="PackedScene" uid="uid://b3ge6hkxcuwqt" path="res://modules/demo1/map/props/pine_small.gltf" id="9_nvd5q"]
+[ext_resource type="PackedScene" uid="uid://bckenvh5w3j2p" path="res://modules/demo1/map/props/rock_group.gltf" id="10_4g4qy"]
+[ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="11_fjpig"]
+[ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="13_fjpig"]
+[ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
+[ext_resource type="PackedScene" uid="uid://ctkf5kicchy5p" path="res://modules/characters/boar/mesh/boar_yellow_long-eared.glb" id="22_tc3uo"]
+[ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
+albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ku402"]
+material = SubResource("StandardMaterial3D_0721d")
+
+[node name="Map" type="Node3D" unique_id=1452746876]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1982310280]
+environment = ExtResource("1_3xldr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1713446068]
+transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
+light_volumetric_fog_energy = 2.0
+light_specular = 0.0
+
+[node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("2_2woxq")]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=489021595]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.2181628, 0)
+fov = 70.0
+
+[node name="BasketballBall" parent="Camera3D" unique_id=1043666953 instance=ExtResource("3_0ulb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+
+[node name="BaseballBall" parent="Camera3D" unique_id=1939063160 instance=ExtResource("4_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Box" parent="Camera3D" unique_id=1434850014 instance=ExtResource("5_fykio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Branch" parent="Camera3D" unique_id=1678581528 instance=ExtResource("6_tc3uo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Glasses" parent="Camera3D" unique_id=981480454 instance=ExtResource("7_uov22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Wrench" parent="Camera3D" unique_id=390634838 instance=ExtResource("8_eqj3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Boars" type="Node3D" parent="." unique_id=1098203158]
+
+[node name="BoarRed" parent="Boars" unique_id=2105937100 instance=ExtResource("9_d6375")]
+transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, -2, 0, -2.3553338)
+
+[node name="BoarGreen" parent="Boars" unique_id=1557496029 instance=ExtResource("21_fykio")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.7, 0, -2.599944)
+
+[node name="BoarYellow" parent="Boars" unique_id=922359660 instance=ExtResource("22_tc3uo")]
+transform = Transform3D(0.7660444, 0, -0.6427875, 0, 1, 0, 0.6427875, 0, 0.7660444, 2, 0, -2.3553338)
+
+[node name="BoarBlue" parent="Boars" unique_id=1184518344 instance=ExtResource("23_uov22")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0.7, 0, -2.599944)
+
+[node name="Props" type="Node3D" parent="." unique_id=516168187]
+
+[node name="Floor" type="Node3D" parent="Props" unique_id=241929415]
+
+[node name="PlatformGrass" parent="Props/Floor" unique_id=1115931623 instance=ExtResource("5_5ku2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5872962, -4.0264034)
+
+[node name="PlatformGrass4" parent="Props/Floor" unique_id=9458462 instance=ExtResource("5_5ku2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70451736, -1.9328241, -0.38282442)
+
+[node name="PlatformGrass3" parent="Props/Floor" unique_id=1296197818 instance=ExtResource("5_5ku2k")]
+transform = Transform3D(0.87441653, 0, -0.48517594, 0, 1, 0, 0.48517594, 0, 0.87441653, 4.649216, -1.5872962, -1.975306)
+
+[node name="PlatformGrass2" parent="Props/Floor" unique_id=930116318 instance=ExtResource("5_5ku2k")]
+transform = Transform3D(0.60509944, 0, 0.7961499, 0, 1, 0, -0.7961499, 0, 0.60509944, -3.613221, -1.5902177, -2.509659)
+
+[node name="FloorSand" parent="Props/Floor" unique_id=1399967608 instance=ExtResource("5_2woxq")]
+transform = Transform3D(0.9362191, 0, 0.35141683, 0, 1, 0, -0.35141683, 0, 0.9362191, -8.087306, -1.5360065, -11.364171)
+
+[node name="FloorSand5" parent="Props/Floor" unique_id=693803132 instance=ExtResource("5_2woxq")]
+transform = Transform3D(0.9362191, 0, 0.35141683, 0, 1, 0, -0.35141683, 0, 0.9362191, -13.974292, -1.5360065, -9.433853)
+
+[node name="FloorSand2" parent="Props/Floor" unique_id=721054284 instance=ExtResource("5_2woxq")]
+transform = Transform3D(0.9362191, 0, 0.35141683, 0, 1, 0, -0.35141683, 0, 0.9362191, -1.5060949, -1.5360065, -12.346512)
+
+[node name="FloorSand3" parent="Props/Floor" unique_id=1634377012 instance=ExtResource("5_2woxq")]
+transform = Transform3D(0.96546805, 0, 0.26052135, 0, 1, 0, -0.26052135, 0, 0.96546805, 4.9280715, -1.5360065, -12.346512)
+
+[node name="FloorSand4" parent="Props/Floor" unique_id=68136968 instance=ExtResource("5_2woxq")]
+transform = Transform3D(0.91285557, 0, -0.4082827, 0, 1, 0, 0.4082827, 0, 0.91285557, 9.692457, -1.5360065, -10.61919)
+
+[node name="Grass" type="Node3D" parent="Props" unique_id=690459835]
+
+[node name="GrassPile" parent="Props/Grass" unique_id=674649935 instance=ExtResource("5_cyo0x")]
+transform = Transform3D(0.8016443, 0, -1.0016189, 0, 1.2829161, 0, 1.0016189, 0, 0.8016443, 1.0292361, -0.3812322, -1.1021543)
+
+[node name="GrassPile7" parent="Props/Grass" unique_id=1505678175 instance=ExtResource("5_cyo0x")]
+transform = Transform3D(-1.215007, -0.041827615, 0.4097346, -0.042394202, 1.2822049, 0.0051797777, -0.40967637, -0.0086341435, -1.2157158, 2.6765866, -0.2091451, -2.1202092)
+
+[node name="GrassPile5" parent="Props/Grass" unique_id=1263313948 instance=ExtResource("5_cyo0x")]
+transform = Transform3D(0.8016443, 0, -1.0016189, 0, 1.2829161, 0, 1.0016189, 0, 0.8016443, 3.9873781, -0.194512, -4.1335073)
+
+[node name="GrassPile6" parent="Props/Grass" unique_id=1047567486 instance=ExtResource("5_cyo0x")]
+transform = Transform3D(0.7156705, 0, 1.0647486, 0, 1.2829161, 0, -1.0647486, 0, 0.7156705, -2.3941786, -0.194512, -3.9953842)
+
+[node name="GrassPile2" parent="Props/Grass" unique_id=1389128831 instance=ExtResource("5_cyo0x")]
+transform = Transform3D(0.9776917, 0, 0.21004517, 0, 1, 0, -0.21004517, 0, 0.9776917, -1.746373, -0.11456378, -1.072009)
+
+[node name="GrassPile3" parent="Props/Grass" unique_id=1097424749 instance=ExtResource("5_cyo0x")]
+transform = Transform3D(-0.6176127, 0, -0.78648245, 0, 1, 0, 0.78648245, 0, -0.6176127, -4.5217643, -0.11456378, -3.7349558)
+
+[node name="GrassPile4" parent="Props/Grass" unique_id=1378908790 instance=ExtResource("5_cyo0x")]
+transform = Transform3D(0.7035686, 0, 0.71062744, 0, 1, 0, -0.71062744, 0, 0.7035686, -4.4439907, -0.20263521, -4.9817324)
+
+[node name="Grass2" parent="Props/Grass" unique_id=29864948 instance=ExtResource("7_kp8o8")]
+transform = Transform3D(0.78575563, 0, 0, 0, 0.78575563, 0, 0, 0, 0.78575563, -4.764969, -0.16898409, -4.6960645)
+
+[node name="DarkerGrass" parent="Props/Grass" unique_id=1835534721 instance=ExtResource("13_fjpig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0322855, -0.12965536, -6.3364954)
+
+[node name="DarkerGrass3" parent="Props/Grass" unique_id=1228892551 instance=ExtResource("13_fjpig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9026566, -0.12416768, -3.5818405)
+
+[node name="DarkerGrass2" parent="Props/Grass" unique_id=649951231 instance=ExtResource("13_fjpig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9010334, -0.21816191, -6.3364954)
+
+[node name="Grass3" parent="Props/Grass" unique_id=1026470585 instance=ExtResource("7_kp8o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8230066, -0.44615763, -1.4005854)
+
+[node name="Grass5" parent="Props/Grass" unique_id=1712283449 instance=ExtResource("7_kp8o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50778574, -0.17291832, -4.6417007)
+
+[node name="Grass4" type="Node3D" parent="Props/Grass" unique_id=1390239654]
+
+[node name="Sprites" type="Node3D" parent="Props" unique_id=1887943975]
+
+[node name="Flowers" type="Sprite3D" parent="Props/Sprites" unique_id=83382985]
+transform = Transform3D(0.580414, 0.0739821, 0, 3.23386e-09, -2.53707e-08, 0.58511, 0.0739821, -0.580414, -2.5576e-08, -3.828105, -0.012704796, -4.0913706)
+texture = ExtResource("6_4g4qy")
+
+[node name="Flowers2" type="Sprite3D" parent="Props/Sprites" unique_id=1553480239]
+transform = Transform3D(0.580414, 0.0739821, 0, 3.23386e-09, -2.53707e-08, 0.58511, 0.0739821, -0.580414, -2.5576e-08, 4.245102, -0.012704758, -3.1931126)
+texture = ExtResource("6_4g4qy")
+
+[node name="Rocks" type="Node3D" parent="Props" unique_id=483663630]
+
+[node name="Rock" parent="Props/Rocks" unique_id=673838718 instance=ExtResource("4_3xldr")]
+transform = Transform3D(0.5923226, 0, -0.8057009, 0, 0.59312123, 0, 0.8057009, 0, 0.5923226, 2.7153535, -0.22768494, -0.7383547)
+
+[node name="Rock2" parent="Props/Rocks" unique_id=259793522 instance=ExtResource("4_3xldr")]
+transform = Transform3D(0.36736646, 0, -0.49970657, 0, 0.24230303, 0, 0.49970657, 0, 0.36736646, 2.964542, -0.08654353, -1.8867216)
+
+[node name="Rock3" parent="Props/Rocks" unique_id=1957781559 instance=ExtResource("4_3xldr")]
+transform = Transform3D(0.36736646, 0, -0.49970657, 0, 0.24230303, 0, 0.49970657, 0, 0.36736646, 4.089801, -0.08654353, -5.062614)
+
+[node name="RockGroup" parent="Props/Rocks" unique_id=1920417799 instance=ExtResource("10_4g4qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9120264, -1.0141115, -5.6198807)
+
+[node name="RockGroup2" parent="Props/Rocks" unique_id=2074017288 instance=ExtResource("10_4g4qy")]
+transform = Transform3D(0.43578097, 0, -0.9000527, 0, 1, 0, 0.9000527, 0, 0.43578097, 5.279951, -0.20769334, -4.1046686)
+
+[node name="Fences" type="Node3D" parent="Props/Rocks" unique_id=608337093]
+
+[node name="Fence" parent="Props/Rocks/Fences" unique_id=1041318221 instance=ExtResource("11_fjpig")]
+transform = Transform3D(0.89620787, 0, -0.4436344, 0, 1, 0, 0.4436344, 0, 0.89620787, 4.66825, -0.06360869, -5.487964)
+
+[node name="Fence2" parent="Props/Rocks/Fences" unique_id=565777148 instance=ExtResource("11_fjpig")]
+transform = Transform3D(0.89620787, 0, -0.4436344, 0, 1, 0, 0.4436344, 0, 0.89620787, 3.6710465, -0.06360869, -5.981593)
+
+[node name="Fence3" parent="Props/Rocks/Fences" unique_id=318806062 instance=ExtResource("11_fjpig")]
+transform = Transform3D(0.96687686, 0, -0.25524327, 0, 1, 0, 0.25524327, 0, 0.96687686, 2.6301773, -0.06360869, -6.3776927)
+
+[node name="Pines" type="Node3D" parent="Props" unique_id=534130236]
+
+[node name="Pine" parent="Props/Pines" unique_id=1753780612 instance=ExtResource("8_5ku2k")]
+transform = Transform3D(-0.87033856, 0, -0.4924539, 0, 1, 0, 0.4924539, 0, -0.87033856, -5.054429, -0.11159873, -3.6509304)
+
+[node name="Pine2" parent="Props/Pines" unique_id=731038634 instance=ExtResource("8_5ku2k")]
+transform = Transform3D(-0.87033856, 0, -0.4924539, 0, 1, 0, 0.4924539, 0, -0.87033856, 6.206768, -0.95199704, -7.716184)
+
+[node name="PineSmall" parent="Props/Pines" unique_id=1653455030 instance=ExtResource("9_nvd5q")]
+transform = Transform3D(0.12723774, 0, 0.99187225, 0, 1, 0, -0.99187225, 0, 0.12723774, -4.8328595, -0.14318295, -5.1904874)
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=517934670]
+transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
+mesh = SubResource("PlaneMesh_ku402")

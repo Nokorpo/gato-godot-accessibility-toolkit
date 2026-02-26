@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7vf1css0b8xp"]
+
+[ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="1_qsvrm"]
+[ext_resource type="Material" uid="uid://d144g40pc4bq7" path="res://modules/demo5/map/props/interactables_without_fading.tres" id="2_cvmle"]
+
+[node name="PineWithoutFading" type="Node3D" unique_id=1696668845]
+
+[node name="Pine" parent="." unique_id=1753780612 instance=ExtResource("1_qsvrm")]
+
+[node name="Pine" parent="Pine" index="0" unique_id=913634411]
+surface_material_override/0 = ExtResource("2_cvmle")
+
+[editable path="Pine"]

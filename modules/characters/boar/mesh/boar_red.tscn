@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/mesh/boar.glb" id="1_2ayei"]
 [ext_resource type="Texture2D" uid="uid://bswxctlwvujla" path="res://modules/characters/boar/mesh/body_red.png" id="2_ro7mn"]
-[ext_resource type="Texture2D" uid="uid://dw315s17d10lx" path="res://modules/characters/boar/mesh/face _red.png" id="3_ja4by"]
+[ext_resource type="Texture2D" uid="uid://dw315s17d10lx" path="res://modules/characters/boar/mesh/face_red.png" id="3_ja4by"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bhb2"]
 albedo_texture = ExtResource("2_ro7mn")
@@ -11,7 +11,7 @@ albedo_texture = ExtResource("2_ro7mn")
 transparency = 1
 albedo_texture = ExtResource("3_ja4by")
 
-[node name="Boar" unique_id=2105937100 instance=ExtResource("1_2ayei")]
+[node name="BoarRed" unique_id=2105937100 instance=ExtResource("1_2ayei")]
 
 [node name="Body" parent="rig/Skeleton3D" parent_id_path=PackedInt32Array(1462020266) index="0" unique_id=1183872288]
 surface_material_override/0 = SubResource("StandardMaterial3D_8bhb2")

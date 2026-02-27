@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="9_d7yls"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fyq4e"]
-points = PackedVector3Array(-0.5, -1, 0, 0.5, -1, 0, 0.5, 1, 0, -0.5, 1, 0, -3, 1, 5, 3, 1, 5, 3, -1, 5, -3, -1, 5)
+points = PackedVector3Array(-0.5, -1.2, 0, 0.5, -1.2, 0, 0.5, 1, 0, -0.5, 1, 0, -3, 1, 5, 3, 1, 5, 3, -1.2, 5, -3, -1.2, 5)
 
 [sub_resource type="Curve" id="Curve_fcelm"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.495208, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

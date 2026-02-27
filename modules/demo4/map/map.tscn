@@ -644,6 +644,9 @@ transform = Transform3D(1.60766, 0, -0.0337008, 0, 1.23525, 0, 0.0284268, 0, 1.9
 [node name="PlatformGrass8" parent="Props/Floor" unique_id=2146591144 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(1.63629, 0, 1.62882, 0, 1.81099, 0, -2.04923, 0, 1.30059, -6.32521, -2.06126, -38.8516)
 
+[node name="PlatformGrass12" parent="Props/Floor" unique_id=1115931623 instance=ExtResource("5_cf3k0")]
+transform = Transform3D(0.7448295, 0, 1.7561166, 0, 1.81099, 0, -0.9327973, 0, 1.4022347, -2.349134, -2.06126, -43.22273)
+
 [node name="PlatformGrass9" parent="Props/Floor" unique_id=540514622 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(0.495966, 0, 2.04675, 0, 1.23525, 0, -2.57503, 0, 0.394217, -10.6569, -1.84688, -31.2871)
 
@@ -696,7 +699,7 @@ transform = Transform3D(2.37896, 0, 0, 0, 2.37896, 0, 0, 0, 2.37896, 0.488454, -
 transform = Transform3D(0.821607, 0, 2.23258, 0, 2.37896, 0, -2.23258, 0, 0.821607, -10.9969, -2.15333, -28.8444)
 
 [node name="FloorSand14" parent="Props/Floor" unique_id=1297038643 instance=ExtResource("7_ohoif")]
-transform = Transform3D(1.52929, 0, 1.86115, 0, 2.37896, 0, -2.21196, 0, 1.28675, -4.21982, -2.15333, -40.159)
+transform = Transform3D(1.52929, 0, 1.86115, 0, 2.37896, 0, -2.21196, 0, 1.28675, -3.5729747, -2.15333, -40.159)
 
 [node name="FloorSand3" parent="Props/Floor" unique_id=2128342140 instance=ExtResource("7_ohoif")]
 transform = Transform3D(-0.879732, 0, -0.475471, 0, 1, 0, 0.475471, 0, -0.879732, 4.08645, -1.22557, -1.55135)
@@ -714,10 +717,16 @@ transform = Transform3D(-0.372485, 0, 0.983832, 0, 1.05198, 0, -0.983832, 0, -0.
 transform = Transform3D(-0.372485, 0, 0.983832, 0, 1.05198, 0, -0.983832, 0, -0.372485, 14.097, -1.72113, -29.6417)
 
 [node name="FloorSand11" parent="Props/Floor" unique_id=291002285 instance=ExtResource("7_ohoif")]
-transform = Transform3D(-0.948435, 0, 0.980145, 0, 1.3639, 0, -0.980145, 0, -0.948435, 9.89957, -1.77434, -50.0292)
+transform = Transform3D(-0.948435, 0, 0.980145, 0, 1.3639, 0, -0.980145, 0, -0.948435, 10.367301, -1.77434, -49.922363)
 
 [node name="FloorSand12" parent="Props/Floor" unique_id=866096514 instance=ExtResource("7_ohoif")]
-transform = Transform3D(-0.789982, 0, 1.11182, 0, 1.3639, 0, -1.11182, 0, -0.789982, 13.2745, -1.68762, -43.926)
+transform = Transform3D(-0.789982, 0, 1.11182, 0, 1.3639, 0, -1.11182, 0, -0.789982, 13.825903, -1.68762, -43.926)
+
+[node name="FloorSand16" parent="Props/Floor" unique_id=1399967608 instance=ExtResource("7_ohoif")]
+transform = Transform3D(-1.2231258, 0, 0.603472, 0, 1.3639, 0, -0.603472, 0, -1.2231258, 17.476042, -1.6746476, -40.48005)
+
+[node name="FloorSand17" parent="Props/Floor" unique_id=1475369028 instance=ExtResource("7_ohoif")]
+transform = Transform3D(0.59731644, 0, 1.2261441, 0, 1.3639001, 0, -1.2261441, 0, 0.59731644, 19.844969, -1.6746476, -40.692642)
 
 [node name="FloorSand8" parent="Props/Floor" unique_id=1375626124 instance=ExtResource("7_ohoif")]
 transform = Transform3D(0.0301072, 0, 1.05155, 0, 1.05198, 0, -1.05155, 0, 0.0301072, 22.4405, -1.72113, -23.7066)
@@ -754,7 +763,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5828, 4.016599, -19.347015
 [node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=717572434]
 
 [node name="BoarButton" parent="ButtonsAndPlatforms" unique_id=1747502302 instance=ExtResource("16_uo75g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.621805, 0.685964, -41.6088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0804083, 0.685964, -41.6088)
 
 [node name="MovingBoarPlatform" parent="ButtonsAndPlatforms" unique_id=648479631 instance=ExtResource("17_tmiu8")]
 transform = Transform3D(-0.0723679, 0, 0.997378, 0, 1, 0, -0.997378, 0, -0.0723679, 8.68142, 0.0922077, -33.6432)
@@ -766,7 +775,7 @@ destination_node = NodePath("Destination")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41278, 0, 0.610415)
 
 [node name="CornTarget" type="StaticBody3D" parent="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" unique_id=317479896 groups=["button", "light_weight"]]
-transform = Transform3D(1.0000012, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000012, -0.029281616, 0.30554694, -0.3258705)
+transform = Transform3D(1.0000026, 0, -4.4703484e-08, 0, 1, 0, 4.4703484e-08, 0, 1.0000026, -0.010341644, 0.22266957, -0.5865288)
 collision_layer = 4
 collision_mask = 0
 

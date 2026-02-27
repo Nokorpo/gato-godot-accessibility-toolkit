@@ -11,7 +11,9 @@ radius = 0.216133
 
 [node name="Acorn" type="RigidBody3D" unique_id=1730986301 groups=["light_weight"]]
 physics_material_override = SubResource("PhysicsMaterial_0jmtj")
-angular_damp = 60.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.15, 0)
+angular_damp = 3.0
 script = ExtResource("1_0jmtj")
 
 [node name="Acorn" parent="." unique_id=1419149241 instance=ExtResource("2_afr2q")]

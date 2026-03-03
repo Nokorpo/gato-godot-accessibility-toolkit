@@ -106,6 +106,12 @@ jobs:
           butler push ./build/windows/ $ITCHIO_USERNAME/$ITCHIO_GAME:windows
           "FINISHED_OK=true" >> $GITHUB_ENV
 
+
+  discord-notifications:
+    needs: [linux, windows]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
       - name: Build OK Discord notification
         if: success()
         env:
@@ -122,5 +128,5 @@ jobs:
           DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
         uses: Ilshidur/action-discord@master
         with:
-          args: "Error while trying to build and publish to itch.io"
+          args: "❌️ Error while trying to build and publish to itch.io. Check [last run in Github](https://github.com/Nokorpo/gato-godot-accessibility-toolkit/actions/workflows/release.yaml)."
 

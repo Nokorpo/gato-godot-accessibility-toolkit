@@ -3,18 +3,21 @@
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_p5mn1"]
 [ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_52e3n"]
-[ext_resource type="Texture2D" uid="uid://eq1hne4r43ei" path="res://modules/demo_selector/assets/demo1.png" id="2_pbv0m"]
+[ext_resource type="Texture2D" uid="uid://dtojqwm7f3173" path="res://modules/demo_selector/assets/demo_1_cover.svg" id="2_tros2"]
 [ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="3_0qcei"]
 [ext_resource type="PackedScene" uid="uid://b0xcaouncmmm6" path="res://modules/demo1/map/map3.tscn" id="3_2eigo"]
 [ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="3_ysq4b"]
-[ext_resource type="Texture2D" uid="uid://bnapdvq6da0hy" path="res://modules/demo_selector/assets/demo4.png" id="6_tros2"]
+[ext_resource type="Texture2D" uid="uid://bxtbq50os8eq3" path="res://modules/demo_selector/assets/demo_4_cover.svg" id="6_pdl1d"]
 [ext_resource type="PackedScene" uid="uid://dvs14kxa77pp2" path="res://modules/demo4/map/map.tscn" id="7_p1xob"]
+[ext_resource type="Texture2D" uid="uid://shdg4wyyiau8" path="res://modules/demo_selector/assets/demo_5_cover.svg" id="8_ichw2"]
 [ext_resource type="Texture2D" uid="uid://b01go352cfomr" path="res://modules/demo_selector/assets/props.png" id="8_q3h6l"]
+[ext_resource type="PackedScene" uid="uid://bjkluuekkwknt" path="res://modules/demo5/map/map.tscn" id="9_hxytc"]
 
 [sub_resource type="Resource" id="Resource_oj4im"]
 script = ExtResource("1_p5mn1")
-title = "Demo 1"
-image = ExtResource("2_pbv0m")
+title = "Input Remapper"
+description = "Change character actions input with the input remapper menu and feed with acorns all the wild boars. "
+image = ExtResource("2_tros2")
 scene = ExtResource("3_2eigo")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
@@ -32,9 +35,18 @@ metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_ysq4b"]
 script = ExtResource("1_p5mn1")
-title = "Demo 4"
-image = ExtResource("6_tros2")
+title = "High Contrast"
+description = "Customize the high contrast settings and search for and collect all the golden acorns."
+image = ExtResource("6_pdl1d")
 scene = ExtResource("7_p1xob")
+metadata/_custom_type_script = "uid://dx7paoh7iir8m"
+
+[sub_resource type="Resource" id="Resource_y1f4t"]
+script = ExtResource("1_p5mn1")
+title = "Color Blindness Filters"
+description = "Try out the color blindness filters to ensure your gameplay does not rely on colors to play it and feed the wild boars with their matching color acorns."
+image = ExtResource("8_ichw2")
+scene = ExtResource("9_hxytc")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_6ghuu"]
@@ -46,5 +58,5 @@ metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [resource]
 script = ExtResource("1_tfvdt")
-demos = Array[ExtResource("1_p5mn1")]([SubResource("Resource_oj4im"), SubResource("Resource_g6obd"), SubResource("Resource_52e3n"), SubResource("Resource_ysq4b"), SubResource("Resource_6ghuu")])
+demos = Array[ExtResource("1_p5mn1")]([SubResource("Resource_oj4im"), SubResource("Resource_g6obd"), SubResource("Resource_52e3n"), SubResource("Resource_ysq4b"), SubResource("Resource_y1f4t"), SubResource("Resource_6ghuu")])
 metadata/_custom_type_script = "uid://cpkos20tvikpp"

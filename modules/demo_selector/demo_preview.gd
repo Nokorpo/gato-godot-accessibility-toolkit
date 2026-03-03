@@ -9,6 +9,7 @@ var _hover_tween: Tween
 func _ready() -> void:
 	%PreviewImage.texture = data.image
 	%DemoTitle.text = data.title
+	%Description.text = data.description
 	%Hover.modulate = Color.TRANSPARENT
 	_on_focus_exited()
 	mouse_entered.connect(_on_mouse_entered)

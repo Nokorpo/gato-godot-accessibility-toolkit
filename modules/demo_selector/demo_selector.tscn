@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vooeq5ose2br"]
 
 [ext_resource type="Texture2D" uid="uid://cg3xu21lbmexl" path="res://modules/demo_selector/assets/background_pattern.png" id="1_1ehge"]
-[ext_resource type="Shader" path="res://modules/demo_selector/pattern_background.gdshader" id="1_wdk7p"]
+[ext_resource type="Shader" uid="uid://c34f850n7180a" path="res://modules/demo_selector/pattern_background.gdshader" id="1_wdk7p"]
 [ext_resource type="Script" uid="uid://dxucdon17jm50" path="res://modules/demo_selector/demo_container.gd" id="1_xsipc"]
 [ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="2_827ex"]
 [ext_resource type="Resource" uid="uid://doxub3jvr747g" path="res://modules/demo_selector/assets/demo_list.tres" id="2_xqaix"]
@@ -76,7 +76,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/h_separation = 100
-theme_override_constants/v_separation = 70
+theme_override_constants/v_separation = 50
 columns = 3
 script = ExtResource("1_xsipc")
 demo_list_resource = ExtResource("2_xqaix")

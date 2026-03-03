@@ -30,7 +30,9 @@ jobs:
 
       - name: Build Linux
         run: |
+          mkdir -p ~/.local/share/godot/export_templates/
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+
           godot --headless --import
           mkdir -p ./build/linux/
           godot --headless --export-release "Linux" ./build/linux/gato
@@ -56,7 +58,9 @@ jobs:
 
       - name: Build Windows
         run: |
+          mkdir -p ~/.local/share/godot/export_templates/
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+
           godot --headless --import
           mkdir -p ./build/windows/
           godot --headless --export-release "Windows" ./build/windows/gato.exe

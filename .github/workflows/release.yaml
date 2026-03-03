@@ -52,8 +52,6 @@ jobs:
     timeout-minutes: 20
     container:
       image: nokorpo/godot-tests:4.6
-    concurrency:
-      group: builds
 
     steps:
       - name: Checkout
@@ -83,8 +81,6 @@ jobs:
     timeout-minutes: 20
     container:
       image: nokorpo/godot-tests:4.6
-    concurrency:
-      group: builds
 
     steps:
       - name: Checkout

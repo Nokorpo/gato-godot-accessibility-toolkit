@@ -14,7 +14,7 @@ env:
 jobs:
 
   should-make-new-build:
-    name: Check if a new build should be generated
+    name: Should generate a new build?
     runs-on: ubuntu-latest
     container:
       image: nokorpo/godot-tests:4.6
@@ -103,6 +103,7 @@ jobs:
 
 
   discord-notifications:
+    name: Discord notification
     needs: [linux, windows]
     if: always() && !cancelled()
     runs-on: ubuntu-latest

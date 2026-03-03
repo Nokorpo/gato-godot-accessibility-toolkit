@@ -1,0 +1,75 @@
+name: Build and deploy
+on:
+  #schedule:
+    # monday, wednesday, friday at 6:00
+    #- cron: 0 6 * * 1,3,5
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: 4.6
+  ITCHIO_USERNAME: nokorpo
+  ITCHIO_GAME: gato-godot-accessibility-toolkit
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+
+jobs:
+
+  linux:
+    name: Linux build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: nokorpo/godot-tests:4.6
+    concurrency:
+      group: builds
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Build Linux
+        run: |
+          echo "Test"
+          godot --headless --import
+          mkdir -p ./build/linux/
+          godot --headless --export-release "Linux" ./build/linux/gato
+
+      - name: Itch.io Deploy
+        run: |
+          butler push ./build/linux/ $ITCHIO_USERNAME/$ITCHIO_GAME:linux
+
+  windows:
+    name: Windows build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: nokorpo/godot-tests:4.6
+    concurrency:
+      group: builds
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Build Windows
+        run: |
+          godot --headless --import
+          mkdir -p ./build/windows/
+          godot --headless --export-release "Windows" ./build/windows/gato.exe
+
+      - name: Itch.io Deploy
+        run: |
+          butler push ./build/windows/ $ITCHIO_USERNAME/$ITCHIO_GAME:windows
+
+      - name: Discord notification
+        if: ${{ env.SHOULD_SEND_DISCORD_MESSAGE == 'true' }}
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "New build available in [this url](https://nokorpo.itch.io/gato-godot-accessibility-toolkit?secret=GAK8HFopdJMBYuNUPkZChGTc)! 📦️"
+

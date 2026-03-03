@@ -37,7 +37,7 @@ jobs:
           last_commit_ts=$(git log -1 --format=%ct 2>/dev/null)
           current_ts=$(date +%s)
 
-          if [ $(( current_ts - last_commit_ts )) -gt "$five_days" ]; then
+          if [ $(( current_ts - last_commit_ts )) -gt "$BUILD_TRIGGER_WINDOW" ]; then
             echo "Last commit is older than 5 days, not making a new build. Skipping." >&2
             exit 1
           else
@@ -63,8 +63,10 @@ jobs:
 
       - name: Build Linux
         run: |
-          mkdir -p ~/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          if [ ! -d ~/.local/share/godot/export_templates ]; then
+            mkdir -p ~/.local/share/godot/export_templates/
+            mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          fi
 
           godot --headless --import
           mkdir -p ./build/linux/
@@ -102,13 +104,23 @@ jobs:
       - name: Itch.io Deploy
         run: |
           butler push ./build/windows/ $ITCHIO_USERNAME/$ITCHIO_GAME:windows
+          "FINISHED_OK=true" >> $GITHUB_ENV
 
-      - name: Discord notification
-        if: ${{ env.SHOULD_SEND_DISCORD_MESSAGE == 'true' }}
+      - name: Build OK Discord notification
+        if: success()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
         uses: Ilshidur/action-discord@master
         with:
-          args: "New build available in [this url](https://nokorpo.itch.io/gato-godot-accessibility-toolkit?secret=GAK8HFopdJMBYuNUPkZChGTc)! 📦️"
+          args: "New builds available in [this url](https://nokorpo.itch.io/gato-godot-accessibility-toolkit?secret=GAK8HFopdJMBYuNUPkZChGTc)! 📦️"
+
+      - name: Build KO Discord notification
+        if: failure()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "Error while trying to build and publish to itch.io"
 

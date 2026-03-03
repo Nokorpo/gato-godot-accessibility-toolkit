@@ -104,7 +104,6 @@ jobs:
       - name: Itch.io Deploy
         run: |
           butler push ./build/windows/ $ITCHIO_USERNAME/$ITCHIO_GAME:windows
-          "FINISHED_OK=true" >> $GITHUB_ENV
 
 
   discord-notifications:

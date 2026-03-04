@@ -45,6 +45,7 @@ func _show_hover() -> void:
 	_hover_tween = create_tween()
 	_hover_tween.parallel().tween_property(hover, "modulate", Color.WHITE, .2)
 	_hover_tween.parallel().tween_property(self, "scale", Vector2.ONE * 1.15, .2)
+	_hover_tween.parallel().tween_property(%CompletedTick, "modulate", Color.TRANSPARENT, .2)
 
 func _hide_hover() -> void:
 	if _hover_tween != null:
@@ -53,5 +54,6 @@ func _hide_hover() -> void:
 	_hover_tween = create_tween()
 	_hover_tween.parallel().tween_property(hover, "modulate", Color.TRANSPARENT, .2)
 	_hover_tween.parallel().tween_property(self, "scale", Vector2.ONE, .2)
+	_hover_tween.parallel().tween_property(%CompletedTick, "modulate", Color.WHITE, .2)
 	await _hover_tween.finished
 	hover.visible = false

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_1f5f7"]
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="2_tghuj"]
 [ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="4_1f5f7"]
+[ext_resource type="Texture2D" uid="uid://d3tlxw1uwu2bx" path="res://modules/demo_selector/assets/completed_demo_tick.svg" id="4_571ta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tghuj"]
 bg_color = Color(0.4627451, 0.27058825, 1, 1)
@@ -64,8 +65,19 @@ texture = ExtResource("2_1f5f7")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="CompletedTick" type="TextureRect" parent="FocusPanel/VBoxContainer/Control" unique_id=2027131897]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = -12.000001
+offset_right = 77.0
+offset_bottom = 63.0
+scale = Vector2(0.8633262, 0.8633262)
+texture = ExtResource("4_571ta")
+
 [node name="Hover" type="Control" parent="FocusPanel/VBoxContainer/Control" unique_id=349611347]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

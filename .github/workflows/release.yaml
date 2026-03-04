@@ -73,6 +73,7 @@ jobs:
       - name: Itch.io Deploy
         run: |
           butler push ./build/linux/ $ITCHIO_USERNAME/$ITCHIO_GAME:linux
+          echo "status=success" >> $GITHUB_OUTPUT
 
   windows:
     name: Windows build
@@ -100,7 +101,7 @@ jobs:
       - name: Itch.io Deploy
         run: |
           butler push ./build/windows/ $ITCHIO_USERNAME/$ITCHIO_GAME:windows
-
+          echo "status=success" >> $GITHUB_OUTPUT
 
   discord-notifications:
     name: Discord notification
@@ -110,7 +111,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Build OK Discord notification
-        if: success()
+        if: needs['linux'].outputs.status == 'success' && needs['windows'].outputs.status == 'success'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
@@ -119,7 +120,7 @@ jobs:
           args: "New builds available in [this url](https://nokorpo.itch.io/gato-godot-accessibility-toolkit?secret=GAK8HFopdJMBYuNUPkZChGTc)! 📦️"
 
       - name: Build KO Discord notification
-        if: failure()
+        if: failure() || needs['linux'].outputs.status != 'success' || needs['windows'].outputs.status != 'success'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}

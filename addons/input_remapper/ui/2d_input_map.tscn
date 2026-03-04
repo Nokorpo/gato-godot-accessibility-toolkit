@@ -106,6 +106,7 @@ text = "W"
 [node name="JoystickContainer" type="VBoxContainer" parent="." unique_id=1477337798]
 visible = false
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="JoystickSelector" type="HBoxContainer" parent="JoystickContainer" unique_id=1850369513]
 unique_name_in_owner = true
@@ -132,19 +133,17 @@ text = ">"
 [node name="InvertDirection" type="HBoxContainer" parent="JoystickContainer" unique_id=1421744737]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 12
 script = ExtResource("5_o01t1")
 
 [node name="Label" type="Label" parent="JoystickContainer/InvertDirection" unique_id=1926303264]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Invert direction"
-horizontal_alignment = 1
 
 [node name="Button" type="CheckBox" parent="JoystickContainer/InvertDirection" unique_id=526978330]
 layout_mode = 2
-size_flags_horizontal = 3
-icon_alignment = 1
+size_flags_horizontal = 6
+size_flags_vertical = 4
 
 [connection signal="pressed" from="JoystickToggle/Button" to="JoystickToggle" method="_on_button_pressed"]
 [connection signal="pressed" from="JoystickToggle/Button2" to="JoystickToggle" method="_on_button_pressed"]

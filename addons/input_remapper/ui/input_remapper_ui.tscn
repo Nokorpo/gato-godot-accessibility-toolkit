@@ -68,7 +68,7 @@ anchor_bottom = 0.5
 offset_left = -549.0
 offset_top = -408.0
 offset_right = 549.0
-offset_bottom = 518.0
+offset_bottom = 520.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -76,11 +76,12 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 100
+theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 30
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1164281544]
 layout_mode = 2
+theme_override_constants/scrollbar_h_separation = 80
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=262821437]
@@ -117,11 +118,14 @@ layout_mode = 2
 [node name="Interaction" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1853740966 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
 size_flags_horizontal = 1
+theme_override_constants/separation = 30
 title = "interactions"
 
 [node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction" unique_id=2079108578 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog")]
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
 layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 20
 columns = 2
 script = ExtResource("5_2gebx")
 input_remapper_ui = NodePath("../../../../../..")
@@ -131,7 +135,6 @@ press_key_dialog = NodePath("../../../../../../PressKeyDialog")
 layout_mode = 2
 size_flags_horizontal = 3
 text = "launch_item"
-horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=2116520438]
 layout_mode = 2
@@ -144,7 +147,6 @@ text = "Z"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "jump"
-horizontal_alignment = 1
 
 [node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=1227646522]
 layout_mode = 2

@@ -2,12 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="1_d5smo"]
 [ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="2_1ka4n"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_yg0ao"]
-color = Color(0.03137255, 0, 0.10980392, 1)
-grow_begin = -10.0
-grow_end = -10.0
-thickness = 4
+[ext_resource type="Texture2D" uid="uid://cao1aje68xm3v" path="res://addons/input_remapper/ui/sprites/checkbox_checked.svg" id="2_28gtb"]
+[ext_resource type="Texture2D" uid="uid://bpcixojgwhtco" path="res://addons/input_remapper/ui/sprites/checkbox.svg" id="3_g18fo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ka4n"]
 bg_color = Color(1, 0.827451, 0, 1)
@@ -45,6 +41,33 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhkwh"]
+bg_color = Color(1, 0.827451, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 15.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oirqi"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxiv0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yg0ao"]
+color = Color(0.03137255, 0, 0.10980392, 0.31764707)
+grow_begin = -10.0
+grow_end = -10.0
+thickness = 6
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gebx"]
 bg_color = Color(0.0869583, 0.0225, 0.25, 0.94902)
 border_width_left = 12
@@ -69,12 +92,48 @@ expand_margin_top = 20.0
 expand_margin_right = 40.0
 expand_margin_bottom = 20.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ies0t"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqd7i"]
+bg_color = Color(1, 0.827451, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efq60"]
+bg_color = Color(0.03137255, 0, 0.10980392, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 30.0
+
 [resource]
 default_font = ExtResource("2_1ka4n")
 default_font_size = 36
+Button/colors/font_focus_color = Color(0.03137255, 0, 0.10980392, 1)
+Button/colors/font_hover_color = Color(0.03137255, 0, 0.10980392, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_1ka4n")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_28gtb")
+Button/styles/normal = SubResource("StyleBoxFlat_d5smo")
+Button/styles/pressed = SubResource("StyleBoxFlat_g18fo")
 CategoryTitle/base_type = &"Label"
 CategoryTitle/font_sizes/font_size = 45
 CategoryTitle/fonts/font = ExtResource("1_d5smo")
+CheckBox/icons/checked = ExtResource("2_28gtb")
+CheckBox/icons/unchecked = ExtResource("3_g18fo")
+CheckBox/styles/hover = SubResource("StyleBoxFlat_yhkwh")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_yhkwh")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_oirqi")
+CheckBox/styles/pressed = SubResource("StyleBoxFlat_nxiv0")
 HSeparator/constants/separation = 40
 HSeparator/styles/separator = SubResource("StyleBoxLine_yg0ao")
 InputButton/base_type = &"Button"
@@ -91,3 +150,8 @@ MenuTitle/styles/normal = null
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2gebx")
 TitleBackground/base_type = &"PanelContainer"
 TitleBackground/styles/panel = SubResource("StyleBoxFlat_sty5u")
+VScrollBar/constants/padding_right = 0
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ies0t")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wqd7i")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_efq60")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_wqd7i")

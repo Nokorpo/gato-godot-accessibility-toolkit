@@ -14,7 +14,7 @@ func update_ui(_input_actions: Array[InputActionButton]) -> void:
 	for input_action in input_actions:
 		var label := Label.new()
 		label.text = input_action.name
-		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		var button := Button.new()
 		button.text = input_action.input.as_text_keycode()

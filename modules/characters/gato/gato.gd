@@ -25,6 +25,8 @@ func _physics_process(delta: float) -> void:
 		previous_y_velocity = velocity.y
 		velocity += get_gravity() * delta
 		mesh.is_grounded = false
+		if position.y < -4.0:
+			respawn()
 	else:
 		mesh.is_grounded = true
 		if previous_y_velocity <= -5.0:
@@ -58,3 +60,6 @@ func _collide_with_objects_that_react() -> void:
 
 func jump() -> void:
 	velocity.y = jump_force
+
+func respawn() -> void:
+	global_position = Vector3.ZERO

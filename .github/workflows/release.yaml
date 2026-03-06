@@ -50,6 +50,8 @@ jobs:
     name: Linux build
     needs: should-make-new-build
     runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.mark-finished.outputs.status }}
     timeout-minutes: 20
     container:
       image: nokorpo/godot-tests:4.6
@@ -74,12 +76,18 @@ jobs:
       - name: Itch.io Deploy
         run: |
           butler push ./build/linux/ $ITCHIO_USERNAME/$ITCHIO_GAME:linux
+
+      - name: Mark finished
+        id: mark-finished
+        reun: |
           echo "status=success" >> $GITHUB_OUTPUT
 
   windows:
     name: Windows build
     needs: should-make-new-build
     runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.mark-finished.outputs.status }}
     timeout-minutes: 20
     container:
       image: nokorpo/godot-tests:4.6
@@ -102,6 +110,10 @@ jobs:
       - name: Itch.io Deploy
         run: |
           butler push ./build/windows/ $ITCHIO_USERNAME/$ITCHIO_GAME:windows
+
+      - name: Mark finished
+        id: mark-finished
+        reun: |
           echo "status=success" >> $GITHUB_OUTPUT
 
   discord-notifications:

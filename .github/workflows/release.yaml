@@ -28,13 +28,16 @@ jobs:
       - name: Check last commit date
         if: ${{ github.event_name != 'workflow_dispatch' }}
         run: |
+          # Mark the workspace as a safe directory
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
           # A new build will be triggered only if there are commits in the last
           # $BUILD_TRIGGER_WINDOW number of days. If last commit was on Tuesday
           # and this runs on Wednesday, it will trigger a build. If the last
           # commit was on Saturday, it will not.
           BUILD_TRIGGER_WINDOW=$(( 3 * 86400 ))      # 86400 = 1 day in seconds
 
-          last_commit_ts=$(git log -1 --format=%ct 2>/dev/null)
+          last_commit_ts=$(git log -1 --format=%ct)
           current_ts=$(date +%s)
 
           if [ $(( current_ts - last_commit_ts )) -gt "$BUILD_TRIGGER_WINDOW" ]; then

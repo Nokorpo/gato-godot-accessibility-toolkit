@@ -16,8 +16,6 @@ jobs:
   should-make-new-build:
     name: Should generate a new build?
     runs-on: ubuntu-latest
-    container:
-      image: nokorpo/godot-tests:4.6
     timeout-minutes: 5
 
     steps:

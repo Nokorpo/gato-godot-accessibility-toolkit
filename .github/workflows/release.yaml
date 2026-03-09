@@ -79,7 +79,7 @@ jobs:
 
       - name: Mark finished
         id: mark-finished
-        reun: |
+        run: |
           echo "status=success" >> $GITHUB_OUTPUT
 
   windows:
@@ -113,7 +113,7 @@ jobs:
 
       - name: Mark finished
         id: mark-finished
-        reun: |
+        run: |
           echo "status=success" >> $GITHUB_OUTPUT
 
   discord-notifications:

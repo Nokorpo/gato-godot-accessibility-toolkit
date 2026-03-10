@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 signal fall_from_height
 signal item_collected(item: Node3D)
+signal fall_into_water
 
 @export var speed: float = 2.0
 @export var jump_force: float = 3
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		previous_y_velocity = velocity.y
 		velocity += get_gravity() * delta
 		mesh.is_grounded = false
-		if position.y < -4.0:
+		if position.y < -3.0:
 			respawn()
 	else:
 		mesh.is_grounded = true
@@ -62,4 +63,5 @@ func jump() -> void:
 	velocity.y = jump_force
 
 func respawn() -> void:
+	fall_into_water.emit()
 	global_position = Vector3.ZERO

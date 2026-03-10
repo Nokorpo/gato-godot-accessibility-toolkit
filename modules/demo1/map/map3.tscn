@@ -85,6 +85,9 @@ size = Vector3(3.277, 9.94777, 10.1546)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8lorg"]
 size = Vector3(3.277, 9.94777, 17.21)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_78qc6"]
+size = Vector3(100, 1, 100)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78qc6"]
 albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
 
@@ -106,6 +109,7 @@ visible = false
 
 [node name="Gato" parent="." unique_id=268196189 instance=ExtResource("2_wt2qj")]
 speed = 3.5
+height_to_respawn = -2.0
 
 [node name="CameraWithRotation" parent="." unique_id=937007224 node_paths=PackedStringArray("target") instance=ExtResource("2_koe00")]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906307, 0, 0, 0)
@@ -1525,11 +1529,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875195, -2.51116, 0.198933
 shape = SubResource("BoxShape3D_8lorg")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="Water" type="MeshInstance3D" parent="." unique_id=2078514405]
+[node name="WaterCameraCollider" type="StaticBody3D" parent="CameraColliders" unique_id=1256045503 groups=["CameraCollider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.663881, -1.6397493, -4.2623963)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/WaterCameraCollider" unique_id=753947002 groups=["CameraCollider"]]
+transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, 0, 0.999991, 0, 0, 0)
+shape = SubResource("BoxShape3D_78qc6")
+debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=2078514405 groups=["button"]]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 16.2716, -0.41976, -5.93962)
 mesh = SubResource("PlaneMesh_kg8y1")
 
-[connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation"]
+[connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]

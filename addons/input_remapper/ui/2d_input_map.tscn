@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://ciu2ae46ncvtp" path="res://addons/input_remapper/ui/action2d_container.gd" id="3_tb1qo"]
 [ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="4_nyq3o"]
 [ext_resource type="Script" uid="uid://bg4knulolkblw" path="res://addons/input_remapper/ui/invert_joystick_direction.gd" id="5_o01t1"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="6_vkcyi"]
+[ext_resource type="PackedScene" uid="uid://drqw3ka7ghfdn" path="res://addons/input_remapper/ui/input_action.tscn" id="7_l1mxn"]
 
 [node name="2DInputMap" type="VBoxContainer" unique_id=2000616933]
 anchors_preset = 15
@@ -46,62 +48,53 @@ texture_hover = ExtResource("4_nyq3o")
 texture_focused = ExtResource("4_nyq3o")
 stretch_mode = 5
 
-[node name="ActionContainer" type="GridContainer" parent="." unique_id=357946398]
+[node name="ActionContainer" type="VBoxContainer" parent="." unique_id=21244656]
 unique_name_in_owner = true
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
 layout_mode = 2
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 20
-columns = 2
 script = ExtResource("3_tb1qo")
 
-[node name="LabelUp" type="Label" parent="ActionContainer" unique_id=500829702]
+[node name="UpRowNavigationContainer" parent="ActionContainer" unique_id=1367961113 instance=ExtResource("6_vkcyi")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "move_up"
+focus_neighbor_bottom = NodePath("../DownRowNavigationContainer")
 
-[node name="ButtonUp" type="Button" parent="ActionContainer" unique_id=1360517857]
+[node name="UpInputAction" parent="ActionContainer/UpRowNavigationContainer" unique_id=514890052 instance=ExtResource("7_l1mxn")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"InputButton"
-text = "W"
+label_text = "move_up"
+button_text = "W"
 
-[node name="LabelDown" type="Label" parent="ActionContainer" unique_id=1319791066]
+[node name="DownRowNavigationContainer" parent="ActionContainer" unique_id=1751955157 instance=ExtResource("6_vkcyi")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "move_down"
+focus_neighbor_top = NodePath("../UpRowNavigationContainer")
+focus_neighbor_bottom = NodePath("../LeftRowNavigationContainer")
 
-[node name="ButtonDown" type="Button" parent="ActionContainer" unique_id=358608118]
+[node name="DownInputAction" parent="ActionContainer/DownRowNavigationContainer" unique_id=1253429929 instance=ExtResource("7_l1mxn")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"InputButton"
-text = "S"
+label_text = "move_down"
+button_text = "S"
 
-[node name="LabelLeft" type="Label" parent="ActionContainer" unique_id=666472320]
+[node name="LeftRowNavigationContainer" parent="ActionContainer" unique_id=1639018414 instance=ExtResource("6_vkcyi")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "move_left"
+focus_neighbor_top = NodePath("../DownRowNavigationContainer")
+focus_neighbor_bottom = NodePath("../RightRowNavigationContainer")
 
-[node name="ButtonLeft" type="Button" parent="ActionContainer" unique_id=1571815658]
+[node name="LeftInputAction" parent="ActionContainer/LeftRowNavigationContainer" unique_id=776140016 instance=ExtResource("7_l1mxn")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"InputButton"
-text = "A"
+label_text = "move_left"
+button_text = "A"
 
-[node name="LabelRight" type="Label" parent="ActionContainer" unique_id=394629129]
+[node name="RightRowNavigationContainer" parent="ActionContainer" unique_id=1611053601 instance=ExtResource("6_vkcyi")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "move_right"
+focus_neighbor_top = NodePath("../LeftRowNavigationContainer")
 
-[node name="ButtonRight" type="Button" parent="ActionContainer" unique_id=132343668]
+[node name="RightInputAction" parent="ActionContainer/RightRowNavigationContainer" unique_id=650647152 instance=ExtResource("7_l1mxn")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"InputButton"
-text = "W"
+label_text = "move_right"
+button_text = "D"
 
 [node name="JoystickContainer" type="VBoxContainer" parent="." unique_id=1477337798]
 visible = false
@@ -147,10 +140,14 @@ size_flags_vertical = 4
 
 [connection signal="pressed" from="JoystickToggle/Button" to="JoystickToggle" method="_on_button_pressed"]
 [connection signal="pressed" from="JoystickToggle/Button2" to="JoystickToggle" method="_on_button_pressed"]
-[connection signal="pressed" from="ActionContainer/ButtonUp" to="ActionContainer" method="_on_button_up_pressed"]
-[connection signal="pressed" from="ActionContainer/ButtonDown" to="ActionContainer" method="_on_button_down_pressed"]
-[connection signal="pressed" from="ActionContainer/ButtonLeft" to="ActionContainer" method="_on_button_left_pressed"]
-[connection signal="pressed" from="ActionContainer/ButtonRight" to="ActionContainer" method="_on_button_right_pressed"]
+[connection signal="pressed" from="ActionContainer/UpRowNavigationContainer" to="ActionContainer" method="_on_button_up_pressed"]
+[connection signal="pressed" from="ActionContainer/UpRowNavigationContainer/UpInputAction" to="ActionContainer" method="_on_button_up_pressed"]
+[connection signal="pressed" from="ActionContainer/DownRowNavigationContainer" to="ActionContainer" method="_on_button_down_pressed"]
+[connection signal="pressed" from="ActionContainer/DownRowNavigationContainer/DownInputAction" to="ActionContainer" method="_on_button_down_pressed"]
+[connection signal="pressed" from="ActionContainer/LeftRowNavigationContainer" to="ActionContainer" method="_on_button_left_pressed"]
+[connection signal="pressed" from="ActionContainer/LeftRowNavigationContainer/LeftInputAction" to="ActionContainer" method="_on_button_left_pressed"]
+[connection signal="pressed" from="ActionContainer/RightRowNavigationContainer" to="ActionContainer" method="_on_button_right_pressed"]
+[connection signal="pressed" from="ActionContainer/RightRowNavigationContainer/RightInputAction" to="ActionContainer" method="_on_button_right_pressed"]
 [connection signal="pressed" from="JoystickContainer/JoystickSelector/Button" to="JoystickContainer/JoystickSelector" method="_on_button_pressed"]
 [connection signal="pressed" from="JoystickContainer/JoystickSelector/Button2" to="JoystickContainer/JoystickSelector" method="_on_button_pressed"]
 [connection signal="toggled" from="JoystickContainer/InvertDirection/Button" to="JoystickContainer/InvertDirection" method="_on_button_toggled"]

@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://x1b45m56mm2l" path="res://addons/input_remapper/ui/2d_input_map.tscn" id="4_mreui"]
 [ext_resource type="Script" uid="uid://dnohs380c7c7s" path="res://addons/input_remapper/ui/action_container.gd" id="5_2gebx"]
 [ext_resource type="PackedScene" uid="uid://bw8doo3b01x73" path="res://addons/input_remapper/ui/press_key_dialog.tscn" id="5_6fg7x"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="7_sty5u"]
+[ext_resource type="PackedScene" uid="uid://drqw3ka7ghfdn" path="res://addons/input_remapper/ui/input_action.tscn" id="9_cntqx"]
 
 [node name="InputRemapperUi" type="Control" unique_id=718320937 node_paths=PackedStringArray("_control_scheme_selector", "_movement_input_map", "_interactions_action_container")]
 layout_mode = 3
@@ -18,9 +20,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_18ywu")
 script = ExtResource("1_05ple")
-_control_scheme_selector = NodePath("PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ControlScheme/ControlSchemeSelector")
-_movement_input_map = NodePath("PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Movement/2DInputMap")
-_interactions_action_container = NodePath("PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer")
+_control_scheme_selector = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlScheme/ControlSchemeSelector")
+_movement_input_map = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Movement/2DInputMap")
+_interactions_action_container = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer")
 
 [node name="TittlePanelContainer" type="PanelContainer" parent="." unique_id=1110522343]
 layout_mode = 1
@@ -74,7 +76,7 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=668384385]
 layout_mode = 2
-theme_override_constants/margin_left = 50
+theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 30
@@ -82,86 +84,89 @@ theme_override_constants/margin_bottom = 30
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1164281544]
 layout_mode = 2
 theme_override_constants/scrollbar_h_separation = 80
+scroll_vertical = 100
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=262821437]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=223263592]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer" unique_id=262821437]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="ControlScheme" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=748209293 instance=ExtResource("3_yg0ao")]
+[node name="ControlScheme" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=748209293 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
 theme_override_constants/separation = 30
 title = "control scheme"
 
-[node name="ControlSchemeSelector" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ControlScheme" unique_id=513719737 instance=ExtResource("1_yg0ao")]
+[node name="ControlSchemeSelector" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlScheme" unique_id=513719737 instance=ExtResource("1_yg0ao")]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=722715464]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=722715464]
 layout_mode = 2
 
-[node name="Movement" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2047251977 instance=ExtResource("3_yg0ao")]
+[node name="Movement" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2047251977 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
 size_flags_horizontal = 1
 theme_override_constants/separation = 30
 title = "movement"
 
-[node name="2DInputMap" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Movement" unique_id=827562170 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog") instance=ExtResource("4_mreui")]
+[node name="2DInputMap" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Movement" unique_id=827562170 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog") instance=ExtResource("4_mreui")]
 layout_mode = 2
-input_remapper_ui = NodePath("../../../../../..")
+input_remapper_ui = NodePath("../../../../../../..")
 action_name = &"move"
-press_key_dialog = NodePath("../../../../../../PressKeyDialog")
+press_key_dialog = NodePath("../../../../../../../PressKeyDialog")
 
-[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=828579408]
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=828579408]
 layout_mode = 2
 
-[node name="Interaction" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1853740966 instance=ExtResource("3_yg0ao")]
+[node name="Interaction" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1853740966 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
 size_flags_horizontal = 1
 theme_override_constants/separation = 30
 title = "interactions"
 
-[node name="ActionContainer" type="GridContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction" unique_id=2079108578 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog")]
+[node name="ActionContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction" unique_id=2144630459 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog")]
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
 layout_mode = 2
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 20
-columns = 2
 script = ExtResource("5_2gebx")
-input_remapper_ui = NodePath("../../../../../..")
-press_key_dialog = NodePath("../../../../../../PressKeyDialog")
+input_remapper_ui = NodePath("../../../../../../..")
+press_key_dialog = NodePath("../../../../../../../PressKeyDialog")
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=674658983]
+[node name="RowNavigationContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" unique_id=1367961113 instance=ExtResource("7_sty5u")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "launch_item"
+focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=2116520438]
+[node name="InputAction" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer" unique_id=514890052 instance=ExtResource("9_cntqx")]
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"InputButton"
-text = "Z"
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=1283069729]
+[node name="RowNavigationContainer2" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" unique_id=145116018 instance=ExtResource("7_sty5u")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../RowNavigationContainer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2" unique_id=1910951487]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2/HBoxContainer" unique_id=1283069729]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "jump"
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" unique_id=1227646522]
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2/HBoxContainer" unique_id=1227646522]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"InputButton"
 text = "Space"
 
-[node name="SaveChangesButton" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=67432300]
+[node name="SaveChangesButton" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=67432300]
 layout_mode = 2
 text = "Save changes"
 
 [node name="PressKeyDialog" parent="." unique_id=1683379886 instance=ExtResource("5_6fg7x")]
 layout_mode = 1
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer/Button" to="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["launch_item"]]
-[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer/Button2" to="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= ["jump"]]
-[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/SaveChangesButton" to="." method="save_changes"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2/HBoxContainer/Button2" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/SaveChangesButton" to="." method="save_changes"]

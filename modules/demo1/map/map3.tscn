@@ -1529,6 +1529,7 @@ debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 16.2716, -0.41976, -5.93962)
 mesh = SubResource("PlaneMesh_kg8y1")
 
+[connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]

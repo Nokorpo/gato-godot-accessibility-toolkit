@@ -9,6 +9,7 @@ signal fall_into_water
 @export var jump_force: float = 3
 @export_range(0, 1) var smoothing: float = 0.75
 @export var rotation_speed: float = 10.0
+@export var height_to_respawn: float = -3.0
 
 @onready var pivot: Node3D = $RotationPivot
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		previous_y_velocity = velocity.y
 		velocity += get_gravity() * delta
 		mesh.is_grounded = false
-		if position.y < -3.0:
+		if position.y < height_to_respawn:
 			respawn()
 	else:
 		mesh.is_grounded = true

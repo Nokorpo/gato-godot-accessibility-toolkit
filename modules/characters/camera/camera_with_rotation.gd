@@ -77,6 +77,6 @@ func handle_camera_collision():
 		if collider.is_in_group("CameraCollider"):
 			camera.global_transform.origin = camera_collision_raycast.get_collision_point() + collision_zoom
 
-func reset_rotation_when_respawning():
+func reset_rotation():
 	position = Vector3.ZERO
 	rotation = initial_rotation

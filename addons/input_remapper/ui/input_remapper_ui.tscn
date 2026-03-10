@@ -84,6 +84,7 @@ theme_override_constants/margin_bottom = 30
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1164281544]
 layout_mode = 2
 theme_override_constants/scrollbar_h_separation = 80
+follow_focus = true
 scroll_vertical = 100
 horizontal_scroll_mode = 0
 

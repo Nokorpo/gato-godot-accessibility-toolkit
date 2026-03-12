@@ -22,6 +22,7 @@ func update_ui(_input_actions: Array[InputActionButton]) -> void:
 
 		var row_ui = row_scene.instantiate()
 		row_ui.add_child(input_action_ui)
+		row_ui.pressed.connect(_on_button_pressed.bind(input_action.name))
 
 		add_child(row_ui)
 
@@ -35,7 +36,9 @@ func _get_button_for_action_recursive(action_name: String, node: Control) -> But
 				return child
 	elif node.get_child_count() > 0:
 		for child in node.get_children():
-			return _get_button_for_action_recursive(action_name, child)
+			var button_or_null := _get_button_for_action_recursive(action_name, child)
+			if button_or_null:
+				return button_or_null
 	return null
 
 func _on_button_pressed(action_name: String) -> void:

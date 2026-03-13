@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_52e3n"]
 [ext_resource type="Texture2D" uid="uid://dtojqwm7f3173" path="res://modules/demo_selector/assets/demo_1_cover.svg" id="2_tros2"]
 [ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="3_0qcei"]
-[ext_resource type="PackedScene" uid="uid://b0xcaouncmmm6" path="res://modules/demo1/map/map3.tscn" id="3_2eigo"]
+[ext_resource type="PackedScene" uid="uid://b0xcaouncmmm6" path="res://modules/demo1/map/map.tscn" id="3_2eigo"]
 [ext_resource type="Texture2D" uid="uid://bxtbq50os8eq3" path="res://modules/demo_selector/assets/demo_4_cover.svg" id="6_pdl1d"]
 [ext_resource type="PackedScene" uid="uid://dvs14kxa77pp2" path="res://modules/demo4/map/map.tscn" id="7_p1xob"]
 [ext_resource type="Texture2D" uid="uid://shdg4wyyiau8" path="res://modules/demo_selector/assets/demo_5_cover.svg" id="8_ichw2"]

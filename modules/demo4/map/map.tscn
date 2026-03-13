@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dpedfmuyu50ig" path="res://modules/demo1/map/props/stone.gltf" id="22_vyjgi"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="23_vyjgi"]
 [ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="24_l68g0"]
-[ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/demo1/objects/bounce_on_touch.gd" id="25_hd4lb"]
+[ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/level_objects/bounce_on_touch.gd" id="25_hd4lb"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
 

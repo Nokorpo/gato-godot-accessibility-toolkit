@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cumfbe0xmrt2c"
-path.bptc="res://.godot/imported/colormap.png-e8d36a859faca83ec03660bd9ddd22be.bptc.ctex"
+uid="uid://dcvh85uqas7lx"
+path.s3tc="res://.godot/imported/particle.png-cd9361467ee546057c7917ab6bef13b7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://modules/demo1/objects/meshes/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-e8d36a859faca83ec03660bd9ddd22be.bptc.ctex"]
+source_file="res://modules/demo1/map/vfx/particle.png"
+dest_files=["res://.godot/imported/particle.png-cd9361467ee546057c7917ab6bef13b7.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

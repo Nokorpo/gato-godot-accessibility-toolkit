@@ -5,22 +5,23 @@
 [ext_resource type="Theme" uid="uid://cocjiykavhucl" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.tres" id="2_t8a7v"]
 [ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="4_8b17j"]
 [ext_resource type="Texture2D" uid="uid://barqh7tdsy3rr" path="res://addons/input_remapper/ui/sprites/reset.svg" id="5_8b17j"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="5_21kfc"]
 
-[node name="ControlSchemeSelector" type="HBoxContainer" unique_id=6726225]
+[node name="ControlSchemeSelector" type="VBoxContainer" unique_id=1848389064]
 offset_right = 570.0
-offset_bottom = 99.0
+offset_bottom = 280.0
 theme_override_constants/separation = 20
 script = ExtResource("1_c4d4j")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=802030843]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=610944414]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2075485578]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=2075485578]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GoBackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=1159471739]
+[node name="GoBackButton" type="TextureButton" parent="HBoxContainer/HBoxContainer" unique_id=1159471739]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_t8a7v")
@@ -29,7 +30,7 @@ texture_hover = ExtResource("4_8b17j")
 texture_focused = ExtResource("4_8b17j")
 flip_h = true
 
-[node name="CurrentScheme" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1073400332]
+[node name="CurrentScheme" type="Label" parent="HBoxContainer/HBoxContainer" unique_id=1073400332]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -37,37 +38,50 @@ text = "default"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=442153525]
+[node name="NextButton" type="TextureButton" parent="HBoxContainer/HBoxContainer" unique_id=442153525]
 layout_mode = 2
 size_flags_vertical = 0
 texture_normal = ExtResource("2_q2ind")
 texture_hover = ExtResource("4_8b17j")
 texture_focused = ExtResource("4_8b17j")
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1280732159]
-layout_mode = 2
-theme_type_variation = &"InputButton"
-text = "Reset controls to default"
-icon = ExtResource("5_8b17j")
-alignment = 0
-
-[node name="NextScheme" type="Label" parent="." unique_id=1876071785]
+[node name="NextScheme" type="Label" parent="HBoxContainer" unique_id=1876071785]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.666667)
 text = "left hand"
 uppercase = true
 
-[node name="NextScheme2" type="Label" parent="." unique_id=9188832]
+[node name="NextScheme2" type="Label" parent="HBoxContainer" unique_id=9188832]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.333333)
 text = "right hand"
 uppercase = true
 
+[node name="RowNavigationContainer" parent="." unique_id=1367961113 instance=ExtResource("5_21kfc")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="RowNavigationContainer" unique_id=2009705674]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="RowNavigationContainer/HBoxContainer2" unique_id=1280732159]
+layout_mode = 2
+theme_type_variation = &"InputButton"
+text = "Reset controls to default"
+icon = ExtResource("5_8b17j")
+alignment = 0
+
+[node name="Control" type="Control" parent="RowNavigationContainer/HBoxContainer2" unique_id=1857063508]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1711037950]
 show_behind_parent = true
 layout_mode = 2
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/GoBackButton" to="." method="_load_last_scheme"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_load_next_scheme"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/GoBackButton" to="." method="_load_last_scheme"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/NextButton" to="." method="_load_next_scheme"]
+[connection signal="pressed" from="RowNavigationContainer" to="." method="reset_config"]
+[connection signal="pressed" from="RowNavigationContainer/HBoxContainer2/ResetButton" to="." method="reset_config"]

@@ -1,8 +1,8 @@
 extends Container
 
-@onready var current_scheme_label: Label = $VBoxContainer/HBoxContainer/CurrentScheme
-@onready var next_scheme_label: Label = $NextScheme
-@onready var second_next_scheme_label: Label = $NextScheme2
+@onready var current_scheme_label: Label = $HBoxContainer/HBoxContainer/CurrentScheme
+@onready var next_scheme_label: Label = $HBoxContainer/NextScheme
+@onready var second_next_scheme_label: Label = $HBoxContainer/NextScheme2
 
 func _update_ui(scheme_list: Array[GatoControlScheme], current_scheme: int) -> void:
 	current_scheme_label.text = scheme_list[current_scheme].name
@@ -14,3 +14,6 @@ func _load_next_scheme() -> void:
 
 func _load_last_scheme() -> void:
 	InputRemapper.load_previous_scheme()
+
+func reset_config() -> void:
+	InputRemapper.reset_changes()

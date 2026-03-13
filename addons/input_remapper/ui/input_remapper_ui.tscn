@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_18ywu")
 script = ExtResource("1_05ple")
-_control_scheme_selector = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlScheme/ControlSchemeSelector")
+_control_scheme_selector = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/ControlSchemeSelector")
 _movement_input_map = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Movement/2DInputMap")
 _interactions_action_container = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer")
 
@@ -85,11 +85,11 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 theme_override_constants/scrollbar_h_separation = 80
 follow_focus = true
-scroll_vertical = 100
 horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=223263592]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/margin_left = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer" unique_id=262821437]
@@ -97,12 +97,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="ControlScheme" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=748209293 instance=ExtResource("3_yg0ao")]
+[node name="ControlSchemeCaregory" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=748209293 instance=ExtResource("3_yg0ao")]
 layout_mode = 2
+size_flags_horizontal = 1
 theme_override_constants/separation = 30
 title = "control scheme"
 
-[node name="ControlSchemeSelector" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlScheme" unique_id=513719737 instance=ExtResource("1_yg0ao")]
+[node name="ControlSchemeSelector" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=513719737 instance=ExtResource("1_yg0ao")]
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=722715464]
@@ -142,25 +143,17 @@ focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
 
 [node name="InputAction" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer" unique_id=514890052 instance=ExtResource("9_cntqx")]
 layout_mode = 2
+label_text = "launch_item"
+button_text = "Z"
 
 [node name="RowNavigationContainer2" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" unique_id=145116018 instance=ExtResource("7_sty5u")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../RowNavigationContainer")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2" unique_id=1910951487]
+[node name="InputAction" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2" unique_id=797363104 instance=ExtResource("9_cntqx")]
 layout_mode = 2
-
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2/HBoxContainer" unique_id=1283069729]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "jump"
-
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2/HBoxContainer" unique_id=1227646522]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"InputButton"
-text = "Space"
+label_text = "jump"
+button_text = "Space"
 
 [node name="SaveChangesButton" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=67432300]
 layout_mode = 2

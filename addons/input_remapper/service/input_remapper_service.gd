@@ -41,3 +41,5 @@ func save_changes() -> void:
 
 func reset_changes() -> void:
 	control_schemes = storage_service.load_input_config_from_file()
+	apply_control_scheme(control_schemes[current_control_scheme_index])
+	control_scheme_changed.emit(control_schemes[current_control_scheme_index])

@@ -132,7 +132,7 @@ _data = {
 [node name="CompletedDemoScreen" type="CanvasLayer" unique_id=67841330]
 script = ExtResource("1_121e6")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1139531347]
+[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=1139531347]
 material = SubResource("ShaderMaterial_0qbok")
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,10 +154,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_right = 1923.0
 offset_bottom = 1080.0
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 250
-theme_override_constants/margin_right = 400
-theme_override_constants/margin_bottom = 300
+theme_override_constants/margin_left = 450
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 450
+theme_override_constants/margin_bottom = 200
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer" unique_id=1770468592]
 layout_mode = 2
@@ -177,38 +177,41 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=407720371]
 layout_mode = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 200
+size_flags_vertical = 3
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_right = 250
 theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=233168674]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 20
 
 [node name="Resume" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=548706988]
 layout_mode = 2
+size_flags_vertical = 3
 theme_type_variation = &"FlatButton"
-text = "RESUME"
+text = "Resume"
 
 [node name="ReturnToDemoSelector" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=582891596]
 layout_mode = 2
+size_flags_vertical = 3
 theme_type_variation = &"FlatButton"
-text = "RETURN TO DEMO SELECTOR"
+text = "Return to Demo Selector"
 
 [node name="Exit" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1803602692]
 layout_mode = 2
+size_flags_vertical = 3
 theme_type_variation = &"FlatButton"
-text = "EXIT GAME"
+text = "Exit Game"
 
 [node name="CompletedDemoTick" type="Sprite2D" parent="Control/MarginContainer/PanelContainer" unique_id=1344923099]
 z_index = 2
-position = Vector2(1027, 57)
+position = Vector2(945.5, 57.5)
 texture = ExtResource("2_je5n1")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Control/MarginContainer/PanelContainer" unique_id=2105646168]
 z_index = 1
-position = Vector2(1030, 59)
+position = Vector2(948.5, 59.5)
 emitting = false
 amount = 48
 texture = ExtResource("3_w1asq")

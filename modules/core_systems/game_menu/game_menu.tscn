@@ -1,13 +1,24 @@
 [gd_scene format=3 uid="uid://cp1splssmfbra"]
 
 [ext_resource type="Script" uid="uid://bmx55hmllsepu" path="res://modules/core_systems/game_menu/game_menu.gd" id="1_7ww1i"]
+[ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/quit_confirmation/blurry_background.gdshader" id="2_hfreh"]
+[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="3_uf5bn"]
 
-[sub_resource type="Theme" id="Theme_qmk0e"]
-default_font_size = 56
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_umwhm"]
+shader = ExtResource("2_hfreh")
+shader_parameter/lod = 2.000000095
 
 [node name="GameMenu" type="CanvasLayer" unique_id=450146438]
 process_mode = 3
 script = ExtResource("1_7ww1i")
+
+[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=1494346127]
+material = SubResource("ShaderMaterial_umwhm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Control" type="Control" parent="." unique_id=176571196]
 layout_mode = 3
@@ -16,15 +27,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_qmk0e")
+theme = ExtResource("3_uf5bn")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1934098463]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-theme_override_constants/margin_left = 700
+theme_override_constants/margin_left = 650
 theme_override_constants/margin_top = 350
-theme_override_constants/margin_right = 700
+theme_override_constants/margin_right = 650
 theme_override_constants/margin_bottom = 350
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer" unique_id=461195376]
@@ -32,6 +43,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer" unique_id=1355284621]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="SettingsButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=433425188]
 layout_mode = 2

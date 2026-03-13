@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://b2xxt2j24tgkp"]
+
+[ext_resource type="Script" uid="uid://dthgk2jo23ufs" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.gd" id="1_121e6"]
+[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="1_r634p"]
+[ext_resource type="Texture2D" uid="uid://d3tlxw1uwu2bx" path="res://modules/demo_selector/assets/completed_demo_tick.svg" id="2_je5n1"]
+[ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/quit_confirmation/blurry_background.gdshader" id="2_law7s"]
+[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="3_w1asq"]
+[ext_resource type="PackedScene" uid="uid://b3arsyyy6i00q" path="res://modules/core_systems/quit_confirmation/quit_confirmation.tscn" id="5_mhl6o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qbok"]
+shader = ExtResource("2_law7s")
+shader_parameter/lod = 2.000000095
+
+[sub_resource type="Curve" id="Curve_121e6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.55, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_mhl6o"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.6298701)
+colors = PackedColorArray(0.25882354, 1, 0.5411765, 1, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_law7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CompletedDemoTick:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CompletedDemoTick:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Label:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0qbok"]
+resource_name = "demo_completed"
+length = 1.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CompletedDemoTick:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.65, 0.9, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.5477943, 1.0285743, -0.3490658503988659, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CompletedDemoTick:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(4, 4), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Label:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2rc7r"]
+_data = {
+&"RESET": SubResource("Animation_law7s"),
+&"demo_completed": SubResource("Animation_0qbok")
+}
+
+[node name="CompletedDemoScreen" type="CanvasLayer" unique_id=67841330]
+script = ExtResource("1_121e6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1139531347]
+material = SubResource("ShaderMaterial_0qbok")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=1341782388]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r634p")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1035817556]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 1923.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 250
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 300
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer" unique_id=1770468592]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer" unique_id=253287340]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1480138731]
+layout_mode = 2
+theme_override_font_sizes/font_size = 82
+text = "DEMO COMLETED!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1348250859]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=407720371]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=233168674]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Resume" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=548706988]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "RESUME"
+
+[node name="ReturnToDemoSelector" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=582891596]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "RETURN TO DEMO SELECTOR"
+
+[node name="Exit" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1803602692]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "EXIT GAME"
+
+[node name="CompletedDemoTick" type="Sprite2D" parent="Control/MarginContainer/PanelContainer" unique_id=1344923099]
+z_index = 2
+position = Vector2(1027, 57)
+texture = ExtResource("2_je5n1")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Control/MarginContainer/PanelContainer" unique_id=2105646168]
+z_index = 1
+position = Vector2(1030, 59)
+emitting = false
+amount = 48
+texture = ExtResource("3_w1asq")
+one_shot = true
+explosiveness = 0.8
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 64.0
+initial_velocity_max = 92.0
+angular_velocity_min = -64.0
+angular_velocity_max = 64.0
+linear_accel_min = -48.0
+linear_accel_max = 48.0
+scale_amount_min = 0.2
+scale_amount_max = 0.8
+scale_amount_curve = SubResource("Curve_121e6")
+color_initial_ramp = SubResource("Gradient_mhl6o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/MarginContainer/PanelContainer" unique_id=2019252670]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_2rc7r")
+
+[node name="QuitConfirmation" parent="." unique_id=1087309525 instance=ExtResource("5_mhl6o")]
+unique_name_in_owner = true
+layer = 5
+visible = false
+
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/Resume" to="." method="resume_demo"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ReturnToDemoSelector" to="." method="quit_and_go_to_menu"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/Exit" to="." method="show_quit_confirmation_screen"]

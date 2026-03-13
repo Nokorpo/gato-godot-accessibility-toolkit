@@ -3,6 +3,7 @@
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="3_3clr6"]
+[ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="3_iwmsy"]
 [ext_resource type="Script" uid="uid://bgbm422tw75f2" path="res://modules/demo4/map/gold_acorn_manager.gd" id="3_vm6ot"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_8ni72"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_cf3k0"]
@@ -93,6 +94,10 @@ light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 
 [node name="GameMenu" parent="." unique_id=2053610931 instance=ExtResource("2_ohoif")]
+visible = false
+
+[node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("3_iwmsy")]
+process_mode = 3
 visible = false
 
 [node name="GoldAcornManager" type="Node3D" parent="." unique_id=1637768729]
@@ -1303,6 +1308,7 @@ shape = SubResource("WorldBoundaryShape3D_0721d")
 debug_color = Color(0, 0, 0, 0.41960785)
 
 [connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation_when_respawning"]
+[connection signal="collected_all_goldacorns" from="GoldAcornManager" to="CompletedDemoScreen" method="show_screen"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn2" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn3" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]

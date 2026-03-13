@@ -108,13 +108,20 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 expand_margin_left = 30.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtlg7"]
+bg_color = Color(0.8, 0.6666667, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 30.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efq60"]
 bg_color = Color(0.03137255, 0, 0.10980392, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-expand_margin_left = 30.0
 
 [resource]
 default_font = ExtResource("2_1ka4n")
@@ -150,8 +157,9 @@ MenuTitle/styles/normal = null
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2gebx")
 TitleBackground/base_type = &"PanelContainer"
 TitleBackground/styles/panel = SubResource("StyleBoxFlat_sty5u")
-VScrollBar/constants/padding_right = 0
+VScrollBar/constants/padding_left = 30
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ies0t")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wqd7i")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_qtlg7")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_efq60")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_wqd7i")

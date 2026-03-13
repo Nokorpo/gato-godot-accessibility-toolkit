@@ -13,6 +13,7 @@ extends Node3D
 @export var joystick_rotation_sensitivity: float = 2
 var camera_rotation: Vector3
 var zoom: float = 10
+var initial_rotation: Vector3
 
 @export_group("Rotation (mouse)")
 @export var mouse_rotation_sensitivity: float = .05
@@ -24,6 +25,9 @@ var mouse_delta: Vector2 = Vector2.ZERO
 @onready var camera_collision_raycast = $Node3D/RayCast3D
 
 var collision_zoom: Vector3 = Vector3(0,1,0)
+
+func _ready():
+	initial_rotation = rotation
 
 func _process(delta: float) -> void:
 	_handle_rotation_from_mouse(delta)
@@ -72,3 +76,7 @@ func handle_camera_collision():
 		var collider = camera_collision_raycast.get_collider()
 		if collider.is_in_group("CameraCollider"):
 			camera.global_transform.origin = camera_collision_raycast.get_collision_point() + collision_zoom
+
+func reset_rotation():
+	position = Vector3.ZERO
+	rotation = initial_rotation

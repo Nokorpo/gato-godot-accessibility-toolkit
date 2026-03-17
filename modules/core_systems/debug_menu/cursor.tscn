@@ -5,6 +5,7 @@
 
 [node name="Cursor" type="Node2D" unique_id=589267301]
 process_mode = 3
+visible = false
 top_level = true
 z_index = 1000
 z_as_relative = false

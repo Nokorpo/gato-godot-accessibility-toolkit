@@ -14,7 +14,10 @@ config/name="Godot Accessibility Toolkit"
 config/version="0.1"
 run/main_scene="uid://vooeq5ose2br"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/stretch_mode=4
+boot_splash/image="uid://cq3ybcqxlmis8"
 config/icon="res://icon.jpg"
+boot_splash/minimum_display_time=1500
 
 [autoload]
 

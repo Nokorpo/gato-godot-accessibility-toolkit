@@ -1,6 +1,7 @@
 extends MarginContainer
 
 signal pressed
+signal input(event: InputEvent)
 
 var _just_released: bool = true
 
@@ -16,9 +17,11 @@ func _input(event: InputEvent) -> void:
 		elif not event.pressed:
 			_just_released = true
 
-	else:
-		if event.is_action("ui_accept"):
+	elif event.is_action("ui_accept"):
 			pressed.emit()
+
+	else:
+		input.emit(event)
 
 func _on_mouse_entered() -> void:
 	grab_focus()

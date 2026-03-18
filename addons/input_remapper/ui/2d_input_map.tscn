@@ -20,12 +20,17 @@ size_flags_vertical = 3
 theme_override_constants/separation = 50
 script = ExtResource("1_uo2cf")
 
-[node name="JoystickToggle" type="HBoxContainer" parent="." unique_id=2053278748]
+[node name="UpRowNavigationContainer" parent="." unique_id=1696954489 instance=ExtResource("6_vkcyi")]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../ActionContainer/DownRowNavigationContainer")
+mouse_filter = 0
+
+[node name="JoystickToggle" type="HBoxContainer" parent="UpRowNavigationContainer" unique_id=2053278748]
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("1_st12y")
 
-[node name="Button" type="TextureButton" parent="JoystickToggle" unique_id=1687164612]
+[node name="Button" type="TextureButton" parent="UpRowNavigationContainer/JoystickToggle" unique_id=1687164612]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_4v8tm")
@@ -34,13 +39,13 @@ texture_focused = ExtResource("4_nyq3o")
 stretch_mode = 3
 flip_h = true
 
-[node name="Label" type="Label" parent="JoystickToggle" unique_id=355206145]
+[node name="Label" type="Label" parent="UpRowNavigationContainer/JoystickToggle" unique_id=355206145]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Keyboard"
 horizontal_alignment = 1
 
-[node name="Button2" type="TextureButton" parent="JoystickToggle" unique_id=1151295962]
+[node name="Button2" type="TextureButton" parent="UpRowNavigationContainer/JoystickToggle" unique_id=1151295962]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_4v8tm")
@@ -101,45 +106,54 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="JoystickSelector" type="HBoxContainer" parent="JoystickContainer" unique_id=1850369513]
+[node name="UpRowNavigationContainer2" parent="JoystickContainer" unique_id=668852652 instance=ExtResource("6_vkcyi")]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../ActionContainer/DownRowNavigationContainer")
+
+[node name="JoystickSelector" type="HBoxContainer" parent="JoystickContainer/UpRowNavigationContainer2" unique_id=1850369513]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("2_a6iv7")
 
-[node name="Button" type="Button" parent="JoystickContainer/JoystickSelector" unique_id=756524523]
+[node name="Button" type="Button" parent="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" unique_id=756524523]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "<"
 
-[node name="Label" type="Label" parent="JoystickContainer/JoystickSelector" unique_id=1570631401]
+[node name="Label" type="Label" parent="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" unique_id=1570631401]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Left"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="JoystickContainer/JoystickSelector" unique_id=1879522485]
+[node name="Button2" type="Button" parent="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" unique_id=1879522485]
 layout_mode = 2
 size_flags_horizontal = 3
 text = ">"
 
-[node name="InvertDirection" type="HBoxContainer" parent="JoystickContainer" unique_id=1421744737]
+[node name="UpRowNavigationContainer3" parent="JoystickContainer" unique_id=1025315973 instance=ExtResource("6_vkcyi")]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../ActionContainer/DownRowNavigationContainer")
+
+[node name="InvertDirection" type="HBoxContainer" parent="JoystickContainer/UpRowNavigationContainer3" unique_id=1421744737]
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("5_o01t1")
 
-[node name="Label" type="Label" parent="JoystickContainer/InvertDirection" unique_id=1926303264]
+[node name="Label" type="Label" parent="JoystickContainer/UpRowNavigationContainer3/InvertDirection" unique_id=1926303264]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Invert direction"
 
-[node name="Button" type="CheckBox" parent="JoystickContainer/InvertDirection" unique_id=526978330]
+[node name="Button" type="CheckBox" parent="JoystickContainer/UpRowNavigationContainer3/InvertDirection" unique_id=526978330]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[connection signal="pressed" from="JoystickToggle/Button" to="JoystickToggle" method="_on_button_pressed"]
-[connection signal="pressed" from="JoystickToggle/Button2" to="JoystickToggle" method="_on_button_pressed"]
+[connection signal="input" from="UpRowNavigationContainer" to="UpRowNavigationContainer/JoystickToggle" method="_on_navigation_container_input"]
+[connection signal="pressed" from="UpRowNavigationContainer/JoystickToggle/Button" to="UpRowNavigationContainer/JoystickToggle" method="_on_button_pressed"]
+[connection signal="pressed" from="UpRowNavigationContainer/JoystickToggle/Button2" to="UpRowNavigationContainer/JoystickToggle" method="_on_button_pressed"]
 [connection signal="pressed" from="ActionContainer/UpRowNavigationContainer" to="ActionContainer" method="_on_button_up_pressed"]
 [connection signal="pressed" from="ActionContainer/UpRowNavigationContainer/UpInputAction" to="ActionContainer" method="_on_button_up_pressed"]
 [connection signal="pressed" from="ActionContainer/DownRowNavigationContainer" to="ActionContainer" method="_on_button_down_pressed"]
@@ -148,6 +162,8 @@ size_flags_vertical = 4
 [connection signal="pressed" from="ActionContainer/LeftRowNavigationContainer/LeftInputAction" to="ActionContainer" method="_on_button_left_pressed"]
 [connection signal="pressed" from="ActionContainer/RightRowNavigationContainer" to="ActionContainer" method="_on_button_right_pressed"]
 [connection signal="pressed" from="ActionContainer/RightRowNavigationContainer/RightInputAction" to="ActionContainer" method="_on_button_right_pressed"]
-[connection signal="pressed" from="JoystickContainer/JoystickSelector/Button" to="JoystickContainer/JoystickSelector" method="_on_button_pressed"]
-[connection signal="pressed" from="JoystickContainer/JoystickSelector/Button2" to="JoystickContainer/JoystickSelector" method="_on_button_pressed"]
-[connection signal="toggled" from="JoystickContainer/InvertDirection/Button" to="JoystickContainer/InvertDirection" method="_on_button_toggled"]
+[connection signal="input" from="JoystickContainer/UpRowNavigationContainer2" to="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" method="_on_button_pressed" unbinds=1]
+[connection signal="pressed" from="JoystickContainer/UpRowNavigationContainer2/JoystickSelector/Button" to="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" method="_on_button_pressed"]
+[connection signal="pressed" from="JoystickContainer/UpRowNavigationContainer2/JoystickSelector/Button2" to="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" method="_on_button_pressed"]
+[connection signal="pressed" from="JoystickContainer/UpRowNavigationContainer3" to="JoystickContainer/UpRowNavigationContainer3/InvertDirection" method="_on_confirm_pressed"]
+[connection signal="toggled" from="JoystickContainer/UpRowNavigationContainer3/InvertDirection/Button" to="JoystickContainer/UpRowNavigationContainer3/InvertDirection" method="_on_button_toggled"]

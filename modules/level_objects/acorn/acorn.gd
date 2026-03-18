@@ -10,7 +10,7 @@ var _is_on_platform: bool = false
 func _ready() -> void:
 	raycast.add_exception(self)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not _is_on_platform and raycast.is_colliding():
 		var collider := raycast.get_collider()
 		if collider is Node3D and (collider as Node3D).is_in_group("moving_platform"):

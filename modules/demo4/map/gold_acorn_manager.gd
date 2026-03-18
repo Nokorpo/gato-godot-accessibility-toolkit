@@ -1,11 +1,14 @@
 extends Node3D
 
-signal collected_all_goldacorns
+signal collected_goldacorn(collected_acorns)
+signal level_finished
 
 var collected_acorns: float = 0
 var total_acorns: int = 4
 
 func _on_gold_acorn_goldacorn_collected() -> void:
 	collected_acorns += 1
+	collected_goldacorn.emit(collected_acorns)
 	if collected_acorns >= total_acorns:
-		collected_all_goldacorns.emit()
+		await DialogueSystem.dialogue_finished
+		level_finished.emit()

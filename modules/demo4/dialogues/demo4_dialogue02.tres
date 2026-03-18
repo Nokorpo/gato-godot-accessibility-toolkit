@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DialogueContainer" format=3 uid="uid://dtuoqso1bo1ur"]
+
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_nexws"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="2_nb4xj"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_ql6g4"]
+
+[sub_resource type="Resource" id="Resource_sn8n4"]
+script = ExtResource("1_nexws")
+message = "Genial, ¡ahora se ve mucho mejor!"
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("2_ql6g4")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[resource]
+script = ExtResource("2_nb4xj")
+messages = Array[ExtResource("1_nexws")]([SubResource("Resource_sn8n4")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

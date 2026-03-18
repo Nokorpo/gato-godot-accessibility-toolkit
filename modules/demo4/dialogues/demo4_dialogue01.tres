@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogueContainer" format=3 uid="uid://ce0dlyl1o4pno"]
+
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_4wldb"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="2_3s6qo"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_ro1be"]
+
+[sub_resource type="Resource" id="Resource_j8fxg"]
+script = ExtResource("1_4wldb")
+message = "No me puedo creer que Zeta haya intentado llevarse las bellotas doradas…"
+name = "Gato"
+animation_name = "talk_worried"
+face = "worried"
+mesh = ExtResource("2_ro1be")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_3s6qo"]
+script = ExtResource("1_4wldb")
+message = " ¡Tengo que encontrarlas!"
+name = "Gato"
+animation_name = "talk_worried"
+face = "worried"
+mesh = ExtResource("2_ro1be")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_6q38n"]
+script = ExtResource("1_4wldb")
+message = "Menos mal que mis gafas tienen un modo alto contraste para ayudarme a encontrarlas. "
+name = "Gato"
+animation_name = "talk_side_eye"
+face = "side_eye"
+mesh = ExtResource("2_ro1be")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[resource]
+script = ExtResource("2_3s6qo")
+messages = Array[ExtResource("1_4wldb")]([SubResource("Resource_j8fxg"), SubResource("Resource_3s6qo"), SubResource("Resource_6q38n")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

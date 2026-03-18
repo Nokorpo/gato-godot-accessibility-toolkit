@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="DialogueContainer" format=3 uid="uid://b48bajfmu064o"]
+
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_bsu35"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="2_6by11"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_kcojn"]
+
+[sub_resource type="Resource" id="Resource_vs0jy"]
+script = ExtResource("1_bsu35")
+message = "¡Ya están todas las bellotas!"
+name = "Gato"
+animation_name = "talk_surprised"
+face = "wow"
+mesh = ExtResource("2_kcojn")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_6by11"]
+script = ExtResource("1_bsu35")
+message = "Estas opciones permiten a los usuarios diferenciar del resto del escenario de juego -"
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("2_kcojn")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_oth7h"]
+script = ExtResource("1_bsu35")
+message = " elementos como enemigos, el personaje protagonista o los objetos coleccionables."
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("2_kcojn")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_kcojn"]
+script = ExtResource("1_bsu35")
+message = "Puedes consultar en el menú del juego la documentación "
+name = "Gato"
+animation_name = "talk_neutral"
+face = "neutral"
+mesh = ExtResource("2_kcojn")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_pfw3p"]
+script = ExtResource("1_bsu35")
+message = "para implementar ajustes de alto contraste en tus proyectos de Godot."
+name = "Gato"
+animation_name = "talk_neutral"
+face = "neutral"
+mesh = ExtResource("2_kcojn")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[resource]
+script = ExtResource("2_6by11")
+messages = Array[ExtResource("1_bsu35")]([SubResource("Resource_vs0jy"), SubResource("Resource_6by11"), SubResource("Resource_oth7h"), SubResource("Resource_kcojn"), SubResource("Resource_pfw3p")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

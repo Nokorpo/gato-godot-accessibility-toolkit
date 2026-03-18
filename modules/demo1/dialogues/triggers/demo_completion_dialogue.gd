@@ -8,8 +8,6 @@ const DEMO_SELECTOR_PATH := "res://modules/demo_selector/demo_selector.tscn"
 
 func launch_dialog() -> void:
 	DialogueSystem.load_dialogue(dialogue)
-	await DialogueSystem.dialogue_finished
-	SceneLoader.create_scene_loader(scene_root, DEMO_SELECTOR_PATH)
 
 # Si quieres implementar tu propio Input Remapper, visita la documentación.
 # Puedes encontrarla en el botón "Documentación" en el menú principal.

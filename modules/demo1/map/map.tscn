@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="1_yy6wf"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_1p31k"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="2_yy6wf"]
+[ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="3_6n1e2"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_6n1e2"]
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="6_e26lp"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="7_5gfar"]
@@ -106,6 +107,10 @@ light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 
 [node name="GameMenu" parent="." unique_id=1727435597 instance=ExtResource("2_1p31k")]
+visible = false
+
+[node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("3_6n1e2")]
+process_mode = 3
 visible = false
 
 [node name="Gato" parent="." unique_id=268196189 instance=ExtResource("1_yy6wf")]
@@ -1552,4 +1557,5 @@ boar_list = NodePath("../Boars")
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_origin"]
-[connection signal="level_finished" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
+[connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
+[connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]

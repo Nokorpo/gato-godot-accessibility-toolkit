@@ -1,5 +1,6 @@
 extends Node
 
+signal fed_all_boars
 signal level_finished
 
 @export var boar_list: Node3D
@@ -15,4 +16,6 @@ func _ready() -> void:
 func _another_one_bites_the_corn() -> void:
 	fed_boars += 1
 	if fed_boars >= total_boars:
+		fed_all_boars.emit()
+		await DialogueSystem.dialogue_finished
 		level_finished.emit()

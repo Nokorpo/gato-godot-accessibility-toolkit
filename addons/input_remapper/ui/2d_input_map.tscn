@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bg4knulolkblw" path="res://addons/input_remapper/ui/invert_joystick_direction.gd" id="5_o01t1"]
 [ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="6_vkcyi"]
 [ext_resource type="PackedScene" uid="uid://drqw3ka7ghfdn" path="res://addons/input_remapper/ui/input_action.tscn" id="7_l1mxn"]
+[ext_resource type="Script" uid="uid://bp8hc2frm7luy" path="res://addons/input_remapper/ui/joystick_container.gd" id="8_l1mxn"]
 
 [node name="2DInputMap" type="VBoxContainer" unique_id=2000616933]
 anchors_preset = 15
@@ -102,9 +103,10 @@ label_text = "move_right"
 button_text = "D"
 
 [node name="JoystickContainer" type="VBoxContainer" parent="." unique_id=1477337798]
-visible = false
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 50
+script = ExtResource("8_l1mxn")
 
 [node name="UpRowNavigationContainer2" parent="JoystickContainer" unique_id=668852652 instance=ExtResource("6_vkcyi")]
 layout_mode = 2
@@ -162,7 +164,7 @@ size_flags_vertical = 4
 [connection signal="pressed" from="ActionContainer/LeftRowNavigationContainer/LeftInputAction" to="ActionContainer" method="_on_button_left_pressed"]
 [connection signal="pressed" from="ActionContainer/RightRowNavigationContainer" to="ActionContainer" method="_on_button_right_pressed"]
 [connection signal="pressed" from="ActionContainer/RightRowNavigationContainer/RightInputAction" to="ActionContainer" method="_on_button_right_pressed"]
-[connection signal="input" from="JoystickContainer/UpRowNavigationContainer2" to="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" method="_on_button_pressed" unbinds=1]
+[connection signal="input" from="JoystickContainer/UpRowNavigationContainer2" to="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" method="_on_row_navigation_input"]
 [connection signal="pressed" from="JoystickContainer/UpRowNavigationContainer2/JoystickSelector/Button" to="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" method="_on_button_pressed"]
 [connection signal="pressed" from="JoystickContainer/UpRowNavigationContainer2/JoystickSelector/Button2" to="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" method="_on_button_pressed"]
 [connection signal="pressed" from="JoystickContainer/UpRowNavigationContainer3" to="JoystickContainer/UpRowNavigationContainer3/InvertDirection" method="_on_confirm_pressed"]

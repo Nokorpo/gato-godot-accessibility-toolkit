@@ -7,14 +7,18 @@ func _on_button_pressed() -> void:
 	if use_joystick:
 		use_joystick = false
 		$Label.text = "Keyboard"
-		$"../../ActionContainer".show()
-		$"../../JoystickContainer".hide()
+		focus_neighbor_bottom = ^"../../JoystickContainer/UpRowNavigationContainer2"
+		%ActionContainer.show()
+		%JoystickContainer.hide()
+		%ActionContainer.set_action()
+
 	else:
 		use_joystick = true
 		$Label.text = "Joystick"
-		$"../../ActionContainer".hide()
-		$"../../JoystickContainer".show()
-
+		focus_neighbor_bottom = ^"../../JoystickContainer/UpRowNavigationContainer3"
+		%ActionContainer.hide()
+		%JoystickContainer.show()
+		%JoystickContainer.set_action()
 
 func _on_navigation_container_input(event: InputEvent) -> void:
 	if event.is_pressed() and (event.is_action("ui_left") or event.is_action("ui_right")):

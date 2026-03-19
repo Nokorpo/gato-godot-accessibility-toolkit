@@ -3,9 +3,12 @@
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_rwbpo"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="1_yy6wf"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_1p31k"]
+[ext_resource type="Script" uid="uid://b2vqfibwv4f66" path="res://modules/demo1/ui/hud.gd" id="2_e26lp"]
 [ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="2_yy6wf"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="3_6n1e2"]
+[ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="3_xoi8s"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_6n1e2"]
+[ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="4_lu8a3"]
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="6_e26lp"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="7_5gfar"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="8_xoi8s"]
@@ -38,6 +41,10 @@
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="35_yr7be"]
 [ext_resource type="Texture2D" uid="uid://catih1m3cybuo" path="res://modules/demo1/map/sprites/floor_leafs.png" id="36_lt6co"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="37_1p31k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e26lp"]
+font_size = 48
+font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q7c8o"]
 size = Vector3(1.28125, 2.70898, 1.87631)
@@ -105,6 +112,41 @@ environment = ExtResource("1_rwbpo")
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1336941519]
+script = ExtResource("2_e26lp")
+
+[node name="Control" type="Control" parent="HUD" unique_id=1185258711]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_xoi8s")
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Control" unique_id=1605183419]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 26.0
+offset_right = 315.0
+offset_bottom = 127.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control/PanelContainer" unique_id=1885586543]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/PanelContainer/MarginContainer" unique_id=1838598258]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1920634047]
+layout_mode = 2
+texture = ExtResource("4_lu8a3")
+expand_mode = 3
+
+[node name="FedBoarCount" type="Label" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1152070878]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_e26lp")
 
 [node name="GameMenu" parent="." unique_id=1727435597 instance=ExtResource("2_1p31k")]
 visible = false
@@ -1559,3 +1601,4 @@ boar_list = NodePath("../Boars")
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
 [connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]
+[connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]

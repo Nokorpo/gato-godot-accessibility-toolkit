@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://bq15a24pows6i"]
+
+[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="1_2fxfl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fxfl"]
+bg_color = Color(0.9538174, 0.94839483, 0.9674569, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[resource]
+default_font = ExtResource("1_2fxfl")
+default_font_size = 32
+HBoxContainer/constants/separation = 20
+MarginContainer/constants/margin_bottom = 6
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_2fxfl")

@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dvs14kxa77pp2"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
+[ext_resource type="Script" uid="uid://dfrwuakpoqpr3" path="res://modules/demo4/hud/hud.gd" id="2_nyeds"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="3_3clr6"]
+[ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="3_671ot"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="3_iwmsy"]
 [ext_resource type="Script" uid="uid://bgbm422tw75f2" path="res://modules/demo4/map/gold_acorn_manager.gd" id="3_vm6ot"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_8ni72"]
+[ext_resource type="Texture2D" uid="uid://ct85t56535spd" path="res://modules/demo4/hud/goldacorn_icon.svg" id="4_lmjde"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_cf3k0"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="7_ohoif"]
 [ext_resource type="PackedScene" uid="uid://cvhe5spjd2wbo" path="res://modules/demo1/map/props/platform_bridge.gltf" id="8_cf3k0"]
@@ -37,6 +40,10 @@
 [ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/level_objects/bounce_on_touch.gd" id="25_hd4lb"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
+font_size = 48
+font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0721d"]
 radius = 0.10625537
@@ -100,6 +107,41 @@ environment = ExtResource("1_6sohf")
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=329260210]
+script = ExtResource("2_nyeds")
+
+[node name="Control" type="Control" parent="HUD" unique_id=132190694]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_671ot")
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Control" unique_id=886866617]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 26.0
+offset_right = 325.0
+offset_bottom = 127.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control/PanelContainer" unique_id=193052782]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/PanelContainer/MarginContainer" unique_id=661066474]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=2018603809]
+layout_mode = 2
+texture = ExtResource("4_lmjde")
+expand_mode = 3
+
+[node name="GoldAcornCount" type="Label" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1952632919]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_ijg73")
 
 [node name="GameMenu" parent="." unique_id=2053610931 instance=ExtResource("2_ohoif")]
 visible = false
@@ -1326,6 +1368,7 @@ collision_layer = 16
 shape = SubResource("WorldBoundaryShape3D_0721d")
 debug_color = Color(0, 0, 0, 0.41960785)
 
+[connection signal="collected_goldacorn" from="GoldAcornManager" to="HUD" method="_update_label_gold_acorn_count"]
 [connection signal="level_finished" from="GoldAcornManager" to="CompletedDemoScreen" method="show_screen"]
 [connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation_when_respawning"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]

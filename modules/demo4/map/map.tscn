@@ -108,6 +108,74 @@ transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 
+[node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=126518054]
+
+[node name="Control" type="Control" parent="ControlsHUD" unique_id=924468066]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_671ot")
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsHUD/Control" unique_id=952549495]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -508.0
+offset_bottom = 157.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlsHUD/Control/MarginContainer" unique_id=304778793]
+layout_mode = 2
+
+[node name="Action1" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=1856708379]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Action1Icon" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action1" unique_id=764926947]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+text = "Z"
+horizontal_alignment = 2
+
+[node name="Action1" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action1" unique_id=2146320084]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Throw acorn"
+
+[node name="Action2" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=381131025]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Action2Icon" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=1821941999]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+text = "SPACE"
+horizontal_alignment = 2
+
+[node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=305624468]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Jump (can double jump)"
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=329260210]
 script = ExtResource("2_nyeds")
 

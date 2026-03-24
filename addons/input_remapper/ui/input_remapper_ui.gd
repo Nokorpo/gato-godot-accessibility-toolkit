@@ -18,6 +18,7 @@ func _ready() -> void:
 		queue_free()
 		return
 	populate_ui(_schemes[InputRemapper.current_control_scheme_index])
+	_control_scheme_selector.grab_focus.call_deferred()
 
 func _get_scheme_index(scheme: GatoControlScheme) -> int:
 	return _schemes.find_custom(

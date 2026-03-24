@@ -10,14 +10,14 @@ func _on_button_pressed() -> void:
 func update_ui() ->void :
 	if use_joystick:
 		$Label.text = "Joystick"
-		focus_neighbor_bottom = ^"../../JoystickContainer/UpRowNavigationContainer3"
+		get_parent().focus_neighbor_bottom = ^"../JoystickContainer/UpRowNavigationContainer2"
 		%ActionContainer.hide()
 		%JoystickContainer.show()
 		%JoystickContainer.set_action()
 
 	else:
 		$Label.text = "Keyboard"
-		focus_neighbor_bottom = ^"../../JoystickContainer/UpRowNavigationContainer2"
+		get_parent().focus_neighbor_bottom = ^"../ActionContainer/UpRowNavigationContainer"
 		%ActionContainer.show()
 		%JoystickContainer.hide()
 		%ActionContainer.set_action()

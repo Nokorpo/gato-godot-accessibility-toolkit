@@ -41,11 +41,19 @@ func _get_button_for_action_recursive(action_name: String, node: Control) -> But
 				return button_or_null
 	return null
 
-func _on_button_pressed(action_name: String) -> void:
+func _read_event_or_null() -> InputEventKey:
 	press_key_dialog.start_reading_input()
-	var event = await press_key_dialog.input_read
+	var result = await press_key_dialog.input_read
+	if result.canceled:
+		return
+	return result.event
+
+func _on_button_pressed(action_name: String) -> void:
+	var event: InputEventKey = await _read_event_or_null()
+	if not event:
+		return
 	var button := get_button_for_action(action_name)
 	if button == null:
-			return
+		return
 	button.text = event.as_text_keycode()
 	input_remapper_ui.set_action(action_name, event)

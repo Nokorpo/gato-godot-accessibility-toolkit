@@ -9,7 +9,11 @@ func start_reading_input():
 	show()
 
 func _input(event: InputEvent) -> void:
-	if reading_input and (event is InputEventKey or event is InputEventJoypadButton):
+	if not reading_input:
+		return
+	if not event.is_pressed():
+		return
+	if event is InputEventKey or event is InputEventJoypadButton:
 		input_read.emit(event)
 		reading_input = false
 		hide()

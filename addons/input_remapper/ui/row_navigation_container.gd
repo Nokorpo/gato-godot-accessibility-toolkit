@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
 		elif not event.pressed:
 			_just_released = true
 
-	elif event.is_action("ui_accept"):
+	elif event.is_pressed() and event.is_action("ui_accept"):
 			pressed.emit()
 
 	else:

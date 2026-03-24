@@ -6,6 +6,12 @@ var use_joystick := false
 func _on_button_pressed() -> void:
 	use_joystick = !use_joystick
 	update_ui()
+	# This is done outside the "update_ui()" method to avoid an initialization
+	# issue where the keymap is unset on the first frame due to a default object
+	if use_joystick:
+		%JoystickContainer.set_action()
+	else:
+		%ActionContainer.set_action()
 
 func update_ui() ->void :
 	if use_joystick:
@@ -13,14 +19,12 @@ func update_ui() ->void :
 		get_parent().focus_neighbor_bottom = ^"../JoystickContainer/UpRowNavigationContainer2"
 		%ActionContainer.hide()
 		%JoystickContainer.show()
-		%JoystickContainer.set_action()
 
 	else:
 		$Label.text = "Keyboard"
 		get_parent().focus_neighbor_bottom = ^"../ActionContainer/UpRowNavigationContainer"
 		%ActionContainer.show()
 		%JoystickContainer.hide()
-		%ActionContainer.set_action()
 
 func _on_navigation_container_input(event: InputEvent) -> void:
 	if event.is_pressed() and (event.is_action("ui_left") or event.is_action("ui_right")):

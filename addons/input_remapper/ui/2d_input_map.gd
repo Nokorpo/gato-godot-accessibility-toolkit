@@ -16,6 +16,10 @@ func update_ui(scheme: GatoControlScheme) -> void:
 		if input_action.name != action_name:
 			continue
 		if input_action is JoystickInputAction2D:
+			%JoystickToggle.use_joystick = true
+			%JoystickToggle.update_ui()
 			%JoystickContainer.update_ui(input_action)
 		elif input_action is KeysInputAction2D:
+			%JoystickToggle.use_joystick = false
+			%JoystickToggle.update_ui()
 			%ActionContainer.update_ui(input_action)

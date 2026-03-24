@@ -27,6 +27,7 @@ focus_neighbor_bottom = NodePath("../ActionContainer/DownRowNavigationContainer"
 mouse_filter = 0
 
 [node name="JoystickToggle" type="HBoxContainer" parent="UpRowNavigationContainer" unique_id=2053278748]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("1_st12y")
@@ -104,6 +105,7 @@ button_text = "D"
 
 [node name="JoystickContainer" type="VBoxContainer" parent="." unique_id=1477337798]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 50
 script = ExtResource("8_l1mxn")

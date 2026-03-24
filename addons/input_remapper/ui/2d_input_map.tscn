@@ -112,7 +112,8 @@ script = ExtResource("8_l1mxn")
 
 [node name="UpRowNavigationContainer2" parent="JoystickContainer" unique_id=668852652 instance=ExtResource("6_vkcyi")]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../../ActionContainer/DownRowNavigationContainer")
+focus_neighbor_bottom = NodePath("../UpRowNavigationContainer3")
+focus_next = NodePath("../UpRowNavigationContainer3")
 
 [node name="JoystickSelector" type="HBoxContainer" parent="JoystickContainer/UpRowNavigationContainer2" unique_id=1850369513]
 unique_name_in_owner = true

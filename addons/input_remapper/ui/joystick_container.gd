@@ -1,7 +1,14 @@
 extends VBoxContainer
 
 var input_remapper_ui: InputRemapperUI
-var action_name: StringName
+var action_name: StringName:
+	set(value):
+		action_name = value
+		if input_action:
+			# Since the parent "2d_input_map.gd" is the one setting up the
+			# action name, we don't know before input_action creation and it
+			# needs to be set up now
+			input_action.name = value
 var input_action: JoystickInputAction2D
 
 func _ready() -> void:
@@ -23,7 +30,6 @@ func _set_invert(invert_joystick: bool) -> void:
 
 func update_ui(_input_action: JoystickInputAction2D) -> void:
 	input_action = _input_action
-	action_name = _input_action.name
 	_set_use_right_joystick(input_action.use_right_joystick)
 	_set_invert(input_action.invert_joystick)
 

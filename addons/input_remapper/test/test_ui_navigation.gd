@@ -30,16 +30,28 @@ class TestRowNavigationContainer extends GutTest:
 		assert_ne(get_viewport().gui_get_focus_owner(), row)
 
 	func test_click() -> void:
-		pass
+		var row = add_child_autofree(sut.instantiate())
+		watch_signals(row)
+		row.grab_focus()
+
+		var event := InputEventMouseButton.new()
+		event.button_index = MOUSE_BUTTON_LEFT
+		event.pressed = true
+		row._input(event)
+
+		assert_signal_emitted(row.pressed)
 
 	func test_confirm() -> void:
-		pass
+		var row = add_child_autofree(sut.instantiate())
+		watch_signals(row)
+		row.grab_focus()
 
-	func test_neighbour_down() -> void:
-		pass
+		var event := InputEventAction.new()
+		event.action = "ui_accept"
+		event.pressed = true
+		row._input(event)
 
-	func test_neighbour_next() -> void:
-		pass
+		assert_signal_emitted(row.pressed)
 
 	func test_option_select_right() -> void:
 		var row = add_child_autofree(sut.instantiate())

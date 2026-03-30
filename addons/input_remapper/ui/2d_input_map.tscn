@@ -55,6 +55,10 @@ texture_hover = ExtResource("4_nyq3o")
 texture_focused = ExtResource("4_nyq3o")
 stretch_mode = 5
 
+[node name="JoystickCooldownTimer" type="Timer" parent="UpRowNavigationContainer/JoystickToggle" unique_id=1590274786]
+wait_time = 0.25
+one_shot = true
+
 [node name="ActionContainer" type="VBoxContainer" parent="." unique_id=21244656]
 unique_name_in_owner = true
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
@@ -120,6 +124,10 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("2_a6iv7")
+
+[node name="JoystickCooldownTimer" type="Timer" parent="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" unique_id=485510889]
+wait_time = 0.25
+one_shot = true
 
 [node name="Button" type="Button" parent="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" unique_id=756524523]
 layout_mode = 2

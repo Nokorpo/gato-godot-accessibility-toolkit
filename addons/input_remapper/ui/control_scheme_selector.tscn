@@ -16,6 +16,10 @@ focus_mode = 1
 theme_override_constants/separation = 20
 script = ExtResource("1_c4d4j")
 
+[node name="JoystickCooldownTimer" type="Timer" parent="." unique_id=1229594090]
+wait_time = 0.25
+one_shot = true
+
 [node name="RowNavigationContainer" parent="." unique_id=1367961113 instance=ExtResource("5_21kfc")]
 layout_mode = 2
 size_flags_horizontal = 3

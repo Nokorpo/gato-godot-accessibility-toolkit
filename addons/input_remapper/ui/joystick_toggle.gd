@@ -1,6 +1,8 @@
 extends HBoxContainer
 ## Lets the user choose whether to use a joystick or keyboard keys for an input action 2D
 
+@onready var joystick_cooldown: Timer = $JoystickCooldownTimer
+
 var use_joystick := false
 
 func _on_button_pressed() -> void:
@@ -27,5 +29,12 @@ func update_ui() ->void :
 		%JoystickContainer.hide()
 
 func _on_navigation_container_input(event: InputEvent) -> void:
-	if event.is_pressed() and (event.is_action("ui_left") or event.is_action("ui_right")):
+	if event is InputEventJoypadButton or event is InputEventKey and not event.is_pressed():
+		return
+	if event is InputEventJoypadMotion:
+		if abs(event.axis_value) <= .95 or joystick_cooldown.time_left >= 0.01:
+			return
+
+	if event.is_action("ui_left") or event.is_action("ui_right"):
+		joystick_cooldown.start()
 		_on_button_pressed()

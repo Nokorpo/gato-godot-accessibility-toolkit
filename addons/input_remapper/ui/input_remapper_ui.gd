@@ -18,6 +18,7 @@ func _ready() -> void:
 		queue_free()
 		return
 	populate_ui(_schemes[InputRemapper.current_control_scheme_index])
+	_control_scheme_selector.grab_focus.call_deferred()
 
 func _get_scheme_index(scheme: GatoControlScheme) -> int:
 	return _schemes.find_custom(
@@ -29,7 +30,8 @@ func populate_ui(scheme: GatoControlScheme) -> void:
 		push_error("Tried to initialize Input Remapper with empty scheme")
 		return
 	var index := _get_scheme_index(scheme)
-	var current_scheme := _schemes[index]
+	var current_scheme := InputRemapper.get_current_scheme()
+	_schemes = InputRemapper.control_schemes
 	_control_scheme_selector._update_ui(_schemes, index)
 	_movement_input_map.update_ui(current_scheme)
 	var inputs: Array[InputActionButton] = []
@@ -59,3 +61,4 @@ func save_changes() -> void:
 	InputRemapper.control_schemes = _schemes
 	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]
 	InputRemapper.apply_control_scheme(current_scheme)
+	InputRemapper.save_changes()

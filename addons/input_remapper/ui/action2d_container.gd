@@ -1,42 +1,63 @@
-extends GridContainer
+extends VBoxContainer
 
 var input_remapper_ui: InputRemapperUI
-var action_name: StringName
+var action_name: StringName:
+	set(value):
+		action_name = value
+		if input_action:
+			# Since the parent "2d_input_map.gd" is the one setting up the
+			# action name, we don't know before input_action creation and it
+			# needs to be set up now
+			input_action.name = value
 var input_action: KeysInputAction2D
 var reading_input: bool = false
 var press_key_dialog: Control
 
+func _ready() -> void:
+	input_action = KeysInputAction2D.new()
+
 func update_ui(_input_action: KeysInputAction2D) -> void:
 	input_action = _input_action
-	$ButtonUp.text = input_action.up.as_text_keycode()
-	$ButtonDown.text = input_action.down.as_text_keycode()
-	$ButtonLeft.text = input_action.left.as_text_keycode()
-	$ButtonRight.text = input_action.right.as_text_keycode()
+
+	%UpInputAction.button_text = input_action.up.as_text_keycode()
+	%DownInputAction.button_text = input_action.down.as_text_keycode()
+	%LeftInputAction.button_text = input_action.left.as_text_keycode()
+	%RightInputAction.button_text = input_action.right.as_text_keycode()
+
+func _read_event_or_null() -> InputEventKey:
+	press_key_dialog.start_reading_input()
+	var result = await press_key_dialog.input_read
+	if result.canceled:
+		return
+	return result.event
 
 func _on_button_up_pressed() -> void:
-	press_key_dialog.start_reading_input()
-	var event = await press_key_dialog.input_read
-	$ButtonUp.text = event.as_text_keycode()
-	input_action.up = event
-	input_remapper_ui.set_action2d(action_name, input_action)
+	var event: InputEventKey = await _read_event_or_null()
+	if event:
+		%UpInputAction.button_text = event.as_text_keycode()
+		input_action.up = event
+		set_action()
 
 func _on_button_down_pressed() -> void:
-	press_key_dialog.start_reading_input()
-	var event = await press_key_dialog.input_read
-	$ButtonDown.text = event.as_text_keycode()
-	input_action.down = event
-	input_remapper_ui.set_action2d(action_name, input_action)
+	var event: InputEventKey = await _read_event_or_null()
+	if event:
+		%DownInputAction.button_text = event.as_text_keycode()
+		input_action.down = event
+		set_action()
 
 func _on_button_left_pressed() -> void:
-	press_key_dialog.start_reading_input()
-	var event = await press_key_dialog.input_read
-	$ButtonLeft.text = event.as_text_keycode()
-	input_action.left = event
-	input_remapper_ui.set_action2d(action_name, input_action)
+	var event: InputEventKey = await _read_event_or_null()
+	if event:
+		%LeftInputAction.button_text = event.as_text_keycode()
+		input_action.left = event
+		set_action()
 
 func _on_button_right_pressed() -> void:
-	press_key_dialog.start_reading_input()
-	var event = await press_key_dialog.input_read
-	$ButtonRight.text = event.as_text_keycode()
-	input_action.right = event
+	var event: InputEventKey = await _read_event_or_null()
+	if event:
+		%RightInputAction.button_text = event.as_text_keycode()
+		input_action.right = event
+		set_action()
+
+func set_action():
 	input_remapper_ui.set_action2d(action_name, input_action)

@@ -1,25 +1,33 @@
 extends HBoxContainer
 
-var input_remapper_ui: InputRemapperUI
-var action_name: StringName
-var input_action: JoystickInputAction2D
+signal value_changed(new_value: bool)
+
+@onready var joystick_cooldown: Timer = $JoystickCooldownTimer
+
+var joystick_container
 var use_right_joystick := false
 
-func update_ui(_input_action: JoystickInputAction2D) -> void:
-	input_action = _input_action
-	set_stick(input_action.use_right_joystick)
+func _on_row_navigation_input(event: InputEvent) -> void:
+	if event is InputEventJoypadButton or event is InputEventKey and not event.is_pressed():
+		return
+	if event is InputEventJoypadMotion:
+		if abs(event.axis_value) <= .95 or joystick_cooldown.time_left >= 0.01:
+			return
+
+	if event.is_action("ui_left") or event.is_action("ui_right"):
+		joystick_cooldown.start()
+		toggle()
+
+func toggle() -> void:
+	use_right_joystick = !use_right_joystick
+	set_stick_text(use_right_joystick)
+	value_changed.emit(use_right_joystick)
 
 func _on_button_pressed() -> void:
-	set_stick(use_right_joystick)
+	toggle()
 
-func set_stick(use_right: bool) -> void:
+func set_stick_text(use_right: bool) -> void:
 	if use_right:
-		use_right_joystick = false
-		input_action.use_right_joystick = false
 		$Label.text = "Right"
-		input_remapper_ui.set_action2d(action_name, input_action)
 	else:
-		use_right_joystick = true
-		input_action.use_right_joystick = false
 		$Label.text = "Left"
-		input_remapper_ui.set_action2d(action_name, input_action)

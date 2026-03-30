@@ -20,16 +20,14 @@ func _on_row_navigation_input(event: InputEvent) -> void:
 
 func toggle() -> void:
 	use_right_joystick = !use_right_joystick
-	set_stick(use_right_joystick)
+	set_stick_text(use_right_joystick)
 	value_changed.emit(use_right_joystick)
 
 func _on_button_pressed() -> void:
 	toggle()
 
-func set_stick(use_right: bool) -> void:
+func set_stick_text(use_right: bool) -> void:
 	if use_right:
-		#use_right_joystick = false
 		$Label.text = "Right"
 	else:
-		#use_right_joystick = true
 		$Label.text = "Left"

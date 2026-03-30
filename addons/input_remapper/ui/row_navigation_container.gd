@@ -1,3 +1,4 @@
+class_name RowNavigationContainer
 extends MarginContainer
 
 signal pressed

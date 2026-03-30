@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func _set_use_right_joystick(use_right_joystick: bool) -> void:
 	%JoystickSelector.set_stick_text(use_right_joystick)
+	%JoystickSelector.use_right_joystick = use_right_joystick
 	input_action.use_right_joystick = use_right_joystick
 	set_action()
 

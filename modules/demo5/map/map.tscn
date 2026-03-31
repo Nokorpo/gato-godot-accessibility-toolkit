@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://btbwdsksnh62b" path="res://modules/characters/boar/mesh/boar_red.tscn" id="9_d6375"]
 [ext_resource type="PackedScene" uid="uid://bckenvh5w3j2p" path="res://modules/demo1/map/props/rock_group.gltf" id="10_4g4qy"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="11_fjpig"]
+[ext_resource type="PackedScene" uid="uid://cu1uku0gtuupp" path="res://modules/demo5/map/props/bin.tscn" id="13_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="13_fjpig"]
 [ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
 [ext_resource type="PackedScene" uid="uid://c7vf1css0b8xp" path="res://modules/demo5/map/props/pine_without_fading.tscn" id="22_d6375"]
@@ -82,6 +83,9 @@ transform = Transform3D(0.7660444, 0, -0.6427875, 0, 1, 0, 0.6427875, 0, 0.76604
 
 [node name="BoarBlue" parent="Boars" unique_id=1184518344 instance=ExtResource("23_uov22")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0.7, 0, -2.599944)
+
+[node name="Bin" parent="." unique_id=624201465 instance=ExtResource("13_0ulb0")]
+transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.7461958, -0.06462026, -5.408327)
 
 [node name="Props" type="Node3D" parent="." unique_id=516168187]
 

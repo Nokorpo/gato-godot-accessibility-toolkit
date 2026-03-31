@@ -40,9 +40,11 @@ jobs:
 
           if [ $(( current_ts - last_commit_ts )) -gt "$BUILD_TRIGGER_WINDOW" ]; then
             echo "Last commit is older than 5 days, not making a new build. Skipping." >&2
+            echo "finished=true" >> $GITHUB_OUTPUT
             exit 1
           else
             echo "Last commit is with the 5 days window. Making a new build." >&2
+            echo "finished=true" >> $GITHUB_OUTPUT
             exit 0
           fi
 
@@ -77,11 +79,6 @@ jobs:
         run: |
           butler push ./build/linux/ $ITCHIO_USERNAME/$ITCHIO_GAME:linux
 
-      - name: Mark finished
-        id: mark-finished
-        run: |
-          echo "status=success" >> $GITHUB_OUTPUT
-
   windows:
     name: Windows build
     needs: should-make-new-build
@@ -111,11 +108,6 @@ jobs:
         run: |
           butler push ./build/windows/ $ITCHIO_USERNAME/$ITCHIO_GAME:windows
 
-      - name: Mark finished
-        id: mark-finished
-        run: |
-          echo "status=success" >> $GITHUB_OUTPUT
-
   discord-notifications:
     name: Discord notification
     needs: [linux, windows]
@@ -124,7 +116,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Build OK Discord notification
-        if: needs['linux'].outputs.status == 'success' && needs['windows'].outputs.status == 'success'
+        if: needs.linux.result == 'success' && needs.windows.result == 'success' && needs.should-make-new-build.result == 'success'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
@@ -133,7 +125,10 @@ jobs:
           args: "New builds available in [this url](https://nokorpo.itch.io/gato-godot-accessibility-toolkit?secret=GAK8HFopdJMBYuNUPkZChGTc)! 📦️"
 
       - name: Build KO Discord notification
-        if: failure() || needs['linux'].outputs.status != 'success' || needs['windows'].outputs.status != 'success'
+        if: |
+          ( failure() && needs.should-make-new-build.result != 'success' && needs.should-make-new-build.outputs.finished != 'true' ) ||
+          ( needs.linux.result != 'skipped' && needs.linux.result != 'success' ) ||
+          ( needs.windows.result != 'skipped' && needs.windows.result != 'success' )
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}

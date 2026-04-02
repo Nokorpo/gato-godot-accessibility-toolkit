@@ -7,6 +7,11 @@ var target = null
 var boar: CharacterBody3D
 @export var mesh: BoarMesh
 @export var eating_time: float = 1.5
+var is_grown: bool = false
+
+func _start(_state_machine: StateMachine, _node: Node) -> void:
+	super(_state_machine, _node)
+	boar = _node as CharacterBody3D
 
 func _on_enter_state() -> void:
 	mesh.play_animation(BoarMesh.Animations.EAT)
@@ -28,10 +33,13 @@ func _animate_boar_growing_up(_boar: Node3D):
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(_boar, "scale", Vector3(1.5,1.5,1.5), .4)
 	_boar.rotate(Vector3.UP, .1)
+	is_grown = true
 
 func _on_exit_state() -> void:
-	_animate_boar_growing_up(node as CharacterBody3D)
-	heart_particles.emitting = true
-	particles.emitting = false
 	target = null
 	node.finished_feeding.emit()
+	particles.emitting = false
+	if not is_grown:
+		_animate_boar_growing_up(boar)
+		heart_particles.emitting = true
+		boar.finished_growing.emit()

@@ -12,7 +12,7 @@ var fed_boars: int = 0
 func _ready() -> void:
 	total_boars = boar_list.get_child_count()
 	for boar: Boar in boar_list.get_children():
-		boar.finished_feeding.connect(_another_one_bites_the_corn)
+		boar.finished_growing.connect(_another_one_bites_the_corn)
 	update_hud_count.emit()
 
 func _another_one_bites_the_corn() -> void:

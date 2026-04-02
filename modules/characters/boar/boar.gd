@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 @warning_ignore("unused_signal")
 signal finished_feeding
+@warning_ignore("unused_signal")
+signal finished_growing
 
 @onready var raycast: RayCast3D = $RayCast3D
 @onready var _original_parent: Node = get_parent()

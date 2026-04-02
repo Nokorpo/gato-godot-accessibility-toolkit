@@ -21,6 +21,8 @@ var previous_y_velocity: float = 0.0
 
 func _ready() -> void:
 	item_detection.item_collected.connect(func(it): item_collected.emit(it))
+	DialogueSystem.dialogue_started.connect(set.bind("process_mode", Node.PROCESS_MODE_DISABLED))
+	DialogueSystem.dialogue_finished.connect(set.bind("process_mode", Node.PROCESS_MODE_INHERIT))
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

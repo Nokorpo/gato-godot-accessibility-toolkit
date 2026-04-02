@@ -33,14 +33,19 @@ func set_avatar(message: DialogueMessage) -> void:
 	if message.mesh != null and message.animation_name != null:
 		character_avatar.set_avatar(message.mesh, message.animation_name, message.face)
 
+func _advance_message() -> void:
+	var next_message := DialogueSystem.advance()
+	if next_message:
+		$NextMessageAudio.play()
+		set_message(next_message)
+	else:
+		$CloseDialogueAudio.play()
+		hide()
+
 func _input(event: InputEvent) -> void:
 	if not _is_active:
 		return
 	if event is InputEventMouseButton and event.is_pressed():
-		var next_message := DialogueSystem.advance()
-		if next_message:
-			$NextMessageAudio.play()
-			set_message(next_message)
-		else:
-			$CloseDialogueAudio.play()
-			hide()
+		_advance_message()
+	elif event.is_action("ui_accept") and event.is_pressed():
+		_advance_message()

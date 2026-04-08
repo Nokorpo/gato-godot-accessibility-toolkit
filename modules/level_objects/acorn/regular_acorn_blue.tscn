@@ -48,7 +48,7 @@ shadow_mesh = SubResource("ArrayMesh_pjxky")
 
 [node name="Acorn" parent="." unique_id=1109065714 instance=ExtResource("1_4w6lq")]
 
-[node name="Acorn" parent="Acorn" index="0" unique_id=1034707574]
+[node name="Acorn" parent="Acorn" index="0" unique_id=77615826]
 mesh = SubResource("ArrayMesh_2qkh2")
 
 [editable path="Acorn"]

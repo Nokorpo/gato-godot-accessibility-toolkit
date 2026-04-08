@@ -9,12 +9,12 @@ var current_item : ThrowableItem
 
 func _ready():
 	_throwable_items = non_accessible_throwable_items
-	spawn_item()
 
 func spawn_item() -> Node:
 	current_item = _get_random_item()
 	var spawned_item : Node = current_item.instantiate_item()
 	add_child(spawned_item)
+	spawned_item.position = current_item.spawn_point
 	return spawned_item
 
 func _get_random_item() -> ThrowableItem:

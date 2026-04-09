@@ -1,10 +1,11 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://btv0tgfmb7gpg"]
 
-[ext_resource type="Texture2D" uid="uid://db1ogumfci1xf" path="res://modules/level_objects/acorn/acorn_acorn.png" id="1_dqxch"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mayti"]
+load_path = "res://.godot/imported/acorn_acorn.png-f54331cccfe278690b6ed6aded658eae.ctex"
 
 [resource]
 resource_name = "acorn"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_dqxch")
+albedo_texture = SubResource("CompressedTexture2D_mayti")
 roughness = 0.5

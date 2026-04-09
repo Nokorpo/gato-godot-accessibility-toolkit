@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://do4iwpqre75ac"]
+
+[ext_resource type="Texture2D" uid="uid://cdcx7shk0bs2e" path="res://modules/level_objects/acorn/acorn_green.png" id="1_q0jdg"]
+
+[resource]
+resource_name = "acorn"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_q0jdg")
+roughness = 0.5

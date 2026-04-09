@@ -59,7 +59,7 @@ metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_re70a"]
 script = ExtResource("2_2jtk5")
-item_name = "Red Acorn"
+item_name = "Accessible Red Acorn"
 item_scene = ExtResource("9_mwtjp")
 spawn_point = Vector3(0, -0.71272963, -1.216)
 can_be_eaten = true
@@ -68,7 +68,7 @@ metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_donvt"]
 script = ExtResource("2_2jtk5")
-item_name = "Blue Acorn"
+item_name = "Accessible Blue Acorn"
 item_scene = ExtResource("10_eksg7")
 spawn_point = Vector3(0, -0.71272963, -1.216)
 can_be_eaten = true
@@ -77,7 +77,7 @@ metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_o66nx"]
 script = ExtResource("2_2jtk5")
-item_name = "Green Acorn"
+item_name = "Accessible Green Acorn"
 item_scene = ExtResource("11_udp35")
 spawn_point = Vector3(0, -0.71272963, -1.216)
 can_be_eaten = true
@@ -86,7 +86,7 @@ metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_1ymfx"]
 script = ExtResource("2_2jtk5")
-item_name = "Yellow Acorn"
+item_name = "Accessible Yellow Acorn"
 item_scene = ExtResource("12_7boki")
 spawn_point = Vector3(0, -0.71272963, -1.216)
 can_be_eaten = true

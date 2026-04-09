@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c507oviog8v0x"]
+
+[ext_resource type="PackedScene" uid="uid://bswf3xbl752" path="res://modules/level_objects/acorn/acorn.glb" id="1_jry7b"]
+[ext_resource type="Material" uid="uid://kogtnritn5tv" path="res://modules/level_objects/acorn/acorn_yellow.tres" id="2_jry7b"]
+
+[node name="RegularAcornYellow" unique_id=354807551 instance=ExtResource("1_jry7b")]
+
+[node name="Acorn" parent="." index="0" unique_id=275629021]
+material_override = ExtResource("2_jry7b")

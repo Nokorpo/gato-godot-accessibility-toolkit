@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://bde5jf3dosw61"]
+
+[ext_resource type="Script" uid="uid://mfl8vvt7x4ae" path="res://modules/demo5/item_pool/throwable_item_pool.gd" id="1_xon4r"]
+[ext_resource type="Script" uid="uid://sx7wfewhlap7" path="res://modules/demo5/item_pool/throwable_item.gd" id="2_2jtk5"]
+[ext_resource type="PackedScene" uid="uid://daishhn3xlx74" path="res://modules/demo5/throwable_items/basketball_ball.tscn" id="3_0ului"]
+[ext_resource type="PackedScene" uid="uid://ttidbrw4r1gb" path="res://modules/demo5/throwable_items/baseball_ball.tscn" id="4_pipgt"]
+[ext_resource type="PackedScene" uid="uid://cx1ifxyiknxot" path="res://modules/demo5/throwable_items/box.tscn" id="5_kh6xt"]
+[ext_resource type="PackedScene" uid="uid://cv8s3xqneydxw" path="res://modules/demo5/throwable_items/branch.tscn" id="6_iu1jo"]
+[ext_resource type="PackedScene" uid="uid://dkfwr2e0hpswl" path="res://modules/demo5/throwable_items/glasses.tscn" id="7_mwtjp"]
+[ext_resource type="PackedScene" uid="uid://eloijn3cq0rw" path="res://modules/demo5/throwable_items/wrench.tscn" id="8_boyh7"]
+[ext_resource type="PackedScene" uid="uid://dk18i5oglbj2y" path="res://modules/level_objects/acorn/regular_acorn_red.tscn" id="9_mwtjp"]
+[ext_resource type="PackedScene" uid="uid://dx8muoosb675p" path="res://modules/level_objects/acorn/acorn_blue.gltf" id="10_eksg7"]
+[ext_resource type="PackedScene" uid="uid://bd0i7xibxqpll" path="res://modules/level_objects/acorn/acorn_green.gltf" id="11_udp35"]
+[ext_resource type="PackedScene" uid="uid://dd6eu0cja2otl" path="res://modules/level_objects/acorn/acorn_yellow.gltf" id="12_7boki"]
+[ext_resource type="PackedScene" uid="uid://cwml83hpf6t1y" path="res://modules/level_objects/acorn/regular_acorn_blue.tscn" id="13_boyh7"]
+[ext_resource type="PackedScene" uid="uid://c507oviog8v0x" path="res://modules/level_objects/acorn/regular_acorn_yellow.tscn" id="14_if4yi"]
+
+[sub_resource type="Resource" id="Resource_pipgt"]
+script = ExtResource("2_2jtk5")
+item_name = "Basketball Ball"
+item_scene = ExtResource("3_0ului")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_3deg2"]
+script = ExtResource("2_2jtk5")
+item_name = "Baseball Ball"
+item_scene = ExtResource("4_pipgt")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_xyoqn"]
+script = ExtResource("2_2jtk5")
+item_name = "Box"
+item_scene = ExtResource("5_kh6xt")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_8ba6i"]
+script = ExtResource("2_2jtk5")
+item_name = "Branch"
+item_scene = ExtResource("6_iu1jo")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_73cli"]
+script = ExtResource("2_2jtk5")
+item_name = "Glasses"
+item_scene = ExtResource("7_mwtjp")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_hguqr"]
+script = ExtResource("2_2jtk5")
+item_name = "Wrench"
+item_scene = ExtResource("8_boyh7")
+spawn_point = Vector3(-0.2804967, -0.235, -0.836)
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_re70a"]
+script = ExtResource("2_2jtk5")
+item_name = "Accessible Red Acorn"
+item_scene = ExtResource("9_mwtjp")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+can_be_eaten = true
+matching_color = "red"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_donvt"]
+script = ExtResource("2_2jtk5")
+item_name = "Accessible Blue Acorn"
+item_scene = ExtResource("10_eksg7")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+can_be_eaten = true
+matching_color = "blue"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_o66nx"]
+script = ExtResource("2_2jtk5")
+item_name = "Accessible Green Acorn"
+item_scene = ExtResource("11_udp35")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+can_be_eaten = true
+matching_color = "green"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_1ymfx"]
+script = ExtResource("2_2jtk5")
+item_name = "Accessible Yellow Acorn"
+item_scene = ExtResource("12_7boki")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+can_be_eaten = true
+matching_color = "yellow"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_eksg7"]
+script = ExtResource("2_2jtk5")
+item_name = "Acorn Blue"
+item_scene = ExtResource("13_boyh7")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+can_be_eaten = true
+matching_color = "blue"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_udp35"]
+script = ExtResource("2_2jtk5")
+item_name = "Acorn Green"
+item_scene = ExtResource("14_if4yi")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+can_be_eaten = true
+matching_color = "green"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_7boki"]
+script = ExtResource("2_2jtk5")
+item_name = "Acorn Yellow"
+item_scene = ExtResource("14_if4yi")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+can_be_eaten = true
+matching_color = "yellow"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[node name="ThrowableItemPool" type="Node3D" unique_id=872441548]
+script = ExtResource("1_xon4r")
+accessible_throwable_items = Array[ExtResource("2_2jtk5")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr"), SubResource("Resource_re70a"), SubResource("Resource_donvt"), SubResource("Resource_o66nx"), SubResource("Resource_1ymfx")])
+non_accessible_throwable_items = Array[ExtResource("2_2jtk5")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr"), SubResource("Resource_re70a"), SubResource("Resource_eksg7"), SubResource("Resource_udp35"), SubResource("Resource_7boki")])

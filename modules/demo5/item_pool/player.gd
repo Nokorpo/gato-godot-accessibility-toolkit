@@ -5,7 +5,7 @@ extends Node
 func _ready():
 	throwable_item_pool.spawn_item()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("jump"):
 		var current_item = throwable_item_pool.current_item.item_node
 		current_item.position.z += -0.5

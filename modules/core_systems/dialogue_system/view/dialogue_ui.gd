@@ -51,7 +51,8 @@ func _advance_message() -> void:
 func _input(event: InputEvent) -> void:
 	if not _is_active:
 		return
-	if event is InputEventMouseButton and event.is_pressed():
-		_advance_message()
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			_advance_message()
 	elif event.is_action("ui_accept") and event.is_pressed():
 		_advance_message()

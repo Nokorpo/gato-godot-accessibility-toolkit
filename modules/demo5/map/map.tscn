@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://btbwdsksnh62b" path="res://modules/characters/boar/mesh/boar_red.tscn" id="9_d6375"]
 [ext_resource type="PackedScene" uid="uid://bckenvh5w3j2p" path="res://modules/demo1/map/props/rock_group.gltf" id="10_4g4qy"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="11_fjpig"]
+[ext_resource type="Script" uid="uid://dq47fh362xasw" path="res://modules/demo5/boar/boar_demo5.gd" id="12_6nsoj"]
 [ext_resource type="PackedScene" uid="uid://cu1uku0gtuupp" path="res://modules/demo5/map/props/bin.tscn" id="13_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="13_fjpig"]
 [ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
@@ -26,6 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://ctkf5kicchy5p" path="res://modules/characters/boar/mesh/boar_yellow_long-eared.glb" id="22_tc3uo"]
 [ext_resource type="PackedScene" uid="uid://blrbkueqfxiqt" path="res://modules/demo5/map/props/pine_small_without_fading.tscn" id="23_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
+
+[sub_resource type="Curve" id="Curve_awgv7"]
+_limits = [0.0, 1.2, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 5.4192076, 0, 0, Vector2(0.5, 1.2), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
 albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
@@ -50,8 +56,10 @@ visible = false
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.218, 1.135)
 
-[node name="PlacehoderPlayer" type="Node3D" parent="." unique_id=989785125]
+[node name="Player" type="Node3D" parent="." unique_id=989785125]
+unique_name_in_owner = true
 script = ExtResource("3_4a7kf")
+throw_path = SubResource("Curve_awgv7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=489021595]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.218, 1.135)
@@ -82,17 +90,21 @@ visible = false
 
 [node name="Boars" type="Node3D" parent="." unique_id=1098203158]
 
-[node name="BoarRed" parent="Boars" unique_id=2105937100 instance=ExtResource("9_d6375")]
-transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, -2, 0, -2.3553338)
+[node name="BoarBlue" parent="Boars" unique_id=698005516 instance=ExtResource("23_uov22")]
+transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, -2, 0, -2.355)
+script = ExtResource("12_6nsoj")
 
-[node name="BoarGreen" parent="Boars" unique_id=1557496029 instance=ExtResource("21_fykio")]
+[node name="BoarGreen" parent="Boars" unique_id=366967628 instance=ExtResource("21_fykio")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.7, 0, -2.599944)
+script = ExtResource("12_6nsoj")
 
-[node name="BoarYellow" parent="Boars" unique_id=922359660 instance=ExtResource("22_tc3uo")]
+[node name="BoarRed" parent="Boars" unique_id=2105937100 instance=ExtResource("9_d6375")]
+transform = Transform3D(0.96592563, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592563, 0.7, 0, -2.599944)
+script = ExtResource("12_6nsoj")
+
+[node name="BoarYellow" parent="Boars" unique_id=655083821 instance=ExtResource("22_tc3uo")]
 transform = Transform3D(0.7660444, 0, -0.6427875, 0, 1, 0, 0.6427875, 0, 0.7660444, 2, 0, -2.3553338)
-
-[node name="BoarBlue" parent="Boars" unique_id=1184518344 instance=ExtResource("23_uov22")]
-transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0.7, 0, -2.599944)
+script = ExtResource("12_6nsoj")
 
 [node name="Bin" parent="." unique_id=624201465 instance=ExtResource("13_0ulb0")]
 transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.7461958, -0.06462026, -5.408327)

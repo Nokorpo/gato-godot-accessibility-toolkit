@@ -1,14 +1,81 @@
 extends Node
 
-@onready var throwable_item_pool : ThrowableItemPool = %ThrowableItemPool
+signal match_color(TargetColor)
+signal mismatch_color(TargetColor)
+
+enum TargetColor { BLUE, GREEN, RED, YELLOW, BIN }
+
+@export var throw_path: Curve 
+@onready var throwable_item_pool: ThrowableItemPool = %ThrowableItemPool
+@onready var target_list: Dictionary[TargetColor, Node3D] = {
+	TargetColor.BLUE: $"../Boars/BoarBlue",
+	TargetColor.GREEN: $"../Boars/BoarGreen",
+	TargetColor.RED: $"../Boars/BoarRed",
+	TargetColor.YELLOW: $"../Boars/BoarYellow",
+	TargetColor.BIN: $"../Bin"
+}
+
+var current_item: ThrowableItem: 
+	get():
+		return throwable_item_pool.current_item
+var current_selection: TargetColor
+var selection_index: int
+var last_boar_selection: TargetColor
+var can_throw_item: bool = true
 
 func _ready():
 	throwable_item_pool.spawn_item()
+	current_selection = TargetColor.BLUE
 
-func _physics_process(delta):
-	if Input.is_action_just_pressed("jump"):
-		var current_item = throwable_item_pool.current_item.item_node
-		current_item.position.z += -0.5
-		await get_tree().create_timer(1).timeout
-		throwable_item_pool.current_item.remove_item()
-		throwable_item_pool.spawn_item()
+func _process(delta):
+	if Input.is_action_just_pressed("ui_left"):
+		_select_left_boar()
+	if  Input.is_action_just_pressed("ui_right"):
+		_select_right_boar()
+	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
+		if current_selection != TargetColor.BIN:
+			last_boar_selection = current_selection
+			current_selection = TargetColor.BIN
+		else:
+			current_selection = last_boar_selection
+	if Input.is_action_just_pressed("ui_accept") && can_throw_item:
+		can_throw_item = false
+		_throw_item()
+
+func fire_towards():
+	var tween: Tween = current_item.item_node.create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(current_item.item_node, 'global_position:x', target_list[current_selection].global_position.x, 0.8)
+	tween.tween_property(current_item.item_node, 'global_position:z', target_list[current_selection].global_position.z, 0.8)
+	tween.tween_method(_set_current_item_height, 0.0, 1.0, 0.8)
+	await tween.finished
+
+func _throw_item():
+	current_item.stop_anim_player()
+	await fire_towards()
+	_check_color_match()
+	await get_tree().create_timer(0.3).timeout
+	current_item.remove_item()
+	throwable_item_pool.spawn_item()
+	can_throw_item = true
+
+func _set_current_item_height(weight: float):
+	current_item.item_node.position.y = throw_path.sample(weight)
+
+func _select_left_boar():
+	selection_index -= 1
+	if selection_index < 0:
+		selection_index = target_list.size() - 2
+	current_selection = selection_index as TargetColor
+
+func _select_right_boar():
+	selection_index += 1
+	if selection_index >= target_list.size() - 1:
+		selection_index = 0
+	current_selection = selection_index as TargetColor
+
+func _check_color_match():
+	if str(current_item.matching_color) == TargetColor.find_key(current_selection):
+		match_color.emit(TargetColor.find_key(current_selection))
+	else:
+		mismatch_color.emit(TargetColor.find_key(current_selection))

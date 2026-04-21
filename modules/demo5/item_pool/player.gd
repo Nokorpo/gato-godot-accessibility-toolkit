@@ -2,6 +2,7 @@ extends Node
 
 signal match_color(TargetColor)
 signal mismatch_color(TargetColor)
+signal focus_target(TargetColor, bool)
 
 enum TargetColor { BLUE, GREEN, RED, YELLOW, BIN }
 
@@ -26,18 +27,24 @@ var can_throw_item: bool = true
 func _ready():
 	throwable_item_pool.spawn_item()
 	current_selection = TargetColor.BLUE
+	emit_signal("focus_target", TargetColor.BLUE, true)
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_left"):
-		_select_left_boar()
+		if current_selection != TargetColor.BIN:
+			select_left_boar()
 	if  Input.is_action_just_pressed("ui_right"):
-		_select_right_boar()
+		if current_selection != TargetColor.BIN:
+			select_right_boar()
 	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
 		if current_selection != TargetColor.BIN:
 			last_boar_selection = current_selection
 			current_selection = TargetColor.BIN
+			emit_signal("focus_target", TargetColor.find_key(last_boar_selection), false)
+			emit_signal("focus_target", TargetColor.find_key(current_selection), true)
 		else:
 			current_selection = last_boar_selection
+			emit_signal("focus_target", TargetColor.find_key(last_boar_selection), false)
 	if Input.is_action_just_pressed("ui_accept") && can_throw_item:
 		can_throw_item = false
 		_throw_item()
@@ -62,20 +69,25 @@ func _throw_item():
 func _set_current_item_height(weight: float):
 	current_item.item_node.position.y = throw_path.sample(weight)
 
-func _select_left_boar():
+func select_left_boar():
 	selection_index -= 1
 	if selection_index < 0:
 		selection_index = target_list.size() - 2
 	current_selection = selection_index as TargetColor
+	emit_signal("focus_target", TargetColor.find_key(last_boar_selection), false)
+	emit_signal("focus_target", TargetColor.find_key(current_selection), true)
 
-func _select_right_boar():
+func select_right_boar():
 	selection_index += 1
 	if selection_index >= target_list.size() - 1:
 		selection_index = 0
 	current_selection = selection_index as TargetColor
+	emit_signal("focus_target", TargetColor.find_key(last_boar_selection), false)
+	emit_signal("focus_target", TargetColor.find_key(current_selection), true)
 
 func _check_color_match():
 	if str(current_item.matching_color) == TargetColor.find_key(current_selection):
-		match_color.emit(TargetColor.find_key(current_selection))
+		emit_signal("match_color", TargetColor.find_key(current_selection))
+
 	else:
-		mismatch_color.emit(TargetColor.find_key(current_selection))
+		emit_signal("mismatch_color", TargetColor.find_key(current_selection))

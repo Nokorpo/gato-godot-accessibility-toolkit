@@ -14,11 +14,10 @@ func _ready():
 
 func eat_acorn(matching_color):
 	if matching_color == color:
-		anim_player.play("eat")
 		anim_player.animation_set_next("eat", "idle")
+		anim_player.play("eat")
 
-func refuse_acorn(matching_color):
-	#if matching_color == color:
-		#anim_player.play("refuse")
-		#anim_player.animation_set_next("refuset", "idle")
-	pass
+func refuse_acorn(matching_color, ):
+	if matching_color == color:
+		anim_player.animation_set_next("refuse", "idle")
+		anim_player.play("refuse")

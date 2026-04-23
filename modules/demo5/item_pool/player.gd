@@ -88,6 +88,5 @@ func select_right_boar():
 func _check_color_match():
 	if str(current_item.matching_color) == TargetColor.find_key(current_selection):
 		emit_signal("match_color", TargetColor.find_key(current_selection))
-
 	else:
 		emit_signal("mismatch_color", TargetColor.find_key(current_selection))

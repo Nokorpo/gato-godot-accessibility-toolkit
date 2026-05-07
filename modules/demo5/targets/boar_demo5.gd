@@ -2,13 +2,13 @@ extends Node
 
 @export_enum("BLUE","RED","GREEN","YELLOW") var color: String
 
-@onready var player : Node = %Player
+@onready var player: Node = %Player
 
-var anim_player : AnimationPlayer
+var anim_player: AnimationPlayer
 
 func _ready():
-	player.connect("match_color", eat_acorn)
-	player.connect("mismatch_color", refuse_acorn)
+	player.connect("matched_color", eat_acorn)
+	player.connect("mismatched_color", refuse_acorn)
 	anim_player = get_node("AnimationPlayer")
 	anim_player.play("idle")
 

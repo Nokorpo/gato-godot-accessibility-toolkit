@@ -9,8 +9,8 @@ var is_open: bool = false
 
 func _ready():
 	anim_player = get_node("AnimationPlayer")
-	player.connect("match_color", _receive_item)
-	player.connect("focus_target", _focus)
+	player.connect("matched_color", _receive_item)
+	player.connect("focused_target", _focus)
 
 func _receive_item(match_color):
 	if match_color == color:

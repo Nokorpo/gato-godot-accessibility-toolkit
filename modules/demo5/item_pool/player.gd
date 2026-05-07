@@ -30,21 +30,6 @@ func _ready():
 	emit_signal("focused_target", TargetColor.BLUE, true)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_left"):
-		if current_selection != TargetColor.BIN:
-			select_left_boar()
-	if  Input.is_action_just_pressed("ui_right"):
-		if current_selection != TargetColor.BIN:
-			select_right_boar()
-	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
-		if current_selection != TargetColor.BIN:
-			last_boar_selection = current_selection
-			current_selection = TargetColor.BIN
-			emit_signal("focus_target", TargetColor.find_key(last_boar_selection), false)
-			emit_signal("focus_target", TargetColor.find_key(current_selection), true)
-		else:
-			current_selection = last_boar_selection
-			emit_signal("focus_target", TargetColor.find_key(last_boar_selection), false)
 	if Input.is_action_just_pressed("ui_accept") && can_throw_item:
 		can_throw_item = false
 		_throw_item()

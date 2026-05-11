@@ -20,6 +20,7 @@ var current_item: ThrowableItem:
 	get():
 		return throwable_item_pool.current_item
 var current_selection: TargetColor
+var selected_color: TargetColor
 var selection_index: int
 var last_boar_selection: TargetColor
 var can_throw_item: bool = true
@@ -31,6 +32,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") && can_throw_item:
+		selected_color = current_selection
 		can_throw_item = false
 		_throw_item()
 
@@ -88,7 +90,7 @@ func select_right_boar():
 	emit_signal("focused_target", TargetColor.find_key(current_selection), true)
 
 func _check_color_match():
-	if str(current_item.matching_color) == TargetColor.find_key(current_selection):
-		emit_signal("matched_color", TargetColor.find_key(current_selection))
+	if str(current_item.matching_color) == TargetColor.find_key(selected_color):
+		emit_signal("matched_color", TargetColor.find_key(selected_color))
 	else:
-		emit_signal("mismatched_color", TargetColor.find_key(current_selection))
+		emit_signal("mismatched_color", TargetColor.find_key(selected_color))

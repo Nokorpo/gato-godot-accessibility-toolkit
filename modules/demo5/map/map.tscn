@@ -144,38 +144,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.218, 1.135)
 non_accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr"), SubResource("Resource_re70a"), SubResource("Resource_eksg7"), SubResource("Resource_7boki"), SubResource("Resource_nt0k8")])
 
-[node name="Player" type="Node3D" parent="." unique_id=989785125]
-unique_name_in_owner = true
-script = ExtResource("3_4a7kf")
-throw_path = SubResource("Curve_awgv7")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=489021595]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.218, 1.135)
-
-[node name="BasketballBall" parent="Camera3D" unique_id=1043666953 instance=ExtResource("3_0ulb0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
-visible = false
-
-[node name="BaseballBall" parent="Camera3D" unique_id=1939063160 instance=ExtResource("4_j3q1o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
-visible = false
-
-[node name="Box" parent="Camera3D" unique_id=1434850014 instance=ExtResource("5_fykio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
-visible = false
-
-[node name="Branch" parent="Camera3D" unique_id=1678581528 instance=ExtResource("6_tc3uo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
-visible = false
-
-[node name="Glasses" parent="Camera3D" unique_id=981480454 instance=ExtResource("7_uov22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
-visible = false
-
-[node name="Wrench2" parent="Camera3D" unique_id=1418436938 instance=ExtResource("8_d6375")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.2804967, -0.235, -0.836)
-visible = false
-
 [node name="Boars" type="Node3D" parent="." unique_id=1098203158]
 
 [node name="BoarBlue" parent="Boars" unique_id=1537324264 instance=ExtResource("23_uov22")]
@@ -210,9 +178,41 @@ color = "YELLOW"
 [node name="HeartParticles" parent="Boars/BoarYellow" unique_id=323562806 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
+[node name="Player" type="Node3D" parent="." unique_id=989785125]
+unique_name_in_owner = true
+script = ExtResource("3_4a7kf")
+throw_path = SubResource("Curve_awgv7")
+
 [node name="Bin" parent="." unique_id=624201465 instance=ExtResource("13_0ulb0")]
 transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.7461958, -0.06462026, -5.408327)
 script = ExtResource("17_k2hu1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=489021595]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.218, 1.135)
+
+[node name="BasketballBall" parent="Camera3D" unique_id=1043666953 instance=ExtResource("3_0ulb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="BaseballBall" parent="Camera3D" unique_id=1939063160 instance=ExtResource("4_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Box" parent="Camera3D" unique_id=1434850014 instance=ExtResource("5_fykio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Branch" parent="Camera3D" unique_id=1678581528 instance=ExtResource("6_tc3uo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Glasses" parent="Camera3D" unique_id=981480454 instance=ExtResource("7_uov22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71272963, -1.216)
+visible = false
+
+[node name="Wrench2" parent="Camera3D" unique_id=1418436938 instance=ExtResource("8_d6375")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.2804967, -0.235, -0.836)
+visible = false
 
 [node name="Props" type="Node3D" parent="." unique_id=516168187]
 

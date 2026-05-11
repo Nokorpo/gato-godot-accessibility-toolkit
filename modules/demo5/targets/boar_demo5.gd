@@ -11,9 +11,9 @@ var heart_particles: GPUParticles3D
 var fed: bool = false
 
 func _ready():
+	player.connect("focused_target", focus_feedback)
 	player.connect("matched_color", eat_acorn)
 	player.connect("mismatched_color", refuse_acorn)
-	player.connect("focused_target", focus_feedback)
 	anim_player = get_node("AnimationPlayer")
 	heart_particles = get_node("HeartParticles")
 	body_material = find_child("Body", true, false).get_active_material(0)

@@ -28,7 +28,7 @@ var can_throw_item: bool = true
 func _ready():
 	throwable_item_pool.spawn_item()
 	current_selection = TargetColor.BLUE
-	emit_signal("focused_target", TargetColor.BLUE, true)
+	emit_signal("focused_target", TargetColor.find_key(last_boar_selection), true)
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") && can_throw_item:

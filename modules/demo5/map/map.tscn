@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bb3haljhc606v" path="res://modules/demo1/map/props/rock.gltf" id="4_3xldr"]
 [ext_resource type="PackedScene" uid="uid://bde5jf3dosw61" path="res://modules/demo5/item_pool/ThrowableItemPool.tscn" id="4_awgv7"]
 [ext_resource type="PackedScene" uid="uid://ttidbrw4r1gb" path="res://modules/demo5/throwable_items/baseball_ball.tscn" id="4_j3q1o"]
+[ext_resource type="Script" uid="uid://sx7wfewhlap7" path="res://modules/demo5/item_pool/throwable_item.gd" id="4_vvos1"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="5_2woxq"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_5ku2k"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="5_cyo0x"]
@@ -18,16 +19,101 @@
 [ext_resource type="PackedScene" uid="uid://eloijn3cq0rw" path="res://modules/demo5/throwable_items/wrench.tscn" id="8_d6375"]
 [ext_resource type="PackedScene" uid="uid://btbwdsksnh62b" path="res://modules/characters/boar/mesh/boar_red.tscn" id="9_d6375"]
 [ext_resource type="PackedScene" uid="uid://bckenvh5w3j2p" path="res://modules/demo1/map/props/rock_group.gltf" id="10_4g4qy"]
+[ext_resource type="PackedScene" uid="uid://dk18i5oglbj2y" path="res://modules/level_objects/acorn/regular_acorn_red.tscn" id="11_861yp"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="11_fjpig"]
 [ext_resource type="Script" uid="uid://dq47fh362xasw" path="res://modules/demo5/targets/boar_demo5.gd" id="12_6nsoj"]
+[ext_resource type="PackedScene" uid="uid://cwml83hpf6t1y" path="res://modules/level_objects/acorn/regular_acorn_blue.tscn" id="12_lt41x"]
 [ext_resource type="PackedScene" uid="uid://cu1uku0gtuupp" path="res://modules/demo5/map/props/bin.tscn" id="13_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="13_fjpig"]
+[ext_resource type="PackedScene" uid="uid://cqbe1fbalf581" path="res://modules/demo1/map/vfx/heart_particles.tscn" id="13_j3q1o"]
+[ext_resource type="PackedScene" uid="uid://c507oviog8v0x" path="res://modules/level_objects/acorn/regular_acorn_yellow.tscn" id="13_wuv32"]
+[ext_resource type="PackedScene" uid="uid://in10cqcgu1h0" path="res://modules/level_objects/acorn/regular_acorn_green.tscn" id="14_lt2dd"]
 [ext_resource type="Script" uid="uid://c1156hiardwed" path="res://modules/demo5/targets/bin.gd" id="17_k2hu1"]
 [ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
 [ext_resource type="PackedScene" uid="uid://c7vf1css0b8xp" path="res://modules/demo5/map/props/pine_without_fading.tscn" id="22_d6375"]
 [ext_resource type="PackedScene" uid="uid://ctkf5kicchy5p" path="res://modules/characters/boar/mesh/boar_yellow_long-eared.glb" id="22_tc3uo"]
 [ext_resource type="PackedScene" uid="uid://blrbkueqfxiqt" path="res://modules/demo5/map/props/pine_small_without_fading.tscn" id="23_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
+
+[sub_resource type="Resource" id="Resource_pipgt"]
+script = ExtResource("4_vvos1")
+item_name = "Basketball Ball"
+item_scene = ExtResource("3_0ulb0")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_3deg2"]
+script = ExtResource("4_vvos1")
+item_name = "Baseball Ball"
+item_scene = ExtResource("4_j3q1o")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_xyoqn"]
+script = ExtResource("4_vvos1")
+item_name = "Box"
+item_scene = ExtResource("5_fykio")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_8ba6i"]
+script = ExtResource("4_vvos1")
+item_name = "Branch"
+item_scene = ExtResource("6_tc3uo")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_73cli"]
+script = ExtResource("4_vvos1")
+item_name = "Glasses"
+item_scene = ExtResource("7_uov22")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_hguqr"]
+script = ExtResource("4_vvos1")
+item_name = "Wrench"
+item_scene = ExtResource("8_d6375")
+spawn_point = Vector3(-0.2804967, -0.235, -0.836)
+matching_color = "BIN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_re70a"]
+script = ExtResource("4_vvos1")
+item_name = "Accessible Red Acorn"
+item_scene = ExtResource("11_861yp")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "RED"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_eksg7"]
+script = ExtResource("4_vvos1")
+item_name = "Acorn Blue"
+item_scene = ExtResource("12_lt41x")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BLUE"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_7boki"]
+script = ExtResource("4_vvos1")
+item_name = "Acorn Yellow"
+item_scene = ExtResource("13_wuv32")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "YELLOW"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_nt0k8"]
+script = ExtResource("4_vvos1")
+item_name = "Acorn Green"
+item_scene = ExtResource("14_lt2dd")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "GREEN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Curve" id="Curve_awgv7"]
 _limits = [0.0, 1.2, 0.0, 1.0]
@@ -56,6 +142,7 @@ visible = false
 [node name="ThrowableItemPool" parent="." unique_id=872441548 instance=ExtResource("4_awgv7")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.218, 1.135)
+non_accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr"), SubResource("Resource_re70a"), SubResource("Resource_eksg7"), SubResource("Resource_7boki"), SubResource("Resource_nt0k8")])
 
 [node name="Player" type="Node3D" parent="." unique_id=989785125]
 unique_name_in_owner = true
@@ -96,20 +183,32 @@ transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.76604
 script = ExtResource("12_6nsoj")
 color = "BLUE"
 
+[node name="HeartParticles" parent="Boars/BoarBlue" unique_id=1449183892 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
 [node name="BoarGreen" parent="Boars" unique_id=993665613 instance=ExtResource("21_fykio")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.7, 0, -2.599944)
 script = ExtResource("12_6nsoj")
 color = "GREEN"
+
+[node name="HeartParticles" parent="Boars/BoarGreen" unique_id=719473685 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
 [node name="BoarRed" parent="Boars" unique_id=2105937100 instance=ExtResource("9_d6375")]
 transform = Transform3D(0.96592563, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592563, 0.7, 0, -2.599944)
 script = ExtResource("12_6nsoj")
 color = "RED"
 
+[node name="HeartParticles" parent="Boars/BoarRed" unique_id=347695972 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
 [node name="BoarYellow" parent="Boars" unique_id=517087124 instance=ExtResource("22_tc3uo")]
 transform = Transform3D(0.7660444, 0, -0.6427875, 0, 1, 0, 0.6427875, 0, 0.7660444, 2, 0, -2.3553338)
 script = ExtResource("12_6nsoj")
 color = "YELLOW"
+
+[node name="HeartParticles" parent="Boars/BoarYellow" unique_id=323562806 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
 [node name="Bin" parent="." unique_id=624201465 instance=ExtResource("13_0ulb0")]
 transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.7461958, -0.06462026, -5.408327)

@@ -116,8 +116,8 @@ matching_color = "GREEN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Curve" id="Curve_awgv7"]
-_limits = [0.0, 1.2, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 4.096431, 0, 0, Vector2(0.5652174, 1.2), -0.2760356, -0.2760356, 0, 0, Vector2(1, 0), -7.7502275, 0.0, 0, 0]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 4.096431, 0, 0, Vector2(0.5111111, 2), 1.3155365, 1.3155365, 0, 0, Vector2(1, 0), -7.7502275, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
@@ -145,6 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 non_accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr"), SubResource("Resource_re70a"), SubResource("Resource_eksg7"), SubResource("Resource_7boki"), SubResource("Resource_nt0k8")])
 
 [node name="Boars" type="Node3D" parent="." unique_id=1098203158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [node name="BoarBlue" parent="Boars" unique_id=1537324264 instance=ExtResource("23_uov22")]
 transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, -2, 0, -2.355)
@@ -154,6 +155,9 @@ color = "BLUE"
 [node name="HeartParticles" parent="Boars/BoarBlue" unique_id=1449183892 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
+[node name="Offset" type="Node3D" parent="Boars/BoarBlue" unique_id=1392857042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
 [node name="BoarGreen" parent="Boars" unique_id=993665613 instance=ExtResource("21_fykio")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.7, 0, -2.599944)
 script = ExtResource("12_6nsoj")
@@ -161,6 +165,9 @@ color = "GREEN"
 
 [node name="HeartParticles" parent="Boars/BoarGreen" unique_id=719473685 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
+[node name="Offset" type="Node3D" parent="Boars/BoarGreen" unique_id=54480078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
 [node name="BoarRed" parent="Boars" unique_id=2105937100 instance=ExtResource("9_d6375")]
 transform = Transform3D(0.96592563, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592563, 0.7, 0, -2.599944)
@@ -170,6 +177,9 @@ color = "RED"
 [node name="HeartParticles" parent="Boars/BoarRed" unique_id=347695972 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
+[node name="Offset" type="Node3D" parent="Boars/BoarRed" unique_id=811200842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
 [node name="BoarYellow" parent="Boars" unique_id=517087124 instance=ExtResource("22_tc3uo")]
 transform = Transform3D(0.7660444, 0, -0.6427875, 0, 1, 0, 0.6427875, 0, 0.7660444, 2, 0, -2.3553338)
 script = ExtResource("12_6nsoj")
@@ -178,14 +188,20 @@ color = "YELLOW"
 [node name="HeartParticles" parent="Boars/BoarYellow" unique_id=323562806 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
+[node name="Offset" type="Node3D" parent="Boars/BoarYellow" unique_id=849370080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
 [node name="Player" type="Node3D" parent="." unique_id=989785125]
 unique_name_in_owner = true
 script = ExtResource("3_4a7kf")
 throw_path = SubResource("Curve_awgv7")
 
 [node name="Bin" parent="." unique_id=624201465 instance=ExtResource("13_0ulb0")]
-transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.7461958, -0.06462026, -5.408327)
+transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.746, 0.2, -5.408)
 script = ExtResource("17_k2hu1")
+
+[node name="Offset" type="Node3D" parent="Bin" unique_id=1086337685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11436019, 0, -1.952178)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=489021595]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.218, 1.135)
@@ -215,20 +231,21 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.2
 visible = false
 
 [node name="Props" type="Node3D" parent="." unique_id=516168187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [node name="Floor" type="Node3D" parent="Props" unique_id=241929415]
 
 [node name="PlatformGrass" parent="Props/Floor" unique_id=1115931623 instance=ExtResource("5_5ku2k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5872962, -4.0264034)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5379117, -4.0264034)
 
 [node name="PlatformGrass4" parent="Props/Floor" unique_id=9458462 instance=ExtResource("5_5ku2k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70451736, -1.9328241, -0.38282442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70451736, -1.8834395, -0.38282442)
 
 [node name="PlatformGrass3" parent="Props/Floor" unique_id=1296197818 instance=ExtResource("5_5ku2k")]
-transform = Transform3D(0.87441653, 0, -0.48517594, 0, 1, 0, 0.48517594, 0, 0.87441653, 4.649216, -1.5872962, -1.975306)
+transform = Transform3D(0.87441653, 0, -0.48517594, 0, 1, 0, 0.48517594, 0, 0.87441653, 4.649216, -1.5379117, -1.975306)
 
 [node name="PlatformGrass2" parent="Props/Floor" unique_id=930116318 instance=ExtResource("5_5ku2k")]
-transform = Transform3D(0.60509944, 0, 0.7961499, 0, 1, 0, -0.7961499, 0, 0.60509944, -3.613221, -1.5902177, -2.509659)
+transform = Transform3D(0.60509944, 0, 0.7961499, 0, 1, 0, -0.7961499, 0, 0.60509944, -3.613221, -1.5408332, -2.509659)
 
 [node name="FloorSand" parent="Props/Floor" unique_id=1399967608 instance=ExtResource("5_2woxq")]
 transform = Transform3D(0.9362191, 0, 0.35141683, 0, 1, 0, -0.35141683, 0, 0.9362191, -8.087306, -1.5360065, -11.364171)

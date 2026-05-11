@@ -56,9 +56,9 @@ func _process(delta):
 func _animate_item_launch():
 	var tween: Tween = current_item.item_node.create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(current_item.item_node, 'global_position:x', target_list[current_selection].global_position.x, 0.8)
-	tween.tween_property(current_item.item_node, 'global_position:z', target_list[current_selection].global_position.z, 0.8)
-	tween.tween_method(_set_current_item_height, 0.0, 1.0, 0.8)
+	tween.tween_property(current_item.item_node, 'global_position:x', target_list[current_selection].find_child("Offset", true).global_position.x, 0.9)
+	tween.tween_property(current_item.item_node, 'global_position:z', target_list[current_selection].find_child("Offset", true).global_position.z, 0.9)
+	tween.tween_method(_set_current_item_height, 0.0, 1.0, 1.0)
 	await tween.finished
 
 func _throw_item():

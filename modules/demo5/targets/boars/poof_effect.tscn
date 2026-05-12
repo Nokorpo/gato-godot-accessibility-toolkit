@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://0cqjbqj142cw"]
+
+[ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="1_gs84m"]
+
+[sub_resource type="Curve" id="Curve_fp34d"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46012267, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7crq6"]
+curve = SubResource("Curve_fp34d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sd2mf"]
+velocity_pivot = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_7crq6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdcha"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("1_gs84m")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_wv2uh"]
+material = SubResource("StandardMaterial3D_mdcha")
+
+[node name="PoofEffect" type="GPUParticles3D" unique_id=1925574660]
+emitting = false
+amount = 5
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_sd2mf")
+draw_pass_1 = SubResource("QuadMesh_wv2uh")

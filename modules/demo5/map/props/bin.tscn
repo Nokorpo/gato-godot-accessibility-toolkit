@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cu1uku0gtuupp"]
 
+[ext_resource type="Script" uid="uid://c1156hiardwed" path="res://modules/demo5/targets/bin/bin.gd" id="1_ckjwt"]
 [ext_resource type="PackedScene" uid="uid://bcbe3thpqw03r" path="res://modules/demo5/map/props/bin.gltf" id="1_nsw11"]
+[ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="2_i530e"]
+[ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="4_31ydy"]
 
 [sub_resource type="Animation" id="Animation_i530e"]
 resource_name = "RESET"
@@ -294,14 +297,89 @@ _data = {
 &"select": SubResource("Animation_sa4yy")
 }
 
+[sub_resource type="Curve" id="Curve_sa4yy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.422772, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jj7hd"]
+curve = SubResource("Curve_sa4yy")
+
+[sub_resource type="Gradient" id="Gradient_31ydy"]
+offsets = PackedFloat32Array(0, 0.34455958, 0.34715027, 0.6632124, 0.67098445, 1)
+colors = PackedColorArray(0.72003716, 0.48234874, 0.008772118, 1, 0.99607843, 0.6901961, 0.16078432, 1, 0.4977541, 0.002590782, 0.7980651, 1, 0.49803922, 0.003921569, 0.8, 1, 0.79607844, 0.15294118, 0, 1, 0.79607844, 0.15294118, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sa4yy"]
+gradient = SubResource("Gradient_31ydy")
+
+[sub_resource type="Curve" id="Curve_31ydy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.24029125, 0.8427907), -0.3558802, -0.3558802, 0, 0, Vector2(1, 1), -1.2885326, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_sa4yy"]
+curve = SubResource("Curve_31ydy")
+
+[sub_resource type="Curve" id="Curve_jj7hd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.54126215, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.2017674, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wwbem"]
+curve = SubResource("Curve_jj7hd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sa4yy"]
+emission_shape_scale = Vector3(0.1, 0.1, 0.1)
+angle_min = 1.0728835e-05
+angle_max = 180.00002
+direction = Vector3(0, 1, 0)
+spread = 8.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -180.00002
+angular_velocity_max = 179.99998
+gravity = Vector3(0, -10, 0)
+linear_accel_min = 14.999997
+linear_accel_max = 17.999998
+damping_max = 16.928001
+damping_curve = SubResource("CurveTexture_sa4yy")
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_wwbem")
+color_initial_ramp = SubResource("GradientTexture1D_sa4yy")
+alpha_curve = SubResource("CurveTexture_jj7hd")
+anim_speed_min = 2.0
+anim_speed_max = 5.0
+anim_offset_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jj7hd"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_31ydy")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wwbem"]
+material = SubResource("StandardMaterial3D_jj7hd")
+size = Vector2(0.1, 0.1)
+
 [node name="Bin" type="Node3D" unique_id=624201465]
+script = ExtResource("1_ckjwt")
 
 [node name="bin" parent="." unique_id=1956125334 instance=ExtResource("1_nsw11")]
 
-[node name="Lid" parent="bin" index="0" unique_id=204684314]
+[node name="Lid" parent="bin" index="0" unique_id=534957371]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.83441275, -0.41085005)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=493351293]
 libraries/ = SubResource("AnimationLibrary_jj7hd")
+
+[node name="PoofEffect" parent="." unique_id=1925574660 instance=ExtResource("2_i530e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="ConfettiEffect" type="GPUParticles3D" parent="." unique_id=1352415388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85556245, 0)
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.97
+process_material = SubResource("ParticleProcessMaterial_sa4yy")
+draw_pass_1 = SubResource("QuadMesh_wwbem")
 
 [editable path="bin"]

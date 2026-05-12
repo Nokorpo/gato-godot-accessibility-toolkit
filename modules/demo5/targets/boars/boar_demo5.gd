@@ -8,6 +8,8 @@ extends Node3D
 var body_material: StandardMaterial3D 
 var anim_player: AnimationPlayer
 var heart_particles: GPUParticles3D
+var eating_particles: CPUParticles3D
+var refusing_particles: GPUParticles3D
 var fed: bool = false
 
 func _ready():
@@ -16,6 +18,8 @@ func _ready():
 	player.connect("mismatched_color", refuse_acorn)
 	anim_player = get_node("AnimationPlayer")
 	heart_particles = get_node("HeartParticles")
+	eating_particles = get_node("EatingParticles")
+	refusing_particles = get_node("PoofEffect")
 	body_material = find_child("Body", true, false).get_active_material(0)
 	anim_player.play("idle")
 
@@ -23,6 +27,7 @@ func eat_acorn(matching_color):
 	if matching_color == color:
 		anim_player.animation_set_next("eat", "idle")
 		anim_player.play("eat")
+		eating_particles.emitting = true
 		if !fed:
 			await get_tree().create_timer(0.3).timeout
 			scale *= 1.2
@@ -33,6 +38,7 @@ func refuse_acorn(matching_color):
 	if matching_color == color:
 		anim_player.animation_set_next("refuse", "idle")
 		anim_player.play("refuse")
+		refusing_particles.emitting = true
 		if fed:
 			fed = false
 			heart_particles.emitting = false

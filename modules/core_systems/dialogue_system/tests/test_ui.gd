@@ -39,7 +39,7 @@ class TestDialogueUI extends GutTest:
 		var ui: Control = add_child_autofree(sut.instantiate())
 		DialogueSystem.ui = ui
 		DialogueSystem.load_dialogue(test_dialog)
-		DialogueSystem.current_message_index = 2
+		DialogueSystem._current_message_index = 2
 
 		var click := InputEventMouseButton.new()
 		click.button_index = MOUSE_BUTTON_LEFT

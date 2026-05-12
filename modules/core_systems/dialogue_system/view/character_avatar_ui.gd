@@ -1,9 +1,18 @@
 extends SubViewportContainer
+## This is a Control node that allows loading a 3D mesh and displaying it inside the UI. This is
+## used to display character avatars in the dialogue system.
+##
+## This node has a cache of characters, so if multiple messages use the same character, it won't
+## be loaded multiple times. It will only be loaded once.
 
 @onready var _character_container: Node3D = $SubViewport/Characters
 
 var _cached_characters: Dictionary[PackedScene, Node3D] = {}
 
+## Set the current displayed character. If the mesh was loaded previously, it will not load it
+## again, it will reuse the previously loaded scene.
+## Additionally, the animation and face texture can be passed to change the character's
+## expression.
 func set_avatar(mesh: PackedScene, animation: StringName, face: StringName) -> void:
 	for character: Node3D in _cached_characters.values():
 		character.hide()

@@ -14,15 +14,22 @@ func _input(event: InputEvent) -> void:
 		_toggle_visibility()
 
 func _toggle_visibility() -> void:
-	visible = !visible
-	get_tree().paused = visible
+	if visible:
+		await $BackgroundBlur.hide_blur().finished
+		get_tree().paused = false
+		visible = false
+	else:
+		visible = true
+		get_tree().paused = true
+		await $BackgroundBlur.show_blur().finished
+
 	if _settings_menu != null:
 		_settings_menu.queue_free()
 
 func open_settings() -> void:
 	var coso: PackedScene = load("res://addons/input_remapper/ui/input_remapper_ui.tscn")
 	_settings_menu = coso.instantiate()
-	add_child(_settings_menu)
+	$CanvasLayer.add_child(_settings_menu)
 
 func quit_and_go_to_menu() -> void:
 	get_tree().paused = false

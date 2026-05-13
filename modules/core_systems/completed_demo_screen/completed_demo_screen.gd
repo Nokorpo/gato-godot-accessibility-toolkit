@@ -8,11 +8,13 @@ const DEMO_SECTOR_PATH := "res://modules/demo_selector/demo_selector.tscn"
 func show_screen() -> void:
 	await get_tree().create_timer(0.5).timeout
 	visible = true
+	$BackgroundBlur.show_blur()
 	%AnimationPlayer.play("demo_completed")
 	get_tree().paused = true
 
 func resume_demo() -> void:
 	visible = false
+	$BackgroundBlur.hide_blur()
 	get_tree().paused = false
 
 func quit_and_go_to_menu() -> void:

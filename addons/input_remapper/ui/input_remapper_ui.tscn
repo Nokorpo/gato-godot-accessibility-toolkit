@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bw8doo3b01x73" path="res://addons/input_remapper/ui/press_key_dialog.tscn" id="5_6fg7x"]
 [ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="7_sty5u"]
 [ext_resource type="PackedScene" uid="uid://drqw3ka7ghfdn" path="res://addons/input_remapper/ui/input_action.tscn" id="9_cntqx"]
+[ext_resource type="PackedScene" uid="uid://pvxfv052stfv" path="res://addons/input_remapper/ui/background_blur/background_blur.tscn" id="10_8h5fo"]
 
 [node name="InputRemapperUi" type="Control" unique_id=718320937 node_paths=PackedStringArray("_control_scheme_selector", "_movement_input_map", "_interactions_action_container")]
 layout_mode = 3
@@ -159,6 +160,9 @@ button_text = "Space"
 layout_mode = 2
 text = "Save changes"
 
+[node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("10_8h5fo")]
+layout_mode = 1
+
 [node name="PressKeyDialog" parent="." unique_id=1683379886 instance=ExtResource("5_6fg7x")]
 layout_mode = 1
 
@@ -167,3 +171,5 @@ layout_mode = 1
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"jump"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2/InputAction" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"jump"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/SaveChangesButton" to="." method="save_changes"]
+[connection signal="input_read" from="PressKeyDialog" to="BackgroundBlur" method="hide_blur" unbinds=1]
+[connection signal="started_reading_input" from="PressKeyDialog" to="BackgroundBlur" method="show_blur"]

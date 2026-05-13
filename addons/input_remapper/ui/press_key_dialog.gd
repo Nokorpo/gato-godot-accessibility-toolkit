@@ -2,6 +2,7 @@ extends Control
 
 const EXCLUDED_KEYS := [KEY_ENTER, KEY_ESCAPE, KEY_META, KEY_CTRL, KEY_SHIFT, KEY_ALT]
 
+signal started_reading_input
 signal input_read(result: InputReadResult)
 
 var reading_input: bool = false
@@ -15,6 +16,7 @@ class InputReadResult:
 
 func start_reading_input():
 	reading_input = true
+	started_reading_input.emit()
 	show()
 
 func _input(event: InputEvent) -> void:

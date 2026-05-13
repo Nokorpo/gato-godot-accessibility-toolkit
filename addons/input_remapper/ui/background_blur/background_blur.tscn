@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://pvxfv052stfv"]
+
+[ext_resource type="Shader" uid="uid://c302iy36los2r" path="res://addons/input_remapper/ui/background_blur/blur.gdshader" id="1_1aaf0"]
+[ext_resource type="Script" uid="uid://db8j4t5yrixhk" path="res://addons/input_remapper/ui/background_blur/background_blur.gd" id="2_sshwh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ix0sm"]
+shader = ExtResource("1_1aaf0")
+shader_parameter/lod = 1.0000000475
+
+[node name="BackgroundBlur" type="ColorRect" unique_id=122701923]
+material = SubResource("ShaderMaterial_ix0sm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("2_sshwh")

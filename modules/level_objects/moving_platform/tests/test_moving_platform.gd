@@ -27,7 +27,6 @@ class TestMovingPlatforms extends GutTest:
 		var scene: Node = add_child_autofree(test_scene.instantiate())
 		var platform: Node3D = scene.find_child("MovingPlatform")
 		watch_signals(platform)
-		var acorn_platform: Node3D = scene.find_child("MovingAcornPlatform")
 		platform.travel_time = 0.0
 
 		platform.travel_to_destination()
@@ -42,7 +41,6 @@ class TestMovingPlatforms extends GutTest:
 		platform.travel_time = 0.0
 		platform.travel_to_destination()
 		watch_signals(platform)
-		var acorn_platform: Node3D = scene.find_child("MovingAcornPlatform")
 
 		platform.travel_to_origin()
 		await wait_for_signal(platform.target_reached, 2, "wait for platform to get into place")

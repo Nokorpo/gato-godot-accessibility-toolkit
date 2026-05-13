@@ -1,5 +1,6 @@
 @tool
 extends Node
+## A simple node that triggers a dialogue when the player enters an Area3D.
 
 @export var trigger_area: Area3D
 @export var dialogue: DialogueContainer

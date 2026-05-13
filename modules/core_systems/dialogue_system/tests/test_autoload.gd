@@ -26,7 +26,7 @@ class TestAutoload extends GutTest:
 
 	func test_run_out_of_messages() -> void:
 		DialogueSystem.load_dialogue(test_dialogue)
-		DialogueSystem.current_message_index = 2
+		DialogueSystem._current_message_index = 2
 
 		var dialogue := DialogueSystem.advance()
 

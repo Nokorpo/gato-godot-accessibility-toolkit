@@ -23,6 +23,7 @@ class TestGatoInput extends GutTest:
 	func test_player_walk_state():
 		#GIVEN
 		var gato: Node3D = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
+		gato.height_to_respawn = -INF
 
 		#WHEN
 		# FIXME this will fail in the future, we need to listen to a signal when the state machine changes state
@@ -37,15 +38,18 @@ class TestGatoInput extends GutTest:
 	func test_player_rotates():
 		#GIVEN
 		var gato: Node3D = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
+		gato.height_to_respawn = -INF
+		var state_machine: StateMachine = gato.find_child("StateMachine")
+		watch_signals(state_machine)
 
 		#WHEN
 		# FIXME this will fail in the future, we need to listen to a signal when the state machine changes state
-		_sender.action_down("move_right").action_down("move_down").hold_for(1)
+		_sender.action_down("move_right").action_down("move_down").hold_for(.5)
 		await(_sender.idle)
 
 		#THEN
 		var horizontal_movement := Vector2(gato.global_position.x, gato.global_position.z)
-		assert_gte(horizontal_movement, Vector2(1.0, 1.0), "Gato didn't move to the bottom right")
+		assert_gte(horizontal_movement, Vector2(.5, .5), "Gato didn't move to the bottom right")
 
 		var rotation_pivot: Node3D = gato.find_child("RotationPivot")
 		var gato_forward := rotation_pivot.global_transform.basis.z
@@ -55,6 +59,7 @@ class TestGatoInput extends GutTest:
 	func test_player_jump_state():
 		#GIVEN
 		var gato: Node = add_child_autofree(load("res://modules/characters/gato/gato.tscn").instantiate())
+		gato.height_to_respawn = -INF
 
 		#WHEN
 		_sender.action_down("jump").wait_frames(2)

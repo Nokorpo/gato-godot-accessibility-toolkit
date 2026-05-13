@@ -1,8 +1,8 @@
 extends Node
 
-signal matched_color(TargetColor)
-signal mismatched_color(TargetColor)
-signal focused_target(TargetColor, bool)
+signal matched_color(color: TargetColor)
+signal mismatched_color(color: TargetColor)
+signal focused_target(color: TargetColor, is_focused: bool)
 
 enum TargetColor { BLUE, GREEN, RED, YELLOW, BIN }
 

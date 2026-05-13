@@ -1,23 +1,13 @@
 [gd_scene format=3 uid="uid://b3arsyyy6i00q"]
 
-[ext_resource type="Script" uid="uid://dui74p83pulho" path="res://modules/core_systems/quit_confirmation/quit_confirmation.gd" id="1_rmy1v"]
-[ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/quit_confirmation/blurry_background.gdshader" id="1_xc7nc"]
+[ext_resource type="Script" uid="uid://dui74p83pulho" path="res://modules/core_systems/ui/quit_confirmation/quit_confirmation.gd" id="1_rmy1v"]
 [ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="2_4fu18"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fu18"]
-shader = ExtResource("1_xc7nc")
-shader_parameter/lod = 0.800000038
+[ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_xuqlc"]
 
 [node name="QuitConfirmation" type="CanvasLayer" unique_id=48681928]
 script = ExtResource("1_rmy1v")
 
-[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=1238796106]
-material = SubResource("ShaderMaterial_4fu18")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("2_xuqlc")]
 
 [node name="Control" type="Control" parent="." unique_id=127256246]
 layout_mode = 3

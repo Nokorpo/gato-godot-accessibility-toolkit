@@ -1,24 +1,14 @@
 [gd_scene format=3 uid="uid://cp1splssmfbra"]
 
 [ext_resource type="Script" uid="uid://bmx55hmllsepu" path="res://modules/core_systems/game_menu/game_menu.gd" id="1_7ww1i"]
-[ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/quit_confirmation/blurry_background.gdshader" id="2_hfreh"]
+[ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_hfreh"]
 [ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="3_uf5bn"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_umwhm"]
-shader = ExtResource("2_hfreh")
-shader_parameter/lod = 2.000000095
 
 [node name="GameMenu" type="CanvasLayer" unique_id=450146438]
 process_mode = 3
 script = ExtResource("1_7ww1i")
 
-[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=1494346127]
-material = SubResource("ShaderMaterial_umwhm")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("2_hfreh")]
 
 [node name="Control" type="Control" parent="." unique_id=176571196]
 layout_mode = 3
@@ -57,6 +47,9 @@ text = "Quit demo"
 
 [node name="OpenMenuCooldown" type="Timer" parent="." unique_id=470500546]
 wait_time = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1304368593]
+layer = 2
 
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/SettingsButton" to="." method="open_settings"]
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="quit_and_go_to_menu"]

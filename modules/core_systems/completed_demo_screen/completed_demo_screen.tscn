@@ -3,13 +3,9 @@
 [ext_resource type="Script" uid="uid://dthgk2jo23ufs" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.gd" id="1_121e6"]
 [ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="1_r634p"]
 [ext_resource type="Texture2D" uid="uid://d3tlxw1uwu2bx" path="res://modules/demo_selector/assets/completed_demo_tick.svg" id="2_je5n1"]
-[ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/quit_confirmation/blurry_background.gdshader" id="2_law7s"]
+[ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_law7s"]
 [ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="3_w1asq"]
-[ext_resource type="PackedScene" uid="uid://b3arsyyy6i00q" path="res://modules/core_systems/quit_confirmation/quit_confirmation.tscn" id="5_mhl6o"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qbok"]
-shader = ExtResource("2_law7s")
-shader_parameter/lod = 2.000000095
+[ext_resource type="PackedScene" uid="uid://b3arsyyy6i00q" path="res://modules/core_systems/ui/quit_confirmation/quit_confirmation.tscn" id="5_mhl6o"]
 
 [sub_resource type="Curve" id="Curve_121e6"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.55, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -132,13 +128,7 @@ _data = {
 [node name="CompletedDemoScreen" type="CanvasLayer" unique_id=67841330]
 script = ExtResource("1_121e6")
 
-[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=1139531347]
-material = SubResource("ShaderMaterial_0qbok")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("2_law7s")]
 
 [node name="Control" type="Control" parent="." unique_id=1341782388]
 layout_mode = 3

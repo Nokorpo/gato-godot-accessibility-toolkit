@@ -2,6 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_3xldr"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_2woxq"]
+[ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="2_861yp"]
 [ext_resource type="PackedScene" uid="uid://daishhn3xlx74" path="res://modules/demo5/throwable_items/basketball_ball.tscn" id="3_0ulb0"]
 [ext_resource type="Script" uid="uid://ksxqul2vd7wj" path="res://modules/demo5/item_pool/player.gd" id="3_4a7kf"]
 [ext_resource type="PackedScene" uid="uid://bb3haljhc606v" path="res://modules/demo1/map/props/rock.gltf" id="4_3xldr"]
@@ -169,6 +170,74 @@ environment = ExtResource("1_3xldr")
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
+
+[node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=2056743659]
+
+[node name="Control" type="Control" parent="ControlsHUD" unique_id=92571950]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_861yp")
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsHUD/Control" unique_id=389645768]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -508.0
+offset_bottom = 157.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlsHUD/Control/MarginContainer" unique_id=576732446]
+layout_mode = 2
+
+[node name="Action1" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=2068602926]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Action1Icon" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action1" unique_id=304479232]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+text = "SPACE/ENTER"
+horizontal_alignment = 2
+
+[node name="Action1" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action1" unique_id=1050725758]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Throw acorn"
+
+[node name="Action2" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=104217974]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Action2Icon" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=1152868665]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+text = "ARROWS"
+horizontal_alignment = 2
+
+[node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=1531043350]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Change target"
 
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("2_2woxq")]
 visible = false

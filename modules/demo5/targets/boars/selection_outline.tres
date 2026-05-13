@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bpgsx0346uqnl"]
+
+[resource]
+cull_mode = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.95421857, 0.95225626, 0.9858634, 1)
+grow = true
+grow_amount = 0.03
+proximity_fade_enabled = true
+proximity_fade_distance = 0.3

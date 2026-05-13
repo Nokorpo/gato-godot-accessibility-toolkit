@@ -20,6 +20,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Basketball Ball"
 item_scene = ExtResource("3_0ului")
 spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_3deg2"]
@@ -27,6 +28,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Baseball Ball"
 item_scene = ExtResource("4_pipgt")
 spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_xyoqn"]
@@ -34,6 +36,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Box"
 item_scene = ExtResource("5_kh6xt")
 spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_8ba6i"]
@@ -41,6 +44,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Branch"
 item_scene = ExtResource("6_iu1jo")
 spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_73cli"]
@@ -48,6 +52,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Glasses"
 item_scene = ExtResource("7_mwtjp")
 spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "BIN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_hguqr"]
@@ -55,6 +60,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Wrench"
 item_scene = ExtResource("8_boyh7")
 spawn_point = Vector3(-0.2804967, -0.235, -0.836)
+matching_color = "BIN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_re70a"]
@@ -62,8 +68,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Accessible Red Acorn"
 item_scene = ExtResource("9_mwtjp")
 spawn_point = Vector3(0, -0.71272963, -1.216)
-can_be_eaten = true
-matching_color = "red"
+matching_color = "RED"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_donvt"]
@@ -71,8 +76,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Accessible Blue Acorn"
 item_scene = ExtResource("10_eksg7")
 spawn_point = Vector3(0, -0.71272963, -1.216)
-can_be_eaten = true
-matching_color = "blue"
+matching_color = "BLUE"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_o66nx"]
@@ -80,8 +84,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Accessible Green Acorn"
 item_scene = ExtResource("11_udp35")
 spawn_point = Vector3(0, -0.71272963, -1.216)
-can_be_eaten = true
-matching_color = "green"
+matching_color = "GREEN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_1ymfx"]
@@ -89,8 +92,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Accessible Yellow Acorn"
 item_scene = ExtResource("12_7boki")
 spawn_point = Vector3(0, -0.71272963, -1.216)
-can_be_eaten = true
-matching_color = "yellow"
+matching_color = "YELLOW"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_eksg7"]
@@ -98,8 +100,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Acorn Blue"
 item_scene = ExtResource("13_boyh7")
 spawn_point = Vector3(0, -0.71272963, -1.216)
-can_be_eaten = true
-matching_color = "blue"
+matching_color = "BLUE"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_udp35"]
@@ -107,8 +108,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Acorn Green"
 item_scene = ExtResource("14_if4yi")
 spawn_point = Vector3(0, -0.71272963, -1.216)
-can_be_eaten = true
-matching_color = "green"
+matching_color = "YELLOW"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_7boki"]
@@ -116,8 +116,7 @@ script = ExtResource("2_2jtk5")
 item_name = "Acorn Yellow"
 item_scene = ExtResource("14_if4yi")
 spawn_point = Vector3(0, -0.71272963, -1.216)
-can_be_eaten = true
-matching_color = "yellow"
+matching_color = "YELLOW"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [node name="ThrowableItemPool" type="Node3D" unique_id=872441548]

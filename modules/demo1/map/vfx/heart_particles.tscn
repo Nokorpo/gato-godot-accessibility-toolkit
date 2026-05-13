@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cqbe1fbalf581"]
+
+[ext_resource type="Texture2D" uid="uid://b1d0cvmyi08cb" path="res://modules/demo1/map/sprites/heart.png" id="1_7rbjh"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08g3y"]
+emission_shape_scale = Vector3(0.2, 0.2, 0.2)
+angle_min = -20.0
+angle_max = 20.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfbha"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_7rbjh")
+backlight_enabled = true
+backlight = Color(0.74978, 0.74978, 0.74978, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ch3xj"]
+material = SubResource("StandardMaterial3D_mfbha")
+size = Vector2(0.2, 0.2)
+
+[node name="HeartParticles" type="GPUParticles3D" unique_id=1449183892]
+emitting = false
+amount = 3
+lifetime = 0.8
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_08g3y")
+draw_pass_1 = SubResource("QuadMesh_ch3xj")

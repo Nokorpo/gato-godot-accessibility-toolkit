@@ -23,7 +23,7 @@ script = ExtResource("1_uo2cf")
 
 [node name="UpRowNavigationContainer" parent="." unique_id=1696954489 instance=ExtResource("6_vkcyi")]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../ActionContainer/DownRowNavigationContainer")
+focus_neighbor_bottom = NodePath("../ActionContainer/UpRowNavigationContainer")
 mouse_filter = 0
 
 [node name="JoystickToggle" type="HBoxContainer" parent="UpRowNavigationContainer" unique_id=2053278748]

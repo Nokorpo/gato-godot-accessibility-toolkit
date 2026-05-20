@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bcbe3thpqw03r" path="res://modules/demo5/map/props/bin.gltf" id="1_nsw11"]
 [ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="2_i530e"]
 [ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="4_31ydy"]
+[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="5_sa4yy"]
 
 [sub_resource type="Animation" id="Animation_i530e"]
 resource_name = "RESET"
@@ -363,7 +364,7 @@ script = ExtResource("1_ckjwt")
 
 [node name="bin" parent="." unique_id=1956125334 instance=ExtResource("1_nsw11")]
 
-[node name="Lid" parent="bin" index="0" unique_id=204684314]
+[node name="Lid" parent="bin" index="0" unique_id=402591274]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.83441275, -0.41085005)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=493351293]
@@ -381,5 +382,10 @@ one_shot = true
 explosiveness = 0.97
 process_material = SubResource("ParticleProcessMaterial_sa4yy")
 draw_pass_1 = SubResource("QuadMesh_wwbem")
+
+[node name="Decal" type="Decal" parent="." unique_id=85073670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34931612, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("5_sa4yy")
 
 [editable path="bin"]

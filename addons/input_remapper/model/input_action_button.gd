@@ -20,6 +20,15 @@ func apply_config() -> void:
 	InputMap.action_erase_events(name)
 	InputMap.action_add_event(name, input)
 
+func equals(other_action: InputAction) -> bool:
+	if other_action is not InputActionButton:
+		return false
+	if name != other_action.name:
+		return false
+	if input.keycode != other_action.input.keycode:
+		return false
+	return true
+
 func get_as_dict() -> Dictionary:
 	return {
 		"type": "input_action_button",

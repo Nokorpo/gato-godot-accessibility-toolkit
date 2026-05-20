@@ -57,6 +57,11 @@ func set_action2d(action_name: StringName, new_input_action2d: InputAction) -> v
 	)
 	current_scheme.input_actions[action_index] = new_input_action2d
 
+func _has_unsaved_changes() -> bool:
+	var index: int = _get_scheme_index(InputRemapper.get_current_scheme())
+	var current_scheme := _schemes[index]
+	return not current_scheme.equals(InputRemapper.get_stored_config()[index])
+
 func save_changes() -> void:
 	InputRemapper.control_schemes = _schemes
 	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]

@@ -43,6 +43,16 @@ func apply_config() -> void:
 		InputMap.action_erase_events(direction_action)
 		InputMap.action_add_event(direction_action, input_map[direction.to_lower()])
 
+func equals(other_action: InputAction) -> bool:
+	if other_action is not JoystickInputAction2D:
+		return false
+	if name != other_action.name:
+		return false
+	if use_right_joystick != other_action.use_right_joystick \
+		or invert_joystick != other_action.invert_joystick:
+		return false
+	return true
+
 func get_as_dict() -> Dictionary:
 	return {
 		"type": "input_action2d_joystick",

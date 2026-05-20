@@ -14,6 +14,10 @@ func apply_config() -> void:
 func get_category() -> StringName:
 	return category
 
+func equals(other_action: InputAction) -> bool:
+	push_error("Error: method \"equals()\" not implemented")
+	return false
+
 func get_as_dict() -> Dictionary:
 	push_error("Error: method \"get_as_dict()\" not implemented")
 	return {}

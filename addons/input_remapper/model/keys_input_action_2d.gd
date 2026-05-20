@@ -25,17 +25,6 @@ func _init(
 func get_map() -> Dictionary[StringName, InputEvent]:
 	return { "up": up, "down": down, "left": left, "right": right }
 
-func get_as_dict() -> Dictionary:
-	return {
-		"type": "input_action2d_keys",
-		"name": name,
-		"category": category,
-		"up": JSON.stringify(JSON.from_native(up, true)),
-		"down": JSON.stringify(JSON.from_native(down, true)),
-		"left": JSON.stringify(JSON.from_native(left, true)),
-		"right": JSON.stringify(JSON.from_native(right, true))
-	}
-
 func apply_config() -> void:
 	var input_map: Dictionary[StringName, InputEvent] = get_map()
 	for direction: StringName in Direction.keys():
@@ -47,6 +36,29 @@ func apply_config() -> void:
 		# actually handling the inputmap should happen in a service
 		InputMap.action_erase_events(direction_action)
 		InputMap.action_add_event(direction_action, input_map[direction.to_lower()])
+
+func equals(other_action: InputAction) -> bool:
+	if other_action is not KeysInputAction2D:
+		return false
+	if name != other_action.name:
+		return false
+	if up.keycode != other_action.up.keycode \
+		or down.keycode != other_action.down.keycode \
+		or left.keycode != other_action.left.keycode \
+		or right.keycode != other_action.right.keycode:
+		return false
+	return true
+
+func get_as_dict() -> Dictionary:
+	return {
+		"type": "input_action2d_keys",
+		"name": name,
+		"category": category,
+		"up": JSON.stringify(JSON.from_native(up, true)),
+		"down": JSON.stringify(JSON.from_native(down, true)),
+		"left": JSON.stringify(JSON.from_native(left, true)),
+		"right": JSON.stringify(JSON.from_native(right, true))
+	}
 
 static func new_from_dict(dict: Dictionary) -> InputAction:
 	if dict["type"] != "input_action2d_keys":

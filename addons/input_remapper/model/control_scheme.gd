@@ -15,6 +15,27 @@ func get_as_dict() -> Dictionary:
 		"input_actions": input_actions.map(func(it): return it.get_as_dict()),
 	}
 
+func equals(other_scheme: GatoControlScheme) -> bool:
+	if self == other_scheme:
+		return true
+
+	if input_actions.size() != other_scheme.input_actions.size():
+		return false
+
+	var has_matches: Dictionary = {}
+	for action in input_actions:
+		has_matches[action] = false
+
+	for action in input_actions:
+		for other_action in other_scheme.input_actions:
+			if action.equals(other_action):
+				has_matches[action] = true
+				break
+
+	if has_matches.values().any(func(it): return it == false):
+		return false
+	return true
+
 static func new_from_dict(dict: Dictionary) -> InputConfig:
 	if dict["type"] != "control_scheme":
 		push_error("Tried to initialize a control scheme with values that aren't of type 'control_scheme'.")

@@ -39,6 +39,9 @@ func apply_control_scheme(control_scheme: GatoControlScheme) -> void:
 func save_changes() -> void:
 	storage_service.store_input_config(control_schemes)
 
+func get_stored_config() -> Array[GatoControlScheme]:
+	return storage_service.load_input_config_from_file()
+
 func reset_changes() -> void:
 	control_schemes = storage_service.load_input_config_from_file()
 	apply_control_scheme(control_schemes[current_control_scheme_index])

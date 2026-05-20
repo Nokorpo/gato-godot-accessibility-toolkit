@@ -6,7 +6,6 @@ const FOCUS_SCALE = Vector3.ONE * 1.3
 
 @export_enum("BLUE","RED","GREEN","YELLOW") var color: String
 
-@onready var player: Node = %Player
 @onready var outline_material: StandardMaterial3D = load("res://modules/demo5/targets/boars/selection_outline.tres")
 
 var body_material: StandardMaterial3D 
@@ -17,6 +16,7 @@ var refusing_particles: GPUParticles3D
 var fed: bool = false
 
 func _ready():
+	var player = get_tree().get_first_node_in_group("player")
 	player.connect("focused_target", focus_feedback)
 	player.connect("matched_color", eat_acorn)
 	player.connect("mismatched_color", refuse_acorn)

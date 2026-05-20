@@ -363,7 +363,7 @@ script = ExtResource("1_ckjwt")
 
 [node name="bin" parent="." unique_id=1956125334 instance=ExtResource("1_nsw11")]
 
-[node name="Lid" parent="bin" index="0" unique_id=534957371]
+[node name="Lid" parent="bin" index="0" unique_id=204684314]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.83441275, -0.41085005)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=493351293]

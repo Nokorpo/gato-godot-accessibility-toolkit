@@ -116,6 +116,11 @@ spawn_point = Vector3(0, -0.71272963, -1.216)
 matching_color = "GREEN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
+[sub_resource type="Curve" id="Curve_awgv7"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 4.096431, 0, 0, Vector2(0.5111111, 2), 1.3155365, 1.3155365, 0, 0, Vector2(1, 0), -7.7502275, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvos1"]
 no_depth_test = true
 albedo_color = Color(7.315874e-06, 0.668447, 0.89378923, 1)
@@ -149,11 +154,6 @@ albedo_color = Color(0.8887103, 0.6703262, 0, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_vvos1"]
 material = SubResource("StandardMaterial3D_pxjlt")
 size = Vector2(0.1, 0.1)
-
-[sub_resource type="Curve" id="Curve_awgv7"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 4.096431, 0, 0, Vector2(0.5111111, 2), 1.3155365, 1.3155365, 0, 0, Vector2(1, 0), -7.7502275, 0.0, 0, 0]
-point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
 albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
@@ -246,6 +246,10 @@ visible = false
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.218, 1.135)
 non_accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr"), SubResource("Resource_re70a"), SubResource("Resource_eksg7"), SubResource("Resource_7boki"), SubResource("Resource_nt0k8")])
+
+[node name="Player" type="Node3D" parent="." unique_id=989785125 groups=["player"]]
+script = ExtResource("3_4a7kf")
+throw_path = SubResource("Curve_awgv7")
 
 [node name="Boars" type="Node3D" parent="." unique_id=1098203158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
@@ -357,11 +361,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
 [node name="PoofEffect" parent="Boars/BoarYellow" unique_id=86073371 instance=ExtResource("18_861yp")]
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0.5500002)
-
-[node name="Player" type="Node3D" parent="." unique_id=989785125]
-unique_name_in_owner = true
-script = ExtResource("3_4a7kf")
-throw_path = SubResource("Curve_awgv7")
 
 [node name="Bin" parent="." unique_id=624201465 instance=ExtResource("13_0ulb0")]
 transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.746, 0.2, -5.408)

@@ -2,7 +2,6 @@ extends Node3D
 
 var color: String = "BIN"
 
-@onready var player = %Player
 @onready var confetti_effect: GPUParticles3D = $ConfettiEffect
 @onready var rejection_effect: GPUParticles3D = $PoofEffect
 @onready var outline_material: StandardMaterial3D = load("res://modules/demo5/targets/boars/selection_outline.tres")
@@ -12,6 +11,7 @@ var anim_player: AnimationPlayer
 var is_open: bool = false
 
 func _ready():
+	var player = get_tree().get_first_node_in_group("player")
 	anim_player = get_node("AnimationPlayer")
 	player.connect("matched_color", _receive_item)
 	player.connect("mismatched_color", _refuse_item)

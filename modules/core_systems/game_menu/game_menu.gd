@@ -9,9 +9,10 @@ const DEMO_SECTOR_PATH := "res://modules/demo_selector/demo_selector.tscn"
 
 var _settings_menu: Node
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("game_menu") and event.is_pressed():
 		_toggle_visibility()
+		get_viewport().set_input_as_handled()
 
 func _toggle_visibility() -> void:
 	if visible:

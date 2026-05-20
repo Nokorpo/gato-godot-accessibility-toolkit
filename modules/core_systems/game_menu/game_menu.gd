@@ -2,6 +2,8 @@ extends CanvasLayer
 
 const DEMO_SECTOR_PATH := "res://modules/demo_selector/demo_selector.tscn"
 
+signal closed
+
 ## A reference to the parent scene, removed when the "Quit" option is selected.
 @onready var parent_scene: Node = get_parent()
 ## Waits for some time after the menu button is pressed before opening/closing it again.
@@ -18,6 +20,7 @@ func _toggle_visibility() -> void:
 		await $BackgroundBlur.hide_blur().finished
 		get_tree().paused = false
 		visible = false
+		closed.emit()
 	else:
 		visible = true
 		get_tree().paused = true

@@ -36,6 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _is_back_input(event) and _has_unsaved_changes():
 		close_without_saving_dialog.show()
 		get_viewport().set_input_as_handled()
+	# else: don't set input as handled so the game can handle it
 
 func _get_scheme_index(scheme: GatoControlScheme) -> int:
 	return _schemes.find_custom(

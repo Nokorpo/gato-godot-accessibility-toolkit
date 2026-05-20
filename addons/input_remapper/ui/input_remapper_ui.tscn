@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="7_sty5u"]
 [ext_resource type="PackedScene" uid="uid://drqw3ka7ghfdn" path="res://addons/input_remapper/ui/input_action.tscn" id="9_cntqx"]
 [ext_resource type="PackedScene" uid="uid://pvxfv052stfv" path="res://addons/input_remapper/ui/background_blur/background_blur.tscn" id="10_8h5fo"]
+[ext_resource type="PackedScene" uid="uid://c0q1il8rqflxw" path="res://addons/input_remapper/ui/close_without_saving_dialog.tscn" id="12_ix0sm"]
 
 [node name="InputRemapperUi" type="Control" unique_id=718320937 node_paths=PackedStringArray("_control_scheme_selector", "_movement_input_map", "_interactions_action_container")]
 layout_mode = 3
@@ -166,6 +167,9 @@ layout_mode = 1
 [node name="PressKeyDialog" parent="." unique_id=1683379886 instance=ExtResource("5_6fg7x")]
 layout_mode = 1
 
+[node name="CloseWithoutSavingDialog" parent="." unique_id=84929324 instance=ExtResource("12_ix0sm")]
+layout_mode = 1
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"launch_item"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer/InputAction" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"launch_item"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer2" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"jump"]]
@@ -173,3 +177,5 @@ layout_mode = 1
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/SaveChangesButton" to="." method="save_changes"]
 [connection signal="input_read" from="PressKeyDialog" to="BackgroundBlur" method="hide_blur" unbinds=1]
 [connection signal="started_reading_input" from="PressKeyDialog" to="BackgroundBlur" method="show_blur"]
+[connection signal="appeared" from="CloseWithoutSavingDialog" to="BackgroundBlur" method="show_blur"]
+[connection signal="disappeared" from="CloseWithoutSavingDialog" to="BackgroundBlur" method="hide_blur"]

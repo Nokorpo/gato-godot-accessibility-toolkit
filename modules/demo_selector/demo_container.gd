@@ -13,10 +13,8 @@ func _ready() -> void:
 		add_child(new_preview)
 	get_child(0).grab_focus()
 
-func load_demo(data: DemoData):
+func load_demo(data: DemoData) -> SceneLoader:
 	if not data.scene:
 		push_error("Could not open the demo '%s'. The scene value is empty." % data.title)
 		return
-
-	var coso: SceneLoader = SceneLoader.create_scene_loader(demo_selector, data.scene.resource_path)
-	return coso
+	return SceneLoader.create_scene_loader(demo_selector, data.scene.resource_path)

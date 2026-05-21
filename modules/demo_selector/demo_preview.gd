@@ -21,8 +21,9 @@ func _on_pressed() -> void:
 	demo_pressed.emit(data)
 
 func _on_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
-		_on_pressed()
+	if event.is_pressed():
+		if event is InputEventMouseButton or event.is_action("ui_accept"):
+			_on_pressed()
 
 func _on_focus_entered() -> void:
 	%FocusPanel.self_modulate.a = 1

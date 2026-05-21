@@ -116,8 +116,8 @@ draw_pass_1 = SubResource("QuadMesh_ch3xj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
 [node name="Decal" type="Decal" parent="." unique_id=83828784]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34931612, 0)
-size = Vector3(0.75, 1, 0.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40498018, 0)
+size = Vector3(0.75, 0.8886719, 0.75)
 texture_albedo = ExtResource("9_dbq5w")
 
 [connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

@@ -2,18 +2,23 @@
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_3xldr"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_2woxq"]
+[ext_resource type="PackedScene" uid="uid://br28c4jlnwdwd" path="res://addons/gato_screen_filters/view/filter.tscn" id="2_38eui"]
 [ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="2_861yp"]
 [ext_resource type="PackedScene" uid="uid://daishhn3xlx74" path="res://modules/demo5/throwable_items/basketball_ball.tscn" id="3_0ulb0"]
 [ext_resource type="Script" uid="uid://ksxqul2vd7wj" path="res://modules/demo5/item_pool/player.gd" id="3_4a7kf"]
 [ext_resource type="PackedScene" uid="uid://bb3haljhc606v" path="res://modules/demo1/map/props/rock.gltf" id="4_3xldr"]
+[ext_resource type="PackedScene" uid="uid://cf7wq5vjixfnv" path="res://modules/demo5/hud/filter_button.tscn" id="4_33yh1"]
 [ext_resource type="PackedScene" uid="uid://bde5jf3dosw61" path="res://modules/demo5/item_pool/ThrowableItemPool.tscn" id="4_awgv7"]
 [ext_resource type="PackedScene" uid="uid://ttidbrw4r1gb" path="res://modules/demo5/throwable_items/baseball_ball.tscn" id="4_j3q1o"]
+[ext_resource type="Script" uid="uid://dsi6af4ga6hye" path="res://modules/demo5/hud/filter_menu.gd" id="4_lt41x"]
 [ext_resource type="Script" uid="uid://sx7wfewhlap7" path="res://modules/demo5/item_pool/throwable_item.gd" id="4_vvos1"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="5_2woxq"]
+[ext_resource type="Script" uid="uid://do2h2ywv65o1w" path="res://modules/demo5/hud/filter_type.gd" id="5_3vuti"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_5ku2k"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="5_cyo0x"]
 [ext_resource type="PackedScene" uid="uid://cx1ifxyiknxot" path="res://modules/demo5/throwable_items/box.tscn" id="5_fykio"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="6_4g4qy"]
+[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="6_33yh1"]
 [ext_resource type="PackedScene" uid="uid://cv8s3xqneydxw" path="res://modules/demo5/throwable_items/branch.tscn" id="6_tc3uo"]
 [ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="7_kp8o8"]
 [ext_resource type="PackedScene" uid="uid://dkfwr2e0hpswl" path="res://modules/demo5/throwable_items/glasses.tscn" id="7_uov22"]
@@ -35,6 +40,37 @@
 [ext_resource type="PackedScene" uid="uid://ctkf5kicchy5p" path="res://modules/characters/boar/mesh/boar_yellow_long-eared.glb" id="22_tc3uo"]
 [ext_resource type="PackedScene" uid="uid://blrbkueqfxiqt" path="res://modules/demo5/map/props/pine_small_without_fading.tscn" id="23_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
+[ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="36_nt0k8"]
+[ext_resource type="Material" uid="uid://d144g40pc4bq7" path="res://modules/demo5/map/props/interactables_without_fading.tres" id="37_pxjlt"]
+
+[sub_resource type="Resource" id="Resource_33yh1"]
+script = ExtResource("5_3vuti")
+metadata/_custom_type_script = "uid://do2h2ywv65o1w"
+
+[sub_resource type="Resource" id="Resource_3vuti"]
+script = ExtResource("5_3vuti")
+value = 1
+metadata/_custom_type_script = "uid://do2h2ywv65o1w"
+
+[sub_resource type="Resource" id="Resource_uxiln"]
+script = ExtResource("5_3vuti")
+value = 2
+metadata/_custom_type_script = "uid://do2h2ywv65o1w"
+
+[sub_resource type="Resource" id="Resource_rk43s"]
+script = ExtResource("5_3vuti")
+value = 3
+metadata/_custom_type_script = "uid://do2h2ywv65o1w"
+
+[sub_resource type="Resource" id="Resource_012p0"]
+script = ExtResource("5_3vuti")
+value = 4
+metadata/_custom_type_script = "uid://do2h2ywv65o1w"
+
+[sub_resource type="Resource" id="Resource_dmlar"]
+script = ExtResource("5_3vuti")
+value = 5
+metadata/_custom_type_script = "uid://do2h2ywv65o1w"
 
 [sub_resource type="Resource" id="Resource_pipgt"]
 script = ExtResource("4_vvos1")
@@ -171,6 +207,8 @@ transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 
+[node name="Filter" parent="." unique_id=417332123 instance=ExtResource("2_38eui")]
+
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=2056743659]
 
 [node name="Control" type="Control" parent="ControlsHUD" unique_id=92571950]
@@ -238,6 +276,51 @@ theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.2549
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
 text = "Change target"
+
+[node name="FiltersMenu" type="CanvasLayer" parent="." unique_id=1987695816 node_paths=PackedStringArray("filter_node", "filter_buttons_node", "filter_label")]
+script = ExtResource("4_lt41x")
+filter_node = NodePath("../Filter")
+filter_buttons_node = NodePath("VBoxContainer/FilterButtons")
+filter_label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FiltersMenu" unique_id=658160085]
+offset_right = 138.0
+offset_bottom = 57.0
+
+[node name="FilterButtons" type="HBoxContainer" parent="FiltersMenu/VBoxContainer" unique_id=798002959]
+layout_mode = 2
+alignment = 1
+
+[node name="Normal" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1045514460 instance=ExtResource("4_33yh1")]
+layout_mode = 2
+filter = SubResource("Resource_33yh1")
+
+[node name="Protanopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1654589995 instance=ExtResource("4_33yh1")]
+layout_mode = 2
+filter = SubResource("Resource_3vuti")
+
+[node name="Deuteranopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=602030319 instance=ExtResource("4_33yh1")]
+layout_mode = 2
+filter = SubResource("Resource_uxiln")
+
+[node name="Deuteranomaly" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1729026628 instance=ExtResource("4_33yh1")]
+layout_mode = 2
+filter = SubResource("Resource_rk43s")
+
+[node name="Tritanopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1131940632 instance=ExtResource("4_33yh1")]
+layout_mode = 2
+filter = SubResource("Resource_012p0")
+
+[node name="Achromatopsia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=794677414 instance=ExtResource("4_33yh1")]
+layout_mode = 2
+filter = SubResource("Resource_dmlar")
+
+[node name="Label" type="Label" parent="FiltersMenu/VBoxContainer" unique_id=1882255650]
+layout_mode = 2
+theme = ExtResource("6_33yh1")
+text = "a"
+horizontal_alignment = 1
+clip_text = true
 
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("2_2woxq")]
 visible = false
@@ -511,8 +594,13 @@ transform = Transform3D(0.96687686, 0, -0.25524327, 0, 1, 0, 0.25524327, 0, 0.96
 
 [node name="Pines" type="Node3D" parent="Props" unique_id=534130236]
 
-[node name="PineWithoutFading" parent="Props/Pines" unique_id=1696668845 instance=ExtResource("22_d6375")]
+[node name="PineWithoutFading" type="Node3D" parent="Props/Pines" unique_id=1696668845]
 transform = Transform3D(-0.2769121, 0, 0.9608953, 0, 1, 0, -0.9608953, 0, -0.2769121, -5.054429, -0.11159873, -3.6509304)
+
+[node name="Pine" parent="Props/Pines/PineWithoutFading" unique_id=1753780612 instance=ExtResource("36_nt0k8")]
+
+[node name="Pine" parent="Props/Pines/PineWithoutFading/Pine" index="0" unique_id=913634411]
+surface_material_override/0 = ExtResource("37_pxjlt")
 
 [node name="PineWithoutFading2" parent="Props/Pines" unique_id=1894947181 instance=ExtResource("22_d6375")]
 transform = Transform3D(-0.87033856, 0, -0.4924539, 0, 1, 0, 0.4924539, 0, -0.87033856, 6.206768, -0.95199704, -7.716184)
@@ -523,3 +611,5 @@ transform = Transform3D(0.12723774, 0, 0.99187225, 0, 1, 0, -0.99187225, 0, 0.12
 [node name="Water" type="MeshInstance3D" parent="." unique_id=517934670]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_ku402")
+
+[editable path="Props/Pines/PineWithoutFading/Pine"]

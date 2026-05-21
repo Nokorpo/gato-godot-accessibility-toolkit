@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cf7wq5vjixfnv"]
+
+[ext_resource type="Script" uid="uid://50pq3785dvwv" path="res://modules/demo5/hud/filter_button.gd" id="1_d3wom"]
+[ext_resource type="ButtonGroup" uid="uid://cjmfxlbum57u0" path="res://modules/demo5/hud/filter_button_group.tres" id="1_ttfl0"]
+[ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="2_a4bfr"]
+
+[node name="FilterButton" type="Button" unique_id=1045514460]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("1_ttfl0")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_d3wom")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1504179739]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_a4bfr")
+expand_mode = 2
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed_button" from="." to="." method="_on_pressed_button"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

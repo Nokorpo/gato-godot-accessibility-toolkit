@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://i2np7666k2dl" path="res://modules/level_objects/acorn/acorn.gd" id="1_0jmtj"]
 [ext_resource type="PackedScene" uid="uid://bswf3xbl752" path="res://modules/level_objects/acorn/acorn.glb" id="2_afr2q"]
+[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="3_a4p7a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0jmtj"]
 rough = true
@@ -22,3 +23,9 @@ script = ExtResource("1_0jmtj")
 shape = SubResource("SphereShape3D_nvhaj")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1787479011]
+
+[node name="Decal" type="Decal" parent="." unique_id=354399938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.194531, 0)
+size = Vector3(0.2, 10, 0.2)
+texture_albedo = ExtResource("3_a4p7a")
+lower_fade = 0.008

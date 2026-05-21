@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c7nhbbapx3716" path="res://modules/characters/gato/walk_state.gd" id="4_pbfhj"]
 [ext_resource type="Script" uid="uid://cqw6xey20fxnq" path="res://modules/characters/gato/jump_state.gd" id="6_ve5e5"]
 [ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="9_d7yls"]
+[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="10_fcelm"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fyq4e"]
 points = PackedVector3Array(-0.5, -1.2, 0, 0.5, -1.2, 0, 0.5, 1, 0, -0.5, 1, 0, -3, 1, 5, 3, 1, 5, 3, -1.2, 5, -3, -1.2, 5)
@@ -170,5 +171,12 @@ use_fixed_seed = true
 seed = 874316874
 process_material = SubResource("ParticleProcessMaterial_d7yls")
 draw_pass_1 = SubResource("QuadMesh_fcelm")
+
+[node name="Decal" type="Decal" parent="." unique_id=1451796742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.961867, 0)
+size = Vector3(0.75, 10, 0.75)
+texture_albedo = ExtResource("10_fcelm")
+lower_fade = 0.008
+distance_fade_enabled = true
 
 [connection signal="fall_from_height" from="." to="LandingDust" method="set_emitting" binds= [true]]

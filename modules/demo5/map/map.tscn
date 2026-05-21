@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://in10cqcgu1h0" path="res://modules/level_objects/acorn/regular_acorn_green.tscn" id="14_lt2dd"]
 [ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="18_861yp"]
 [ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
+[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="21_lt41x"]
 [ext_resource type="PackedScene" uid="uid://c7vf1css0b8xp" path="res://modules/demo5/map/props/pine_without_fading.tscn" id="22_d6375"]
 [ext_resource type="PackedScene" uid="uid://ctkf5kicchy5p" path="res://modules/characters/boar/mesh/boar_yellow_long-eared.glb" id="22_tc3uo"]
 [ext_resource type="PackedScene" uid="uid://blrbkueqfxiqt" path="res://modules/demo5/map/props/pine_small_without_fading.tscn" id="23_0ulb0"]
@@ -281,6 +282,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 [node name="PoofEffect" parent="Boars/BoarBlue" unique_id=1925574660 instance=ExtResource("18_861yp")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0.54999995)
 
+[node name="Decal" type="Decal" parent="Boars/BoarBlue" unique_id=13706500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
+
 [node name="BoarGreen" parent="Boars" unique_id=993665613 instance=ExtResource("21_fykio")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.7, 0, -2.599944)
 script = ExtResource("12_6nsoj")
@@ -307,6 +313,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
 [node name="PoofEffect" parent="Boars/BoarGreen" unique_id=1058293836 instance=ExtResource("18_861yp")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 5.9604645e-08, 0, 0.54999995)
+
+[node name="Decal" type="Decal" parent="Boars/BoarGreen" unique_id=1618827631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
 
 [node name="BoarRed" parent="Boars" unique_id=2105937100 instance=ExtResource("9_d6375")]
 transform = Transform3D(0.96592563, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592563, 0.7, 0, -2.599944)
@@ -335,6 +346,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 [node name="PoofEffect" parent="Boars/BoarRed" unique_id=153231458 instance=ExtResource("18_861yp")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.1920929e-07, 0, 0.54999995)
 
+[node name="Decal" type="Decal" parent="Boars/BoarRed" unique_id=466887127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
+
 [node name="BoarYellow" parent="Boars" unique_id=517087124 instance=ExtResource("22_tc3uo")]
 transform = Transform3D(0.7660444, 0, -0.6427875, 0, 1, 0, 0.6427875, 0, 0.7660444, 2, 0, -2.3553338)
 script = ExtResource("12_6nsoj")
@@ -361,6 +377,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
 [node name="PoofEffect" parent="Boars/BoarYellow" unique_id=86073371 instance=ExtResource("18_861yp")]
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0.5500002)
+
+[node name="Decal" type="Decal" parent="Boars/BoarYellow" unique_id=1533640754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
 
 [node name="Bin" parent="." unique_id=624201465 instance=ExtResource("13_0ulb0")]
 transform = Transform3D(0.8797731, 0, 0.47539392, 0, 1, 0, -0.47539392, 0, 0.8797731, -2.746, 0.2, -5.408)

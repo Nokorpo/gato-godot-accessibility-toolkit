@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://olsa5oic45g3" path="res://modules/characters/boar/mesh/boar_mesh.tscn" id="5_d5hix"]
 [ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="6_d5hix"]
 [ext_resource type="Texture2D" uid="uid://b1d0cvmyi08cb" path="res://modules/demo1/map/sprites/heart.png" id="7_chhcr"]
+[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="9_dbq5w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5hix"]
 radius = 0.243
@@ -113,5 +114,10 @@ draw_pass_1 = SubResource("QuadMesh_ch3xj")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1830242425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="Decal" type="Decal" parent="." unique_id=83828784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40498018, 0)
+size = Vector3(0.75, 0.8886719, 0.75)
+texture_albedo = ExtResource("9_dbq5w")
 
 [connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

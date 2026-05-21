@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dlgjam44ucftj" path="res://modules/level_objects/acorn/gold_acorn.gltf" id="1_i3kmj"]
 [ext_resource type="Script" uid="uid://cuqenjv6o6em7" path="res://modules/level_objects/acorn/gold_acorn.gd" id="1_puj2h"]
 [ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="2_vhraj"]
+[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="4_n6r8r"]
 
 [sub_resource type="Animation" id="Animation_puj2h"]
 length = 0.001
@@ -120,6 +121,11 @@ scale_amount_curve = SubResource("Curve_8lt4b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1831770879]
 shape = SubResource("SphereShape3D_n6r8r")
+
+[node name="Decal" type="Decal" parent="." unique_id=753999190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6883054, 0)
+size = Vector3(0.2, 1, 0.2)
+texture_albedo = ExtResource("4_n6r8r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

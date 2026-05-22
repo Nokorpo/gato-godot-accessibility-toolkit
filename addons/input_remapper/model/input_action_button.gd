@@ -29,6 +29,9 @@ func equals(other_action: InputAction) -> bool:
 		return false
 	return true
 
+func contains_input_event(input_event: InputEvent) -> bool:
+	return input.is_match(input_event)
+
 func get_as_dict() -> Dictionary:
 	return {
 		"type": "input_action_button",

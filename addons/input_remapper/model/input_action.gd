@@ -18,6 +18,10 @@ func equals(other_action: InputAction) -> bool:
 	push_error("Error: method \"equals()\" not implemented")
 	return false
 
+func contains_input_event(input_event: InputEvent) -> bool:
+	push_error("Error: method \"equals()\" not implemented")
+	return false
+
 func get_as_dict() -> Dictionary:
 	push_error("Error: method \"get_as_dict()\" not implemented")
 	return {}

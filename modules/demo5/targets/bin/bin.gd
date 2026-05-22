@@ -13,9 +13,10 @@ var is_open: bool = false
 func _ready():
 	var player = get_tree().get_first_node_in_group("player")
 	anim_player = get_node("AnimationPlayer")
-	player.connect("matched_color", _receive_item)
-	player.connect("mismatched_color", _refuse_item)
-	player.connect("focused_target", _focus)
+	if player != null:
+		player.connect("matched_color", _receive_item)
+		player.connect("mismatched_color", _refuse_item)
+		player.connect("focused_target", _focus)
 	bin_meshes = find_children("", "MeshInstance3D", true, false)
 
 func _receive_item(match_color):

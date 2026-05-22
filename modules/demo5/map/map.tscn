@@ -13,26 +13,33 @@
 [ext_resource type="Script" uid="uid://dsi6af4ga6hye" path="res://modules/demo5/hud/filter_menu.gd" id="4_lt41x"]
 [ext_resource type="Script" uid="uid://sx7wfewhlap7" path="res://modules/demo5/item_pool/throwable_item.gd" id="4_vvos1"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="5_2woxq"]
-[ext_resource type="Script" uid="uid://do2h2ywv65o1w" path="res://modules/demo5/hud/filter_type.gd" id="5_3vuti"]
+[ext_resource type="Script" uid="uid://do2h2ywv65o1w" path="res://modules/demo5/hud/filter.gd" id="5_3vuti"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_5ku2k"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="5_cyo0x"]
 [ext_resource type="PackedScene" uid="uid://cx1ifxyiknxot" path="res://modules/demo5/throwable_items/box.tscn" id="5_fykio"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="6_4g4qy"]
 [ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="6_33yh1"]
 [ext_resource type="PackedScene" uid="uid://cv8s3xqneydxw" path="res://modules/demo5/throwable_items/branch.tscn" id="6_tc3uo"]
+[ext_resource type="Texture2D" uid="uid://cb4k6sc8p2pr1" path="res://modules/demo5/hud/sprites/filter_icon_normal.svg" id="7_4phwh"]
 [ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="7_kp8o8"]
 [ext_resource type="PackedScene" uid="uid://dkfwr2e0hpswl" path="res://modules/demo5/throwable_items/glasses.tscn" id="7_uov22"]
+[ext_resource type="Texture2D" uid="uid://b44fdxl4ikoa8" path="res://modules/demo5/hud/sprites/filter_icon_protanopia.svg" id="8_aosah"]
 [ext_resource type="PackedScene" uid="uid://eloijn3cq0rw" path="res://modules/demo5/throwable_items/wrench.tscn" id="8_d6375"]
 [ext_resource type="PackedScene" uid="uid://btbwdsksnh62b" path="res://modules/characters/boar/mesh/boar_red.tscn" id="9_d6375"]
+[ext_resource type="Texture2D" uid="uid://wstwb0x2ts3m" path="res://modules/demo5/hud/sprites/filter_icon_deuteranopia.svg" id="9_f6o8q"]
 [ext_resource type="PackedScene" uid="uid://bckenvh5w3j2p" path="res://modules/demo1/map/props/rock_group.gltf" id="10_4g4qy"]
+[ext_resource type="Texture2D" uid="uid://bfn0yi6siemf5" path="res://modules/demo5/hud/sprites/filter_icon_deuteranomaly.svg" id="10_ewdyg"]
 [ext_resource type="PackedScene" uid="uid://dk18i5oglbj2y" path="res://modules/level_objects/acorn/regular_acorn_red.tscn" id="11_861yp"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="11_fjpig"]
+[ext_resource type="Texture2D" uid="uid://bftwiwk53ntdw" path="res://modules/demo5/hud/sprites/filter_icon_tritanopia.svg" id="11_vdqj1"]
 [ext_resource type="Script" uid="uid://dq47fh362xasw" path="res://modules/demo5/targets/boars/boar_demo5.gd" id="12_6nsoj"]
+[ext_resource type="Texture2D" uid="uid://b0g5ntm3h7h0k" path="res://modules/demo5/hud/sprites/filter_icon_achromatopsia.svg" id="12_al88k"]
 [ext_resource type="PackedScene" uid="uid://cwml83hpf6t1y" path="res://modules/level_objects/acorn/regular_acorn_blue.tscn" id="12_lt41x"]
 [ext_resource type="PackedScene" uid="uid://cu1uku0gtuupp" path="res://modules/demo5/map/props/bin.tscn" id="13_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="13_fjpig"]
 [ext_resource type="PackedScene" uid="uid://cqbe1fbalf581" path="res://modules/demo1/map/vfx/heart_particles.tscn" id="13_j3q1o"]
 [ext_resource type="PackedScene" uid="uid://c507oviog8v0x" path="res://modules/level_objects/acorn/regular_acorn_yellow.tscn" id="13_wuv32"]
+[ext_resource type="Texture2D" uid="uid://t2woqqdag0le" path="res://modules/demo5/hud/sprites/icon_eye.svg" id="14_aosah"]
 [ext_resource type="PackedScene" uid="uid://in10cqcgu1h0" path="res://modules/level_objects/acorn/regular_acorn_green.tscn" id="14_lt2dd"]
 [ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="18_861yp"]
 [ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
@@ -42,6 +49,9 @@
 [ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
 [ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="36_nt0k8"]
 [ext_resource type="Material" uid="uid://d144g40pc4bq7" path="res://modules/demo5/map/props/interactables_without_fading.tres" id="37_pxjlt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aosah"]
+bg_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 
 [sub_resource type="Resource" id="Resource_33yh1"]
 script = ExtResource("5_3vuti")
@@ -71,6 +81,16 @@ metadata/_custom_type_script = "uid://do2h2ywv65o1w"
 script = ExtResource("5_3vuti")
 value = 5
 metadata/_custom_type_script = "uid://do2h2ywv65o1w"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_aosah"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33yh1"]
+bg_color = Color(0.90588236, 0.88235295, 0.9372549, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="Resource" id="Resource_pipgt"]
 script = ExtResource("4_vvos1")
@@ -277,50 +297,144 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
 text = "Change target"
 
+[node name="Action3" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=1690556492]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Action2Icon" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action3" unique_id=794095035]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+text = "TAB / SHIFT"
+horizontal_alignment = 2
+
+[node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action3" unique_id=1145852553]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Next filter / Prev. Filter"
+
 [node name="FiltersMenu" type="CanvasLayer" parent="." unique_id=1987695816 node_paths=PackedStringArray("filter_node", "filter_buttons_node", "filter_label")]
 script = ExtResource("4_lt41x")
 filter_node = NodePath("../Filter")
 filter_buttons_node = NodePath("VBoxContainer/FilterButtons")
-filter_label = NodePath("VBoxContainer/Label")
+filter_label = NodePath("VBoxContainer/MarginContainer/Panel/Label")
+
+[node name="Panel" type="Panel" parent="FiltersMenu" unique_id=1895538784]
+offset_left = 1318.0
+offset_top = 833.0
+offset_right = 1827.0
+offset_bottom = 891.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aosah")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FiltersMenu" unique_id=658160085]
-offset_right = 138.0
-offset_bottom = 57.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -695.0
+offset_top = -263.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="FilterButtons" type="HBoxContainer" parent="FiltersMenu/VBoxContainer" unique_id=798002959]
 layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Normal" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1045514460 instance=ExtResource("4_33yh1")]
 layout_mode = 2
+tooltip_text = "Normal"
+button_pressed = true
 filter = SubResource("Resource_33yh1")
+filter_icon = ExtResource("7_4phwh")
 
 [node name="Protanopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1654589995 instance=ExtResource("4_33yh1")]
 layout_mode = 2
+tooltip_text = "Protanopia"
 filter = SubResource("Resource_3vuti")
+filter_icon = ExtResource("8_aosah")
 
 [node name="Deuteranopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=602030319 instance=ExtResource("4_33yh1")]
 layout_mode = 2
+tooltip_text = "Deuteranopia"
 filter = SubResource("Resource_uxiln")
+filter_icon = ExtResource("9_f6o8q")
 
 [node name="Deuteranomaly" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1729026628 instance=ExtResource("4_33yh1")]
 layout_mode = 2
+tooltip_text = "Deuteranomaly"
 filter = SubResource("Resource_rk43s")
+filter_icon = ExtResource("10_ewdyg")
 
 [node name="Tritanopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1131940632 instance=ExtResource("4_33yh1")]
 layout_mode = 2
+tooltip_text = "Tritanopia"
 filter = SubResource("Resource_012p0")
+filter_icon = ExtResource("11_vdqj1")
 
 [node name="Achromatopsia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=794677414 instance=ExtResource("4_33yh1")]
 layout_mode = 2
+tooltip_text = "Achromatopsia"
 filter = SubResource("Resource_dmlar")
+filter_icon = ExtResource("12_al88k")
 
-[node name="Label" type="Label" parent="FiltersMenu/VBoxContainer" unique_id=1882255650]
+[node name="HSeparator" type="HSeparator" parent="FiltersMenu/VBoxContainer" unique_id=1733478503]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxLine_aosah")
+
+[node name="MarginContainer" type="MarginContainer" parent="FiltersMenu/VBoxContainer" unique_id=340364354]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+
+[node name="Panel" type="Panel" parent="FiltersMenu/VBoxContainer/MarginContainer" unique_id=1678413004]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_33yh1")
+
+[node name="Label" type="Label" parent="FiltersMenu/VBoxContainer/MarginContainer/Panel" unique_id=1882255650]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -22.5
+offset_right = 160.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("6_33yh1")
-text = "a"
+theme_override_colors/font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+text = "NORMAL"
 horizontal_alignment = 1
 clip_text = true
+
+[node name="TextureRect" type="TextureRect" parent="FiltersMenu/VBoxContainer/MarginContainer/Panel" unique_id=641008044]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.00006
+offset_top = -40.0
+offset_right = 22.528473
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("14_aosah")
+expand_mode = 3
 
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("2_2woxq")]
 visible = false

@@ -1,30 +1,46 @@
 [gd_scene format=3 uid="uid://cf7wq5vjixfnv"]
 
+[ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="1_ak8v4"]
 [ext_resource type="Script" uid="uid://50pq3785dvwv" path="res://modules/demo5/hud/filter_button.gd" id="1_d3wom"]
 [ext_resource type="ButtonGroup" uid="uid://cjmfxlbum57u0" path="res://modules/demo5/hud/filter_button_group.tres" id="1_ttfl0"]
-[ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="2_a4bfr"]
+[ext_resource type="Texture2D" uid="uid://b574dy5trmgpp" path="res://modules/demo5/hud/sprites/filter_button.svg" id="2_xh85l"]
+[ext_resource type="Texture2D" uid="uid://bjmhdac1ohfwj" path="res://modules/demo5/hud/sprites/button_hover.svg" id="3_sk0bp"]
+[ext_resource type="Texture2D" uid="uid://bx6fe3rkygokt" path="res://modules/demo5/hud/sprites/filter_button_disabled.svg" id="4_sk0bp"]
+[ext_resource type="Texture2D" uid="uid://cb4k6sc8p2pr1" path="res://modules/demo5/hud/sprites/filter_icon_normal.svg" id="5_xh85l"]
 
-[node name="FilterButton" type="Button" unique_id=1045514460]
-custom_minimum_size = Vector2(50, 50)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="FilterButton" type="TextureButton" unique_id=987962203]
+offset_right = 85.0
+offset_bottom = 85.0
+pivot_offset = Vector2(42.5, 42.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_ak8v4")
 toggle_mode = true
 button_group = ExtResource("1_ttfl0")
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("2_xh85l")
+texture_pressed = ExtResource("3_sk0bp")
+texture_hover = ExtResource("3_sk0bp")
+texture_disabled = ExtResource("4_sk0bp")
+stretch_mode = 3
 script = ExtResource("1_d3wom")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1504179739]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_a4bfr")
-expand_mode = 2
+[node name="Icon" type="TextureRect" parent="." unique_id=1754834781]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -24.0
+offset_right = 27.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xh85l")
+stretch_mode = 3
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
-[connection signal="pressed_button" from="." to="." method="_on_pressed_button"]
 [connection signal="toggled" from="." to="." method="_on_toggled"]

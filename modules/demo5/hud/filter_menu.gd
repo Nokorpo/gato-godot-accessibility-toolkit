@@ -5,15 +5,22 @@ extends Node
 @export var filter_label: Label
 
 var current_filter: Filter = Filter.new()
-var are_filters_blocked: bool = false
-var filters_to_shader_index_map: int
+var are_filters_blocked: bool 
+var filters_to_shader_index_map: Array = [
+	0, #Filter.FilterType.NORMAL 
+	1, #Filter.FilterType.PROTANOPIA 
+	3, #"Filter.FilterType.DEUTERANOPIA" 
+	4, #"Filter.FilterType.DEUTERANOMALY" 
+	5, #"Filter.FilterType.TRITANOPIA"
+	7, #"Filter.FilterType.ACHROMATOPSIA"
+]
 
 func _ready():
 	for button: FilterButton in filter_buttons_node.get_children():
 		button.pressed_button.connect(select_filter)
 
 func _input(event: InputEvent) -> void:
-	if are_filters_blocked:
+	if are_filters_blocked and (event.is_action_pressed("change_filter_left") or event.is_action_pressed("change_filter_right")):
 		_notify_filters_are_blocked()
 		return
 	if event.is_action_pressed("change_filter_right"):
@@ -28,12 +35,15 @@ func _input(event: InputEvent) -> void:
 		select_filter(Filter.new(next_filter))
 
 func select_filter(filter: Filter):
-	var button: FilterButton = _get_filter_button(filter)
-	var previous_button: FilterButton = _get_filter_button(current_filter)
-	_set_label_text(filter)
-	button.button_pressed = true
-	current_filter = filter
-	_apply_filter_shader(current_filter)
+	if !are_filters_blocked:
+		var button: FilterButton = _get_filter_button(filter)
+		var previous_button: FilterButton = _get_filter_button(current_filter)
+		_set_label_text(filter)
+		button.button_pressed = true
+		current_filter = filter
+		_apply_filter_shader(current_filter)
+	else:
+		_notify_filters_are_blocked()
 
 func _get_filter_button(filter: Filter) -> FilterButton:
 	return filter_buttons_node.get_child(filter.value)
@@ -46,4 +56,19 @@ func _set_label_text(filter: Filter):
 	filter_label.text = filter.get_filter_name(filter.value)
 
 func _apply_filter_shader(filter: Filter):
-	pass
+	if filter.value == Filter.FilterType.NORMAL:
+		filter_node.visible = false
+	else:
+		filter_node.visible = true
+		var index: int = filters_to_shader_index_map[filter.value]
+		filter_node.material.set_shader_parameter("type", index)
+
+func block_filters():
+	are_filters_blocked = true
+	for button: FilterButton in filter_buttons_node.get_children():
+		button.disable()
+
+func unblock_filters():
+	are_filters_blocked = false
+	for button: FilterButton in filter_buttons_node.get_children():
+		button.enable()

@@ -14,13 +14,6 @@ var unselected_border: TextureRect
 func _ready():
 	texture_rect.texture = filter_icon
 
-
-func _on_focus_entered():
-	pass
-
-func _on_focus_exited():
-	pass # Replace with function body.
-
 func _on_toggled(toggled_on):
 	if toggled_on == true:
 		pressed_button.emit(filter)

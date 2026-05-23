@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cobpv617jlo7j"]
+
+[ext_resource type="Texture2D" uid="uid://djbuvfab2ayb0" path="res://modules/characters/boar/mesh/boar_yellow_long-eared_body_yellow.png" id="1_eyttn"]
+
+[resource]
+resource_name = "body"
+cull_mode = 2
+albedo_texture = ExtResource("1_eyttn")
+roughness = 0.5

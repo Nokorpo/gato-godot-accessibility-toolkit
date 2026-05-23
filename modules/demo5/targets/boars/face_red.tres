@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bquuvb41sity2"]
+
+[ext_resource type="Texture2D" uid="uid://dw315s17d10lx" path="res://modules/characters/boar/mesh/face_red.png" id="1_aqgug"]
+
+[resource]
+resource_name = "face"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("1_aqgug")

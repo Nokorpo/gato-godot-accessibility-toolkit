@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://rhdvpoovp68q"]
+
+[ext_resource type="Material" uid="uid://cobpv617jlo7j" path="res://modules/demo5/targets/boars/body_yellow.tres" id="1_1qchf"]
+[ext_resource type="PackedScene" uid="uid://biviod71dmsyt" path="res://modules/characters/boar/mesh/boar.glb" id="1_ukawi"]
+[ext_resource type="Material" uid="uid://cno538sw6l6ju" path="res://modules/demo5/targets/boars/face_yellow.tres" id="3_efgcp"]
+
+[node name="BoarYellow" type="Node3D" unique_id=723388221]
+
+[node name="Boar" parent="." unique_id=1431420299 instance=ExtResource("1_ukawi")]
+
+[node name="Body" parent="Boar/rig/Skeleton3D" parent_id_path=PackedInt32Array(1431420299, 1005136589) index="0" unique_id=1316490680]
+material_override = ExtResource("1_1qchf")
+
+[node name="Face" parent="Boar/rig/Skeleton3D" parent_id_path=PackedInt32Array(1431420299, 1005136589) index="1" unique_id=1553228091]
+material_override = ExtResource("3_efgcp")
+
+[editable path="Boar"]

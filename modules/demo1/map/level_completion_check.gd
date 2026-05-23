@@ -28,3 +28,8 @@ func _another_one_bites_the_corn() -> void:
 func _another_one_mismatch_the_corn() -> void:
 	fed_boars -= 1
 	update_hud_count.emit()
+
+func change_boar_meshes():
+	boar_list.hide()
+	boar_list = $"../AccessibleBoars"
+	boar_list.show()

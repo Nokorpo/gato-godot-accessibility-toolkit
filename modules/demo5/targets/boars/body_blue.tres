@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2vni4a1t1web"]
+
+[ext_resource type="Texture2D" uid="uid://chodky0etqsb1" path="res://modules/characters/boar/mesh/boar_blue_tusked_body_blue.png" id="1_vbu3u"]
+
+[resource]
+resource_name = "body"
+cull_mode = 2
+albedo_texture = ExtResource("1_vbu3u")
+roughness = 0.5

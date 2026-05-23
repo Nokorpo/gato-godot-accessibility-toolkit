@@ -9,10 +9,10 @@ enum TargetColor { BLUE, GREEN, RED, YELLOW, BIN }
 @export var throw_path: Curve 
 @onready var throwable_item_pool: ThrowableItemPool = %ThrowableItemPool
 @onready var target_list: Dictionary[TargetColor, Node3D] = {
-	TargetColor.BLUE: $"../Boars/BoarBlue",
-	TargetColor.GREEN: $"../Boars/BoarGreen",
-	TargetColor.RED: $"../Boars/BoarRed",
-	TargetColor.YELLOW: $"../Boars/BoarYellow",
+	TargetColor.BLUE: $"../AccessibleBoars/BoarBlue",
+	TargetColor.GREEN: $"../AccessibleBoars/BoarGreen",
+	TargetColor.RED: $"../AccessibleBoars/BoarRed",
+	TargetColor.YELLOW: $"../AccessibleBoars/BoarYellow",
 	TargetColor.BIN: $"../Bin"
 }
 

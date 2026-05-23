@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnfw5rfr0a822"]
+
+[ext_resource type="Texture2D" uid="uid://dmuvmkfgf08c" path="res://modules/characters/boar/mesh/boar_green_spiky_body_green.png" id="1_my1hu"]
+
+[resource]
+resource_name = "body"
+cull_mode = 2
+albedo_texture = ExtResource("1_my1hu")
+roughness = 0.5

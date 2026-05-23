@@ -23,7 +23,10 @@ func _ready():
 	player.connect("focused_target", focus_feedback)
 	player.connect("matched_color", eat_acorn)
 	player.connect("mismatched_color", refuse_acorn)
-	anim_player = get_node("AnimationPlayer")
+	if has_node("AnimationPlayer") == true:
+		anim_player = get_node("AnimationPlayer")
+	else:
+		anim_player = get_node("Boar/AnimationPlayer")
 	heart_particles = get_node("HeartParticles")
 	eating_particles = get_node("EatingParticles")
 	refusing_particles = get_node("PoofEffect")

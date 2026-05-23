@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://28ta3iypul5u"]
+
+[ext_resource type="Texture2D" uid="uid://wyq8e81d84x6" path="res://modules/characters/boar/mesh/boar_green_spiky_face_green.png" id="1_7md4b"]
+
+[resource]
+resource_name = "face"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("1_7md4b")

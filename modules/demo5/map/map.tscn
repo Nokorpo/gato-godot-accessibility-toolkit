@@ -52,11 +52,16 @@
 [ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
 [ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="36_nt0k8"]
 [ext_resource type="Material" uid="uid://d144g40pc4bq7" path="res://modules/demo5/map/props/interactables_without_fading.tres" id="37_pxjlt"]
+[ext_resource type="PackedScene" uid="uid://dt2y67phyqpfp" path="res://modules/demo5/targets/boars/boar_blue.tscn" id="39_mdxg1"]
+[ext_resource type="PackedScene" uid="uid://bampo4q5ii6de" path="res://modules/demo5/targets/boars/boar_green.tscn" id="40_yiqpe"]
+[ext_resource type="PackedScene" uid="uid://c6yixj1wpj8u0" path="res://modules/demo5/targets/boars/boar_red.tscn" id="41_ps754"]
+[ext_resource type="PackedScene" uid="uid://rhdvpoovp68q" path="res://modules/demo5/targets/boars/boar_yellow.tscn" id="42_yiqpe"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="53_tr8eo"]
 [ext_resource type="Script" uid="uid://cv2pio2355wvl" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_ready.gd" id="53_xeev5"]
-[ext_resource type="Resource" uid="uid://04odm6qkfamm" path="res://modules/demo1/dialogues/demo1_dialogue01.tres" id="54_k0vpd"]
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="54_k0vpd"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="54_xkoa7"]
 [ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="55_64bld"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="55_mdxg1"]
 [ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="56_mdxg1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aosah"]
@@ -223,6 +228,15 @@ albedo_color = Color(0.8887103, 0.6703262, 0, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_vvos1"]
 material = SubResource("StandardMaterial3D_pxjlt")
 size = Vector2(0.1, 0.1)
+
+[sub_resource type="Resource" id="Resource_mdxg1"]
+script = ExtResource("54_k0vpd")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_87pyo"]
+script = ExtResource("55_mdxg1")
+messages = Array[ExtResource("54_k0vpd")]([SubResource("Resource_mdxg1")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
 albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
@@ -496,18 +510,19 @@ non_accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Res
 script = ExtResource("3_4a7kf")
 throw_path = SubResource("Curve_awgv7")
 
-[node name="Boars" type="Node3D" parent="." unique_id=1098203158]
+[node name="AccessibleBoars" type="Node3D" parent="." unique_id=1098203158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+visible = false
 
-[node name="BoarBlue" parent="Boars" unique_id=1537324264 instance=ExtResource("23_uov22")]
+[node name="BoarBlue" parent="AccessibleBoars" unique_id=1537324264 instance=ExtResource("23_uov22")]
 transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, -2, 0, -2.355)
 script = ExtResource("12_6nsoj")
 color = "BLUE"
 
-[node name="HeartParticles" parent="Boars/BoarBlue" unique_id=1449183892 instance=ExtResource("13_j3q1o")]
+[node name="HeartParticles" parent="AccessibleBoars/BoarBlue" unique_id=1449183892 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
-[node name="EatingParticles" type="CPUParticles3D" parent="Boars/BoarBlue" unique_id=2100820814]
+[node name="EatingParticles" type="CPUParticles3D" parent="AccessibleBoars/BoarBlue" unique_id=2100820814]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0.05, 0.5)
 emitting = false
 one_shot = true
@@ -520,26 +535,26 @@ initial_velocity_max = 1.0
 scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_861yp")
 
-[node name="Offset" type="Node3D" parent="Boars/BoarBlue" unique_id=1392857042]
+[node name="Offset" type="Node3D" parent="AccessibleBoars/BoarBlue" unique_id=1392857042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
-[node name="PoofEffect" parent="Boars/BoarBlue" unique_id=1925574660 instance=ExtResource("18_861yp")]
+[node name="PoofEffect" parent="AccessibleBoars/BoarBlue" unique_id=1925574660 instance=ExtResource("18_861yp")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0.54999995)
 
-[node name="Decal" type="Decal" parent="Boars/BoarBlue" unique_id=13706500]
+[node name="Decal" type="Decal" parent="AccessibleBoars/BoarBlue" unique_id=13706500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
 size = Vector3(0.75, 1, 0.75)
 texture_albedo = ExtResource("21_lt41x")
 
-[node name="BoarGreen" parent="Boars" unique_id=993665613 instance=ExtResource("21_fykio")]
+[node name="BoarGreen" parent="AccessibleBoars" unique_id=993665613 instance=ExtResource("21_fykio")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.7, 0, -2.599944)
 script = ExtResource("12_6nsoj")
 color = "GREEN"
 
-[node name="HeartParticles" parent="Boars/BoarGreen" unique_id=719473685 instance=ExtResource("13_j3q1o")]
+[node name="HeartParticles" parent="AccessibleBoars/BoarGreen" unique_id=719473685 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
-[node name="EatingParticles" type="CPUParticles3D" parent="Boars/BoarGreen" unique_id=1210035519]
+[node name="EatingParticles" type="CPUParticles3D" parent="AccessibleBoars/BoarGreen" unique_id=1210035519]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 5.9604645e-08, 0.05, 0.5)
 emitting = false
 one_shot = true
@@ -552,26 +567,26 @@ initial_velocity_max = 1.0
 scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_861yp")
 
-[node name="Offset" type="Node3D" parent="Boars/BoarGreen" unique_id=54480078]
+[node name="Offset" type="Node3D" parent="AccessibleBoars/BoarGreen" unique_id=54480078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
-[node name="PoofEffect" parent="Boars/BoarGreen" unique_id=1058293836 instance=ExtResource("18_861yp")]
+[node name="PoofEffect" parent="AccessibleBoars/BoarGreen" unique_id=1058293836 instance=ExtResource("18_861yp")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 5.9604645e-08, 0, 0.54999995)
 
-[node name="Decal" type="Decal" parent="Boars/BoarGreen" unique_id=1618827631]
+[node name="Decal" type="Decal" parent="AccessibleBoars/BoarGreen" unique_id=1618827631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
 size = Vector3(0.75, 1, 0.75)
 texture_albedo = ExtResource("21_lt41x")
 
-[node name="BoarRed" parent="Boars" unique_id=2105937100 instance=ExtResource("9_d6375")]
+[node name="BoarRed" parent="AccessibleBoars" unique_id=2105937100 instance=ExtResource("9_d6375")]
 transform = Transform3D(0.96592563, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592563, 0.7, 0, -2.599944)
 script = ExtResource("12_6nsoj")
 color = "RED"
 
-[node name="HeartParticles" parent="Boars/BoarRed" unique_id=347695972 instance=ExtResource("13_j3q1o")]
+[node name="HeartParticles" parent="AccessibleBoars/BoarRed" unique_id=347695972 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
-[node name="EatingParticles" type="CPUParticles3D" parent="Boars/BoarRed" unique_id=2135410460]
+[node name="EatingParticles" type="CPUParticles3D" parent="AccessibleBoars/BoarRed" unique_id=2135410460]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0.05, 0.5)
 emitting = false
 one_shot = true
@@ -584,26 +599,26 @@ initial_velocity_max = 1.0
 scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_861yp")
 
-[node name="Offset" type="Node3D" parent="Boars/BoarRed" unique_id=811200842]
+[node name="Offset" type="Node3D" parent="AccessibleBoars/BoarRed" unique_id=811200842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
-[node name="PoofEffect" parent="Boars/BoarRed" unique_id=153231458 instance=ExtResource("18_861yp")]
+[node name="PoofEffect" parent="AccessibleBoars/BoarRed" unique_id=153231458 instance=ExtResource("18_861yp")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.1920929e-07, 0, 0.54999995)
 
-[node name="Decal" type="Decal" parent="Boars/BoarRed" unique_id=466887127]
+[node name="Decal" type="Decal" parent="AccessibleBoars/BoarRed" unique_id=466887127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
 size = Vector3(0.75, 1, 0.75)
 texture_albedo = ExtResource("21_lt41x")
 
-[node name="BoarYellow" parent="Boars" unique_id=517087124 instance=ExtResource("22_tc3uo")]
+[node name="BoarYellow" parent="AccessibleBoars" unique_id=517087124 instance=ExtResource("22_tc3uo")]
 transform = Transform3D(0.7660444, 0, -0.6427875, 0, 1, 0, 0.6427875, 0, 0.7660444, 2, 0, -2.3553338)
 script = ExtResource("12_6nsoj")
 color = "YELLOW"
 
-[node name="HeartParticles" parent="Boars/BoarYellow" unique_id=323562806 instance=ExtResource("13_j3q1o")]
+[node name="HeartParticles" parent="AccessibleBoars/BoarYellow" unique_id=323562806 instance=ExtResource("13_j3q1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 
-[node name="EatingParticles" type="CPUParticles3D" parent="Boars/BoarYellow" unique_id=793046562]
+[node name="EatingParticles" type="CPUParticles3D" parent="AccessibleBoars/BoarYellow" unique_id=793046562]
 transform = Transform3D(1.0000002, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1.0000002, 0, 0.05, 0.5)
 emitting = false
 one_shot = true
@@ -616,13 +631,144 @@ initial_velocity_max = 1.0
 scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_861yp")
 
-[node name="Offset" type="Node3D" parent="Boars/BoarYellow" unique_id=849370080]
+[node name="Offset" type="Node3D" parent="AccessibleBoars/BoarYellow" unique_id=849370080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
 
-[node name="PoofEffect" parent="Boars/BoarYellow" unique_id=86073371 instance=ExtResource("18_861yp")]
+[node name="PoofEffect" parent="AccessibleBoars/BoarYellow" unique_id=86073371 instance=ExtResource("18_861yp")]
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0.5500002)
 
-[node name="Decal" type="Decal" parent="Boars/BoarYellow" unique_id=1533640754]
+[node name="Decal" type="Decal" parent="AccessibleBoars/BoarYellow" unique_id=1533640754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
+
+[node name="NormalBoars" type="Node3D" parent="." unique_id=1222803279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="BoarBlue" parent="NormalBoars" unique_id=1540213572 instance=ExtResource("39_mdxg1")]
+transform = Transform3D(0.7660446, 0, 0.64278775, 0, 1, 0, -0.64278775, 0, 0.7660446, -2, 0, -2.355)
+script = ExtResource("12_6nsoj")
+color = "BLUE"
+
+[node name="HeartParticles" parent="NormalBoars/BoarBlue" unique_id=443355748 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
+[node name="EatingParticles" type="CPUParticles3D" parent="NormalBoars/BoarBlue" unique_id=441151240]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0.05, 0.5)
+emitting = false
+one_shot = true
+mesh = SubResource("QuadMesh_lt41x")
+direction = Vector3(0, 1, 0)
+spread = 10.0
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_861yp")
+
+[node name="Offset" type="Node3D" parent="NormalBoars/BoarBlue" unique_id=751336198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
+[node name="PoofEffect" parent="NormalBoars/BoarBlue" unique_id=1615243114 instance=ExtResource("18_861yp")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0.54999995)
+
+[node name="Decal" type="Decal" parent="NormalBoars/BoarBlue" unique_id=1892696308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
+
+[node name="BoarGreen" parent="NormalBoars" unique_id=136117243 instance=ExtResource("40_yiqpe")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.7, 0, -2.599944)
+script = ExtResource("12_6nsoj")
+color = "GREEN"
+
+[node name="HeartParticles" parent="NormalBoars/BoarGreen" unique_id=914186475 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
+[node name="EatingParticles" type="CPUParticles3D" parent="NormalBoars/BoarGreen" unique_id=1261593457]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 5.9604645e-08, 0.05, 0.5)
+emitting = false
+one_shot = true
+mesh = SubResource("QuadMesh_lt2dd")
+direction = Vector3(0, 1, 0)
+spread = 10.0
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_861yp")
+
+[node name="Offset" type="Node3D" parent="NormalBoars/BoarGreen" unique_id=2041607009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
+[node name="PoofEffect" parent="NormalBoars/BoarGreen" unique_id=97946046 instance=ExtResource("18_861yp")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 5.9604645e-08, 0, 0.54999995)
+
+[node name="Decal" type="Decal" parent="NormalBoars/BoarGreen" unique_id=1600957714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
+
+[node name="BoarRed" parent="NormalBoars" unique_id=503691051 instance=ExtResource("41_ps754")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0.7, 0, -2.599944)
+script = ExtResource("12_6nsoj")
+color = "RED"
+
+[node name="HeartParticles" parent="NormalBoars/BoarRed" unique_id=1043223337 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
+[node name="EatingParticles" type="CPUParticles3D" parent="NormalBoars/BoarRed" unique_id=301798450]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0.05, 0.5)
+emitting = false
+one_shot = true
+mesh = SubResource("QuadMesh_861yp")
+direction = Vector3(0, 1, 0)
+spread = 10.0
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_861yp")
+
+[node name="Offset" type="Node3D" parent="NormalBoars/BoarRed" unique_id=1612546878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
+[node name="PoofEffect" parent="NormalBoars/BoarRed" unique_id=34810247 instance=ExtResource("18_861yp")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.1920929e-07, 0, 0.54999995)
+
+[node name="Decal" type="Decal" parent="NormalBoars/BoarRed" unique_id=1778580811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
+size = Vector3(0.75, 1, 0.75)
+texture_albedo = ExtResource("21_lt41x")
+
+[node name="BoarYellow" parent="NormalBoars" unique_id=723388221 instance=ExtResource("42_yiqpe")]
+transform = Transform3D(0.76604444, 0, -0.6427876, 0, 1, 0, 0.6427876, 0, 0.76604444, 2, 0, -2.3553338)
+script = ExtResource("12_6nsoj")
+color = "YELLOW"
+
+[node name="HeartParticles" parent="NormalBoars/BoarYellow" unique_id=97093608 instance=ExtResource("13_j3q1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
+[node name="EatingParticles" type="CPUParticles3D" parent="NormalBoars/BoarYellow" unique_id=627819381]
+transform = Transform3D(1.0000002, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1.0000002, 0, 0.05, 0.5)
+emitting = false
+one_shot = true
+mesh = SubResource("QuadMesh_vvos1")
+direction = Vector3(0, 1, 0)
+spread = 10.0
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_861yp")
+
+[node name="Offset" type="Node3D" parent="NormalBoars/BoarYellow" unique_id=1982034245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
+[node name="PoofEffect" parent="NormalBoars/BoarYellow" unique_id=585500868 instance=ExtResource("18_861yp")]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0.5500002)
+
+[node name="Decal" type="Decal" parent="NormalBoars/BoarYellow" unique_id=1350751748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 0)
 size = Vector3(0.75, 1, 0.75)
 texture_albedo = ExtResource("21_lt41x")
@@ -791,9 +937,13 @@ transform = Transform3D(-0.87033856, 0, -0.4924539, 0, 1, 0, 0.4924539, 0, -0.87
 transform = Transform3D(0.12723774, 0, 0.99187225, 0, 1, 0, -0.99187225, 0, 0.12723774, -4.8328595, -0.14318295, -5.1904874)
 
 [node name="Dialogue" type="Node3D" parent="." unique_id=1963336891]
-[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=1389185825 node_paths=PackedStringArray("scene_root")]
+
+[node name="StartingDialogue" type="Node" parent="Dialogue" unique_id=1474119192]
+script = ExtResource("53_xeev5")
+dialogue = SubResource("Resource_87pyo")
+
+[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=1389185825]
 script = ExtResource("55_64bld")
-scene_root = NodePath("")
 dialogue = ExtResource("56_mdxg1")
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=517934670]
@@ -806,7 +956,7 @@ visible = false
 
 [node name="LevelCompletionCheck" type="Node" parent="." unique_id=1276413535 node_paths=PackedStringArray("boar_list")]
 script = ExtResource("54_xkoa7")
-boar_list = NodePath("../Boars")
+boar_list = NodePath("../NormalBoars")
 
 [connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
 [connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]

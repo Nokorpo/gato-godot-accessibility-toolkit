@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="17_2s3xo"]
 [ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="18_qknnp"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="19_05mnp"]
-[ext_resource type="Script" uid="uid://o7njoy4m8t1d" path="res://modules/demo1/dialogues/triggers/controls_changed_dialogue.gd" id="19_lu8a3"]
+[ext_resource type="Script" path="res://modules/demo1/dialogues/triggers/controls_changed_dialogue.gd" id="19_lu8a3"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="20_5pxm7"]
 [ext_resource type="Resource" uid="uid://bttq8y1y3kh5r" path="res://modules/demo1/dialogues/demo1_dialogue03.tres" id="20_xs2cs"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="21_47kr6"]

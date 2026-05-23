@@ -4,6 +4,9 @@ const NORMAL_SCALE = Vector3.ONE
 const FED_SCALE = Vector3.ONE * 1.2
 const FOCUS_SCALE = Vector3.ONE * 1.3
 
+signal finished_growing
+signal decrease
+
 @export_enum("BLUE","RED","GREEN","YELLOW") var color: String
 
 @onready var outline_material: StandardMaterial3D = load("res://modules/demo5/targets/boars/selection_outline.tres")
@@ -37,6 +40,7 @@ func eat_acorn(matching_color):
 			scale = FED_SCALE
 			fed = true
 			heart_particles.emitting = true
+			finished_growing.emit()
 
 func refuse_acorn(matching_color):
 	if matching_color == color:
@@ -48,6 +52,7 @@ func refuse_acorn(matching_color):
 			heart_particles.emitting = false
 			await get_tree().create_timer(0.3).timeout
 			scale = NORMAL_SCALE
+			decrease.emit()
 
 func focus_feedback(matching_color, focused):
 	if matching_color == color and focused:

@@ -41,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://c507oviog8v0x" path="res://modules/level_objects/acorn/regular_acorn_yellow.tscn" id="13_wuv32"]
 [ext_resource type="Texture2D" uid="uid://t2woqqdag0le" path="res://modules/demo5/hud/sprites/icon_eye.svg" id="14_aosah"]
 [ext_resource type="PackedScene" uid="uid://in10cqcgu1h0" path="res://modules/level_objects/acorn/regular_acorn_green.tscn" id="14_lt2dd"]
+[ext_resource type="Script" uid="uid://b2vqfibwv4f66" path="res://modules/demo1/ui/hud.gd" id="16_0yf11"]
+[ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="17_dbxgk"]
 [ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="18_861yp"]
 [ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="21_lt41x"]
@@ -50,6 +52,12 @@
 [ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
 [ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="36_nt0k8"]
 [ext_resource type="Material" uid="uid://d144g40pc4bq7" path="res://modules/demo5/map/props/interactables_without_fading.tres" id="37_pxjlt"]
+[ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="53_tr8eo"]
+[ext_resource type="Script" uid="uid://cv2pio2355wvl" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_ready.gd" id="53_xeev5"]
+[ext_resource type="Resource" uid="uid://04odm6qkfamm" path="res://modules/demo1/dialogues/demo1_dialogue01.tres" id="54_k0vpd"]
+[ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="54_xkoa7"]
+[ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="55_64bld"]
+[ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="56_mdxg1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aosah"]
 bg_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
@@ -92,6 +100,10 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_xeev5"]
+font_size = 48
+font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 
 [sub_resource type="Resource" id="Resource_pipgt"]
 script = ExtResource("4_vvos1")
@@ -440,6 +452,41 @@ expand_mode = 3
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("2_2woxq")]
 visible = false
 
+[node name="HUD" type="CanvasLayer" parent="." unique_id=424861386]
+script = ExtResource("16_0yf11")
+
+[node name="Control" type="Control" parent="HUD" unique_id=1730327546]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_861yp")
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Control" unique_id=2140972014]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 26.0
+offset_right = 315.0
+offset_bottom = 127.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control/PanelContainer" unique_id=775751641]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/PanelContainer/MarginContainer" unique_id=1665937613]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=489330448]
+layout_mode = 2
+texture = ExtResource("17_dbxgk")
+expand_mode = 3
+
+[node name="FedBoarCount" type="Label" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1445269113]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_xeev5")
+
 [node name="ThrowableItemPool" parent="." unique_id=872441548 instance=ExtResource("4_awgv7")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.218, 1.135)
@@ -743,8 +790,26 @@ transform = Transform3D(-0.87033856, 0, -0.4924539, 0, 1, 0, 0.4924539, 0, -0.87
 [node name="PineSmallWithoutFading" parent="Props/Pines" unique_id=412629760 instance=ExtResource("23_0ulb0")]
 transform = Transform3D(0.12723774, 0, 0.99187225, 0, 1, 0, -0.99187225, 0, 0.12723774, -4.8328595, -0.14318295, -5.1904874)
 
+[node name="Dialogue" type="Node3D" parent="." unique_id=1963336891]
+[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=1389185825 node_paths=PackedStringArray("scene_root")]
+script = ExtResource("55_64bld")
+scene_root = NodePath("")
+dialogue = ExtResource("56_mdxg1")
+
 [node name="Water" type="MeshInstance3D" parent="." unique_id=517934670]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_ku402")
+
+[node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("53_tr8eo")]
+process_mode = 3
+visible = false
+
+[node name="LevelCompletionCheck" type="Node" parent="." unique_id=1276413535 node_paths=PackedStringArray("boar_list")]
+script = ExtResource("54_xkoa7")
+boar_list = NodePath("../Boars")
+
+[connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
+[connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]
+[connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]
 
 [editable path="Props/Pines/PineWithoutFading/Pine"]

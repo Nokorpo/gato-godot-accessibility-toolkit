@@ -5,7 +5,7 @@ const FED_SCALE = Vector3.ONE * 1.2
 const FOCUS_SCALE = Vector3.ONE * 1.3
 
 signal finished_growing
-signal decrease
+signal decreased
 
 @export_enum("BLUE","RED","GREEN","YELLOW") var color: String
 
@@ -52,7 +52,7 @@ func refuse_acorn(matching_color):
 			heart_particles.emitting = false
 			await get_tree().create_timer(0.3).timeout
 			scale = NORMAL_SCALE
-			decrease.emit()
+			decreased.emit()
 
 func focus_feedback(matching_color, focused):
 	if matching_color == color and focused:

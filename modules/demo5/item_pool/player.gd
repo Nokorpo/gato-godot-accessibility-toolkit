@@ -31,7 +31,7 @@ func _ready():
 	emit_signal("focused_target", TargetColor.find_key(last_boar_selection), true)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept") && can_throw_item:
+	if Input.is_action_just_pressed("ui_accept") and can_throw_item == true:
 		selected_color = current_selection
 		can_throw_item = false
 		_throw_item()
@@ -68,7 +68,8 @@ func _throw_item():
 	await get_tree().create_timer(0.3).timeout
 	current_item.remove_item()
 	throwable_item_pool.spawn_item()
-	can_throw_item = true
+	if !DialogueSystem.ui.is_visible_in_tree():
+		can_throw_item = true
 
 func _set_current_item_height(weight: float):
 	current_item.item_node.position.y = throw_path.sample(weight)

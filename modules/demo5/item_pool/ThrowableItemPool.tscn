@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dkfwr2e0hpswl" path="res://modules/demo5/throwable_items/glasses.tscn" id="7_mwtjp"]
 [ext_resource type="PackedScene" uid="uid://eloijn3cq0rw" path="res://modules/demo5/throwable_items/wrench.tscn" id="8_boyh7"]
 [ext_resource type="PackedScene" uid="uid://dk18i5oglbj2y" path="res://modules/level_objects/acorn/regular_acorn_red.tscn" id="9_mwtjp"]
-[ext_resource type="PackedScene" uid="uid://dx8muoosb675p" path="res://modules/level_objects/acorn/acorn_blue.gltf" id="10_eksg7"]
-[ext_resource type="PackedScene" uid="uid://bd0i7xibxqpll" path="res://modules/level_objects/acorn/acorn_green.gltf" id="11_udp35"]
-[ext_resource type="PackedScene" uid="uid://dd6eu0cja2otl" path="res://modules/level_objects/acorn/acorn_yellow.gltf" id="12_7boki"]
+[ext_resource type="PackedScene" uid="uid://bufvmiucjhxss" path="res://modules/demo5/throwable_items/acorns/accessible_acorn_blue.tscn" id="10_mwtjp"]
+[ext_resource type="PackedScene" uid="uid://jwpggyqb1uqe" path="res://modules/demo5/throwable_items/acorns/accessible_acorn_green.tscn" id="11_boyh7"]
+[ext_resource type="PackedScene" uid="uid://deout8uvg83up" path="res://modules/demo5/throwable_items/acorns/accessible_acorn_yellow.tscn" id="12_if4yi"]
 [ext_resource type="PackedScene" uid="uid://cwml83hpf6t1y" path="res://modules/level_objects/acorn/regular_acorn_blue.tscn" id="13_boyh7"]
 [ext_resource type="PackedScene" uid="uid://c507oviog8v0x" path="res://modules/level_objects/acorn/regular_acorn_yellow.tscn" id="14_if4yi"]
 
@@ -74,24 +74,24 @@ metadata/_custom_type_script = "uid://sx7wfewhlap7"
 [sub_resource type="Resource" id="Resource_donvt"]
 script = ExtResource("2_2jtk5")
 item_name = "Accessible Blue Acorn"
-item_scene = ExtResource("10_eksg7")
-spawn_point = Vector3(0, -0.71272963, -1.216)
+item_scene = ExtResource("10_mwtjp")
+spawn_point = Vector3(0, -0.40721387, -0.80565304)
 matching_color = "BLUE"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_o66nx"]
 script = ExtResource("2_2jtk5")
 item_name = "Accessible Green Acorn"
-item_scene = ExtResource("11_udp35")
-spawn_point = Vector3(0, -0.71272963, -1.216)
+item_scene = ExtResource("11_boyh7")
+spawn_point = Vector3(0, -0.40721387, -0.80565304)
 matching_color = "GREEN"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Resource" id="Resource_1ymfx"]
 script = ExtResource("2_2jtk5")
 item_name = "Accessible Yellow Acorn"
-item_scene = ExtResource("12_7boki")
-spawn_point = Vector3(0, -0.71272963, -1.216)
+item_scene = ExtResource("12_if4yi")
+spawn_point = Vector3(0, -0.40721387, -0.80565304)
 matching_color = "YELLOW"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 

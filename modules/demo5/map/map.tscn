@@ -56,13 +56,15 @@
 [ext_resource type="PackedScene" uid="uid://bampo4q5ii6de" path="res://modules/demo5/targets/boars/boar_green.tscn" id="40_yiqpe"]
 [ext_resource type="PackedScene" uid="uid://c6yixj1wpj8u0" path="res://modules/demo5/targets/boars/boar_red.tscn" id="41_ps754"]
 [ext_resource type="PackedScene" uid="uid://rhdvpoovp68q" path="res://modules/demo5/targets/boars/boar_yellow.tscn" id="42_yiqpe"]
-[ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="53_tr8eo"]
-[ext_resource type="Script" uid="uid://cv2pio2355wvl" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_ready.gd" id="53_xeev5"]
 [ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="54_k0vpd"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="54_xkoa7"]
-[ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="55_64bld"]
 [ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="55_mdxg1"]
-[ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="56_mdxg1"]
+[ext_resource type="Script" uid="uid://dwntaleokp86s" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_ready.gd" id="58_riqon"]
+[ext_resource type="Script" uid="uid://c8285oouuj2ce" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_first_fed_boar.gd" id="60_ps754"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="60_riqon"]
+[ext_resource type="Script" uid="uid://88gbxjo3fu6j" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_second_fed_boar.gd" id="61_ps754"]
+[ext_resource type="Script" uid="uid://d1o8hyi8eobjd" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_third_fed_boar.gd" id="64_ps754"]
+[ext_resource type="Script" uid="uid://04e2ma8qdgop" path="res://modules/demo5/dialogues/triggers/demo_completion_dialogue.gd" id="65_riqon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aosah"]
 bg_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
@@ -229,13 +231,128 @@ albedo_color = Color(0.8887103, 0.6703262, 0, 1)
 material = SubResource("StandardMaterial3D_pxjlt")
 size = Vector2(0.1, 0.1)
 
-[sub_resource type="Resource" id="Resource_mdxg1"]
+[sub_resource type="Resource" id="Resource_ps754"]
 script = ExtResource("54_k0vpd")
+message = "¡Jabalíes coloridos! ¿Quizás sean así por el color de las bellotas que comen?"
+name = "Gato"
+animation_name = "talk_surprised"
+face = "wow"
+mesh = ExtResource("60_riqon")
 metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
-[sub_resource type="Resource" id="Resource_87pyo"]
+[sub_resource type="Resource" id="Resource_riqon"]
+script = ExtResource("54_k0vpd")
+message = "Vamos a comprobarlo…"
+name = "Gato"
+animation_name = "talk_side_eye"
+face = "side_eye"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_2ryrr"]
 script = ExtResource("55_mdxg1")
-messages = Array[ExtResource("54_k0vpd")]([SubResource("Resource_mdxg1")])
+messages = Array[ExtResource("54_k0vpd")]([SubResource("Resource_ps754"), SubResource("Resource_riqon")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
+
+[sub_resource type="Resource" id="Resource_ywulb"]
+script = ExtResource("54_k0vpd")
+message = "¡Toma! "
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_gm00q"]
+script = ExtResource("54_k0vpd")
+message = "Aunque seguramente costaría mucho diferenciar los colores si aplicamos algún filtro de daltonismo."
+name = "Gato"
+animation_name = "talk_worried"
+face = "worried"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_pqlvt"]
+script = ExtResource("55_mdxg1")
+messages = Array[ExtResource("54_k0vpd")]([SubResource("Resource_ywulb"), SubResource("Resource_gm00q")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
+
+[sub_resource type="Resource" id="Resource_qh51v"]
+script = ExtResource("54_k0vpd")
+message = "Está mucho más difícil ahora…"
+name = "Gato"
+animation_name = "talk_surprised"
+face = "surprised"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_ptp6h"]
+script = ExtResource("54_k0vpd")
+message = "¿Y si pruebas a cambiar entre los distintos tipos de filtros?"
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_sl6ik"]
+script = ExtResource("55_mdxg1")
+messages = Array[ExtResource("54_k0vpd")]([SubResource("Resource_qh51v"), SubResource("Resource_ptp6h")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
+
+[sub_resource type="Resource" id="Resource_nynoo"]
+script = ExtResource("54_k0vpd")
+message = "Es imprescindible no depender exclusivamente de los colores..."
+name = "Gato"
+animation_name = "talk_side_eye"
+face = "side_eye"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_kabh5"]
+script = ExtResource("54_k0vpd")
+message = "a la hora de diseñar una experiencia."
+name = "Gato"
+animation_name = "talk_side_eye"
+face = "side_eye"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_vx2jq"]
+script = ExtResource("54_k0vpd")
+message = "¡Mira qué diferencia cambiando las siluetas de los jabalíes y bellotas!"
+name = "Gato"
+animation_name = "talk_surprised"
+face = "wow"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_8itej"]
+script = ExtResource("55_mdxg1")
+messages = Array[ExtResource("54_k0vpd")]([SubResource("Resource_nynoo"), SubResource("Resource_kabh5"), SubResource("Resource_vx2jq")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
+
+[sub_resource type="Resource" id="Resource_aupo0"]
+script = ExtResource("54_k0vpd")
+message = "¡Yay! Estos filtros pueden ayudarte durante el desarrollo de tu proyecto,"
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_tpw7a"]
+script = ExtResource("54_k0vpd")
+message = "para que sea sencillo de leerlo visualmente independientemente del tipo de visión del usuario."
+name = "Gato"
+animation_name = "talk_happy"
+face = "happy"
+mesh = ExtResource("60_riqon")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_efubn"]
+script = ExtResource("55_mdxg1")
+messages = Array[ExtResource("54_k0vpd")]([SubResource("Resource_aupo0"), SubResource("Resource_tpw7a")])
 metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
@@ -500,6 +617,10 @@ expand_mode = 3
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_xeev5")
+
+[node name="LevelCompletionCheck" type="Node" parent="." unique_id=1276413535 node_paths=PackedStringArray("boar_list")]
+script = ExtResource("54_xkoa7")
+boar_list = NodePath("../NormalBoars")
 
 [node name="ThrowableItemPool" parent="." unique_id=872441548 instance=ExtResource("4_awgv7")]
 unique_name_in_owner = true
@@ -939,27 +1060,29 @@ transform = Transform3D(0.12723774, 0, 0.99187225, 0, 1, 0, -0.99187225, 0, 0.12
 [node name="Dialogue" type="Node3D" parent="." unique_id=1963336891]
 
 [node name="StartingDialogue" type="Node" parent="Dialogue" unique_id=1474119192]
-script = ExtResource("53_xeev5")
-dialogue = SubResource("Resource_87pyo")
+script = ExtResource("58_riqon")
+dialogue = SubResource("Resource_2ryrr")
 
-[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=1389185825]
-script = ExtResource("55_64bld")
-dialogue = ExtResource("56_mdxg1")
+[node name="FirstFedBoarDialogue" type="Node" parent="Dialogue" unique_id=168027349]
+script = ExtResource("60_ps754")
+dialogue = SubResource("Resource_pqlvt")
+
+[node name="SecondFedBoarDialogue" type="Node" parent="Dialogue" unique_id=707745954]
+script = ExtResource("61_ps754")
+dialogue = SubResource("Resource_sl6ik")
+
+[node name="ChangeMeshesDialogue" type="Node" parent="Dialogue" unique_id=301537383]
+script = ExtResource("64_ps754")
+dialogue = SubResource("Resource_8itej")
+
+[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=526275409]
+script = ExtResource("65_riqon")
+dialogue = SubResource("Resource_efubn")
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=517934670]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_ku402")
 
-[node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("53_tr8eo")]
-process_mode = 3
-visible = false
-
-[node name="LevelCompletionCheck" type="Node" parent="." unique_id=1276413535 node_paths=PackedStringArray("boar_list")]
-script = ExtResource("54_xkoa7")
-boar_list = NodePath("../NormalBoars")
-
-[connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
-[connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]
 [connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]
 
 [editable path="Props/Pines/PineWithoutFading/Pine"]

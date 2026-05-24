@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://deout8uvg83up"]
+
+[ext_resource type="PackedScene" uid="uid://dd6eu0cja2otl" path="res://modules/level_objects/acorn/acorn_yellow.gltf" id="1_rnr16"]
+
+[sub_resource type="Animation" id="Animation_4w6lq"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8qte5"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("acorn_yellow:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0, 0, -0.06666666, 0, 0.29444444, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.8333334, 2.2333333, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("acorn_yellow:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.05, -0.16666667, -0.024708396, 0, 0, 0.06340052, -0.06666666, 0.0015384617, 0.29444444, -0.006794872, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.8333334, 2.2333333, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("acorn_yellow:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0, 0, -0.06666666, 0, 0.29444444, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.8333334, 2.2333333, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ceq4v"]
+_data = {
+&"RESET": SubResource("Animation_4w6lq"),
+&"idle": SubResource("Animation_8qte5")
+}
+
+[node name="AccessibleAcornYellow" unique_id=843138063 instance=ExtResource("1_rnr16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00024884782, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1482179440]
+libraries/ = SubResource("AnimationLibrary_ceq4v")
+autoplay = &"idle"

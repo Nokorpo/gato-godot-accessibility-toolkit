@@ -5,7 +5,7 @@ extends Node
 @export var filter_label: Label
 
 var current_filter: Filter = Filter.new()
-var are_filters_blocked: bool 
+var are_filters_blocked: bool
 var filters_to_shader_index_map: Array = [
 	0, #Filter.FilterType.NORMAL 
 	1, #Filter.FilterType.PROTANOPIA 
@@ -18,6 +18,7 @@ var filters_to_shader_index_map: Array = [
 func _ready():
 	for button: FilterButton in filter_buttons_node.get_children():
 		button.pressed_button.connect(select_filter)
+	block_filters()
 
 func _input(event: InputEvent) -> void:
 	if are_filters_blocked and (event.is_action_pressed("change_filter_left") or event.is_action_pressed("change_filter_right")):

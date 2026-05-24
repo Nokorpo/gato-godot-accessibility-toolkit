@@ -38,11 +38,17 @@ theme_override_constants/separation = 20
 [node name="SettingsButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=433425188]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1803045332]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_next = NodePath("../SettingsButton")
+focus_previous = NodePath("../SettingsButton")
 text = "Quit demo"
 
 [node name="OpenMenuCooldown" type="Timer" parent="." unique_id=470500546]

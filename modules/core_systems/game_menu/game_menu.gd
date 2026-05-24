@@ -11,7 +11,19 @@ signal closed
 
 var _settings_menu: Node
 
+func _is_back_input(event: InputEvent) -> bool:
+	return (
+		event is InputEventKey and event.keycode == KEY_ESCAPE \
+		or event is InputEventJoypadButton and event.button_index == JOY_BUTTON_B
+	) and event.is_pressed()
+
 func _unhandled_input(event: InputEvent) -> void:
+	if _settings_menu != null and _is_back_input(event):
+		_settings_menu.queue_free()
+		_settings_menu = null
+		get_viewport().set_input_as_handled()
+		return
+
 	if event.is_action("game_menu") and event.is_pressed():
 		_toggle_visibility()
 		get_viewport().set_input_as_handled()
@@ -25,14 +37,16 @@ func _toggle_visibility() -> void:
 	else:
 		visible = true
 		get_tree().paused = true
+		$Control/MarginContainer/PanelContainer/VBoxContainer/SettingsButton.grab_focus()
 		await $BackgroundBlur.show_blur().finished
 
 	if _settings_menu != null:
 		_settings_menu.queue_free()
+		_settings_menu = null
 
 func open_settings() -> void:
-	var coso: PackedScene = load("res://addons/input_remapper/ui/input_remapper_ui.tscn")
-	_settings_menu = coso.instantiate()
+	var settings_scene: PackedScene = load("res://addons/input_remapper/ui/input_remapper_ui.tscn")
+	_settings_menu = settings_scene.instantiate()
 	$CanvasLayer.add_child(_settings_menu)
 
 func quit_and_go_to_menu() -> void:

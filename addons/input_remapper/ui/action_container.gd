@@ -59,7 +59,6 @@ func _read_event_or_null() -> InputEventKey:
 	return result.event
 
 func _on_button_pressed(action_name: String) -> void:
-
 	var event: InputEventKey = await _read_event_or_null()
 	if not event:
 		return

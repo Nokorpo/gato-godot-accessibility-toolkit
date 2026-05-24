@@ -42,10 +42,10 @@ class TestInputRemapper extends GutTest:
 	var sut := load("res://addons/input_remapper/service/input_remapper_service.gd")
 
 	func test_autoload_initializes_storage_service() -> void:
-		var coso = InputRemapper
-		assert_not_null(coso, "Autoload does not exist. Is the plugin enabled?")
-		assert_true("storage_service" in coso)
-		assert_not_null(coso.storage_service, "The autoload didn't initialize the storage service")
+		var input_remapper_autoload = InputRemapper
+		assert_not_null(input_remapper_autoload, "Autoload does not exist. Is the plugin enabled?")
+		assert_true("storage_service" in input_remapper_autoload)
+		assert_not_null(input_remapper_autoload.storage_service, "The autoload didn't initialize the storage service")
 
 	func test_config_is_applied() -> void:
 		InputMap.add_action(ACTION_NAME)

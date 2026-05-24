@@ -51,4 +51,4 @@ func open_settings() -> void:
 
 func quit_and_go_to_menu() -> void:
 	get_tree().paused = false
-	var _coso: SceneLoader = SceneLoader.create_scene_loader(parent_scene, DEMO_SECTOR_PATH)
+	var _scene_loader: SceneLoader = SceneLoader.create_scene_loader(parent_scene, DEMO_SECTOR_PATH)

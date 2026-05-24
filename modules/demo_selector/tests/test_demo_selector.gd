@@ -38,8 +38,8 @@ class TestDemoSelectorScene extends GutTest:
 		data.scene = load("res://modules/demo_selector/tests/test_scene.tscn")
 
 		# WHEN
-		var coso: SceneLoader = demo_container.load_demo(data)
-		await coso.tree_exited
+		var scene_loader: SceneLoader = demo_container.load_demo(data)
+		await scene_loader.tree_exited
 
 		# THEN
 		assert_false(is_instance_valid(scene))

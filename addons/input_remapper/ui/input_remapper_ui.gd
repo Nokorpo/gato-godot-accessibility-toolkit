@@ -1,6 +1,7 @@
 class_name InputRemapperUI
 extends Control
 
+signal detected_conflicting_inputs(input_action_list: Array[InputAction])
 signal closed
 
 @export var _control_scheme_selector: Control
@@ -75,6 +76,40 @@ func set_action2d(action_name: StringName, new_input_action2d: InputAction) -> v
 	)
 	current_scheme.input_actions[action_index] = new_input_action2d
 
+func _check_for_conflicting_input(control_scheme: GatoControlScheme) -> bool:
+	var actions: Array[InputAction] = control_scheme.input_actions
+	var actions_with_duplicated_input := _find_duplicates(actions)
+	if actions_with_duplicated_input.size() > 0:
+		detected_conflicting_inputs.emit(actions_with_duplicated_input)
+		return true
+	return false
+
+func _find_duplicates(actions: Array[InputAction]) -> Array[InputAction]:
+	# FIXME this is a hack, we should make a proper function for this,
+	# but it's quick to implement it this way for now.
+	var actions_with_duplicated_input: Array[InputAction] = []
+	for action_a: InputAction in actions:
+		var current_action := action_a.duplicate(true)
+		current_action.name = "test"
+		for action_b: InputAction in actions:
+			var other_action := action_b.duplicate(true)
+			other_action.name = "test"
+			if action_a == action_b:
+				continue
+			if current_action.equals(other_action):
+				actions_with_duplicated_input.append(action_a)
+			if action_b is KeysInputAction2D:
+				if _find_duplicates_in_keysinputaction2d(action_a, action_b):
+					actions_with_duplicated_input.append(action_a)
+	return actions_with_duplicated_input
+
+# FIXME this should be a method in InputActions that lets you check for conflicts, not this
+func _find_duplicates_in_keysinputaction2d(action_a: InputAction, action_b) -> bool:
+	return action_a.contains_input_event(action_b.up)\
+		or action_a.contains_input_event(action_b.down)\
+		or action_a.contains_input_event(action_b.left)\
+		or action_a.contains_input_event(action_b.right)
+
 func _has_unsaved_changes() -> bool:
 	var index: int = _get_scheme_index(InputRemapper.get_current_scheme())
 	var current_scheme := _schemes[index]
@@ -83,6 +118,10 @@ func _has_unsaved_changes() -> bool:
 func save_changes() -> void:
 	InputRemapper.control_schemes = _schemes
 	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]
+	if _check_for_conflicting_input(current_scheme):
+		$ErrorDialog.show()
+		print("Found conflicting input. Skipping save.")
+		return
 	InputRemapper.apply_control_scheme(current_scheme)
 	InputRemapper.save_changes()
 

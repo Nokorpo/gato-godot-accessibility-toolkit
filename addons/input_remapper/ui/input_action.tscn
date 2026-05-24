@@ -2,15 +2,23 @@
 
 [ext_resource type="Script" uid="uid://ddmacrhia8xuu" path="res://addons/input_remapper/ui/input_action.gd" id="1_51mg0"]
 
-[node name="InputAction" type="HBoxContainer" unique_id=514890052]
+[node name="InputAction" type="PanelContainer" unique_id=681386481]
+offset_left = 125.0
+offset_right = 125.0
+offset_bottom = 31.0
+mouse_filter = 1
+theme_type_variation = &"InputActionNormal"
 script = ExtResource("1_51mg0")
 
-[node name="Label" type="Label" parent="." unique_id=787176148]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=514890052]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=787176148]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "launch_item"
 
-[node name="Button" type="Button" parent="." unique_id=9605682]
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=9605682]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -18,4 +26,4 @@ mouse_filter = 1
 theme_type_variation = &"InputButton"
 text = "Z"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer" method="_on_button_pressed"]

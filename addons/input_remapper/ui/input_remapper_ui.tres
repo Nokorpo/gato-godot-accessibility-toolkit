@@ -68,6 +68,21 @@ grow_begin = -10.0
 grow_end = -10.0
 thickness = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51mg0"]
+content_margin_left = 10.0
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28gtb"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gebx"]
 bg_color = Color(0.08627451, 0.023529412, 0.2509804, 1)
 border_width_left = 12
@@ -143,6 +158,10 @@ CheckBox/styles/normal = SubResource("StyleBoxFlat_oirqi")
 CheckBox/styles/pressed = SubResource("StyleBoxFlat_nxiv0")
 HSeparator/constants/separation = 40
 HSeparator/styles/separator = SubResource("StyleBoxLine_yg0ao")
+InputActionError/base_type = &"InputActionNormal"
+InputActionError/styles/panel = SubResource("StyleBoxFlat_51mg0")
+InputActionNormal/base_type = &"PanelContainer"
+InputActionNormal/styles/panel = SubResource("StyleBoxEmpty_28gtb")
 InputButton/base_type = &"Button"
 InputButton/colors/font_hover_color = Color(0.0901961, 0.0235294, 0.254902, 1)
 InputButton/styles/hover = SubResource("StyleBoxFlat_1ka4n")

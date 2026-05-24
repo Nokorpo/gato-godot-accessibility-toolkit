@@ -49,6 +49,12 @@ func equals(other_action: InputAction) -> bool:
 		return false
 	return true
 
+func contains_input_event(input_event: InputEvent) -> bool:
+	for input: InputEventKey in [up, down, left, right]:
+		if input.is_match(input_event):
+			return true
+	return false
+
 func get_as_dict() -> Dictionary:
 	return {
 		"type": "input_action2d_keys",

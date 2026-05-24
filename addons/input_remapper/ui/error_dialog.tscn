@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dnj8weyejjv11"]
+
+[ext_resource type="Script" uid="uid://d06d8538yilpu" path="res://addons/input_remapper/ui/error_dialog.gd" id="1_g88h6"]
+
+[node name="ErrorDialog" type="Control" unique_id=534890888]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g88h6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1695982315]
+top_level = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -261.5
+offset_right = 300.0
+offset_bottom = 261.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1668659057]
+layout_mode = 2
+
+[node name="Empty space" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1286719413]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1967051571]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 84
+text = "⚠️"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1502144327]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Two or more actions have the same input configured"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Empty space2" type="Control" parent="PanelContainer/VBoxContainer" unique_id=757234198]
+layout_mode = 2
+size_flags_vertical = 3

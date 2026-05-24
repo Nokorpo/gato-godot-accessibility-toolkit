@@ -83,7 +83,7 @@ layout_mode = 2
 layout_mode = 2
 focus_mode = 0
 theme_type_variation = &"InputButton"
-text = "Reset controls to default"
+text = "Reset changes"
 icon = ExtResource("5_8b17j")
 alignment = 0
 

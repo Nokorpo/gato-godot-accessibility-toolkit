@@ -143,6 +143,7 @@ default_font = ExtResource("2_1ka4n")
 default_font_size = 36
 Button/colors/font_focus_color = Color(0.03137255, 0, 0.10980392, 1)
 Button/colors/font_hover_color = Color(0.03137255, 0, 0.10980392, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_1ka4n")
 Button/styles/hover = SubResource("StyleBoxFlat_1ka4n")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_28gtb")
 Button/styles/normal = SubResource("StyleBoxFlat_d5smo")

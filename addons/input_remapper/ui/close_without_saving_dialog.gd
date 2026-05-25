@@ -1,11 +1,13 @@
 extends Control
 
-@onready var input_remapper_ui: InputRemapperUI = get_parent()
+@onready var input_remapper_ui: InputRemapperUI
 
 signal appeared
 signal disappeared
 
 func _ready() -> void:
+	if get_parent() is InputRemapperUI:
+		input_remapper_ui = get_parent()
 	visibility_changed.connect(_on_visibility_changed)
 	get_child(0).modulate = Color.TRANSPARENT
 	$PanelContainer/VBoxContainer/RowNavigationContainer/BackButton.pressed.connect(_on_back)

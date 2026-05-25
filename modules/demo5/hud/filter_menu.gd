@@ -7,10 +7,10 @@ extends Node
 var current_filter: Filter = Filter.new()
 var are_filters_blocked: bool
 var filters_to_shader_index_map: Array = [
-	0, #Filter.FilterType.NORMAL 
-	1, #Filter.FilterType.PROTANOPIA 
-	3, #"Filter.FilterType.DEUTERANOPIA" 
-	4, #"Filter.FilterType.DEUTERANOMALY" 
+	0, #Filter.FilterType.NORMAL
+	1, #Filter.FilterType.PROTANOPIA
+	3, #Filter.FilterType.DEUTERANOPIA
+	4, #Filter.FilterType.DEUTERANOMALY
 	5, #"Filter.FilterType.TRITANOPIA"
 	7, #"Filter.FilterType.ACHROMATOPSIA"
 ]
@@ -25,12 +25,12 @@ func _input(event: InputEvent) -> void:
 		_notify_filters_are_blocked()
 		return
 	if event.is_action_pressed("change_filter_right"):
-		var next_filter: Filter.FilterType = (current_filter.value + 1) % Filter.FilterType.values().size()
+		var next_filter: Filter.FilterType = (current_filter.value + 1) % Filter.FilterType.values().size() as Filter.FilterType
 		if next_filter == null:
 			next_filter = Filter.FilterType.values()[0]
 		select_filter(Filter.new(next_filter))
 	if event.is_action_pressed("change_filter_left"):
-		var next_filter: Filter.FilterType = (current_filter.value - 1) % Filter.FilterType.values().size()
+		var next_filter: Filter.FilterType = (current_filter.value - 1) % Filter.FilterType.values().size() as Filter.FilterType
 		if next_filter < 0:
 			next_filter = Filter.FilterType.values()[-1]
 		select_filter(Filter.new(next_filter))
@@ -38,7 +38,6 @@ func _input(event: InputEvent) -> void:
 func select_filter(filter: Filter):
 	if !are_filters_blocked:
 		var button: FilterButton = _get_filter_button(filter)
-		var previous_button: FilterButton = _get_filter_button(current_filter)
 		_set_label_text(filter)
 		button.button_pressed = true
 		current_filter = filter

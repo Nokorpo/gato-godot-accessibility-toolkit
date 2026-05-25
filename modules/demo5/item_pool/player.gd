@@ -30,7 +30,7 @@ func _ready():
 	current_selection = TargetColor.BLUE
 	emit_signal("focused_target", TargetColor.find_key(last_boar_selection), true)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and can_throw_item == true:
 		selected_color = current_selection
 		can_throw_item = false

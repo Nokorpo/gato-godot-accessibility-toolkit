@@ -11,7 +11,7 @@ signal decreased
 
 @onready var outline_material: StandardMaterial3D = load("res://modules/demo5/targets/boars/selection_outline.tres")
 
-var body_material: StandardMaterial3D 
+var body_material: StandardMaterial3D
 var anim_player: AnimationPlayer
 var heart_particles: GPUParticles3D
 var eating_particles: CPUParticles3D

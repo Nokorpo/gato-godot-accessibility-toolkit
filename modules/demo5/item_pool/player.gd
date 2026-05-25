@@ -6,7 +6,7 @@ signal focused_target(color: TargetColor, is_focused: bool)
 
 enum TargetColor { BLUE, GREEN, RED, YELLOW, BIN }
 
-@export var throw_path: Curve 
+@export var throw_path: Curve
 @onready var throwable_item_pool: ThrowableItemPool = %ThrowableItemPool
 @onready var target_list: Dictionary[TargetColor, Node3D] = {
 	TargetColor.BLUE: $"../AccessibleBoars/BoarBlue",
@@ -16,7 +16,7 @@ enum TargetColor { BLUE, GREEN, RED, YELLOW, BIN }
 	TargetColor.BIN: $"../Bin"
 }
 
-var current_item: ThrowableItem: 
+var current_item: ThrowableItem:
 	get():
 		return throwable_item_pool.current_item
 var current_selection: TargetColor

@@ -11,8 +11,8 @@ var filters_to_shader_index_map: Array = [
 	1, #Filter.FilterType.PROTANOPIA
 	3, #Filter.FilterType.DEUTERANOPIA
 	4, #Filter.FilterType.DEUTERANOMALY
-	5, #"Filter.FilterType.TRITANOPIA"
-	7, #"Filter.FilterType.ACHROMATOPSIA"
+	5, #Filter.FilterType.TRITANOPIA
+	7, #Filter.FilterType.ACHROMATOPSIA
 ]
 
 func _ready():

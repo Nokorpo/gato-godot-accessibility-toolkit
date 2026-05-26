@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://d0xyfr16tcse3"]
+
+[ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="1_3l3kr"]
+[ext_resource type="Script" uid="uid://78m06ag4ao5p" path="res://modules/demo4/high_contrast/texture_check_button.gd" id="1_ilj3v"]
+[ext_resource type="Texture2D" uid="uid://2tmx0rm6dn7w" path="res://icon.jpg" id="2_ilj3v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsqau"]
+bg_color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.40069768, 0.40069777, 0.40069747, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab4hp"]
+bg_color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[node name="TextureCheckButton" type="HBoxContainer" unique_id=2009164450]
+script = ExtResource("1_ilj3v")
+
+[node name="CheckButton" type="TextureButton" parent="." unique_id=1393616618]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("1_3l3kr")
+texture_pressed = ExtResource("2_ilj3v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1193894022]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2061515100]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=214652093]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ON"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=719808060]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "OFF"
+
+[node name="PanelContainer" type="Panel" parent="VBoxContainer" unique_id=1280884833]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lsqau")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/PanelContainer" unique_id=1442769075]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 54.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ab4hp")
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_button_toggled"]

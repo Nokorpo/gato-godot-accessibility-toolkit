@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvs14kxa77pp2"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
+[ext_resource type="PackedScene" uid="uid://dn1fq3kwyg6sq" path="res://modules/demo4/high_contrast/high_contrast.tscn" id="1_671ot"]
 [ext_resource type="Script" uid="uid://dfrwuakpoqpr3" path="res://modules/demo4/hud/hud.gd" id="2_nyeds"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="3_3clr6"]
@@ -98,7 +99,10 @@ size = Vector3(100, 1, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0721d"]
 
-[node name="Map" type="Node3D" unique_id=675758072]
+[node name="Map" type="Node3D" unique_id=1295868009]
+
+[node name="HighContrast" parent="." unique_id=31790624 node_paths=PackedStringArray("scene_root") instance=ExtResource("1_671ot")]
+scene_root = NodePath("..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2064162423]
 environment = ExtResource("1_6sohf")
@@ -117,6 +121,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("3_671ot")
 
 [node name="MarginContainer" type="MarginContainer" parent="ControlsHUD/Control" unique_id=952549495]
@@ -186,6 +191,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("3_671ot")
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/Control" unique_id=886866617]

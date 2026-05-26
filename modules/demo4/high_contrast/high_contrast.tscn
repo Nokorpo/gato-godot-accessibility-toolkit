@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dn1fq3kwyg6sq"]
+
+[ext_resource type="Script" uid="uid://bbcrlurfsptxg" path="res://modules/demo4/high_contrast/high_contrast.gd" id="1_ab4hp"]
+[ext_resource type="Shader" uid="uid://ccrxn4vdxoh34" path="res://modules/demo4/shaders/high_contrast.gdshader" id="2_lsqau"]
+[ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/ui/background_blur/blur.gdshader" id="3_5tw3i"]
+[ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="4_lvvh7"]
+[ext_resource type="PackedScene" uid="uid://d0xyfr16tcse3" path="res://modules/demo4/high_contrast/texture_check_button.tscn" id="5_qxrg3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_671ot"]
+render_priority = 0
+shader = ExtResource("2_lsqau")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/highlight_force = -0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmjde"]
+render_priority = 0
+shader = ExtResource("2_lsqau")
+shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/highlight_force = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb708"]
+render_priority = 0
+shader = ExtResource("2_lsqau")
+shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/highlight_force = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5fho"]
+render_priority = 0
+shader = ExtResource("2_lsqau")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/highlight_force = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm1tf"]
+render_priority = 0
+shader = ExtResource("2_lsqau")
+shader_parameter/color = Color(1, 0.7490196, 0, 1)
+shader_parameter/highlight_force = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0olh3"]
+shader = ExtResource("3_5tw3i")
+shader_parameter/lod = 3.0000001425
+
+[sub_resource type="Gradient" id="Gradient_ijg73"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wb708"]
+gradient = SubResource("Gradient_ijg73")
+
+[node name="HighContrast" type="Node3D" unique_id=2004513584]
+script = ExtResource("1_ab4hp")
+world_material = SubResource("ShaderMaterial_671ot")
+player_material = SubResource("ShaderMaterial_lmjde")
+npcs_material = SubResource("ShaderMaterial_wb708")
+obstacles_material = SubResource("ShaderMaterial_r5fho")
+interactable_material = SubResource("ShaderMaterial_pm1tf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=802766851]
+
+[node name="Blur" type="TextureRect" parent="CanvasLayer" unique_id=379961456]
+visible = false
+material = SubResource("ShaderMaterial_0olh3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_wb708")
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1800134712]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_lvvh7")
+
+[node name="Offset" type="Control" parent="CanvasLayer/Control" unique_id=278026982]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Offset" unique_id=817229845]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1558.0
+offset_top = 884.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 256
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/Offset/MarginContainer" unique_id=226689929]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer" unique_id=253569507]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureCheckButton" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer" unique_id=2009164450 instance=ExtResource("5_qxrg3")]
+layout_mode = 2
+
+[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/TextureCheckButton" to="." method="disable"]
+[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/TextureCheckButton" to="." method="enable"]

@@ -66,8 +66,15 @@
 [ext_resource type="Script" uid="uid://d1o8hyi8eobjd" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_third_fed_boar.gd" id="64_ps754"]
 [ext_resource type="Script" uid="uid://04e2ma8qdgop" path="res://modules/demo5/dialogues/triggers/demo_completion_dialogue.gd" id="65_riqon"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqon"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aosah"]
 bg_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
 
 [sub_resource type="Resource" id="Resource_33yh1"]
 script = ExtResource("5_3vuti")
@@ -462,123 +469,114 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
 text = "Next filter / Prev. Filter"
 
-[node name="FiltersMenu" type="CanvasLayer" parent="." unique_id=1987695816 node_paths=PackedStringArray("filter_node", "filter_buttons_node", "filter_label")]
+[node name="FiltersMenu" type="CanvasLayer" parent="." unique_id=1987695816 node_paths=PackedStringArray("filter_node", "filter_buttons_node", "filter_label", "filter_buttons_background")]
 script = ExtResource("4_lt41x")
 filter_node = NodePath("../Filter")
-filter_buttons_node = NodePath("VBoxContainer/FilterButtons")
-filter_label = NodePath("VBoxContainer/MarginContainer/Panel/Label")
+filter_buttons_node = NodePath("PanelContainer/VBoxContainer/FilterButtons")
+filter_label = NodePath("PanelContainer/VBoxContainer/MarginContainer/Panel/Label")
+filter_buttons_background = NodePath("PanelContainer/MarginContainer/Panel")
 
-[node name="Panel" type="Panel" parent="FiltersMenu" unique_id=1895538784]
-offset_left = 1318.0
-offset_top = 833.0
-offset_right = 1827.0
-offset_bottom = 891.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_aosah")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="FiltersMenu" unique_id=658160085]
+[node name="PanelContainer" type="PanelContainer" parent="FiltersMenu" unique_id=1687727560]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -695.0
-offset_top = -263.0
+offset_left = -602.0
+offset_top = -295.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_riqon")
 
-[node name="FilterButtons" type="HBoxContainer" parent="FiltersMenu/VBoxContainer" unique_id=798002959]
+[node name="MarginContainer" type="MarginContainer" parent="FiltersMenu/PanelContainer" unique_id=602389444]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="Panel" type="Panel" parent="FiltersMenu/PanelContainer/MarginContainer" unique_id=1895538784]
+custom_minimum_size = Vector2(520, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aosah")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FiltersMenu/PanelContainer" unique_id=658160085]
+layout_mode = 2
+
+[node name="FilterButtons" type="HBoxContainer" parent="FiltersMenu/PanelContainer/VBoxContainer" unique_id=798002959]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="Normal" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1045514460 instance=ExtResource("4_33yh1")]
+[node name="Normal" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1045514460 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Normal"
 button_pressed = true
 filter = SubResource("Resource_33yh1")
 filter_icon = ExtResource("7_4phwh")
 
-[node name="Protanopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1654589995 instance=ExtResource("4_33yh1")]
+[node name="Protanopia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1654589995 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Protanopia"
 filter = SubResource("Resource_3vuti")
 filter_icon = ExtResource("8_aosah")
 
-[node name="Deuteranopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=602030319 instance=ExtResource("4_33yh1")]
+[node name="Deuteranopia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=602030319 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Deuteranopia"
 filter = SubResource("Resource_uxiln")
 filter_icon = ExtResource("9_f6o8q")
 
-[node name="Deuteranomaly" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1729026628 instance=ExtResource("4_33yh1")]
+[node name="Deuteranomaly" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1729026628 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Deuteranomaly"
 filter = SubResource("Resource_rk43s")
 filter_icon = ExtResource("10_ewdyg")
 
-[node name="Tritanopia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=1131940632 instance=ExtResource("4_33yh1")]
+[node name="Tritanopia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1131940632 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Tritanopia"
 filter = SubResource("Resource_012p0")
 filter_icon = ExtResource("11_vdqj1")
 
-[node name="Achromatopsia" parent="FiltersMenu/VBoxContainer/FilterButtons" unique_id=794677414 instance=ExtResource("4_33yh1")]
+[node name="Achromatopsia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=794677414 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Achromatopsia"
 filter = SubResource("Resource_dmlar")
 filter_icon = ExtResource("12_al88k")
 
-[node name="HSeparator" type="HSeparator" parent="FiltersMenu/VBoxContainer" unique_id=1733478503]
+[node name="HSeparator" type="HSeparator" parent="FiltersMenu/PanelContainer/VBoxContainer" unique_id=1733478503]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 theme_override_styles/separator = SubResource("StyleBoxLine_aosah")
 
-[node name="MarginContainer" type="MarginContainer" parent="FiltersMenu/VBoxContainer" unique_id=340364354]
+[node name="MarginContainer" type="MarginContainer" parent="FiltersMenu/PanelContainer/VBoxContainer" unique_id=340364354]
 layout_mode = 2
-theme_override_constants/margin_left = 150
-theme_override_constants/margin_right = 150
+theme_override_constants/margin_left = 140
+theme_override_constants/margin_right = 140
 
-[node name="Panel" type="Panel" parent="FiltersMenu/VBoxContainer/MarginContainer" unique_id=1678413004]
-custom_minimum_size = Vector2(0, 70)
+[node name="Panel" type="PanelContainer" parent="FiltersMenu/PanelContainer/VBoxContainer/MarginContainer" unique_id=1421532690]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_33yh1")
 
-[node name="Label" type="Label" parent="FiltersMenu/VBoxContainer/MarginContainer/Panel" unique_id=1882255650]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -22.5
-offset_right = 160.0
-offset_bottom = 22.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Label" type="Label" parent="FiltersMenu/PanelContainer/VBoxContainer/MarginContainer/Panel" unique_id=1882255650]
+layout_mode = 2
 theme = ExtResource("6_33yh1")
 theme_override_colors/font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 text = "NORMAL"
 horizontal_alignment = 1
-clip_text = true
 
-[node name="TextureRect" type="TextureRect" parent="FiltersMenu/VBoxContainer/MarginContainer/Panel" unique_id=641008044]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -56.00006
-offset_top = -40.0
-offset_right = 22.528473
-offset_bottom = 10.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="TextureRect" type="TextureRect" parent="FiltersMenu/PanelContainer/VBoxContainer/MarginContainer/Panel" unique_id=641008044]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
 texture = ExtResource("14_aosah")
 expand_mode = 3
+stretch_mode = 4
 
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("2_2woxq")]
 visible = false
@@ -593,6 +591,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("2_861yp")
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/Control" unique_id=2140972014]
@@ -610,6 +609,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=489330448]
 layout_mode = 2
+mouse_behavior_recursive = 2
 texture = ExtResource("17_dbxgk")
 expand_mode = 3
 

@@ -3,6 +3,7 @@ extends Node
 @export var filter_node: ColorRect
 @export var filter_buttons_node: Container
 @export var filter_label: Label
+@export var filter_buttons_background: Panel
 
 var current_filter: Filter = Filter.new()
 var are_filters_blocked: bool
@@ -67,8 +68,10 @@ func block_filters():
 	are_filters_blocked = true
 	for button: FilterButton in filter_buttons_node.get_children():
 		button.disable()
+	filter_buttons_background.get_theme_stylebox("panel").bg_color = Color(0.09, 0.024, 0.255, 0.1)
 
 func unblock_filters():
 	are_filters_blocked = false
 	for button: FilterButton in filter_buttons_node.get_children():
 		button.enable()
+	filter_buttons_background.get_theme_stylebox("panel").bg_color = Color(0.09, 0.024, 0.255)

@@ -32,6 +32,7 @@ func _ready():
 	refusing_particles = get_node("PoofEffect")
 	body_material = find_child("Body", true, false).get_active_material(0)
 	anim_player.play("idle")
+	focus_feedback("BLUE", true)
 
 func eat_acorn(matching_color):
 	if matching_color == color:

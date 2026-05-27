@@ -32,7 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="18_hyq56"]
 [ext_resource type="PackedScene" uid="uid://cwp1ql6gjtok7" path="res://modules/level_objects/oak/oak.tscn" id="19_tmiu8"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="19_uo75g"]
+[ext_resource type="Script" uid="uid://boqk5mgllk2ws" path="res://modules/demo4/dialogues/triggers/launch_dialogue_on_high_contrast_enabled_dialogue.gd" id="20_lmjde"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="20_tmiu8"]
+[ext_resource type="Resource" uid="uid://bcc5hct5shuu8" path="res://modules/demo4/dialogues/demo4_dialogue07.tres" id="21_ijg73"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="21_rfxh8"]
 [ext_resource type="PackedScene" uid="uid://d67xo88xjrfm" path="res://modules/level_objects/acorn/gold_acorn.tscn" id="22_vm6ot"]
 [ext_resource type="PackedScene" uid="uid://dpedfmuyu50ig" path="res://modules/demo1/map/props/stone.gltf" id="22_vyjgi"]
@@ -247,6 +249,11 @@ dialogue = ExtResource("9_kfagj")
 [node name="CollectAcornDialogue" type="Node" parent="Dialogue" unique_id=173209078]
 script = ExtResource("10_h01ac")
 dialogue = Array[ExtResource("11_spi3t")]([ExtResource("12_qabrk"), ExtResource("13_nyeds"), ExtResource("14_671ot"), ExtResource("15_lmjde")])
+
+[node name="HighContrastEnabledDialogue" type="Node" parent="Dialogue" unique_id=219253494 node_paths=PackedStringArray("high_contrast_node")]
+script = ExtResource("20_lmjde")
+high_contrast_node = NodePath("../../HighContrast")
+dialogue = ExtResource("21_ijg73")
 
 [node name="Props" type="Node3D" parent="." unique_id=1606805648]
 

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d3tlxw1uwu2bx" path="res://modules/demo_selector/assets/completed_demo_tick.svg" id="2_je5n1"]
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_law7s"]
 [ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="3_w1asq"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="4_0qbok"]
 [ext_resource type="PackedScene" uid="uid://b3arsyyy6i00q" path="res://modules/core_systems/ui/quit_confirmation/quit_confirmation.tscn" id="5_mhl6o"]
 
 [sub_resource type="Curve" id="Curve_121e6"]
@@ -125,8 +126,10 @@ _data = {
 &"demo_completed": SubResource("Animation_0qbok")
 }
 
-[node name="CompletedDemoScreen" type="CanvasLayer" unique_id=67841330]
+[node name="CompletedDemoScreen" type="CanvasLayer" unique_id=67841330 node_paths=PackedStringArray("_first_selected_button")]
+process_mode = 2
 script = ExtResource("1_121e6")
+_first_selected_button = NodePath("Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer")
 
 [node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("2_law7s")]
 
@@ -176,21 +179,50 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Resume" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=548706988]
+[node name="RowNavigationContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1367961113 instance=ExtResource("4_0qbok")]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
+focus_next = NodePath("../RowNavigationContainer2")
+focus_previous = NodePath("../RowNavigationContainer3")
+mouse_filter = 0
+
+[node name="Resume" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer" unique_id=548706988]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
 theme_type_variation = &"FlatButton"
 text = "Resume"
 
-[node name="ReturnToDemoSelector" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=582891596]
+[node name="RowNavigationContainer2" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1705326311 instance=ExtResource("4_0qbok")]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../RowNavigationContainer")
+focus_neighbor_bottom = NodePath("../RowNavigationContainer3")
+focus_next = NodePath("../RowNavigationContainer3")
+focus_previous = NodePath("../RowNavigationContainer")
+mouse_filter = 0
+
+[node name="ReturnToDemoSelector" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer2" unique_id=582891596]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
 theme_type_variation = &"FlatButton"
 text = "Return to Demo Selector"
 
-[node name="Exit" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1803602692]
+[node name="RowNavigationContainer3" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=122748974 instance=ExtResource("4_0qbok")]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../RowNavigationContainer2")
+focus_neighbor_bottom = NodePath("../RowNavigationContainer")
+focus_next = NodePath("../RowNavigationContainer")
+focus_previous = NodePath("../RowNavigationContainer2")
+mouse_filter = 0
+
+[node name="Exit" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer3" unique_id=1803602692]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
 theme_type_variation = &"FlatButton"
 text = "Exit Game"
 
@@ -229,6 +261,10 @@ unique_name_in_owner = true
 layer = 5
 visible = false
 
-[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/Resume" to="." method="resume_demo"]
-[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ReturnToDemoSelector" to="." method="quit_and_go_to_menu"]
-[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/Exit" to="." method="show_quit_confirmation_screen"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer" to="." method="resume_demo"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer/Resume" to="." method="resume_demo"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer2" to="." method="quit_and_go_to_menu"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer2/ReturnToDemoSelector" to="." method="quit_and_go_to_menu"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer3" to="." method="show_quit_confirmation_screen"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer3/Exit" to="." method="show_quit_confirmation_screen"]
+[connection signal="visibility_changed" from="QuitConfirmation" to="." method="_on_quit_confirmation_visibility_changed"]

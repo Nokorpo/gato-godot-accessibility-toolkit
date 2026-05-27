@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://dui74p83pulho" path="res://modules/core_systems/ui/quit_confirmation/quit_confirmation.gd" id="1_rmy1v"]
 [ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="2_4fu18"]
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_xuqlc"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="4_fnxq3"]
 
-[node name="QuitConfirmation" type="CanvasLayer" unique_id=48681928]
+[node name="QuitConfirmation" type="CanvasLayer" unique_id=48681928 node_paths=PackedStringArray("_confirm_button")]
 script = ExtResource("1_rmy1v")
+_confirm_button = NodePath("Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer")
 
 [node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("2_xuqlc")]
 
@@ -53,15 +55,27 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Yes" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=408919131]
+[node name="RowNavigationContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1367961113 instance=ExtResource("4_fnxq3")]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="Yes" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer" unique_id=408919131]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
 text = "YES"
 
-[node name="No" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=147331354]
+[node name="RowNavigationContainer2" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=315668209 instance=ExtResource("4_fnxq3")]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="No" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer2" unique_id=147331354]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
 text = "NO"
 
-[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/Yes" to="." method="exit_game"]
-[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/No" to="." method="hide_confirmation_screen"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer" to="." method="exit_game"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer/Yes" to="." method="exit_game"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer2" to="." method="hide_confirmation_screen"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer2/No" to="." method="hide_confirmation_screen"]

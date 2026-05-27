@@ -17,6 +17,7 @@ var filters_to_shader_index_map: Array = [
 ]
 
 func _ready():
+	select_filter(Filter.new())
 	for button: FilterButton in filter_buttons_node.get_children():
 		button.pressed_button.connect(select_filter)
 	block_filters()

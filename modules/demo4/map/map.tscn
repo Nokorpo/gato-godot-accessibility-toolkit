@@ -1097,7 +1097,7 @@ texture = ExtResource("27_ykkph")
 transform = Transform3D(-0.0439116, 0.58346, -1.11455e-08, 2.21184e-08, 1.28417e-08, 0.58511, 0.58346, 0.0439116, -2.30197e-08, 5.59111, 0.480894, -24.3676)
 texture = ExtResource("27_ykkph")
 
-[node name="Water" type="MeshInstance3D" parent="." unique_id=425975453]
+[node name="Water" type="MeshInstance3D" parent="." unique_id=425975453 groups=["danger"]]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_qtbex")
 

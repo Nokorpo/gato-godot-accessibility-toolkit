@@ -24,16 +24,16 @@ shader = ExtResource("2_lsqau")
 shader_parameter/color = Color(0, 0, 1, 1)
 shader_parameter/highlight_force = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5fho"]
-render_priority = 0
-shader = ExtResource("2_lsqau")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/highlight_force = 1.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pm1tf"]
 render_priority = 0
 shader = ExtResource("2_lsqau")
 shader_parameter/color = Color(1, 0.7490196, 0, 1)
+shader_parameter/highlight_force = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxrg3"]
+render_priority = 0
+shader = ExtResource("2_lsqau")
+shader_parameter/color = Color(0.95000005, 0.25, 1, 1)
 shader_parameter/highlight_force = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0olh3"]
@@ -52,8 +52,8 @@ script = ExtResource("1_ab4hp")
 world_material = SubResource("ShaderMaterial_671ot")
 player_material = SubResource("ShaderMaterial_lmjde")
 npcs_material = SubResource("ShaderMaterial_wb708")
-obstacles_material = SubResource("ShaderMaterial_r5fho")
 interactable_material = SubResource("ShaderMaterial_pm1tf")
+danger_material = SubResource("ShaderMaterial_qxrg3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=802766851]
 

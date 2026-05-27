@@ -10,8 +10,8 @@ signal disabled
 @export var world_material: ShaderMaterial
 @export var player_material: Material
 @export var npcs_material: Material
-@export var obstacles_material: Material
 @export var interactable_material: Material
+@export var danger_material: Material
 
 @onready var _ui_offset: Control = $CanvasLayer/Control/Offset
 @onready var _ui_content: Control = _ui_offset.get_child(0)
@@ -77,6 +77,8 @@ func _get_appropriate_material(node: Node) -> Material:
 		return npcs_material
 	if _rec_find_parent_in_group(node, &"interactable"):
 		return interactable_material
+	if _rec_find_parent_in_group(node, &"danger"):
+		return danger_material
 	else:
 		return world_material
 

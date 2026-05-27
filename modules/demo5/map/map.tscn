@@ -51,6 +51,9 @@
 [ext_resource type="PackedScene" uid="uid://ctkf5kicchy5p" path="res://modules/characters/boar/mesh/boar_yellow_long-eared.glb" id="22_tc3uo"]
 [ext_resource type="PackedScene" uid="uid://blrbkueqfxiqt" path="res://modules/demo5/map/props/pine_small_without_fading.tscn" id="23_0ulb0"]
 [ext_resource type="PackedScene" uid="uid://b0jb02r0n4obq" path="res://modules/characters/boar/mesh/boar_blue_tusked.glb" id="23_uov22"]
+[ext_resource type="PackedScene" uid="uid://bufvmiucjhxss" path="res://modules/demo5/throwable_items/acorns/accessible_acorn_blue.tscn" id="29_gm00q"]
+[ext_resource type="PackedScene" uid="uid://jwpggyqb1uqe" path="res://modules/demo5/throwable_items/acorns/accessible_acorn_green.tscn" id="30_qh51v"]
+[ext_resource type="PackedScene" uid="uid://deout8uvg83up" path="res://modules/demo5/throwable_items/acorns/accessible_acorn_yellow.tscn" id="31_ptp6h"]
 [ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="36_nt0k8"]
 [ext_resource type="Material" uid="uid://d144g40pc4bq7" path="res://modules/demo5/map/props/interactables_without_fading.tres" id="37_pxjlt"]
 [ext_resource type="PackedScene" uid="uid://dt2y67phyqpfp" path="res://modules/demo5/targets/boars/boar_blue.tscn" id="39_mdxg1"]
@@ -176,6 +179,38 @@ spawn_point = Vector3(0, -0.71272963, -1.216)
 matching_color = "RED"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
+[sub_resource type="Resource" id="Resource_donvt"]
+script = ExtResource("4_vvos1")
+item_name = "Accessible Blue Acorn"
+item_scene = ExtResource("29_gm00q")
+spawn_point = Vector3(0, -0.40721387, -0.80565304)
+matching_color = "BLUE"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_o66nx"]
+script = ExtResource("4_vvos1")
+item_name = "Accessible Green Acorn"
+item_scene = ExtResource("30_qh51v")
+spawn_point = Vector3(0, -0.40721387, -0.80565304)
+matching_color = "GREEN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_1ymfx"]
+script = ExtResource("4_vvos1")
+item_name = "Accessible Yellow Acorn"
+item_scene = ExtResource("31_ptp6h")
+spawn_point = Vector3(0, -0.40721387, -0.80565304)
+matching_color = "YELLOW"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_ugsor"]
+script = ExtResource("4_vvos1")
+item_name = "Accessible Red Acorn"
+item_scene = ExtResource("11_861yp")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "RED"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
 [sub_resource type="Resource" id="Resource_eksg7"]
 script = ExtResource("4_vvos1")
 item_name = "Acorn Blue"
@@ -184,20 +219,20 @@ spawn_point = Vector3(0, -0.71272963, -1.216)
 matching_color = "BLUE"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
-[sub_resource type="Resource" id="Resource_7boki"]
-script = ExtResource("4_vvos1")
-item_name = "Acorn Yellow"
-item_scene = ExtResource("13_wuv32")
-spawn_point = Vector3(0, -0.71272963, -1.216)
-matching_color = "YELLOW"
-metadata/_custom_type_script = "uid://sx7wfewhlap7"
-
 [sub_resource type="Resource" id="Resource_nt0k8"]
 script = ExtResource("4_vvos1")
 item_name = "Acorn Green"
 item_scene = ExtResource("14_lt2dd")
 spawn_point = Vector3(0, -0.71272963, -1.216)
 matching_color = "GREEN"
+metadata/_custom_type_script = "uid://sx7wfewhlap7"
+
+[sub_resource type="Resource" id="Resource_7boki"]
+script = ExtResource("4_vvos1")
+item_name = "Acorn Yellow"
+item_scene = ExtResource("13_wuv32")
+spawn_point = Vector3(0, -0.71272963, -1.216)
+matching_color = "YELLOW"
 metadata/_custom_type_script = "uid://sx7wfewhlap7"
 
 [sub_resource type="Curve" id="Curve_awgv7"]
@@ -636,7 +671,9 @@ boar_list = NodePath("../NormalBoars")
 [node name="ThrowableItemPool" parent="." unique_id=872441548 instance=ExtResource("4_awgv7")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.218, 1.135)
-non_accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr"), SubResource("Resource_re70a"), SubResource("Resource_eksg7"), SubResource("Resource_7boki"), SubResource("Resource_nt0k8")])
+trash_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_pipgt"), SubResource("Resource_3deg2"), SubResource("Resource_xyoqn"), SubResource("Resource_8ba6i"), SubResource("Resource_73cli"), SubResource("Resource_hguqr")])
+accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_re70a"), SubResource("Resource_donvt"), SubResource("Resource_o66nx"), SubResource("Resource_1ymfx")])
+non_accessible_throwable_items = Array[ExtResource("4_vvos1")]([SubResource("Resource_ugsor"), SubResource("Resource_eksg7"), SubResource("Resource_nt0k8"), SubResource("Resource_7boki")])
 
 [node name="Player" type="Node3D" parent="." unique_id=989785125 groups=["player"]]
 script = ExtResource("3_4a7kf")

@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://in10cqcgu1h0" path="res://modules/level_objects/acorn/regular_acorn_green.tscn" id="14_lt2dd"]
 [ext_resource type="Script" uid="uid://b2vqfibwv4f66" path="res://modules/demo1/ui/hud.gd" id="16_0yf11"]
 [ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="17_dbxgk"]
+[ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="18_2ryrr"]
 [ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="18_861yp"]
 [ext_resource type="PackedScene" uid="uid://d0sv6gorxxptt" path="res://modules/characters/boar/mesh/boar_green_spiky.glb" id="21_fykio"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="21_lt41x"]
@@ -618,6 +619,10 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_xeev5")
 
+[node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("18_2ryrr")]
+process_mode = 3
+visible = false
+
 [node name="LevelCompletionCheck" type="Node" parent="." unique_id=1276413535 node_paths=PackedStringArray("boar_list")]
 script = ExtResource("54_xkoa7")
 boar_list = NodePath("../NormalBoars")
@@ -1075,8 +1080,9 @@ dialogue = SubResource("Resource_sl6ik")
 script = ExtResource("64_ps754")
 dialogue = SubResource("Resource_8itej")
 
-[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=526275409]
+[node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=526275409 node_paths=PackedStringArray("demo_completed_screen")]
 script = ExtResource("65_riqon")
+demo_completed_screen = NodePath("../../CompletedDemoScreen")
 dialogue = SubResource("Resource_efubn")
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=517934670]

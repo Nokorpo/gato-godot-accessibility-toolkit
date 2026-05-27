@@ -5,7 +5,7 @@ const DEMO_SELECTOR_PATH := "res://modules/demo_selector/demo_selector.tscn"
 
 @onready var level_completion_node: Node = $"../../LevelCompletionCheck"
 
-@export var scene_root: Node3D
+@export var demo_completed_screen: Node
 @export var dialogue: DialogueContainer
 
 func _ready():
@@ -13,3 +13,5 @@ func _ready():
 
 func launch_dialog() -> void:
 	DialogueSystem.load_dialogue(dialogue)
+	await DialogueSystem.dialogue_finished
+	demo_completed_screen.show_screen()

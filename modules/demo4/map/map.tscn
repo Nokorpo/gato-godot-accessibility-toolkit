@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvs14kxa77pp2"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
+[ext_resource type="PackedScene" uid="uid://dn1fq3kwyg6sq" path="res://modules/demo4/high_contrast/high_contrast.tscn" id="1_671ot"]
 [ext_resource type="Script" uid="uid://dfrwuakpoqpr3" path="res://modules/demo4/hud/hud.gd" id="2_nyeds"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="3_3clr6"]
@@ -98,7 +99,10 @@ size = Vector3(100, 1, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0721d"]
 
-[node name="Map" type="Node3D" unique_id=675758072]
+[node name="Map" type="Node3D" unique_id=1295868009]
+
+[node name="HighContrast" parent="." unique_id=31790624 node_paths=PackedStringArray("scene_root") instance=ExtResource("1_671ot")]
+scene_root = NodePath("..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2064162423]
 environment = ExtResource("1_6sohf")
@@ -117,6 +121,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("3_671ot")
 
 [node name="MarginContainer" type="MarginContainer" parent="ControlsHUD/Control" unique_id=952549495]
@@ -186,6 +191,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("3_671ot")
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/Control" unique_id=886866617]
@@ -222,14 +228,14 @@ visible = false
 unique_name_in_owner = true
 script = ExtResource("3_vm6ot")
 
-[node name="Gato" parent="." unique_id=1969310140 instance=ExtResource("3_3clr6")]
+[node name="Gato" parent="." unique_id=1969310140 groups=["player"] instance=ExtResource("3_3clr6")]
 speed = 3.5
 
 [node name="CameraWithRotation" parent="." unique_id=833798013 node_paths=PackedStringArray("target") instance=ExtResource("4_8ni72")]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906307, 0, 0, 0)
 target = NodePath("../Gato")
 
-[node name="Boar" parent="." unique_id=818332652 instance=ExtResource("15_tk8fx")]
+[node name="Boar" parent="." unique_id=818332652 groups=["npc"] instance=ExtResource("15_tk8fx")]
 transform = Transform3D(0.619025, 0, -0.785371, 0, 1, 0, 0.785371, 0, 0.619025, 11.0078, 0.443848, -42.1938)
 
 [node name="Dialogue" type="Node3D" parent="." unique_id=124812228]
@@ -244,7 +250,7 @@ dialogue = Array[ExtResource("11_spi3t")]([ExtResource("12_qabrk"), ExtResource(
 
 [node name="Props" type="Node3D" parent="." unique_id=1606805648]
 
-[node name="Oak" parent="Props" unique_id=1590561041 instance=ExtResource("19_tmiu8")]
+[node name="Oak" parent="Props" unique_id=1590561041 groups=["interactable"] instance=ExtResource("19_tmiu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4882, 0.401593, -24.0903)
 
 [node name="Pines" type="Node3D" parent="Props" unique_id=719723413]
@@ -888,7 +894,7 @@ transform = Transform3D(0.954848, 0, -0.91794, 0, 1.32452, 0, 0.91794, 0, 0.9548
 [node name="FloorGrass2" parent="Props/Floor" unique_id=1826726876 instance=ExtResource("21_rfxh8")]
 transform = Transform3D(0.96408, 0, 0.333748, 0, 1.02021, 0, -0.333748, 0, 0.96408, -4.82543, 0.552338, -45.338)
 
-[node name="GoldAcorns" type="Node3D" parent="Props" unique_id=1747555328]
+[node name="GoldAcorns" type="Node3D" parent="Props" unique_id=1747555328 groups=["interactable"]]
 
 [node name="GoldAcorn" parent="Props/GoldAcorns" unique_id=1792166140 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8327, 3.1887155, -5.93187)
@@ -902,7 +908,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5359, 0.6577796, -28.441)
 [node name="GoldAcorn4" parent="Props/GoldAcorns" unique_id=126238221 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5828, 4.016599, -19.347015)
 
-[node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=717572434]
+[node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=717572434 groups=["interactable"]]
 
 [node name="BoarButton" parent="ButtonsAndPlatforms" unique_id=1747502302 instance=ExtResource("16_uo75g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0804083, 0.685964, -41.6088)
@@ -1091,7 +1097,7 @@ texture = ExtResource("27_ykkph")
 transform = Transform3D(-0.0439116, 0.58346, -1.11455e-08, 2.21184e-08, 1.28417e-08, 0.58511, 0.58346, 0.0439116, -2.30197e-08, 5.59111, 0.480894, -24.3676)
 texture = ExtResource("27_ykkph")
 
-[node name="Water" type="MeshInstance3D" parent="." unique_id=425975453]
+[node name="Water" type="MeshInstance3D" parent="." unique_id=425975453 groups=["danger"]]
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_qtbex")
 

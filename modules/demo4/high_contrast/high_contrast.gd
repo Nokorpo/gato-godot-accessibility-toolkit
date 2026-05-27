@@ -57,16 +57,12 @@ func _apply_material(node: Node):
 	var meshes := _find_meshes_in_node_descendants(node)
 	for mesh: MeshInstance3D in meshes:
 		var material := _get_appropriate_material(mesh)
-#		for i: int in range(mesh.mesh.get_surface_count()):
-			#mesh.mesh.surface_get_material(i).next_pass = material
 		for i: int in range(mesh.get_surface_override_material_count()):
 			mesh.set_surface_override_material(i, material)
 
 func _remove_material(node: Node):
 	var meshes := _find_meshes_in_node_descendants(node)
 	for mesh: MeshInstance3D in meshes:
-		#for i: int in range(mesh.mesh.get_surface_count()):
-				#mesh.mesh.surface_get_material(i).next_pass = null
 		for i: int in range(mesh.get_surface_override_material_count()):
 				mesh.set_surface_override_material(i, null)
 

@@ -5,11 +5,12 @@ signal goldacorn_collected
 @onready var pick_up_dust: CPUParticles3D = $PickUpDust
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var _has_been_collected: bool = false
 
 func _on_body_entered(_body: Gato) -> void:
+	if _has_been_collected:
+		return
+	_has_been_collected = true
 	emit_signal("goldacorn_collected")
 	pick_up_dust.emitting = true
 	animation_player.play("pick_up")

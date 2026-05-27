@@ -511,6 +511,7 @@ alignment = 1
 [node name="Normal" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1045514460 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Normal"
+focus_mode = 0
 button_pressed = true
 filter = SubResource("Resource_33yh1")
 filter_icon = ExtResource("7_4phwh")
@@ -518,30 +519,35 @@ filter_icon = ExtResource("7_4phwh")
 [node name="Protanopia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1654589995 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Protanopia"
+focus_mode = 0
 filter = SubResource("Resource_3vuti")
 filter_icon = ExtResource("8_aosah")
 
 [node name="Deuteranopia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=602030319 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Deuteranopia"
+focus_mode = 0
 filter = SubResource("Resource_uxiln")
 filter_icon = ExtResource("9_f6o8q")
 
 [node name="Deuteranomaly" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1729026628 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Deuteranomaly"
+focus_mode = 0
 filter = SubResource("Resource_rk43s")
 filter_icon = ExtResource("10_ewdyg")
 
 [node name="Tritanopia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=1131940632 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Tritanopia"
+focus_mode = 0
 filter = SubResource("Resource_012p0")
 filter_icon = ExtResource("11_vdqj1")
 
 [node name="Achromatopsia" parent="FiltersMenu/PanelContainer/VBoxContainer/FilterButtons" unique_id=794677414 instance=ExtResource("4_33yh1")]
 layout_mode = 2
 tooltip_text = "Achromatopsia"
+focus_mode = 0
 filter = SubResource("Resource_dmlar")
 filter_icon = ExtResource("12_al88k")
 

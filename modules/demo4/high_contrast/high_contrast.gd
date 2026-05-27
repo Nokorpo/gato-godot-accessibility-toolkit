@@ -18,10 +18,8 @@ signal disabled
 var _enabled: bool = false
 
 func _ready() -> void:
-	if not scene_root:
-		push_warning("This node requires a reference to the top node on the scene in \"scene_root\". The reference was null. Please, set it up.")
-		return
-	await scene_root.ready #wait for level ready before running this init script
+	if scene_root:
+		await scene_root.ready #wait for level ready before running this init script
 	get_tree().node_added.connect(_on_node_added)
 	_hide_ui()
 
@@ -30,11 +28,17 @@ func _hide_ui() -> void:
 	_ui_offset.position.x = ui_size
 
 func enable() -> void:
+	if not scene_root:
+		push_error("This node requires a reference to the top node on the scene in \"scene_root\". The reference was null. Please, set it up.")
+		return
 	_enabled = true
 	_apply_material(scene_root)
 	enabled.emit()
 
 func disable() -> void:
+	if not scene_root:
+		push_error("This node requires a reference to the top node on the scene in \"scene_root\". The reference was null. Please, set it up.")
+		return
 	_enabled = false
 	_remove_material(scene_root)
 	disabled.emit()

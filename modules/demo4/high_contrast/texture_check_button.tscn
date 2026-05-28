@@ -36,7 +36,7 @@ script = ExtResource("1_ilj3v")
 
 [node name="CheckButton" type="TextureButton" parent="." unique_id=1393616618]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 10
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true

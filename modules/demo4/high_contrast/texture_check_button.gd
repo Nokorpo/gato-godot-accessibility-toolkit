@@ -11,6 +11,9 @@ const DISABLED_BACKGROUND: Color = Color.DIM_GRAY
 @onready var _panel := $MarginContainer/VBoxContainer/PanelContainer
 @onready var _ball := $MarginContainer/VBoxContainer/PanelContainer/Panel
 
+@export var button_texture: Texture2D
+@export var button_texture_pressed: Texture2D
+
 var _ball_initial_horizontal_position: float
 var _ball_final_horizontal_position: float
 
@@ -19,6 +22,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	_ball_initial_horizontal_position = _ball.position.x
 	_ball_final_horizontal_position = _panel.size.x - _ball.size.x - _ball.position.x
+	_button.texture_normal = button_texture
+	_button.texture_pressed = button_texture_pressed
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	_button.button_pressed = toggled_on

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://btphqkxj12va1"]
 
+[ext_resource type="Texture2D" uid="uid://dqxe5e6pkik3e" path="res://modules/demo3/sprites/battle_background.png" id="1_qwr5b"]
 [ext_resource type="Texture2D" uid="uid://d2gcisobav00r" path="res://modules/demo3/sprites/gato_spritesheet.png" id="1_rydgl"]
+[ext_resource type="Texture2D" uid="uid://bppwdsresh4fc" path="res://modules/demo3/sprites/battle_background_floor.png" id="2_1as0v"]
 [ext_resource type="Texture2D" uid="uid://b67y3i6dk866v" path="res://modules/demo3/sprites/zeta_spritesheet.png" id="2_uovfb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcw1k"]
@@ -238,9 +240,26 @@ animations = [{
 
 [node name="SpriteAnimations" type="Node2D" unique_id=1709833007]
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1739403249]
+position = Vector2(967.2222, 543.5)
+scale = Vector2(4.025926, 4.025926)
+texture = ExtResource("1_qwr5b")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=1487261413]
+texture_filter = 1
+position = Vector2(574.3301, 964)
+scale = Vector2(4.801282, 4.8012815)
+texture = ExtResource("2_1as0v")
+
+[node name="Floor2" type="Sprite2D" parent="." unique_id=1916332835]
+texture_filter = 1
+position = Vector2(1325, 656.00006)
+scale = Vector2(3.6765034, 2.5917153)
+texture = ExtResource("2_1as0v")
+
 [node name="Gato" type="AnimatedSprite2D" parent="." unique_id=1218405956]
 texture_filter = 1
-position = Vector2(487, 738)
+position = Vector2(572.3301, 678)
 scale = Vector2(7.2083335, 7.2083335)
 sprite_frames = SubResource("SpriteFrames_m2xvf")
 animation = &"idle"
@@ -250,7 +269,7 @@ frame_progress = 0.52723277
 
 [node name="Zeta" type="AnimatedSprite2D" parent="." unique_id=2918741]
 texture_filter = 1
-position = Vector2(1313, 318)
+position = Vector2(1373, 369)
 scale = Vector2(6.7526026, 6.7526026)
 sprite_frames = SubResource("SpriteFrames_k2tpy")
 animation = &"idle"

@@ -8,7 +8,7 @@ play a game they couldn't have otherwise.
 
 ## Usage example
 
-### TODO exlpain how to create "user://input.data" config
+### TODO explain how to create "user://input.data" config
 ### TODO explain how to call the UI
 ### TODO explain how to theme the UI
 ### TODO explain how to use the autoload via code

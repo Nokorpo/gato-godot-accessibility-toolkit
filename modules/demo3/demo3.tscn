@@ -11,27 +11,139 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l6pr3")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=513039619]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -159.5
-offset_top = -69.0
-offset_right = 14.5
-offset_bottom = 34.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1802180546]
+[node name="Gato" type="Control" parent="MarginContainer" unique_id=2067989345]
 layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=659596040]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Gato" unique_id=1400608730]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Gato/MarginContainer" unique_id=1228911524]
 layout_mode = 2
-text = "Placeholder"
+
+[node name="MoraleBar" type="ProgressBar" parent="MarginContainer/Gato/MarginContainer/VBoxContainer" unique_id=1442261478]
+layout_mode = 2
+value = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Gato/MarginContainer/VBoxContainer" unique_id=1879321446]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Zeta" type="Control" parent="MarginContainer" unique_id=380226452]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Zeta" unique_id=150799089]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+pivot_offset_ratio = Vector2(1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Zeta/MarginContainer" unique_id=2065722383]
+layout_mode = 2
+
+[node name="MoraleBar" type="ProgressBar" parent="MarginContainer/Zeta/MarginContainer/VBoxContainer" unique_id=1485228225]
+layout_mode = 2
+value = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Zeta/MarginContainer/VBoxContainer" unique_id=1622751702]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+color = Color(0.87, 0.62060004, 0.12179999, 1)
+
+[node name="BattleMenu" type="Control" parent="MarginContainer" unique_id=1218957986]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleMenu" unique_id=1105201095]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -400.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/BattleMenu/MarginContainer" unique_id=1675723445]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+color = Color(0.55, 0.6925001, 1, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/BattleMenu/MarginContainer" unique_id=1057185407]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer" unique_id=1184251681]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer" unique_id=1171405409]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2092294755]
+layout_mode = 2
+text = "Atacar"
+
+[node name="Button2" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1097103283]
+layout_mode = 2
+text = "Dialogar"
+
+[node name="BattleNarrator" type="Control" parent="MarginContainer" unique_id=376416183]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleNarrator" unique_id=271671734]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/BattleNarrator/MarginContainer" unique_id=1541833905]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" unique_id=2099880096]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Label" type="Label" parent="MarginContainer/BattleNarrator/MarginContainer/PanelContainer/MarginContainer" unique_id=1323115831]
+layout_mode = 2
+text = "Algo sucedió..."

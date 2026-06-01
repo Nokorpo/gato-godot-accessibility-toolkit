@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://8c0oldvee0dt"]
+
+[ext_resource type="Theme" uid="uid://cocjiykavhucl" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.tres" id="1_l6pr3"]
+
+[node name="Demo3" type="Control" unique_id=1587426216]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l6pr3")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=513039619]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -69.0
+offset_right = 14.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1802180546]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=659596040]
+layout_mode = 2
+text = "Placeholder"

@@ -67,6 +67,7 @@ stretch_mode = 5
 
 [node name="CompletedTick" type="TextureRect" parent="FocusPanel/VBoxContainer/Control" unique_id=2027131897]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 12.0
 offset_top = -12.000001

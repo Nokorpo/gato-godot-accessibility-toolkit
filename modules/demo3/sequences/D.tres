@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://5osep81xbj3o"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_f2snh"]
+
+[resource]
+script = ExtResource("1_f2snh")
+next_sequence = 4
+sequence_id = 3
+sequence_script = "SAY \"aasdasdas\"
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

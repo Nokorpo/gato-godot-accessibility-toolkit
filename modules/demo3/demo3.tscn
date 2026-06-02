@@ -1,6 +1,125 @@
 [gd_scene format=3 uid="uid://8c0oldvee0dt"]
 
 [ext_resource type="Theme" uid="uid://cocjiykavhucl" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.tres" id="1_l6pr3"]
+[ext_resource type="Script" uid="uid://wsk1roo34gls" path="res://modules/demo3/scripts/interpreter.gd" id="2_54xbp"]
+[ext_resource type="Resource" uid="uid://bsy4gwd1natp1" path="res://modules/demo3/sequences/A.tres" id="3_xowxx"]
+[ext_resource type="Script" uid="uid://bvr2d6r4f152k" path="res://modules/demo3/scripts/text_box.gd" id="4_5glrk"]
+[ext_resource type="Script" uid="uid://bjmgwl240pdi6" path="res://modules/demo3/scripts/character.gd" id="4_oss10"]
+
+[sub_resource type="Animation" id="Animation_yvqj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Gato/MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -266)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Gato/MarginContainer/VBoxContainer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/Zeta/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/Zeta/MarginContainer:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oss10"]
+resource_name = "gato_hit"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Gato/MarginContainer:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -266), Vector2(-64, -270), Vector2(0, -266)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Gato/MarginContainer/VBoxContainer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0cgi2"]
+resource_name = "zeta_risa"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Zeta/MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994, 0.14999999, 0.19999999, 0.25, 0.29999998, 0.35000002, 0.4, 0.45, 0.5, 0.55, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Zeta/MarginContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvqj8"]
+_data = {
+&"RESET": SubResource("Animation_yvqj8"),
+&"gato_hit": SubResource("Animation_oss10"),
+&"zeta_risa": SubResource("Animation_0cgi2")
+}
 
 [node name="Demo3" type="Control" unique_id=1587426216]
 layout_mode = 3
@@ -10,6 +129,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l6pr3")
+
+[node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "animation_player")]
+script = ExtResource("2_54xbp")
+initial_sequence = ExtResource("3_xowxx")
+narrator = NodePath("../MarginContainer/BattleNarrator/MarginContainer/PanelContainer")
+gato = NodePath("../MarginContainer/Gato")
+zeta = NodePath("../MarginContainer/Zeta")
+animation_player = NodePath("../AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]
 layout_mode = 1
@@ -23,20 +150,22 @@ theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 
-[node name="Gato" type="Control" parent="MarginContainer" unique_id=2067989345]
+[node name="Gato" type="Control" parent="MarginContainer" unique_id=2067989345 node_paths=PackedStringArray("hp_bar")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+script = ExtResource("4_oss10")
+hp_bar = NodePath("MarginContainer/VBoxContainer/MoraleBar")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Gato" unique_id=1400608730]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -266.0
+offset_right = 200.0
 grow_vertical = 0
-pivot_offset_ratio = Vector2(0, 1)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Gato/MarginContainer" unique_id=1228911524]
 layout_mode = 2
@@ -49,20 +178,22 @@ value = 100.0
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="Zeta" type="Control" parent="MarginContainer" unique_id=380226452]
+[node name="Zeta" type="Control" parent="MarginContainer" unique_id=380226452 node_paths=PackedStringArray("hp_bar")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+script = ExtResource("4_oss10")
+hp_bar = NodePath("MarginContainer/VBoxContainer/MoraleBar")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Zeta" unique_id=150799089]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -200.0
+offset_bottom = 266.0
 grow_horizontal = 0
-pivot_offset_ratio = Vector2(1, 0)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Zeta/MarginContainer" unique_id=2065722383]
 layout_mode = 2
@@ -136,6 +267,7 @@ pivot_offset_ratio = Vector2(0.5, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/BattleNarrator/MarginContainer" unique_id=1541833905]
 layout_mode = 2
+script = ExtResource("4_5glrk")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" unique_id=2099880096]
 layout_mode = 2
@@ -147,3 +279,10 @@ theme_override_constants/margin_bottom = 64
 [node name="Label" type="Label" parent="MarginContainer/BattleNarrator/MarginContainer/PanelContainer/MarginContainer" unique_id=1323115831]
 layout_mode = 2
 text = "Algo sucedió..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1710645868]
+libraries/ = SubResource("AnimationLibrary_yvqj8")
+
+[connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="Interpreter" method="_on_attack_button_pressed"]
+[connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button2" to="Interpreter" method="_on_dialogue_button_pressed"]
+[connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]

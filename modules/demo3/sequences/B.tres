@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ChoiceSequence" format=3 uid="uid://ryi2pp7f8s51"]
+
+[ext_resource type="Script" uid="uid://bogv65h3ib6n6" path="res://modules/demo3/scripts/choice_sequence.gd" id="1_pdygu"]
+
+[resource]
+script = ExtResource("1_pdygu")
+attack_sequence = 2
+dialogue_sequence = 3
+sequence_id = 1
+sequence_script = "SAY \"Zeta está defendiéndose con una bellota\"
+STOP
+SAY \"¿Qué hago?\"
+STOP
+WAIT_FOR_CHOICE"
+metadata/_custom_type_script = "uid://bogv65h3ib6n6"

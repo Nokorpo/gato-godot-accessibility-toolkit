@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://bpufucftj51u8"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_8ksqc"]
+
+[resource]
+script = ExtResource("1_8ksqc")
+next_sequence = 1
+sequence_id = 2
+sequence_script = "SAY \"Gato usó ZARPAZO, pero falló\"
+STOP
+SAY \"Gato: ¡Au! Le dí a la bellota\"
+STOP
+SAY \"Zeta: Justo me has rascado donde me
+STOP picaba...\"
+SAY \"Zeta sigue defendiéndose\"
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

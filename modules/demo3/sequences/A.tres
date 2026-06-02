@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://bsy4gwd1natp1"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_1q2hi"]
+
+[resource]
+script = ExtResource("1_1q2hi")
+next_sequence = 1
+sequence_script = "SAY \"Gato: Hola me llamo Gato y me han robado las bellotas\"
+STOP
+PLAY_ANIMATION gato_hit
+SET_HP gato 50
+STOP
+SAY \"Zeta: Soy Zeta y le he robado las bellotas\"
+PLAY_ANIMATION zeta_risa
+STOP
+SAY \"¡Ayúdame a recuperar mis bellotas!\"
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d2gcisobav00r" path="res://modules/demo3/sprites/gato_spritesheet.png" id="1_rydgl"]
 [ext_resource type="Texture2D" uid="uid://bppwdsresh4fc" path="res://modules/demo3/sprites/battle_background_floor.png" id="2_1as0v"]
 [ext_resource type="Texture2D" uid="uid://b67y3i6dk866v" path="res://modules/demo3/sprites/zeta_spritesheet.png" id="2_uovfb"]
+[ext_resource type="Texture2D" uid="uid://dksp5ms76s1uw" path="res://modules/demo3/sprites/boar_spritesheet.png" id="5_1as0v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcw1k"]
 atlas = ExtResource("1_rydgl")
@@ -238,6 +239,49 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lffv0"]
+atlas = ExtResource("5_1as0v")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5vgd"]
+atlas = ExtResource("5_1as0v")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm01g"]
+atlas = ExtResource("5_1as0v")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w431k"]
+atlas = ExtResource("5_1as0v")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lemf6"]
+atlas = ExtResource("5_1as0v")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjn3p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lffv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5vgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm01g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w431k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lemf6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="SpriteAnimations" type="Node2D" unique_id=1709833007]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1739403249]
@@ -247,7 +291,7 @@ texture = ExtResource("1_qwr5b")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=1487261413]
 texture_filter = 1
-position = Vector2(574.3301, 964)
+position = Vector2(609.3301, 947.99994)
 scale = Vector2(4.801282, 4.8012815)
 texture = ExtResource("2_1as0v")
 
@@ -259,8 +303,8 @@ texture = ExtResource("2_1as0v")
 
 [node name="Gato" type="AnimatedSprite2D" parent="." unique_id=1218405956]
 texture_filter = 1
-position = Vector2(572.3301, 678)
-scale = Vector2(7.2083335, 7.2083335)
+position = Vector2(449, 647)
+scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_m2xvf")
 animation = &"idle"
 autoplay = "idle"
@@ -269,10 +313,18 @@ frame_progress = 0.52723277
 
 [node name="Zeta" type="AnimatedSprite2D" parent="." unique_id=2918741]
 texture_filter = 1
-position = Vector2(1373, 369)
-scale = Vector2(6.7526026, 6.7526026)
+position = Vector2(1378, 399)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_k2tpy")
 animation = &"idle"
 autoplay = "idle"
 frame = 4
 frame_progress = 0.7270487
+
+[node name="Boar" type="AnimatedSprite2D" parent="." unique_id=1881253890]
+texture_filter = 1
+position = Vector2(825.99994, 696.9999)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_sjn3p")
+animation = &"idle"
+autoplay = "idle"

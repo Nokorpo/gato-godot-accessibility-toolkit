@@ -57,4 +57,4 @@ func _input(input_event: InputEvent) -> void:
 	and input_event.pressed:
 		var rect: Rect2 = _panel.get_global_rect()
 		if rect.has_point(get_viewport().get_mouse_position()):
-			_on_button_toggled(!_button.button_pressed)
+			_button.button_pressed = !_button.button_pressed

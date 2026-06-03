@@ -8,14 +8,15 @@ const ENABLED_BACKGROUND: Color = Color.LIGHT_YELLOW
 const DISABLED_BACKGROUND: Color = Color.DIM_GRAY
 
 @onready var _button := $CheckButton
-@onready var _panel := $MarginContainer/VBoxContainer/PanelContainer
-@onready var _ball := $MarginContainer/VBoxContainer/PanelContainer/Panel
+@onready var _panel: Panel = $MarginContainer/VBoxContainer/Panel
+@onready var _ball := $MarginContainer/VBoxContainer/Panel/Panel
 
 @export var button_texture: Texture2D
 @export var button_texture_pressed: Texture2D
 
 var _ball_initial_horizontal_position: float
 var _ball_final_horizontal_position: float
+@onready var _background_stylebox: StyleBox = _panel.get_theme_stylebox("panel").duplicate()
 
 func _ready() -> void:
 	# wait required for Godot to calculate the size of `_panel`
@@ -24,6 +25,7 @@ func _ready() -> void:
 	_ball_final_horizontal_position = _panel.size.x - _ball.size.x - _ball.position.x
 	_button.texture_normal = button_texture
 	_button.texture_pressed = button_texture_pressed
+	_panel.add_theme_stylebox_override("panel", _background_stylebox)
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	_button.button_pressed = toggled_on
@@ -45,7 +47,7 @@ func _animate_transition(toggled_on: bool) -> Tween:
 	tween.tween_property(_ball, "position", Vector2(new_pos, _ball.position.y), .1)
 
 	var new_color := ENABLED_BACKGROUND if toggled_on else DISABLED_BACKGROUND
-	tween.tween_property(_panel.get_theme_stylebox("panel"), "bg_color", new_color, .1)
+	tween.tween_property(_background_stylebox, "bg_color", new_color, .1)
 
 	return tween
 

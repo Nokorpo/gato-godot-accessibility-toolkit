@@ -70,14 +70,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "ON"
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=1280884833]
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=1280884833]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 6
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lsqau")
 
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1442769075]
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Panel" unique_id=1442769075]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 4.0

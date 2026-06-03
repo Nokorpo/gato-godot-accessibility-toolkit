@@ -17,6 +17,8 @@ signal disabled
 @onready var _ui_content: Control = _ui_offset.get_child(0)
 var _enabled: bool = false
 
+@onready var blur: Control = $CanvasLayer/BackgroundBlur
+
 func _ready() -> void:
 	if scene_root:
 		await scene_root.ready #wait for level ready before running this init script
@@ -27,7 +29,7 @@ func _hide_ui() -> void:
 	var ui_size: float = _ui_content.get_rect().size.x
 	_ui_offset.position.x = ui_size
 
-func enable() -> void:
+func enable_high_contrast() -> void:
 	if not scene_root:
 		push_error("This node requires a reference to the top node on the scene in \"scene_root\". The reference was null. Please, set it up.")
 		return
@@ -35,7 +37,7 @@ func enable() -> void:
 	_apply_material(scene_root)
 	enabled.emit()
 
-func disable() -> void:
+func disable_high_contrast() -> void:
 	if not scene_root:
 		push_error("This node requires a reference to the top node on the scene in \"scene_root\". The reference was null. Please, set it up.")
 		return
@@ -91,3 +93,9 @@ func _find_meshes_in_node_descendants(node: Node) -> Array[MeshInstance3D]:
 	for mesh: MeshInstance3D in node.find_children("", "MeshInstance3D", true, false):
 		meshes.append(mesh)
 	return meshes
+
+func disable_blur() -> void:
+	blur.hide_blur()
+
+func enable_blur() -> void:
+	blur.show_blur()

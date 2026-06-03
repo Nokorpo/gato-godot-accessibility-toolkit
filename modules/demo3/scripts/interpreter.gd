@@ -1,0 +1,62 @@
+extends Node
+
+@export var initial_sequence: Sequence
+@export var narrator: Node
+@export var gato: Node
+@export var zeta: Node
+@export var animation_player: AnimationPlayer
+
+@onready var interpreter := InstructionInterpreter.new(self)
+
+var _sequence: Sequence:
+	set(value):
+		_sequence = value
+		_current_line = 0
+		_current_script = value.sequence_script.split("\n", false)
+var _current_line: int
+var _current_script: PackedStringArray
+
+func _ready():
+	_sequence = initial_sequence
+	#dialogue_box.next.connect(_next)
+	#attack_button.pressed(_attack)
+	#dialogue_button.pressed.connect(_dialogue)
+	_run_sequence()
+
+func _run_sequence():
+	var result: InstructionInterpreter.Result = InstructionInterpreter.Result.CONTINUE
+	while result == InstructionInterpreter.Result.CONTINUE:
+		if _current_line >= _current_script.size():
+			_load_next_sequence()
+		var line: String = _current_script[_current_line]
+		result = interpreter.parse(line)
+		if result == InstructionInterpreter.Result.CONTINUE:
+			_current_line += 1
+
+	if result == InstructionInterpreter.Result.STOP:
+		_current_line += 1
+	elif result == InstructionInterpreter.Result.WAIT_FOR_CHOICE:
+		pass # skipped, waiting for attack/dialogue choice
+
+func _load_sequence(sequence_id: Sequence.Sequences) -> Sequence:
+	var file_path: StringName = Sequence.sequence_id_to_file_path(sequence_id)
+	assert(FileAccess.file_exists(file_path), "Could not load Sequence in path: %s" % file_path)
+	return load(file_path)
+
+func _load_next_sequence():
+	assert(_sequence is NextSequence)
+	narrator.show()
+	_sequence = _load_sequence(_sequence.next_sequence)
+
+func _on_attack_button_pressed() -> void:
+	assert(_sequence is ChoiceSequence)
+	_sequence = _load_sequence(_sequence.attack_sequence)
+	_run_sequence()
+
+func _on_dialogue_button_pressed() -> void:
+	assert(_sequence is ChoiceSequence)
+	_sequence = _load_sequence(_sequence.dialogue_sequence)
+	_run_sequence()
+
+func _on_narrator_text_box_pressed() -> void:
+	_run_sequence()

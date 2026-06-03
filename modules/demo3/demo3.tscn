@@ -5,25 +5,260 @@
 [ext_resource type="Resource" uid="uid://bsy4gwd1natp1" path="res://modules/demo3/sequences/A.tres" id="3_xowxx"]
 [ext_resource type="Script" uid="uid://bvr2d6r4f152k" path="res://modules/demo3/scripts/text_box.gd" id="4_5glrk"]
 [ext_resource type="Script" uid="uid://bjmgwl240pdi6" path="res://modules/demo3/scripts/character.gd" id="4_oss10"]
+[ext_resource type="Texture2D" uid="uid://d2gcisobav00r" path="res://modules/demo3/sprites/gato_spritesheet.png" id="5_yvqj8"]
+[ext_resource type="Texture2D" uid="uid://b67y3i6dk866v" path="res://modules/demo3/sprites/zeta_spritesheet.png" id="6_0cgi2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwayi"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2xvf"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj62e"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxdsd"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m15j1"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsri3"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkodd"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o84wq"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxuw6"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pojht"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6pra"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(1056, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2pbn"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(1152, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eje8n"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(1248, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2nnr"]
+atlas = ExtResource("6_0cgi2")
+region = Rect2(1344, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ac34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtpsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwayi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2xvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj62e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxdsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m15j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsri3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkodd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o84wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxuw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pojht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6pra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2pbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eje8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2nnr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcw1k"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjvhq"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_337ok"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8book"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gwij"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn0ce"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwcew"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sir2f"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa1w5"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b6n6"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7gwv"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vav3b"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(1056, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbkoa"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(1152, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gral5"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(1248, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wttfg"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(1344, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yba7r"]
+atlas = ExtResource("5_yvqj8")
+region = Rect2(1440, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cgi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcw1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjvhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_337ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8book")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gwij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn0ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwcew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sir2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa1w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b6n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7gwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vav3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbkoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gral5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wttfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yba7r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
 
 [sub_resource type="Animation" id="Animation_yvqj8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Gato/MarginContainer:position")
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -266)]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/Gato/MarginContainer/VBoxContainer/ColorRect:color")
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,26 +270,38 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/Zeta/MarginContainer:position")
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-200, 0)]
+"values": [Vector2(300, 300)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("MarginContainer/Zeta/MarginContainer:scale")
+tracks/3/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(6, 6)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 7)]
 }
 
 [sub_resource type="Animation" id="Animation_oss10"]
@@ -64,19 +311,19 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Gato/MarginContainer:position")
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -266), Vector2(-64, -270), Vector2(0, -266)]
+"values": [Vector2(0, 0), Vector2(-64, -4), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/Gato/MarginContainer/VBoxContainer/ColorRect:color")
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -92,26 +339,26 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Zeta/MarginContainer:position")
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.049999997, 0.099999994, 0.14999999, 0.19999999, 0.25, 0.29999998, 0.35000002, 0.4, 0.45, 0.5, 0.55, 0.6),
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994, 0.14999999, 0.19999999, 0.25, 0.29999998, 0.35, 0.39999998, 0.45, 0.5, 0.55, 0.59999996),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0), Vector2(-200, -10), Vector2(-200, 0)]
+"values": [Vector2(300, 300), Vector2(300, 290), Vector2(300, 300), Vector2(300, 290), Vector2(300, 300), Vector2(300, 290), Vector2(300, 300), Vector2(300, 290), Vector2(300, 300), Vector2(300, 290), Vector2(300, 300), Vector2(300, 290), Vector2(300, 300)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/Zeta/MarginContainer:scale")
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.36),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.9, 1.05), Vector2(1, 1)]
+"values": [Vector2(6, 6), Vector2(5.4, 6.3), Vector2(6, 6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvqj8"]
@@ -134,8 +381,8 @@ theme = ExtResource("1_l6pr3")
 script = ExtResource("2_54xbp")
 initial_sequence = ExtResource("3_xowxx")
 narrator = NodePath("../MarginContainer/BattleNarrator/MarginContainer/PanelContainer")
-gato = NodePath("../MarginContainer/Gato")
-zeta = NodePath("../MarginContainer/Zeta")
+gato = NodePath("../MarginContainer/AspectRatioContainer/Gato")
+zeta = NodePath("../MarginContainer/AspectRatioContainer/Zeta")
 animation_player = NodePath("../AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]
@@ -150,62 +397,55 @@ theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 
-[node name="Gato" type="Control" parent="MarginContainer" unique_id=2067989345 node_paths=PackedStringArray("hp_bar")]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer" unique_id=800669109]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-script = ExtResource("4_oss10")
-hp_bar = NodePath("MarginContainer/VBoxContainer/MoraleBar")
+ratio = 2.0
+stretch_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Gato" unique_id=1400608730]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -266.0
-offset_right = 200.0
-grow_vertical = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Gato/MarginContainer" unique_id=1228911524]
-layout_mode = 2
-
-[node name="MoraleBar" type="ProgressBar" parent="MarginContainer/Gato/MarginContainer/VBoxContainer" unique_id=1442261478]
-layout_mode = 2
-value = 100.0
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Gato/MarginContainer/VBoxContainer" unique_id=1879321446]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="Zeta" type="Control" parent="MarginContainer" unique_id=380226452 node_paths=PackedStringArray("hp_bar")]
+[node name="Zeta" type="Control" parent="MarginContainer/AspectRatioContainer" unique_id=380226452 node_paths=PackedStringArray("hp_bar")]
+custom_minimum_size = Vector2(576, 636)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 script = ExtResource("4_oss10")
-hp_bar = NodePath("MarginContainer/VBoxContainer/MoraleBar")
+hp_bar = NodePath("MoraleBar")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Zeta" unique_id=150799089]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -200.0
-offset_bottom = 266.0
-grow_horizontal = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Zeta/MarginContainer" unique_id=2065722383]
-layout_mode = 2
-
-[node name="MoraleBar" type="ProgressBar" parent="MarginContainer/Zeta/MarginContainer/VBoxContainer" unique_id=1485228225]
-layout_mode = 2
+[node name="MoraleBar" type="ProgressBar" parent="MarginContainer/AspectRatioContainer/Zeta" unique_id=1485228225]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 62.0
 value = 100.0
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Zeta/MarginContainer/VBoxContainer" unique_id=1622751702]
-custom_minimum_size = Vector2(200, 200)
+[node name="Zeta" type="AnimatedSprite2D" parent="MarginContainer/AspectRatioContainer/Zeta" unique_id=370298118]
+texture_filter = 1
+position = Vector2(300, 300)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_6ac34")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Gato" type="Control" parent="MarginContainer/AspectRatioContainer" unique_id=2067989345 node_paths=PackedStringArray("hp_bar")]
+custom_minimum_size = Vector2(672, 732)
 layout_mode = 2
-color = Color(0.87, 0.62060004, 0.12179999, 1)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+script = ExtResource("4_oss10")
+hp_bar = NodePath("MoraleBar")
+
+[node name="MoraleBar" type="ProgressBar" parent="MarginContainer/AspectRatioContainer/Gato" unique_id=1442261478]
+layout_mode = 0
+offset_right = 672.0
+offset_bottom = 62.0
+value = 100.0
+
+[node name="Gato" type="AnimatedSprite2D" parent="MarginContainer/AspectRatioContainer/Gato" unique_id=1635979158]
+texture_filter = 1
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_0cgi2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7806606
+offset = Vector2(47.999996, 48)
 
 [node name="BattleMenu" type="Control" parent="MarginContainer" unique_id=1218957986]
 layout_mode = 2

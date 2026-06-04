@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="6_lyyeo"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="7_gvnoq"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="8_4avm2"]
-[ext_resource type="PackedScene" uid="uid://bvawh86pyq2d1" path="res://modules/characters/boar/boar.tscn" id="9_cxtxi"]
+[ext_resource type="PackedScene" uid="uid://ciejc3mfd5apl" path="res://modules/demo2/boar/fence_boar.tscn" id="9_hjvqd"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="11_tu8u1"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="13_5n58l"]
 [ext_resource type="PackedScene" uid="uid://dgntlhkoeu81e" path="res://modules/level_objects/button/boar_button.tscn" id="14_t36cc"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dpedfmuyu50ig" path="res://modules/demo1/map/props/stone.gltf" id="30_6xdfy"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="31_utkq5"]
 [ext_resource type="PackedScene" uid="uid://bdovvfnqsoptp" path="res://modules/demo1/map/props/pine.gltf" id="32_jm04u"]
+[ext_resource type="Script" uid="uid://cafosuymdg10d" path="res://modules/demo2/boar/enclosure.gd" id="33_153m6"]
 [ext_resource type="PackedScene" uid="uid://b3ge6hkxcuwqt" path="res://modules/demo1/map/props/pine_small.gltf" id="33_kemgx"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="34_mttlf"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="35_ckfvk"]
@@ -58,6 +59,9 @@ albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kg8y1"]
 material = SubResource("StandardMaterial3D_78qc6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41c7q"]
+size = Vector3(3.8423462, 1, 1.8641663)
 
 [node name="Map3" type="Node3D" unique_id=1042335550]
 
@@ -189,17 +193,17 @@ target = NodePath("../Gato")
 
 [node name="Boars" type="Node3D" parent="." unique_id=1901608649]
 
-[node name="Boar" parent="Boars" unique_id=1006060351 instance=ExtResource("9_cxtxi")]
-transform = Transform3D(0.961937, 0, -0.273271, 0, 1, 0, 0.273271, 0, 0.961937, -2.8502767, -0.07713328, 2.967168)
+[node name="EnclosureBoar" parent="Boars" unique_id=1230429055 instance=ExtResource("9_hjvqd")]
+transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -2.8502767, -0.07713328, 2.967168)
 
-[node name="Boar2" parent="Boars" unique_id=922734642 instance=ExtResource("9_cxtxi")]
-transform = Transform3D(-0.27327102, 0, -0.961937, 0, 1, 0, 0.961937, 0, -0.27327102, -3.4865315, -0.07713328, 9.738307)
+[node name="EnclosureBoar2" parent="Boars" unique_id=591191046 instance=ExtResource("9_hjvqd")]
+transform = Transform3D(-0.27327102, 0, -0.96193707, 0, 1, 0, 0.96193707, 0, -0.27327102, -3.4865315, -0.07713328, 9.738307)
 
-[node name="Boar3" parent="Boars" unique_id=1552822708 instance=ExtResource("9_cxtxi")]
-transform = Transform3D(-0.27327102, 0, -0.961937, 0, 1, 0, 0.961937, 0, -0.27327102, 11.163607, -0.07713328, 12.410475)
+[node name="EnclosureBoar3" parent="Boars" unique_id=407465964 instance=ExtResource("9_hjvqd")]
+transform = Transform3D(-0.27327102, 0, -0.96193707, 0, 1, 0, 0.96193707, 0, -0.27327102, 11.163607, -0.07713328, 12.410475)
 
-[node name="Boar4" parent="Boars" unique_id=1910890672 instance=ExtResource("9_cxtxi")]
-transform = Transform3D(0.858432, 0, -0.5129272, 0, 1, 0, 0.5129272, 0, 0.858432, 11.163607, -0.07713328, -6.837372)
+[node name="EnclosureBoar4" parent="Boars" unique_id=883679658 instance=ExtResource("9_hjvqd")]
+transform = Transform3D(0.8584321, 0, -0.5129272, 0, 1, 0, 0.5129272, 0, 0.8584321, 11.163607, -0.07713328, -6.837372)
 
 [node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=1616744154]
 
@@ -662,6 +666,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.1976, 0)
 
 [node name="BoarButton" parent="." unique_id=1635479508 instance=ExtResource("14_t36cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.648222, 1.6183405, 9.330586)
+
+[node name="EnclosureA" type="Area3D" parent="." unique_id=2036903222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4728231, 0, -5)
+script = ExtResource("33_153m6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnclosureA" unique_id=750357091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12973022, 0, 0.027526855)
+shape = SubResource("BoxShape3D_41c7q")
+
+[node name="EnclosureB" type="Area3D" parent="." unique_id=175006401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
+script = ExtResource("33_153m6")
+enclosure_type = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnclosureB" unique_id=640067024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12973022, 0, 0.16358948)
+shape = SubResource("BoxShape3D_41c7q")
 
 [connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]
 [connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]

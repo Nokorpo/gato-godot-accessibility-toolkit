@@ -1,9 +1,12 @@
 extends Node
 
 @export var initial_sequence: Sequence
+@export_category("Scene Nodes")
 @export var narrator: Node
 @export var gato: Node
 @export var zeta: Node
+@export var attack_button: Button
+@export var dialogue_button: Button
 @export var animation_player: AnimationPlayer
 
 @onready var interpreter := InstructionInterpreter.new(self)
@@ -21,6 +24,8 @@ func _ready():
 	#dialogue_box.next.connect(_next)
 	#attack_button.pressed(_attack)
 	#dialogue_button.pressed.connect(_dialogue)
+	attack_button.disabled = true
+	dialogue_button.disabled = true
 	_run_sequence()
 
 func _run_sequence():
@@ -36,7 +41,8 @@ func _run_sequence():
 	if result == InstructionInterpreter.Result.STOP:
 		_current_line += 1
 	elif result == InstructionInterpreter.Result.WAIT_FOR_CHOICE:
-		pass # skipped, waiting for attack/dialogue choice
+		attack_button.disabled = false
+		dialogue_button.disabled = false
 
 func _load_sequence(sequence_id: Sequence.Sequences) -> Sequence:
 	var file_path: StringName = Sequence.sequence_id_to_file_path(sequence_id)
@@ -50,11 +56,15 @@ func _load_next_sequence():
 
 func _on_attack_button_pressed() -> void:
 	assert(_sequence is ChoiceSequence)
+	attack_button.disabled = true
+	dialogue_button.disabled = true
 	_sequence = _load_sequence(_sequence.attack_sequence)
 	_run_sequence()
 
 func _on_dialogue_button_pressed() -> void:
 	assert(_sequence is ChoiceSequence)
+	attack_button.disabled = true
+	dialogue_button.disabled = true
 	_sequence = _load_sequence(_sequence.dialogue_sequence)
 	_run_sequence()
 

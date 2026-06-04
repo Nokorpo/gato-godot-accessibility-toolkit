@@ -377,12 +377,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l6pr3")
 
-[node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "animation_player")]
+[node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "attack_button", "dialogue_button", "animation_player")]
 script = ExtResource("2_54xbp")
 initial_sequence = ExtResource("3_xowxx")
 narrator = NodePath("../MarginContainer/BattleNarrator/MarginContainer/PanelContainer")
 gato = NodePath("../MarginContainer/AspectRatioContainer/Gato")
 zeta = NodePath("../MarginContainer/AspectRatioContainer/Zeta")
+attack_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button")
+dialogue_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button2")
 animation_player = NodePath("../AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]

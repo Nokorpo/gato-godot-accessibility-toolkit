@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="6_lyyeo"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="7_gvnoq"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="8_4avm2"]
+[ext_resource type="Script" uid="uid://bulnh317aocyr" path="res://modules/demo2/gato.gd" id="8_41c7q"]
 [ext_resource type="PackedScene" uid="uid://ciejc3mfd5apl" path="res://modules/demo2/boar/fence_boar.tscn" id="9_hjvqd"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="11_tu8u1"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="13_5n58l"]
@@ -37,6 +38,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_e26lp"]
 font_size = 48
 font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_41c7q"]
+height = 1.0
+radius = 2.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcwfk"]
 albedo_color = Color(0.68235296, 0.3372549, 0.29411766, 1)
@@ -184,8 +189,17 @@ process_mode = 3
 visible = false
 
 [node name="Gato" parent="." unique_id=268196189 instance=ExtResource("7_gvnoq")]
+script = ExtResource("8_41c7q")
 speed = 3.5
 height_to_respawn = -2.0
+
+[node name="BoarDetector" type="Area3D" parent="Gato" unique_id=904082916]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gato/BoarDetector" unique_id=501414515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_41c7q")
 
 [node name="CameraWithRotation" parent="." unique_id=937007224 node_paths=PackedStringArray("target") instance=ExtResource("8_4avm2")]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906307, 0, 0, 0)
@@ -195,6 +209,9 @@ target = NodePath("../Gato")
 
 [node name="EnclosureBoar" parent="Boars" unique_id=1230429055 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -2.8502767, -0.07713328, 2.967168)
+
+[node name="EnclosureBoar5" parent="Boars" unique_id=1320955871 instance=ExtResource("9_hjvqd")]
+transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -1.8419878, -0.07713328, 2.967168)
 
 [node name="EnclosureBoar2" parent="Boars" unique_id=591191046 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(-0.27327102, 0, -0.96193707, 0, 1, 0, 0.96193707, 0, -0.27327102, -3.4865315, -0.07713328, 9.738307)

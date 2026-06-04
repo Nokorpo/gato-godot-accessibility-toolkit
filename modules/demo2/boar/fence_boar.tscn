@@ -56,6 +56,7 @@ material = SubResource("StandardMaterial3D_ox46n")
 size = Vector2(0.2, 0.2)
 
 [node name="EnclosureBoar" type="CharacterBody3D" unique_id=1230429055]
+collision_layer = 9
 script = ExtResource("1_sckd0")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1899679971]

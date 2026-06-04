@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://t863tdkujjnd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ueke"]
+load_path = "res://.godot/imported/boar_body.png-95539584e2c8073ed539ef987c7b8354.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_griw2"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0.827451, 0, 1)
+grow = true
+grow_amount = 0.03
+proximity_fade_enabled = true
+proximity_fade_distance = 0.5
+
+[resource]
+resource_name = "body"
+next_pass = SubResource("StandardMaterial3D_griw2")
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_6ueke")
+roughness = 0.5

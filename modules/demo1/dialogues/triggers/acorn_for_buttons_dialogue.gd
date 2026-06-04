@@ -1,3 +1,6 @@
+## This Source Code Form is subject to the terms of the Mozilla Public
+## License, v. 2.0. If a copy of the MPL was not distributed with this
+## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends Node
 ## This node represents a dialogue that is launched when a set of conditions are met:
 ## 1. When the player grabs an acorn, a timer of 6 minutes starts.

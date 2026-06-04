@@ -1,3 +1,6 @@
+## This Source Code Form is subject to the terms of the Mozilla Public
+## License, v. 2.0. If a copy of the MPL was not distributed with this
+## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends HBoxContainer
 ## Lets the user choose whether to use a joystick or keyboard keys for an input action 2D
 

@@ -1,3 +1,6 @@
+## This Source Code Form is subject to the terms of the Mozilla Public
+## License, v. 2.0. If a copy of the MPL was not distributed with this
+## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends Area3D
 ## This node detects when an Acorn enters its detection area, then makes it follow it.[br][br]
 ## This is used by the player character so that it can gather acorns and have them following it around.

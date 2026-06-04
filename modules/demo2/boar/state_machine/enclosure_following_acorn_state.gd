@@ -46,6 +46,9 @@ func _on_exit_state() -> void:
 
 func _physics_process(delta: float) -> void:
 	if active:
+		if not is_instance_valid(_target):
+			state_machine.change_state(EnclosureBoarIdleState)
+			return
 		look_at_acorn(delta)
 		if is_following:
 			var target_diff: Vector3 = Plane.PLANE_XZ.project(_target.global_position - boar.global_position)

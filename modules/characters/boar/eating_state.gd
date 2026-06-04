@@ -17,7 +17,8 @@ func _on_enter_state() -> void:
 	mesh.play_animation(BoarMesh.Animations.EAT)
 	particles.emitting = true
 	await get_tree().create_timer(eating_time).timeout
-	await animate_acorn_disappearance()
+	if is_instance_valid(target):
+		await target.animate_acorn_disappearance()
 	state_machine.call_deferred("change_state", BoarIdleState)
 
 #TODO move to acorn code

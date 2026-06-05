@@ -4,14 +4,22 @@
 
 [resource]
 script = ExtResource("1_8ksqc")
-next_sequence = 1
+next_sequence = 4
 sequence_id = 2
-sequence_script = "SAY \"Gato usó ZARPAZO, pero falló\"
+sequence_script = "SAY \"Gato usó ZARPAZO\"
 STOP
-SAY \"Gato: ¡Au! Le dí a la bellota\"
+PLAY_ANIMATION gato_attack
+SET_HP zeta 80
+SAY \"Zeta perdió un 20% de sus puntos de moral\"
 STOP
-SAY \"Zeta: Justo me has rascado donde me
-STOP picaba...\"
-SAY \"Zeta sigue defendiéndose\"
+SAY \"Zeta: ¡Auch! ¿De verdad piensas que puedes hacerme algo con esas uñas?\"
+STOP
+SAY \"Zeta: ¡Toma ataque extraordinario!\"
+STOP
+SAY \"Zeta usó GOLPE ASTUTO\"
+STOP
+PLAY_ANIMATION zeta_attack
+SET_HP gato 80
+SAY \"Zeta perdió un 20% de sus puntos de paciencia\"
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

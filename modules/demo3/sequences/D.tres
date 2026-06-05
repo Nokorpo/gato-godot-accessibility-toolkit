@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_f2snh")
-next_sequence = 4
+next_sequence = 1
 sequence_id = 3
-sequence_script = "SAY \"aasdasdas\"
+sequence_script = "SAY \"Zeta: No.\"
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

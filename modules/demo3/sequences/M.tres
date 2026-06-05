@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://ci1btjv8of18b"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_kxslr"]
+
+[resource]
+script = ExtResource("1_kxslr")
+next_sequence = 14
+sequence_id = 12
+sequence_script = "SAY \"Gato: ¡Te paso de vuelta la bellota caliente!
+STOP
+PLAY_ANIMATION gato_throw_acorn
+SAY \"Gato usó LANZA-BELLOTAS, pero falló.\"
+STOP
+PLAY_ANIMATION zeta_risa
+SAY \"Zeta: Ja, ¿eso es lo mejor que puedes hacer?.\"
+STOP
+PLAY_ANIMATION boar_attack
+SAY \"El jabalí usó EMBESTIDA. Es super eficaz.\"
+STOP
+SET_HP zeta 20
+SAY \"Zeta perdió un 40% de sus puntos de moral.\"
+STOP
+SAY \"¡AUUUUU! ¡Mis bellotas!\"
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

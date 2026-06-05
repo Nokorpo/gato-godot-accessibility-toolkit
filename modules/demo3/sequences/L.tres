@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ChoiceSequence" format=3 uid="uid://dq7abep8qwwa0"]
+
+[ext_resource type="Script" uid="uid://bogv65h3ib6n6" path="res://modules/demo3/scripts/choice_sequence.gd" id="1_uy27u"]
+
+[resource]
+script = ExtResource("1_uy27u")
+attack_sequence = 12
+dialogue_sequence = 13
+sequence_id = 11
+sequence_script = "PLAY_ANIMATION boar_unhide
+SAY \"Un jabalí se unió al equipo de Gato atraído por la bellota.\"
+STOP
+SAY \"Elige una opción.\"
+WAIT_FOR_CHOICE"
+metadata/_custom_type_script = "uid://bogv65h3ib6n6"

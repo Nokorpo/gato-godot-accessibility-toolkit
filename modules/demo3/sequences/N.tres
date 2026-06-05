@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://cdhk2ltikrui1"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_hedkp"]
+
+[resource]
+script = ExtResource("1_hedkp")
+next_sequence = 15
+sequence_id = 13
+sequence_script = "PLAY_ANIMATION gato_talk
+SAY \"Gato: ¿Cómo tienes la poca decencia de dejar a este pequeño sin su comida?\"
+STOP
+PLAY_ANIMATION zeta_angry
+SAY \"Zeta: ¿¡Eh!? ¿E-estoy sintiendo... culpa?\"
+STOP
+PLAY_ANIMATION zeta_hit
+SET_HP zeta 20
+SAY \"Es muy eficaz. Zeta perdió un 40% de sus puntos de moral.\"
+STOP
+"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

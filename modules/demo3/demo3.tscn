@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://bjmgwl240pdi6" path="res://modules/demo3/scripts/character.gd" id="4_oss10"]
 [ext_resource type="Texture2D" uid="uid://d2gcisobav00r" path="res://modules/demo3/sprites/gato_spritesheet.png" id="5_yvqj8"]
 [ext_resource type="Texture2D" uid="uid://b67y3i6dk866v" path="res://modules/demo3/sprites/zeta_spritesheet.png" id="6_0cgi2"]
+[ext_resource type="Texture2D" uid="uid://dcth5iskimsaq" path="res://modules/demo3/sprites/acorn_sprite.png" id="6_cph3f"]
+[ext_resource type="Texture2D" uid="uid://dksp5ms76s1uw" path="res://modules/demo3/sprites/boar_spritesheet.png" id="8_r1uns"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
 atlas = ExtResource("6_0cgi2")
@@ -241,6 +243,56 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tateb"]
+atlas = ExtResource("8_r1uns")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2de5g"]
+atlas = ExtResource("8_r1uns")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2qrs"]
+atlas = ExtResource("8_r1uns")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h7n0"]
+atlas = ExtResource("8_r1uns")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xitem"]
+atlas = ExtResource("8_r1uns")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53201"]
+atlas = ExtResource("8_r1uns")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyyiy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tateb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2de5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2qrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h7n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xitem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53201")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_yvqj8"]
 length = 0.001
 tracks/0/type = "value"
@@ -253,7 +305,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(336, 336)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -303,6 +355,249 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(7, 7)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120, 300)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_tyyiy"]
+resource_name = "boar_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(600, 400), Vector2(429, 457), Vector2(1120.0001, 204.00003), Vector2(600, 400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 300), Vector2(364, 304), Vector2(300, 300)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.55, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h2asr"]
+resource_name = "boar_unhide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_r1uns"]
+resource_name = "gato_attack"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 336), Vector2(1020, 223), Vector2(336, 336)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.13, 0.19),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7, 7), Vector2(4, 4), Vector2(10, 10), Vector2(7, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 300), Vector2(364, 304), Vector2(300, 300)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.25, 0.39999998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_u2qrs"]
+resource_name = "gato_fail_attack"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 336), Vector2(1020, 223), Vector2(336, 336)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.13, 0.19),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7, 7), Vector2(4, 4), Vector2(10, 10), Vector2(7, 7)]
+}
 
 [sub_resource type="Animation" id="Animation_oss10"]
 resource_name = "gato_hit"
@@ -318,12 +613,217 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-64, -4), Vector2(0, 0)]
+"values": [Vector2(336, 336), Vector2(272, 332), Vector2(336, 336)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6ac34"]
+resource_name = "gato_talk"
+length = 0.8
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.39, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 336), Vector2(336, 316), Vector2(336, 336), Vector2(336, 316), Vector2(336, 336)]
+}
+
+[sub_resource type="Animation" id="Animation_53201"]
+resource_name = "gato_throw_acorn"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18090588, 0.38043442, 0.77, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 336), Vector2(400, 336), Vector2(110, 336), Vector2(578, 336), Vector2(336, 336)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.44, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-731.00006, 574), Vector2(-841.99994, 574.00006), Vector2(798.9998, 135.00003)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4389628, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_xitem"]
+resource_name = "zeta_angry"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.28, 0.5, 0.69, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 300), Vector2(300, 227), Vector2(300, 300), Vector2(300, 227), Vector2(300, 300)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.31658527, 0.54005724, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(4, 4), Vector2(6, 6), Vector2(4, 4), Vector2(6, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_tateb"]
+resource_name = "zeta_attack"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.51),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 300), Vector2(-489, 465), Vector2(300, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.12, 0.24, 0.5099724),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(5, 5), Vector2(9, 9), Vector2(6, 6), Vector2(6, 6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.28),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.14, 0.24000001, 0.52),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 336), Vector2(272, 332), Vector2(336, 336)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/AspectRatioContainer/Gato/Gato:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.14, 0.19, 0.34),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2de5g"]
+resource_name = "zeta_hide"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.40392157, 0.40392157, 0.40392157, 0.54509807)]
+}
+
+[sub_resource type="Animation" id="Animation_cph3f"]
+resource_name = "zeta_hit"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 300), Vector2(364, 304), Vector2(300, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -361,11 +861,115 @@ tracks/1/keys = {
 "values": [Vector2(6, 6), Vector2(5.4, 6.3), Vector2(6, 6)]
 }
 
+[sub_resource type="Animation" id="Animation_0kdck"]
+resource_name = "zeta_throw_acorn"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.26, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 300), Vector2(476.00006, 300), Vector2(115, 300), Vector2(300, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.18, 0.21139126),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.120000005, 0.19139126, 0.92),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(120, 300), Vector2(120, 300), Vector2(-1310, 588.00006)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/AspectRatioContainer/Acorn/Acorn:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.19, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_6h7n0"]
+resource_name = "zeta_unhide"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Zeta/Zeta:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.40392157, 0.40392157, 0.40392157, 0.54509807), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvqj8"]
 _data = {
 &"RESET": SubResource("Animation_yvqj8"),
+&"boar_attack": SubResource("Animation_tyyiy"),
+&"boar_unhide": SubResource("Animation_h2asr"),
+&"gato_attack": SubResource("Animation_r1uns"),
+&"gato_fail_attack": SubResource("Animation_u2qrs"),
 &"gato_hit": SubResource("Animation_oss10"),
-&"zeta_risa": SubResource("Animation_0cgi2")
+&"gato_talk": SubResource("Animation_6ac34"),
+&"gato_throw_acorn": SubResource("Animation_53201"),
+&"zeta_angry": SubResource("Animation_xitem"),
+&"zeta_attack": SubResource("Animation_tateb"),
+&"zeta_hide": SubResource("Animation_2de5g"),
+&"zeta_hit": SubResource("Animation_cph3f"),
+&"zeta_risa": SubResource("Animation_0cgi2"),
+&"zeta_throw_acorn": SubResource("Animation_0kdck"),
+&"zeta_unhide": SubResource("Animation_6h7n0")
 }
 
 [node name="Demo3" type="Control" unique_id=1587426216]
@@ -426,6 +1030,20 @@ sprite_frames = SubResource("SpriteFrames_6ac34")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="Acorn" type="Control" parent="MarginContainer/AspectRatioContainer" unique_id=1635156003]
+custom_minimum_size = Vector2(576, 636)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+script = ExtResource("4_oss10")
+
+[node name="Acorn" type="Sprite2D" parent="MarginContainer/AspectRatioContainer/Acorn" unique_id=1682625528]
+visible = false
+texture_filter = 1
+position = Vector2(120, 300)
+scale = Vector2(5, 5)
+texture = ExtResource("6_cph3f")
+
 [node name="Gato" type="Control" parent="MarginContainer/AspectRatioContainer" unique_id=2067989345 node_paths=PackedStringArray("hp_bar")]
 custom_minimum_size = Vector2(672, 732)
 layout_mode = 2
@@ -442,12 +1060,28 @@ value = 100.0
 
 [node name="Gato" type="AnimatedSprite2D" parent="MarginContainer/AspectRatioContainer/Gato" unique_id=1635979158]
 texture_filter = 1
+position = Vector2(336, 336)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_0cgi2")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.7806606
-offset = Vector2(47.999996, 48)
+
+[node name="Boar" type="Control" parent="MarginContainer/AspectRatioContainer" unique_id=1764091289]
+custom_minimum_size = Vector2(672, 732)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+script = ExtResource("4_oss10")
+
+[node name="Boar" type="AnimatedSprite2D" parent="MarginContainer/AspectRatioContainer/Boar" unique_id=1708477159]
+visible = false
+texture_filter = 1
+position = Vector2(600, 400)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_tyyiy")
+autoplay = "default"
+frame_progress = 0.053262696
 
 [node name="BattleMenu" type="Control" parent="MarginContainer" unique_id=1218957986]
 layout_mode = 2

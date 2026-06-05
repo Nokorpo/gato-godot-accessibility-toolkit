@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ChoiceSequence" format=3 uid="uid://c15umt13whfv6"]
+
+[ext_resource type="Script" uid="uid://bogv65h3ib6n6" path="res://modules/demo3/scripts/choice_sequence.gd" id="1_42p5e"]
+
+[resource]
+script = ExtResource("1_42p5e")
+attack_sequence = 18
+dialogue_sequence = 19
+sequence_id = 15
+sequence_script = "PLAY_ANIMATION zeta_angry
+SAY \"Zeta está con remordimiento.\"
+STOP
+SAY \"Elige una opción.\"
+WAIT_FOR_CHOICE"
+metadata/_custom_type_script = "uid://bogv65h3ib6n6"

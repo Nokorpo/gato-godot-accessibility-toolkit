@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://6udlcgg074dv"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_mndm7"]
+
+[resource]
+script = ExtResource("1_mndm7")
+next_sequence = 5
+sequence_id = 10
+sequence_script = "SAY \"Gato: ¿Estás mirando?\"
+STOP
+PLAY_ANIMATION zeta_angry
+SAY \"Zeta: ¡Ahí no hay nada, no me líes!	
+STOP
+SAY \"Gato: Ejem...\"
+PLAY_ANIMATION zeta_hide
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

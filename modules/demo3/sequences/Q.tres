@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://7g3wuhusx87x"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_qh888"]
+
+[resource]
+script = ExtResource("1_qh888")
+next_sequence = 20
+sequence_id = 16
+sequence_script = "SAY \"Gato: ¡A ver si  con esta aprendes la lección!\"
+STOP
+SAY \"Gato y jabalí usaron ATAQUE COMBINADO\"
+STOP
+PLAY_ANIMATION gato_attack
+PLAY_ANIMATION boar_attack
+SET_HP zeta 0
+SAY \"Zeta se quedó sin puntos de moral.\"
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

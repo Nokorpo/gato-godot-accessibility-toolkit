@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ChoiceSequence" format=3 uid="uid://cacly3dfa85bc"]
+
+[ext_resource type="Script" uid="uid://bogv65h3ib6n6" path="res://modules/demo3/scripts/choice_sequence.gd" id="1_pf8qm"]
+
+[resource]
+script = ExtResource("1_pf8qm")
+attack_sequence = 9
+dialogue_sequence = 10
+sequence_id = 8
+sequence_script = "PLAY_ANIMATION zeta_unhide
+SAY \"Zeta está despistado\"
+STOP
+SAY \"Elige una opción\"
+WAIT_FOR_CHOICE"
+metadata/_custom_type_script = "uid://bogv65h3ib6n6"

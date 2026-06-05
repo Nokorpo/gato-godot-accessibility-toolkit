@@ -39,4 +39,3 @@ STOP
 SAY What should I do?
 WAIT_FOR_CHOICE
 ```
-

@@ -1,7 +1,7 @@
 class_name Sequence
 extends Resource
 
-enum Sequences { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S }
+enum Sequences { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U }
 
 const SEQUENCES_DIRECTORY: StringName = &"res://modules/demo3/sequences/"
 

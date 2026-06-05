@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="DemoData" format=3 uid="uid://tx41efjkw4wt"]
 
-[ext_resource type="PackedScene" uid="uid://bmgdf7tq0mlpo" path="res://modules/demo2/demo2.tscn" id="1_8g0xa"]
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="1_jspqg"]
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_qkqgx"]
+[ext_resource type="PackedScene" uid="uid://dcj0hlpoquwj0" path="res://modules/demo2/map.tscn" id="2_jspqg"]
 
 [resource]
 script = ExtResource("1_qkqgx")
 title = "HUD personalization"
 description = "Customize how the HUD is shown so that everyone can see the relevant information while playing"
 image = ExtResource("1_jspqg")
-scene = ExtResource("1_8g0xa")
+scene = ExtResource("2_jspqg")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"

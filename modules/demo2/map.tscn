@@ -3,6 +3,7 @@
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_plfc8"]
 [ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="2_er80s"]
 [ext_resource type="Script" uid="uid://b2vqfibwv4f66" path="res://modules/demo1/ui/hud.gd" id="3_imhxh"]
+[ext_resource type="PackedScene" uid="uid://d7dukcfibx61" path="res://modules/demo2/hud/boar_enclosure_hud.tscn" id="3_lvynv"]
 [ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="4_tsi04"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="5_683d8"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="6_lyyeo"]
@@ -181,6 +182,8 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_e26lp")
 
+[node name="BoarEnclosureHUD" parent="." unique_id=1964409119 instance=ExtResource("3_lvynv")]
+
 [node name="GameMenu" parent="." unique_id=1727435597 instance=ExtResource("5_683d8")]
 visible = false
 
@@ -210,8 +213,9 @@ target = NodePath("../Gato")
 [node name="EnclosureBoar" parent="Boars" unique_id=1230429055 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -2.8502767, -0.07713328, 2.967168)
 
-[node name="EnclosureBoar5" parent="Boars" unique_id=1320955871 instance=ExtResource("9_hjvqd")]
-transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -1.8419878, -0.07713328, 2.967168)
+[node name="EnclosureBoar5" parent="Boars" unique_id=131288888 instance=ExtResource("9_hjvqd")]
+transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -1.365, -0.077, 2.967)
+assigned_enclosure = 1
 
 [node name="EnclosureBoar2" parent="Boars" unique_id=591191046 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(-0.27327102, 0, -0.96193707, 0, 1, 0, 0.96193707, 0, -0.27327102, -3.4865315, -0.07713328, 9.738307)
@@ -701,6 +705,8 @@ enclosure_type = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12973022, 0, 0.16358948)
 shape = SubResource("BoxShape3D_41c7q")
 
+[connection signal="boar_deselected" from="Gato" to="BoarEnclosureHUD" method="hide_enclosure_indicator"]
+[connection signal="boar_selected" from="Gato" to="BoarEnclosureHUD" method="show_enclosure_indicator"]
 [connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]
 [connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
 [connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]

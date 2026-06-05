@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 158.75 158.75"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="hud_b.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.36386536"
+     inkscape:cx="-305.05789"
+     inkscape:cy="441.09722"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 113.99494,40.088176 c 9.18273,23.98264 -5.64384,37.997874 -17.157405,37.277931 8.177265,3.329691 26.620865,11.7881 27.458255,42.508583 C 125.13318,150.59517 27.958957,158.75 22.179814,136.32842 16.400671,113.90684 14.932877,50.201734 24.493579,30.114025 34.054281,10.026316 104.81222,16.105536 113.99494,40.088176 Z M 66.767884,65.713195 c 5.147186,0 23.899312,1.518603 19.016163,-9.501821 C 80.900899,45.19095 75.679359,45.480243 66.217676,45.480243 c -9.461682,0 -15.937684,0.888283 -16.891831,9.869312 -0.954147,8.98103 12.294853,10.36364 17.442039,10.36364 z M 43.452666,110.77535 c -0.252124,11.51348 21.171189,14.33952 26.486217,14.33952 5.315029,0 28.041472,-4.51238 27.660962,-16.62213 -0.38051,-12.10975 -20.854737,-15.151845 -26.393556,-15.151845 -5.538819,0 -27.501498,5.920975 -27.753623,17.434455 z"
+       id="text4"
+       style="font-size:167.843px;line-height:1;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';text-align:center;text-anchor:middle;stroke-width:17.4836;stroke-linecap:round;stroke-miterlimit:0;stroke-opacity:0.92549;paint-order:stroke fill markers"
+       aria-label="B"
+       sodipodi:nodetypes="zczzzzzzzzzzzzzz" />
+  </g>
+</svg>

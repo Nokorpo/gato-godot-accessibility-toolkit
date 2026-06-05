@@ -1,5 +1,8 @@
 extends Gato
 
+signal boar_selected(enclosure: Enclosure.EnclosureType)
+signal boar_deselected
+
 @onready var boar_detector: Area3D = $BoarDetector
 
 var _boars_in_range: Array[EnclosureBoar] = []
@@ -26,14 +29,18 @@ func _process(delta: float) -> void:
 		_selected_boar.deselect()
 	_selected_boar = _boars_in_range[closest_index]
 	_selected_boar.select()
+	boar_selected.emit(_selected_boar.assigned_enclosure)
 
 func _on_body_entered(body: PhysicsBody3D) -> void:
 	if body is EnclosureBoar:
 		_boars_in_range.append(body)
 		if _selected_boar == null and _boars_in_range.size() == 1:
 			body.select()
+			boar_selected.emit(body.assigned_enclosure)
 
 func _on_body_exited(body: PhysicsBody3D) -> void:
 	if body in _boars_in_range:
 		_boars_in_range.remove_at(_boars_in_range.find(body))
 		body.deselect()
+	if _boars_in_range.size() == 0:
+		boar_deselected.emit()

@@ -7,6 +7,6 @@ script = ExtResource("1_pdygu")
 attack_sequence = 2
 dialogue_sequence = 3
 sequence_id = 1
-sequence_script = "SAY \"Elige una acción\"
+sequence_script = "SAY Elige una acción
 WAIT_FOR_CHOICE"
 metadata/_custom_type_script = "uid://bogv65h3ib6n6"

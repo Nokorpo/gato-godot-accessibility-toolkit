@@ -6,19 +6,19 @@
 script = ExtResource("1_rsber")
 next_sequence = 11
 sequence_id = 9
-sequence_script = "SAY \"Gato usó ZARPAZO\"
+sequence_script = "SAY Gato usó ZARPAZO
 STOP
 PLAY_ANIMATION gato_attack
 SET_HP zeta 60
-SAY \"Zeta perdió un 20% de sus puntos de moral\"
+SAY Zeta perdió un 20% de sus puntos de moral
 STOP
-SAY \"Zeta: Jijiji, para, para, me haces cosquillas...\"
+SAY Zeta: \"Jijiji, para, para, me haces cosquillas...\"
 STOP
-SAY \"Zeta: ¿No querías las bellotas? ¡Pues toma ésta!\"
+SAY Zeta: \"¿No querías las bellotas? ¡Pues toma ésta!\"
 STOP
 PLAY_ANIMATION zeta_throw_acorn
-SAY \"Zeta usó LANZA-BELLOTAS, pero falló\"
+SAY Zeta usó LANZA-BELLOTAS, pero falló
 STOP
-SAY \"Zeta: ¿¡Pero qué!?\"
+SAY Zeta: \"¿¡Pero qué!?\"
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

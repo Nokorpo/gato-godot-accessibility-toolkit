@@ -7,13 +7,13 @@ script = ExtResource("1_dxl3p")
 next_sequence = 5
 sequence_id = 6
 sequence_script = "PLAY_ANIMATION gato_fail_attack
-SAY \"Gato usó ZARPAZO, pero falló\"
+SAY Gato usó ZARPAZO, pero falló
 STOP
 PLAY_ANIMATION zeta_risa
-SAY \"Zeta: Justo me has rascado donde me picaba, gracias.\"
+SAY Zeta: \"Justo me has rascado donde me picaba, gracias.\"
 STOP
 PLAY_ANIMATION gato_talk
-SAY \"Gato: Mecachis, así es muy difícil alcanzarle...\"
+SAY Gato: \"Mecachis, así es muy difícil alcanzarle...\"
 STOP
 "
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

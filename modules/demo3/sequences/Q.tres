@@ -6,13 +6,13 @@
 script = ExtResource("1_qh888")
 next_sequence = 20
 sequence_id = 16
-sequence_script = "SAY \"Gato: ¡A ver si  con esta aprendes la lección!\"
+sequence_script = "SAY Gato: \"¡A ver si  con esta aprendes la lección!\"
 STOP
-SAY \"Gato y jabalí usaron ATAQUE COMBINADO\"
+SAY Gato y jabalí usaron ATAQUE COMBINADO
 STOP
 PLAY_ANIMATION gato_attack
 PLAY_ANIMATION boar_attack
 SET_HP zeta 0
-SAY \"Zeta se quedó sin puntos de moral.\"
+SAY Zeta se quedó sin puntos de moral.
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

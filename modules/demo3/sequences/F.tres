@@ -7,10 +7,9 @@ script = ExtResource("1_v1dvt")
 attack_sequence = 6
 dialogue_sequence = 7
 sequence_id = 5
-sequence_script = "SAY \"Gato: Se ha escondido, ¿cómo lo voy a alcanzar así?
+sequence_script = "SAY Gato: \"Se ha escondido, ¿cómo lo voy a alcanzar así?\"
 PLAY_ANIMATION gato_talk
 STOP
-SAY \"Elige una opción\"
-WAIT_FOR_CHOICE
-"
+SAY Elige una opción
+WAIT_FOR_CHOICE"
 metadata/_custom_type_script = "uid://bogv65h3ib6n6"

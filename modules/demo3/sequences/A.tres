@@ -6,13 +6,13 @@
 script = ExtResource("1_1q2hi")
 next_sequence = 1
 sequence_script = "PLAY_ANIMATION gato_talk
-SAY \"Gato: ¿Zeta me está retando a un combate?\"
+SAY Gato: \"¿Zeta me está retando a un combate?\"
 STOP
-SAY \"Gato: ¡Ya sé, me apoyaré en el Text to Speech para derrotarlo!\"
+SAY Gato: \"¡Ya sé, me apoyaré en el Text to Speech para derrotarlo!\"
 STOP
-SAY \"Gato: ¡Oye Zeta, devuelve esas bellotas!\"
+SAY Gato: \"¡Oye Zeta, devuelve esas bellotas!\"
 STOP
-SAY \"Zeta: Ja, ja, ja, atrévete a quitármelas si es que puedes...\"
+SAY Zeta: \"Ja, ja, ja, atrévete a quitármelas si es que puedes...\"
 PLAY_ANIMATION zeta_risa
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

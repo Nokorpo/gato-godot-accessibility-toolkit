@@ -6,7 +6,7 @@
 script = ExtResource("1_fuqii")
 next_sequence = 5
 sequence_id = 4
-sequence_script = "SAY \"Zeta se escondió tras un árbol\"
+sequence_script = "SAY Zeta se escondió tras un árbol
 PLAY_ANIMATION zeta_hide
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

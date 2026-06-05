@@ -8,8 +8,8 @@ attack_sequence = 12
 dialogue_sequence = 13
 sequence_id = 11
 sequence_script = "PLAY_ANIMATION boar_unhide
-SAY \"Un jabalí se unió al equipo de Gato atraído por la bellota.\"
+SAY Un jabalí se unió al equipo de Gato atraído por la bellota.
 STOP
-SAY \"Elige una opción.\"
+SAY Elige una opción.
 WAIT_FOR_CHOICE"
 metadata/_custom_type_script = "uid://bogv65h3ib6n6"

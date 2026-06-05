@@ -6,10 +6,10 @@
 script = ExtResource("1_kxslr")
 next_sequence = 14
 sequence_id = 12
-sequence_script = "SAY \"Gato: ¡Te paso de vuelta la bellota caliente!
+sequence_script = "SAY Gato: \"¡Te paso de vuelta la bellota caliente!
 STOP
 PLAY_ANIMATION gato_throw_acorn
-SAY \"Gato usó LANZA-BELLOTAS, pero falló.\"
+SAY Gato usó LANZA-BELLOTAS, pero falló.
 STOP
 PLAY_ANIMATION zeta_risa
 SAY \"Zeta: Ja, ¿eso es lo mejor que puedes hacer?.\"

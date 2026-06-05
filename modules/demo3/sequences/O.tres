@@ -8,8 +8,8 @@ attack_sequence = 16
 dialogue_sequence = 17
 sequence_id = 14
 sequence_script = "PLAY_ANIMATION zeta_angry
-SAY \"Zeta está aturdido.\"
+SAY Zeta está aturdido.
 STOP
-SAY \"Elige una opción.\"
+SAY Elige una opción.
 WAIT_FOR_CHOICE"
 metadata/_custom_type_script = "uid://bogv65h3ib6n6"

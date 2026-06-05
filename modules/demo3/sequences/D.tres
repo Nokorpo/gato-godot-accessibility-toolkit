@@ -6,6 +6,8 @@
 script = ExtResource("1_f2snh")
 next_sequence = 1
 sequence_id = 3
-sequence_script = "SAY \"Zeta: No.\"
+sequence_script = "SAY Gato: \"Devuélveme las bellotas.\"
+STOP
+SAY Zeta: \"No.\"
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

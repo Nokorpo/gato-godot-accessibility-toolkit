@@ -6,12 +6,12 @@
 script = ExtResource("1_mndm7")
 next_sequence = 5
 sequence_id = 10
-sequence_script = "SAY \"Gato: ¿Estás mirando?\"
+sequence_script = "SAY Gato: \"¿Estás mirando?\"
 STOP
 PLAY_ANIMATION zeta_angry
-SAY \"Zeta: ¡Ahí no hay nada, no me líes!	
+SAY Zeta: \"¡Ahí no hay nada, no me líes!	
 STOP
-SAY \"Gato: Ejem...\"
+SAY Gato: \"Ejem...\"
 PLAY_ANIMATION zeta_hide
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

@@ -19,6 +19,10 @@ var _sequence: Sequence:
 var _current_line: int
 var _current_script: PackedStringArray
 
+## Used to disable input while animations are being played.
+var active: bool = true
+var _animation_semaphor: int = 0
+
 func _ready():
 	_sequence = initial_sequence
 	#dialogue_box.next.connect(_next)
@@ -55,6 +59,8 @@ func _load_next_sequence():
 	_sequence = _load_sequence(_sequence.next_sequence)
 
 func _on_attack_button_pressed() -> void:
+	if not active:
+		return
 	assert(_sequence is ChoiceSequence)
 	attack_button.disabled = true
 	dialogue_button.disabled = true
@@ -62,6 +68,8 @@ func _on_attack_button_pressed() -> void:
 	_run_sequence()
 
 func _on_dialogue_button_pressed() -> void:
+	if not active:
+		return
 	assert(_sequence is ChoiceSequence)
 	attack_button.disabled = true
 	dialogue_button.disabled = true
@@ -69,4 +77,15 @@ func _on_dialogue_button_pressed() -> void:
 	_run_sequence()
 
 func _on_narrator_text_box_pressed() -> void:
+	if not active:
+		return
 	_run_sequence()
+
+func _on_animation_player_animation_started(anim_name: StringName) -> void:
+	_animation_semaphor += 1
+	active = false
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	_animation_semaphor -= 1
+	if _animation_semaphor <= 0:
+		active = true

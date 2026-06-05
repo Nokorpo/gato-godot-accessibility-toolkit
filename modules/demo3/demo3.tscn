@@ -528,3 +528,5 @@ libraries/ = SubResource("AnimationLibrary_yvqj8")
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="Interpreter" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button2" to="Interpreter" method="_on_dialogue_button_pressed"]
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_started"]

@@ -12,11 +12,12 @@ func _ready() -> void:
 	boar_detector.body_entered.connect(_on_body_entered)
 	boar_detector.body_exited.connect(_on_body_exited)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if _boars_in_range.size() < 2:
 		# we don't care when there is only one boar,
 		# it will be the only selectable boar
 		return
+
 	var closest_index: int = 0
 	var closest_distance: float = INF
 	for i in range(_boars_in_range.size()):
@@ -25,8 +26,10 @@ func _process(delta: float) -> void:
 		if closest_distance > distance:
 			closest_index = i
 			closest_distance = distance
+
 	if _selected_boar:
 		_selected_boar.deselect()
+
 	_selected_boar = _boars_in_range[closest_index]
 	_selected_boar.select()
 	boar_selected.emit(_selected_boar.assigned_enclosure)

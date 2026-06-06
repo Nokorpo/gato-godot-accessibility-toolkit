@@ -44,3 +44,4 @@ func _on_body_exited(body: PhysicsBody3D) -> void:
 		body.deselect()
 	if _boars_in_range.size() == 0:
 		boar_deselected.emit()
+		_selected_boar = null

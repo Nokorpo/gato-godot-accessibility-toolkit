@@ -10,6 +10,7 @@ extends Node
 @export var animation_player: AnimationPlayer
 
 @onready var interpreter := InstructionInterpreter.new(self)
+@onready var battle_menu: Control = %BattleMenu
 
 var _sequence: Sequence:
 	set(value):
@@ -28,6 +29,7 @@ func _ready():
 	#dialogue_box.next.connect(_next)
 	#attack_button.pressed(_attack)
 	#dialogue_button.pressed.connect(_dialogue)
+	battle_menu.visible = false
 	attack_button.disabled = true
 	dialogue_button.disabled = true
 	_run_sequence()
@@ -45,6 +47,7 @@ func _run_sequence():
 	if result == InstructionInterpreter.Result.STOP:
 		_current_line += 1
 	elif result == InstructionInterpreter.Result.WAIT_FOR_CHOICE:
+		battle_menu.visible = true
 		attack_button.disabled = false
 		dialogue_button.disabled = false
 
@@ -62,6 +65,7 @@ func _on_attack_button_pressed() -> void:
 	if not active:
 		return
 	assert(_sequence is ChoiceSequence)
+	battle_menu.visible = false
 	attack_button.disabled = true
 	dialogue_button.disabled = true
 	_sequence = _load_sequence(_sequence.attack_sequence)
@@ -71,6 +75,7 @@ func _on_dialogue_button_pressed() -> void:
 	if not active:
 		return
 	assert(_sequence is ChoiceSequence)
+	battle_menu.visible = false
 	attack_button.disabled = true
 	dialogue_button.disabled = true
 	_sequence = _load_sequence(_sequence.dialogue_sequence)

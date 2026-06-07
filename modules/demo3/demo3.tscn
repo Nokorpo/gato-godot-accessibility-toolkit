@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://8c0oldvee0dt"]
 
-[ext_resource type="Theme" uid="uid://cocjiykavhucl" path="res://modules/core_systems/dialogue_system/view/dialogue_ui.tres" id="1_l6pr3"]
+[ext_resource type="Theme" uid="uid://cdalj3a2b07s2" path="res://modules/demo3/battle_ui.tres" id="1_2de5g"]
 [ext_resource type="Script" uid="uid://wsk1roo34gls" path="res://modules/demo3/scripts/interpreter.gd" id="2_54xbp"]
 [ext_resource type="Resource" uid="uid://bsy4gwd1natp1" path="res://modules/demo3/sequences/A.tres" id="3_xowxx"]
+[ext_resource type="Texture2D" uid="uid://dqxe5e6pkik3e" path="res://modules/demo3/sprites/battle_background.png" id="4_2de5g"]
 [ext_resource type="Script" uid="uid://bvr2d6r4f152k" path="res://modules/demo3/scripts/text_box.gd" id="4_5glrk"]
 [ext_resource type="Script" uid="uid://bjmgwl240pdi6" path="res://modules/demo3/scripts/character.gd" id="4_oss10"]
+[ext_resource type="Texture2D" uid="uid://bppwdsresh4fc" path="res://modules/demo3/sprites/battle_background_floor.png" id="5_u2qrs"]
 [ext_resource type="Texture2D" uid="uid://d2gcisobav00r" path="res://modules/demo3/sprites/gato_spritesheet.png" id="5_yvqj8"]
 [ext_resource type="Texture2D" uid="uid://b67y3i6dk866v" path="res://modules/demo3/sprites/zeta_spritesheet.png" id="6_0cgi2"]
 [ext_resource type="Texture2D" uid="uid://dcth5iskimsaq" path="res://modules/demo3/sprites/acorn_sprite.png" id="6_cph3f"]
@@ -493,6 +495,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("MarginContainer/AspectRatioContainer/FloorGato:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(341, 737.99994)]
+}
 
 [sub_resource type="Animation" id="Animation_tyyiy"]
 resource_name = "boar_attack"
@@ -586,6 +600,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/AspectRatioContainer/FloorGato:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(341, 737.99994), Vector2(446, 738)]
 }
 
 [sub_resource type="Animation" id="Animation_r1uns"]
@@ -1061,7 +1087,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_l6pr3")
+theme = ExtResource("1_2de5g")
 
 [node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "attack_button", "dialogue_button", "animation_player")]
 script = ExtResource("2_54xbp")
@@ -1090,6 +1116,25 @@ layout_mode = 2
 ratio = 2.0
 stretch_mode = 1
 
+[node name="Background" type="Sprite2D" parent="MarginContainer/AspectRatioContainer" unique_id=2114833762]
+modulate = Color(0.88275343, 0.8443506, 0.98848766, 1)
+texture_filter = 1
+position = Vector2(831, 410)
+scale = Vector2(4.2108316, 4.2035136)
+texture = ExtResource("4_2de5g")
+
+[node name="FloorGato" type="Sprite2D" parent="MarginContainer/AspectRatioContainer" unique_id=1276251661]
+texture_filter = 1
+position = Vector2(341, 737.99994)
+scale = Vector2(4, 4)
+texture = ExtResource("5_u2qrs")
+
+[node name="FloorZeta" type="Sprite2D" parent="MarginContainer/AspectRatioContainer" unique_id=2111117338]
+texture_filter = 1
+position = Vector2(1334, 570)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("5_u2qrs")
+
 [node name="Zeta" type="Control" parent="MarginContainer/AspectRatioContainer" unique_id=380226452 node_paths=PackedStringArray("hp_bar")]
 custom_minimum_size = Vector2(576, 636)
 layout_mode = 2
@@ -1100,8 +1145,10 @@ hp_bar = NodePath("MoraleBar")
 
 [node name="MoraleBar" type="ProgressBar" parent="MarginContainer/AspectRatioContainer/Zeta" unique_id=1485228225]
 layout_mode = 0
-offset_right = 576.0
+offset_left = -35.0
+offset_right = 541.0
 offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.14901961, 0.07450981, 0.36078432, 0)
 value = 100.0
 
 [node name="Zeta" type="AnimatedSprite2D" parent="MarginContainer/AspectRatioContainer/Zeta" unique_id=370298118]
@@ -1136,8 +1183,10 @@ hp_bar = NodePath("MoraleBar")
 
 [node name="MoraleBar" type="ProgressBar" parent="MarginContainer/AspectRatioContainer/Gato" unique_id=1442261478]
 layout_mode = 0
-offset_right = 672.0
+offset_left = 62.0
+offset_right = 638.0
 offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
 value = 100.0
 
 [node name="Gato" type="AnimatedSprite2D" parent="MarginContainer/AspectRatioContainer/Gato" unique_id=1635979158]
@@ -1186,50 +1235,6 @@ sprite_frames = SubResource("SpriteFrames_tyyiy")
 autoplay = "default"
 frame_progress = 0.053262696
 
-[node name="BattleMenu" type="Control" parent="MarginContainer" unique_id=1218957986]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleMenu" unique_id=1105201095]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -400.0
-grow_horizontal = 0
-grow_vertical = 0
-pivot_offset_ratio = Vector2(1, 1)
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/BattleMenu/MarginContainer" unique_id=1675723445]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-color = Color(0.55, 0.6925001, 1, 1)
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/BattleMenu/MarginContainer" unique_id=1057185407]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer" unique_id=1184251681]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer" unique_id=1171405409]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2092294755]
-layout_mode = 2
-text = "Atacar"
-
-[node name="Button2" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1097103283]
-layout_mode = 2
-text = "Dialogar"
-
 [node name="BattleNarrator" type="Control" parent="MarginContainer" unique_id=376416183]
 layout_mode = 2
 size_flags_vertical = 8
@@ -1240,6 +1245,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -129.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 1)
@@ -1257,13 +1264,65 @@ theme_override_constants/margin_bottom = 64
 
 [node name="Label" type="Label" parent="MarginContainer/BattleNarrator/MarginContainer/PanelContainer/MarginContainer" unique_id=1323115831]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Algo sucedió..."
+autowrap_mode = 2
+
+[node name="BattleMenu" type="Control" parent="MarginContainer" unique_id=1218957986]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleMenu" unique_id=1105201095]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -704.0
+offset_top = -176.0
+offset_right = 46.0
+offset_bottom = 76.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/BattleMenu/MarginContainer" unique_id=1675723445]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/BattleMenu/MarginContainer" unique_id=1057185407]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer" unique_id=1184251681]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer" unique_id=1171405409]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2092294755]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "Atacar"
+
+[node name="Button2" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1097103283]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "Dialogar"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1710645868]
 libraries/ = SubResource("AnimationLibrary_yvqj8")
 
+[connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="Interpreter" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button2" to="Interpreter" method="_on_dialogue_button_pressed"]
-[connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_started"]

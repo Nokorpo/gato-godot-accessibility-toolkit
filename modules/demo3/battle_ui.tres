@@ -1,0 +1,79 @@
+[gd_resource type="Theme" format=3 uid="uid://cdalj3a2b07s2"]
+
+[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="1_6w1ef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2h4t"]
+bg_color = Color(0.9764706, 0.77254903, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2syu"]
+bg_color = Color(0.9764706, 0.77254903, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mdh3"]
+bg_color = Color(0.9977661, 0.94049907, 0.9456181, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2dn0"]
+bg_color = Color(0.12352241, 0.08062964, 0.26852384, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gov3"]
+bg_color = Color(0.870588, 0.698039, 0.184314, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no6vj"]
+bg_color = Color(0.14509805, 0.0627451, 0.37254903, 0.9607843)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y52bx"]
+bg_color = Color(0.14901961, 0.07450981, 0.36078432, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsdua"]
+bg_color = Color(0, 0.8121261, 0.48174763, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+default_font_size = 42
+Button/colors/font_color = Color(0.035963945, 0.022224838, 0.15240702, 1)
+Button/fonts/font = ExtResource("1_6w1ef")
+Button/styles/focus = SubResource("StyleBoxFlat_k2h4t")
+Button/styles/hover = SubResource("StyleBoxFlat_e2syu")
+Button/styles/normal = SubResource("StyleBoxFlat_0mdh3")
+Button/styles/pressed = SubResource("StyleBoxFlat_s2dn0")
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_6w1ef")
+NameTag/base_type = &"PanelContainer"
+NameTag/styles/panel = SubResource("StyleBoxFlat_0gov3")
+NameTagLabel/base_type = &"Label"
+NameTagLabel/colors/font_color = Color(0, 0, 0, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_no6vj")
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/fonts/font = ExtResource("1_6w1ef")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_y52bx")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_jsdua")

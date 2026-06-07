@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://vlxa6wl0rffe"]
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://dg6jnfy4fvbf4"]
 
 [ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_xv8iq"]
 
@@ -9,5 +9,6 @@ sequence_script = "PLAY_ANIMATION zeta_angry
 SAY Zeta: \"Vale, vale, déjame en paz y toma las bellotas.\"
 STOP
 SAY Has derrotado a Zeta.
-SAY Dar la opción de Text to Speech al usuario facilita la navegación por menús y la comprensión de los estados del juego. "
+SAY Dar la opción de Text to Speech al usuario facilita la navegación por menús y la comprensión de los estados del juego.
+END"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

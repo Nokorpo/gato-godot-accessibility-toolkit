@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dcth5iskimsaq" path="res://modules/demo3/sprites/acorn_sprite.png" id="6_cph3f"]
 [ext_resource type="Texture2D" uid="uid://dksp5ms76s1uw" path="res://modules/demo3/sprites/boar_spritesheet.png" id="8_r1uns"]
 [ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="8_tateb"]
+[ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="13_xitem"]
+[ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="14_53201"]
+[ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="15_tyyiy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
 atlas = ExtResource("6_0cgi2")
@@ -1089,7 +1092,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2de5g")
 
-[node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "attack_button", "dialogue_button", "animation_player")]
+[node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "attack_button", "dialogue_button", "animation_player", "completed_demo")]
 script = ExtResource("2_54xbp")
 initial_sequence = ExtResource("3_xowxx")
 narrator = NodePath("../MarginContainer/BattleNarrator/MarginContainer/PanelContainer")
@@ -1098,6 +1101,7 @@ zeta = NodePath("../MarginContainer/AspectRatioContainer/Zeta")
 attack_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button")
 dialogue_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button2")
 animation_player = NodePath("../AnimationPlayer")
+completed_demo = NodePath("../CompletedDemoScreen")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]
 layout_mode = 1
@@ -1320,6 +1324,17 @@ text = "Dialogar"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1710645868]
 libraries/ = SubResource("AnimationLibrary_yvqj8")
+
+[node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("13_xitem")]
+visible = false
+
+[node name="InputRemapperMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("14_53201")]
+layer = 2
+visible = false
+
+[node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("15_tyyiy")]
+process_mode = 3
+visible = false
 
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="Interpreter" method="_on_attack_button_pressed"]

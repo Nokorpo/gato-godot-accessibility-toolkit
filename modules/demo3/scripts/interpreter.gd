@@ -8,6 +8,7 @@ extends Node
 @export var attack_button: Button
 @export var dialogue_button: Button
 @export var animation_player: AnimationPlayer
+@export var completed_demo: CanvasLayer
 
 @onready var interpreter := InstructionInterpreter.new(self)
 @onready var battle_menu: Control = %BattleMenu
@@ -26,9 +27,6 @@ var _animation_semaphor: int = 0
 
 func _ready():
 	_sequence = initial_sequence
-	#dialogue_box.next.connect(_next)
-	#attack_button.pressed(_attack)
-	#dialogue_button.pressed.connect(_dialogue)
 	battle_menu.visible = false
 	attack_button.disabled = true
 	dialogue_button.disabled = true

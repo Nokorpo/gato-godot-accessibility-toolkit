@@ -12,7 +12,8 @@ var _keyword_to_instruction_map: Dictionary:
 				"PLAY_ANIMATION": PlayAnimationInstruction.new(_node),
 				"SET_HP": ChangeHpInstruction.new(_node),
 				"STOP": StopInstruction.new(_node),
-				"WAIT_FOR_CHOICE": WaitForChoiceInstruction.new(_node)
+				"WAIT_FOR_CHOICE": WaitForChoiceInstruction.new(_node),
+				"END": EndInstruction.new(_node)
 			}
 		return _keyword_to_instruction_map
 
@@ -78,3 +79,10 @@ class ChangeHpInstruction extends Instruction:
 			assert(false, "Trying to change HP for unknown character \"%s\"." % character)
 			return Result.ERROR
 		return Result.CONTINUE
+
+class EndInstruction extends Instruction:
+	func run(_value: String) -> Result:
+		_node.battle_menu.hide()
+		_node.narrator.hide()
+		_node.completed_demo.show_screen()
+		return Result.STOP

@@ -1,3 +1,6 @@
+## This Source Code Form is subject to the terms of the Mozilla Public
+## License, v. 2.0. If a copy of the MPL was not distributed with this
+## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends Node
 ## This is an autoload that handles interaction with the dialogue system. It tries to keep the
 ## interface clean by just providing methods to load a dialogue and advance to the next message.

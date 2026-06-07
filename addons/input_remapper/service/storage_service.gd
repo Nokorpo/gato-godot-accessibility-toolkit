@@ -1,3 +1,6 @@
+## This Source Code Form is subject to the terms of the Mozilla Public
+## License, v. 2.0. If a copy of the MPL was not distributed with this
+## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends RefCounted
 ## This class loads and stores control schemes and input configuration defined in InputRemapper. It
 ## stores all data in "user://input.data" by default.[br][br]

@@ -47,7 +47,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 
-	if event.is_action("game_menu") and event.is_pressed():
+	if event.is_action("game_menu") and event.is_pressed() and _cooldown_timer.is_stopped():
+		_cooldown_timer.start()
 		_toggle_visibility()
 		get_viewport().set_input_as_handled()
 

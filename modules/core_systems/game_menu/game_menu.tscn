@@ -42,5 +42,6 @@ text = "Quit demo"
 
 [node name="OpenMenuCooldown" type="Timer" parent="." unique_id=470500546]
 wait_time = 0.5
+one_shot = true
 
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="quit_and_go_to_menu"]

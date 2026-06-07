@@ -81,11 +81,11 @@ func _on_narrator_text_box_pressed() -> void:
 		return
 	_run_sequence()
 
-func _on_animation_player_animation_started(anim_name: StringName) -> void:
+func _on_animation_player_animation_started(_anim_name: StringName) -> void:
 	_animation_semaphor += 1
 	active = false
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	_animation_semaphor -= 1
 	if _animation_semaphor <= 0:
 		active = true

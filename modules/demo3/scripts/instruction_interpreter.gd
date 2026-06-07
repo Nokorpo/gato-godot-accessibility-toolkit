@@ -57,6 +57,7 @@ class StopInstruction extends Instruction:
 class WaitForChoiceInstruction extends Instruction:
 	func run(_value: String) -> Result:
 		_node.narrator.hide()
+		_node.attack_button.grab_focus()
 		return Result.WAIT_FOR_CHOICE
 
 class PlayAnimationInstruction extends Instruction:

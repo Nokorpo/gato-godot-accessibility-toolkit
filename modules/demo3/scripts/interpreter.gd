@@ -32,6 +32,12 @@ func _ready():
 	dialogue_button.disabled = true
 	_run_sequence()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("ui_accept") and event.is_pressed():
+		if narrator.visible:
+			_on_narrator_text_box_pressed()
+			get_viewport().set_input_as_handled()
+
 func _run_sequence():
 	var result: InstructionInterpreter.Result = InstructionInterpreter.Result.CONTINUE
 	while result == InstructionInterpreter.Result.CONTINUE:

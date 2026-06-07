@@ -10,6 +10,7 @@
 script = ExtResource("1_ddpr4")
 
 [node name="Control" type="Control" parent="." unique_id=1368683456]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,6 +74,7 @@ offset_top = -216.0
 offset_right = 115.0
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/BottomCenter/MarginContainer" unique_id=1843219772]
 layout_mode = 2
@@ -107,6 +109,7 @@ anchor_bottom = 1.0
 offset_top = -216.0
 offset_right = 230.0
 grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/BottomLeft/MarginContainer" unique_id=225479687]
 layout_mode = 2
@@ -124,37 +127,3 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_1m6iu")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=899180395]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=63712785]
-layout_mode = 2
-text = "Upper left"
-
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1544984389]
-layout_mode = 2
-text = "Bottom center"
-
-[node name="Button5" type="Button" parent="VBoxContainer" unique_id=1049378211]
-layout_mode = 2
-text = "Bottom left"
-
-[node name="Control" type="Control" parent="VBoxContainer" unique_id=147964921]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=253975434]
-layout_mode = 2
-text = "A"
-
-[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1820826766]
-layout_mode = 2
-text = "B"
-
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="change_hud" binds= [0]]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="change_hud" binds= [1]]
-[connection signal="pressed" from="VBoxContainer/Button5" to="." method="change_hud" binds= [2]]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="show_enclosure_indicator" binds= [0]]
-[connection signal="pressed" from="VBoxContainer/Button4" to="." method="show_enclosure_indicator" binds= [1]]

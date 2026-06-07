@@ -28,3 +28,7 @@ func change_hud(hud: HUD) -> void:
 	_hud_nodes[_selected_hud].hide()
 	_selected_hud = hud
 	_hud_nodes[_selected_hud].show()
+
+func change_zoom(zoom_level: float) -> void:
+	for hud: Control in _hud_nodes.values():
+		hud.set_zoom_level(zoom_level)

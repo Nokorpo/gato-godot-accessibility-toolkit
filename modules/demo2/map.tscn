@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="7_hfgrw"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="8_4avm2"]
 [ext_resource type="Script" uid="uid://bulnh317aocyr" path="res://modules/demo2/gato.gd" id="8_41c7q"]
+[ext_resource type="PackedScene" uid="uid://koxea4nie8ev" path="res://modules/demo2/hud/menu/hud_customization_menu.tscn" id="8_s3l5j"]
 [ext_resource type="PackedScene" uid="uid://ciejc3mfd5apl" path="res://modules/demo2/boar/fence_boar.tscn" id="9_hjvqd"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="11_tu8u1"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="13_5n58l"]
@@ -188,6 +189,8 @@ label_settings = SubResource("LabelSettings_e26lp")
 [node name="GameMenu" parent="." unique_id=1727435597 instance=ExtResource("5_683d8")]
 visible = false
 
+[node name="HudCustomizationMenu" parent="GameMenu" unique_id=657266733 instance=ExtResource("8_s3l5j")]
+
 [node name="InputRemapperMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("7_hfgrw")]
 layer = 2
 visible = false
@@ -218,18 +221,16 @@ target = NodePath("../Gato")
 [node name="EnclosureBoar" parent="Boars" unique_id=1230429055 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -2.8502767, -0.07713328, 2.967168)
 
-[node name="EnclosureBoar5" parent="Boars" unique_id=131288888 instance=ExtResource("9_hjvqd")]
-transform = Transform3D(0.96193707, 0, -0.27327102, 0, 1, 0, 0.27327102, 0, 0.96193707, -1.365, -0.077, 2.967)
-assigned_enclosure = 1
-
 [node name="EnclosureBoar2" parent="Boars" unique_id=591191046 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(-0.27327102, 0, -0.96193707, 0, 1, 0, 0.96193707, 0, -0.27327102, -3.4865315, -0.07713328, 9.738307)
+assigned_enclosure = 1
 
 [node name="EnclosureBoar3" parent="Boars" unique_id=407465964 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(-0.27327102, 0, -0.96193707, 0, 1, 0, 0.96193707, 0, -0.27327102, 11.163607, -0.07713328, 12.410475)
 
 [node name="EnclosureBoar4" parent="Boars" unique_id=883679658 instance=ExtResource("9_hjvqd")]
 transform = Transform3D(0.8584321, 0, -0.5129272, 0, 1, 0, 0.5129272, 0, 0.8584321, 11.163607, -0.07713328, -6.837372)
+assigned_enclosure = 1
 
 [node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=1616744154]
 
@@ -710,6 +711,8 @@ enclosure_type = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12973022, 0, 0.16358948)
 shape = SubResource("BoxShape3D_41c7q")
 
+[connection signal="hud_position_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_hud"]
+[connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]
 [connection signal="boar_deselected" from="Gato" to="BoarEnclosureHUD" method="hide_enclosure_indicator"]
 [connection signal="boar_selected" from="Gato" to="BoarEnclosureHUD" method="show_enclosure_indicator"]
 [connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]

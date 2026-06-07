@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://koxea4nie8ev"]
+
+[ext_resource type="Script" uid="uid://ca5idge1h0ti3" path="res://modules/demo2/hud/menu/hud_customization_menu.gd" id="1_h25dq"]
+[ext_resource type="Theme" uid="uid://b24vcdre3irkg" path="res://modules/demo2/hud/menu/hud_customization_menu.theme" id="2_1f8eo"]
+[ext_resource type="Texture2D" uid="uid://cjlll0r0ig8pw" path="res://addons/input_remapper/ui/sprites/controller.svg" id="3_6gp2b"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="3_g8x15"]
+[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="5_6gp2b"]
+[ext_resource type="Script" uid="uid://dvtilc13aalu3" path="res://modules/demo2/hud/menu/hud_position_selector.gd" id="5_8nvky"]
+[ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="6_8nvky"]
+[ext_resource type="Script" uid="uid://clutl3ctdotm5" path="res://modules/demo2/hud/menu/zoom_bar.gd" id="8_6gp2b"]
+
+[node name="HudCustomizationMenu" type="CanvasLayer" unique_id=657266733 node_paths=PackedStringArray("position_control")]
+layer = 2
+script = ExtResource("1_h25dq")
+position_control = NodePath("Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer")
+
+[node name="Control" type="Control" parent="." unique_id=1007506417]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1f8eo")
+
+[node name="TittlePanelContainer" type="PanelContainer" parent="Control" unique_id=2033931657]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -567.0
+offset_right = 567.0
+offset_bottom = 98.0
+grow_horizontal = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/TittlePanelContainer" unique_id=2052915468]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleBackground"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TittlePanelContainer/PanelContainer" unique_id=632940749]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="Control/TittlePanelContainer/PanelContainer/HBoxContainer" unique_id=1865109967]
+layout_mode = 2
+texture = ExtResource("3_6gp2b")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Control/TittlePanelContainer/PanelContainer/HBoxContainer" unique_id=300703521]
+layout_mode = 2
+theme_type_variation = &"MenuTitle"
+text = "Opciones de interfaz"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1951066995]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.5
+offset_top = -203.0
+offset_right = 567.5
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer" unique_id=1928774202]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer" unique_id=397584527]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=574445796]
+layout_mode = 2
+text = "Posición de la interfaz"
+
+[node name="PositionNavigationContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1367961113 instance=ExtResource("3_g8x15")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ZoomNavigationContainer")
+focus_neighbor_bottom = NodePath("../ZoomNavigationContainer")
+focus_next = NodePath("../ZoomNavigationContainer")
+focus_previous = NodePath("../ZoomNavigationContainer")
+mouse_filter = 0
+
+[node name="HudPositionSelector" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer" unique_id=774616824]
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("5_8nvky")
+
+[node name="LeftButton" type="TextureButton" parent="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" unique_id=1534049235]
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("5_6gp2b")
+texture_hover = ExtResource("6_8nvky")
+texture_focused = ExtResource("6_8nvky")
+stretch_mode = 3
+flip_h = true
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" unique_id=12881423]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Keyboard"
+horizontal_alignment = 1
+
+[node name="RightButton" type="TextureButton" parent="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" unique_id=1305583238]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("5_6gp2b")
+texture_hover = ExtResource("6_8nvky")
+texture_focused = ExtResource("6_8nvky")
+stretch_mode = 5
+
+[node name="JoystickCooldownTimer" type="Timer" parent="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" unique_id=756344080]
+wait_time = 0.25
+one_shot = true
+
+[node name="Control" type="Control" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1062173662]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=117639676]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1793695832]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Tamaño de la interfaz"
+
+[node name="ZoomLevelLabel" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1230905183]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "100%"
+
+[node name="ZoomNavigationContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=758635252 instance=ExtResource("3_g8x15")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../PositionNavigationContainer")
+focus_neighbor_bottom = NodePath("../PositionNavigationContainer")
+focus_next = NodePath("../PositionNavigationContainer")
+focus_previous = NodePath("../PositionNavigationContainer")
+mouse_filter = 0
+
+[node name="ZoomBar" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer" unique_id=40732369 node_paths=PackedStringArray("zoom_level_label")]
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("8_6gp2b")
+zoom_level_label = NodePath("../../HBoxContainer/ZoomLevelLabel")
+
+[node name="LowerButton" type="TextureButton" parent="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" unique_id=1617226865]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_6gp2b")
+texture_hover = ExtResource("6_8nvky")
+texture_focused = ExtResource("6_8nvky")
+stretch_mode = 3
+flip_h = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" unique_id=205540721]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 75.0
+max_value = 150.0
+step = 25.0
+value = 100.0
+show_percentage = false
+
+[node name="IncreaseButton" type="TextureButton" parent="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" unique_id=1347516998]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_6gp2b")
+texture_hover = ExtResource("6_8nvky")
+texture_focused = ExtResource("6_8nvky")
+stretch_mode = 5
+
+[node name="JoystickCooldownTimer" type="Timer" parent="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" unique_id=123236163]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="input" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer" to="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" method="_on_navigation_container_input"]
+[connection signal="hud_position_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" to="." method="_on_hud_position_changed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector/LeftButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" method="_on_left_button_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector/RightButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" method="_on_right_button_pressed"]
+[connection signal="input" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer" to="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" method="_on_navigation_container_input"]
+[connection signal="hud_zoom_level_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" to="." method="_on_hud_zoom_level_changed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar/LowerButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" method="_on_lower_button_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar/IncreaseButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" method="_on_increase_button_pressed"]

@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://t2woqqdag0le" path="res://modules/demo5/hud/sprites/icon_eye.svg" id="14_aosah"]
 [ext_resource type="PackedScene" uid="uid://in10cqcgu1h0" path="res://modules/level_objects/acorn/regular_acorn_green.tscn" id="14_lt2dd"]
 [ext_resource type="Script" uid="uid://b2vqfibwv4f66" path="res://modules/demo1/ui/hud.gd" id="16_0yf11"]
+[ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="16_qh51v"]
 [ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="17_dbxgk"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="18_2ryrr"]
 [ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="18_861yp"]
@@ -621,6 +622,10 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("2_2woxq")]
+visible = false
+
+[node name="InputRemapperMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("16_qh51v")]
+layer = 2
 visible = false
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=424861386]

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="4_6n1e2"]
 [ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="4_lu8a3"]
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="6_e26lp"]
+[ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="6_iclfv"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="7_5gfar"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="8_xoi8s"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="9_lu8a3"]
@@ -23,7 +24,7 @@
 [ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="17_2s3xo"]
 [ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="18_qknnp"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="19_05mnp"]
-[ext_resource type="Script" path="res://modules/demo1/dialogues/triggers/controls_changed_dialogue.gd" id="19_lu8a3"]
+[ext_resource type="Script" uid="uid://o7njoy4m8t1d" path="res://modules/demo1/dialogues/triggers/controls_changed_dialogue.gd" id="19_lu8a3"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="20_5pxm7"]
 [ext_resource type="Resource" uid="uid://bttq8y1y3kh5r" path="res://modules/demo1/dialogues/demo1_dialogue03.tres" id="20_xs2cs"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="21_47kr6"]
@@ -219,6 +220,10 @@ text = "0"
 label_settings = SubResource("LabelSettings_e26lp")
 
 [node name="GameMenu" parent="." unique_id=1727435597 instance=ExtResource("2_1p31k")]
+visible = false
+
+[node name="InputRemapperMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("6_iclfv")]
+layer = 2
 visible = false
 
 [node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("3_6n1e2")]

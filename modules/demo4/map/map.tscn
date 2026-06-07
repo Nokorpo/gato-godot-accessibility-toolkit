@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ct85t56535spd" path="res://modules/demo4/hud/goldacorn_icon.svg" id="4_lmjde"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="5_cf3k0"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="7_ohoif"]
+[ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="7_wb708"]
 [ext_resource type="PackedScene" uid="uid://cvhe5spjd2wbo" path="res://modules/demo1/map/props/platform_bridge.gltf" id="8_cf3k0"]
 [ext_resource type="Script" uid="uid://cv2pio2355wvl" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_ready.gd" id="8_tccp5"]
 [ext_resource type="PackedScene" uid="uid://bhg33u0341p57" path="res://modules/demo1/map/props/moving_acorn_platform.gltf" id="9_a6plf"]
@@ -220,6 +221,10 @@ text = "0"
 label_settings = SubResource("LabelSettings_ijg73")
 
 [node name="GameMenu" parent="." unique_id=2053610931 instance=ExtResource("2_ohoif")]
+visible = false
+
+[node name="InputRemapperMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("7_wb708")]
+layer = 2
 visible = false
 
 [node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("3_iwmsy")]

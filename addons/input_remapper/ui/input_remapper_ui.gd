@@ -22,7 +22,11 @@ func _ready() -> void:
 		queue_free()
 		return
 	populate_ui(_schemes[InputRemapper.current_control_scheme_index])
-	_control_scheme_selector.grab_focus.call_deferred()
+	grab_focus.call_deferred()
+
+func grab_focus(hide_focus: bool = false) -> void:
+	_control_scheme_selector.grab_focus.call_deferred(hide_focus)
+	#$PanelContainer/MarginContainer/ScrollContainer.scroll_vertical = 0
 
 func _is_back_input(event: InputEvent) -> bool:
 	return (

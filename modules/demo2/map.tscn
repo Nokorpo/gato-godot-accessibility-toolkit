@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="5_683d8"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="6_lyyeo"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="7_gvnoq"]
+[ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="7_hfgrw"]
 [ext_resource type="PackedScene" uid="uid://b3yetd8078rj2" path="res://modules/characters/camera/camera_with_rotation.tscn" id="8_4avm2"]
 [ext_resource type="Script" uid="uid://bulnh317aocyr" path="res://modules/demo2/gato.gd" id="8_41c7q"]
 [ext_resource type="PackedScene" uid="uid://ciejc3mfd5apl" path="res://modules/demo2/boar/fence_boar.tscn" id="9_hjvqd"]
@@ -185,6 +186,10 @@ label_settings = SubResource("LabelSettings_e26lp")
 [node name="BoarEnclosureHUD" parent="." unique_id=1964409119 instance=ExtResource("3_lvynv")]
 
 [node name="GameMenu" parent="." unique_id=1727435597 instance=ExtResource("5_683d8")]
+visible = false
+
+[node name="InputRemapperMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("7_hfgrw")]
+layer = 2
 visible = false
 
 [node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("6_lyyeo")]

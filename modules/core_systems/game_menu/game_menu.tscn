@@ -35,27 +35,12 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="SettingsButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=433425188]
-layout_mode = 2
-size_flags_vertical = 3
-focus_neighbor_bottom = NodePath("../QuitButton")
-focus_next = NodePath("../QuitButton")
-focus_previous = NodePath("../QuitButton")
-text = "Settings"
-
 [node name="QuitButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1803045332]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_top = NodePath("../SettingsButton")
-focus_next = NodePath("../SettingsButton")
-focus_previous = NodePath("../SettingsButton")
 text = "Quit demo"
 
 [node name="OpenMenuCooldown" type="Timer" parent="." unique_id=470500546]
 wait_time = 0.5
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1304368593]
-layer = 2
-
-[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/SettingsButton" to="." method="open_settings"]
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="quit_and_go_to_menu"]

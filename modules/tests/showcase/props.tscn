@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://debsy1fv3sm1b"]
 
 [ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_5ldq4"]
+[ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="1_crl3f"]
 [ext_resource type="PackedScene" uid="uid://76tobu24ib4r" path="res://modules/level_objects/oak/oak.glb" id="2_jq4l3"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="2_x84rj"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="3_kubfn"]
@@ -28,6 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://bp4bygve8r1mf" path="res://modules/demo5/throwable_items/wrench.gltf" id="26_8155b"]
 
 [node name="Props" type="Node3D" unique_id=874950120]
+
+[node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("1_crl3f")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1350706492]
 environment = ExtResource("1_5ldq4")

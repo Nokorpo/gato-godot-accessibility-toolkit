@@ -2,16 +2,18 @@
 
 [ext_resource type="Theme" uid="uid://cdalj3a2b07s2" path="res://modules/demo3/battle_ui.tres" id="1_2de5g"]
 [ext_resource type="Script" uid="uid://wsk1roo34gls" path="res://modules/demo3/scripts/interpreter.gd" id="2_54xbp"]
-[ext_resource type="Resource" uid="uid://bsy4gwd1natp1" path="res://modules/demo3/sequences/A.tres" id="3_xowxx"]
+[ext_resource type="Script" uid="uid://dnkfe7f602l5j" path="res://modules/demo3/scripts/demo_3.gd" id="2_tyyiy"]
 [ext_resource type="Texture2D" uid="uid://dqxe5e6pkik3e" path="res://modules/demo3/sprites/battle_background.png" id="4_2de5g"]
 [ext_resource type="Script" uid="uid://bvr2d6r4f152k" path="res://modules/demo3/scripts/text_box.gd" id="4_5glrk"]
 [ext_resource type="Script" uid="uid://bjmgwl240pdi6" path="res://modules/demo3/scripts/character.gd" id="4_oss10"]
+[ext_resource type="Resource" uid="uid://bsy4gwd1natp1" path="res://modules/demo3/sequences/A.tres" id="4_tyyiy"]
 [ext_resource type="Texture2D" uid="uid://bppwdsresh4fc" path="res://modules/demo3/sprites/battle_background_floor.png" id="5_u2qrs"]
 [ext_resource type="Texture2D" uid="uid://d2gcisobav00r" path="res://modules/demo3/sprites/gato_spritesheet.png" id="5_yvqj8"]
 [ext_resource type="Texture2D" uid="uid://b67y3i6dk866v" path="res://modules/demo3/sprites/zeta_spritesheet.png" id="6_0cgi2"]
 [ext_resource type="Texture2D" uid="uid://dcth5iskimsaq" path="res://modules/demo3/sprites/acorn_sprite.png" id="6_cph3f"]
 [ext_resource type="Texture2D" uid="uid://dksp5ms76s1uw" path="res://modules/demo3/sprites/boar_spritesheet.png" id="8_r1uns"]
 [ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="8_tateb"]
+[ext_resource type="Script" uid="uid://c5sf7qm5knx1" path="res://modules/demo3/scripts/button_text_reader.gd" id="13_53201"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="13_xitem"]
 [ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="14_53201"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="15_tyyiy"]
@@ -1091,15 +1093,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2de5g")
+script = ExtResource("2_tyyiy")
 
 [node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "attack_button", "dialogue_button", "animation_player", "completed_demo")]
 script = ExtResource("2_54xbp")
-initial_sequence = ExtResource("3_xowxx")
+initial_sequence = ExtResource("4_tyyiy")
 narrator = NodePath("../MarginContainer/BattleNarrator/MarginContainer/PanelContainer")
 gato = NodePath("../MarginContainer/AspectRatioContainer/Gato")
 zeta = NodePath("../MarginContainer/AspectRatioContainer/Zeta")
-attack_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button")
-dialogue_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button2")
+attack_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton")
+dialogue_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogButton")
 animation_player = NodePath("../AnimationPlayer")
 completed_demo = NodePath("../CompletedDemoScreen")
 
@@ -1312,15 +1315,18 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2092294755]
+[node name="AttackButton" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2092294755]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 text = "Atacar"
+script = ExtResource("13_53201")
 
-[node name="Button2" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1097103283]
+[node name="DialogButton" type="Button" parent="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1097103283]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 text = "Dialogar"
+script = ExtResource("13_53201")
+text_to_read = "Dialogar"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1710645868]
 libraries/ = SubResource("AnimationLibrary_yvqj8")
@@ -1337,7 +1343,8 @@ process_mode = 3
 visible = false
 
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
-[connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="Interpreter" method="_on_attack_button_pressed"]
-[connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button2" to="Interpreter" method="_on_dialogue_button_pressed"]
+[connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="Interpreter" method="_on_attack_button_pressed"]
+[connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogButton" to="Interpreter" method="_on_dialogue_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_started"]
+[connection signal="current_animation_changed" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_current_animation_changed"]

@@ -19,6 +19,10 @@ boot_splash/image="uid://cq3ybcqxlmis8"
 config/icon="res://icon.jpg"
 boot_splash/minimum_display_time=1500
 
+[audio]
+
+general/text_to_speech=true
+
 [autoload]
 
 DebugOptions="*res://modules/core_systems/debug_menu/debug_menu.tscn"
@@ -28,6 +32,7 @@ InputRemapper="*uid://r58sbk2t1lft"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 DialogueSystem="*res://modules/core_systems/dialogue_system/controller/dialogue_system_autoload.gd"
 GatoScreenFilters="*uid://da558lwadhp5b"
+TextToSpeech="*uid://b0706qk4g27gp"
 
 [display]
 

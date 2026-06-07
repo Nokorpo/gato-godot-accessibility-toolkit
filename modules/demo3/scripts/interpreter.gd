@@ -57,6 +57,7 @@ func _run_sequence():
 
 func _load_sequence(sequence_id: Sequence.Sequences) -> Sequence:
 	var file_path: StringName = Sequence.sequence_id_to_file_path(sequence_id)
+	print("loading file %s" % file_path)
 	assert(FileAccess.file_exists(file_path), "Could not load Sequence in path: %s" % file_path)
 	return load(file_path)
 
@@ -88,6 +89,8 @@ func _on_dialogue_button_pressed() -> void:
 func _on_narrator_text_box_pressed() -> void:
 	if not active:
 		return
+	if TextToSpeech.is_reading():
+		TextToSpeech.stop()
 	_run_sequence()
 
 func _on_animation_player_animation_started(_anim_name: StringName) -> void:
@@ -95,6 +98,11 @@ func _on_animation_player_animation_started(_anim_name: StringName) -> void:
 	active = false
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	_animation_semaphor -= 1
+	if _animation_semaphor <= 0:
+		active = true
+
+func _on_animation_player_current_animation_changed(name: StringName) -> void:
 	_animation_semaphor -= 1
 	if _animation_semaphor <= 0:
 		active = true

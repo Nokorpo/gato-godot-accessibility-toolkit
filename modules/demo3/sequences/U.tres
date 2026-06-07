@@ -9,6 +9,8 @@ sequence_script = "PLAY_ANIMATION zeta_angry
 SAY Zeta: \"Vale, vale, déjame en paz y toma las bellotas.\"
 STOP
 SAY Has derrotado a Zeta.
+STOP
 SAY Dar la opción de Text to Speech al usuario facilita la navegación por menús y la comprensión de los estados del juego.
+STOP
 END"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

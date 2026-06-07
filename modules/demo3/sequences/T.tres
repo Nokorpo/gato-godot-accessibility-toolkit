@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://cgt5ohdtoi100"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_7364y"]
+
+[resource]
+script = ExtResource("1_7364y")
+next_sequence = 20
+sequence_id = 19
+sequence_script = "PLAY_ANIMATION gato_talk
+SAY Gato: \"Zeta, por cada bellota que te lleves arruinarás la vida de un jabalí...\"
+STOP
+PLAY_ANIMATION zeta_angry
+SAY Zeta: \"¿Pero qué...?
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

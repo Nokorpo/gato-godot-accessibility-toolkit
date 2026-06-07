@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://cddov48ipk18n"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_krkjq"]
+
+[resource]
+script = ExtResource("1_krkjq")
+next_sequence = 20
+sequence_id = 17
+sequence_script = "SAY Gato: \"No es por nada, pero... como te vuelva a ver por aquí te las verás con los jabalíes...\"
+STOP
+SAY Zeta: \"Ay no... no quiero cuentas con ellos...\"
+STOP
+PLAY_ANIMATION zeta_angry"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

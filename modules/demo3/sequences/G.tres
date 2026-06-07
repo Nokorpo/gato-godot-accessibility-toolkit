@@ -7,7 +7,7 @@ script = ExtResource("1_dxl3p")
 next_sequence = 5
 sequence_id = 6
 sequence_script = "PLAY_ANIMATION gato_fail_attack
-SAY Gato usó ZARPAZO, pero falló
+SAY Gato usó ZARPAZO, pero falló.
 STOP
 PLAY_ANIMATION zeta_risa
 SAY Zeta: \"Justo me has rascado donde me picaba, gracias.\"

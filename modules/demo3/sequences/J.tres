@@ -6,7 +6,7 @@
 script = ExtResource("1_rsber")
 next_sequence = 11
 sequence_id = 9
-sequence_script = "SAY Gato usó ZARPAZO
+sequence_script = "SAY Gato usó ZARPAZO.
 STOP
 PLAY_ANIMATION gato_attack
 SET_HP zeta 60
@@ -17,7 +17,7 @@ STOP
 SAY Zeta: \"¿No querías las bellotas? ¡Pues toma ésta!\"
 STOP
 PLAY_ANIMATION zeta_throw_acorn
-SAY Zeta usó LANZA-BELLOTAS, pero falló
+SAY Zeta usó LANZA-BELLOTAS, pero falló.
 STOP
 SAY Zeta: \"¿¡Pero qué!?\"
 STOP"

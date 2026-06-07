@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b67y3i6dk866v" path="res://modules/demo3/sprites/zeta_spritesheet.png" id="6_0cgi2"]
 [ext_resource type="Texture2D" uid="uid://dcth5iskimsaq" path="res://modules/demo3/sprites/acorn_sprite.png" id="6_cph3f"]
 [ext_resource type="Texture2D" uid="uid://dksp5ms76s1uw" path="res://modules/demo3/sprites/boar_spritesheet.png" id="8_r1uns"]
+[ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="8_tateb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
 atlas = ExtResource("6_0cgi2")
@@ -243,6 +244,11 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Curve" id="Curve_2de5g"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.40804595, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tateb"]
 atlas = ExtResource("8_r1uns")
 region = Rect2(0, 0, 96, 96)
@@ -451,6 +457,42 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(600, 400)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 7)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Sparkles:emitting")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_tyyiy"]
 resource_name = "boar_attack"
@@ -491,6 +533,33 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_24xyy"]
+resource_name = "boar_convince"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(7, 7), Vector2(9, 9), Vector2(7, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Sparkles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_h2asr"]
 resource_name = "boar_unhide"
 length = 0.2
@@ -505,6 +574,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.033333335, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_r1uns"]
@@ -957,6 +1038,7 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_yvqj8"),
 &"boar_attack": SubResource("Animation_tyyiy"),
+&"boar_convince": SubResource("Animation_24xyy"),
 &"boar_unhide": SubResource("Animation_h2asr"),
 &"gato_attack": SubResource("Animation_r1uns"),
 &"gato_fail_attack": SubResource("Animation_u2qrs"),
@@ -1073,6 +1155,27 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 script = ExtResource("4_oss10")
+
+[node name="Sparkles" type="CPUParticles2D" parent="MarginContainer/AspectRatioContainer/Boar" unique_id=329016633]
+position = Vector2(752, 507)
+emitting = false
+amount = 10
+texture = ExtResource("8_tateb")
+one_shot = true
+explosiveness = 0.5
+direction = Vector2(1, -1)
+spread = 30.0
+gravity = Vector2(-20, 0)
+initial_velocity_min = 400.0
+initial_velocity_max = 500.0
+angular_velocity_curve = SubResource("Curve_2de5g")
+linear_accel_min = 20.0
+linear_accel_max = 40.0
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_min = 0.3
+scale_amount_max = 0.6
+color = Color(1, 0.91055876, 0.48009068, 1)
 
 [node name="Boar" type="AnimatedSprite2D" parent="MarginContainer/AspectRatioContainer/Boar" unique_id=1708477159]
 visible = false

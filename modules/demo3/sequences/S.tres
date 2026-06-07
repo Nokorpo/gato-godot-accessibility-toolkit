@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NextSequence" format=3 uid="uid://inubtdix16kp"]
+
+[ext_resource type="Script" uid="uid://cnso2h8f22hfc" path="res://modules/demo3/scripts/next_sequence.gd" id="1_f7ma0"]
+
+[resource]
+script = ExtResource("1_f7ma0")
+next_sequence = 20
+sequence_id = 18
+sequence_script = "SAY Gato: \"¡Pero mira qué carita tiene!\"
+STOP
+SAY El jabalí usó encanto.
+STOP
+PLAY_ANIMATION boar_convince
+SAY ¡Es super eficaz!
+SET_HP zeta 0
+STOP"
+metadata/_custom_type_script = "uid://cnso2h8f22hfc"

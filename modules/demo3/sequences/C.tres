@@ -6,7 +6,7 @@
 script = ExtResource("1_8ksqc")
 next_sequence = 4
 sequence_id = 2
-sequence_script = "SAY Gato usó ZARPAZO
+sequence_script = "SAY Gato usó ZARPAZO.
 STOP
 PLAY_ANIMATION gato_attack
 SET_HP zeta 80
@@ -20,6 +20,6 @@ SAY Zeta usó GOLPE ASTUTO
 STOP
 PLAY_ANIMATION zeta_attack
 SET_HP gato 80
-SAY Zeta perdió un 20% de sus puntos de paciencia
+SAY Zeta perdió un 20% de sus puntos de paciencia.
 STOP"
 metadata/_custom_type_script = "uid://cnso2h8f22hfc"

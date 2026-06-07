@@ -10,6 +10,6 @@ sequence_id = 5
 sequence_script = "SAY Gato: \"Se ha escondido, ¿cómo lo voy a alcanzar así?\"
 PLAY_ANIMATION gato_talk
 STOP
-SAY Elige una opción
+SAY Elige una opción.
 WAIT_FOR_CHOICE"
 metadata/_custom_type_script = "uid://bogv65h3ib6n6"

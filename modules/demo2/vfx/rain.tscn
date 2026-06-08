@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cf8wb3t7scvpl"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3g8o3"]
+emission_shape_scale = Vector3(20, 0, 20)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+collision_mode = 2
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvgba"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_udwu4"]
+material = SubResource("StandardMaterial3D_uvgba")
+size = Vector2(0.02, 0.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvgba"]
+direction = Vector3(0, 1, 0)
+spread = 20.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udwu4"]
+shading_mode = 0
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_k1wua"]
+material = SubResource("StandardMaterial3D_udwu4")
+size = Vector2(0.05, 0.05)
+
+[node name="Rain" type="Node3D" unique_id=950564856]
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=52014514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(100, 1, 100)
+
+[node name="Rain" type="GPUParticles3D" parent="." unique_id=1501000019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+amount = 100
+sub_emitter = NodePath("Impact")
+lifetime = 0.5
+visibility_aabb = AABB(-20.103876, -10.500001, -20.254025, 40.32555, 10.958334, 40.720455)
+process_material = SubResource("ParticleProcessMaterial_3g8o3")
+draw_pass_1 = SubResource("QuadMesh_udwu4")
+
+[node name="Impact" type="GPUParticles3D" parent="Rain" unique_id=2090266148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+emitting = false
+amount = 5000
+one_shot = true
+visibility_aabb = AABB(-4, -4, -4, 100, 50, 100)
+process_material = SubResource("ParticleProcessMaterial_uvgba")
+draw_pass_1 = SubResource("QuadMesh_k1wua")

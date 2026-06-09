@@ -32,7 +32,7 @@ InputRemapper="*uid://r58sbk2t1lft"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 DialogueSystem="*res://modules/core_systems/dialogue_system/controller/dialogue_system_autoload.gd"
 GatoScreenFilters="*uid://da558lwadhp5b"
-TextToSpeech="*uid://b0706qk4g27gp"
+GatoTextToSpeech="*uid://b0706qk4g27gp"
 
 [display]
 
@@ -45,7 +45,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/gato_screen_filters/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/input_remapper/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/gato_screen_filters/plugin.cfg", "res://addons/gato_tts/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/input_remapper/plugin.cfg")
 
 [global_group]
 

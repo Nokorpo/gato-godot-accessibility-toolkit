@@ -50,7 +50,7 @@ class SayInstruction extends Instruction:
 			return Result.ERROR
 		if not _node.narrator.visible:
 			_node.narrator.show()
-		TextToSpeech.read(value)
+		GatoTextToSpeech.read(value)
 		_node.narrator.set_text(value)
 		return Result.CONTINUE
 

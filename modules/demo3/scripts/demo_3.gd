@@ -5,4 +5,4 @@ extends Control
 
 
 func _init() -> void:
-	TextToSpeech.set_language("es")
+	GatoTextToSpeech.set_language("es")

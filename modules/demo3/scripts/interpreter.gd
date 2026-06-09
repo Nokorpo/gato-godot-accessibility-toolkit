@@ -92,8 +92,8 @@ func _on_dialogue_button_pressed() -> void:
 func _on_narrator_text_box_pressed() -> void:
 	if not active:
 		return
-	if TextToSpeech.is_reading():
-		TextToSpeech.stop()
+	if GatoTextToSpeech.is_reading():
+		GatoTextToSpeech.stop()
 	_run_sequence()
 
 func _on_animation_player_animation_started(_anim_name: StringName) -> void:

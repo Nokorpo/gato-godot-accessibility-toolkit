@@ -5,6 +5,7 @@
 [resource]
 resource_name = "interactables"
 cull_mode = 2
+diffuse_mode = 3
 albedo_texture = ExtResource("1_ebgp6")
 texture_filter = 2
 distance_fade_mode = 3

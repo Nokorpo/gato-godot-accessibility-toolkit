@@ -5,6 +5,7 @@
 [resource]
 resource_name = "acorn"
 cull_mode = 2
+diffuse_mode = 3
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_7ybo8")
 roughness = 0.5

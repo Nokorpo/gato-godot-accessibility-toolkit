@@ -113,8 +113,12 @@ environment = ExtResource("1_rwbpo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1033447697]
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
+light_color = Color(0.9521355, 0.90358907, 0.6171664, 1)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 1.5
+sky_mode = 1
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=1657196910]
 

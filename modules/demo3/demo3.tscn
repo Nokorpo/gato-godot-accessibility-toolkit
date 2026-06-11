@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="8_tateb"]
 [ext_resource type="Script" uid="uid://c5sf7qm5knx1" path="res://modules/demo3/scripts/button_text_reader.gd" id="13_53201"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="13_xitem"]
-[ext_resource type="PackedScene" uid="uid://bw0rrjgfgwhuy" path="res://modules/core_systems/game_menu/input_remapper_submenu.tscn" id="14_53201"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="15_tyyiy"]
+[ext_resource type="PackedScene" uid="uid://4el58wwwkssf" path="res://modules/core_systems/game_menu/tts_submenu.tscn" id="16_0kdck"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
 atlas = ExtResource("6_0cgi2")
@@ -1334,8 +1334,7 @@ libraries/ = SubResource("AnimationLibrary_yvqj8")
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("13_xitem")]
 visible = false
 
-[node name="InputRemapperMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("14_53201")]
-layer = 2
+[node name="TextToSpeechMenu" parent="GameMenu" unique_id=1505566936 instance=ExtResource("16_0kdck")]
 visible = false
 
 [node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("15_tyyiy")]

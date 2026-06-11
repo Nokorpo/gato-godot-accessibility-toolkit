@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw0rrjgfgwhuy"]
 
 [ext_resource type="PackedScene" uid="uid://b6u5d6udex1v1" path="res://addons/input_remapper/ui/input_remapper_ui.tscn" id="1_fh0xm"]
-[ext_resource type="Script" uid="uid://te7jrjplidra" path="res://modules/core_systems/game_menu/input_remapper_submenu.gd" id="1_r0yp6"]
+[ext_resource type="Script" uid="uid://te7jrjplidra" path="res://modules/core_systems/game_menu/submenu.gd" id="1_r0yp6"]
 
 [node name="InputRemapperMenu" type="CanvasLayer" unique_id=1505566936]
 script = ExtResource("1_r0yp6")

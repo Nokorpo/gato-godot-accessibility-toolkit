@@ -44,4 +44,5 @@ text = "Quit demo"
 wait_time = 0.5
 one_shot = true
 
+[connection signal="mouse_entered" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" method="grab_focus"]
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="quit_and_go_to_menu"]

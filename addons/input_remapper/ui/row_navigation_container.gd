@@ -27,9 +27,11 @@ func _input(event: InputEvent) -> void:
 		input.emit(event)
 
 func _on_mouse_entered() -> void:
+	print("mouse enter")
 	grab_focus()
 
 func _on_mouse_exited() -> void:
+	print("mouse exit")
 	release_focus()
 
 func _on_focus_entered() -> void:

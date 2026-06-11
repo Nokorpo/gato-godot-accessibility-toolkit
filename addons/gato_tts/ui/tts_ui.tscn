@@ -158,3 +158,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[connection signal="input" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer/LanguageSelector" method="_on_navigation_container_input"]
+[connection signal="input" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer2" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer2/VoiceSelector" method="_on_navigation_container_input"]
+[connection signal="input" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer3" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer3/SpeedSelector" method="_on_navigation_container_input"]

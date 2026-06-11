@@ -105,7 +105,7 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	if _animation_semaphor <= 0:
 		active = true
 
-func _on_animation_player_current_animation_changed(name: StringName) -> void:
+func _on_animation_player_current_animation_changed(_name: StringName) -> void:
 	_animation_semaphor -= 1
 	if _animation_semaphor <= 0:
 		active = true

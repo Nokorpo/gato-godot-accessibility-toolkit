@@ -44,6 +44,7 @@
 [ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/level_objects/bounce_on_touch.gd" id="25_hd4lb"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
+[ext_resource type="Script" uid="uid://cbjoqq7qgch38" path="res://modules/demo4/map/disable_acorn_point_when_boar_crossed.gd" id="44_0olh3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
 font_size = 48
@@ -51,6 +52,9 @@ font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0721d"]
 radius = 0.10625537
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r5fho"]
+size = Vector3(2.3261719, 1.6376953, 2.8544922)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
 albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
@@ -954,6 +958,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8512957, 0)
 
 [node name="AcornButton2" parent="ButtonsAndPlatforms" unique_id=1162665974 instance=ExtResource("19_uo75g")]
 transform = Transform3D(-0.0569717, 0, -0.998376, 0, 1, 0, 0.998376, 0, -0.0569717, 15.5377, 2.483861, -21.9664)
+
+[node name="DisableAcornPointWhenBoarCrossed" type="Area3D" parent="ButtonsAndPlatforms" unique_id=212043507 node_paths=PackedStringArray("acorn_landing_point")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.432806, -1.9073486e-06, -32.25406)
+script = ExtResource("44_0olh3")
+acorn_landing_point = NodePath("../MovingBoarPlatform/MovingPlatform/CornTarget")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonsAndPlatforms/DisableAcornPointWhenBoarCrossed" unique_id=1825754736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88817215, 0.31884766, -0.9272461)
+shape = SubResource("BoxShape3D_r5fho")
 
 [node name="Sprites" type="Node3D" parent="." unique_id=429349805]
 

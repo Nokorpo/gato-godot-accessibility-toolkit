@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogueContainer" format=3 uid="uid://b4o2im5ic68eg"]
+
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_loivw"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_52jxu"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="3_hf14e"]
+
+[sub_resource type="Resource" id="Resource_pjckb"]
+script = ExtResource("1_loivw")
+message = "Hace un tiempo de perros, debería guiar a los jabalíes hasta su cercado correspondiente."
+name = "Gato"
+animation_name = "talk_worried"
+face = "worried"
+mesh = ExtResource("2_52jxu")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_hypwh"]
+script = ExtResource("1_loivw")
+message = "Si hago un camino con las bellotas podría atraer a los jabalíes hasta tu zona..."
+name = "Gato"
+animation_name = "talk_side_eye"
+face = "side_eye"
+mesh = ExtResource("2_52jxu")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[resource]
+script = ExtResource("3_hf14e")
+messages = Array[ExtResource("1_loivw")]([SubResource("Resource_pjckb"), SubResource("Resource_hypwh")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

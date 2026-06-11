@@ -14,11 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://ciejc3mfd5apl" path="res://modules/demo2/boar/fence_boar.tscn" id="9_hjvqd"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="11_tu8u1"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="13_5n58l"]
+[ext_resource type="Resource" uid="uid://b4o2im5ic68eg" path="res://modules/demo2/dialogues/demo2_dialogue01.tres" id="14_31tas"]
 [ext_resource type="PackedScene" uid="uid://dgntlhkoeu81e" path="res://modules/level_objects/button/boar_button.tscn" id="14_t36cc"]
 [ext_resource type="Script" uid="uid://cv2pio2355wvl" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_ready.gd" id="15_633k7"]
-[ext_resource type="Resource" uid="uid://04odm6qkfamm" path="res://modules/demo1/dialogues/demo1_dialogue01.tres" id="16_kgkhn"]
+[ext_resource type="Resource" uid="uid://c75h8phjkk83j" path="res://modules/demo2/dialogues/demo2_dialogue02.tres" id="16_pjckb"]
+[ext_resource type="Script" uid="uid://btcidvgv04sx1" path="res://modules/demo2/dialogues/demo2_dialogue02.gd" id="17_0w0v3"]
+[ext_resource type="Script" uid="uid://cnvcd54ql07u7" path="res://modules/demo2/dialogues/demo2_dialogue03.gd" id="18_0w0v3"]
+[ext_resource type="Resource" uid="uid://bjqis6ea4lyb1" path="res://modules/demo2/dialogues/demo2_dialogue03.tres" id="18_plfc8"]
+[ext_resource type="Resource" uid="uid://bfm28b7anygqb" path="res://modules/demo2/dialogues/demo2_dialogue04.tres" id="20_er80s"]
 [ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="23_3krps"]
-[ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="24_i78el"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="25_njrsv"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="26_sp1lc"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="27_gtj3l"]
@@ -301,12 +305,21 @@ assigned_enclosure = 1
 
 [node name="StartingDialogue" type="Node" parent="Dialogue" unique_id=1375766844]
 script = ExtResource("15_633k7")
-dialogue = ExtResource("16_kgkhn")
+dialogue = ExtResource("14_31tas")
+
+[node name="NearBoarDialogue" type="Node" parent="Dialogue" unique_id=1009737590]
+script = ExtResource("17_0w0v3")
+dialogue = ExtResource("16_pjckb")
+
+[node name="EnclosedDialogue" type="Node" parent="Dialogue" unique_id=2039497502 node_paths=PackedStringArray("boars_node")]
+script = ExtResource("18_0w0v3")
+boars_node = NodePath("../../Boars")
+dialogue = ExtResource("18_plfc8")
 
 [node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=1871029937 node_paths=PackedStringArray("scene_root")]
 script = ExtResource("23_3krps")
 scene_root = NodePath("../..")
-dialogue = ExtResource("24_i78el")
+dialogue = ExtResource("20_er80s")
 
 [node name="Props" type="Node3D" parent="." unique_id=536652009]
 
@@ -845,7 +858,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 [connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]
 [connection signal="boar_deselected" from="Gato" to="BoarEnclosureHUD" method="hide_enclosure_indicator"]
 [connection signal="boar_selected" from="Gato" to="BoarEnclosureHUD" method="show_enclosure_indicator"]
+[connection signal="boar_selected" from="Gato" to="Dialogue/NearBoarDialogue" method="_on_gato_boar_selected"]
 [connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]
 [connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
 [connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]
 [connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]
+[connection signal="button_activated" from="BoarButton" to="MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]

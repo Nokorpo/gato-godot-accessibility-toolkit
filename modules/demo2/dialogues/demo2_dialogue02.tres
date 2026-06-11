@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogueContainer" format=3 uid="uid://c75h8phjkk83j"]
+
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="1_37rrp"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="2_3m7xh"]
+[ext_resource type="Script" uid="uid://cnd7f8tpw04ix" path="res://modules/core_systems/dialogue_system/model/dialogue_container.gd" id="3_tjlvr"]
+
+[sub_resource type="Resource" id="Resource_0w0v3"]
+script = ExtResource("1_37rrp")
+message = "Uy, el HUD está un poco raro… debería modificarlo para que se vea mejor."
+name = "Gato"
+animation_name = "talk_surprised"
+face = "surprised"
+mesh = ExtResource("2_3m7xh")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_31tas"]
+script = ExtResource("1_37rrp")
+message = "Al menú de ajustes se accede desde el menú de pausa."
+name = "Gato"
+animation_name = "talk_neutral"
+face = "neutral"
+mesh = ExtResource("2_3m7xh")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[resource]
+script = ExtResource("3_tjlvr")
+messages = Array[ExtResource("1_37rrp")]([SubResource("Resource_0w0v3"), SubResource("Resource_31tas")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

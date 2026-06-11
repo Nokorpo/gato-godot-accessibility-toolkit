@@ -8,11 +8,16 @@ class_name BoarFollowingAcornState
 const EAT_RANGE: float = .7
 const BOAR_FOLLOWING_ACORN_SPEED: float = .5
 
+@export var mesh: BoarMesh
+@export var has_ground_ahead_raycasts: Array[RayCast3D]
+
 var boar: CharacterBody3D
 var is_following: bool = false
 var _target: Node3D = null
-@export var mesh: BoarMesh
 
+func _ready() -> void:
+	for raycast: RayCast3D in has_ground_ahead_raycasts:
+		raycast.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_enter_state() -> void:
 	mesh.play_animation(BoarMesh.Animations.WALK)
@@ -21,6 +26,9 @@ func _on_enter_state() -> void:
 	is_following = false
 
 	_target = %AcornDetection.get_acorn_in_range()
+
+	for raycast: RayCast3D in has_ground_ahead_raycasts:
+		raycast.process_mode = Node.PROCESS_MODE_INHERIT
 
 	await detection_animation().finished
 	is_following = true
@@ -40,12 +48,19 @@ func short_angle_dist(from, to) -> float:
 	var difference := fmod(to - from, max_angle)
 	return fmod(2 * difference, max_angle) - difference
 
-func trigonometry_angle_to_godot_angle(angle_radians):
-	return -angle_radians + PI/2
-
 func _on_exit_state() -> void:
 	$"../EatingState".target = _target
 	_target = null
+	for raycast: RayCast3D in has_ground_ahead_raycasts:
+		raycast.process_mode = Node.PROCESS_MODE_DISABLED
+
+func _has_ground_ahead() -> bool:
+	var has_ground: int = 0
+	for raycast: RayCast3D in has_ground_ahead_raycasts:
+		if raycast.is_colliding():
+			has_ground += 1
+	print(has_ground)
+	return has_ground > 0
 
 func _physics_process(delta: float) -> void:
 	if active:
@@ -54,7 +69,13 @@ func _physics_process(delta: float) -> void:
 			return
 		look_at_acorn(delta)
 		if is_following:
-			var target_diff: Vector3 = Plane.PLANE_XZ.project(_target.global_position - boar.global_position)
+			if not _has_ground_ahead():
+				state_machine.change_state(BoarIdleState)
+				return
+			var target_diff: Vector3 = _target.global_position - boar.global_position
+			if abs(target_diff.y) >= 1.:
+				state_machine.change_state(BoarIdleState)
+				return
 			if target_diff.length() <= EAT_RANGE * boar.scale.y:
 				state_machine.change_state(BoarEatingState)
 			else:

@@ -40,9 +40,6 @@ func short_angle_dist(from, to) -> float:
 	var difference := fmod(to - from, max_angle)
 	return fmod(2 * difference, max_angle) - difference
 
-func trigonometry_angle_to_godot_angle(angle_radians):
-	return -angle_radians + PI/2
-
 func _on_exit_state() -> void:
 	$"../EatingState".target = _target
 	_target = null

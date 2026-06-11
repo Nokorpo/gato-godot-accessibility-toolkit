@@ -91,9 +91,6 @@ size = Vector3(13.8936, 9.04885, 3.91745)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x3rkg"]
 size = Vector3(14.229, 9.04885, 6.87963)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m4l5s"]
-size = Vector3(3.277, 9.94777, 10.1546)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_8lorg"]
 size = Vector3(3.277, 9.94777, 17.21)
 
@@ -1636,16 +1633,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.906626, -2.96062, 0.748672)
 shape = SubResource("BoxShape3D_x3rkg")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider14" type="StaticBody3D" parent="CameraColliders" unique_id=1132783907 groups=["CameraCollider"]]
-transform = Transform3D(0.919225, 0, 0.393733, 0, 1, 0, -0.393733, 0, 0.919225, 23.8565, 6.2762, -7.3262)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider14" unique_id=1857348865 groups=["CameraCollider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875195, -2.51116, 0.198934)
-shape = SubResource("BoxShape3D_m4l5s")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
 [node name="CameraCollider15" type="StaticBody3D" parent="CameraColliders" unique_id=328652443 groups=["CameraCollider"]]
 transform = Transform3D(0.960391, 0, 0.278656, 0, 1, 0, -0.278656, 0, 0.960391, 37.8609, 6.2762, -4.74841)
 collision_layer = 16
@@ -1674,7 +1661,6 @@ mesh = SubResource("PlaneMesh_kg8y1")
 script = ExtResource("37_1p31k")
 boar_list = NodePath("../Boars")
 
-[connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]

@@ -26,6 +26,7 @@ shape = SubResource("SphereShape3D_nvhaj")
 
 [node name="Decal" type="Decal" parent="." unique_id=354399938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.194531, 0)
+visible = false
 size = Vector3(0.2, 10, 0.2)
 texture_albedo = ExtResource("3_a4p7a")
 lower_fade = 0.008

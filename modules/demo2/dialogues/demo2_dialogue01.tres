@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
 [sub_resource type="Resource" id="Resource_hypwh"]
 script = ExtResource("1_loivw")
-message = "Si hago un camino con las bellotas podría atraer a los jabalíes hasta tu zona..."
+message = "Si hago un camino con las bellotas podría atraer a los jabalíes hasta su zona..."
 name = "Gato"
 animation_name = "talk_side_eye"
 face = "side_eye"

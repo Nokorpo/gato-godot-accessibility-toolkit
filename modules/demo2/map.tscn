@@ -355,9 +355,6 @@ transform = Transform3D(1.6880732, 0, 0.2127435, 0, 1.3948997, 0, -0.2127435, 0,
 [node name="FloorSand8" parent="Props/Floor" unique_id=8123146 instance=ExtResource("26_sp1lc")]
 transform = Transform3D(0.9978458, 0, 0.2155226, 0, 0.8369398, 0, -0.2155226, 0, 0.9978458, 10.660531, -0.6718135, 13.877401)
 
-[node name="FloorSand7" parent="Props/Floor" unique_id=123023251 instance=ExtResource("26_sp1lc")]
-transform = Transform3D(1.5630438, 0, -0.17269519, 0, 1, 0, 0.26234835, 0, 1.0288938, 2.3330336, -0.9007594, 10.390667)
-
 [node name="FloorSand9" parent="Props/Floor" unique_id=742017582 instance=ExtResource("26_sp1lc")]
 transform = Transform3D(1.0168067, 0, -0.08502069, 0, 0.49231398, 0, 0.17066512, 0, 0.50653905, -5.39765, -0.7333524, 9.843254)
 
@@ -829,7 +826,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.287
 destination_node = NodePath("Destination")
 
 [node name="Destination" type="Marker3D" parent="MovingBoarPlatform/MovingPlatform" unique_id=1234080342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.1976, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8161073, 0)
 
 [node name="BoarButton" parent="." unique_id=1635479508 instance=ExtResource("14_t36cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.648222, 1.6183405, 9.330586)

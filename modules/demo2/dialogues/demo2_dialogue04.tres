@@ -15,16 +15,25 @@ metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
 [sub_resource type="Resource" id="Resource_gvnoq"]
 script = ExtResource("1_auqdy")
-message = "Es importante dar al usuario la capacidad de personalizar la información mostrada en el HUD -"
+message = "Es importante dar al usuario la capacidad de personalizar la información mostrada en el HUD."
 name = "Gato"
 animation_name = "talk_happy"
 face = "happy"
 mesh = ExtResource("2_lr7kg")
 metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
+[sub_resource type="Resource" id="Resource_auqdy"]
+script = ExtResource("1_auqdy")
+message = "También es útil poder modificar la escala o posición de los distintos bloques de información."
+name = "Gato"
+animation_name = "talk_neutral"
+face = "neutral"
+mesh = ExtResource("2_lr7kg")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
 [sub_resource type="Resource" id="Resource_4avm2"]
 script = ExtResource("1_auqdy")
-message = "para que se adapte a sus preferencias o necesidades, así como la escala o posición de los distintos bloques de información."
+message = "Así pueden adaptarlo a sus preferencias o necesidades."
 name = "Gato"
 animation_name = "talk_happy"
 face = "happy"
@@ -33,5 +42,5 @@ metadata/_custom_type_script = "uid://b4npe4u3m0glf"
 
 [resource]
 script = ExtResource("3_na4dc")
-messages = Array[ExtResource("1_auqdy")]([SubResource("Resource_lyyeo"), SubResource("Resource_gvnoq"), SubResource("Resource_4avm2")])
+messages = Array[ExtResource("1_auqdy")]([SubResource("Resource_lyyeo"), SubResource("Resource_gvnoq"), SubResource("Resource_auqdy"), SubResource("Resource_4avm2")])
 metadata/_custom_type_script = "uid://cnd7f8tpw04ix"

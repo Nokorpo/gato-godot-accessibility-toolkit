@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dpwhvb35m7q27"]
+
+[ext_resource type="Theme" uid="uid://cjsdcc6e7ndhf" path="res://addons/gato_tts/ui/tts_ui.tres" id="1_krw8n"]
+[ext_resource type="Script" uid="uid://dbhl3hlql8m7b" path="res://addons/gato_tts/ui/tts_ui.gd" id="2_5xqkn"]
+[ext_resource type="Texture2D" uid="uid://cm0fjwoxxmqd7" path="res://addons/gato_tts/ui/sprites/controller.svg" id="2_unphv"]
+[ext_resource type="PackedScene" uid="uid://dnkxpmf8stfxn" path="res://addons/gato_tts/ui/option_selector.tscn" id="4_4576x"]
+[ext_resource type="PackedScene" uid="uid://p3ythjt12gy1" path="res://addons/gato_tts/ui/row_navigation_container.tscn" id="4_uyg0e"]
+[ext_resource type="Script" uid="uid://b62jpobyyj61k" path="res://addons/gato_tts/ui/test_button.gd" id="6_6uv2x"]
+[ext_resource type="PackedScene" uid="uid://821nttkt6a50" path="res://addons/gato_tts/ui/background_blur/background_blur.tscn" id="7_6uv2x"]
+
+[node name="TextToSpeechUi" type="Control" unique_id=718320937]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_krw8n")
+script = ExtResource("2_5xqkn")
+
+[node name="TittlePanelContainer" type="PanelContainer" parent="." unique_id=1110522343]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.0
+offset_top = -524.0
+offset_right = 567.0
+offset_bottom = -426.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="TittlePanelContainer" unique_id=33010022]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleBackground"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TittlePanelContainer/PanelContainer" unique_id=1060846628]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="TittlePanelContainer/PanelContainer/HBoxContainer" unique_id=1044591961]
+layout_mode = 2
+texture = ExtResource("2_unphv")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TittlePanelContainer/PanelContainer/HBoxContainer" unique_id=150548940]
+layout_mode = 2
+theme_type_variation = &"MenuTitle"
+text = "Text-to-Speech"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=391513200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.5
+offset_top = -348.5
+offset_right = 567.5
+offset_bottom = 348.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=668384385]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1164281544]
+layout_mode = 2
+theme_override_constants/scrollbar_h_separation = 80
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=223263592]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer" unique_id=262821437]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="ControlSchemeCaregory" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=748209293]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=320624394]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Language"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=2423411]
+layout_mode = 2
+
+[node name="RowNavigationContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=1367961113 instance=ExtResource("4_uyg0e")]
+layout_mode = 2
+
+[node name="LanguageSelector" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer" unique_id=1125411710 instance=ExtResource("4_4576x")]
+unique_name_in_owner = true
+layout_mode = 2
+options = Array[StringName]([&"ES", &"EN"])
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=1180137820]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Voice
+"
+
+[node name="RowNavigationContainer2" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=1836809827 instance=ExtResource("4_uyg0e")]
+layout_mode = 2
+
+[node name="VoiceSelector" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer2" unique_id=1338115347 instance=ExtResource("4_4576x")]
+unique_name_in_owner = true
+layout_mode = 2
+options = Array[StringName]([&"ES", &"EN"])
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=603941706]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed
+"
+
+[node name="RowNavigationContainer3" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=2068911109 instance=ExtResource("4_uyg0e")]
+layout_mode = 2
+
+[node name="SpeedSelector" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer3" unique_id=1954383217 instance=ExtResource("4_4576x")]
+unique_name_in_owner = true
+layout_mode = 2
+options = Array[StringName]([&"ES", &"EN"])
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=1154650112]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=804687731]
+layout_mode = 2
+text = "Test"
+script = ExtResource("6_6uv2x")
+language_to_test_phrase_map = Dictionary[StringName, String]({
+&"EN": "This is how the game voice will sound.",
+&"ES": "Así sonará la voz del juego."
+})
+
+[node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("7_6uv2x")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

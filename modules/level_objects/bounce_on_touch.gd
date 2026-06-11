@@ -11,6 +11,26 @@ var tween: Tween
 
 var leaf_particles = load("res://modules/demo1/map/vfx/leaf_particles.tscn")
 
+func _ready() -> void:
+	_make_grass_bounce_on_player_touch()
+
+func _make_grass_bounce_on_player_touch():
+	# FIXME hack to make grass bounce when player touches it
+	var area := Area3D.new()
+	var collision_shape: CollisionShape3D = find_child("CollisionShape3D").duplicate()
+	area.add_child(collision_shape)
+	area.body_entered.connect(_on_body_entered)
+	add_child(area)
+	# grass has collisions disabled, therefore the static body isn't needed
+	# trees do have collision enabled, so it won't be deleted
+	var static_body: StaticBody3D = find_child("StaticBody3D")
+	if static_body.get_collision_layer_value(1) == false:
+		static_body.queue_free()
+
+func _on_body_entered(body: PhysicsBody3D) -> void:
+	if body is Gato:
+		react_to_player_collision()
+
 func react_to_player_collision() -> void:
 	if not is_instance_valid(tween) or not tween.is_running():
 		if self.is_in_group("has_leafs"):

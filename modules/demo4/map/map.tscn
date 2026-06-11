@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dvs14kxa77pp2"]
 
-[ext_resource type="Environment" uid="uid://l5cljf1asbvp" path="res://modules/tests/showcase/environment.tres" id="1_6sohf"]
 [ext_resource type="PackedScene" uid="uid://dn1fq3kwyg6sq" path="res://modules/demo4/high_contrast/high_contrast.tscn" id="1_671ot"]
 [ext_resource type="Script" uid="uid://dfrwuakpoqpr3" path="res://modules/demo4/hud/hud.gd" id="2_nyeds"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="2_ohoif"]
+[ext_resource type="Environment" uid="uid://bohawhjnhrc0k" path="res://modules/tests/showcase/environment_sunset.tres" id="2_wb708"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="3_3clr6"]
 [ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="3_671ot"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="3_iwmsy"]
@@ -52,11 +52,11 @@ font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_0721d"]
 radius = 0.10625537
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0721d"]
-albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wb708"]
+albedo_color = Color(0.22976679, 0.56832093, 0.5833981, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qtbex"]
-material = SubResource("StandardMaterial3D_0721d")
+material = SubResource("StandardMaterial3D_wb708")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ykkph"]
 size = Vector3(100, 1, 100)
@@ -108,12 +108,14 @@ size = Vector3(100, 1, 100)
 scene_root = NodePath("..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2064162423]
-environment = ExtResource("1_6sohf")
+environment = ExtResource("2_wb708")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=186145150]
-transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
+transform = Transform3D(-0.42806768, -0.61007386, 0.6667597, 7.450581e-09, 0.7377727, 0.6750496, -0.9037466, 0.28896695, -0.3158167, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
+shadow_enabled = true
+sky_mode = 1
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=126518054]
 

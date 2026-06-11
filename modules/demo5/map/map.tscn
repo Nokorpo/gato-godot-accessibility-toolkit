@@ -277,7 +277,7 @@ size = Vector2(0.1, 0.1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_qh51v"]
 dof_blur_far_enabled = true
-dof_blur_far_distance = 4.0
+dof_blur_far_distance = 4.5
 dof_blur_near_distance = 3.52
 
 [sub_resource type="Resource" id="Resource_ps754"]

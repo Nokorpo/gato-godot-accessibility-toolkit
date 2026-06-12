@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="35_yr7be"]
 [ext_resource type="Texture2D" uid="uid://catih1m3cybuo" path="res://modules/demo1/map/sprites/floor_leafs.png" id="36_lt6co"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="37_1p31k"]
+[ext_resource type="LightmapGIData" uid="uid://d1t4tn6kf1mfl" path="res://modules/demo1/map/map.lmbake" id="45_nqvxv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e26lp"]
 font_size = 48
@@ -112,13 +113,15 @@ material = SubResource("StandardMaterial3D_78qc6")
 environment = ExtResource("1_rwbpo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1033447697]
-transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.8873492, 0.46109807, 0, -0.46109807, 0.8873492, 0, 0, 0)
 light_color = Color(0.9521355, 0.90358907, 0.6171664, 1)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
-light_bake_mode = 0
 shadow_enabled = true
-shadow_blur = 1.5
+shadow_blur = 1.8
+directional_shadow_split_1 = 0.001
+directional_shadow_fade_start = 0.9
+directional_shadow_max_distance = 30.0
 sky_mode = 1
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=1657196910]
@@ -1679,7 +1682,13 @@ mesh = SubResource("PlaneMesh_kg8y1")
 script = ExtResource("37_1p31k")
 boar_list = NodePath("../Boars")
 
-[connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1314793111]
+quality = 2
+directional = true
+shadowmask_mode = 1
+generate_probes_subdiv = 3
+light_data = ExtResource("45_nqvxv")
+
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]

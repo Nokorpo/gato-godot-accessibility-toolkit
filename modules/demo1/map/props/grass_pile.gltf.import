@@ -24,7 +24,7 @@ nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/light_baking=2
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -43,6 +43,17 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://modules/demo1/map/props/interactables_toon.tres",
 "use_external/path": "uid://cik2hye8spgog"
+}
+},
+"meshes": {
+"grass_pile_Icosphere_002": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
 }
 },
 "nodes": {

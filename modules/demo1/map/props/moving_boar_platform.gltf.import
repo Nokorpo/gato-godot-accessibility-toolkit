@@ -45,6 +45,17 @@ _subresources={
 "use_external/path": "uid://cik2hye8spgog"
 }
 },
+"meshes": {
+"moving_boar_platform_platform_001": {
+"generate/lightmap_uv": 2,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+}
+},
 "nodes": {
 "PATH:MovingBoarPlatform": {
 "generate/physics": true,

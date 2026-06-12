@@ -27,7 +27,6 @@ func animate_acorn_disappearance() -> Tween:
 	return tween
 
 func _delete_when_safe() -> void:
-	print(_running_tweens.size())
 	queue_free()
 
 func _physics_process(_delta: float) -> void:

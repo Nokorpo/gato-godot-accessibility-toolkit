@@ -60,7 +60,6 @@ func _run_sequence():
 
 func _load_sequence(sequence_id: Sequence.Sequences) -> Sequence:
 	var file_path: StringName = Sequence.sequence_id_to_file_path(sequence_id)
-	print("loading file %s" % file_path)
 	assert(FileAccess.file_exists(file_path), "Could not load Sequence in path: %s" % file_path)
 	return load(file_path)
 

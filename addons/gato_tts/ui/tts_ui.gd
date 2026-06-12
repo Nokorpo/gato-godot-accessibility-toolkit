@@ -22,7 +22,6 @@ func _ready() -> void:
 	_on_language_changed(DEFAULT_LANGUAGE)
 
 func _on_language_changed(language: StringName) -> void:
-	print("New language %s" % language)
 	GatoTextToSpeech.set_language(language)
 	# TODO update voices
 	_current_voices = GatoTextToSpeech.get_voices_for_language(language)
@@ -37,5 +36,4 @@ func _on_voice_changed(voice_name: StringName) -> void:
 	GatoTextToSpeech.set_language(GatoTextToSpeech.language, new_voice.id)
 
 func _on_speed_changed(speed: StringName) -> void:
-	print("New speed %s" % speed)
 	GatoTextToSpeech.rate = float(speed)

@@ -59,7 +59,6 @@ func _has_ground_ahead() -> bool:
 	for raycast: RayCast3D in has_ground_ahead_raycasts:
 		if raycast.is_colliding():
 			has_ground += 1
-	print(has_ground)
 	return has_ground > 0
 
 func _physics_process(delta: float) -> void:

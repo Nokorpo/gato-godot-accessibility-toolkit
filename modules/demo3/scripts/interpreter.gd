@@ -35,6 +35,9 @@ func _ready():
 	dialogue_button.disabled = true
 	_run_sequence()
 
+func _exit_tree() -> void:
+	interpreter.free()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("ui_accept") and event.is_pressed():
 		if narrator.visible:

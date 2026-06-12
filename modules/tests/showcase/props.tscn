@@ -205,6 +205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.369351, 0, -1.55723)
 
 [node name="oak2" parent="Props/Vegetation" unique_id=1269258151 instance=ExtResource("20_duu18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56453, 0, -1.91311)
+script = null
 
 [node name="Pine2" parent="Props/Vegetation" unique_id=917902538 instance=ExtResource("10_duu18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63087, 0, -1.66775)

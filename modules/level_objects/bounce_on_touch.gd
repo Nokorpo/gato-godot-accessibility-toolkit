@@ -27,7 +27,7 @@ func _make_grass_bounce_on_player_touch():
 	if static_body.get_collision_layer_value(1) == false:
 		static_body.queue_free()
 
-func _on_body_entered(body: PhysicsBody3D) -> void:
+func _on_body_entered(body: Node3D) -> void:
 	if body is Gato:
 		react_to_player_collision()
 

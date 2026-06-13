@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_p5mn1"]
 [ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]
-[ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_52e3n"]
 [ext_resource type="Texture2D" uid="uid://dtojqwm7f3173" path="res://modules/demo_selector/assets/demo_1_cover.svg" id="2_tros2"]
 [ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="3_0qcei"]
 [ext_resource type="PackedScene" uid="uid://b0xcaouncmmm6" path="res://modules/demo1/map/map.tscn" id="3_2eigo"]
+[ext_resource type="Texture2D" uid="uid://d1a3i1hbg7dn0" path="res://modules/demo_selector/assets/demo_2_cover.svg" id="4_hxytc"]
 [ext_resource type="PackedScene" uid="uid://8c0oldvee0dt" path="res://modules/demo3/demo3.tscn" id="5_pdl1d"]
+[ext_resource type="PackedScene" uid="uid://dcj0hlpoquwj0" path="res://modules/demo2/map.tscn" id="5_y1f4t"]
 [ext_resource type="Texture2D" uid="uid://bxtbq50os8eq3" path="res://modules/demo_selector/assets/demo_4_cover.svg" id="6_pdl1d"]
+[ext_resource type="Texture2D" uid="uid://bj44bfkhdlcvr" path="res://modules/demo_selector/assets/demo_3_cover.svg" id="6_phqfu"]
 [ext_resource type="PackedScene" uid="uid://dvs14kxa77pp2" path="res://modules/demo4/map/map.tscn" id="7_p1xob"]
 [ext_resource type="Texture2D" uid="uid://shdg4wyyiau8" path="res://modules/demo_selector/assets/demo_5_cover.svg" id="8_ichw2"]
 [ext_resource type="Texture2D" uid="uid://b01go352cfomr" path="res://modules/demo_selector/assets/props.png" id="8_q3h6l"]
@@ -23,15 +25,17 @@ metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_g6obd"]
 script = ExtResource("1_p5mn1")
-title = "Demo 2 (n/a)"
-image = ExtResource("2_52e3n")
+title = "HUD Personalization"
+description = "Customize the HUD to your liking and guide the boars to their corresponding enclosure."
+image = ExtResource("4_hxytc")
+scene = ExtResource("5_y1f4t")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_52e3n"]
 script = ExtResource("1_p5mn1")
 title = "Text-to-speech"
 description = "Fight off hard-to-read UIs with text-to-speech while you battle for your hard-earned-acorns!"
-image = ExtResource("2_52e3n")
+image = ExtResource("6_phqfu")
 scene = ExtResource("5_pdl1d")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 

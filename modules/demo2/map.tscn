@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="35_ckfvk"]
 [ext_resource type="PackedScene" uid="uid://cwp1ql6gjtok7" path="res://modules/level_objects/oak/oak.tscn" id="37_lctgs"]
 [ext_resource type="PackedScene" uid="uid://cf8wb3t7scvpl" path="res://modules/demo2/vfx/rain.tscn" id="38_hwpi4"]
+[ext_resource type="LightmapGIData" uid="uid://cvpomm8o1ylwo" path="res://modules/demo2/map.lmbake" id="38_hypwh"]
 [ext_resource type="PackedScene" uid="uid://bwhm2vtstl7ju" path="res://modules/demo1/map/props/platform_wood.gltf" id="39_hwxsx"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="41_ldgjx"]
 [ext_resource type="Texture2D" uid="uid://catih1m3cybuo" path="res://modules/demo1/map/sprites/floor_leafs.png" id="42_5qhej"]
@@ -145,7 +146,7 @@ light_color = Color(0.79162765, 0.79005474, 0.965264, 1)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 shadow_enabled = true
-directional_shadow_mode = 0
+directional_shadow_blend_splits = true
 sky_mode = 1
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1497746580]
@@ -154,7 +155,7 @@ light_color = Color(0.88239926, 0.8516697, 0.85968256, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
-directional_shadow_mode = 0
+directional_shadow_blend_splits = true
 sky_mode = 1
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=1657196910]
@@ -695,6 +696,9 @@ transform = Transform3D(-0.6084015, 0, 0.79362977, 0, 1, 0, -0.79362977, 0, -0.6
 [node name="GrassPile15" parent="Props/Grass" unique_id=2063795680 instance=ExtResource("35_ckfvk")]
 transform = Transform3D(0.99993485, 0, 0.011414111, 0, 1, 0, -0.011414111, 0, 0.99993485, -8.096704, -0.23247984, 6.048544)
 
+[node name="GrassPile21" parent="Props/Grass" unique_id=952539119 instance=ExtResource("35_ckfvk")]
+transform = Transform3D(0.99993485, 0, 0.011414111, 0, 1, 0, -0.011414111, 0, 0.99993485, -11.836838, -0.23247984, -1.3841718)
+
 [node name="GrassPile16" parent="Props/Grass" unique_id=971554436 instance=ExtResource("35_ckfvk")]
 transform = Transform3D(0.99993485, 0, 0.011414111, 0, 1, 0, -0.011414111, 0, 0.99993485, -0.2691763, -0.16926292, 2.7588987)
 
@@ -889,6 +893,24 @@ shape = SubResource("BoxShape3D_41c7q")
 
 [node name="Rain" parent="." unique_id=950564856 instance=ExtResource("38_hwpi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1376312723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3351855, 0.4839412, -4.263281)
+visible = false
+light_color = Color(0.99607843, 0.88235295, 0.7294118, 1)
+light_energy = 2.0
+light_bake_mode = 1
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1495149003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2240307, 0.4839412, -4.263281)
+visible = false
+light_color = Color(0.99607843, 0.88235295, 0.7294118, 1)
+light_energy = 2.0
+light_bake_mode = 1
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=281743364]
+bounces = 5
+light_data = ExtResource("38_hypwh")
 
 [connection signal="hud_position_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_hud"]
 [connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]

@@ -44,6 +44,7 @@
 [ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/level_objects/bounce_on_touch.gd" id="25_hd4lb"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
+[ext_resource type="LightmapGIData" uid="uid://dge4y4rpqa2s4" path="res://modules/demo4/map/map.lmbake" id="45_0olh3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
 font_size = 48
@@ -110,12 +111,39 @@ scene_root = NodePath("..")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2064162423]
 environment = ExtResource("2_wb708")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=186145150]
-transform = Transform3D(-0.42806768, -0.61007386, 0.6667597, 7.450581e-09, 0.7377727, 0.6750496, -0.9037466, 0.28896695, -0.3158167, 0, 0, 0)
+[node name="Lights" type="Node3D" parent="." unique_id=1122178208]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights" unique_id=186145150]
+transform = Transform3D(-0.4280677, -0.61007375, 0.66675943, 7.4505815e-09, 0.7377725, 0.6750495, -0.90374666, 0.2889669, -0.31581658, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
 shadow_enabled = true
+directional_shadow_blend_splits = true
 sky_mode = 1
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights" unique_id=779824375]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10.801221, 3.5881925, -5.8936987)
+light_color = Color(0.9411765, 0.62352943, 0, 1)
+light_size = 0.2
+light_bake_mode = 1
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" unique_id=1500999583]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 15.017687, -0.24034443, -31.42662)
+light_color = Color(0.9411765, 0.62352943, 0, 1)
+light_size = 0.2
+light_bake_mode = 1
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights" unique_id=762072556]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 20.550077, 4.3941317, -19.38286)
+light_color = Color(0.9411765, 0.62352943, 0, 1)
+light_size = 0.2
+light_bake_mode = 1
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lights" unique_id=756901358]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -16.497835, 1.0464046, -28.466486)
+light_color = Color(0.9411765, 0.62352943, 0, 1)
+light_size = 0.2
+light_bake_mode = 1
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=126518054]
 
@@ -513,6 +541,9 @@ transform = Transform3D(0.963761, 0, 0.266767, 0, 0.69374, 0, -0.266767, 0, 0.96
 
 [node name="Stone2" parent="Props/Rocks" unique_id=2074864863 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(-1.50631, 0, -0.775565, 0, 1.69424, 0, 0.775565, 0, -1.50631, 6.62096, -0.85389, -1.89038)
+
+[node name="Stone11" parent="Props/Rocks" unique_id=1951836540 instance=ExtResource("22_vyjgi")]
+transform = Transform3D(-0.20018743, 0, 0.9797576, 0, 1, 0, -0.9797576, 0, -0.20018743, -5.8811088, 0.1666472, -1.6046367)
 
 [node name="Stone4" parent="Props/Rocks" unique_id=1236783823 instance=ExtResource("22_vyjgi")]
 transform = Transform3D(0.924412, 0, -0.707687, 0, 1.1642, 0, 0.707687, 0, 0.924412, -9.99627, -0.0010677, -22.236)
@@ -1455,6 +1486,10 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/WorldBoundary3D" unique_id=1665024964]
 shape = SubResource("WorldBoundaryShape3D_0721d")
 debug_color = Color(0, 0, 0, 0.41960785)
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1648679070]
+bounces = 5
+light_data = ExtResource("45_0olh3")
 
 [connection signal="collected_goldacorn" from="GoldAcornManager" to="HUD" method="_update_label_gold_acorn_count"]
 [connection signal="level_finished" from="GoldAcornManager" to="CompletedDemoScreen" method="show_screen"]

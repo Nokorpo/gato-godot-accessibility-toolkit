@@ -40,6 +40,8 @@
 [ext_resource type="PackedScene" uid="uid://bwhm2vtstl7ju" path="res://modules/demo1/map/props/platform_wood.gltf" id="39_hwxsx"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="41_ldgjx"]
 [ext_resource type="Texture2D" uid="uid://catih1m3cybuo" path="res://modules/demo1/map/sprites/floor_leafs.png" id="42_5qhej"]
+[ext_resource type="Texture2D" uid="uid://cnoo82xkn5mgr" path="res://modules/demo2/hud/enclosure_icon_a.svg" id="42_plfc8"]
+[ext_resource type="Texture2D" uid="uid://drke4gsccrlfw" path="res://modules/demo2/hud/enclosure_icon_b.svg" id="43_er80s"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="43_tvvq4"]
 
 [sub_resource type="Gradient" id="Gradient_t68yl"]
@@ -805,20 +807,6 @@ mesh = SubResource("PlaneMesh_kg8y1")
 script = ExtResource("43_tvvq4")
 boar_list = NodePath("../Boars")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=1211309986]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.2863045, -0.05792904, -4.7898765)
-modulate = Color(0.22745098, 0.18431373, 0.47058824, 1)
-outline_modulate = Color(0.9372549, 0.95686275, 0.9372549, 1)
-text = "A"
-font_size = 500
-
-[node name="Label3D2" type="Label3D" parent="." unique_id=312419484]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.1944842, -0.05250919, -4.7898765)
-modulate = Color(0.22745098, 0.18431373, 0.47058824, 1)
-outline_modulate = Color(0.9372549, 0.95686275, 0.9372549, 1)
-text = "B"
-font_size = 500
-
 [node name="MovingBoarPlatform" parent="." unique_id=318905234 instance=ExtResource("13_5n58l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.28717, 1.3919647, 9.477833)
 
@@ -850,6 +838,18 @@ shape = SubResource("BoxShape3D_41c7q")
 
 [node name="Rain" parent="." unique_id=950564856 instance=ExtResource("38_hwpi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1650686096]
+transform = Transform3D(0.9, 0, 0, 0, -3.934025e-08, 0.9, 0, -0.9, -3.934025e-08, -3.0966136, -0.049697954, -4.4758244)
+modulate = Color(1, 1, 1, 0.47058824)
+texture_filter = 0
+texture = ExtResource("42_plfc8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1560561919]
+transform = Transform3D(0.9, 0, 0, 0, -3.934025e-08, 0.9, 0, -0.9, -3.934025e-08, 3.2559826, -0.05281647, -4.4758244)
+modulate = Color(1, 1, 1, 0.47058824)
+texture_filter = 0
+texture = ExtResource("43_er80s")
 
 [connection signal="hud_position_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_hud"]
 [connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]

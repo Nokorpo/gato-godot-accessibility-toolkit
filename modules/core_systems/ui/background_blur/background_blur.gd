@@ -3,6 +3,9 @@
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends ColorRect
 
+func is_enabled() -> bool:
+	return color.is_equal_approx(Color.WHITE)
+
 func show_blur() -> Tween:
 	mouse_filter = MOUSE_FILTER_STOP
 	var tween := create_tween()

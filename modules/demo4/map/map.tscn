@@ -108,9 +108,6 @@ size = Vector3(100, 1, 100)
 
 [node name="Map" type="Node3D" unique_id=1295868009]
 
-[node name="HighContrast" parent="." unique_id=31790624 node_paths=PackedStringArray("scene_root") instance=ExtResource("1_671ot")]
-scene_root = NodePath("..")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2064162423]
 environment = ExtResource("1_6sohf")
 
@@ -118,6 +115,9 @@ environment = ExtResource("1_6sohf")
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
+
+[node name="HighContrast" parent="." unique_id=31790624 node_paths=PackedStringArray("scene_root") instance=ExtResource("1_671ot")]
+scene_root = NodePath("..")
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=126518054]
 
@@ -187,6 +187,27 @@ theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.2549
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
 text = "Jump (can double jump)"
+
+[node name="Action3" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=1694556430]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Action2Icon" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action3" unique_id=1927762582]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+text = "LB/RB"
+horizontal_alignment = 2
+
+[node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action3" unique_id=276695953]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "En/disable filters"
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=329260210]
 script = ExtResource("2_nyeds")

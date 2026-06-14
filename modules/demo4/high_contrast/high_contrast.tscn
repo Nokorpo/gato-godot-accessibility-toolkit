@@ -124,17 +124,19 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer" unique_id=1942439748]
 layout_mode = 2
 
-[node name="TextureCheckButton" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2009164450 instance=ExtResource("5_qxrg3")]
+[node name="HighContrastButton" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2009164450 instance=ExtResource("5_qxrg3")]
+unique_name_in_owner = true
 layout_mode = 2
 button_texture = ExtResource("6_lsqau")
 button_texture_pressed = ExtResource("6_lsqau")
 
-[node name="TextureCheckButton2" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=479144610 instance=ExtResource("5_qxrg3")]
+[node name="BlurButton" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=479144610 instance=ExtResource("5_qxrg3")]
+unique_name_in_owner = true
 layout_mode = 2
 button_texture = ExtResource("7_5tw3i")
 button_texture_pressed = ExtResource("7_5tw3i")
 
-[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton" to="." method="disable_high_contrast"]
-[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton" to="." method="enable_high_contrast"]
-[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton2" to="." method="disable_blur"]
-[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton2" to="." method="enable_blur"]
+[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HighContrastButton" to="." method="disable_high_contrast"]
+[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HighContrastButton" to="." method="enable_high_contrast"]
+[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BlurButton" to="." method="disable_blur"]
+[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BlurButton" to="." method="enable_blur"]

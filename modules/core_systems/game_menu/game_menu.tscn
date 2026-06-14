@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bmx55hmllsepu" path="res://modules/core_systems/game_menu/game_menu.gd" id="1_7ww1i"]
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_hfreh"]
-[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="3_uf5bn"]
+[ext_resource type="Theme" uid="uid://ptmdpjnuag7c" path="res://modules/core_systems/game_menu/game_menu.theme" id="3_uf5bn"]
+[ext_resource type="PackedScene" uid="uid://mci4stvhspgq" path="res://modules/core_systems/game_menu/game_menu_button.tscn" id="4_uf5bn"]
 
 [node name="GameMenu" type="CanvasLayer" unique_id=450146438]
 process_mode = 3
@@ -35,14 +36,11 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="QuitButton" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1803045332]
+[node name="QuitButton" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1436776288 instance=ExtResource("4_uf5bn")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "Quit demo"
 
 [node name="OpenMenuCooldown" type="Timer" parent="." unique_id=470500546]
 wait_time = 0.5
 one_shot = true
 
-[connection signal="mouse_entered" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" method="grab_focus"]
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="quit_and_go_to_menu"]

@@ -8,7 +8,6 @@ extends CanvasLayer
 @onready var _ui_content: Control = _ui_offset.get_child(0)
 
 var _initial_offset_position: Vector2
-var _enabled: bool = false
 var _tween: Tween = null
 
 func _ready() -> void:

@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_vs0jy"]
 script = ExtResource("1_mhb8f")
-message = "¡Aquí hay otra! Ya sólo queda encontrar 2 más."
+message = "¡Aquí hay otra! Ya sólo queda encontrar 3 más."
 name = "Gato"
 animation_name = "talk_surprised"
 face = "wow"

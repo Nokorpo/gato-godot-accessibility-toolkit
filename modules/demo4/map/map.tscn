@@ -33,9 +33,11 @@
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="18_hyq56"]
 [ext_resource type="PackedScene" uid="uid://cwp1ql6gjtok7" path="res://modules/level_objects/oak/oak.tscn" id="19_tmiu8"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="19_uo75g"]
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="20_b5aul"]
 [ext_resource type="Script" uid="uid://boqk5mgllk2ws" path="res://modules/demo4/dialogues/triggers/launch_dialogue_on_high_contrast_enabled_dialogue.gd" id="20_lmjde"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="20_tmiu8"]
 [ext_resource type="Resource" uid="uid://bcc5hct5shuu8" path="res://modules/demo4/dialogues/demo4_dialogue07.tres" id="21_ijg73"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="21_pm1tf"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="21_rfxh8"]
 [ext_resource type="PackedScene" uid="uid://d67xo88xjrfm" path="res://modules/level_objects/acorn/gold_acorn.tscn" id="22_vm6ot"]
 [ext_resource type="PackedScene" uid="uid://dpedfmuyu50ig" path="res://modules/demo1/map/props/stone.gltf" id="22_vyjgi"]
@@ -49,6 +51,20 @@
 [sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
 font_size = 48
 font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+
+[sub_resource type="Resource" id="Resource_2f5ck"]
+script = ExtResource("20_b5aul")
+message = "¡Toma que toma! Ya sólo queda encontrar 1 más."
+name = "Gato"
+animation_name = "talk_surprised"
+face = "wow"
+mesh = ExtResource("21_pm1tf")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_i4c4x"]
+script = ExtResource("11_spi3t")
+messages = Array[ExtResource("20_b5aul")]([SubResource("Resource_2f5ck")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0721d"]
 radius = 0.10625537
@@ -278,7 +294,7 @@ dialogue = ExtResource("9_kfagj")
 
 [node name="CollectAcornDialogue" type="Node" parent="Dialogue" unique_id=173209078]
 script = ExtResource("10_h01ac")
-dialogue = Array[ExtResource("11_spi3t")]([ExtResource("12_qabrk"), ExtResource("13_nyeds"), ExtResource("14_671ot"), ExtResource("15_lmjde")])
+dialogue = Array[ExtResource("11_spi3t")]([ExtResource("12_qabrk"), ExtResource("13_nyeds"), ExtResource("14_671ot"), SubResource("Resource_i4c4x"), ExtResource("15_lmjde")])
 
 [node name="HighContrastEnabledDialogue" type="Node" parent="Dialogue" unique_id=219253494 node_paths=PackedStringArray("high_contrast_node")]
 script = ExtResource("20_lmjde")
@@ -945,6 +961,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5359, 0.6577796, -28.441)
 [node name="GoldAcorn4" parent="Props/GoldAcorns" unique_id=126238221 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5828, 4.016599, -19.347015)
 
+[node name="GoldAcorn5" parent="Props/GoldAcorns" unique_id=647902887 instance=ExtResource("22_vm6ot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51606464, 0.51306105, -12.297416)
+
 [node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=717572434 groups=["interactable"]]
 
 [node name="BoarButton" parent="ButtonsAndPlatforms" unique_id=1747502302 instance=ExtResource("16_uo75g")]
@@ -1495,6 +1514,7 @@ debug_color = Color(0, 0, 0, 0.41960785)
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn2" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn3" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn4" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
+[connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn5" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform2/MovingPlatform" method="travel_to_destination"]

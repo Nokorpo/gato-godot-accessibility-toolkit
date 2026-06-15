@@ -214,7 +214,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
-text = "LB/RB"
+text = "TAB / SHIFT"
 horizontal_alignment = 2
 
 [node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action3" unique_id=276695953]

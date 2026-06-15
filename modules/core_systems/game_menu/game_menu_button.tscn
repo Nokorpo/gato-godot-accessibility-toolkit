@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://mci4stvhspgq"]
+
+[ext_resource type="Script" uid="uid://bgnpdmwxiru6d" path="res://modules/core_systems/game_menu/game_menu_button.gd" id="1_huspl"]
+
+[node name="GameMenuButton" type="Button" unique_id=1436776288]
+size_flags_vertical = 3
+text = "Placeholder button text"
+script = ExtResource("1_huspl")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -3,8 +3,10 @@
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends CanvasLayer
 
+@export var button_text: String = "Controles"
+
 func get_button_text() -> String:
-	return "Controles"
+	return button_text
 
 func grab_focus() -> void:
-	$InputRemapperUi.grab_focus()
+	get_child(0).grab_focus()

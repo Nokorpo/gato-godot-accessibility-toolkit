@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bfx3wk32j285q"]
+
+[ext_resource type="Script" uid="uid://bnxp5kawqccld" path="res://modules/demo3/hud/demo_3hud.gd" id="1_tmj6e"]
+[ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="3_yepjd"]
+[ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="5_5xa6b"]
+[ext_resource type="PackedScene" uid="uid://d0xyfr16tcse3" path="res://modules/core_systems/texture_check_button/texture_check_button.tscn" id="6_b2s8n"]
+[ext_resource type="Texture2D" uid="uid://c335dlwdskfyl" path="res://modules/demo5/hud/sprites/blur_icon.svg" id="8_pavum"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsqau"]
+bg_color = Color(0.9529412, 0.9490196, 0.96862745, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="Demo3HUD" type="CanvasLayer" unique_id=802766851]
+script = ExtResource("1_tmj6e")
+
+[node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("3_yepjd")]
+
+[node name="Control" type="Control" parent="." unique_id=1800134712]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_5xa6b")
+
+[node name="Offset" type="Control" parent="Control" unique_id=278026982]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Offset" unique_id=817229845]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1502.0
+offset_top = 634.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 512
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/Offset/MarginContainer" unique_id=226689929]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lsqau")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Offset/MarginContainer/PanelContainer" unique_id=253569507]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Offset/MarginContainer/PanelContainer/MarginContainer" unique_id=1942439748]
+layout_mode = 2
+
+[node name="BlurButton" parent="Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=479144610 instance=ExtResource("6_b2s8n")]
+unique_name_in_owner = true
+layout_mode = 2
+button_texture = ExtResource("8_pavum")
+button_texture_pressed = ExtResource("8_pavum")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=916033744]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -504.0
+offset_bottom = -399.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0)
+
+[node name="MouseDetectorNear" type="Control" parent="HBoxContainer" unique_id=918023763]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MouseDetector" type="Control" parent="HBoxContainer" unique_id=1163933872]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[connection signal="mouse_entered" from="HBoxContainer/MouseDetectorNear" to="." method="_show_hint"]
+[connection signal="mouse_exited" from="HBoxContainer/MouseDetectorNear" to="." method="_hide_hint"]
+[connection signal="mouse_entered" from="HBoxContainer/MouseDetector" to="." method="_show_hud"]
+[connection signal="mouse_exited" from="HBoxContainer/MouseDetector" to="." method="_hide_hud"]

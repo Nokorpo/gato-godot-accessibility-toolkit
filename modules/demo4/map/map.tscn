@@ -33,9 +33,11 @@
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="18_hyq56"]
 [ext_resource type="PackedScene" uid="uid://cwp1ql6gjtok7" path="res://modules/level_objects/oak/oak.tscn" id="19_tmiu8"]
 [ext_resource type="PackedScene" uid="uid://ph4lf6yiqkhj" path="res://modules/level_objects/button/acorn_button.tscn" id="19_uo75g"]
+[ext_resource type="Script" uid="uid://b4npe4u3m0glf" path="res://modules/core_systems/dialogue_system/model/dialogue_message.gd" id="20_b5aul"]
 [ext_resource type="Script" uid="uid://boqk5mgllk2ws" path="res://modules/demo4/dialogues/triggers/launch_dialogue_on_high_contrast_enabled_dialogue.gd" id="20_lmjde"]
 [ext_resource type="PackedScene" uid="uid://i166axlbpy7g" path="res://modules/demo1/map/props/fence.gltf" id="20_tmiu8"]
 [ext_resource type="Resource" uid="uid://bcc5hct5shuu8" path="res://modules/demo4/dialogues/demo4_dialogue07.tres" id="21_ijg73"]
+[ext_resource type="PackedScene" uid="uid://lfdv7nvfw25m" path="res://modules/characters/gato/mesh/gato_mesh.tscn" id="21_pm1tf"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="21_rfxh8"]
 [ext_resource type="PackedScene" uid="uid://d67xo88xjrfm" path="res://modules/level_objects/acorn/gold_acorn.tscn" id="22_vm6ot"]
 [ext_resource type="PackedScene" uid="uid://dpedfmuyu50ig" path="res://modules/demo1/map/props/stone.gltf" id="22_vyjgi"]
@@ -45,16 +47,34 @@
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
 [ext_resource type="LightmapGIData" uid="uid://dge4y4rpqa2s4" path="res://modules/demo4/map/map.lmbake" id="45_0olh3"]
+[ext_resource type="Script" uid="uid://cbjoqq7qgch38" path="res://modules/demo4/map/disable_acorn_point_when_boar_crossed.gd" id="44_0olh3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
 font_size = 48
 font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+
+[sub_resource type="Resource" id="Resource_2f5ck"]
+script = ExtResource("20_b5aul")
+message = "¡Toma que toma! Ya sólo queda encontrar 1 más."
+name = "Gato"
+animation_name = "talk_surprised"
+face = "wow"
+mesh = ExtResource("21_pm1tf")
+metadata/_custom_type_script = "uid://b4npe4u3m0glf"
+
+[sub_resource type="Resource" id="Resource_i4c4x"]
+script = ExtResource("11_spi3t")
+messages = Array[ExtResource("20_b5aul")]([SubResource("Resource_2f5ck")])
+metadata/_custom_type_script = "uid://cnd7f8tpw04ix"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0721d"]
 radius = 0.10625537
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wb708"]
 albedo_color = Color(0.22976679, 0.56832093, 0.5833981, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r5fho"]
+size = Vector3(2.3261719, 1.6376953, 2.8544922)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qtbex"]
 material = SubResource("StandardMaterial3D_wb708")
@@ -105,9 +125,6 @@ size = Vector3(100, 1, 100)
 
 [node name="Map" type="Node3D" unique_id=1295868009]
 
-[node name="HighContrast" parent="." unique_id=31790624 node_paths=PackedStringArray("scene_root") instance=ExtResource("1_671ot")]
-scene_root = NodePath("..")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2064162423]
 environment = ExtResource("2_wb708")
 
@@ -144,6 +161,9 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -16.
 light_color = Color(0.9411765, 0.62352943, 0, 1)
 light_size = 0.2
 light_bake_mode = 1
+
+[node name="HighContrast" parent="." unique_id=31790624 node_paths=PackedStringArray("scene_root") instance=ExtResource("1_671ot")]
+scene_root = NodePath("..")
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=126518054]
 
@@ -191,7 +211,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Throw acorn"
+text = "Lanzar bellota"
 
 [node name="Action2" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=381131025]
 layout_mode = 2
@@ -203,7 +223,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
-text = "SPACE"
+text = "ESPACIO"
 horizontal_alignment = 2
 
 [node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=305624468]
@@ -212,7 +232,28 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Jump (can double jump)"
+text = "Saltar - Doble salto"
+
+[node name="Action3" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=1694556430]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Action2Icon" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action3" unique_id=1927762582]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+text = "TAB / SHIFT"
+horizontal_alignment = 2
+
+[node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action3" unique_id=276695953]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Activ./desactiv. filtros"
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=329260210]
 script = ExtResource("2_nyeds")
@@ -283,7 +324,7 @@ dialogue = ExtResource("9_kfagj")
 
 [node name="CollectAcornDialogue" type="Node" parent="Dialogue" unique_id=173209078]
 script = ExtResource("10_h01ac")
-dialogue = Array[ExtResource("11_spi3t")]([ExtResource("12_qabrk"), ExtResource("13_nyeds"), ExtResource("14_671ot"), ExtResource("15_lmjde")])
+dialogue = Array[ExtResource("11_spi3t")]([ExtResource("12_qabrk"), ExtResource("13_nyeds"), ExtResource("14_671ot"), SubResource("Resource_i4c4x"), ExtResource("15_lmjde")])
 
 [node name="HighContrastEnabledDialogue" type="Node" parent="Dialogue" unique_id=219253494 node_paths=PackedStringArray("high_contrast_node")]
 script = ExtResource("20_lmjde")
@@ -953,6 +994,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5359, 0.6577796, -28.441)
 [node name="GoldAcorn4" parent="Props/GoldAcorns" unique_id=126238221 instance=ExtResource("22_vm6ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5828, 4.016599, -19.347015)
 
+[node name="GoldAcorn5" parent="Props/GoldAcorns" unique_id=647902887 instance=ExtResource("22_vm6ot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51606464, 0.51306105, -12.297416)
+
 [node name="ButtonsAndPlatforms" type="Node3D" parent="." unique_id=717572434 groups=["interactable"]]
 
 [node name="BoarButton" parent="ButtonsAndPlatforms" unique_id=1747502302 instance=ExtResource("16_uo75g")]
@@ -987,6 +1031,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8512957, 0)
 
 [node name="AcornButton2" parent="ButtonsAndPlatforms" unique_id=1162665974 instance=ExtResource("19_uo75g")]
 transform = Transform3D(-0.0569717, 0, -0.998376, 0, 1, 0, 0.998376, 0, -0.0569717, 15.5377, 2.483861, -21.9664)
+
+[node name="DisableAcornPointWhenBoarCrossed" type="Area3D" parent="ButtonsAndPlatforms" unique_id=212043507 node_paths=PackedStringArray("acorn_landing_point")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.432806, -1.9073486e-06, -32.25406)
+script = ExtResource("44_0olh3")
+acorn_landing_point = NodePath("../MovingBoarPlatform/MovingPlatform/CornTarget")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonsAndPlatforms/DisableAcornPointWhenBoarCrossed" unique_id=1825754736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88817215, 0.31884766, -0.9272461)
+shape = SubResource("BoxShape3D_r5fho")
 
 [node name="Sprites" type="Node3D" parent="." unique_id=429349805]
 
@@ -1498,6 +1551,7 @@ light_data = ExtResource("45_0olh3")
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn2" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn3" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn4" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
+[connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn5" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/BoarButton" to="ButtonsAndPlatforms/MovingBoarPlatform/MovingPlatform" method="travel_to_origin"]
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform2/MovingPlatform" method="travel_to_destination"]

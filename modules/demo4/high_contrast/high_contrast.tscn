@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/ui/background_blur/blur.gdshader" id="3_5tw3i"]
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="3_lvvh7"]
 [ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="4_lvvh7"]
-[ext_resource type="PackedScene" uid="uid://d0xyfr16tcse3" path="res://modules/demo4/high_contrast/texture_check_button.tscn" id="5_qxrg3"]
+[ext_resource type="PackedScene" uid="uid://d0xyfr16tcse3" path="res://modules/core_systems/texture_check_button/texture_check_button.tscn" id="5_qxrg3"]
 [ext_resource type="Texture2D" uid="uid://kvveqsud1r73" path="res://modules/demo5/hud/sprites/high_contrast_icon.svg" id="6_lsqau"]
 [ext_resource type="Texture2D" uid="uid://c335dlwdskfyl" path="res://modules/demo5/hud/sprites/blur_icon.svg" id="7_5tw3i"]
 
@@ -124,17 +124,19 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer" unique_id=1942439748]
 layout_mode = 2
 
-[node name="TextureCheckButton" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2009164450 instance=ExtResource("5_qxrg3")]
+[node name="HighContrastButton" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2009164450 instance=ExtResource("5_qxrg3")]
+unique_name_in_owner = true
 layout_mode = 2
 button_texture = ExtResource("6_lsqau")
 button_texture_pressed = ExtResource("6_lsqau")
 
-[node name="TextureCheckButton2" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=479144610 instance=ExtResource("5_qxrg3")]
+[node name="BlurButton" parent="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=479144610 instance=ExtResource("5_qxrg3")]
+unique_name_in_owner = true
 layout_mode = 2
 button_texture = ExtResource("7_5tw3i")
 button_texture_pressed = ExtResource("7_5tw3i")
 
-[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton" to="." method="disable_high_contrast"]
-[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton" to="." method="enable_high_contrast"]
-[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton2" to="." method="disable_blur"]
-[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TextureCheckButton2" to="." method="enable_blur"]
+[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HighContrastButton" to="." method="disable_high_contrast"]
+[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HighContrastButton" to="." method="enable_high_contrast"]
+[connection signal="disabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BlurButton" to="." method="disable_blur"]
+[connection signal="enabled" from="CanvasLayer/Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BlurButton" to="." method="enable_blur"]

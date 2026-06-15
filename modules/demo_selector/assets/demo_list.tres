@@ -2,60 +2,63 @@
 
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_p5mn1"]
 [ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]
-[ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_52e3n"]
 [ext_resource type="Texture2D" uid="uid://dtojqwm7f3173" path="res://modules/demo_selector/assets/demo_1_cover.svg" id="2_tros2"]
-[ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="3_0qcei"]
 [ext_resource type="PackedScene" uid="uid://b0xcaouncmmm6" path="res://modules/demo1/map/map.tscn" id="3_2eigo"]
+[ext_resource type="Texture2D" uid="uid://d1a3i1hbg7dn0" path="res://modules/demo_selector/assets/demo_2_cover.svg" id="4_hxytc"]
 [ext_resource type="PackedScene" uid="uid://8c0oldvee0dt" path="res://modules/demo3/demo3.tscn" id="5_pdl1d"]
+[ext_resource type="PackedScene" uid="uid://dcj0hlpoquwj0" path="res://modules/demo2/map.tscn" id="5_y1f4t"]
 [ext_resource type="Texture2D" uid="uid://bxtbq50os8eq3" path="res://modules/demo_selector/assets/demo_4_cover.svg" id="6_pdl1d"]
+[ext_resource type="Texture2D" uid="uid://bj44bfkhdlcvr" path="res://modules/demo_selector/assets/demo_3_cover.svg" id="6_phqfu"]
 [ext_resource type="PackedScene" uid="uid://dvs14kxa77pp2" path="res://modules/demo4/map/map.tscn" id="7_p1xob"]
 [ext_resource type="Texture2D" uid="uid://shdg4wyyiau8" path="res://modules/demo_selector/assets/demo_5_cover.svg" id="8_ichw2"]
-[ext_resource type="Texture2D" uid="uid://b01go352cfomr" path="res://modules/demo_selector/assets/props.png" id="8_q3h6l"]
 [ext_resource type="PackedScene" uid="uid://bjkluuekkwknt" path="res://modules/demo5/map/map.tscn" id="9_hxytc"]
+[ext_resource type="Texture2D" uid="uid://dq8qtmw8rfjra" path="res://modules/demo_selector/assets/demo_locked_cover.svg" id="12_ichw2"]
 
 [sub_resource type="Resource" id="Resource_oj4im"]
 script = ExtResource("1_p5mn1")
-title = "Input Remapper"
-description = "Change character actions input with the input remapper menu and feed with acorns all the wild boars. "
+title = "Personalización de Controles"
+description = "Modifica las acciones de los personajes mediante el menú de reasignación de controles y alimenta a todos los jabalíes con bellotas."
 image = ExtResource("2_tros2")
 scene = ExtResource("3_2eigo")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_g6obd"]
 script = ExtResource("1_p5mn1")
-title = "Demo 2 (n/a)"
-image = ExtResource("2_52e3n")
+title = "Personalización del HUD"
+description = "Personaliza el HUD a tu gusto y guía a los jabalíes hasta su cercado correspondiente."
+image = ExtResource("4_hxytc")
+scene = ExtResource("5_y1f4t")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_52e3n"]
 script = ExtResource("1_p5mn1")
-title = "Text-to-speech"
-description = "Fight off hard-to-read UIs with text-to-speech while you battle for your hard-earned-acorns!"
-image = ExtResource("2_52e3n")
+title = "Texto a Voz"
+description = "¡Supera las interfaces difíciles de leer con la función de conversión de texto a voz mientras te enfrentas a un combate para recuperar tus bellotas!"
+image = ExtResource("6_phqfu")
 scene = ExtResource("5_pdl1d")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_ysq4b"]
 script = ExtResource("1_p5mn1")
-title = "High Contrast"
-description = "Customize the high contrast settings and search for and collect all the golden acorns."
+title = "Alto Contraste"
+description = "Activa los ajustes de Alto Contraste para buscar y recolectar todas las bellotas doradas."
 image = ExtResource("6_pdl1d")
 scene = ExtResource("7_p1xob")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_y1f4t"]
 script = ExtResource("1_p5mn1")
-title = "Color Blindness Filters"
-description = "Try out the color blindness filters to ensure your gameplay does not rely on colors to play it and feed the wild boars with their matching color acorns."
+title = "Filtros de Daltonismo"
+description = "Comprueba que tu gameplay no dependa exclusivamente de los colores. Alimenta a los jabalíes con sus respectivas bellotas."
 image = ExtResource("8_ichw2")
 scene = ExtResource("9_hxytc")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_6ghuu"]
 script = ExtResource("1_p5mn1")
-title = "Prop Showcase"
-image = ExtResource("8_q3h6l")
-scene = ExtResource("3_0qcei")
+title = "Próximamente"
+description = "Próximamente se añadirán más herramientas y demos."
+image = ExtResource("12_ichw2")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [resource]

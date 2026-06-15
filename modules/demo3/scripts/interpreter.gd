@@ -35,6 +35,9 @@ func _ready():
 	dialogue_button.disabled = true
 	_run_sequence()
 
+func _exit_tree() -> void:
+	interpreter.free()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("ui_accept") and event.is_pressed():
 		if narrator.visible:
@@ -60,7 +63,6 @@ func _run_sequence():
 
 func _load_sequence(sequence_id: Sequence.Sequences) -> Sequence:
 	var file_path: StringName = Sequence.sequence_id_to_file_path(sequence_id)
-	print("loading file %s" % file_path)
 	assert(FileAccess.file_exists(file_path), "Could not load Sequence in path: %s" % file_path)
 	return load(file_path)
 
@@ -105,7 +107,7 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	if _animation_semaphor <= 0:
 		active = true
 
-func _on_animation_player_current_animation_changed(name: StringName) -> void:
+func _on_animation_player_current_animation_changed(_name: StringName) -> void:
 	_animation_semaphor -= 1
 	if _animation_semaphor <= 0:
 		active = true

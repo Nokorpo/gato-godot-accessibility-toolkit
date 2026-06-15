@@ -92,9 +92,6 @@ size = Vector3(13.8936, 9.04885, 3.91745)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x3rkg"]
 size = Vector3(14.229, 9.04885, 6.87963)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m4l5s"]
-size = Vector3(3.277, 9.94777, 10.1546)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_8lorg"]
 size = Vector3(3.277, 9.94777, 17.21)
 
@@ -164,7 +161,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Throw acorn"
+text = "Lanzar bellota"
 
 [node name="Action2" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=16092402]
 layout_mode = 2
@@ -176,7 +173,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
-text = "SPACE"
+text = "ESPACIO"
 horizontal_alignment = 2
 
 [node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=1715499014]
@@ -185,7 +182,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Jump (can double jump)"
+text = "Saltar - Doble salto"
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1336941519]
 script = ExtResource("2_e26lp")
@@ -1637,16 +1634,6 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider13" unique_id=1216892652 groups=["CameraCollider"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.906626, -2.96062, 0.748672)
 shape = SubResource("BoxShape3D_x3rkg")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider14" type="StaticBody3D" parent="CameraColliders" unique_id=1132783907 groups=["CameraCollider"]]
-transform = Transform3D(0.919225, 0, 0.393733, 0, 1, 0, -0.393733, 0, 0.919225, 23.8565, 6.2762, -7.3262)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider14" unique_id=1857348865 groups=["CameraCollider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875195, -2.51116, 0.198934)
-shape = SubResource("BoxShape3D_m4l5s")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
 [node name="CameraCollider15" type="StaticBody3D" parent="CameraColliders" unique_id=328652443 groups=["CameraCollider"]]

@@ -14,6 +14,8 @@ signal closed
 
 @onready var _button_list_container: VBoxContainer = $Control/MarginContainer/PanelContainer/VBoxContainer
 
+@onready var _game_menu_button: PackedScene = load("uid://mci4stvhspgq")
+
 var _opened_menu: Node
 
 func _ready() -> void:
@@ -28,9 +30,8 @@ func _initialize_buttons():
 			_add_button(i, child.get_button_text())
 
 func _add_button(child_idx: int, text: String) -> void:
-	var button = Button.new()
+	var button = _game_menu_button.instantiate()
 	button.text = text
-	button.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	button.pressed.connect(open_menu.bind(child_idx))
 	_button_list_container.add_child(button)
 	var second_to_last_position: int = _button_list_container.get_child_count() - 2

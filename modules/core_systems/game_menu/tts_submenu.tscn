@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4el58wwwkssf"]
+
+[ext_resource type="Script" uid="uid://te7jrjplidra" path="res://modules/core_systems/game_menu/submenu.gd" id="1_e3ujg"]
+[ext_resource type="PackedScene" uid="uid://dpwhvb35m7q27" path="res://addons/gato_tts/ui/tts_ui.tscn" id="2_e3ujg"]
+
+[node name="TextToSpeechMenu" type="CanvasLayer" unique_id=1505566936]
+script = ExtResource("1_e3ujg")
+button_text = "Text to Speech"
+
+[node name="TextToSpeechUi" parent="." unique_id=718320937 instance=ExtResource("2_e3ujg")]

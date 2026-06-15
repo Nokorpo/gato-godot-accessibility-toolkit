@@ -59,6 +59,7 @@ _subresources={
 "nodes": {
 "PATH:GrassPile": {
 "generate/physics": true,
+"physics/layer": 0,
 "physics/shape_type": 4,
 "primitive/position": Vector3(0.05, 0.2, 0),
 "primitive/radius": 0.3,

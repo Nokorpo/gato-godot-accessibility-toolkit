@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dnkxpmf8stfxn"]
+
+[ext_resource type="Script" uid="uid://hfwsdu0idt5i" path="res://addons/gato_tts/ui/option_selector.gd" id="1_la2rk"]
+[ext_resource type="Texture2D" uid="uid://chvx8quoqfjgl" path="res://addons/gato_tts/ui/sprites/arrow.svg" id="2_3dych"]
+[ext_resource type="Texture2D" uid="uid://bxp08q0vb8lx5" path="res://addons/gato_tts/ui/sprites/arrow_hover.svg" id="3_fn03g"]
+
+[node name="OptionSelector" type="HBoxContainer" unique_id=1125411710]
+theme_override_constants/separation = 12
+script = ExtResource("1_la2rk")
+options = Array[StringName]([&"Option 1", &"Option 2", &"Option 3"])
+
+[node name="LeftButton" type="TextureButton" parent="." unique_id=1975752565]
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("2_3dych")
+texture_hover = ExtResource("3_fn03g")
+texture_focused = ExtResource("3_fn03g")
+stretch_mode = 3
+flip_h = true
+
+[node name="Label" type="Label" parent="." unique_id=1165697192]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option 1"
+horizontal_alignment = 1
+
+[node name="RightButton" type="TextureButton" parent="." unique_id=1764741010]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("2_3dych")
+texture_hover = ExtResource("3_fn03g")
+texture_focused = ExtResource("3_fn03g")
+stretch_mode = 5
+
+[node name="JoystickCooldownTimer" type="Timer" parent="." unique_id=903109815]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]

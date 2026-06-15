@@ -6,6 +6,7 @@ extends Node3D
 @export_group("Properties")
 @export var target: Node
 @export var camera_speed: float = 10
+@export var offset: Vector3 = Vector3.ZERO
 
 @export_group("Zoom")
 @export var zoom_minimum = 16
@@ -39,7 +40,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if target != null:
-		self.position = self.position.lerp(target.position, delta * 4)
+		self.position = self.position.lerp(target.position + offset, delta * 4)
 	camera.position = camera.position.lerp(Vector3(0, 0, zoom), 8 * delta)
 
 func _handle_rotation_from_buttons(delta):

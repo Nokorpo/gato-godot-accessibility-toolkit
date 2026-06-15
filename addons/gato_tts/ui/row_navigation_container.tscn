@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://p3ythjt12gy1"]
+
+[ext_resource type="Script" uid="uid://hio61rx5uhhd" path="res://addons/gato_tts/ui/row_navigation_container.gd" id="1_ovpwj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18ywu"]
+bg_color = Color(0.99215686, 0.81960785, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="RowNavigationContainer" type="MarginContainer" unique_id=1367961113]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+focus_behavior_recursive = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_ovpwj")
+
+[node name="Panel" type="Panel" parent="." unique_id=925008380]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_18ywu")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

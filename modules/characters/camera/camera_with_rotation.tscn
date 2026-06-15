@@ -6,6 +6,7 @@
 [node name="CameraWithRotation" type="Node3D" unique_id=1927378553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 script = ExtResource("1_r4u81")
+offset = Vector3(0, 0.8, 0)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=350682521]
 transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, 0, 1, 0, 0, 0)

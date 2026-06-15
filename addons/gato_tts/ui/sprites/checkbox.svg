@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="23.923136mm"
+   height="26.750813mm"
+   viewBox="0 0 23.923135 26.750812"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="checkbox.svg"
+   inkscape:export-xdpi="23.962503"
+   inkscape:export-ydpi="23.962503"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:clip-to-page="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-11.283756,-11.150324)"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#ffd300;fill-opacity:1;stroke:#08001c;stroke-width:3.62649;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect9"
+       width="19.490005"
+       height="18.995487"
+       x="13.903635"
+       y="17.092405"
+       ry="5"
+       rx="5" />
+    <path
+       style="color:#000000;display:none;fill:#ececec;fill-opacity:1;stroke:#08001c;stroke-width:1.24893;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 33.129431,12.034509 C 31.844113,11.40835 30.294835,11.942278 29.66854,13.22717 l -7.272058,14.919729 -6.414666,-4.4628 c -1.169905,-0.82208 -2.784778,-0.540414 -3.606676,0.629853 -0.821627,1.169587 -0.538988,2.783714 0.63035,3.605225 l 8.899898,6.208546 c 1.306623,0.91145 3.11735,0.447531 3.815268,-0.983458 l 8.602116,-17.649839 c 0.626181,-1.284751 0.09185,-2.833849 -1.193341,-3.459917 z"
+       id="path111-7"
+       sodipodi:nodetypes="ssccscsccs"
+       inkscape:export-filename="..\..\..\Art\Gato\2D\Demo Covers\completed_demo_tick.svg"
+       inkscape:export-xdpi="23.962503"
+       inkscape:export-ydpi="23.962503" />
+  </g>
+</svg>

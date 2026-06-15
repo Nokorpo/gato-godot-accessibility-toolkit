@@ -7,7 +7,7 @@ signal collected_goldacorn(collected_acorns)
 signal level_finished
 
 var collected_acorns: int = 0
-var total_acorns: int = 4
+var total_acorns: int = 5
 
 func _on_gold_acorn_goldacorn_collected() -> void:
 	collected_acorns += 1

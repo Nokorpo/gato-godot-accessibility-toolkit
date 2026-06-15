@@ -14,11 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://ciejc3mfd5apl" path="res://modules/demo2/boar/fence_boar.tscn" id="9_hjvqd"]
 [ext_resource type="PackedScene" uid="uid://clxg74c0kdeh3" path="res://modules/level_objects/moving_platform/moving_platform.tscn" id="11_tu8u1"]
 [ext_resource type="PackedScene" uid="uid://chiqiuu3em46f" path="res://modules/demo1/map/props/moving_boar_platform.gltf" id="13_5n58l"]
+[ext_resource type="Resource" uid="uid://b4o2im5ic68eg" path="res://modules/demo2/dialogues/demo2_dialogue01.tres" id="14_31tas"]
 [ext_resource type="PackedScene" uid="uid://dgntlhkoeu81e" path="res://modules/level_objects/button/boar_button.tscn" id="14_t36cc"]
 [ext_resource type="Script" uid="uid://cv2pio2355wvl" path="res://modules/demo1/dialogues/triggers/launch_dialogue_on_ready.gd" id="15_633k7"]
-[ext_resource type="Resource" uid="uid://04odm6qkfamm" path="res://modules/demo1/dialogues/demo1_dialogue01.tres" id="16_kgkhn"]
+[ext_resource type="Resource" uid="uid://c75h8phjkk83j" path="res://modules/demo2/dialogues/demo2_dialogue02.tres" id="16_pjckb"]
+[ext_resource type="Script" uid="uid://btcidvgv04sx1" path="res://modules/demo2/dialogues/demo2_dialogue02.gd" id="17_0w0v3"]
+[ext_resource type="Script" uid="uid://cnvcd54ql07u7" path="res://modules/demo2/dialogues/demo2_dialogue03.gd" id="18_0w0v3"]
+[ext_resource type="Resource" uid="uid://bjqis6ea4lyb1" path="res://modules/demo2/dialogues/demo2_dialogue03.tres" id="18_plfc8"]
+[ext_resource type="Resource" uid="uid://bfm28b7anygqb" path="res://modules/demo2/dialogues/demo2_dialogue04.tres" id="20_er80s"]
 [ext_resource type="Script" uid="uid://cauaqb46hjwdk" path="res://modules/demo1/dialogues/triggers/demo_completion_dialogue.gd" id="23_3krps"]
-[ext_resource type="Resource" uid="uid://dpni6wmjemu3w" path="res://modules/demo1/dialogues/demo1_dialogue05.tres" id="24_i78el"]
 [ext_resource type="PackedScene" uid="uid://byhsfvrmf7nyq" path="res://modules/demo1/map/props/floor_grass.gltf" id="25_njrsv"]
 [ext_resource type="PackedScene" uid="uid://d037at1i5qtcc" path="res://modules/demo1/map/props/floor_sand.gltf" id="26_sp1lc"]
 [ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="27_gtj3l"]
@@ -37,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://bwhm2vtstl7ju" path="res://modules/demo1/map/props/platform_wood.gltf" id="39_hwxsx"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="41_ldgjx"]
 [ext_resource type="Texture2D" uid="uid://catih1m3cybuo" path="res://modules/demo1/map/sprites/floor_leafs.png" id="42_5qhej"]
+[ext_resource type="Texture2D" uid="uid://cnoo82xkn5mgr" path="res://modules/demo2/hud/enclosure_icon_a.svg" id="42_plfc8"]
+[ext_resource type="Texture2D" uid="uid://drke4gsccrlfw" path="res://modules/demo2/hud/enclosure_icon_b.svg" id="43_er80s"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="43_tvvq4"]
 
 [sub_resource type="Gradient" id="Gradient_t68yl"]
@@ -203,7 +209,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Throw acorn"
+text = "Lanzar bellota"
 
 [node name="Action2" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=16092402]
 layout_mode = 2
@@ -215,7 +221,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
-text = "SPACE"
+text = "ESPACIO"
 horizontal_alignment = 2
 
 [node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=1715499014]
@@ -224,7 +230,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Jump (can double jump)"
+text = "Saltar - Doble salto"
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1336941519]
 script = ExtResource("3_imhxh")
@@ -315,12 +321,21 @@ assigned_enclosure = 1
 
 [node name="StartingDialogue" type="Node" parent="Dialogue" unique_id=1375766844]
 script = ExtResource("15_633k7")
-dialogue = ExtResource("16_kgkhn")
+dialogue = ExtResource("14_31tas")
+
+[node name="NearBoarDialogue" type="Node" parent="Dialogue" unique_id=1009737590]
+script = ExtResource("17_0w0v3")
+dialogue = ExtResource("16_pjckb")
+
+[node name="EnclosedDialogue" type="Node" parent="Dialogue" unique_id=2039497502 node_paths=PackedStringArray("boars_node")]
+script = ExtResource("18_0w0v3")
+boars_node = NodePath("../../Boars")
+dialogue = ExtResource("18_plfc8")
 
 [node name="DemoCompletionDialogue" type="Node" parent="Dialogue" unique_id=1871029937 node_paths=PackedStringArray("scene_root")]
 script = ExtResource("23_3krps")
 scene_root = NodePath("../..")
-dialogue = ExtResource("24_i78el")
+dialogue = ExtResource("20_er80s")
 
 [node name="Props" type="Node3D" parent="." unique_id=536652009]
 
@@ -848,20 +863,6 @@ mesh = SubResource("PlaneMesh_kg8y1")
 script = ExtResource("43_tvvq4")
 boar_list = NodePath("../Boars")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=1211309986]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.2863045, -0.05792904, -4.7898765)
-modulate = Color(0.22745098, 0.18431373, 0.47058824, 1)
-outline_modulate = Color(0.9372549, 0.95686275, 0.9372549, 1)
-text = "A"
-font_size = 500
-
-[node name="Label3D2" type="Label3D" parent="." unique_id=312419484]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.1944842, -0.05250919, -4.7898765)
-modulate = Color(0.22745098, 0.18431373, 0.47058824, 1)
-outline_modulate = Color(0.9372549, 0.95686275, 0.9372549, 1)
-text = "B"
-font_size = 500
-
 [node name="MovingBoarPlatform" parent="." unique_id=318905234 instance=ExtResource("13_5n58l")]
 transform = Transform3D(-6.119594e-08, 0, 1.4, 0, 1, 0, -1.4, 0, -6.119594e-08, 11.28717, 1.3919647, 9.922539)
 
@@ -869,7 +870,7 @@ transform = Transform3D(-6.119594e-08, 0, 1.4, 0, 1, 0, -1.4, 0, -6.119594e-08, 
 destination_node = NodePath("Destination")
 
 [node name="Destination" type="Marker3D" parent="MovingBoarPlatform/MovingPlatform" unique_id=1234080342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8161073, 0)
 
 [node name="BoarButton" parent="." unique_id=1635479508 instance=ExtResource("14_t36cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.648222, 1.6183405, 9.330586)
@@ -912,11 +913,25 @@ light_bake_mode = 1
 bounces = 5
 light_data = ExtResource("38_hypwh")
 
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1650686096]
+transform = Transform3D(0.9, 0, 0, 0, -3.934025e-08, 0.9, 0, -0.9, -3.934025e-08, -3.0966136, -0.049697954, -4.4758244)
+modulate = Color(1, 1, 1, 0.47058824)
+texture_filter = 0
+texture = ExtResource("42_plfc8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1560561919]
+transform = Transform3D(0.9, 0, 0, 0, -3.934025e-08, 0.9, 0, -0.9, -3.934025e-08, 3.2559826, -0.05281647, -4.4758244)
+modulate = Color(1, 1, 1, 0.47058824)
+texture_filter = 0
+texture = ExtResource("43_er80s")
+
 [connection signal="hud_position_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_hud"]
 [connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]
 [connection signal="boar_deselected" from="Gato" to="BoarEnclosureHUD" method="hide_enclosure_indicator"]
 [connection signal="boar_selected" from="Gato" to="BoarEnclosureHUD" method="show_enclosure_indicator"]
-[connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation" binds= [0.0]]
+[connection signal="boar_selected" from="Gato" to="Dialogue/NearBoarDialogue" method="_on_gato_boar_selected"]
+[connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation"]
 [connection signal="fed_all_boars" from="LevelCompletionCheck" to="Dialogue/DemoCompletionDialogue" method="launch_dialog"]
 [connection signal="level_finished" from="LevelCompletionCheck" to="CompletedDemoScreen" method="show_screen"]
 [connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]
+[connection signal="button_activated" from="BoarButton" to="MovingBoarPlatform/MovingPlatform" method="travel_to_destination"]

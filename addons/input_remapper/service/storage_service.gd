@@ -28,8 +28,7 @@ var control_scheme_script: Script = load("res://addons/input_remapper/model/cont
 
 ## Initializes the settings file with a default config if it's empty on startup.
 func _init():
-	pass
-	if FileAccess.file_exists(settings_file):
+	if verify_config_file(settings_file) == Error.OK:
 		return
 
 	var default_file_path := OS.get_environment(DEFAULT_FILE_ENVVAR)
@@ -37,6 +36,31 @@ func _init():
 		default_file_path = DEFAULT_FILE_PATH
 
 	DirAccess.copy_absolute(default_file_path, settings_file)
+
+## Checks that the configuration file can be loaded correctly. If the file doesn't exist, cannot be
+## parsed into JSON or the reading results in an empty list of control schemes, it returns an error.
+func verify_config_file(file_path: Variant = null) -> Error:
+	var config_file := settings_file
+	if file_path != null:
+		config_file = file_path
+
+	if FileAccess.file_exists(settings_file):
+		push_error("Error: no control scheme could be loaded. Configuration file could not be found.")
+		return Error.ERR_FILE_NOT_FOUND
+
+	var file = FileAccess.open(config_file, FileAccess.READ)
+	var file_contents := file.get_as_text()
+	var json: Variant = JSON.parse_string(file_contents)
+	if json == null:
+		push_error("Error: no control scheme could be loaded. Configuration file could not be parsed.")
+		return Error.ERR_FILE_CORRUPT
+
+	var data = load_input_config_from_json(json)
+	if data == null or data.is_empty():
+		push_error("Error: no control scheme could be loaded. Control scheme list was empty.")
+		return Error.ERR_FILE_CORRUPT
+	file.close()
+	return Error.OK
 
 ## If the settings file is not found, it needs to be generated for the plugin to work. This method
 ## generated the settings file with the Input Map defined in the project.

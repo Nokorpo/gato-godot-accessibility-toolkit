@@ -28,6 +28,19 @@ func _ready() -> void:
 	get_tree().node_added.connect(_on_node_added)
 	_hide_ui()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("change_filter_right") and event.is_pressed():
+		if _enabled:
+			%HighContrastButton._on_button_toggled(false)
+		else:
+			%HighContrastButton._on_button_toggled(true)
+	if event.is_action("change_filter_left") and event.is_pressed():
+		var result = blur.is_enabled()
+		if result:
+			%BlurButton._on_button_toggled(false)
+		else:
+			%BlurButton._on_button_toggled(true)
+
 func _hide_ui() -> void:
 	var ui_size: float = _ui_content.get_rect().size.x
 	_ui_offset.position.x = ui_size

@@ -61,13 +61,15 @@ script = ExtResource("1_piglh")
 script = ExtResource("1_q5ai3")
 metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
 
-[node name="IdleState" type="Node" parent="StateMachine" unique_id=1160705882 node_paths=PackedStringArray("mesh")]
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1160705882 node_paths=PackedStringArray("mesh", "raycast")]
 script = ExtResource("1_2jkah")
 mesh = NodePath("../../Boar")
+raycast = NodePath("../../RayCast3D")
 
-[node name="FollowingAcornState" type="Node" parent="StateMachine" unique_id=1059703736 node_paths=PackedStringArray("mesh")]
+[node name="FollowingAcornState" type="Node" parent="StateMachine" unique_id=1059703736 node_paths=PackedStringArray("mesh", "has_ground_ahead_raycasts")]
 script = ExtResource("2_q5ai3")
 mesh = NodePath("../../Boar")
+has_ground_ahead_raycasts = [NodePath("../../HasGroundAhead"), NodePath("../../HasGroundAhead2"), NodePath("../../HasGroundAhead3")]
 
 [node name="EatingState" type="Node" parent="StateMachine" unique_id=1573134787 node_paths=PackedStringArray("mesh")]
 script = ExtResource("3_puyul")
@@ -114,6 +116,15 @@ draw_pass_1 = SubResource("QuadMesh_ch3xj")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1830242425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="HasGroundAhead" type="RayCast3D" parent="." unique_id=762206823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.58714795)
+
+[node name="HasGroundAhead2" type="RayCast3D" parent="." unique_id=733203030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.78976643)
+
+[node name="HasGroundAhead3" type="RayCast3D" parent="." unique_id=1408078229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.9882507)
 
 [node name="Decal" type="Decal" parent="." unique_id=83828784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40498018, 0)

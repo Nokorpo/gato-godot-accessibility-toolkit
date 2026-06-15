@@ -5,9 +5,13 @@ extends StateMachineState
 class_name BoarIdleState
 
 @export var mesh: BoarMesh
+@export var raycast: RayCast3D
 
 func _on_enter_state() -> void:
 	mesh.play_animation.call_deferred(BoarMesh.Animations.IDLE)
+	if raycast.is_colliding():
+		var tween := create_tween()
+		tween.tween_property(node, "global_position", raycast.get_collision_point(), 0.25)
 
 func tick() -> void:
 	var acorn = %AcornDetection.get_acorn_in_range()

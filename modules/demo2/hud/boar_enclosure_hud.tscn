@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="1_3jf1q"]
 [ext_resource type="Script" uid="uid://b4h8a4qetgm6l" path="res://modules/demo2/hud/boar_enclosure_hud.gd" id="1_ddpr4"]
-[ext_resource type="Texture2D" uid="uid://du0676sfec5oe" path="res://modules/demo2/hud/hud_a.svg" id="2_ddpr4"]
-[ext_resource type="Texture2D" uid="uid://dmbs1i424rsxo" path="res://modules/demo2/hud/hud_b.svg" id="3_1m6iu"]
 [ext_resource type="Script" uid="uid://djvxjesh02nor" path="res://modules/demo2/hud/enclosure_hud_implementation.gd" id="3_if6f7"]
+[ext_resource type="Texture2D" uid="uid://cnoo82xkn5mgr" path="res://modules/demo2/hud/enclosure_icon_a.svg" id="4_1m6iu"]
+[ext_resource type="Texture2D" uid="uid://drke4gsccrlfw" path="res://modules/demo2/hud/enclosure_icon_b.svg" id="5_if6f7"]
 
 [node name="BoarEnclosureHUD" type="CanvasLayer" unique_id=1964409119]
 script = ExtResource("1_ddpr4")
@@ -36,17 +36,21 @@ enclosure_to_node_map = {
 layout_mode = 1
 offset_right = 230.0
 offset_bottom = 216.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 6
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/UpperLeft/MarginContainer" unique_id=1894160836]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/UpperLeft/MarginContainer/PanelContainer" unique_id=1995633658]
 layout_mode = 2
-texture = ExtResource("2_ddpr4")
+texture = ExtResource("4_1m6iu")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/UpperLeft/MarginContainer/PanelContainer" unique_id=1361478038]
 layout_mode = 2
-texture = ExtResource("3_1m6iu")
+texture = ExtResource("5_if6f7")
 
 [node name="BottomCenter" type="Control" parent="Control" unique_id=745257555 node_paths=PackedStringArray("enclosure_to_node_map")]
 layout_mode = 1
@@ -81,11 +85,11 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/BottomCenter/MarginContainer/PanelContainer" unique_id=170686962]
 layout_mode = 2
-texture = ExtResource("2_ddpr4")
+texture = ExtResource("4_1m6iu")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/BottomCenter/MarginContainer/PanelContainer" unique_id=875859779]
 layout_mode = 2
-texture = ExtResource("3_1m6iu")
+texture = ExtResource("5_if6f7")
 
 [node name="BottomLeft" type="Control" parent="Control" unique_id=1237861217 node_paths=PackedStringArray("enclosure_to_node_map")]
 layout_mode = 1
@@ -120,10 +124,10 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_ddpr4")
+texture = ExtResource("4_1m6iu")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/BottomLeft/MarginContainer/PanelContainer" unique_id=691560249]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_1m6iu")
+texture = ExtResource("5_if6f7")

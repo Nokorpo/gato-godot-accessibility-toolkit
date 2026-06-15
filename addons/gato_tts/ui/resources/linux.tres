@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="GatoTTSLanguageVoices" format=3 uid="uid://dvt5eaosfce1y"]
+
+[ext_resource type="Script" uid="uid://cjs3cpm3sffmh" path="res://addons/gato_tts/ui/resources/curated_voices.gd" id="1_0ymkv"]
+[ext_resource type="Script" uid="uid://dx81sjvmmhspn" path="res://addons/gato_tts/ui/resources/language_voices.gd" id="1_maxw0"]
+[ext_resource type="Script" uid="uid://d4h8e4xoyq0oh" path="res://addons/gato_tts/ui/resources/voice_id.gd" id="2_36mgg"]
+
+[sub_resource type="Resource" id="Resource_s3lmd"]
+script = ExtResource("2_36mgg")
+name = &"España 1"
+id = &"Spanish (Spain)"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_l4lj2"]
+script = ExtResource("2_36mgg")
+name = &"España 2"
+id = &"Spanish (Spain)+Alicia"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_fk52f"]
+script = ExtResource("2_36mgg")
+name = &"Latinoamérica 1"
+id = &"Spanish (Latin America)"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_2ay3p"]
+script = ExtResource("2_36mgg")
+name = &"Latinoamérica 2"
+id = &"Spanish (Latin America)+Alicia"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_36mgg"]
+script = ExtResource("1_0ymkv")
+voice_id_list = Array[ExtResource("2_36mgg")]([SubResource("Resource_s3lmd"), SubResource("Resource_l4lj2"), SubResource("Resource_fk52f"), SubResource("Resource_2ay3p")])
+metadata/_custom_type_script = "uid://cjs3cpm3sffmh"
+
+[sub_resource type="Resource" id="Resource_u3n2k"]
+script = ExtResource("2_36mgg")
+name = &"UK 1"
+id = &"English (Great Britain)"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_8krtt"]
+script = ExtResource("2_36mgg")
+name = &"UK 2"
+id = &"English (Great Britain)+Alicia"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_s7dw4"]
+script = ExtResource("2_36mgg")
+name = &"US 1"
+id = &"English (America)"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_mmd3t"]
+script = ExtResource("2_36mgg")
+name = &"US 2"
+id = &"English (America)+Alicia"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_6os8p"]
+script = ExtResource("1_0ymkv")
+voice_id_list = Array[ExtResource("2_36mgg")]([SubResource("Resource_u3n2k"), SubResource("Resource_8krtt"), SubResource("Resource_s7dw4"), SubResource("Resource_mmd3t")])
+metadata/_custom_type_script = "uid://cjs3cpm3sffmh"
+
+[resource]
+script = ExtResource("1_maxw0")
+platform = 2
+curated_voices = Dictionary[int, ExtResource("1_0ymkv")]({
+0: SubResource("Resource_36mgg"),
+1: SubResource("Resource_6os8p")
+})
+metadata/_custom_type_script = "uid://dx81sjvmmhspn"

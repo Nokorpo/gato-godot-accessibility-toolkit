@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="8_tateb"]
 [ext_resource type="Script" uid="uid://c5sf7qm5knx1" path="res://modules/demo3/scripts/button_text_reader.gd" id="13_53201"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="13_xitem"]
+[ext_resource type="PackedScene" uid="uid://bfx3wk32j285q" path="res://modules/demo3/hud/hud.tscn" id="15_0kdck"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="15_tyyiy"]
 [ext_resource type="PackedScene" uid="uid://4el58wwwkssf" path="res://modules/core_systems/game_menu/tts_submenu.tscn" id="16_0kdck"]
 
@@ -1330,6 +1331,8 @@ text_to_read = "Dialogar"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1710645868]
 libraries/ = SubResource("AnimationLibrary_yvqj8")
+
+[node name="Demo3HUD" parent="." unique_id=802766851 instance=ExtResource("15_0kdck")]
 
 [node name="GameMenu" parent="." unique_id=450146438 instance=ExtResource("13_xitem")]
 visible = false

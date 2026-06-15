@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://23yhqkgw378k" path="res://modules/core_systems/ui/background_blur/blur.gdshader" id="3_5tw3i"]
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="3_lvvh7"]
 [ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="4_lvvh7"]
-[ext_resource type="PackedScene" uid="uid://d0xyfr16tcse3" path="res://modules/demo4/high_contrast/texture_check_button.tscn" id="5_qxrg3"]
+[ext_resource type="PackedScene" uid="uid://d0xyfr16tcse3" path="res://modules/core_systems/texture_check_button/texture_check_button.tscn" id="5_qxrg3"]
 [ext_resource type="Texture2D" uid="uid://kvveqsud1r73" path="res://modules/demo5/hud/sprites/high_contrast_icon.svg" id="6_lsqau"]
 [ext_resource type="Texture2D" uid="uid://c335dlwdskfyl" path="res://modules/demo5/hud/sprites/blur_icon.svg" id="7_5tw3i"]
 

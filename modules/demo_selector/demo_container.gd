@@ -9,8 +9,8 @@ var demo_preview: PackedScene = load("res://modules/demo_selector/demo_preview.t
 @onready var demo_selector: Node = $"../.."
 
 func _ready() -> void:
-	if FeatureFlags.get_flag("show_demo_2"):
-		demo_list_resource.demos[1] = load("res://modules/demo_selector/assets/demo2_preview.tres")
+	if not FeatureFlags.get_flag("show_demo_2"):
+		demo_list_resource.demos.remove_at(1)
 	for demo_data in demo_list_resource.demos:
 		var new_preview: DemoPreview = demo_preview.instantiate()
 		new_preview.data = demo_data

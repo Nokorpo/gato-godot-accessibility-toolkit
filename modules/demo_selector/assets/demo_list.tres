@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bj44bfkhdlcvr" path="res://modules/demo_selector/assets/demo_3_cover.svg" id="6_phqfu"]
 [ext_resource type="PackedScene" uid="uid://dvs14kxa77pp2" path="res://modules/demo4/map/map.tscn" id="7_p1xob"]
 [ext_resource type="Texture2D" uid="uid://shdg4wyyiau8" path="res://modules/demo_selector/assets/demo_5_cover.svg" id="8_ichw2"]
-[ext_resource type="Texture2D" uid="uid://b01go352cfomr" path="res://modules/demo_selector/assets/props.png" id="8_q3h6l"]
 [ext_resource type="PackedScene" uid="uid://bjkluuekkwknt" path="res://modules/demo5/map/map.tscn" id="9_hxytc"]
+[ext_resource type="Texture2D" uid="uid://dq8qtmw8rfjra" path="res://modules/demo_selector/assets/demo_locked_cover.svg" id="12_ichw2"]
 
 [sub_resource type="Resource" id="Resource_oj4im"]
 script = ExtResource("1_p5mn1")
@@ -58,7 +58,7 @@ metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 script = ExtResource("1_p5mn1")
 title = "Próximamente"
 description = "Próximamente se añadirán más herramientas y demos."
-image = ExtResource("8_q3h6l")
+image = ExtResource("12_ichw2")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [resource]

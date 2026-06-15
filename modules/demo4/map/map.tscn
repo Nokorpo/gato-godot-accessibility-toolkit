@@ -181,7 +181,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Throw acorn"
+text = "Lanzar bellota"
 
 [node name="Action2" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=381131025]
 layout_mode = 2
@@ -193,7 +193,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
-text = "SPACE"
+text = "ESPACIO"
 horizontal_alignment = 2
 
 [node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=305624468]
@@ -202,7 +202,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Jump (can double jump)"
+text = "Saltar - Doble salto"
 
 [node name="Action3" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=1694556430]
 layout_mode = 2
@@ -223,7 +223,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "En/disable filters"
+text = "Activ./desactiv. filtros"
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=329260210]
 script = ExtResource("2_nyeds")

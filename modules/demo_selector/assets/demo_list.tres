@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="1_p5mn1"]
 [ext_resource type="Script" uid="uid://cpkos20tvikpp" path="res://modules/demo_selector/demo_list.gd" id="1_tfvdt"]
 [ext_resource type="Texture2D" uid="uid://dtojqwm7f3173" path="res://modules/demo_selector/assets/demo_1_cover.svg" id="2_tros2"]
-[ext_resource type="PackedScene" uid="uid://debsy1fv3sm1b" path="res://modules/tests/showcase/props.tscn" id="3_0qcei"]
 [ext_resource type="PackedScene" uid="uid://b0xcaouncmmm6" path="res://modules/demo1/map/map.tscn" id="3_2eigo"]
 [ext_resource type="Texture2D" uid="uid://d1a3i1hbg7dn0" path="res://modules/demo_selector/assets/demo_2_cover.svg" id="4_hxytc"]
 [ext_resource type="PackedScene" uid="uid://8c0oldvee0dt" path="res://modules/demo3/demo3.tscn" id="5_pdl1d"]
@@ -17,49 +16,49 @@
 
 [sub_resource type="Resource" id="Resource_oj4im"]
 script = ExtResource("1_p5mn1")
-title = "Input Remapper"
-description = "Change character actions input with the input remapper menu and feed with acorns all the wild boars. "
+title = "Personalización de Controles"
+description = "Modifica las acciones de los personajes mediante el menú de reasignación de controles y alimenta a todos los jabalíes con bellotas."
 image = ExtResource("2_tros2")
 scene = ExtResource("3_2eigo")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_g6obd"]
 script = ExtResource("1_p5mn1")
-title = "HUD Personalization"
-description = "Customize the HUD to your liking and guide the boars to their corresponding enclosure."
+title = "Personalización del HUD"
+description = "Personaliza el HUD a tu gusto y guía a los jabalíes hasta su cercado correspondiente."
 image = ExtResource("4_hxytc")
 scene = ExtResource("5_y1f4t")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_52e3n"]
 script = ExtResource("1_p5mn1")
-title = "Text-to-speech"
-description = "Fight off hard-to-read UIs with text-to-speech while you battle for your hard-earned-acorns!"
+title = "Texto a Voz"
+description = "¡Supera las interfaces difíciles de leer con la función de conversión de texto a voz mientras te enfrentas a un combate para recuperar tus bellotas!"
 image = ExtResource("6_phqfu")
 scene = ExtResource("5_pdl1d")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_ysq4b"]
 script = ExtResource("1_p5mn1")
-title = "High Contrast"
-description = "Customize the high contrast settings and search for and collect all the golden acorns."
+title = "Alto Contraste"
+description = "Activa los ajustes de Alto Contraste para buscar y recolectar todas las bellotas doradas."
 image = ExtResource("6_pdl1d")
 scene = ExtResource("7_p1xob")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_y1f4t"]
 script = ExtResource("1_p5mn1")
-title = "Color Blindness Filters"
-description = "Try out the color blindness filters to ensure your gameplay does not rely on colors to play it and feed the wild boars with their matching color acorns."
+title = "Filtros de Daltonismo"
+description = "Comprueba que tu gameplay no dependa exclusivamente de los colores. Alimenta a los jabalíes con sus respectivas bellotas."
 image = ExtResource("8_ichw2")
 scene = ExtResource("9_hxytc")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [sub_resource type="Resource" id="Resource_6ghuu"]
 script = ExtResource("1_p5mn1")
-title = "Prop Showcase"
+title = "Próximamente"
+description = "Próximamente se añadirán más herramientas y demos."
 image = ExtResource("8_q3h6l")
-scene = ExtResource("3_0qcei")
 metadata/_custom_type_script = "uid://dx7paoh7iir8m"
 
 [resource]

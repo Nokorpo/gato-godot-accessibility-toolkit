@@ -4,7 +4,7 @@
 class_name Filter
 extends Resource
 
-enum FilterType { NORMAL, PROTANOPIA, DEUTERANOPIA, DEUTERANOMALY, TRITANOPIA, ACHROMATOPSIA }
+enum FilterType { NORMAL, PROTANOPIA, DEUTERANOPIA, DEUTERANOMALÍA, TRITANOPIA, ACROMATOPSIA }
 
 @export var value: FilterType
 

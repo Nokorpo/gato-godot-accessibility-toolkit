@@ -453,7 +453,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
-text = "SPACE/ENTER"
+text = "ESPACIO/ENTER"
 horizontal_alignment = 2
 
 [node name="Action1" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action1" unique_id=1050725758]
@@ -462,7 +462,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Throw acorn"
+text = "Lanzar bellota"
 
 [node name="Action2" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=104217974]
 layout_mode = 2
@@ -474,7 +474,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
-text = "ARROWS"
+text = "FLECHAS"
 horizontal_alignment = 2
 
 [node name="Action2" type="Label" parent="ControlsHUD/Control/MarginContainer/VBoxContainer/Action2" unique_id=1531043350]
@@ -483,7 +483,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Change target"
+text = "Cambiar objetivo"
 
 [node name="Action3" type="HBoxContainer" parent="ControlsHUD/Control/MarginContainer/VBoxContainer" unique_id=1690556492]
 layout_mode = 2
@@ -504,7 +504,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-text = "Next filter / Prev. Filter"
+text = "Sig. filtro / Ant. filtro"
 
 [node name="FiltersMenu" type="CanvasLayer" parent="." unique_id=1987695816 node_paths=PackedStringArray("filter_node", "filter_buttons_node", "filter_label", "filter_buttons_background")]
 script = ExtResource("4_lt41x")
@@ -1101,7 +1101,7 @@ transform = Transform3D(-0.2769121, 0, 0.9608953, 0, 1, 0, -0.9608953, 0, -0.276
 
 [node name="Pine" parent="Props/Pines/PineWithoutFading" unique_id=1753780612 instance=ExtResource("36_nt0k8")]
 
-[node name="Pine" parent="Props/Pines/PineWithoutFading/Pine" index="0" unique_id=913634411]
+[node name="Pine" parent="Props/Pines/PineWithoutFading/Pine" index="0" unique_id=1100026183]
 surface_material_override/0 = ExtResource("37_pxjlt")
 
 [node name="PineWithoutFading2" parent="Props/Pines" unique_id=1894947181 instance=ExtResource("22_d6375")]

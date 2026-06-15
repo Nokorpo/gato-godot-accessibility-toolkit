@@ -38,6 +38,7 @@ theme_override_constants/separation = 20
 
 [node name="QuitButton" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=1436776288 instance=ExtResource("4_uf5bn")]
 layout_mode = 2
+text = "Volver al menú de demos"
 
 [node name="OpenMenuCooldown" type="Timer" parent="." unique_id=470500546]
 wait_time = 0.5

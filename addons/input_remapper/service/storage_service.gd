@@ -44,7 +44,7 @@ func verify_config_file(file_path: Variant = null) -> Error:
 	if file_path != null:
 		config_file = file_path
 
-	if FileAccess.file_exists(settings_file):
+	if not FileAccess.file_exists(config_file):
 		push_error("Error: no control scheme could be loaded. Configuration file could not be found.")
 		return Error.ERR_FILE_NOT_FOUND
 

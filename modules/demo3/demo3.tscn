@@ -1349,7 +1349,9 @@ visible = false
 stream = ExtResource("19_h2asr")
 
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" method="grab_focus"]
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="Interpreter" method="_on_attack_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogButton" to="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogButton" method="grab_focus"]
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogButton" to="Interpreter" method="_on_dialogue_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="Interpreter" method="_on_animation_player_animation_started"]

@@ -16,6 +16,9 @@ signal closed
 
 @onready var _game_menu_button: PackedScene = load("uid://mci4stvhspgq")
 
+@onready var _accept_audio: AudioStreamPlayer = $AcceptAudioStreamPlayer
+@onready var _cancel_audio: AudioStreamPlayer = $CancelAudioStreamPlayer
+
 var _opened_menu: Node
 
 func _ready() -> void:
@@ -33,6 +36,7 @@ func _add_button(child_idx: int, text: String) -> void:
 	var button = _game_menu_button.instantiate()
 	button.text = text
 	button.pressed.connect(open_menu.bind(child_idx))
+	button.pressed.connect(_accept_audio.play)
 	_button_list_container.add_child(button)
 	var second_to_last_position: int = _button_list_container.get_child_count() - 2
 	_button_list_container.move_child(button, second_to_last_position)
@@ -45,6 +49,7 @@ func _is_back_input(event: InputEvent) -> bool:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if _opened_menu != null and _is_back_input(event):
+		_cancel_audio.play()
 		_opened_menu.hide()
 		_opened_menu = null
 		_button_list_container.get_child(0).grab_focus()

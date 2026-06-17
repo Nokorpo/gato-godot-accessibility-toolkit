@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bfx3wk32j285q" path="res://modules/demo3/hud/hud.tscn" id="15_0kdck"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="15_tyyiy"]
 [ext_resource type="PackedScene" uid="uid://4el58wwwkssf" path="res://modules/core_systems/game_menu/tts_submenu.tscn" id="16_0kdck"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="19_h2asr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
 atlas = ExtResource("6_0cgi2")
@@ -1343,6 +1344,9 @@ visible = false
 [node name="CompletedDemoScreen" parent="." unique_id=67841330 instance=ExtResource("15_tyyiy")]
 process_mode = 3
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=421337986]
+stream = ExtResource("19_h2asr")
 
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
 [connection signal="pressed" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="Interpreter" method="_on_attack_button_pressed"]

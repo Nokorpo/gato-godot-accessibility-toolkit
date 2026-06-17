@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ck6hh30xh50a3" path="res://addons/input_remapper/ui/close_without_saving_dialog.gd" id="1_4p0ew"]
 [ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="2_e342f"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="3_qhuyp"]
+[ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="4_1bb2q"]
 
 [node name="CloseWithoutSavingDialog" type="Control" unique_id=84929324]
 visible = false
@@ -64,3 +66,9 @@ focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
 [node name="ExitWithoutSavingButton" type="Button" parent="PanelContainer/VBoxContainer/RowNavigationContainer3" unique_id=1759807679]
 layout_mode = 2
 text = "Exit without saving"
+
+[node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2141940438]
+stream = ExtResource("3_qhuyp")
+
+[node name="CancelAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1882142875]
+stream = ExtResource("4_1bb2q")

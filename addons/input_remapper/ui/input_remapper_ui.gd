@@ -11,7 +11,9 @@ signal closed
 @export var _movement_input_map: Control
 @export var _interactions_action_container: Control
 
-@onready var pressed_key_dialog := $PressKeyDialog
+@onready var _accept_audio: AudioStreamPlayer = %AcceptAudioStreamPlayer
+@onready var _cancel_audio: AudioStreamPlayer = %CancelAudioStreamPlayer
+
 @onready var close_without_saving_dialog := $CloseWithoutSavingDialog
 
 var _schemes: Array[GatoControlScheme] = []
@@ -41,9 +43,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
 
-	if _is_back_input(event) and _has_unsaved_changes():
-		close_without_saving_dialog.show()
-		get_viewport().set_input_as_handled()
+	if _is_back_input(event):
+		if _has_unsaved_changes():
+			close_without_saving_dialog.show()
+			get_viewport().set_input_as_handled()
+			return
+		_cancel_audio.play()
+		return
 	# else: don't set input as handled so the game can handle it
 
 func _get_scheme_index(scheme: GatoControlScheme) -> int:
@@ -131,6 +137,7 @@ func save_changes() -> void:
 		return
 	InputRemapper.apply_control_scheme(current_scheme)
 	InputRemapper.save_changes()
+	_accept_audio.play()
 
 func close() -> void:
 	visible = false

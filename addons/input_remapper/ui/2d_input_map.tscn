@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="6_vkcyi"]
 [ext_resource type="PackedScene" uid="uid://drqw3ka7ghfdn" path="res://addons/input_remapper/ui/input_action.tscn" id="7_l1mxn"]
 [ext_resource type="Script" uid="uid://bp8hc2frm7luy" path="res://addons/input_remapper/ui/joystick_container.gd" id="8_l1mxn"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="11_xl7oq"]
+[ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="12_62wd7"]
 
 [node name="2DInputMap" type="VBoxContainer" unique_id=2000616933]
 anchors_preset = 15
@@ -164,7 +166,16 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
+[node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=924391084]
+unique_name_in_owner = true
+stream = ExtResource("11_xl7oq")
+
+[node name="CancelAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=445899074]
+unique_name_in_owner = true
+stream = ExtResource("12_62wd7")
+
 [connection signal="input" from="UpRowNavigationContainer" to="UpRowNavigationContainer/JoystickToggle" method="_on_navigation_container_input"]
+[connection signal="toggle_changed" from="UpRowNavigationContainer/JoystickToggle" to="AcceptAudioStreamPlayer" method="play" unbinds=1]
 [connection signal="pressed" from="UpRowNavigationContainer/JoystickToggle/Button" to="UpRowNavigationContainer/JoystickToggle" method="_on_button_pressed"]
 [connection signal="pressed" from="UpRowNavigationContainer/JoystickToggle/Button2" to="UpRowNavigationContainer/JoystickToggle" method="_on_button_pressed"]
 [connection signal="pressed" from="ActionContainer/UpRowNavigationContainer" to="ActionContainer" method="_on_button_up_pressed"]

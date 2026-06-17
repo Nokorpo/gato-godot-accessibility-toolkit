@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_hfreh"]
 [ext_resource type="Theme" uid="uid://ptmdpjnuag7c" path="res://modules/core_systems/game_menu/game_menu.theme" id="3_uf5bn"]
 [ext_resource type="PackedScene" uid="uid://mci4stvhspgq" path="res://modules/core_systems/game_menu/game_menu_button.tscn" id="4_uf5bn"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="5_umwhm"]
+[ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="6_dfnms"]
 
 [node name="GameMenu" type="CanvasLayer" unique_id=450146438]
 process_mode = 3
@@ -44,4 +46,11 @@ text = "Volver al menú de demos"
 wait_time = 0.5
 one_shot = true
 
+[node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=934992041]
+stream = ExtResource("5_umwhm")
+
+[node name="CancelAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1896299367]
+stream = ExtResource("6_dfnms")
+
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="quit_and_go_to_menu"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="AcceptAudioStreamPlayer" method="play"]

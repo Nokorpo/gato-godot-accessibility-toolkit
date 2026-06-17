@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dvtilc13aalu3" path="res://modules/demo2/hud/menu/hud_position_selector.gd" id="5_8nvky"]
 [ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="6_8nvky"]
 [ext_resource type="Script" uid="uid://clutl3ctdotm5" path="res://modules/demo2/hud/menu/zoom_bar.gd" id="8_6gp2b"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="9_8nvky"]
 
 [node name="HudCustomizationMenu" type="CanvasLayer" unique_id=657266733 node_paths=PackedStringArray("position_control")]
 layer = 2
@@ -189,11 +190,16 @@ stretch_mode = 5
 wait_time = 0.25
 one_shot = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1778408420]
+stream = ExtResource("9_8nvky")
+
 [connection signal="input" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer" to="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" method="_on_navigation_container_input"]
 [connection signal="hud_position_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" to="." method="_on_hud_position_changed"]
+[connection signal="hud_position_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" to="AudioStreamPlayer" method="play" unbinds=1]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector/LeftButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" method="_on_left_button_pressed"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector/RightButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" method="_on_right_button_pressed"]
 [connection signal="input" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer" to="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" method="_on_navigation_container_input"]
 [connection signal="hud_zoom_level_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" to="." method="_on_hud_zoom_level_changed"]
+[connection signal="hud_zoom_level_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" to="AudioStreamPlayer" method="play" unbinds=1]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar/LowerButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" method="_on_lower_button_pressed"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar/IncreaseButton" to="Control/PanelContainer/MarginContainer/VBoxContainer/ZoomNavigationContainer/ZoomBar" method="_on_increase_button_pressed"]

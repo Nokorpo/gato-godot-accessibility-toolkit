@@ -3,6 +3,9 @@
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends VBoxContainer
 
+@onready var _accept_audio: AudioStreamPlayer = %AcceptAudioStreamPlayer
+@onready var _cancel_audio: AudioStreamPlayer = %CancelAudioStreamPlayer
+
 var input_remapper_ui: InputRemapperUI
 var action_name: StringName:
 	set(value):
@@ -32,10 +35,13 @@ func update_ui(_input_action: KeysInputAction2D) -> void:
 	%RightInputAction.set_error_highlight(false)
 
 func _read_event_or_null() -> InputEventKey:
+	_accept_audio.play()
 	press_key_dialog.start_reading_input()
 	var result = await press_key_dialog.input_read
 	if result.canceled:
+		_cancel_audio.play()
 		return
+	_accept_audio.play()
 	return result.event
 
 func _on_button_up_pressed() -> void:

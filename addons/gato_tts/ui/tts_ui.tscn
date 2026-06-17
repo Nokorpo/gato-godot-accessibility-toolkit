@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://p3ythjt12gy1" path="res://addons/gato_tts/ui/row_navigation_container.tscn" id="4_uyg0e"]
 [ext_resource type="Script" uid="uid://b62jpobyyj61k" path="res://addons/gato_tts/ui/test_button.gd" id="6_6uv2x"]
 [ext_resource type="PackedScene" uid="uid://821nttkt6a50" path="res://addons/gato_tts/ui/background_blur/background_blur.tscn" id="7_6uv2x"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="8_2meej"]
 
-[node name="TextToSpeechUi" type="Control" unique_id=718320937]
+[node name="TextToSpeechUi" type="Control" unique_id=718320937 node_paths=PackedStringArray("first_item")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_krw8n")
 script = ExtResource("2_5xqkn")
+first_item = NodePath("PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer")
 
 [node name="TittlePanelContainer" type="PanelContainer" parent="." unique_id=1110522343]
 layout_mode = 1
@@ -158,6 +160,9 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=430075034]
+stream = ExtResource("8_2meej")
 
 [connection signal="input" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer/LanguageSelector" method="_on_navigation_container_input"]
 [connection signal="input" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer2" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer2/VoiceSelector" method="_on_navigation_container_input"]

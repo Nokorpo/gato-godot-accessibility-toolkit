@@ -4,6 +4,8 @@
 extends HBoxContainer
 ## Lets the user choose whether to use a joystick or keyboard keys for an input action 2D
 
+signal toggle_changed(use_joystick: bool)
+
 @onready var joystick_cooldown: Timer = $JoystickCooldownTimer
 
 var use_joystick := false
@@ -19,6 +21,7 @@ func _on_button_pressed() -> void:
 		%ActionContainer.set_action()
 
 func update_ui() ->void :
+	toggle_changed.emit(use_joystick)
 	if use_joystick:
 		$Label.text = "Joystick"
 		get_parent().focus_neighbor_bottom = ^"../JoystickContainer/UpRowNavigationContainer2"

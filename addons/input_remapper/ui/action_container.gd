@@ -8,6 +8,9 @@ signal detected_conflicting_inputs(input_action_list: Array[InputAction])
 @export var input_remapper_ui: InputRemapperUI
 @export var press_key_dialog: Control
 
+@onready var _accept_audio: AudioStreamPlayer = %AcceptAudioStreamPlayer
+@onready var _cancel_audio: AudioStreamPlayer = %CancelAudioStreamPlayer
+
 var input_actions: Array[InputActionButton] = []
 var use_right_joystick := false
 var input_action_nodes: Array[Control] = []
@@ -62,9 +65,12 @@ func _read_event_or_null() -> InputEventKey:
 	return result.event
 
 func _on_button_pressed(action_name: String) -> void:
+	_accept_audio.play()
 	var event: InputEventKey = await _read_event_or_null()
 	if not event:
+		_cancel_audio.play()
 		return
+	_accept_audio.play()
 
 	var button := get_button_for_action(action_name)
 	if button == null:

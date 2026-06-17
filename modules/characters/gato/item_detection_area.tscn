@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dsydd8kmsg0gs"]
 
 [ext_resource type="Script" uid="uid://b6iob58oiw2ke" path="res://modules/characters/gato/item_container.gd" id="1_3r1vw"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="2_qir8f"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5kfaa"]
 height = 1.4127
@@ -16,5 +17,8 @@ debug_color = Color(1.44392e-06, 0.634627, 0.426822, 0.42)
 
 [node name="ItemContainer" type="Node3D" parent="." unique_id=1646934526]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1686390944]
+stream = ExtResource("2_qir8f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

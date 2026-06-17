@@ -3,6 +3,8 @@
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends VBoxContainer
 
+@onready var _accept_audio: AudioStreamPlayer = %AcceptAudioStreamPlayer
+
 var input_remapper_ui: InputRemapperUI
 var action_name: StringName:
 	set(value):
@@ -26,11 +28,13 @@ func _set_use_right_joystick(use_right_joystick: bool) -> void:
 	%JoystickSelector.use_right_joystick = use_right_joystick
 	input_action.use_right_joystick = use_right_joystick
 	set_action()
+	_accept_audio.play()
 
 func _set_invert(invert_joystick: bool) -> void:
 	%InvertDirection.button_pressed = invert_joystick
 	input_action.invert_joystick = invert_joystick
 	set_action()
+	_accept_audio.play()
 
 func update_ui(_input_action: JoystickInputAction2D) -> void:
 	input_action = _input_action

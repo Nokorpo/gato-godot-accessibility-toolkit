@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://pvxfv052stfv" path="res://addons/input_remapper/ui/background_blur/background_blur.tscn" id="10_8h5fo"]
 [ext_resource type="PackedScene" uid="uid://c0q1il8rqflxw" path="res://addons/input_remapper/ui/close_without_saving_dialog.tscn" id="12_ix0sm"]
 [ext_resource type="PackedScene" uid="uid://dnj8weyejjv11" path="res://addons/input_remapper/ui/error_dialog.tscn" id="13_4idbt"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="14_e26m8"]
+[ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="15_dfgbc"]
 
 [node name="InputRemapperUi" type="Control" unique_id=718320937 node_paths=PackedStringArray("_control_scheme_selector", "_movement_input_map", "_interactions_action_container")]
 layout_mode = 3
@@ -173,6 +175,14 @@ layout_mode = 1
 
 [node name="ErrorDialog" parent="." unique_id=534890888 instance=ExtResource("13_4idbt")]
 layout_mode = 1
+
+[node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1016087300]
+unique_name_in_owner = true
+stream = ExtResource("14_e26m8")
+
+[node name="CancelAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1390252073]
+unique_name_in_owner = true
+stream = ExtResource("15_dfgbc")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"launch_item"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer/InputAction" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"launch_item"]]

@@ -15,6 +15,7 @@ extends Node
 
 @onready var interpreter := InstructionInterpreter.new(self)
 @onready var battle_menu: Control = %BattleMenu
+@onready var accept_audio: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 var _sequence: Sequence:
 	set(value):
@@ -79,6 +80,7 @@ func _on_attack_button_pressed() -> void:
 	attack_button.disabled = true
 	dialogue_button.disabled = true
 	_sequence = _load_sequence(_sequence.attack_sequence)
+	accept_audio.play()
 	_run_sequence()
 
 func _on_dialogue_button_pressed() -> void:
@@ -89,6 +91,7 @@ func _on_dialogue_button_pressed() -> void:
 	attack_button.disabled = true
 	dialogue_button.disabled = true
 	_sequence = _load_sequence(_sequence.dialogue_sequence)
+	accept_audio.play()
 	_run_sequence()
 
 func _on_narrator_text_box_pressed() -> void:
@@ -96,6 +99,7 @@ func _on_narrator_text_box_pressed() -> void:
 		return
 	if GatoTextToSpeech.is_reading():
 		GatoTextToSpeech.stop()
+	accept_audio.play()
 	_run_sequence()
 
 func _on_animation_player_animation_started(_anim_name: StringName) -> void:

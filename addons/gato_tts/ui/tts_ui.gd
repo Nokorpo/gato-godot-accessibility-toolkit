@@ -10,6 +10,8 @@ extends Control
 @onready var voice_selector = %VoiceSelector
 @onready var speed_selector = %SpeedSelector
 
+@onready var _accept_audio: AudioStreamPlayer = $AcceptAudioStreamPlayer
+
 const DEFAULT_LANGUAGE: StringName = "ES"
 const LANGUAGE_OPTIONS: Array[StringName] = ["ES", "EN"]
 const VOICE_SPEED_OPTIONS: Array[StringName] = ["1.0", "1.5", "2.0", "0.5", "0.75"]
@@ -35,11 +37,14 @@ func _on_language_changed(language: StringName) -> void:
 	for voice in _current_voices:
 		voice_names.append(voice.name)
 	%VoiceSelector.options = voice_names
+	_accept_audio.play()
 
 func _on_voice_changed(voice_name: StringName) -> void:
 	var new_voice_index := _current_voices.find_custom(func(it:GatoTTSVoiceID): return it.name == voice_name)
 	var new_voice := _current_voices[new_voice_index]
 	GatoTextToSpeech.set_language(GatoTextToSpeech.language, new_voice.id)
+	_accept_audio.play()
 
 func _on_speed_changed(speed: StringName) -> void:
 	GatoTextToSpeech.rate = float(speed)
+	_accept_audio.play()

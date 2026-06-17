@@ -18,6 +18,8 @@ signal item_collected(item: Node3D)
 
 @onready var item_container: Node3D = $ItemContainer
 
+@onready var item_collect_sound: AudioStreamPlayer = $AudioStreamPlayer
+
 ## The list of items currently contained by this container. They will follow the
 ## container around as it moves.
 var items: Array[Node3D] = []
@@ -88,6 +90,7 @@ func _on_body_entered(body: Node3D) -> void:
 			return
 
 		_disable_item_physics(body)
+		item_collect_sound.play()
 		await _float_item_toward_container(body).finished
 		items.append(body)
 		item_collected.emit(body)

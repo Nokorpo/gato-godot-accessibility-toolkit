@@ -5,6 +5,9 @@ extends Control
 
 @onready var input_remapper_ui: InputRemapperUI
 
+@onready var _accept_audio: AudioStreamPlayer = $AcceptAudioStreamPlayer
+@onready var _cancel_audio: AudioStreamPlayer = $CancelAudioStreamPlayer
+
 signal appeared
 signal disappeared
 
@@ -27,10 +30,13 @@ func _on_visibility_changed():
 
 func _on_back() -> void:
 	visible = false
+	_cancel_audio.play()
 
 func _on_save_and_exit() -> void:
+	_accept_audio.play()
 	input_remapper_ui.save_changes()
 	input_remapper_ui.close()
 
 func _on_exit_without_saving() -> void:
+	_cancel_audio.play()
 	input_remapper_ui.close()

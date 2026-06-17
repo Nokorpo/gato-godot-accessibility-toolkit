@@ -7,6 +7,7 @@ extends GridContainer
 var demo_preview: PackedScene = load("res://modules/demo_selector/demo_preview.tscn")
 
 @onready var demo_selector: Node = $"../.."
+@onready var accept_sound: AudioStreamPlayer = $"../../AudioStreamPlayer"
 
 func _ready() -> void:
 	if not FeatureFlags.get_flag("show_demo_2"):
@@ -15,6 +16,7 @@ func _ready() -> void:
 		var new_preview: DemoPreview = demo_preview.instantiate()
 		new_preview.data = demo_data
 		new_preview.demo_pressed.connect(load_demo)
+		new_preview.demo_pressed.connect(accept_sound.play.unbind(1))
 		add_child(new_preview)
 	get_child(0).grab_focus()
 

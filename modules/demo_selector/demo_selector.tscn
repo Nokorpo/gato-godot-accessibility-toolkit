@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="2_827ex"]
 [ext_resource type="Resource" uid="uid://doxub3jvr747g" path="res://modules/demo_selector/assets/demo_list.tres" id="2_xqaix"]
 [ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="5_827ex"]
+[ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="7_56klt"]
 
 [sub_resource type="Gradient" id="Gradient_xqaix"]
 colors = PackedColorArray(0.09019608, 0.023529412, 0.25490198, 1, 0.13694337, 0.021770453, 0.19578174, 1)
@@ -87,3 +88,6 @@ theme_override_fonts/font = ExtResource("5_827ex")
 theme_override_font_sizes/font_size = 12
 text = "Nokorpo 2025"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1912630576]
+stream = ExtResource("7_56klt")

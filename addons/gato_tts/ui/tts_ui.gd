@@ -3,6 +3,9 @@
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends Control
 
+## First node that will be selected when the menu grabs focus.
+@export var first_item: Control
+
 @onready var language_selector = %LanguageSelector
 @onready var voice_selector = %VoiceSelector
 @onready var speed_selector = %SpeedSelector
@@ -20,6 +23,9 @@ func _ready() -> void:
 	voice_selector.selection_changed.connect(_on_voice_changed)
 	speed_selector.selection_changed.connect(_on_speed_changed)
 	_on_language_changed(DEFAULT_LANGUAGE)
+
+func grab_focus(hide_focus: bool = false) -> void:
+	first_item.grab_focus(hide_focus)
 
 func _on_language_changed(language: StringName) -> void:
 	GatoTextToSpeech.set_language(language)

@@ -10,9 +10,14 @@ const FORCE := 0.2
 var tween: Tween
 
 var leaf_particles = load("res://modules/demo1/map/vfx/leaf_particles.tscn")
+var sfx: AudioStreamPlayer = null
 
 func _ready() -> void:
 	_make_grass_bounce_on_player_touch()
+	if self.is_in_group("has_leafs"):
+		sfx = get_tree().root.find_child("TreeShakeSFX", true, false)
+	else:
+		sfx = get_tree().root.find_child("GrassSFX", true, false)
 
 func _make_grass_bounce_on_player_touch():
 	# FIXME hack to make grass bounce when player touches it
@@ -35,6 +40,7 @@ func react_to_player_collision() -> void:
 	if not is_instance_valid(tween) or not tween.is_running():
 		if self.is_in_group("has_leafs"):
 			emit_particles()
+		sfx.play()
 		tween = create_tween().set_trans(Tween.TRANS_SINE)
 
 		tween.tween_property(self, "rotation", Vector3( 1, 0, 1) * FORCE  , .2)

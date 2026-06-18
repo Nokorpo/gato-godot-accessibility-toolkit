@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cuqenjv6o6em7" path="res://modules/level_objects/acorn/gold_acorn.gd" id="1_puj2h"]
 [ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="2_vhraj"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="4_n6r8r"]
+[ext_resource type="AudioStream" uid="uid://cty0svmjrv5js" path="res://third_party/dragon-studio-angel-choir-463220_looped.ogg" id="5_8lt4b"]
 
 [sub_resource type="Animation" id="Animation_puj2h"]
 length = 0.001
@@ -126,6 +127,13 @@ shape = SubResource("SphereShape3D_n6r8r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6883054, 0)
 size = Vector3(0.2, 1, 0.2)
 texture_albedo = ExtResource("4_n6r8r")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=152465861]
+stream = ExtResource("5_8lt4b")
+volume_db = -20.0
+unit_size = 2.0
+autoplay = true
+max_distance = 10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

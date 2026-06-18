@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b5h0k7houk38n" path="res://icon.svg" id="1_3l3kr"]
 [ext_resource type="Script" uid="uid://78m06ag4ao5p" path="res://modules/core_systems/texture_check_button/texture_check_button.gd" id="1_ilj3v"]
 [ext_resource type="Texture2D" uid="uid://2tmx0rm6dn7w" path="res://icon.jpg" id="2_ilj3v"]
+[ext_resource type="AudioStream" uid="uid://ba8bygjneg25t" path="res://third_party/dragon-studio-button-press-3-386171_clipped.ogg" id="4_6qb3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsqau"]
 bg_color = Color(0.4117647, 0.4117647, 0.4117647, 1)
@@ -89,4 +90,9 @@ size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ab4hp")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=539299355]
+stream = ExtResource("4_6qb3k")
+volume_db = -4.0
+
+[connection signal="toggled" from="." to="AudioStreamPlayer" method="play" unbinds=1]
 [connection signal="toggled" from="CheckButton" to="." method="_on_button_toggled"]

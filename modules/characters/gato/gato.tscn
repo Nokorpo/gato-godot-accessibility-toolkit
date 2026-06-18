@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cqw6xey20fxnq" path="res://modules/characters/gato/jump_state.gd" id="6_ve5e5"]
 [ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="9_d7yls"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="10_fcelm"]
+[ext_resource type="AudioStream" uid="uid://gfvyluic1cyp" path="res://third_party/dragon-studio-water-splash-effect-443133_cropped.ogg" id="11_t654d"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fyq4e"]
 points = PackedVector3Array(-0.5, -1.2, 0, 0.5, -1.2, 0, 0.5, 1, 0, -0.5, 1, 0, -3, 1, 5, 3, 1, 5, 3, -1.2, 5, -3, -1.2, 5)
@@ -178,5 +179,12 @@ size = Vector3(0.75, 10, 0.75)
 texture_albedo = ExtResource("10_fcelm")
 lower_fade = 0.008
 distance_fade_enabled = true
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1050152487]
+
+[node name="SplashSFX" type="AudioStreamPlayer" parent="." unique_id=884361689]
+process_mode = 3
+stream = ExtResource("11_t654d")
+volume_db = -4.0
 
 [connection signal="fall_from_height" from="." to="LandingDust" method="set_emitting" binds= [true]]

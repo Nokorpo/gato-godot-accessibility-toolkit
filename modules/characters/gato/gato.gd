@@ -19,8 +19,12 @@ signal fall_into_water
 @onready var mesh: GatoMesh = $RotationPivot/Mesh
 @onready var item_detection: Node3D = $RotationPivot/ItemDetectionArea
 @onready var items: Array = item_detection.items
+@onready var splash_sfx: AudioStreamPlayer = $SplashSFX
 
 var previous_y_velocity: float = 0.0
+## When the character is respawning, we wait a short amount of time before moving it to the respawn point.
+## In order to stop the character and camera, we skip calculating movement with this flag.
+var _is_respawning: bool = false
 
 func _ready() -> void:
 	item_detection.item_collected.connect(func(it): item_collected.emit(it))
@@ -28,6 +32,9 @@ func _ready() -> void:
 	DialogueSystem.dialogue_finished.connect(set.bind("process_mode", Node.PROCESS_MODE_INHERIT))
 
 func _physics_process(delta: float) -> void:
+	if _is_respawning:
+		return
+
 	if not is_on_floor():
 		previous_y_velocity = velocity.y
 		velocity += get_gravity() * delta
@@ -69,5 +76,10 @@ func jump() -> void:
 	velocity.y = jump_force
 
 func respawn() -> void:
+	splash_sfx.play()
+	_is_respawning = true
+	await splash_sfx.finished
+	_is_respawning = false
+
 	fall_into_water.emit()
 	global_position = Vector3.ZERO

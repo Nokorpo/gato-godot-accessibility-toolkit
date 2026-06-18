@@ -43,6 +43,9 @@
 [ext_resource type="Texture2D" uid="uid://cnoo82xkn5mgr" path="res://modules/demo2/hud/enclosure_icon_a.svg" id="42_plfc8"]
 [ext_resource type="Texture2D" uid="uid://drke4gsccrlfw" path="res://modules/demo2/hud/enclosure_icon_b.svg" id="43_er80s"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="43_tvvq4"]
+[ext_resource type="AudioStream" uid="uid://cfk8dwpnnoyvx" path="res://third_party/cartoon-music-game-sfx-rain-amp-distant-thunder-543879_looped.ogg" id="45_imhxh"]
+[ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="45_tsi04"]
+[ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="46_tsi04"]
 
 [sub_resource type="Gradient" id="Gradient_t68yl"]
 offsets = PackedFloat32Array(0, 0.155172, 0.853448, 1)
@@ -139,6 +142,18 @@ material = SubResource("StandardMaterial3D_s3l5j")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_41c7q"]
 size = Vector3(3.8423462, 1, 1.8641663)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_683d8"]
+random_pitch = 1.4142135
+random_volume_offset_db = 4.0
+streams_count = 1
+stream_0/stream = ExtResource("46_tsi04")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lyyeo"]
+random_pitch = 1.2599211
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("46_tsi04")
 
 [node name="Map3" type="Node3D" unique_id=1042335550]
 
@@ -850,6 +865,64 @@ transform = Transform3D(0.9, 0, 0, 0, -3.934025e-08, 0.9, 0, -0.9, -3.934025e-08
 modulate = Color(1, 1, 1, 0.47058824)
 texture_filter = 0
 texture = ExtResource("43_er80s")
+
+[node name="SFX" type="Node3D" parent="." unique_id=1480272321]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX" unique_id=431035281]
+stream = ExtResource("45_imhxh")
+volume_db = -4.0
+autoplay = true
+playback_type = 1
+parameters/looping = true
+
+[node name="OceanWaves" type="AudioStreamPlayer3D" parent="SFX" unique_id=1838104265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.493928, 0.91066885, 24.164993)
+stream = ExtResource("45_tsi04")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 30.0
+parameters/looping = true
+
+[node name="OceanWaves2" type="AudioStreamPlayer3D" parent="SFX" unique_id=2109869926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.555449, 0.91066885, 6.4646225)
+stream = ExtResource("45_tsi04")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 30.0
+parameters/looping = true
+
+[node name="OceanWaves3" type="AudioStreamPlayer3D" parent="SFX" unique_id=759308658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.07928, 0.91066885, 19.711405)
+stream = ExtResource("45_tsi04")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 30.0
+parameters/looping = true
+
+[node name="OceanWaves4" type="AudioStreamPlayer3D" parent="SFX" unique_id=1456557900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.917103, 0.91066885, 12.45907)
+stream = ExtResource("45_tsi04")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 30.0
+parameters/looping = true
+
+[node name="TreeShakeSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1756973557]
+stream = SubResource("AudioStreamRandomizer_683d8")
+volume_db = -10.0
+
+[node name="GrassSFX" type="AudioStreamPlayer" parent="SFX" unique_id=720546627]
+stream = SubResource("AudioStreamRandomizer_lyyeo")
+volume_db = -20.0
+pitch_scale = 1.5
 
 [connection signal="hud_position_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_hud"]
 [connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]

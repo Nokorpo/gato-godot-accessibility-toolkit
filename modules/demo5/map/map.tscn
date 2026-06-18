@@ -70,6 +70,7 @@
 [ext_resource type="Script" uid="uid://88gbxjo3fu6j" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_second_fed_boar.gd" id="61_ps754"]
 [ext_resource type="Script" uid="uid://d1o8hyi8eobjd" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_third_fed_boar.gd" id="64_ps754"]
 [ext_resource type="Script" uid="uid://04e2ma8qdgop" path="res://modules/demo5/dialogues/triggers/demo_completion_dialogue.gd" id="65_riqon"]
+[ext_resource type="AudioStream" uid="uid://ba8bygjneg25t" path="res://third_party/dragon-studio-button-press-3-386171_clipped.ogg" id="71_ptp6h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqon"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -1101,7 +1102,7 @@ transform = Transform3D(-0.2769121, 0, 0.9608953, 0, 1, 0, -0.9608953, 0, -0.276
 
 [node name="Pine" parent="Props/Pines/PineWithoutFading" unique_id=1753780612 instance=ExtResource("36_nt0k8")]
 
-[node name="Pine" parent="Props/Pines/PineWithoutFading/Pine" index="0" unique_id=1100026183]
+[node name="Pine" parent="Props/Pines/PineWithoutFading/Pine" index="0" unique_id=1570255397]
 surface_material_override/0 = ExtResource("37_pxjlt")
 
 [node name="PineWithoutFading2" parent="Props/Pines" unique_id=1894947181 instance=ExtResource("22_d6375")]
@@ -1137,6 +1138,13 @@ dialogue = SubResource("Resource_efubn")
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 0, -1.38688, 0)
 mesh = SubResource("PlaneMesh_ku402")
 
+[node name="SFX" type="Node3D" parent="." unique_id=724216065]
+
+[node name="FilterChangeSFX" type="AudioStreamPlayer" parent="SFX" unique_id=889550961]
+stream = ExtResource("71_ptp6h")
+volume_db = -6.0
+
+[connection signal="filter_changed" from="FiltersMenu" to="SFX/FilterChangeSFX" method="play"]
 [connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]
 
 [editable path="Props/Pines/PineWithoutFading/Pine"]

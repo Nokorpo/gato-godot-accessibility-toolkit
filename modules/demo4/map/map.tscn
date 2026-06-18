@@ -47,6 +47,8 @@
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
 [ext_resource type="Script" uid="uid://cbjoqq7qgch38" path="res://modules/demo4/map/disable_acorn_point_when_boar_crossed.gd" id="44_0olh3"]
+[ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="48_pm1tf"]
+[ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="49_2f5ck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
 font_size = 48
@@ -121,6 +123,18 @@ size = Vector3(17.917187, 1.15234, 12.385497)
 size = Vector3(100, 1, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0721d"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x7q1j"]
+random_pitch = 1.4142135
+random_volume_offset_db = 4.0
+streams_count = 1
+stream_0/stream = ExtResource("49_2f5ck")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i7qr0"]
+random_pitch = 1.2599211
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("49_2f5ck")
 
 [node name="Map" type="Node3D" unique_id=1295868009]
 
@@ -1506,6 +1520,77 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/WorldBoundary3D" unique_id=1665024964]
 shape = SubResource("WorldBoundaryShape3D_0721d")
 debug_color = Color(0, 0, 0, 0.41960785)
+
+[node name="SFX" type="Node3D" parent="." unique_id=945265496]
+
+[node name="OceanWaves" type="AudioStreamPlayer3D" parent="SFX" unique_id=998566681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5586462, 0.91066885, 17.712877)
+stream = ExtResource("48_pm1tf")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 20.0
+parameters/looping = true
+
+[node name="OceanWaves2" type="AudioStreamPlayer3D" parent="SFX" unique_id=1397248131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.883392, 0.91066885, 8.238731)
+stream = ExtResource("48_pm1tf")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 20.0
+parameters/looping = true
+
+[node name="OceanWaves3" type="AudioStreamPlayer3D" parent="SFX" unique_id=1490704808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.271107, 0.91066885, -7.7956505)
+stream = ExtResource("48_pm1tf")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 20.0
+parameters/looping = true
+
+[node name="OceanWaves4" type="AudioStreamPlayer3D" parent="SFX" unique_id=1275765033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.394012, 0.91066885, -31.947187)
+stream = ExtResource("48_pm1tf")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 20.0
+parameters/looping = true
+
+[node name="OceanWaves5" type="AudioStreamPlayer3D" parent="SFX" unique_id=344456572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18343, 0.91066885, -51.211582)
+stream = ExtResource("48_pm1tf")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 20.0
+parameters/looping = true
+
+[node name="OceanWaves6" type="AudioStreamPlayer3D" parent="SFX" unique_id=352516784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.660227, 0.91066885, -20.292053)
+stream = ExtResource("48_pm1tf")
+volume_db = -3.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 20.0
+parameters/looping = true
+
+[node name="TreeShakeSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1462398682]
+stream = SubResource("AudioStreamRandomizer_x7q1j")
+volume_db = -10.0
+
+[node name="GrassSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1828632833]
+stream = SubResource("AudioStreamRandomizer_i7qr0")
+volume_db = -20.0
+pitch_scale = 1.5
 
 [connection signal="collected_goldacorn" from="GoldAcornManager" to="HUD" method="_update_label_gold_acorn_count"]
 [connection signal="level_finished" from="GoldAcornManager" to="CompletedDemoScreen" method="show_screen"]

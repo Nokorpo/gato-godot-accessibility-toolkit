@@ -3,6 +3,8 @@
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
 extends Node
 
+signal filter_changed
+
 @export var filter_node: ColorRect
 @export var filter_buttons_node: Container
 @export var filter_label: Label
@@ -47,6 +49,7 @@ func select_filter(filter: Filter):
 		button.button_pressed = true
 		current_filter = filter
 		_apply_filter_shader(current_filter)
+		filter_changed.emit()
 	else:
 		_notify_filters_are_blocked()
 

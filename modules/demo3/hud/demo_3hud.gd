@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var _blur: Control = $BackgroundBlur
 @onready var _ui_offset: Control = $Control/Offset
 @onready var _ui_content: Control = _ui_offset.get_child(0)
+@onready var _toggle_button: Control = %BlurButton
 
 var _initial_offset_position: Vector2
 var _tween: Tween = null
@@ -34,7 +35,7 @@ func _hide_hud() -> void:
 func _input(event: InputEvent) -> void:
 	if (event.is_action("change_filter_right") or event.is_action("change_filter_left")) \
 		and event.is_pressed():
-		%BlurButton._on_button_toggled(not _blur.is_enabled())
+		_toggle_button._on_button_toggled(not _blur.is_enabled())
 
 func _show_hint() -> void:
 	if _tween:

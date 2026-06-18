@@ -90,6 +90,8 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 mouse_filter = 1
 
+[connection signal="disabled" from="Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BlurButton" to="BackgroundBlur" method="hide_blur"]
+[connection signal="enabled" from="Control/Offset/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BlurButton" to="BackgroundBlur" method="show_blur"]
 [connection signal="mouse_entered" from="HBoxContainer/MouseDetectorNear" to="." method="_show_hint"]
 [connection signal="mouse_exited" from="HBoxContainer/MouseDetectorNear" to="." method="_hide_hint"]
 [connection signal="mouse_entered" from="HBoxContainer/MouseDetector" to="." method="_show_hud"]

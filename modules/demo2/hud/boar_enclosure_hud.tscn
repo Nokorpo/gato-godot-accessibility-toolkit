@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d7dukcfibx61"]
 
-[ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="1_3jf1q"]
 [ext_resource type="Script" uid="uid://b4h8a4qetgm6l" path="res://modules/demo2/hud/boar_enclosure_hud.gd" id="1_ddpr4"]
+[ext_resource type="Theme" uid="uid://e5y3w2giwq35" path="res://modules/demo2/hud/boar_enclosure_hud.theme" id="2_1m6iu"]
 [ext_resource type="Script" uid="uid://djvxjesh02nor" path="res://modules/demo2/hud/enclosure_hud_implementation.gd" id="3_if6f7"]
 [ext_resource type="Texture2D" uid="uid://cnoo82xkn5mgr" path="res://modules/demo2/hud/enclosure_icon_a.svg" id="4_1m6iu"]
 [ext_resource type="Texture2D" uid="uid://drke4gsccrlfw" path="res://modules/demo2/hud/enclosure_icon_b.svg" id="5_if6f7"]
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_3jf1q")
+theme = ExtResource("2_1m6iu")
 script = ExtResource("3_if6f7")
 enclosure_to_node_map = {
 0: NodePath("MarginContainer/PanelContainer/TextureRect"),
@@ -59,7 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_3jf1q")
+theme = ExtResource("2_1m6iu")
 script = ExtResource("3_if6f7")
 enclosure_to_node_map = {
 0: NodePath("MarginContainer/PanelContainer/TextureRect"),
@@ -98,7 +98,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_3jf1q")
+theme = ExtResource("2_1m6iu")
 script = ExtResource("3_if6f7")
 enclosure_to_node_map = {
 0: NodePath("MarginContainer/PanelContainer/TextureRect"),

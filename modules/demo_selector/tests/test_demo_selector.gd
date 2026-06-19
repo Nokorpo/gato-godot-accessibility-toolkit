@@ -24,11 +24,11 @@ class TestDemoSelectorScene extends GutTest:
 		var scene: Node = add_child_autofree(demo_selector_scene.instantiate())
 		var demo_container: Container = scene.find_child("DemoContainer")
 		assert_gt(demo_container.get_child_count(), 0, "the demo container is empty")
-		
+
 		for i: int in range(demo_container.get_child_count()):
 			var preview = demo_container.get_child(i)
 			assert_typeof(preview, typeof(DemoPreview), "a child of demo container is not of type DemoPreview")
-			assert_eq(preview.data, demo_list.demos[i], "The preview data %d matches with demo list data %d" % [i , i]) 
+			assert_eq(preview.data, demo_list.demos[i], "The preview data %d matches with demo list data %d" % [i , i])
 
 	func test_demo_selector_loads_demo():
 		# GIVEN

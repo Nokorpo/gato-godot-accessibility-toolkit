@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dn1mu76pbawjl" path="res://modules/level_objects/button/button.gd" id="1_q5228"]
 [ext_resource type="PackedScene" uid="uid://byarb3le21bcc" path="res://modules/demo1/map/props/boar_button.gltf" id="2_q5228"]
+[ext_resource type="AudioStream" uid="uid://ba8bygjneg25t" path="res://third_party/dragon-studio-button-press-3-386171_clipped.ogg" id="3_glvl7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q5228"]
 size = Vector3(1, 0.26748, 1)
@@ -95,6 +96,9 @@ shape = SubResource("BoxShape3D_2vunl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1062695461]
 libraries/ = SubResource("AnimationLibrary_lk2fu")
+
+[node name="ClickSound" type="AudioStreamPlayer3D" parent="." unique_id=820792654]
+stream = ExtResource("3_glvl7")
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
 [connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_exited"]

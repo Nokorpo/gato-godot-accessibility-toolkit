@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://clxg74c0kdeh3"]
 
 [ext_resource type="Script" uid="uid://c5f300rf0g28o" path="res://modules/level_objects/moving_platform/moving_platform.gd" id="1_rdi45"]
+[ext_resource type="AudioStream" uid="uid://caywfep3v6rwx" path="res://third_party/freesound_community-fridge-compressor-hum-20355_looped.ogg" id="2_bjqu3"]
 
 [node name="MovingPlatform" type="Node3D" unique_id=816114017]
 script = ExtResource("1_rdi45")
+
+[node name="MovingSound" type="AudioStreamPlayer3D" parent="." unique_id=1125483920]
+stream = ExtResource("2_bjqu3")
+volume_db = -20.0

@@ -12,6 +12,8 @@ signal target_reached
 @export var travel_time: float = 2.0
 @export var destination_node: Node3D
 
+@onready var _moving_sound: AudioStreamPlayer3D = $MovingSound
+
 var node_to_move: Node3D = null
 var origin: Vector3 = Vector3.ZERO
 var destination: Vector3
@@ -30,6 +32,8 @@ func _ready() -> void:
 
 	if destination_node != null:
 		destination = destination_node.global_position
+
+	target_reached.connect(_moving_sound.stop)
 
 ## If the node is currently in the origin or moving towards the origin, it will
 ## travel towards the destination. If it is in the destination or traveling
@@ -52,6 +56,9 @@ func travel_to_destination() -> void:
 func _animate_movement_to(target: Vector3) -> void:
 	if _tween != null:
 		_tween.kill()
+
+	if not _moving_sound.playing:
+		_moving_sound.play()
 
 	var speed := travel_time / (destination - origin).length()
 	var time := speed * (target - global_position).length()

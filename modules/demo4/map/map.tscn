@@ -49,6 +49,7 @@
 [ext_resource type="Script" uid="uid://cbjoqq7qgch38" path="res://modules/demo4/map/disable_acorn_point_when_boar_crossed.gd" id="44_0olh3"]
 [ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="48_pm1tf"]
 [ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="49_2f5ck"]
+[ext_resource type="AudioStream" uid="uid://d1ghg6brg5rcs" path="res://third_party/ebunny-simple-magic-loop-368855.mp3" id="50_i4c4x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
 font_size = 48
@@ -1591,6 +1592,11 @@ volume_db = -10.0
 stream = SubResource("AudioStreamRandomizer_i7qr0")
 volume_db = -20.0
 pitch_scale = 1.5
+
+[node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=1084686688]
+stream = ExtResource("50_i4c4x")
+volume_db = -14.0
+autoplay = true
 
 [connection signal="collected_goldacorn" from="GoldAcornManager" to="HUD" method="_update_label_gold_acorn_count"]
 [connection signal="level_finished" from="GoldAcornManager" to="CompletedDemoScreen" method="show_screen"]

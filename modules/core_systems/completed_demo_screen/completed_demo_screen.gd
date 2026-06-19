@@ -17,6 +17,7 @@ func show_screen() -> void:
 	visible = true
 	$BackgroundBlur.show_blur()
 	%AnimationPlayer.play("demo_completed")
+	$BGM.play()
 
 func resume_demo() -> void:
 	visible = false

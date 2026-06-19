@@ -6,9 +6,12 @@ extends RigidBody3D
 ## Simple acorn with no logic. The script only gives it a specific type so it can
 ## be detected by other scripts like the player.
 
+signal just_touched_floor()
+
 @onready var raycast: RayCast3D = $RayCast3D
 @onready var _original_parent: Node = get_parent()
 var _is_on_platform: bool = false
+var _is_on_floor: bool = false
 
 var _running_tweens: Array[Tween] = []
 
@@ -29,10 +32,20 @@ func animate_acorn_disappearance() -> Tween:
 func _delete_when_safe() -> void:
 	queue_free()
 
+func _is_moving_platform(collider: Object) -> bool:
+	return collider is Node3D and (collider as Node3D).is_in_group("moving_platform")
+
 func _physics_process(_delta: float) -> void:
-	if not _is_on_platform and raycast.is_colliding():
+	if raycast.is_colliding():
+		if not _is_on_floor:
+			_is_on_floor = true
+			just_touched_floor.emit()
+
 		var collider := raycast.get_collider()
-		if collider is Node3D and (collider as Node3D).is_in_group("moving_platform"):
+		if not _is_on_platform and _is_moving_platform(collider):
 			self.reparent(collider)
-	elif _is_on_platform and not raycast.is_colliding():
+	elif _is_on_platform:
+		# just exitted a moving platform
 		self.reparent(_original_parent)
+	else:
+		_is_on_floor = false

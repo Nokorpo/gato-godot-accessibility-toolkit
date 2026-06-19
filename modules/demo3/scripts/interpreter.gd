@@ -12,10 +12,11 @@ extends Node
 @export var dialogue_button: Button
 @export var animation_player: AnimationPlayer
 @export var completed_demo: CanvasLayer
+@export var bgm: AudioStreamPlayer
+@export var accept_audio: AudioStreamPlayer
 
 @onready var interpreter := InstructionInterpreter.new(self)
 @onready var battle_menu: Control = %BattleMenu
-@onready var accept_audio: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 var _sequence: Sequence:
 	set(value):

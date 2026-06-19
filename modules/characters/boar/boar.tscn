@@ -9,6 +9,11 @@
 [ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="6_d5hix"]
 [ext_resource type="Texture2D" uid="uid://b1d0cvmyi08cb" path="res://modules/demo1/map/sprites/heart.png" id="7_chhcr"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="9_dbq5w"]
+[ext_resource type="AudioStream" uid="uid://pc3k73bqhxfe" path="res://third_party/freesound_community-crunchy-bite-95979_arranged.ogg" id="10_08g3y"]
+[ext_resource type="AudioStream" uid="uid://c410wulfbkpqu" path="res://third_party/freesound_community-075996_pig-86576_split1.ogg" id="11_ct26h"]
+[ext_resource type="AudioStream" uid="uid://b0ub8hqic8sxe" path="res://third_party/freesound_community-085283_pig-86584.mp3" id="11_ox46n"]
+[ext_resource type="AudioStream" uid="uid://bp3mw6jd5vc2l" path="res://third_party/freesound_community-075996_pig-86576_split2.ogg" id="12_1qsat"]
+[ext_resource type="AudioStream" uid="uid://daarxykm135yy" path="res://third_party/freesound_community-075996_pig-86576_split3.ogg" id="13_tjkul"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5hix"]
 radius = 0.243
@@ -54,6 +59,18 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_ox46n")
 size = Vector2(0.2, 0.2)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ox46n"]
+random_pitch = 1.2599211
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("10_08g3y")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m1b2a"]
+streams_count = 3
+stream_0/stream = ExtResource("11_ct26h")
+stream_1/stream = ExtResource("12_1qsat")
+stream_2/stream = ExtResource("13_tjkul")
+
 [node name="Boar" type="CharacterBody3D" unique_id=922734642 groups=["heavy_weight"]]
 script = ExtResource("1_piglh")
 
@@ -66,14 +83,17 @@ script = ExtResource("1_2jkah")
 mesh = NodePath("../../Boar")
 raycast = NodePath("../../RayCast3D")
 
-[node name="FollowingAcornState" type="Node" parent="StateMachine" unique_id=1059703736 node_paths=PackedStringArray("mesh", "has_ground_ahead_raycasts")]
+[node name="FollowingAcornState" type="Node" parent="StateMachine" unique_id=1059703736 node_paths=PackedStringArray("mesh", "has_ground_ahead_raycasts", "acorn_found_sound")]
 script = ExtResource("2_q5ai3")
 mesh = NodePath("../../Boar")
 has_ground_ahead_raycasts = [NodePath("../../HasGroundAhead"), NodePath("../../HasGroundAhead2"), NodePath("../../HasGroundAhead3")]
+acorn_found_sound = NodePath("../../SFX/AcornFoundSound")
 
-[node name="EatingState" type="Node" parent="StateMachine" unique_id=1573134787 node_paths=PackedStringArray("mesh")]
+[node name="EatingState" type="Node" parent="StateMachine" unique_id=1573134787 node_paths=PackedStringArray("mesh", "eating_sound", "finished_eating_sound")]
 script = ExtResource("3_puyul")
 mesh = NodePath("../../Boar")
+eating_sound = NodePath("../../SFX/EatingSound")
+finished_eating_sound = NodePath("../../SFX/FinishedEatingSound")
 
 [node name="SimulationTicker" type="Timer" parent="StateMachine" unique_id=709805935]
 wait_time = 3.0
@@ -130,5 +150,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.9882507)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40498018, 0)
 size = Vector3(0.75, 0.8886719, 0.75)
 texture_albedo = ExtResource("9_dbq5w")
+
+[node name="SFX" type="Node3D" parent="." unique_id=661752879]
+
+[node name="EatingSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=1750098170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30243957)
+stream = SubResource("AudioStreamRandomizer_ox46n")
+unit_size = 5.0
+pitch_scale = 1.35
+
+[node name="AcornFoundSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=1183749580]
+stream = SubResource("AudioStreamRandomizer_m1b2a")
+unit_size = 5.0
+pitch_scale = 1.1
+
+[node name="FinishedEatingSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=469951227]
+stream = ExtResource("11_ox46n")
+unit_size = 5.0
+pitch_scale = 1.35
 
 [connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

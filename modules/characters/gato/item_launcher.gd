@@ -9,6 +9,7 @@ const GRAVITY := 9.8
 @export var height_at_peak: float = 2
 @export var time_to_land: float = 1
 @export var item_detection: Node3D
+@export var item_launch_sound: AudioStreamPlayer
 
 @onready var landing_spot_detector: Area3D = $ItemLandingSpotDetector
 
@@ -19,6 +20,8 @@ func _physics_process(_delta: float) -> void:
 func _launch_item() -> void:
 	var item: Node3D = item_detection.pop_item()
 	if item:
+		item_launch_sound.play()
+
 		var acorn: RigidBody3D = item
 		acorn.global_transform = global_transform
 		var landing_spot = _get_item_landing_spots()

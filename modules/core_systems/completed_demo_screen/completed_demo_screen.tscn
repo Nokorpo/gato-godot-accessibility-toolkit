@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="3_w1asq"]
 [ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="4_0qbok"]
 [ext_resource type="PackedScene" uid="uid://b3arsyyy6i00q" path="res://modules/core_systems/ui/quit_confirmation/quit_confirmation.tscn" id="5_mhl6o"]
+[ext_resource type="AudioStream" uid="uid://cnlb6e7ojp3b0" path="res://third_party/ebunny-winner-loop-370951.mp3" id="8_2rc7r"]
 
 [sub_resource type="Curve" id="Curve_121e6"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.55, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -260,6 +261,10 @@ libraries/ = SubResource("AnimationLibrary_2rc7r")
 unique_name_in_owner = true
 layer = 5
 visible = false
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=787622083]
+stream = ExtResource("8_2rc7r")
+volume_db = -12.0
 
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer" to="." method="resume_demo"]
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/RowNavigationContainer/Resume" to="." method="resume_demo"]

@@ -90,4 +90,5 @@ class EndInstruction extends Instruction:
 		_node.battle_menu.hide()
 		_node.narrator.hide()
 		_node.completed_demo.show_screen()
+		_node.bgm.stop()
 		return Result.STOP

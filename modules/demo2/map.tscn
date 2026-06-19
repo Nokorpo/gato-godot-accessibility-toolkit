@@ -46,6 +46,7 @@
 [ext_resource type="AudioStream" uid="uid://cfk8dwpnnoyvx" path="res://third_party/cartoon-music-game-sfx-rain-amp-distant-thunder-543879_looped.ogg" id="45_imhxh"]
 [ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="45_tsi04"]
 [ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="46_tsi04"]
+[ext_resource type="AudioStream" uid="uid://cjud64sdnm7d" path="res://third_party/ebunny-celtic-morning-loop-366817.mp3" id="47_683d8"]
 
 [sub_resource type="Gradient" id="Gradient_t68yl"]
 offsets = PackedFloat32Array(0, 0.155172, 0.853448, 1)
@@ -868,7 +869,7 @@ texture = ExtResource("43_er80s")
 
 [node name="SFX" type="Node3D" parent="." unique_id=1480272321]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX" unique_id=431035281]
+[node name="RainSFX" type="AudioStreamPlayer" parent="SFX" unique_id=431035281]
 stream = ExtResource("45_imhxh")
 volume_db = -4.0
 autoplay = true
@@ -923,6 +924,11 @@ volume_db = -10.0
 stream = SubResource("AudioStreamRandomizer_lyyeo")
 volume_db = -20.0
 pitch_scale = 1.5
+
+[node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=805747593]
+stream = ExtResource("47_683d8")
+volume_db = -14.0
+autoplay = true
 
 [connection signal="hud_position_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_hud"]
 [connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]

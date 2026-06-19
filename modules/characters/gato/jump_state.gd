@@ -6,6 +6,10 @@ class_name GatoJumpState
 
 @export var mesh: GatoMesh
 @export var max_jumps: int = 2
+@export_category("Sounds")
+@export var jump_sound: AudioStreamPlayer
+@export var light_landing_sfx: AudioStreamPlayer
+@export var hard_landing_sfx: AudioStreamPlayer
 
 var remaining_jumps: int = max_jumps
 
@@ -18,6 +22,7 @@ func _on_enter_state() -> void:
 	if not DebugOptions.enable_infinite_jumps:
 		remaining_jumps -= 1
 	node.jump()
+	jump_sound.play()
 	mesh.play_animation(GatoMesh.Animations.JUMP)
 
 # Called when the state machine changes from this state to another one.
@@ -46,3 +51,8 @@ func _physics_process(_delta: float) -> void:
 				state_machine.change_state(GatoWalkState)
 			else:
 				state_machine.change_state(GatoIdleState)
+			if node.previous_y_velocity <= -5.0:
+				hard_landing_sfx.play()
+				light_landing_sfx.play()
+			else:
+				light_landing_sfx.play()

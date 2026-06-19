@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://btjdp1u0veu8x" path="res://modules/demo1/map/sprites/dust.png" id="9_d7yls"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="10_fcelm"]
 [ext_resource type="AudioStream" uid="uid://gfvyluic1cyp" path="res://third_party/dragon-studio-water-splash-effect-443133_cropped.ogg" id="11_t654d"]
+[ext_resource type="AudioStream" uid="uid://2ypcsfklt1xd" path="res://third_party/freesound_community-cartoon-jump-6462_clipped.ogg" id="12_q2twd"]
+[ext_resource type="AudioStream" uid="uid://bkmefvpne8v41" path="res://third_party/freesound_community-080998_bullet-hit-39870_clipped.ogg" id="13_t3afo"]
+[ext_resource type="AudioStream" uid="uid://c8upl7mwufwa6" path="res://third_party/freesound_community-landing-on-grass-40650_clipped.ogg" id="14_sl7ab"]
+[ext_resource type="AudioStream" uid="uid://b27736odmrhhi" path="res://third_party/dragon-studio-simple-whoosh-382724_clipped.ogg" id="15_lohdw"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fyq4e"]
 points = PackedVector3Array(-0.5, -1.2, 0, 0.5, -1.2, 0, 0.5, 1, 0, -0.5, 1, 0, -3, 1, 5, 3, 1, 5, 3, -1.2, 5, -3, -1.2, 5)
@@ -104,11 +108,19 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_d7yls")
 size = Vector2(0.5, 0.5)
 
-[node name="Gato" type="CharacterBody3D" unique_id=1969310140 groups=["heavy_weight"]]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t3afo"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("12_q2twd")
+
+[node name="Gato" type="CharacterBody3D" unique_id=1969310140 node_paths=PackedStringArray("splash_sfx", "light_landing_sfx", "hard_landing_sfx") groups=["heavy_weight"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_5kfaa")
 jump_force = 3.5
+splash_sfx = NodePath("SFX/SplashSound")
+light_landing_sfx = NodePath("SFX/LightLandingSound")
+hard_landing_sfx = NodePath("SFX/HardLandingSound")
 
 [node name="RotationPivot" type="Node3D" parent="." unique_id=1970795476]
 
@@ -116,10 +128,11 @@ jump_force = 3.5
 
 [node name="ItemDetectionArea" parent="RotationPivot" unique_id=1963362453 instance=ExtResource("3_obe3c")]
 
-[node name="ItemLauncher" type="Node3D" parent="RotationPivot" unique_id=1485288636 node_paths=PackedStringArray("item_detection")]
+[node name="ItemLauncher" type="Node3D" parent="RotationPivot" unique_id=1485288636 node_paths=PackedStringArray("item_detection", "item_launch_sound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.738809, 0.463744)
 script = ExtResource("4_fyq4e")
 item_detection = NodePath("../ItemDetectionArea")
+item_launch_sound = NodePath("../../SFX/LaunchItemSound")
 
 [node name="ItemLandingSpotDetector" type="Area3D" parent="RotationPivot/ItemLauncher" unique_id=1912211962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
@@ -157,9 +170,12 @@ script = ExtResource("4_pbfhj")
 mesh = NodePath("../../RotationPivot/Mesh")
 walk_partricles = NodePath("../../RotationPivot/WalkDust")
 
-[node name="JumpState" type="Node" parent="StateMachine" unique_id=803980522 node_paths=PackedStringArray("mesh")]
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=803980522 node_paths=PackedStringArray("mesh", "jump_sound", "light_landing_sfx", "hard_landing_sfx")]
 script = ExtResource("6_ve5e5")
 mesh = NodePath("../../RotationPivot/Mesh")
+jump_sound = NodePath("../../SFX/JumpSound")
+light_landing_sfx = NodePath("../../SFX/LightLandingSound")
+hard_landing_sfx = NodePath("../../SFX/HardLandingSound")
 
 [node name="LandingDust" type="GPUParticles3D" parent="." unique_id=308969818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239751, 0)
@@ -182,9 +198,26 @@ distance_fade_enabled = true
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1050152487]
 
-[node name="SplashSFX" type="AudioStreamPlayer" parent="." unique_id=884361689]
+[node name="SFX" type="Node3D" parent="." unique_id=835571843]
+
+[node name="SplashSound" type="AudioStreamPlayer" parent="SFX" unique_id=884361689]
 process_mode = 3
 stream = ExtResource("11_t654d")
 volume_db = -4.0
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="SFX" unique_id=40531186]
+stream = SubResource("AudioStreamRandomizer_t3afo")
+
+[node name="LightLandingSound" type="AudioStreamPlayer" parent="SFX" unique_id=838463790]
+stream = ExtResource("13_t3afo")
+volume_db = -8.0
+
+[node name="HardLandingSound" type="AudioStreamPlayer" parent="SFX" unique_id=826388264]
+stream = ExtResource("14_sl7ab")
+volume_db = -6.0
+
+[node name="LaunchItemSound" type="AudioStreamPlayer" parent="SFX" unique_id=1037342712]
+stream = ExtResource("15_lohdw")
+volume_db = -8.0
 
 [connection signal="fall_from_height" from="." to="LandingDust" method="set_emitting" binds= [true]]

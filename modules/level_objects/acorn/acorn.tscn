@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://i2np7666k2dl" path="res://modules/level_objects/acorn/acorn.gd" id="1_0jmtj"]
 [ext_resource type="PackedScene" uid="uid://bswf3xbl752" path="res://modules/level_objects/acorn/acorn.glb" id="2_afr2q"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="3_a4p7a"]
+[ext_resource type="AudioStream" uid="uid://bkmefvpne8v41" path="res://third_party/freesound_community-080998_bullet-hit-39870_clipped.ogg" id="4_bxtr8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0jmtj"]
 rough = true
@@ -29,3 +30,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.194531, 0)
 size = Vector3(0.2, 10, 0.2)
 texture_albedo = ExtResource("3_a4p7a")
 lower_fade = 0.008
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=209957932]
+stream = ExtResource("4_bxtr8")
+volume_db = -12.0
+unit_size = 5.0
+max_distance = 10.0
+
+[connection signal="just_touched_floor" from="." to="AudioStreamPlayer3D" method="play"]

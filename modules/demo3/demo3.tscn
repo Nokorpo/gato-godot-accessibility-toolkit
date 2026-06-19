@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="15_tyyiy"]
 [ext_resource type="PackedScene" uid="uid://4el58wwwkssf" path="res://modules/core_systems/game_menu/tts_submenu.tscn" id="16_0kdck"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="19_h2asr"]
+[ext_resource type="AudioStream" uid="uid://b84dmyguq06cv" path="res://third_party/ebunny-celtic-wild-loop-366792.mp3" id="20_24xyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
 atlas = ExtResource("6_0cgi2")
@@ -1097,7 +1098,7 @@ grow_vertical = 2
 theme = ExtResource("1_2de5g")
 script = ExtResource("2_tyyiy")
 
-[node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "attack_button", "dialogue_button", "animation_player", "completed_demo")]
+[node name="Interpreter" type="Node" parent="." unique_id=1133095987 node_paths=PackedStringArray("narrator", "gato", "zeta", "attack_button", "dialogue_button", "animation_player", "completed_demo", "bgm", "accept_audio")]
 script = ExtResource("2_54xbp")
 initial_sequence = ExtResource("4_tyyiy")
 narrator = NodePath("../MarginContainer/BattleNarrator/MarginContainer/PanelContainer")
@@ -1107,6 +1108,8 @@ attack_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelCon
 dialogue_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogButton")
 animation_player = NodePath("../AnimationPlayer")
 completed_demo = NodePath("../CompletedDemoScreen")
+bgm = NodePath("../BGM")
+accept_audio = NodePath("../PopSound")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]
 layout_mode = 1
@@ -1345,8 +1348,13 @@ visible = false
 process_mode = 3
 visible = false
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=421337986]
+[node name="PopSound" type="AudioStreamPlayer" parent="." unique_id=421337986]
 stream = ExtResource("19_h2asr")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=520474886]
+stream = ExtResource("20_24xyy")
+volume_db = -14.0
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" method="grab_focus"]

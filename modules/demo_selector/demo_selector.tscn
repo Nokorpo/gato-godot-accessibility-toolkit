@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://doxub3jvr747g" path="res://modules/demo_selector/assets/demo_list.tres" id="2_xqaix"]
 [ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="5_827ex"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="7_56klt"]
+[ext_resource type="AudioStream" uid="uid://bqegiuqhui6o1" path="res://third_party/ebunny-fable-loop-372218.mp3" id="8_072ts"]
 
 [sub_resource type="Gradient" id="Gradient_xqaix"]
 colors = PackedColorArray(0.09019608, 0.023529412, 0.25490198, 1, 0.13694337, 0.021770453, 0.19578174, 1)
@@ -24,6 +25,15 @@ shader_parameter/repeat_x = 2.0000000475
 shader_parameter/repeat_y = 2.0000000475
 shader_parameter/row_offset = 0.800000038
 shader_parameter/texture_to_scroll = ExtResource("1_1ehge")
+
+[sub_resource type="GDScript" id="GDScript_072ts"]
+script/source = "extends AudioStreamPlayer
+
+func _init() -> void:
+	var original_volume: float = volume_db
+	volume_db = -40
+	create_tween().tween_property(self, \"volume_db\", original_volume, .75)
+"
 
 [node name="DemoSelector" type="Control" unique_id=911296128]
 layout_mode = 3
@@ -72,7 +82,7 @@ horizontal_alignment = 1
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1534869132]
 layout_mode = 2
 
-[node name="DemoContainer" type="GridContainer" parent="VBoxContainer" unique_id=1680606502]
+[node name="DemoContainer" type="GridContainer" parent="VBoxContainer" unique_id=1680606502 node_paths=PackedStringArray("accept_sound")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -81,6 +91,7 @@ theme_override_constants/v_separation = 50
 columns = 3
 script = ExtResource("1_xsipc")
 demo_list_resource = ExtResource("2_xqaix")
+accept_sound = NodePath("../../AcceptSound")
 
 [node name="Footer" type="Label" parent="VBoxContainer" unique_id=954230710]
 layout_mode = 2
@@ -89,5 +100,11 @@ theme_override_font_sizes/font_size = 12
 text = "Nokorpo 2025"
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1912630576]
+[node name="AcceptSound" type="AudioStreamPlayer" parent="." unique_id=1912630576]
 stream = ExtResource("7_56klt")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=199212879]
+stream = ExtResource("8_072ts")
+volume_db = -14.0
+autoplay = true
+script = SubResource("GDScript_072ts")

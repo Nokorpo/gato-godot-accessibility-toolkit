@@ -7,7 +7,7 @@ extends GridContainer
 var demo_preview: PackedScene = load("res://modules/demo_selector/demo_preview.tscn")
 
 @onready var demo_selector: Node = $"../.."
-@onready var accept_sound: AudioStreamPlayer = $"../../AudioStreamPlayer"
+@export var accept_sound: AudioStreamPlayer
 
 func _ready() -> void:
 	if not FeatureFlags.get_flag("show_demo_2"):

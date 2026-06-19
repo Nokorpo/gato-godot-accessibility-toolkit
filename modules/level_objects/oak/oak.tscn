@@ -2,12 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dodp0ku0lw76g" path="res://modules/level_objects/oak/oak.gd" id="1_0g256"]
 [ext_resource type="PackedScene" uid="uid://cjyapjiy2cyjv" path="res://modules/demo1/map/props/oak.gltf" id="2_0g256"]
+[ext_resource type="AudioStream" uid="uid://dunpq8ray0rkx" path="res://third_party/freesound_community-falling-whistle-swish-2-32477_shortened.ogg" id="3_nlbur"]
+[ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="4_mokar"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t8r8f"]
 height = 3.06145
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0g256"]
 radius = 3.22852
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_404g2"]
+random_pitch = 1.4142135
+random_volume_offset_db = 4.0
+streams_count = 1
+stream_0/stream = ExtResource("4_mokar")
 
 [node name="Oak" type="Node3D" unique_id=2101331710]
 script = ExtResource("1_0g256")
@@ -41,5 +49,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.305741, 2, -1.197)
 [node name="SpawnerCooldown" type="Timer" parent="." unique_id=499317293]
 wait_time = 3.0
 one_shot = true
+
+[node name="AcornsFallingSound" type="AudioStreamPlayer" parent="." unique_id=1625250380]
+stream = ExtResource("3_nlbur")
+volume_db = -16.0
+
+[node name="LeavesRustleSound" type="AudioStreamPlayer3D" parent="." unique_id=908980507]
+stream = SubResource("AudioStreamRandomizer_404g2")
+volume_db = -10.0
 
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_body_entered"]

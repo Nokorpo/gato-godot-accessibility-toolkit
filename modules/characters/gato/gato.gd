@@ -14,12 +14,16 @@ signal fall_into_water
 @export var rotation_speed: float = 10.0
 @export var height_to_respawn: float = -3.0
 
+@export_category("Sounds")
+@export var splash_sfx: AudioStreamPlayer
+@export var light_landing_sfx: AudioStreamPlayer
+@export var hard_landing_sfx: AudioStreamPlayer
+
 @onready var pivot: Node3D = $RotationPivot
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 @onready var mesh: GatoMesh = $RotationPivot/Mesh
 @onready var item_detection: Node3D = $RotationPivot/ItemDetectionArea
 @onready var items: Array = item_detection.items
-@onready var splash_sfx: AudioStreamPlayer = $SplashSFX
 
 var previous_y_velocity: float = 0.0
 ## When the character is respawning, we wait a short amount of time before moving it to the respawn point.

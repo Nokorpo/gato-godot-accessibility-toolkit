@@ -8,6 +8,8 @@ static var acorn_scene: PackedScene = load("res://modules/level_objects/acorn/ac
 @onready var spawners: Node3D = $AcornSpawners
 @onready var spawn_cooldown: Timer = $SpawnerCooldown
 @onready var spawn_cooldown_time: float = spawn_cooldown.wait_time
+@onready var acorns_falling_sound: AudioStreamPlayer = $AcornsFallingSound
+@onready var leaves_rustle_sound: AudioStreamPlayer3D = $LeavesRustleSound
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Gato and spawn_cooldown.is_stopped():
@@ -21,3 +23,5 @@ func spawn_acorns() -> void:
 		var acorn: Node3D = acorn_scene.instantiate()
 		add_child(acorn)
 		acorn.global_position = point.global_position
+	acorns_falling_sound.play()
+	leaves_rustle_sound.play()

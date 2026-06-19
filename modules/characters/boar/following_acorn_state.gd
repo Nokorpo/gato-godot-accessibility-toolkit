@@ -10,6 +10,7 @@ const BOAR_FOLLOWING_ACORN_SPEED: float = .5
 
 @export var mesh: BoarMesh
 @export var has_ground_ahead_raycasts: Array[RayCast3D]
+@export var acorn_found_sound: AudioStreamPlayer3D
 
 var boar: CharacterBody3D
 var is_following: bool = false
@@ -30,6 +31,7 @@ func _on_enter_state() -> void:
 	for raycast: RayCast3D in has_ground_ahead_raycasts:
 		raycast.process_mode = Node.PROCESS_MODE_INHERIT
 
+	acorn_found_sound.play()
 	await detection_animation().finished
 	is_following = true
 

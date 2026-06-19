@@ -71,6 +71,7 @@
 [ext_resource type="Script" uid="uid://d1o8hyi8eobjd" path="res://modules/demo5/dialogues/triggers/launch_dialogue_on_third_fed_boar.gd" id="64_ps754"]
 [ext_resource type="Script" uid="uid://04e2ma8qdgop" path="res://modules/demo5/dialogues/triggers/demo_completion_dialogue.gd" id="65_riqon"]
 [ext_resource type="AudioStream" uid="uid://ba8bygjneg25t" path="res://third_party/dragon-studio-button-press-3-386171_clipped.ogg" id="71_ptp6h"]
+[ext_resource type="AudioStream" uid="uid://d1ghg6brg5rcs" path="res://third_party/ebunny-simple-magic-loop-368855.mp3" id="72_sl6ik"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqon"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -1143,6 +1144,11 @@ mesh = SubResource("PlaneMesh_ku402")
 [node name="FilterChangeSFX" type="AudioStreamPlayer" parent="SFX" unique_id=889550961]
 stream = ExtResource("71_ptp6h")
 volume_db = -6.0
+
+[node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=643762828]
+stream = ExtResource("72_sl6ik")
+volume_db = -14.0
+autoplay = true
 
 [connection signal="filter_changed" from="FiltersMenu" to="SFX/FilterChangeSFX" method="play"]
 [connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]

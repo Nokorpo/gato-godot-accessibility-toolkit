@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="GatoTTSLanguageVoices" format=3 uid="uid://b1mfp7u6anpl2"]
+
+[ext_resource type="Script" uid="uid://cjs3cpm3sffmh" path="res://addons/gato_tts/ui/resources/curated_voices.gd" id="1_cetpt"]
+[ext_resource type="Script" uid="uid://d4h8e4xoyq0oh" path="res://addons/gato_tts/ui/resources/voice_id.gd" id="2_3iuuu"]
+[ext_resource type="Script" uid="uid://dx81sjvmmhspn" path="res://addons/gato_tts/ui/resources/language_voices.gd" id="3_peytc"]
+
+[sub_resource type="Resource" id="Resource_cetpt"]
+script = ExtResource("2_3iuuu")
+name = &"España"
+id = &"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices\\Tokens\\TTS_MS_ES-ES_HELENA_11.0"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_36mgg"]
+script = ExtResource("1_cetpt")
+voice_id_list = Array[ExtResource("2_3iuuu")]([SubResource("Resource_cetpt")])
+metadata/_custom_type_script = "uid://cjs3cpm3sffmh"
+
+[sub_resource type="Resource" id="Resource_3iuuu"]
+script = ExtResource("2_3iuuu")
+name = &"US"
+id = &"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices\\Tokens\\TTS_MS_EN-US_ZIRA_11.0"
+metadata/_custom_type_script = "uid://d4h8e4xoyq0oh"
+
+[sub_resource type="Resource" id="Resource_6os8p"]
+script = ExtResource("1_cetpt")
+voice_id_list = Array[ExtResource("2_3iuuu")]([SubResource("Resource_3iuuu")])
+metadata/_custom_type_script = "uid://cjs3cpm3sffmh"
+
+[resource]
+script = ExtResource("3_peytc")
+curated_voices = Dictionary[int, ExtResource("1_cetpt")]({
+0: SubResource("Resource_36mgg"),
+1: SubResource("Resource_6os8p")
+})
+metadata/_custom_type_script = "uid://dx81sjvmmhspn"

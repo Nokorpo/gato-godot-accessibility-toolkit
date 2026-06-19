@@ -29,7 +29,7 @@ var rate: float = 1.0
 ## List of curated voices for each platform.
 var _os_to_curated_voice_map: Dictionary[String, GatoTTSLanguageVoices] = {
 	# Missing platforms: "Android", "iOS", "Web"
-	"Windows": null,
+	"Windows": load("uid://b1mfp7u6anpl2"),
 	"MacOS": null,
 	"Linux": load("uid://dvt5eaosfce1y"),
 }

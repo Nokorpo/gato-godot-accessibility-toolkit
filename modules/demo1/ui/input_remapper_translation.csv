@@ -1,0 +1,26 @@
+keys,en,es
+menu_title,CONTROL SETTINGS,AJUSTES CONTROLES
+section_title_control_scheme,CONTROL SCHEME,ESQUEMA DE CONTROL
+control_scheme_default,DEFAULT,POR DEFECTO
+control_scheme_right,RIGHT HAND,Mano Derecha
+control_scheme_left,LEFT HAND,Mano Izquierda
+reset_button,Reset Changes,Resetear Cambios
+movement,MOVEMENT,MOVIMIENTO
+keyboard,Keyboard,Teclado
+joystick_left,Left,Izquierdo
+joystick_right,Right,Derecho
+invert_direction,Invert direction,Invertir dirección
+move_up,move_up,Mover Arriba
+move_down,move_down,Mover Abajo
+move_left,move_left,Mover Izquierda
+move_right,move_right,Mover Derecha
+interaction,INTERACTIONS,INTERACCIONES
+jump,jump,Saltar
+launch_item,throw item,Lanzar Bellota
+press_key,Press a key…,Pulsa una tecla…
+save_changes,Save Changes,Guardar Cambios
+unsaved_changes,You have unsaved changes.\nDo you want to close the menu?,Tienes cambios sin guardar.\n¿Quieres cerrar el menú?
+unsaved_go_back,Go back to menu,Volver al menú
+unsaved_save_changes,Save changes and exit,Guardar cambios y cerrar
+unsaved_exit,Exit without saving,Salir sin guardar cambios
+error_same_input,Two or more actions have the same input configured,Dos o más acciones tienen el mismo control asignado

@@ -29,7 +29,7 @@ func update_ui() ->void :
 		%JoystickContainer.show()
 
 	else:
-		$Label.text = "Keyboard"
+		$Label.text = "keyboard"
 		get_parent().focus_neighbor_bottom = ^"../ActionContainer/UpRowNavigationContainer"
 		%ActionContainer.show()
 		%JoystickContainer.hide()

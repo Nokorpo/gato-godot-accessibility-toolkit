@@ -81,7 +81,7 @@ layout_mode = 2
 layout_mode = 2
 focus_mode = 0
 theme_type_variation = &"InputButton"
-text = "Reset changes"
+text = "save_changes"
 icon = ExtResource("5_8b17j")
 alignment = 0
 

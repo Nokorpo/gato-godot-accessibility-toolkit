@@ -30,6 +30,6 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="PanelContainer" unique_id=387890781]
 layout_mode = 2
 size_flags_vertical = 1
-text = "Press a key..."
+text = "press_key"
 horizontal_alignment = 1
 vertical_alignment = 1

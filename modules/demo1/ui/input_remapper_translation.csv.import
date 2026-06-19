@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ecvu0emtw8bj"
+
+[deps]
+
+files=["res://modules/demo1/ui/input_remapper_translation.en.translation", "res://modules/demo1/ui/input_remapper_translation.es.translation"]
+
+source_file="res://modules/demo1/ui/input_remapper_translation.csv"
+dest_files=["res://modules/demo1/ui/input_remapper_translation.en.translation", "res://modules/demo1/ui/input_remapper_translation.es.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

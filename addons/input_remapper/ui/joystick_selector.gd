@@ -31,6 +31,6 @@ func _on_button_pressed() -> void:
 
 func set_stick_text(use_right: bool) -> void:
 	if use_right:
-		$Label.text = "Right"
+		$Label.text = "joystick_right"
 	else:
-		$Label.text = "Left"
+		$Label.text = "joystick_left"

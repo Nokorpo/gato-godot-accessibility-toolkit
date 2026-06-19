@@ -61,7 +61,7 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="TittlePanelContainer/PanelContainer/HBoxContainer" unique_id=150548940]
 layout_mode = 2
 theme_type_variation = &"MenuTitle"
-text = "control settings"
+text = "menu_title"
 horizontal_alignment = 1
 uppercase = true
 
@@ -106,7 +106,7 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 1
 theme_override_constants/separation = 30
-title = "control scheme"
+title = "section_title_control_scheme"
 
 [node name="ControlSchemeSelector" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory" unique_id=513719737 instance=ExtResource("1_yg0ao")]
 layout_mode = 2
@@ -133,7 +133,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 1
 theme_override_constants/separation = 30
-title = "interactions"
+title = "interaction"
 
 [node name="ActionContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction" unique_id=2144630459 node_paths=PackedStringArray("input_remapper_ui", "press_key_dialog")]
 editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
@@ -148,7 +148,7 @@ focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
 
 [node name="InputAction" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer" unique_id=514890052 instance=ExtResource("9_cntqx")]
 layout_mode = 2
-label_text = "launch_item"
+label_text = "patata"
 button_text = "Z"
 
 [node name="RowNavigationContainer2" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" unique_id=145116018 instance=ExtResource("7_sty5u")]
@@ -162,7 +162,7 @@ button_text = "Space"
 
 [node name="SaveChangesButton" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=67432300]
 layout_mode = 2
-text = "Save changes"
+text = "save_changes"
 
 [node name="BackgroundBlur" parent="." unique_id=122701923 instance=ExtResource("10_8h5fo")]
 layout_mode = 1

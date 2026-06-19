@@ -46,7 +46,7 @@ flip_h = true
 [node name="Label" type="Label" parent="UpRowNavigationContainer/JoystickToggle" unique_id=355206145]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Keyboard"
+text = "keyboard"
 horizontal_alignment = 1
 
 [node name="Button2" type="TextureButton" parent="UpRowNavigationContainer/JoystickToggle" unique_id=1151295962]
@@ -139,7 +139,7 @@ text = "<"
 [node name="Label" type="Label" parent="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" unique_id=1570631401]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Left"
+text = "joystick_left"
 horizontal_alignment = 1
 
 [node name="Button2" type="Button" parent="JoystickContainer/UpRowNavigationContainer2/JoystickSelector" unique_id=1879522485]
@@ -159,7 +159,7 @@ script = ExtResource("5_o01t1")
 [node name="Label" type="Label" parent="JoystickContainer/UpRowNavigationContainer3/InvertDirection" unique_id=1926303264]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Invert direction"
+text = "invert_direction"
 
 [node name="Button" type="CheckBox" parent="JoystickContainer/UpRowNavigationContainer3/InvertDirection" unique_id=526978330]
 layout_mode = 2

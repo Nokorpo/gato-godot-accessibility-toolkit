@@ -143,6 +143,11 @@ change_filter_left={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://modules/demo1/ui/input_remapper_translation.en.translation", "res://modules/demo1/ui/input_remapper_translation.es.translation")
+locale/fallback="es"
+
 [layer_names]
 
 3d_render/layer_1="Vision normal"

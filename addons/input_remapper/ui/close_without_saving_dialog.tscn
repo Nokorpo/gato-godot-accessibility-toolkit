@@ -37,8 +37,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_vertical = 3
-text = "You have unsaved changes.
-Do you want to close the menu?"
+text = "unsaved_changes"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -49,7 +48,7 @@ focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
 
 [node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer/RowNavigationContainer" unique_id=200972874]
 layout_mode = 2
-text = "Go back to menu"
+text = "unsaved_go_back"
 
 [node name="RowNavigationContainer2" parent="PanelContainer/VBoxContainer" unique_id=408430158 instance=ExtResource("2_e342f")]
 layout_mode = 2
@@ -57,7 +56,7 @@ focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
 
 [node name="SaveAndExitButton" type="Button" parent="PanelContainer/VBoxContainer/RowNavigationContainer2" unique_id=1622973675]
 layout_mode = 2
-text = "Save changes and exit"
+text = "unsaved_save_changes"
 
 [node name="RowNavigationContainer3" parent="PanelContainer/VBoxContainer" unique_id=527345306 instance=ExtResource("2_e342f")]
 layout_mode = 2
@@ -65,7 +64,7 @@ focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
 
 [node name="ExitWithoutSavingButton" type="Button" parent="PanelContainer/VBoxContainer/RowNavigationContainer3" unique_id=1759807679]
 layout_mode = 2
-text = "Exit without saving"
+text = "unsaved_exit"
 
 [node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2141940438]
 stream = ExtResource("3_qhuyp")

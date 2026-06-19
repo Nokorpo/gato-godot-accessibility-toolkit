@@ -20,6 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://4el58wwwkssf" path="res://modules/core_systems/game_menu/tts_submenu.tscn" id="16_0kdck"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="19_h2asr"]
 [ext_resource type="AudioStream" uid="uid://b84dmyguq06cv" path="res://third_party/ebunny-celtic-wild-loop-366792.mp3" id="20_24xyy"]
+[ext_resource type="AudioStream" uid="uid://di2oecu52d6vx" path="res://third_party/dragon-studio-hard-heavy-impact-515256.mp3" id="21_ba37j"]
+[ext_resource type="AudioStream" uid="uid://d27cp27uwxip5" path="res://third_party/u_xjrmmgxfru-hit-tree-01-266310.mp3" id="21_hb7qm"]
+[ext_resource type="AudioStream" uid="uid://cox4qmpeysxo6" path="res://third_party/dragon-studio-christmas-bells-02-439604.mp3" id="22_a4hsd"]
+[ext_resource type="AudioStream" uid="uid://b27736odmrhhi" path="res://third_party/dragon-studio-simple-whoosh-382724_clipped.ogg" id="22_p0232"]
+[ext_resource type="AudioStream" uid="uid://b0ub8hqic8sxe" path="res://third_party/freesound_community-085283_pig-86584.mp3" id="25_ljlu1"]
+[ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="26_ljlu1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtpsl"]
 atlas = ExtResource("6_0cgi2")
@@ -515,6 +521,66 @@ tracks/16/keys = {
 "update": 0,
 "values": [Vector2(341, 737.99994)]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("SFX/BigHitSound:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SFX/SparklesSound:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SFX/GrassSound:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SFX/HitSound:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("SFX/MissSound:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_tyyiy"]
 resource_name = "boar_attack"
@@ -525,10 +591,10 @@ tracks/0/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Boar:positio
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.38, 0.499, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(600, 400), Vector2(429, 457), Vector2(1120.0001, 204.00003), Vector2(600, 400)]
+"values": [Vector2(600, 400), Vector2(429, 457), Vector2(1120.0001, 204.00003), Vector2(1120.0001, 204.00003), Vector2(1120.0001, 204.00003), Vector2(1120.0001, 204.00003), Vector2(600, 400)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -554,6 +620,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/BigHitSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.33333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_24xyy"]
 resource_name = "boar_convince"
@@ -576,6 +654,18 @@ tracks/1/path = NodePath("MarginContainer/AspectRatioContainer/Boar/Sparkles:emi
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/SparklesSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -620,6 +710,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(341, 737.99994), Vector2(446, 738)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/GrassSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_r1uns"]
@@ -685,6 +787,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/HitSound:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.11),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_u2qrs"]
 resource_name = "gato_fail_attack"
@@ -712,6 +826,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(7, 7), Vector2(4, 4), Vector2(10, 10), Vector2(7, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/MissSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.110000014),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_oss10"]
@@ -798,6 +924,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 6.283185307179586]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/MissSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.58),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_xitem"]
@@ -902,6 +1040,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/HitSound:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.100000024),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_2de5g"]
@@ -1039,6 +1189,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0, 0.0, -6.283185307179586]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/MissSound:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.42),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_6h7n0"]
 resource_name = "zeta_unhide"
@@ -1108,8 +1270,8 @@ attack_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelCon
 dialogue_button = NodePath("../MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogButton")
 animation_player = NodePath("../AnimationPlayer")
 completed_demo = NodePath("../CompletedDemoScreen")
-bgm = NodePath("../BGM")
-accept_audio = NodePath("../PopSound")
+bgm = NodePath("../SFX/BGM")
+accept_audio = NodePath("../SFX/PopSound")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]
 layout_mode = 1
@@ -1348,13 +1510,36 @@ visible = false
 process_mode = 3
 visible = false
 
-[node name="PopSound" type="AudioStreamPlayer" parent="." unique_id=421337986]
+[node name="SFX" type="Node" parent="." unique_id=1409834074]
+
+[node name="PopSound" type="AudioStreamPlayer" parent="SFX" unique_id=421337986]
 stream = ExtResource("19_h2asr")
 
-[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=520474886]
+[node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=520474886]
 stream = ExtResource("20_24xyy")
 volume_db = -14.0
 autoplay = true
+
+[node name="HitSound" type="AudioStreamPlayer" parent="SFX" unique_id=2093086827]
+stream = ExtResource("21_hb7qm")
+
+[node name="BigHitSound" type="AudioStreamPlayer" parent="SFX" unique_id=40354162]
+stream = ExtResource("21_ba37j")
+volume_db = -20.0
+
+[node name="SparklesSound" type="AudioStreamPlayer" parent="SFX" unique_id=1886735387]
+stream = ExtResource("22_a4hsd")
+
+[node name="MissSound" type="AudioStreamPlayer" parent="SFX" unique_id=1690429425]
+stream = ExtResource("22_p0232")
+volume_db = -4.0
+
+[node name="BoarSound" type="AudioStreamPlayer" parent="SFX" unique_id=620595623]
+stream = ExtResource("25_ljlu1")
+volume_db = -2.0
+
+[node name="GrassSound" type="AudioStreamPlayer" parent="SFX" unique_id=930840664]
+stream = ExtResource("26_ljlu1")
 
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" method="grab_focus"]

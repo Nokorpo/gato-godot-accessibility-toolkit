@@ -48,6 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="46_c23nl"]
 [ext_resource type="AudioStream" uid="uid://d1ghg6brg5rcs" path="res://third_party/ebunny-simple-magic-loop-368855.mp3" id="47_kcps6"]
 [ext_resource type="AudioStream" uid="uid://bl6mgexlkdfy1" path="res://third_party/strachszydlo-morning-birdsong-ambience-544142_clipped.ogg" id="48_6ar30"]
+[ext_resource type="AudioStream" uid="uid://qmrbjtbx26ha" path="res://third_party/dragon-studio-ding-sfx-472366.mp3" id="49_uidwh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e26lp"]
 font_size = 48
@@ -1673,9 +1674,10 @@ debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 16.2716, -0.41976, -5.93962)
 mesh = SubResource("PlaneMesh_kg8y1")
 
-[node name="LevelCompletionCheck" type="Node" parent="." unique_id=732998872 node_paths=PackedStringArray("boar_list")]
+[node name="LevelCompletionCheck" type="Node" parent="." unique_id=732998872 node_paths=PackedStringArray("boar_list", "ding_sound")]
 script = ExtResource("37_1p31k")
 boar_list = NodePath("../Boars")
+ding_sound = NodePath("../SFX/DingSound")
 
 [node name="SFX" type="Node3D" parent="." unique_id=707240930]
 
@@ -1746,6 +1748,9 @@ stream = ExtResource("48_6ar30")
 unit_size = 5.0
 autoplay = true
 max_distance = 20.0
+
+[node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=1916695183]
+stream = ExtResource("49_uidwh")
 
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]

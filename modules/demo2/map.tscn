@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="45_tsi04"]
 [ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="46_tsi04"]
 [ext_resource type="AudioStream" uid="uid://cjud64sdnm7d" path="res://third_party/ebunny-celtic-morning-loop-366817.mp3" id="47_683d8"]
+[ext_resource type="AudioStream" uid="uid://qmrbjtbx26ha" path="res://third_party/dragon-studio-ding-sfx-472366.mp3" id="48_lyyeo"]
 
 [sub_resource type="Gradient" id="Gradient_t68yl"]
 offsets = PackedFloat32Array(0, 0.155172, 0.853448, 1)
@@ -819,9 +820,10 @@ debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 transform = Transform3D(80, 0, 0, 0, 2.779, 0, 0, 0, 80, 16.2716, -0.41976, -5.93962)
 mesh = SubResource("PlaneMesh_kg8y1")
 
-[node name="LevelCompletionCheck" type="Node" parent="." unique_id=732998872 node_paths=PackedStringArray("boar_list")]
+[node name="LevelCompletionCheck" type="Node" parent="." unique_id=732998872 node_paths=PackedStringArray("boar_list", "ding_sound")]
 script = ExtResource("43_tvvq4")
 boar_list = NodePath("../Boars")
+ding_sound = NodePath("../SFX/DingSound")
 
 [node name="MovingBoarPlatform" parent="." unique_id=318905234 instance=ExtResource("13_5n58l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.28717, 1.3919647, 9.477833)
@@ -929,6 +931,9 @@ pitch_scale = 1.5
 stream = ExtResource("47_683d8")
 volume_db = -14.0
 autoplay = true
+
+[node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=1972139443]
+stream = ExtResource("48_lyyeo")
 
 [connection signal="hud_position_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_hud"]
 [connection signal="hud_zoom_level_changed" from="GameMenu/HudCustomizationMenu" to="BoarEnclosureHUD" method="change_zoom"]

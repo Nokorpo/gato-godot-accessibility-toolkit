@@ -50,6 +50,7 @@
 [ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="48_pm1tf"]
 [ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="49_2f5ck"]
 [ext_resource type="AudioStream" uid="uid://d1ghg6brg5rcs" path="res://third_party/ebunny-simple-magic-loop-368855.mp3" id="50_i4c4x"]
+[ext_resource type="AudioStream" uid="uid://qmrbjtbx26ha" path="res://third_party/dragon-studio-ding-sfx-472366.mp3" id="51_x7q1j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijg73"]
 font_size = 48
@@ -1598,7 +1599,11 @@ stream = ExtResource("50_i4c4x")
 volume_db = -14.0
 autoplay = true
 
+[node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=456173787]
+stream = ExtResource("51_x7q1j")
+
 [connection signal="collected_goldacorn" from="GoldAcornManager" to="HUD" method="_update_label_gold_acorn_count"]
+[connection signal="collected_goldacorn" from="GoldAcornManager" to="SFX/DingSound" method="play" unbinds=1]
 [connection signal="level_finished" from="GoldAcornManager" to="CompletedDemoScreen" method="show_screen"]
 [connection signal="fall_into_water" from="Gato" to="CameraWithRotation" method="reset_rotation_when_respawning"]
 [connection signal="goldacorn_collected" from="Props/GoldAcorns/GoldAcorn" to="GoldAcornManager" method="_on_gold_acorn_goldacorn_collected"]

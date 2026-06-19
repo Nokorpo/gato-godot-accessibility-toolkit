@@ -8,6 +8,7 @@ signal level_finished
 signal update_hud_count
 
 @export var boar_list: Node3D
+@export var ding_sound: AudioStreamPlayer
 
 var total_boars: int
 var fed_boars: int = 0
@@ -23,6 +24,7 @@ func _ready() -> void:
 func _another_one_bites_the_corn() -> void:
 	fed_boars += 1
 	update_hud_count.emit()
+	ding_sound.play()
 	if fed_boars >= total_boars:
 		fed_all_boars.emit()
 		await DialogueSystem.dialogue_finished

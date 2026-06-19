@@ -72,6 +72,7 @@
 [ext_resource type="Script" uid="uid://04e2ma8qdgop" path="res://modules/demo5/dialogues/triggers/demo_completion_dialogue.gd" id="65_riqon"]
 [ext_resource type="AudioStream" uid="uid://ba8bygjneg25t" path="res://third_party/dragon-studio-button-press-3-386171_clipped.ogg" id="71_ptp6h"]
 [ext_resource type="AudioStream" uid="uid://d1ghg6brg5rcs" path="res://third_party/ebunny-simple-magic-loop-368855.mp3" id="72_sl6ik"]
+[ext_resource type="AudioStream" uid="uid://qmrbjtbx26ha" path="res://third_party/dragon-studio-ding-sfx-472366.mp3" id="73_8itej"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqon"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -671,9 +672,10 @@ label_settings = SubResource("LabelSettings_xeev5")
 process_mode = 3
 visible = false
 
-[node name="LevelCompletionCheck" type="Node" parent="." unique_id=1276413535 node_paths=PackedStringArray("boar_list")]
+[node name="LevelCompletionCheck" type="Node" parent="." unique_id=1276413535 node_paths=PackedStringArray("boar_list", "ding_sound")]
 script = ExtResource("54_xkoa7")
 boar_list = NodePath("../NormalBoars")
+ding_sound = NodePath("../SFX/DingSound")
 
 [node name="ThrowableItemPool" parent="." unique_id=872441548 instance=ExtResource("4_awgv7")]
 unique_name_in_owner = true
@@ -1149,6 +1151,9 @@ volume_db = -6.0
 stream = ExtResource("72_sl6ik")
 volume_db = -14.0
 autoplay = true
+
+[node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=1278221249]
+stream = ExtResource("73_8itej")
 
 [connection signal="filter_changed" from="FiltersMenu" to="SFX/FilterChangeSFX" method="play"]
 [connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]

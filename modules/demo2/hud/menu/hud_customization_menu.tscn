@@ -192,6 +192,7 @@ one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1778408420]
 stream = ExtResource("9_8nvky")
+bus = &"SFX"
 
 [connection signal="input" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer" to="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" method="_on_navigation_container_input"]
 [connection signal="hud_position_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/PositionNavigationContainer/HudPositionSelector" to="." method="_on_hud_position_changed"]

@@ -1533,6 +1533,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves2" type="AudioStreamPlayer3D" parent="SFX" unique_id=1397248131]
@@ -1543,6 +1544,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves3" type="AudioStreamPlayer3D" parent="SFX" unique_id=1490704808]
@@ -1553,6 +1555,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves4" type="AudioStreamPlayer3D" parent="SFX" unique_id=1275765033]
@@ -1563,6 +1566,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves5" type="AudioStreamPlayer3D" parent="SFX" unique_id=344456572]
@@ -1573,6 +1577,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves6" type="AudioStreamPlayer3D" parent="SFX" unique_id=352516784]
@@ -1583,24 +1588,30 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="TreeShakeSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1462398682]
 stream = SubResource("AudioStreamRandomizer_x7q1j")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="GrassSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1828632833]
 stream = SubResource("AudioStreamRandomizer_i7qr0")
 volume_db = -20.0
 pitch_scale = 1.5
+bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=1084686688]
 stream = ExtResource("50_i4c4x")
 volume_db = -14.0
 autoplay = true
+bus = &"Music"
 
 [node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=456173787]
 stream = ExtResource("51_x7q1j")
+volume_db = -8.0
+bus = &"SFX"
 
 [connection signal="collected_goldacorn" from="GoldAcornManager" to="HUD" method="_update_label_gold_acorn_count"]
 [connection signal="collected_goldacorn" from="GoldAcornManager" to="SFX/DingSound" method="play" unbinds=1]

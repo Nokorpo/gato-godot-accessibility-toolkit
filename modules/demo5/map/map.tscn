@@ -1200,35 +1200,42 @@ mesh = SubResource("PlaneMesh_ku402")
 [node name="FilterChangeSFX" type="AudioStreamPlayer" parent="SFX" unique_id=889550961]
 stream = ExtResource("71_ptp6h")
 volume_db = -6.0
+bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=643762828]
 stream = ExtResource("72_sl6ik")
 volume_db = -14.0
 autoplay = true
+bus = &"Music"
 
 [node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=1278221249]
 stream = ExtResource("73_8itej")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="BoarSelectedSound" type="AudioStreamPlayer" parent="SFX" unique_id=1033318730]
 stream = SubResource("AudioStreamRandomizer_kabh5")
 volume_db = -4.0
 pitch_scale = 1.1
+bus = &"SFX"
 script = SubResource("GDScript_aupo0")
 
 [node name="BoarEatingSound" type="AudioStreamPlayer" parent="SFX" unique_id=955285483]
 stream = SubResource("AudioStreamRandomizer_efubn")
 volume_db = -6.0
 pitch_scale = 1.35
+bus = &"SFX"
 script = SubResource("GDScript_kabh5")
 
 [node name="ThrowItemSound" type="AudioStreamPlayer" parent="SFX" unique_id=1088483792]
 stream = SubResource("AudioStreamRandomizer_ugsor")
 volume_db = -4.0
+bus = &"SFX"
 
 [node name="BoarWrongAcornSound" type="AudioStreamPlayer" parent="SFX" unique_id=1751052390]
 stream = SubResource("AudioStreamRandomizer_pkdfv")
 volume_db = -4.0
+bus = &"SFX"
 script = SubResource("GDScript_ugsor")
 
 [connection signal="filter_changed" from="FiltersMenu" to="SFX/FilterChangeSFX" method="play"]

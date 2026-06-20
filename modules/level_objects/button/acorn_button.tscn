@@ -99,6 +99,7 @@ libraries/ = SubResource("AnimationLibrary_lk2fu")
 
 [node name="ClickSound" type="AudioStreamPlayer3D" parent="." unique_id=1897209922]
 stream = ExtResource("3_5v165")
+bus = &"SFX"
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
 [connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_exited"]

@@ -19,22 +19,28 @@ var input_action: JoystickInputAction2D
 func _ready() -> void:
 	%JoystickSelector.joystick_container = self
 	%InvertDirection.joystick_container = self
-	%JoystickSelector.value_changed.connect(_set_use_right_joystick)
-	%InvertDirection.value_changed.connect(_set_invert)
+	%JoystickSelector.value_changed.connect(_on_joystick_selector_changed)
+	%InvertDirection.value_changed.connect(_on_invert_direction_changed)
 	input_action = JoystickInputAction2D.new()
+
+func _on_joystick_selector_changed(use_right_joystick: bool) -> void:
+	_set_use_right_joystick(use_right_joystick)
+	_accept_audio.play()
+
+func _on_invert_direction_changed(invert_joystick: bool) -> void:
+	_set_invert(invert_joystick)
+	_accept_audio.play()
 
 func _set_use_right_joystick(use_right_joystick: bool) -> void:
 	%JoystickSelector.set_stick_text(use_right_joystick)
 	%JoystickSelector.use_right_joystick = use_right_joystick
 	input_action.use_right_joystick = use_right_joystick
 	set_action()
-	_accept_audio.play()
 
 func _set_invert(invert_joystick: bool) -> void:
 	%InvertDirection.button_pressed = invert_joystick
 	input_action.invert_joystick = invert_joystick
 	set_action()
-	_accept_audio.play()
 
 func update_ui(_input_action: JoystickInputAction2D) -> void:
 	input_action = _input_action

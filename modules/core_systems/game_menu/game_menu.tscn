@@ -48,9 +48,10 @@ one_shot = true
 
 [node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=934992041]
 stream = ExtResource("5_umwhm")
+bus = &"SFX"
 
 [node name="CancelAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1896299367]
 stream = ExtResource("6_dfnms")
+bus = &"SFX"
 
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="quit_and_go_to_menu"]
-[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/QuitButton" to="AcceptAudioStreamPlayer" method="play"]

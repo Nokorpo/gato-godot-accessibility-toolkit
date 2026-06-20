@@ -163,6 +163,7 @@ grow_vertical = 1
 
 [node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=430075034]
 stream = ExtResource("8_2meej")
+bus = &"SFX"
 
 [connection signal="input" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer/LanguageSelector" method="_on_navigation_container_input"]
 [connection signal="input" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer2" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ControlSchemeCaregory/RowNavigationContainer2/VoiceSelector" method="_on_navigation_container_input"]

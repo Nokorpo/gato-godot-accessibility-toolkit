@@ -102,9 +102,11 @@ horizontal_alignment = 1
 
 [node name="AcceptSound" type="AudioStreamPlayer" parent="." unique_id=1912630576]
 stream = ExtResource("7_56klt")
+bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=199212879]
 stream = ExtResource("8_072ts")
 volume_db = -14.0
 autoplay = true
+bus = &"Music"
 script = SubResource("GDScript_072ts")

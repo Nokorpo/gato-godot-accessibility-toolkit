@@ -1689,6 +1689,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves2" type="AudioStreamPlayer3D" parent="SFX" unique_id=650149640]
@@ -1699,6 +1700,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves3" type="AudioStreamPlayer3D" parent="SFX" unique_id=74246848]
@@ -1709,6 +1711,7 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="OceanWaves4" type="AudioStreamPlayer3D" parent="SFX" unique_id=1294991152]
@@ -1719,21 +1722,25 @@ unit_size = 5.0
 max_db = 0.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="TreeShakeSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1041091001]
 stream = SubResource("AudioStreamRandomizer_kcps6")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="GrassSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1237882210]
 stream = SubResource("AudioStreamRandomizer_nqvxv")
 volume_db = -20.0
 pitch_scale = 1.5
+bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=2041881066]
 stream = ExtResource("47_kcps6")
 volume_db = -14.0
 autoplay = true
+bus = &"Music"
 
 [node name="ForestAmbiance" type="AudioStreamPlayer3D" parent="SFX" unique_id=1001820121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3835, 6.3077917, -4.2204556)
@@ -1741,6 +1748,7 @@ stream = ExtResource("48_6ar30")
 unit_size = 5.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 
 [node name="ForestAmbiance2" type="AudioStreamPlayer3D" parent="SFX" unique_id=2089256830]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.18361, 1.4746697, -5.7410245)
@@ -1748,9 +1756,12 @@ stream = ExtResource("48_6ar30")
 unit_size = 5.0
 autoplay = true
 max_distance = 20.0
+bus = &"SFX"
 
 [node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=1916695183]
 stream = ExtResource("49_uidwh")
+volume_db = -8.0
+bus = &"SFX"
 
 [connection signal="button_activated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_destination"]
 [connection signal="button_deactivated" from="ButtonsAndPlatforms/AcornButton2" to="ButtonsAndPlatforms/MovingAcornPlatform/MovingPlatform" method="travel_to_origin"]

@@ -1514,32 +1514,40 @@ visible = false
 
 [node name="PopSound" type="AudioStreamPlayer" parent="SFX" unique_id=421337986]
 stream = ExtResource("19_h2asr")
+bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="SFX" unique_id=520474886]
 stream = ExtResource("20_24xyy")
 volume_db = -14.0
 autoplay = true
+bus = &"Music"
 
 [node name="HitSound" type="AudioStreamPlayer" parent="SFX" unique_id=2093086827]
 stream = ExtResource("21_hb7qm")
+bus = &"SFX"
 
 [node name="BigHitSound" type="AudioStreamPlayer" parent="SFX" unique_id=40354162]
 stream = ExtResource("21_ba37j")
 volume_db = -20.0
+bus = &"SFX"
 
 [node name="SparklesSound" type="AudioStreamPlayer" parent="SFX" unique_id=1886735387]
 stream = ExtResource("22_a4hsd")
+bus = &"SFX"
 
 [node name="MissSound" type="AudioStreamPlayer" parent="SFX" unique_id=1690429425]
 stream = ExtResource("22_p0232")
 volume_db = -4.0
+bus = &"SFX"
 
 [node name="BoarSound" type="AudioStreamPlayer" parent="SFX" unique_id=620595623]
 stream = ExtResource("25_ljlu1")
 volume_db = -2.0
+bus = &"SFX"
 
 [node name="GrassSound" type="AudioStreamPlayer" parent="SFX" unique_id=930840664]
 stream = ExtResource("26_ljlu1")
+bus = &"SFX"
 
 [connection signal="pressed" from="MarginContainer/BattleNarrator/MarginContainer/PanelContainer" to="Interpreter" method="_on_narrator_text_box_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="MarginContainer/BattleMenu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" method="grab_focus"]

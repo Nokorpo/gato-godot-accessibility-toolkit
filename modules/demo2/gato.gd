@@ -14,6 +14,8 @@ var _selected_boar: EnclosureBoar = null
 func _ready() -> void:
 	boar_detector.body_entered.connect(_on_body_entered)
 	boar_detector.body_exited.connect(_on_body_exited)
+	DialogueSystem.dialogue_started.connect(set.bind("process_mode", Node.PROCESS_MODE_DISABLED))
+	DialogueSystem.dialogue_finished.connect(set.bind("process_mode", Node.PROCESS_MODE_INHERIT))
 
 func _process(_delta: float) -> void:
 	if _boars_in_range.size() < 2:

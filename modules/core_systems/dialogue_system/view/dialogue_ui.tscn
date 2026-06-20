@@ -143,7 +143,9 @@ text = "name"
 [node name="NextMessageAudio" type="AudioStreamPlayer" parent="." unique_id=311176356]
 stream = ExtResource("3_0imcl")
 volume_db = -4.0
+bus = &"SFX"
 
 [node name="CloseDialogueAudio" type="AudioStreamPlayer" parent="." unique_id=1600640440]
 stream = ExtResource("4_xcu6i")
 volume_db = -2.0
+bus = &"SFX"

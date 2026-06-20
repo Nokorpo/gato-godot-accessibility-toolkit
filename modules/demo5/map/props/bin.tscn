@@ -420,13 +420,16 @@ texture_albedo = ExtResource("5_sa4yy")
 [node name="BinOpenSound" type="AudioStreamPlayer" parent="SFX" unique_id=1333289379]
 stream = ExtResource("6_jj7hd")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="BinCloseSound" type="AudioStreamPlayer" parent="SFX" unique_id=2095378915]
 stream = ExtResource("7_wwbem")
 volume_db = -12.0
+bus = &"SFX"
 
 [node name="CorrectItemSound" type="AudioStreamPlayer" parent="SFX" unique_id=2082907018]
 stream = ExtResource("8_yl8i6")
 volume_db = -6.0
+bus = &"SFX"
 
 [editable path="bin"]

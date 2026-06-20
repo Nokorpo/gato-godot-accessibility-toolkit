@@ -21,6 +21,7 @@ boot_splash/minimum_display_time=1500
 
 [audio]
 
+buses/default_bus_layout="uid://cfakstc5gy8kh"
 general/text_to_speech=true
 
 [autoload]

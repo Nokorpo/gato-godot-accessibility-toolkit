@@ -4,12 +4,15 @@
 extends StateMachineState
 class_name EnclosureBoarEatingState
 
-@onready var particles: CPUParticles3D = $"../../CPUParticles3D"
-@onready var heart_particles: GPUParticles3D = $"../../HeartParticles"
-var target = null
-var boar: CharacterBody3D
 @export var mesh: BoarMesh
 @export var eating_time: float = 1.5
+@export var eating_sound: AudioStreamPlayer3D
+
+@onready var particles: CPUParticles3D = $"../../CPUParticles3D"
+@onready var heart_particles: GPUParticles3D = $"../../HeartParticles"
+
+var target = null
+var boar: CharacterBody3D
 
 func _start(_state_machine: StateMachine, _node: Node) -> void:
 	super(_state_machine, _node)
@@ -18,13 +21,11 @@ func _start(_state_machine: StateMachine, _node: Node) -> void:
 func _on_enter_state() -> void:
 	mesh.play_animation(BoarMesh.Animations.EAT)
 	particles.emitting = true
+	eating_sound.play()
 	await get_tree().create_timer(eating_time).timeout
 	if is_instance_valid(target):
 		await target.animate_acorn_disappearance()
 	state_machine.call_deferred("change_state", EnclosureBoarIdleState)
-
-#TODO move to acorn code
-
 
 func _on_exit_state() -> void:
 	target = null

@@ -86,4 +86,5 @@ func open_menu(child_idx: int) -> void:
 ## Unpauses the game and closes (hides) the game menu.
 func quit_and_go_to_menu() -> void:
 	get_tree().paused = false
+	_accept_audio.play()
 	var _scene_loader: SceneLoader = SceneLoader.create_scene_loader(_parent_scene, DEMO_SECTOR_PATH)

@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://bvawh86pyq2d1"]
+[gd_scene format=3 uid="uid://ciejc3mfd5apl"]
 
-[ext_resource type="Script" uid="uid://b8lat2nfgffpw" path="res://modules/characters/boar/idle_state.gd" id="1_2jkah"]
-[ext_resource type="Script" uid="uid://dxsjc4ctsii3s" path="res://modules/characters/boar/boar.gd" id="1_piglh"]
-[ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/core_systems/state_machine/state_machine.gd" id="1_q5ai3"]
-[ext_resource type="Script" uid="uid://b6ayrw6exwhl6" path="res://modules/characters/boar/following_acorn_state.gd" id="2_q5ai3"]
-[ext_resource type="Script" uid="uid://dskqwhajk2r" path="res://modules/characters/boar/eating_state.gd" id="3_puyul"]
-[ext_resource type="PackedScene" uid="uid://olsa5oic45g3" path="res://modules/characters/boar/mesh/boar_mesh.tscn" id="5_d5hix"]
-[ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="6_d5hix"]
-[ext_resource type="Texture2D" uid="uid://b1d0cvmyi08cb" path="res://modules/demo1/map/sprites/heart.png" id="7_chhcr"]
-[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="9_dbq5w"]
-[ext_resource type="AudioStream" uid="uid://pc3k73bqhxfe" path="res://third_party/freesound_community-crunchy-bite-95979_arranged.ogg" id="10_08g3y"]
-[ext_resource type="AudioStream" uid="uid://c410wulfbkpqu" path="res://third_party/freesound_community-075996_pig-86576_split1.ogg" id="11_ct26h"]
-[ext_resource type="AudioStream" uid="uid://b0ub8hqic8sxe" path="res://third_party/freesound_community-085283_pig-86584.mp3" id="11_ox46n"]
-[ext_resource type="AudioStream" uid="uid://bp3mw6jd5vc2l" path="res://third_party/freesound_community-075996_pig-86576_split2.ogg" id="12_1qsat"]
-[ext_resource type="AudioStream" uid="uid://daarxykm135yy" path="res://third_party/freesound_community-075996_pig-86576_split3.ogg" id="13_tjkul"]
+[ext_resource type="Script" uid="uid://batdgi82hyxxe" path="res://modules/demo2/boar/enclosure_boar.gd" id="1_rpev0"]
+[ext_resource type="Script" uid="uid://b3s70uhhhr6gp" path="res://modules/core_systems/state_machine/state_machine.gd" id="2_7fnho"]
+[ext_resource type="Script" uid="uid://bm6fxo12nps05" path="res://modules/demo2/boar/state_machine/enclosure_idle_state.gd" id="3_qs2qq"]
+[ext_resource type="Script" uid="uid://bkt3pqgnyw6ac" path="res://modules/demo2/boar/state_machine/enclosure_following_acorn_state.gd" id="4_r43si"]
+[ext_resource type="Script" uid="uid://bk5b02xkbssx7" path="res://modules/demo2/boar/state_machine/enclosure_eating_state.gd" id="5_668b0"]
+[ext_resource type="Script" uid="uid://b02bb357gnf3o" path="res://modules/demo2/boar/state_machine/found_enclosure_state.gd" id="6_khqkq"]
+[ext_resource type="PackedScene" uid="uid://olsa5oic45g3" path="res://modules/characters/boar/mesh/boar_mesh.tscn" id="7_wm160"]
+[ext_resource type="Script" uid="uid://di1r8tti6234t" path="res://modules/characters/boar/acorn_detection.gd" id="8_0lneh"]
+[ext_resource type="Texture2D" uid="uid://b1d0cvmyi08cb" path="res://modules/demo1/map/sprites/heart.png" id="9_spmtx"]
+[ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="10_bujws"]
+[ext_resource type="AudioStream" uid="uid://pc3k73bqhxfe" path="res://third_party/freesound_community-crunchy-bite-95979_arranged.ogg" id="11_33iou"]
+[ext_resource type="AudioStream" uid="uid://c410wulfbkpqu" path="res://third_party/freesound_community-075996_pig-86576_split1.ogg" id="12_41ax8"]
+[ext_resource type="AudioStream" uid="uid://bp3mw6jd5vc2l" path="res://third_party/freesound_community-075996_pig-86576_split2.ogg" id="13_cvg45"]
+[ext_resource type="AudioStream" uid="uid://daarxykm135yy" path="res://third_party/freesound_community-075996_pig-86576_split3.ogg" id="14_rs5o6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5hix"]
 radius = 0.243
@@ -47,7 +47,7 @@ gravity = Vector3(0, 0, 0)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ox46n"]
 transparency = 1
 cull_mode = 2
-albedo_texture = ExtResource("7_chhcr")
+albedo_texture = ExtResource("9_spmtx")
 backlight_enabled = true
 backlight = Color(0.74978, 0.74978, 0.74978, 1)
 billboard_mode = 3
@@ -59,41 +59,44 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_ox46n")
 size = Vector2(0.2, 0.2)
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ox46n"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4lahk"]
 random_pitch = 1.2599211
 random_volume_offset_db = 2.0
 streams_count = 1
-stream_0/stream = ExtResource("10_08g3y")
+stream_0/stream = ExtResource("11_33iou")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m1b2a"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tgbld"]
 streams_count = 3
-stream_0/stream = ExtResource("11_ct26h")
-stream_1/stream = ExtResource("12_1qsat")
-stream_2/stream = ExtResource("13_tjkul")
+stream_0/stream = ExtResource("12_41ax8")
+stream_1/stream = ExtResource("13_cvg45")
+stream_2/stream = ExtResource("14_rs5o6")
 
-[node name="Boar" type="CharacterBody3D" unique_id=922734642 groups=["heavy_weight"]]
-script = ExtResource("1_piglh")
+[node name="EnclosureBoar" type="CharacterBody3D" unique_id=1230429055]
+collision_layer = 9
+script = ExtResource("1_rpev0")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1899679971]
-script = ExtResource("1_q5ai3")
+script = ExtResource("2_7fnho")
 metadata/_custom_type_script = "uid://b3s70uhhhr6gp"
 
-[node name="IdleState" type="Node" parent="StateMachine" unique_id=1160705882 node_paths=PackedStringArray("mesh", "raycast")]
-script = ExtResource("1_2jkah")
-mesh = NodePath("../../Boar")
-raycast = NodePath("../../RayCast3D")
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1160705882 node_paths=PackedStringArray("mesh")]
+script = ExtResource("3_qs2qq")
+mesh = NodePath("../../BoarMesh")
 
 [node name="FollowingAcornState" type="Node" parent="StateMachine" unique_id=1059703736 node_paths=PackedStringArray("mesh", "has_ground_ahead_raycasts", "acorn_found_sound")]
-script = ExtResource("2_q5ai3")
-mesh = NodePath("../../Boar")
+script = ExtResource("4_r43si")
+mesh = NodePath("../../BoarMesh")
 has_ground_ahead_raycasts = [NodePath("../../HasGroundAhead"), NodePath("../../HasGroundAhead2"), NodePath("../../HasGroundAhead3")]
 acorn_found_sound = NodePath("../../SFX/AcornFoundSound")
 
-[node name="EatingState" type="Node" parent="StateMachine" unique_id=1573134787 node_paths=PackedStringArray("mesh", "eating_sound", "finished_eating_sound")]
-script = ExtResource("3_puyul")
-mesh = NodePath("../../Boar")
+[node name="EatingState" type="Node" parent="StateMachine" unique_id=1573134787 node_paths=PackedStringArray("mesh", "eating_sound")]
+script = ExtResource("5_668b0")
+mesh = NodePath("../../BoarMesh")
 eating_sound = NodePath("../../SFX/EatingSound")
-finished_eating_sound = NodePath("../../SFX/FinishedEatingSound")
+
+[node name="FoundPigstyState" type="Node" parent="StateMachine" unique_id=180750083 node_paths=PackedStringArray("mesh")]
+script = ExtResource("6_khqkq")
+mesh = NodePath("../../BoarMesh")
 
 [node name="SimulationTicker" type="Timer" parent="StateMachine" unique_id=709805935]
 wait_time = 3.0
@@ -107,11 +110,11 @@ shape = SubResource("CapsuleShape3D_d5hix")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.473425, 1.00678e-08)
 shape = SubResource("BoxShape3D_d5hix")
 
-[node name="Boar" parent="." unique_id=905961501 instance=ExtResource("5_d5hix")]
+[node name="BoarMesh" parent="." unique_id=905961501 instance=ExtResource("7_wm160")]
 
 [node name="AcornDetection" type="Area3D" parent="." unique_id=792997277]
 unique_name_in_owner = true
-script = ExtResource("6_d5hix")
+script = ExtResource("8_0lneh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AcornDetection" unique_id=955436468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
@@ -137,39 +140,33 @@ draw_pass_1 = SubResource("QuadMesh_ch3xj")
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1830242425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
-[node name="HasGroundAhead" type="RayCast3D" parent="." unique_id=762206823]
+[node name="HasGroundAhead" type="RayCast3D" parent="." unique_id=491795003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.58714795)
 
-[node name="HasGroundAhead2" type="RayCast3D" parent="." unique_id=733203030]
+[node name="HasGroundAhead2" type="RayCast3D" parent="." unique_id=120742706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.78976643)
 
-[node name="HasGroundAhead3" type="RayCast3D" parent="." unique_id=1408078229]
+[node name="HasGroundAhead3" type="RayCast3D" parent="." unique_id=1885676281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.9882507)
 
 [node name="Decal" type="Decal" parent="." unique_id=83828784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40498018, 0)
 size = Vector3(0.75, 0.8886719, 0.75)
-texture_albedo = ExtResource("9_dbq5w")
+texture_albedo = ExtResource("10_bujws")
 
-[node name="SFX" type="Node3D" parent="." unique_id=661752879]
+[node name="SFX" type="Node3D" parent="." unique_id=1924752062]
 
-[node name="EatingSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=1750098170]
+[node name="EatingSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=2052941130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30243957)
-stream = SubResource("AudioStreamRandomizer_ox46n")
+stream = SubResource("AudioStreamRandomizer_4lahk")
 unit_size = 5.0
 pitch_scale = 1.35
 bus = &"SFX"
 
-[node name="AcornFoundSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=1183749580]
-stream = SubResource("AudioStreamRandomizer_m1b2a")
+[node name="AcornFoundSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=1744510938]
+stream = SubResource("AudioStreamRandomizer_tgbld")
 unit_size = 5.0
 pitch_scale = 1.1
-bus = &"SFX"
-
-[node name="FinishedEatingSound" type="AudioStreamPlayer3D" parent="SFX" unique_id=469951227]
-stream = ExtResource("11_ox46n")
-unit_size = 5.0
-pitch_scale = 1.35
 bus = &"SFX"
 
 [connection signal="timeout" from="StateMachine/SimulationTicker" to="StateMachine" method="_tick"]

@@ -53,9 +53,11 @@ one_shot = true
 [node name="AcornsFallingSound" type="AudioStreamPlayer" parent="." unique_id=1625250380]
 stream = ExtResource("3_nlbur")
 volume_db = -16.0
+bus = &"SFX"
 
 [node name="LeavesRustleSound" type="AudioStreamPlayer3D" parent="." unique_id=908980507]
 stream = SubResource("AudioStreamRandomizer_404g2")
 volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_body_entered"]

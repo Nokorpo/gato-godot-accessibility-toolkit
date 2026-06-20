@@ -204,20 +204,26 @@ distance_fade_enabled = true
 process_mode = 3
 stream = ExtResource("11_t654d")
 volume_db = -4.0
+bus = &"SFX"
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="SFX" unique_id=40531186]
 stream = SubResource("AudioStreamRandomizer_t3afo")
+volume_db = -4.0
+bus = &"SFX"
 
 [node name="LightLandingSound" type="AudioStreamPlayer" parent="SFX" unique_id=838463790]
 stream = ExtResource("13_t3afo")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="HardLandingSound" type="AudioStreamPlayer" parent="SFX" unique_id=826388264]
 stream = ExtResource("14_sl7ab")
 volume_db = -6.0
+bus = &"SFX"
 
 [node name="LaunchItemSound" type="AudioStreamPlayer" parent="SFX" unique_id=1037342712]
 stream = ExtResource("15_lohdw")
 volume_db = -8.0
+bus = &"SFX"
 
 [connection signal="fall_from_height" from="." to="LandingDust" method="set_emitting" binds= [true]]

@@ -28,11 +28,12 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../ActionContainer/UpRowNavigationContainer")
 mouse_filter = 0
 
-[node name="JoystickToggle" type="HBoxContainer" parent="UpRowNavigationContainer" unique_id=2053278748]
+[node name="JoystickToggle" type="HBoxContainer" parent="UpRowNavigationContainer" unique_id=2053278748 node_paths=PackedStringArray("accept_sound")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 script = ExtResource("1_st12y")
+accept_sound = NodePath("../../AcceptAudioStreamPlayer")
 
 [node name="Button" type="TextureButton" parent="UpRowNavigationContainer/JoystickToggle" unique_id=1687164612]
 layout_mode = 2
@@ -169,13 +170,14 @@ size_flags_vertical = 4
 [node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=924391084]
 unique_name_in_owner = true
 stream = ExtResource("11_xl7oq")
+bus = &"SFX"
 
 [node name="CancelAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=445899074]
 unique_name_in_owner = true
 stream = ExtResource("12_62wd7")
+bus = &"SFX"
 
 [connection signal="input" from="UpRowNavigationContainer" to="UpRowNavigationContainer/JoystickToggle" method="_on_navigation_container_input"]
-[connection signal="toggle_changed" from="UpRowNavigationContainer/JoystickToggle" to="AcceptAudioStreamPlayer" method="play" unbinds=1]
 [connection signal="pressed" from="UpRowNavigationContainer/JoystickToggle/Button" to="UpRowNavigationContainer/JoystickToggle" method="_on_button_pressed"]
 [connection signal="pressed" from="UpRowNavigationContainer/JoystickToggle/Button2" to="UpRowNavigationContainer/JoystickToggle" method="_on_button_pressed"]
 [connection signal="pressed" from="ActionContainer/UpRowNavigationContainer" to="ActionContainer" method="_on_button_up_pressed"]

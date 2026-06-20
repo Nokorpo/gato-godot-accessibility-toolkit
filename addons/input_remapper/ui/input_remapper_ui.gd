@@ -40,7 +40,7 @@ func _is_back_input(event: InputEvent) -> bool:
 	) and event.is_pressed()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not visible:
+	if not is_visible_in_tree():
 		return
 
 	if _is_back_input(event):
@@ -49,6 +49,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 		_cancel_audio.play()
+
 		return
 	# else: don't set input as handled so the game can handle it
 

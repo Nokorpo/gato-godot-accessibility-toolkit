@@ -6,12 +6,15 @@ extends HBoxContainer
 
 signal toggle_changed(use_joystick: bool)
 
+@export var accept_sound: AudioStreamPlayer
+
 @onready var joystick_cooldown: Timer = $JoystickCooldownTimer
 
 var use_joystick := false
 
 func _on_button_pressed() -> void:
 	use_joystick = !use_joystick
+	accept_sound.play()
 	update_ui()
 	# This is done outside the "update_ui()" method to avoid an initialization
 	# issue where the keymap is unset on the first frame due to a default object

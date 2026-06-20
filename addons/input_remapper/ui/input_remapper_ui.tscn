@@ -179,10 +179,12 @@ layout_mode = 1
 [node name="AcceptAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1016087300]
 unique_name_in_owner = true
 stream = ExtResource("14_e26m8")
+bus = &"SFX"
 
 [node name="CancelAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1390252073]
 unique_name_in_owner = true
 stream = ExtResource("15_dfgbc")
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"launch_item"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer/RowNavigationContainer/InputAction" to="PanelContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Interaction/ActionContainer" method="_on_button_pressed" binds= [&"launch_item"]]

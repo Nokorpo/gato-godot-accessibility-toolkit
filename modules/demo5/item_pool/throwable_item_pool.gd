@@ -58,3 +58,13 @@ func spawn_item() -> Node:
 
 func swap_items():
 	_throwable_items = accessible_throwable_items
+	_replace_current_item_if_it_is_an_acorn()
+
+func _replace_current_item_if_it_is_an_acorn() -> void:
+	var current_index: int = non_accessible_throwable_items.find(current_item)
+	if current_index >= 0:
+		get_child(0).queue_free()
+		current_item = accessible_throwable_items[current_index]
+		var spawned_item : Node = current_item.instantiate_item()
+		add_child(spawned_item)
+		spawned_item.position = current_item.spawn_point

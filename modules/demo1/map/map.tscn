@@ -36,8 +36,10 @@
 [ext_resource type="PackedScene" uid="uid://b3ge6hkxcuwqt" path="res://modules/demo1/map/props/pine_small.gltf" id="27_2gk0u"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="28_oo4bj"]
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="29_m8m1s"]
+[ext_resource type="PackedScene" uid="uid://buruqccryn2ji" path="res://modules/demo1/map/props/rock_hide_effect.tscn" id="30_qknnp"]
 [ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="30_wmnpe"]
 [ext_resource type="PackedScene" uid="uid://cwp1ql6gjtok7" path="res://modules/level_objects/oak/oak.tscn" id="31_41qk7"]
+[ext_resource type="PackedScene" uid="uid://cih1u4dgxywqt" path="res://modules/demo1/map/props/rock_group_hide_effect.tscn" id="32_05mnp"]
 [ext_resource type="PackedScene" uid="uid://cvhe5spjd2wbo" path="res://modules/demo1/map/props/platform_bridge.gltf" id="32_wtyg3"]
 [ext_resource type="PackedScene" uid="uid://bwhm2vtstl7ju" path="res://modules/demo1/map/props/platform_wood.gltf" id="33_jjqji"]
 [ext_resource type="PackedScene" uid="uid://bqe8vij7tmoqy" path="res://modules/demo1/map/props/lighthouse.gltf" id="34_a8qfx"]
@@ -420,10 +422,10 @@ transform = Transform3D(-0.0555985, 0, -1.56198, 0, 0.811066, 0, 1.65406, 0, -0.
 [node name="Rock10" parent="Props/Rocks" unique_id=1551740256 instance=ExtResource("22_5212t")]
 transform = Transform3D(-0.0555985, 0, -1.56198, 0, 0.811066, 0, 1.65406, 0, -0.0525033, 34.928, 5.53722, 0.373759)
 
-[node name="Rock6" parent="Props/Rocks" unique_id=851705107 instance=ExtResource("22_5212t")]
+[node name="RockHideEffect2" parent="Props/Rocks" unique_id=968854661 instance=ExtResource("30_qknnp")]
 transform = Transform3D(2.3655, 0, -0.478438, 0, 2.4134, 0, 0.478438, 0, 2.3655, 22.739, 5.65881, -10.8007)
 
-[node name="Rock5" parent="Props/Rocks" unique_id=345832659 instance=ExtResource("22_5212t")]
+[node name="RockHideEffect" parent="Props/Rocks" unique_id=1491908582 instance=ExtResource("30_qknnp")]
 transform = Transform3D(3.76449, -0.272165, 1.82329, 1.0512, 1.03261, 0.418175, -2.62801, 0.0231819, 2.77903, 24.3103, 8.48517, -11.6119)
 
 [node name="Rock4" parent="Props/Rocks" unique_id=36286324 instance=ExtResource("22_5212t")]
@@ -483,7 +485,7 @@ transform = Transform3D(-2.74539, 0, 2.11225, 0, 3.46392, 0, -2.11225, 0, -2.745
 [node name="RockGroup6" parent="Props/Rocks" unique_id=913130440 instance=ExtResource("23_snwuc")]
 transform = Transform3D(-2.25771, 0, 1.33111, 0, 2.6209, 0, -1.33111, 0, -2.25771, 16.3803, 0.41933, -9.14974)
 
-[node name="RockGroup11" parent="Props/Rocks" unique_id=533353854 instance=ExtResource("23_snwuc")]
+[node name="RockGroupHideEffect" parent="Props/Rocks" unique_id=1216658540 instance=ExtResource("32_05mnp")]
 transform = Transform3D(0.911342, 0, -2.45735, 0, 2.6209, 0, 2.45735, 0, 0.911342, 22.0451, 4.40666, -8.55582)
 
 [node name="RockGroup17" parent="Props/Rocks" unique_id=742201186 instance=ExtResource("23_snwuc")]

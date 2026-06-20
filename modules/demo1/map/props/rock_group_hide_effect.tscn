@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cih1u4dgxywqt"]
+
+[ext_resource type="PackedScene" uid="uid://bckenvh5w3j2p" path="res://modules/demo1/map/props/rock_group.gltf" id="1_s3k7y"]
+[ext_resource type="Material" uid="uid://08orbybb5x2j" path="res://modules/demo1/map/props/interactables.tres" id="2_3dmx0"]
+
+[node name="RockGroupHideEffect" type="Node3D" unique_id=1216658540]
+
+[node name="RockGroup" parent="." unique_id=1243192982 instance=ExtResource("1_s3k7y")]
+
+[node name="RockGroup" parent="RockGroup" index="0" unique_id=964222319]
+material_override = ExtResource("2_3dmx0")
+
+[editable path="RockGroup"]

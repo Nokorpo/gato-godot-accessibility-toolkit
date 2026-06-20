@@ -46,6 +46,8 @@
 [ext_resource type="Script" uid="uid://bh28do1i5hkni" path="res://modules/level_objects/bounce_on_touch.gd" id="25_hd4lb"]
 [ext_resource type="PackedScene" uid="uid://d3bc7vpyxfakx" path="res://modules/demo1/map/props/darker_grass.gltf" id="26_hd4lb"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="27_ykkph"]
+[ext_resource type="PackedScene" uid="uid://cih1u4dgxywqt" path="res://modules/demo1/map/props/rock_group_hide_effect.tscn" id="29_ycg8r"]
+[ext_resource type="PackedScene" uid="uid://chc1igvvbeown" path="res://modules/demo1/map/props/grass_platform_hide_effect.tscn" id="38_0lmgb"]
 [ext_resource type="Script" uid="uid://cbjoqq7qgch38" path="res://modules/demo4/map/disable_acorn_point_when_boar_crossed.gd" id="44_0olh3"]
 [ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="48_pm1tf"]
 [ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="49_2f5ck"]
@@ -99,12 +101,6 @@ size = Vector3(1, 5.01953, 5.28343)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfagj"]
 size = Vector3(1, 5.01953, 5.28343)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hblto"]
-size = Vector3(1, 4.08008, 5.28343)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qke5w"]
-size = Vector3(1, 5.01953, 4.44116)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ocf3"]
 size = Vector3(1, 5.01953, 8.04321)
@@ -488,10 +484,10 @@ transform = Transform3D(1.6175, 0, -0.479217, 0, 1.68699, 0, 0.479217, 0, 1.6175
 [node name="RockGroup3" parent="Props/Rocks" unique_id=1176368107 instance=ExtResource("10_qtbex")]
 transform = Transform3D(2.52966, 0, -0.893068, 0, 2.68268, 0, 0.893068, 0, 2.52966, -12.6932, -1.50291, -0.581812)
 
-[node name="RockGroup8" parent="Props/Rocks" unique_id=474906391 instance=ExtResource("10_qtbex")]
+[node name="RockGroupHideEffect4" parent="Props/Rocks" unique_id=1216658540 instance=ExtResource("29_ycg8r")]
 transform = Transform3D(-2.63816, 0, -0.486669, 0, 2.68268, 0, 0.486669, 0, -2.63816, 14.469, -4.467196, -20.9064)
 
-[node name="RockGroup9" parent="Props/Rocks" unique_id=1562877537 instance=ExtResource("10_qtbex")]
+[node name="RockGroupHideEffect3" parent="Props/Rocks" unique_id=108130731 instance=ExtResource("29_ycg8r")]
 transform = Transform3D(0.467917, 0, -2.64155, 0, 2.68268, 0, 2.64155, 0, 0.467917, 21.7909, -2.19393, -24.9978)
 
 [node name="RockGroup4" parent="Props/Rocks" unique_id=1014496114 instance=ExtResource("10_qtbex")]
@@ -503,10 +499,10 @@ transform = Transform3D(-1.56637, 0.22943, -2.16578, 0.38879, 2.65436, 1.49012e-
 [node name="RockGroup14" parent="Props/Rocks" unique_id=1479742058 instance=ExtResource("10_qtbex")]
 transform = Transform3D(2.53406, -0.0350137, 0.879803, -0.0486524, 2.67089, 0.246425, -0.879155, -0.24873, 2.52229, -16.0592, -2.42865, -22.8081)
 
-[node name="RockGroup16" parent="Props/Rocks" unique_id=1608788650 instance=ExtResource("10_qtbex")]
+[node name="RockGroupHideEffect" parent="Props/Rocks" unique_id=1664542103 instance=ExtResource("29_ycg8r")]
 transform = Transform3D(-2.65297, 0.388588, -1.25823, 0.429246, 2.93056, -1.79702e-08, 1.24494, -0.182351, -2.68128, -12.9151, -0.677023, -40.1196)
 
-[node name="RockGroup18" parent="Props/Rocks" unique_id=388326292 instance=ExtResource("10_qtbex")]
+[node name="RockGroupHideEffect2" parent="Props/Rocks" unique_id=1702243772 instance=ExtResource("29_ycg8r")]
 transform = Transform3D(-2.15927, 0.0784152, -2.39863, 0.0306953, 2.75078, 0.0863112, 2.98604, 0.0284278, -1.73538, -18.7038, -2.36979, -32.1727)
 
 [node name="RockGroup17" parent="Props/Rocks" unique_id=36750634 instance=ExtResource("10_qtbex")]
@@ -876,10 +872,10 @@ transform = Transform3D(1.56734, 0, -1.06799, 0, 1.3888, 0, 0.900858, 0, 1.85812
 [node name="PlatformGrass11" parent="Props/Floor" unique_id=1037058559 instance=ExtResource("5_cf3k0")]
 transform = Transform3D(1.0933, 0, 1.15097, 0, 1.36579, 0, -0.970851, 0, 1.29614, 19.7572, -0.206468, -42.7302)
 
-[node name="PlatformGrass6" parent="Props/Floor" unique_id=349360911 instance=ExtResource("5_cf3k0")]
+[node name="GrassPlatformHideEffect" parent="Props/Floor" unique_id=427920659 instance=ExtResource("38_0lmgb")]
 transform = Transform3D(-0.136684, 0, -0.61605, 0, 2.85938, 0, 0.519642, 0, -0.162043, 14.7457, -1.836719, -23.1912)
 
-[node name="PlatformGrass7" parent="Props/Floor" unique_id=1046309860 instance=ExtResource("5_cf3k0")]
+[node name="GrassPlatformHideEffect2" parent="Props/Floor" unique_id=1279662459 instance=ExtResource("38_0lmgb")]
 transform = Transform3D(-0.225788, 0, -0.578035, 0, 3.80793, 0, 0.487576, 0, -0.267677, 20.4076, -2.403098, -19.65166)
 
 [node name="PlatformGrass2" parent="Props/Floor" unique_id=929241688 instance=ExtResource("5_cf3k0")]
@@ -1305,76 +1301,6 @@ transform = Transform3D(0.999991, 0, 5.66244e-07, 0, 1, 0, -5.66244e-07, 0, 0.99
 shape = SubResource("BoxShape3D_kfagj")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
 
-[node name="CameraCollider8" type="StaticBody3D" parent="CameraColliders" unique_id=902778865 groups=["CameraCollider"]]
-transform = Transform3D(-0.999958, 0, -0.00919776, 0, 1, 0, 0.00919776, 0, -0.999958, 13.2185, 0.52243, -23.1099)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider8" unique_id=410608000 groups=["CameraCollider"]]
-transform = Transform3D(0.999982, 0, 4.68455e-07, 0, 1, 0, -4.68455e-07, 0, 0.999982, 0, 0, 0)
-shape = SubResource("BoxShape3D_hblto")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider9" type="StaticBody3D" parent="CameraColliders" unique_id=657888093 groups=["CameraCollider"]]
-transform = Transform3D(-0.644884, 0, 0.76428, 0, 1, 0, -0.76428, 0, -0.644884, 20.201, -0.0530281, -20.8219)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider9" unique_id=1548986245 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
-shape = SubResource("BoxShape3D_qke5w")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider10" type="StaticBody3D" parent="CameraColliders" unique_id=1175133844 groups=["CameraCollider"]]
-transform = Transform3D(-0.76428, 0, -0.644884, 0, 1, 0, 0.644884, 0, -0.76428, 19.4417, -0.0530281, -18.0704)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider10" unique_id=11049639 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
-shape = SubResource("BoxShape3D_qke5w")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider11" type="StaticBody3D" parent="CameraColliders" unique_id=987589880 groups=["CameraCollider"]]
-transform = Transform3D(-0.76428, 0, -0.644884, 0, 1, 0, 0.644884, 0, -0.76428, 22.6888, -0.0530281, -20.8102)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider11" unique_id=544041629 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
-shape = SubResource("BoxShape3D_qke5w")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider12" type="StaticBody3D" parent="CameraColliders" unique_id=1905479957 groups=["CameraCollider"]]
-transform = Transform3D(-0.76428, 0, -0.644884, 0, 1, 0, 0.644884, 0, -0.76428, 20.7059, -0.0530281, -24.9012)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider12" unique_id=688404998 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
-shape = SubResource("BoxShape3D_qke5w")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider13" type="StaticBody3D" parent="CameraColliders" unique_id=696542858 groups=["CameraCollider"]]
-transform = Transform3D(-0.544449, 0, -0.838794, 0, 1, 0, 0.838794, 0, -0.544449, 14.851, -0.0530281, -24.9898)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider13" unique_id=1100245577 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
-shape = SubResource("BoxShape3D_qke5w")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider14" type="StaticBody3D" parent="CameraColliders" unique_id=1192186627 groups=["CameraCollider"]]
-transform = Transform3D(0.85624, 0, -0.516578, 0, 1, 0, 0.516578, 0, 0.85624, 15.0604, -0.0530281, -20.334)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider14" unique_id=1548814052 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 9.83477e-07, 0, 1, 0, -9.83477e-07, 0, 0.999993, 0, 1.0636, -0.668064)
-shape = SubResource("BoxShape3D_qke5w")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
 [node name="CameraCollider15" type="StaticBody3D" parent="CameraColliders" unique_id=145864663 groups=["CameraCollider"]]
 transform = Transform3D(0.672871, 0, -0.73976, 0, 1, 0, 0.73976, 0, 0.672871, -13.5658, -0.0530281, -21.8769)
 collision_layer = 16
@@ -1401,26 +1327,6 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider17" unique_id=2027112865 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
-shape = SubResource("BoxShape3D_nqej6")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider18" type="StaticBody3D" parent="CameraColliders" unique_id=698694691 groups=["CameraCollider"]]
-transform = Transform3D(-0.828725, 0, 0.559656, 0, 1, 0, -0.559656, 0, -0.828725, -16.7984, 0.0611551, -31.1638)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider18" unique_id=1834676387 groups=["CameraCollider"]]
-transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
-shape = SubResource("BoxShape3D_nqej6")
-debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)
-
-[node name="CameraCollider19" type="StaticBody3D" parent="CameraColliders" unique_id=141730522 groups=["CameraCollider"]]
-transform = Transform3D(-0.999568, 0, -0.0294048, 0, 1, 0, 0.0294048, 0, -0.999568, -16.1756, 0.0611551, -34.8339)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraColliders/CameraCollider19" unique_id=241353898 groups=["CameraCollider"]]
 transform = Transform3D(0.999993, 0, 1.13249e-06, 0, 1, 0, -1.13249e-06, 0, 0.999993, 0, 1.0636, -0.668062)
 shape = SubResource("BoxShape3D_nqej6")
 debug_color = Color(8.42288e-08, 0.201697, 0.240887, 0.42)

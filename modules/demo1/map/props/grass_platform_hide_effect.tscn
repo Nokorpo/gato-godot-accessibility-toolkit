@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://chc1igvvbeown"]
+
+[ext_resource type="PackedScene" uid="uid://5wqsk0tnrs3f" path="res://modules/demo1/map/props/platform_grass.gltf" id="1_naqes"]
+[ext_resource type="Material" uid="uid://08orbybb5x2j" path="res://modules/demo1/map/props/interactables.tres" id="2_iyenh"]
+
+[node name="GrassPlatformHideEffect" type="Node3D" unique_id=427920659]
+
+[node name="PlatformGrass" parent="." unique_id=612974733 instance=ExtResource("1_naqes")]
+
+[node name="PlatformGrass" parent="PlatformGrass" index="0" unique_id=1714438686]
+material_override = ExtResource("2_iyenh")
+
+[editable path="PlatformGrass"]

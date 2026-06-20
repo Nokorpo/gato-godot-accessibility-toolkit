@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://0cqjbqj142cw" path="res://modules/demo5/targets/boars/poof_effect.tscn" id="2_i530e"]
 [ext_resource type="Texture2D" uid="uid://dcvh85uqas7lx" path="res://modules/demo1/map/vfx/particle.png" id="4_31ydy"]
 [ext_resource type="Texture2D" uid="uid://di0kf3lxr378y" path="res://modules/characters/shadow.svg" id="5_sa4yy"]
+[ext_resource type="AudioStream" uid="uid://chrads154a28o" path="res://third_party/freesound_community-door-open-46756_clipped.ogg" id="6_jj7hd"]
+[ext_resource type="AudioStream" uid="uid://chowhnspb48ji" path="res://third_party/freesound_community-box-falling-down-97295_equalized.ogg" id="7_wwbem"]
+[ext_resource type="AudioStream" uid="uid://djoayxgwhwxbu" path="res://third_party/freesound_community-coin-gold-box-open-14773.mp3" id="8_yl8i6"]
 
 [sub_resource type="Animation" id="Animation_i530e"]
 resource_name = "RESET"
@@ -74,6 +77,18 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SFX/BinCloseSound:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_nsw11"]
 resource_name = "close_lid"
@@ -86,7 +101,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(-1.5311774, -0.25, 0, 0.25, 0, 0, -0.16666667, -0.25519624, 0, 0),
+"points": PackedFloat32Array(-1.5311774, -0.25, 0, 0.25, 0, 0, -0.167, -1.805, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/1/type = "bezier"
@@ -110,6 +125,18 @@ tracks/2/keys = {
 "handle_modes": PackedInt32Array(2, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/BinCloseSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ckjwt"]
@@ -364,7 +391,7 @@ script = ExtResource("1_ckjwt")
 
 [node name="bin" parent="." unique_id=1956125334 instance=ExtResource("1_nsw11")]
 
-[node name="Lid" parent="bin" index="0" unique_id=402591274]
+[node name="Lid" parent="bin" index="0" unique_id=108321218]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.83441275, -0.41085005)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=493351293]
@@ -387,5 +414,19 @@ draw_pass_1 = SubResource("QuadMesh_wwbem")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34931612, 0)
 size = Vector3(0.75, 1, 0.75)
 texture_albedo = ExtResource("5_sa4yy")
+
+[node name="SFX" type="Node" parent="." unique_id=567350909]
+
+[node name="BinOpenSound" type="AudioStreamPlayer" parent="SFX" unique_id=1333289379]
+stream = ExtResource("6_jj7hd")
+volume_db = -8.0
+
+[node name="BinCloseSound" type="AudioStreamPlayer" parent="SFX" unique_id=2095378915]
+stream = ExtResource("7_wwbem")
+volume_db = -12.0
+
+[node name="CorrectItemSound" type="AudioStreamPlayer" parent="SFX" unique_id=2082907018]
+stream = ExtResource("8_yl8i6")
+volume_db = -6.0
 
 [editable path="bin"]

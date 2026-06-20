@@ -9,6 +9,8 @@ var color: String = "BIN"
 @onready var rejection_effect: GPUParticles3D = $PoofEffect
 @onready var outline_material: StandardMaterial3D = load("res://modules/demo5/targets/boars/selection_outline.tres")
 
+@onready var open_sound: AudioStreamPlayer = $SFX/BinOpenSound
+
 var bin_meshes: Array = [MeshInstance3D]
 var anim_player: AnimationPlayer
 var is_open: bool = false
@@ -27,11 +29,13 @@ func _receive_item(match_color):
 		anim_player.play("collect_item")
 		is_open = true
 		confetti_effect.emitting = true
+		$SFX/CorrectItemSound.play()
 
 func _focus(match_color, has_focus):
 	if has_focus and match_color == color:
 		is_open = true
 		anim_player.play("idle_selected")
+		open_sound.play()
 		scale *= 1.2
 		_add_outline_material()
 	if !has_focus and is_open:

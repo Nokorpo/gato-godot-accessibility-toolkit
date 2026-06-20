@@ -58,3 +58,11 @@ Kinoton (Freesound) ([Pixabay license](https://pixabay.com/service/license-summa
 [Paweł Mazurek](https://pixabay.com/users/strachszydło-42907726/) ([Pixabay license](https://pixabay.com/service/license-summary/)):
 - [Morning Birdsong Ambience](https://pixabay.com/sound-effects/nature-morning-birdsong-ambience-544142/)
 
+EminYILDIRIM (Freesound) ([Pixabay license](https://pixabay.com/service/license-summary/)):
+- [Coin Gold Box Open](https://pixabay.com/sound-effects/household-coin-gold-box-open-14773/)
+
+sfarkas92 (Freesound) ([Pixabay license](https://pixabay.com/service/license-summary/)):
+- [Door Open](https://pixabay.com/sound-effects/household-door-open-46756/)
+
+danlucaz (Freesound) ([Pixabay license](https://pixabay.com/service/license-summary/)):
+- [Box Falling Down](https://pixabay.com/sound-effects/household-box-falling-down-97295/)

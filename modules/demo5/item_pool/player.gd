@@ -18,6 +18,7 @@ enum TargetColor { BLUE, GREEN, RED, YELLOW, BIN }
 	TargetColor.YELLOW: $"../AccessibleBoars/BoarYellow",
 	TargetColor.BIN: $"../Bin"
 }
+@onready var throw_item_sound: AudioStreamPlayer = $"../SFX/ThrowItemSound"
 
 var current_item: ThrowableItem:
 	get():
@@ -66,6 +67,7 @@ func _animate_item_launch():
 
 func _throw_item():
 	current_item.stop_anim_player()
+	throw_item_sound.play()
 	await _animate_item_launch()
 	_check_color_match()
 	await get_tree().create_timer(0.3).timeout

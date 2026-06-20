@@ -73,6 +73,12 @@
 [ext_resource type="AudioStream" uid="uid://ba8bygjneg25t" path="res://third_party/dragon-studio-button-press-3-386171_clipped.ogg" id="71_ptp6h"]
 [ext_resource type="AudioStream" uid="uid://d1ghg6brg5rcs" path="res://third_party/ebunny-simple-magic-loop-368855.mp3" id="72_sl6ik"]
 [ext_resource type="AudioStream" uid="uid://qmrbjtbx26ha" path="res://third_party/dragon-studio-ding-sfx-472366.mp3" id="73_8itej"]
+[ext_resource type="AudioStream" uid="uid://c410wulfbkpqu" path="res://third_party/freesound_community-075996_pig-86576_split1.ogg" id="74_aupo0"]
+[ext_resource type="AudioStream" uid="uid://bp3mw6jd5vc2l" path="res://third_party/freesound_community-075996_pig-86576_split2.ogg" id="75_tpw7a"]
+[ext_resource type="AudioStream" uid="uid://daarxykm135yy" path="res://third_party/freesound_community-075996_pig-86576_split3.ogg" id="76_efubn"]
+[ext_resource type="AudioStream" uid="uid://pc3k73bqhxfe" path="res://third_party/freesound_community-crunchy-bite-95979_arranged.ogg" id="77_tpw7a"]
+[ext_resource type="AudioStream" uid="uid://b27736odmrhhi" path="res://third_party/dragon-studio-simple-whoosh-382724_clipped.ogg" id="78_efubn"]
+[ext_resource type="AudioStream" uid="uid://b0ub8hqic8sxe" path="res://third_party/freesound_community-085283_pig-86584.mp3" id="79_kabh5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqon"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -407,6 +413,54 @@ albedo_color = Color(0.13725491, 0.72156864, 0.85882354, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ku402"]
 material = SubResource("StandardMaterial3D_0721d")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kabh5"]
+streams_count = 3
+stream_0/stream = ExtResource("74_aupo0")
+stream_1/stream = ExtResource("75_tpw7a")
+stream_2/stream = ExtResource("76_efubn")
+
+[sub_resource type="GDScript" id="GDScript_aupo0"]
+script/source = "extends AudioStreamPlayer
+
+func _on_target_focused(color, is_focused) -> void:
+	if color != \"BIN\" and is_focused:
+		play()
+"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_efubn"]
+random_pitch = 1.2599211
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("77_tpw7a")
+
+[sub_resource type="GDScript" id="GDScript_kabh5"]
+resource_name = "ignore_bin"
+script/source = "extends AudioStreamPlayer
+
+func _on_matched_color(color) -> void:
+	if color != \"BIN\":
+		play()
+"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ugsor"]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("78_efubn")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pkdfv"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("79_kabh5")
+
+[sub_resource type="GDScript" id="GDScript_ugsor"]
+resource_name = "ignore_bin"
+script/source = "extends AudioStreamPlayer
+
+func _on_mismatched_color(color) -> void:
+	if color != \"BIN\":
+		play()
+"
 
 [node name="Map" type="Node3D" unique_id=1452746876]
 
@@ -1154,8 +1208,33 @@ autoplay = true
 
 [node name="DingSound" type="AudioStreamPlayer" parent="SFX" unique_id=1278221249]
 stream = ExtResource("73_8itej")
+volume_db = -8.0
+
+[node name="BoarSelectedSound" type="AudioStreamPlayer" parent="SFX" unique_id=1033318730]
+stream = SubResource("AudioStreamRandomizer_kabh5")
+volume_db = -4.0
+pitch_scale = 1.1
+script = SubResource("GDScript_aupo0")
+
+[node name="BoarEatingSound" type="AudioStreamPlayer" parent="SFX" unique_id=955285483]
+stream = SubResource("AudioStreamRandomizer_efubn")
+volume_db = -6.0
+pitch_scale = 1.35
+script = SubResource("GDScript_kabh5")
+
+[node name="ThrowItemSound" type="AudioStreamPlayer" parent="SFX" unique_id=1088483792]
+stream = SubResource("AudioStreamRandomizer_ugsor")
+volume_db = -4.0
+
+[node name="BoarWrongAcornSound" type="AudioStreamPlayer" parent="SFX" unique_id=1751052390]
+stream = SubResource("AudioStreamRandomizer_pkdfv")
+volume_db = -4.0
+script = SubResource("GDScript_ugsor")
 
 [connection signal="filter_changed" from="FiltersMenu" to="SFX/FilterChangeSFX" method="play"]
 [connection signal="update_hud_count" from="LevelCompletionCheck" to="HUD" method="update_fed_boar_count_label"]
+[connection signal="focused_target" from="Player" to="SFX/BoarSelectedSound" method="_on_target_focused"]
+[connection signal="matched_color" from="Player" to="SFX/BoarEatingSound" method="_on_matched_color"]
+[connection signal="mismatched_color" from="Player" to="SFX/BoarWrongAcornSound" method="_on_mismatched_color"]
 
 [editable path="Props/Pines/PineWithoutFading/Pine"]

@@ -11,7 +11,8 @@ func _on_enter_state() -> void:
 	mesh.play_animation.call_deferred(BoarMesh.Animations.IDLE)
 	if raycast.is_colliding():
 		var tween := create_tween()
-		tween.tween_property(node, "global_position", raycast.get_collision_point(), 0.25)
+		var new_position: Vector3 = node.position + node.to_local(raycast.get_collision_point())
+		tween.tween_property(node, "position", new_position, 0.25)
 
 func tick() -> void:
 	var acorn = %AcornDetection.get_acorn_in_range()

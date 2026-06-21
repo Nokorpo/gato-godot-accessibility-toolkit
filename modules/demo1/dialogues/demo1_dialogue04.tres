@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_4hmk4"]
 script = ExtResource("1_eo6bj")
-message = "Quizá las bellotas se pueden usar para algo más que alimentar jabalíes..."
+message = "Quizá las bellotas se pueden usar para activar la plataforma..."
 name = "Gato"
 animation_name = "talk_happy"
 face = "happy"

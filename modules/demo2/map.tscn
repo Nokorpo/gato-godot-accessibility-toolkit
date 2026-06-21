@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dcj0hlpoquwj0"]
 
 [ext_resource type="Theme" uid="uid://bq15a24pows6i" path="res://modules/demo1/ui/hud_theme.tres" id="2_er80s"]
+[ext_resource type="Texture2D" uid="uid://cuf1ik6emiyq6" path="res://modules/demo1/ui/enclosed_boar_icon.svg" id="3_4avm2"]
 [ext_resource type="Script" uid="uid://b2vqfibwv4f66" path="res://modules/demo1/ui/hud.gd" id="3_imhxh"]
 [ext_resource type="PackedScene" uid="uid://d7dukcfibx61" path="res://modules/demo2/hud/boar_enclosure_hud.tscn" id="3_lvynv"]
-[ext_resource type="Texture2D" uid="uid://cwhuclvckbue1" path="res://modules/demo1/ui/fed_boar_icon.svg" id="4_tsi04"]
 [ext_resource type="PackedScene" uid="uid://cp1splssmfbra" path="res://modules/core_systems/game_menu/game_menu.tscn" id="5_683d8"]
 [ext_resource type="PackedScene" uid="uid://b2xxt2j24tgkp" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.tscn" id="6_lyyeo"]
 [ext_resource type="PackedScene" uid="uid://fi43o1qrjkvt" path="res://modules/characters/gato/gato.tscn" id="7_gvnoq"]
@@ -258,13 +258,14 @@ offset_bottom = 127.0
 
 [node name="MarginContainer" type="MarginContainer" parent="HUD/Control/PanelContainer" unique_id=1885586543]
 layout_mode = 2
+theme_override_constants/margin_right = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/PanelContainer/MarginContainer" unique_id=1838598258]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1920634047]
 layout_mode = 2
-texture = ExtResource("4_tsi04")
+texture = ExtResource("3_4avm2")
 expand_mode = 3
 
 [node name="FedBoarCount" type="Label" parent="HUD/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1152070878]

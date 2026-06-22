@@ -7,7 +7,11 @@
 [ext_resource type="Resource" uid="uid://doxub3jvr747g" path="res://modules/demo_selector/assets/demo_list.tres" id="2_xqaix"]
 [ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="5_827ex"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="7_56klt"]
+[ext_resource type="Texture2D" uid="uid://dj4aujpnkspfe" path="res://modules/demo_selector/assets/docs_button_hover.svg" id="7_a5vom"]
+[ext_resource type="Script" uid="uid://bfxmwyoo4vxe3" path="res://modules/demo_selector/link_to_documentation.gd" id="8_4fih7"]
 [ext_resource type="AudioStream" uid="uid://bqegiuqhui6o1" path="res://third_party/ebunny-fable-loop-372218.mp3" id="8_072ts"]
+[ext_resource type="Texture2D" uid="uid://bconktc3foucy" path="res://modules/demo_selector/assets/docs_button.svg" id="9_2c1cb"]
+[ext_resource type="Texture2D" uid="uid://bjvjnyuu76one" path="res://modules/demo_selector/assets/docs_icon.svg" id="10_a5vom"]
 
 [sub_resource type="Gradient" id="Gradient_xqaix"]
 colors = PackedColorArray(0.09019608, 0.023529412, 0.25490198, 1, 0.13694337, 0.021770453, 0.19578174, 1)
@@ -25,6 +29,10 @@ shader_parameter/repeat_x = 2.0000000475
 shader_parameter/repeat_y = 2.0000000475
 shader_parameter/row_offset = 0.800000038
 shader_parameter/texture_to_scroll = ExtResource("1_1ehge")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fih7"]
+font = ExtResource("5_827ex")
+font_size = 28
 
 [sub_resource type="GDScript" id="GDScript_072ts"]
 script/source = "extends AudioStreamPlayer
@@ -93,11 +101,53 @@ script = ExtResource("1_xsipc")
 demo_list_resource = ExtResource("2_xqaix")
 accept_sound = NodePath("../../AcceptSound")
 
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1280027657]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="DocumentationButton" type="TextureButton" parent="VBoxContainer/MarginContainer" unique_id=1549865043]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("9_2c1cb")
+texture_pressed = ExtResource("7_a5vom")
+texture_hover = ExtResource("7_a5vom")
+stretch_mode = 0
+script = ExtResource("8_4fih7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/DocumentationButton" unique_id=698463805]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -20.0
+offset_right = 137.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/DocumentationButton/HBoxContainer" unique_id=1923202397]
+layout_mode = 2
+texture = ExtResource("10_a5vom")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/DocumentationButton/HBoxContainer" unique_id=515034562]
+layout_mode = 2
+text = "Documentación"
+label_settings = SubResource("LabelSettings_4fih7")
+horizontal_alignment = 1
+
 [node name="Footer" type="Label" parent="VBoxContainer" unique_id=954230710]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_827ex")
 theme_override_font_sizes/font_size = 12
-text = "Nokorpo 2025"
+text = "Nokorpo 2026"
 horizontal_alignment = 1
 
 [node name="AcceptSound" type="AudioStreamPlayer" parent="." unique_id=1912630576]
@@ -110,3 +160,5 @@ volume_db = -14.0
 autoplay = true
 bus = &"Music"
 script = SubResource("GDScript_072ts")
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/DocumentationButton" to="VBoxContainer/MarginContainer/DocumentationButton" method="_on_pressed"]

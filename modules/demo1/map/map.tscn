@@ -56,6 +56,15 @@
 [ext_resource type="AudioStream" uid="uid://bl6mgexlkdfy1" path="res://third_party/strachszydlo-morning-birdsong-ambience-544142_clipped.ogg" id="48_6ar30"]
 [ext_resource type="AudioStream" uid="uid://qmrbjtbx26ha" path="res://third_party/dragon-studio-ding-sfx-472366.mp3" id="49_uidwh"]
 
+[sub_resource type="GDScript" id="GDScript_5212t"]
+resource_name = "load_input_config"
+script/source = "extends Node
+
+func _ready():
+	var schemes: Array[GatoControlScheme] = InputRemapper.storage_service.load_input_config_from_file(\"res://modules/demo1/demo1_input.data\")
+	InputRemapper.apply_control_scheme(schemes[0])
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_e26lp"]
 font_size = 48
 font_color = Color(0.09019608, 0.023529412, 0.25490198, 1)
@@ -152,6 +161,9 @@ environment = ExtResource("1_rwbpo")
 transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
 light_volumetric_fog_energy = 2.0
 light_specular = 0.0
+
+[node name="LoadInputConfig" type="Node" parent="." unique_id=432177938]
+script = SubResource("GDScript_5212t")
 
 [node name="ControlsHUD" type="CanvasLayer" parent="." unique_id=1657196910]
 

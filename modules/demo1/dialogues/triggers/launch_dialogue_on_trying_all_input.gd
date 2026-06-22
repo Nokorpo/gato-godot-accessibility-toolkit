@@ -10,7 +10,6 @@ signal finished
 var used_actions: Dictionary[StringName, bool] = {
 	"move_up": false,
 	"jump": false,
-	"launch_item": false,
 }
 
 func _process(_delta: float) -> void:

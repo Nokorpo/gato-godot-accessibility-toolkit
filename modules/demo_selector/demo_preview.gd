@@ -25,7 +25,8 @@ func _on_pressed() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_pressed():
-		if event is InputEventMouseButton or event.is_action("ui_accept"):
+		if event.is_action("ui_accept") \
+			or (event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT):
 			_on_pressed()
 
 func _on_focus_entered() -> void:

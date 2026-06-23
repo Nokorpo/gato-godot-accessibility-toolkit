@@ -15,8 +15,8 @@ var input_actions: Array[InputActionButton] = []
 var use_right_joystick := false
 var input_action_nodes: Array[Control] = []
 
-var row_scene: PackedScene = load("res://addons/input_remapper/ui/row_navigation_container.tscn")
-var input_action_scene: PackedScene = load("res://addons/input_remapper/ui/input_action.tscn")
+var row_scene: PackedScene = load("res://addons/gato_input_remapper/ui/row_navigation_container.tscn")
+var input_action_scene: PackedScene = load("res://addons/gato_input_remapper/ui/input_action.tscn")
 
 func _ready() -> void:
 	if input_remapper_ui:

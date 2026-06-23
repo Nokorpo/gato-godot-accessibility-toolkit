@@ -16,7 +16,7 @@ class Helper:
 
 class TestInputActionButton extends GutTest:
 	const ACTION_NAME := "act"
-	var sut := load("res://addons/input_remapper/model/input_action_button.gd")
+	var sut := load("res://addons/gato_input_remapper/model/input_action_button.gd")
 
 	func test_creation_minimal() -> void:
 		var input_event := Helper.create_input_event(KEY_SPACE)
@@ -54,7 +54,7 @@ class TestInputActionButton extends GutTest:
 
 class TestJoystickInputAction2D extends GutTest:
 	const ACTION_NAME := "act"
-	var sut := load("res://addons/input_remapper/model/joystick_input_action_2d.gd")
+	var sut := load("res://addons/gato_input_remapper/model/joystick_input_action_2d.gd")
 
 	func test_apply() -> void:
 		Helper.initialize_directional_input(ACTION_NAME)
@@ -78,7 +78,7 @@ class TestJoystickInputAction2D extends GutTest:
 
 class TestKeysInputAction2D extends GutTest:
 	const ACTION_NAME := "act"
-	var sut := load("res://addons/input_remapper/model/keys_input_action_2d.gd")
+	var sut := load("res://addons/gato_input_remapper/model/keys_input_action_2d.gd")
 
 	func test_apply() -> void:
 		Helper.initialize_directional_input(ACTION_NAME)

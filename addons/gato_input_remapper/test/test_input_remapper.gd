@@ -14,7 +14,7 @@ class Helper:
 		return input_event
 
 	static func create_scheme() -> GatoControlScheme:
-		var input_action = load("res://addons/input_remapper/model/input_action_button.gd")\
+		var input_action = load("res://addons/gato_input_remapper/model/input_action_button.gd")\
 			.new(ACTION_NAME, create_input_event(KEY_0), CATEGORY)
 
 		var scheme := GatoControlScheme.new()
@@ -35,14 +35,14 @@ class Helper:
 		return scheme_list
 
 	static func generate_file_content() -> String:
-		var storage = load("res://addons/input_remapper/service/storage_service.gd").new()
+		var storage = load("res://addons/gato_input_remapper/service/storage_service.gd").new()
 		storage.store_input_config(Helper.create_empty_schemes(), TEMP_FILE)
 		var text := FileAccess.get_file_as_string(TEMP_FILE)
 		DirAccess.remove_absolute(TEMP_FILE)
 		return text
 
 class TestInputRemapper extends GutTest:
-	var sut := load("res://addons/input_remapper/service/input_remapper_service.gd")
+	var sut := load("res://addons/gato_input_remapper/service/input_remapper_service.gd")
 
 	func test_autoload_initializes_storage_service() -> void:
 		var input_remapper_autoload = InputRemapper
@@ -95,12 +95,12 @@ class TestInputRemapper extends GutTest:
 		file.store_string(FILE_CONTENT)
 		file.close()
 
-		var storage_stub = load("res://addons/input_remapper/service/storage_service.gd").new()
+		var storage_stub = load("res://addons/gato_input_remapper/service/storage_service.gd").new()
 		storage_stub.settings_file = TEMP_FILE
 		var input_remapper = sut.new(storage_stub)
 
 		# simulate user changes
-		var input_action = load("res://addons/input_remapper/model/input_action_button.gd")\
+		var input_action = load("res://addons/gato_input_remapper/model/input_action_button.gd")\
 			.new(ACTION_NAME, Helper.create_input_event(KEY_0))
 		input_remapper.get_current_scheme().input_actions.append(input_action)
 

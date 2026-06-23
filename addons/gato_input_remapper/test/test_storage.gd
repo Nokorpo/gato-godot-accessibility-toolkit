@@ -17,9 +17,9 @@ class Helper:
 	const ACTION_NAME := "act"
 	const CATEGORY := "test"
 	static func create_scheme() -> GatoControlScheme:
-		var input_action = load("res://addons/input_remapper/model/input_action_button.gd")\
+		var input_action = load("res://addons/gato_input_remapper/model/input_action_button.gd")\
 			.new(ACTION_NAME, create_input_event(KEY_0), CATEGORY)
-		var input_action_2d = load("res://addons/input_remapper/model/joystick_input_action_2d.gd")\
+		var input_action_2d = load("res://addons/gato_input_remapper/model/joystick_input_action_2d.gd")\
 			.new(ACTION_NAME, false, false, CATEGORY)
 
 		var scheme := GatoControlScheme.new()
@@ -42,14 +42,14 @@ class Helper:
 
 	const TEMP_FILE := "user://temp.txt"
 	static func generate_file_content(scheme_list: Array) -> String:
-		var storage = load("res://addons/input_remapper/service/storage_service.gd").new()
+		var storage = load("res://addons/gato_input_remapper/service/storage_service.gd").new()
 		storage.store_input_config(scheme_list, TEMP_FILE)
 		var text := FileAccess.get_file_as_string(TEMP_FILE)
 		DirAccess.remove_absolute(TEMP_FILE)
 		return text
 
 class TestStorage extends GutTest:
-	var sut := load("res://addons/input_remapper/service/storage_service.gd")
+	var sut := load("res://addons/gato_input_remapper/service/storage_service.gd")
 
 	func test_init() -> void:
 		var storage_service = sut.new()

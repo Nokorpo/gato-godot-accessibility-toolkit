@@ -6,7 +6,7 @@ extends EditorPlugin
 
 
 func _enter_tree():
-	add_autoload_singleton("InputRemapper", "res://addons/input_remapper/service/input_remapper_service.gd")
+	add_autoload_singleton("InputRemapper", "res://addons/gato_input_remapper/service/input_remapper_service.gd")
 
 func _exit_tree():
 	remove_autoload_singleton("InputRemapper")

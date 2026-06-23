@@ -4,7 +4,7 @@
 extends GutTest
 
 class TestRowNavigationContainer extends GutTest:
-	var sut := load("res://addons/input_remapper/ui/row_navigation_container.tscn")
+	var sut := load("res://addons/gato_input_remapper/ui/row_navigation_container.tscn")
 
 	func test_autoload_initializes_storage_service() -> void:
 		var row = add_child_autofree(sut.instantiate())
@@ -83,7 +83,7 @@ class TestRowNavigationContainer extends GutTest:
 		assert_eq(get_signal_parameters(row, "input"), [action_left])
 
 class TestIntegrationJoystickSelection extends GutTest:
-	var sut := load("res://addons/input_remapper/ui/input_remapper_ui.tscn")
+	var sut := load("res://addons/gato_input_remapper/ui/input_remapper_ui.tscn")
 
 	func _find_first_row(ui_element: Control) -> RowNavigationContainer:
 		var row_index: int = ui_element.get_children().find_custom(

@@ -14,7 +14,7 @@ var control_schemes: Array[GatoControlScheme] = []
 
 func _init(_storage_service: Variant = null) -> void:
 	if _storage_service == null:
-		storage_service = load("res://addons/input_remapper/service/storage_service.gd").new()
+		storage_service = load("res://addons/gato_input_remapper/service/storage_service.gd").new()
 	else:
 		storage_service = _storage_service
 

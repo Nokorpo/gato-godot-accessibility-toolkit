@@ -50,9 +50,9 @@ static func new_from_dict(dict: Dictionary) -> InputConfig:
 	return instance
 
 static var type_to_script_map: Dictionary[String, Script] = {
-	"input_action_button": load("res://addons/input_remapper/model/input_action_button.gd"),
-	"input_action2d_joystick": load("res://addons/input_remapper/model/joystick_input_action_2d.gd"),
-	"input_action2d_keys": load("res://addons/input_remapper/model/keys_input_action_2d.gd"),
+	"input_action_button": load("res://addons/gato_input_remapper/model/input_action_button.gd"),
+	"input_action2d_joystick": load("res://addons/gato_input_remapper/model/joystick_input_action_2d.gd"),
+	"input_action2d_keys": load("res://addons/gato_input_remapper/model/keys_input_action_2d.gd"),
 }
 
 static func load_input_actions(input_actions: Array) -> Array[InputAction]:

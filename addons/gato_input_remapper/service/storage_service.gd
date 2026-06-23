@@ -18,13 +18,13 @@ const DEFAULT_FILE_ENVVAR := "DEFAULT_INPUT_REMAPPER_FILE_PATH"
 ## initialize the input with the data in this file. If you need to use a different file, pass the
 ## new path by setting the environment variable [code]"DEFAULT_INPUT_REMAPPER_FILE_PATH"[/code].
 ## See [member DEFAULT_FILE_ENVVAR].
-const DEFAULT_FILE_PATH := "res://addons/input_remapper/default_input.data"
+const DEFAULT_FILE_PATH := "res://addons/gato_input_remapper/default_input.data"
 
 ## Defines where the settings will be stored once changes are saved. This is also the path that will
 ## be used to reload the settings next time the game runs.
 var settings_file := "user://input.data"
 
-var control_scheme_script: Script = load("res://addons/input_remapper/model/control_scheme.gd")
+var control_scheme_script: Script = load("res://addons/gato_input_remapper/model/control_scheme.gd")
 
 ## Initializes the settings file with a default config if it's empty on startup.
 func _init():

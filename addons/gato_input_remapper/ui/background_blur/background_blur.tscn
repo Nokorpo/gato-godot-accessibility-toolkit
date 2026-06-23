@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://pvxfv052stfv"]
 
-[ext_resource type="Shader" uid="uid://c302iy36los2r" path="res://addons/input_remapper/ui/background_blur/blur.gdshader" id="1_1aaf0"]
-[ext_resource type="Script" uid="uid://db8j4t5yrixhk" path="res://addons/input_remapper/ui/background_blur/background_blur.gd" id="2_sshwh"]
+[ext_resource type="Shader" uid="uid://c302iy36los2r" path="res://addons/gato_input_remapper/ui/background_blur/blur.gdshader" id="1_1aaf0"]
+[ext_resource type="Script" uid="uid://db8j4t5yrixhk" path="res://addons/gato_input_remapper/ui/background_blur/background_blur.gd" id="2_sshwh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ix0sm"]
 shader = ExtResource("1_1aaf0")

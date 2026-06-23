@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpw2wmvyeqeyq"
-path="res://.godot/imported/arrow.svg-cc83f370a1bce62e839de7370bbe933c.ctex"
+uid="uid://cao1aje68xm3v"
+path="res://.godot/imported/checkbox_checked.svg-b69c045f76fec28184aaceecbfa9e7e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/input_remapper/ui/sprites/arrow.svg"
-dest_files=["res://.godot/imported/arrow.svg-cc83f370a1bce62e839de7370bbe933c.ctex"]
+source_file="res://addons/gato_input_remapper/ui/sprites/checkbox_checked.svg"
+dest_files=["res://.godot/imported/checkbox_checked.svg-b69c045f76fec28184aaceecbfa9e7e2.ctex"]
 
 [params]
 

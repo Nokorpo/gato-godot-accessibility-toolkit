@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bm6gt8oxjo807" path="res://modules/demo1/map/props/grass_pile.gltf" id="5_cyo0x"]
 [ext_resource type="PackedScene" uid="uid://cx1ifxyiknxot" path="res://modules/demo5/throwable_items/box.tscn" id="5_fykio"]
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="6_4g4qy"]
-[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="6_33yh1"]
+[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/gato_input_remapper/ui/input_remapper_ui.tres" id="6_33yh1"]
 [ext_resource type="PackedScene" uid="uid://cv8s3xqneydxw" path="res://modules/demo5/throwable_items/branch.tscn" id="6_tc3uo"]
 [ext_resource type="Texture2D" uid="uid://cb4k6sc8p2pr1" path="res://modules/demo5/hud/sprites/filter_icon_normal.svg" id="7_4phwh"]
 [ext_resource type="PackedScene" uid="uid://dl6ode0o8eo5a" path="res://modules/demo1/map/props/grass.gltf" id="7_kp8o8"]

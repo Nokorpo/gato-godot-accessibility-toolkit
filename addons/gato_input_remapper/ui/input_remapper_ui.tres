@@ -1,9 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://cwy34ps7k0g02"]
 
-[ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="1_d5smo"]
-[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="2_1ka4n"]
-[ext_resource type="Texture2D" uid="uid://cao1aje68xm3v" path="res://addons/input_remapper/ui/sprites/checkbox_checked.svg" id="2_28gtb"]
-[ext_resource type="Texture2D" uid="uid://bpcixojgwhtco" path="res://addons/input_remapper/ui/sprites/checkbox.svg" id="3_g18fo"]
+[ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/gato_input_remapper/ui/fonts/Fredoka-Bold.ttf" id="1_d5smo"]
+[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/gato_input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="2_1ka4n"]
+[ext_resource type="Texture2D" uid="uid://cao1aje68xm3v" path="res://addons/gato_input_remapper/ui/sprites/checkbox_checked.svg" id="2_28gtb"]
+[ext_resource type="Texture2D" uid="uid://bpcixojgwhtco" path="res://addons/gato_input_remapper/ui/sprites/checkbox.svg" id="3_g18fo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ka4n"]
 bg_color = Color(1, 0.827451, 0, 1)

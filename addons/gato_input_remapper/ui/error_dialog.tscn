@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnj8weyejjv11"]
 
-[ext_resource type="Script" uid="uid://d06d8538yilpu" path="res://addons/input_remapper/ui/error_dialog.gd" id="1_g88h6"]
+[ext_resource type="Script" uid="uid://d06d8538yilpu" path="res://addons/gato_input_remapper/ui/error_dialog.gd" id="1_g88h6"]
 
 [node name="ErrorDialog" type="Control" unique_id=534890888]
 visible = false

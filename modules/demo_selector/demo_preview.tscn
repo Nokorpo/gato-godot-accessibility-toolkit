@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dnt0dclo16dur" path="res://modules/demo_selector/demo_preview.gd" id="1_0hnp5"]
 [ext_resource type="Texture2D" uid="uid://c6srva6trybgk" path="res://modules/demo_selector/assets/placeholder.svg" id="2_1f5f7"]
 [ext_resource type="Script" uid="uid://dx7paoh7iir8m" path="res://modules/demo_selector/demo_data.gd" id="2_tghuj"]
-[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="4_1f5f7"]
+[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/gato_input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="4_1f5f7"]
 [ext_resource type="Texture2D" uid="uid://d3tlxw1uwu2bx" path="res://modules/demo_selector/assets/completed_demo_tick.svg" id="4_571ta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tghuj"]

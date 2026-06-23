@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b56lhiiq3meri"
-path="res://.godot/imported/Fredoka-Bold.ttf-88553802150be7ad2b8ca10669e50169.fontdata"
+path="res://.godot/imported/Fredoka-Bold.ttf-ed74c28123832a3fe35b24e72a7826e5.fontdata"
 
 [deps]
 
-source_file="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf"
-dest_files=["res://.godot/imported/Fredoka-Bold.ttf-88553802150be7ad2b8ca10669e50169.fontdata"]
+source_file="res://addons/gato_input_remapper/ui/fonts/Fredoka-Bold.ttf"
+dest_files=["res://.godot/imported/Fredoka-Bold.ttf-ed74c28123832a3fe35b24e72a7826e5.fontdata"]
 
 [params]
 

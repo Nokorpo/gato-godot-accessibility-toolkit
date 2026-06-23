@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxhsaoc5088pf"]
 
-[ext_resource type="Script" uid="uid://bn5ueid1xbvwp" path="res://addons/input_remapper/ui/row_navigation_container.gd" id="1_vp02i"]
+[ext_resource type="Script" uid="uid://bn5ueid1xbvwp" path="res://addons/gato_input_remapper/ui/row_navigation_container.gd" id="1_vp02i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18ywu"]
 bg_color = Color(0.99215686, 0.81960785, 0, 1)

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ca5idge1h0ti3" path="res://modules/demo2/hud/menu/hud_customization_menu.gd" id="1_h25dq"]
 [ext_resource type="Theme" uid="uid://b24vcdre3irkg" path="res://modules/demo2/hud/menu/hud_customization_menu.theme" id="2_1f8eo"]
-[ext_resource type="Texture2D" uid="uid://cjlll0r0ig8pw" path="res://addons/input_remapper/ui/sprites/controller.svg" id="3_6gp2b"]
-[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="3_g8x15"]
-[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="5_6gp2b"]
+[ext_resource type="Texture2D" uid="uid://cjlll0r0ig8pw" path="res://addons/gato_input_remapper/ui/sprites/controller.svg" id="3_6gp2b"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/gato_input_remapper/ui/row_navigation_container.tscn" id="3_g8x15"]
+[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/gato_input_remapper/ui/sprites/arrow.svg" id="5_6gp2b"]
 [ext_resource type="Script" uid="uid://dvtilc13aalu3" path="res://modules/demo2/hud/menu/hud_position_selector.gd" id="5_8nvky"]
-[ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="6_8nvky"]
+[ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/gato_input_remapper/ui/sprites/arrow_hover.svg" id="6_8nvky"]
 [ext_resource type="Script" uid="uid://clutl3ctdotm5" path="res://modules/demo2/hud/menu/zoom_bar.gd" id="8_6gp2b"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="9_8nvky"]
 

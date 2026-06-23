@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b2xxt2j24tgkp"]
 
 [ext_resource type="Script" uid="uid://dthgk2jo23ufs" path="res://modules/core_systems/completed_demo_screen/completed_demo_screen.gd" id="1_121e6"]
-[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="1_r634p"]
+[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/gato_input_remapper/ui/input_remapper_ui.tres" id="1_r634p"]
 [ext_resource type="Texture2D" uid="uid://d3tlxw1uwu2bx" path="res://modules/demo_selector/assets/completed_demo_tick.svg" id="2_je5n1"]
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_law7s"]
-[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="3_w1asq"]
-[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="4_0qbok"]
+[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/gato_input_remapper/ui/sprites/arrow.svg" id="3_w1asq"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/gato_input_remapper/ui/row_navigation_container.tscn" id="4_0qbok"]
 [ext_resource type="PackedScene" uid="uid://b3arsyyy6i00q" path="res://modules/core_systems/ui/quit_confirmation/quit_confirmation.tscn" id="5_mhl6o"]
 [ext_resource type="AudioStream" uid="uid://cnlb6e7ojp3b0" path="res://third_party/ebunny-winner-loop-370951.mp3" id="8_2rc7r"]
 

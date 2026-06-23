@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="GatoControlScheme" format=3 uid="uid://b5dcj7dfumapq"]
 
-[ext_resource type="Script" uid="uid://bvd7amftuy0aq" path="res://addons/input_remapper/model/input_action.gd" id="1_obciu"]
-[ext_resource type="Script" uid="uid://ctgokt75j2t0k" path="res://addons/input_remapper/model/input_action_button.gd" id="2_jc31g"]
-[ext_resource type="Script" uid="uid://jfhe3oy4t0v6" path="res://addons/input_remapper/model/joystick_input_action_2d.gd" id="3_jfug2"]
-[ext_resource type="Script" uid="uid://bra3mf6x4mptc" path="res://addons/input_remapper/model/keys_input_action_2d.gd" id="4_tgr08"]
-[ext_resource type="Script" uid="uid://coiheovm2u2si" path="res://addons/input_remapper/model/control_scheme.gd" id="5_vedvc"]
+[ext_resource type="Script" uid="uid://bvd7amftuy0aq" path="res://addons/gato_input_remapper/model/input_action.gd" id="1_obciu"]
+[ext_resource type="Script" uid="uid://ctgokt75j2t0k" path="res://addons/gato_input_remapper/model/input_action_button.gd" id="2_jc31g"]
+[ext_resource type="Script" uid="uid://jfhe3oy4t0v6" path="res://addons/gato_input_remapper/model/joystick_input_action_2d.gd" id="3_jfug2"]
+[ext_resource type="Script" uid="uid://bra3mf6x4mptc" path="res://addons/gato_input_remapper/model/keys_input_action_2d.gd" id="4_tgr08"]
+[ext_resource type="Script" uid="uid://coiheovm2u2si" path="res://addons/gato_input_remapper/model/control_scheme.gd" id="5_vedvc"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_obciu"]
 device = -1

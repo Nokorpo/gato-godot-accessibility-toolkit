@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dkaux4wn52qf1"]
 
-[ext_resource type="Script" uid="uid://611fp47fdxra" path="res://addons/input_remapper/ui/control_scheme_selector.gd" id="1_c4d4j"]
-[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/input_remapper/ui/sprites/arrow.svg" id="2_q2ind"]
-[ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/input_remapper/ui/sprites/arrow_hover.svg" id="4_8b17j"]
-[ext_resource type="Texture2D" uid="uid://barqh7tdsy3rr" path="res://addons/input_remapper/ui/sprites/reset.svg" id="5_8b17j"]
-[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="5_21kfc"]
+[ext_resource type="Script" uid="uid://611fp47fdxra" path="res://addons/gato_input_remapper/ui/control_scheme_selector.gd" id="1_c4d4j"]
+[ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/gato_input_remapper/ui/sprites/arrow.svg" id="2_q2ind"]
+[ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/gato_input_remapper/ui/sprites/arrow_hover.svg" id="4_8b17j"]
+[ext_resource type="Texture2D" uid="uid://barqh7tdsy3rr" path="res://addons/gato_input_remapper/ui/sprites/reset.svg" id="5_8b17j"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/gato_input_remapper/ui/row_navigation_container.tscn" id="5_21kfc"]
 
 [node name="ControlSchemeSelector" type="VBoxContainer" unique_id=1848389064]
 offset_right = 570.0

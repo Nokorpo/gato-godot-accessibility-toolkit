@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://barqh7tdsy3rr"
-path="res://.godot/imported/reset.svg-918bb921c94e320a70fc138d1d0169d2.ctex"
+uid="uid://cd6wh68uu2enj"
+path="res://.godot/imported/arrow_hover.svg-cf0750a4064e744a0c2575203d6fd3ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/input_remapper/ui/sprites/reset.svg"
-dest_files=["res://.godot/imported/reset.svg-918bb921c94e320a70fc138d1d0169d2.ctex"]
+source_file="res://addons/gato_input_remapper/ui/sprites/arrow_hover.svg"
+dest_files=["res://.godot/imported/arrow_hover.svg-cf0750a4064e744a0c2575203d6fd3ac.ctex"]
 
 [params]
 

@@ -1,6 +1,5 @@
 [gd_resource type="Theme" format=3 uid="uid://cjsdcc6e7ndhf"]
 
-[ext_resource type="FontFile" uid="uid://b56lhiiq3meri" path="res://addons/input_remapper/ui/fonts/Fredoka-Bold.ttf" id="1_q1gre"]
 [ext_resource type="Texture2D" uid="uid://pxdhye7d2le5" path="res://addons/gato_tts/ui/sprites/checkbox_checked.svg" id="2_u8c2g"]
 [ext_resource type="Texture2D" uid="uid://bef67ck7uuq73" path="res://addons/gato_tts/ui/sprites/checkbox.svg" id="3_a1uxo"]
 [ext_resource type="FontFile" uid="uid://wglp24i5vrkn" path="res://addons/gato_tts/ui/fonts/Fredoka-Bold.ttf" id="4_u8c2g"]
@@ -150,7 +149,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_d5smo")
 Button/styles/pressed = SubResource("StyleBoxFlat_g18fo")
 CategoryTitle/base_type = &"Label"
 CategoryTitle/font_sizes/font_size = 45
-CategoryTitle/fonts/font = ExtResource("1_q1gre")
+CategoryTitle/fonts/font = ExtResource("4_u8c2g")
 CheckBox/icons/checked = ExtResource("2_u8c2g")
 CheckBox/icons/unchecked = ExtResource("3_a1uxo")
 CheckBox/styles/hover = SubResource("StyleBoxFlat_yhkwh")
@@ -172,7 +171,7 @@ InputButton/styles/pressed = SubResource("StyleBoxFlat_g18fo")
 MenuTitle/base_type = &"Label"
 MenuTitle/colors/font_color = Color(0.0980392, 0.0352941, 0.254902, 1)
 MenuTitle/font_sizes/font_size = 60
-MenuTitle/fonts/font = ExtResource("1_q1gre")
+MenuTitle/fonts/font = ExtResource("4_u8c2g")
 MenuTitle/styles/normal = null
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2gebx")
 TitleBackground/base_type = &"PanelContainer"

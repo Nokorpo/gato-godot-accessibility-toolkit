@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://cdalj3a2b07s2"]
 
-[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="1_6w1ef"]
+[ext_resource type="FontFile" uid="uid://bxj6586s6gbvo" path="res://addons/gato_input_remapper/ui/fonts/Fredoka-SemiBold.ttf" id="1_6w1ef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2h4t"]
 bg_color = Color(0.9764706, 0.77254903, 0, 1)

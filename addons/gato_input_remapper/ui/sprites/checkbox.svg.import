@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpcixojgwhtco"
-path="res://.godot/imported/checkbox.svg-adf50fd2003e71b9560b7471fa840e07.ctex"
+path="res://.godot/imported/checkbox.svg-0845e29b6ef0bcbbac9feb42fe7490b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/input_remapper/ui/sprites/checkbox.svg"
-dest_files=["res://.godot/imported/checkbox.svg-adf50fd2003e71b9560b7471fa840e07.ctex"]
+source_file="res://addons/gato_input_remapper/ui/sprites/checkbox.svg"
+dest_files=["res://.godot/imported/checkbox.svg-0845e29b6ef0bcbbac9feb42fe7490b9.ctex"]
 
 [params]
 

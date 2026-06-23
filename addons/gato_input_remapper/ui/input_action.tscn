@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drqw3ka7ghfdn"]
 
-[ext_resource type="Script" uid="uid://ddmacrhia8xuu" path="res://addons/input_remapper/ui/input_action.gd" id="1_51mg0"]
+[ext_resource type="Script" uid="uid://ddmacrhia8xuu" path="res://addons/gato_input_remapper/ui/input_action.gd" id="1_51mg0"]
 
 [node name="InputAction" type="PanelContainer" unique_id=681386481]
 offset_left = 125.0

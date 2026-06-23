@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0q1il8rqflxw"]
 
-[ext_resource type="Script" uid="uid://ck6hh30xh50a3" path="res://addons/input_remapper/ui/close_without_saving_dialog.gd" id="1_4p0ew"]
-[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="2_e342f"]
+[ext_resource type="Script" uid="uid://ck6hh30xh50a3" path="res://addons/gato_input_remapper/ui/close_without_saving_dialog.gd" id="1_4p0ew"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/gato_input_remapper/ui/row_navigation_container.tscn" id="2_e342f"]
 [ext_resource type="AudioStream" uid="uid://c7dxc18dnx6us" path="res://modules/core_systems/dialogue_system/sounds/accept.ogg" id="3_qhuyp"]
 [ext_resource type="AudioStream" uid="uid://bqv8f3n5iao3y" path="res://modules/core_systems/dialogue_system/sounds/cancel.ogg" id="4_1bb2q"]
 

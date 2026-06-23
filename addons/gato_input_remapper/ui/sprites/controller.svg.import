@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjlll0r0ig8pw"
-path="res://.godot/imported/controller.svg-8f1366b0cf282770aab80bd6622150d4.ctex"
+path="res://.godot/imported/controller.svg-dde0625950818265b55b30027353a5f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/input_remapper/ui/sprites/controller.svg"
-dest_files=["res://.godot/imported/controller.svg-8f1366b0cf282770aab80bd6622150d4.ctex"]
+source_file="res://addons/gato_input_remapper/ui/sprites/controller.svg"
+dest_files=["res://.godot/imported/controller.svg-dde0625950818265b55b30027353a5f2.ctex"]
 
 [params]
 

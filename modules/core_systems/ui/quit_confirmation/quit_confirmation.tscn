@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b3arsyyy6i00q"]
 
 [ext_resource type="Script" uid="uid://dui74p83pulho" path="res://modules/core_systems/ui/quit_confirmation/quit_confirmation.gd" id="1_rmy1v"]
-[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/input_remapper/ui/input_remapper_ui.tres" id="2_4fu18"]
+[ext_resource type="Theme" uid="uid://cwy34ps7k0g02" path="res://addons/gato_input_remapper/ui/input_remapper_ui.tres" id="2_4fu18"]
 [ext_resource type="PackedScene" uid="uid://bcp0n375ar3si" path="res://modules/core_systems/ui/background_blur/background_blur.tscn" id="2_xuqlc"]
-[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/input_remapper/ui/row_navigation_container.tscn" id="4_fnxq3"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/gato_input_remapper/ui/row_navigation_container.tscn" id="4_fnxq3"]
 
 [node name="QuitConfirmation" type="CanvasLayer" unique_id=48681928 node_paths=PackedStringArray("_confirm_button")]
 script = ExtResource("1_rmy1v")

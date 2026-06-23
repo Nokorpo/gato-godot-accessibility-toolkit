@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7qloakgx7etx"]
 
-[ext_resource type="Script" uid="uid://dnwphryehyd5u" path="res://addons/input_remapper/ui/category.gd" id="1_omixo"]
+[ext_resource type="Script" uid="uid://dnwphryehyd5u" path="res://addons/gato_input_remapper/ui/category.gd" id="1_omixo"]
 
 [node name="Category" type="VBoxContainer" unique_id=1383079060]
 size_flags_horizontal = 0

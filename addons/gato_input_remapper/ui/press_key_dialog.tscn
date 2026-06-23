@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw8doo3b01x73"]
 
-[ext_resource type="Script" uid="uid://c0peswbik1vq1" path="res://addons/input_remapper/ui/press_key_dialog.gd" id="1_108n5"]
+[ext_resource type="Script" uid="uid://c0peswbik1vq1" path="res://addons/gato_input_remapper/ui/press_key_dialog.gd" id="1_108n5"]
 
 [node name="PressKeyDialog" type="Control" unique_id=602646284]
 visible = false

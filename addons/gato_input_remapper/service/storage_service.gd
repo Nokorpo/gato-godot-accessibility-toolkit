@@ -45,19 +45,19 @@ func verify_config_file(file_path: Variant = null) -> Error:
 		config_file = file_path
 
 	if not FileAccess.file_exists(config_file):
-		push_error("Error: no control scheme could be loaded. Configuration file could not be found.")
+		printerr("GATO Input Remapper: No control scheme could be loaded. Configuration file could not be found.")
 		return Error.ERR_FILE_NOT_FOUND
 
 	var file = FileAccess.open(config_file, FileAccess.READ)
 	var file_contents := file.get_as_text()
 	var json: Variant = JSON.parse_string(file_contents)
 	if json == null:
-		push_error("Error: no control scheme could be loaded. Configuration file could not be parsed.")
+		printerr("Error: no control scheme could be loaded. Configuration file could not be parsed.")
 		return Error.ERR_FILE_CORRUPT
 
 	var data = load_input_config_from_json(json)
 	if data == null or data.is_empty():
-		push_error("Error: no control scheme could be loaded. Control scheme list was empty.")
+		printerr("Error: no control scheme could be loaded. Control scheme list was empty.")
 		return Error.ERR_FILE_CORRUPT
 	file.close()
 	return Error.OK

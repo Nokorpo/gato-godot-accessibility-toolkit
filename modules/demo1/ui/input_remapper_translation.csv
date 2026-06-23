@@ -4,19 +4,19 @@ section_title_control_scheme,CONTROL SCHEME,ESQUEMA DE CONTROL
 control_scheme_default,DEFAULT,POR DEFECTO
 control_scheme_right,RIGHT HAND,Mano Derecha
 control_scheme_left,LEFT HAND,Mano Izquierda
-reset_button,Reset Changes,Resetear Cambios
+reset_changes,Reset Changes,Resetear Cambios
 movement,MOVEMENT,MOVIMIENTO
 keyboard,Keyboard,Teclado
 joystick_left,Left,Izquierdo
 joystick_right,Right,Derecho
 invert_direction,Invert direction,Invertir dirección
-move_up,move_up,Mover Arriba
-move_down,move_down,Mover Abajo
-move_left,move_left,Mover Izquierda
-move_right,move_right,Mover Derecha
+move_up,Move up,Mover Arriba
+move_down,Move down,Mover Abajo
+move_left,Move left,Mover Izquierda
+move_right,Move right,Mover Derecha
 interaction,INTERACTIONS,INTERACCIONES
-jump,jump,Saltar
-launch_item,throw item,Lanzar Bellota
+jump,Jump,Saltar
+launch_item,Throw item,Lanzar Bellota
 press_key,Press a key…,Pulsa una tecla…
 save_changes,Save Changes,Guardar Cambios
 unsaved_changes,You have unsaved changes.\nDo you want to close the menu?,Tienes cambios sin guardar.\n¿Quieres cerrar el menú?

@@ -108,6 +108,7 @@ theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 20
 
 [node name="DocumentationButton" type="TextureButton" parent="VBoxContainer/MarginContainer" unique_id=1549865043]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8

@@ -1175,7 +1175,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.120000005, 0.19139126, 0.92),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(120, 300), Vector2(120, 300), Vector2(-1310, 588.00006)]
+"values": [Vector2(120, 300), Vector2(120, 300), Vector2(-1500, 588)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1273,6 +1273,15 @@ completed_demo = NodePath("../CompletedDemoScreen")
 bgm = NodePath("../SFX/BGM")
 accept_audio = NodePath("../SFX/PopSound")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1564154263]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2de5g")
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=364915537]
 layout_mode = 1
 anchors_preset = 15
@@ -1289,13 +1298,6 @@ theme_override_constants/margin_bottom = 128
 layout_mode = 2
 ratio = 2.0
 stretch_mode = 1
-
-[node name="Background" type="Sprite2D" parent="MarginContainer/AspectRatioContainer" unique_id=2114833762]
-modulate = Color(0.88275343, 0.8443506, 0.98848766, 1)
-texture_filter = 1
-position = Vector2(831, 410)
-scale = Vector2(4.2108316, 4.2035136)
-texture = ExtResource("4_2de5g")
 
 [node name="FloorGato" type="Sprite2D" parent="MarginContainer/AspectRatioContainer" unique_id=1276251661]
 texture_filter = 1

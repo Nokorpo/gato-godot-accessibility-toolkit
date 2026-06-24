@@ -64,6 +64,7 @@ script/source = "extends Node
 
 func _ready():
 	var schemes: Array[GatoControlScheme] = InputRemapper.storage_service.load_input_config_from_file(\"res://modules/demo1/demo1_input.data\")
+	InputRemapper.control_schemes[0] = schemes[0]
 	InputRemapper.apply_control_scheme(schemes[0])
 "
 

@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/stretch_mode=4
 boot_splash/image="uid://cq3ybcqxlmis8"
 config/icon="uid://fhygvgv5n3j3"
+config/windows_native_icon="res://logo_icon.ico"
 boot_splash/minimum_display_time=1500
 
 [audio]

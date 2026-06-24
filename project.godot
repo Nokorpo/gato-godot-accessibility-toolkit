@@ -16,7 +16,7 @@ run/main_scene="uid://vooeq5ose2br"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/stretch_mode=4
 boot_splash/image="uid://cq3ybcqxlmis8"
-config/icon="res://icon.jpg"
+config/icon="uid://fhygvgv5n3j3"
 boot_splash/minimum_display_time=1500
 
 [audio]

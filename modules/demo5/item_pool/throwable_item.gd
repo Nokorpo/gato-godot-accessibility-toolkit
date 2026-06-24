@@ -16,11 +16,11 @@ var item_node: Node
 func instantiate_item() -> Node:
 	item_node = item_scene.instantiate()
 
-	var shadow := Decal.new()
-	shadow.texture_albedo = shadow_texture
-	shadow.size = Vector3(.20, 5., .20)
-	item_node.add_child(shadow)
-	shadow.position.y -= 2.5
+	#var shadow := Decal.new()
+	#shadow.texture_albedo = shadow_texture
+	#shadow.size = Vector3(.20, 5., .20)
+	#item_node.add_child(shadow)
+	#shadow.position.y -= 2.5
 
 	return item_node
 

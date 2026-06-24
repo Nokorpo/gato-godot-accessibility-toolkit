@@ -5,5 +5,6 @@
 [resource]
 resource_name = "body"
 cull_mode = 2
+diffuse_mode = 3
 albedo_texture = ExtResource("1_vbu3u")
 roughness = 0.5

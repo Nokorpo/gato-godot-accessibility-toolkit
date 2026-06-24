@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cik2hye8spgog"]
+
+[ext_resource type="Texture2D" uid="uid://6noq1yps1dlu" path="res://modules/demo1/map/props/interactables.png" id="1_dde7w"]
+
+[resource]
+resource_name = "interactables"
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_dde7w")
+texture_filter = 2
+distance_fade_min_distance = 2.0

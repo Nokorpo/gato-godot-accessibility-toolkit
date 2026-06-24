@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://b33u3hkmdcbwx" path="res://modules/demo1/map/sprites/flowers.png" id="35_yr7be"]
 [ext_resource type="Texture2D" uid="uid://catih1m3cybuo" path="res://modules/demo1/map/sprites/floor_leafs.png" id="36_lt6co"]
 [ext_resource type="Script" uid="uid://ctos4lq5i6svp" path="res://modules/demo1/map/level_completion_check.gd" id="37_1p31k"]
+[ext_resource type="LightmapGIData" uid="uid://e23bf4di7b6f" path="res://modules/demo1/map/map.lmbake" id="45_nqvxv"]
 [ext_resource type="AudioStream" uid="uid://csumq2x8b6q20" path="res://third_party/dragon-studio-ocean-waves-376898.mp3" id="45_nqvxv"]
 [ext_resource type="AudioStream" uid="uid://cqcvvrp3rtp62" path="res://third_party/dragon-studio-dry-grass-rustling-478361.mp3" id="46_c23nl"]
 [ext_resource type="AudioStream" uid="uid://d1ghg6brg5rcs" path="res://third_party/ebunny-simple-magic-loop-368855.mp3" id="47_kcps6"]
@@ -158,10 +159,12 @@ size = Vector3(8.974609, 1.9804688, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=123859659]
 environment = ExtResource("1_rwbpo")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1033447697]
-transform = Transform3D(1, 0, 0, 0, 0.887349, 0.461098, 0, -0.461098, 0.887349, 0, 0, 0)
-light_volumetric_fog_energy = 2.0
-light_specular = 0.0
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=476838694]
+transform = Transform3D(1, 0, 0, 0, 0.8873492, 0.46109807, 0, -0.46109807, 0.8873492, 0, 0, 0)
+light_color = Color(0.9529412, 0.9019608, 0.6156863, 1)
+shadow_enabled = true
+directional_shadow_blend_splits = true
+sky_mode = 1
 
 [node name="LoadInputConfig" type="Node" parent="." unique_id=432177938]
 script = SubResource("GDScript_5212t")
@@ -660,7 +663,7 @@ transform = Transform3D(-1.5505, 0, 1.31297, 0, 0.990467, 0, -1.30356, 0, -1.561
 transform = Transform3D(-2.02721, 0, 0.348739, 0, 2.05699, 0, -0.348739, 0, -2.02721, 23.0958, -1.34618, 0.882472)
 
 [node name="RockGroup35" parent="Props/Rocks" unique_id=2137426009 instance=ExtResource("23_snwuc")]
-transform = Transform3D(-1.16641, 0, 1.2777, 0, 2.17156, 0, -1.45847, 0, -1.02184, 23.6578, -2.82617, 3.66161)
+transform = Transform3D(-1.16641, 0, 1.2777003, 0, 2.17156, 0, -1.45847, 0, -1.0218396, 23.6578, -2.82617, 3.66161)
 
 [node name="RockGroup30" parent="Props/Rocks" unique_id=125223640 instance=ExtResource("23_snwuc")]
 transform = Transform3D(-0.484941, 0, -3.15731, 0, 2.6209, 0, 3.1347, 0, -0.488439, 37.0498, -1.60199, 7.79206)
@@ -1900,6 +1903,9 @@ stream = ExtResource("49_uidwh")
 volume_db = -8.0
 bus = &"SFX"
 
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1401996455]
+bounces = 5
+light_data = ExtResource("45_nqvxv")
 [node name="UseBoarAsPlaformDialoueTrigger" type="Area3D" parent="." unique_id=2043343872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0612373, 3.5972552, -10.618257)
 

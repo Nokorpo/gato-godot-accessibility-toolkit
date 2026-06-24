@@ -8,8 +8,8 @@ signal detected_conflicting_inputs(input_action_list: Array[InputAction])
 @export var input_remapper_ui: InputRemapperUI
 @export var press_key_dialog: Control
 
-@onready var _accept_audio: AudioStreamPlayer = %AcceptAudioStreamPlayer
-@onready var _cancel_audio: AudioStreamPlayer = %CancelAudioStreamPlayer
+@onready var _accept_audio: AudioStreamPlayer =  get_node_or_null("%AcceptAudioStreamPlayer")
+@onready var _cancel_audio: AudioStreamPlayer = get_node_or_null("%CancelAudioStreamPlayer")
 
 var input_actions: Array[InputActionButton] = []
 var use_right_joystick := false
@@ -19,6 +19,7 @@ var row_scene: PackedScene = load("res://addons/gato_input_remapper/ui/row_navig
 var input_action_scene: PackedScene = load("res://addons/gato_input_remapper/ui/input_action.tscn")
 
 func _ready() -> void:
+
 	if input_remapper_ui:
 		input_remapper_ui.detected_conflicting_inputs.connect(_on_detected_conflicting_inputs)
 

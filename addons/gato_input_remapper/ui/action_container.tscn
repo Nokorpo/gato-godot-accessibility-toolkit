@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://kk68b0rf25so"]
+
+[ext_resource type="Script" uid="uid://dnohs380c7c7s" path="res://addons/gato_input_remapper/ui/action_container.gd" id="1_sosgl"]
+[ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/gato_input_remapper/ui/row_navigation_container.tscn" id="2_c3lw8"]
+[ext_resource type="PackedScene" uid="uid://drqw3ka7ghfdn" path="res://addons/gato_input_remapper/ui/input_action.tscn" id="3_lqltc"]
+
+[node name="ActionContainer" type="VBoxContainer" unique_id=95324329]
+editor_description = "This should be a separate scene and it should generate the UI based on its content automatically"
+script = ExtResource("1_sosgl")
+
+[node name="RowNavigationContainer" parent="." unique_id=1367961113 instance=ExtResource("2_c3lw8")]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../RowNavigationContainer2")
+
+[node name="InputAction" parent="RowNavigationContainer" unique_id=681386481 instance=ExtResource("3_lqltc")]
+layout_mode = 2
+label_text = "patata"
+button_text = "Z"
+
+[node name="RowNavigationContainer2" parent="." unique_id=1198322422 instance=ExtResource("2_c3lw8")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../RowNavigationContainer")
+
+[node name="InputAction" parent="RowNavigationContainer2" unique_id=1881325220 instance=ExtResource("3_lqltc")]
+layout_mode = 2
+label_text = "jump"
+button_text = "Space"
+
+[connection signal="pressed" from="RowNavigationContainer" to="." method="_on_button_pressed" binds= [&"launch_item"]]
+[connection signal="pressed" from="RowNavigationContainer/InputAction" to="." method="_on_button_pressed" binds= [&"launch_item"]]
+[connection signal="pressed" from="RowNavigationContainer2" to="." method="_on_button_pressed" binds= [&"jump"]]
+[connection signal="pressed" from="RowNavigationContainer2/InputAction" to="." method="_on_button_pressed" binds= [&"jump"]]

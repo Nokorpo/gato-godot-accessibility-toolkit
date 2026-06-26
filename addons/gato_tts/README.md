@@ -1,8 +1,8 @@
 # GATO: Text-to-Speech
 
-This is a plugin made under the base project of GATO (Godot Accessibility
-Toolkit). Its objective is to provide a plug-and-play tool for games to have
-text-to-speech options.
+This plugin is a plug-and-play tool for games to have text-to-speech options. It is based on Godot's
+TTS, but it provides a simpler API and a UI that can be used while playing the game to configure the
+voice that reads the text.
 
 ### How it works
 
@@ -31,3 +31,7 @@ var button_text: String = "Action"
 func _on_focus_grabbed() -> void:
 	GatoTextToSpeech.read(button_text)
 ```
+
+-----------
+
+This plugin is part of [GATO (Godot Accessibility Toolkit)](https://github.com/Nokorpo/gato-godot-accessibility-toolkit).

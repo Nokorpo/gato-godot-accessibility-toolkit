@@ -3,20 +3,19 @@
 importer="2d_array_texture"
 type="CompressedTexture2DArray"
 uid="uid://dqm5kmkdiram4"
-path.bptc="res://.godot/imported/map.exr-5803aabfc4132be07e64b258b1724415.bptc.ctexarray"
+path="res://.godot/imported/map.exr-5803aabfc4132be07e64b258b1724415.ctexarray"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://modules/demo2/map.exr"
-dest_files=["res://.godot/imported/map.exr-5803aabfc4132be07e64b258b1724415.bptc.ctexarray"]
+dest_files=["res://.godot/imported/map.exr-5803aabfc4132be07e64b258b1724415.ctexarray"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

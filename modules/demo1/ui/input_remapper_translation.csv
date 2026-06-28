@@ -24,3 +24,7 @@ unsaved_go_back,Go back to menu,Volver al menú
 unsaved_save_changes,Save changes and exit,Guardar cambios y cerrar
 unsaved_exit,Exit without saving,Salir sin guardar cambios
 error_same_input,Two or more actions have the same input configured,Dos o más acciones tienen el mismo control asignado
+"Gato: ""¿Zeta me está retando a un combate?""","Gato: ""Is Zeta challenging me to a duel?""","Gato: ""¿Zeta me está retando a un combate?"""
+"Gato: ""¡Ya sé, me apoyaré en el Text to Speech para derrotarlo!""","Gato: ""I know! I’ll use Text to Speech to defeat him!""","Gato: ""¡Ya sé, me apoyaré en el Text to Speech para derrotarlo!"""
+"Gato: ""¡Oye Zeta, devuelve esas bellotas!""","Gato: ""Hey Zeta, give me back the acorns!""","Gato: ""¡Oye Zeta, devuelve esas bellotas!"""
+"Zeta: ""Ja, ja, ja, atrévete a quitármelas si es que puedes…""","Zeta: ""Ha, ha, ha, try to take them from me if you can…""","Zeta: ""Ja, ja, ja, atrévete a quitármelas si es que puedes…"""

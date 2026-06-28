@@ -50,8 +50,9 @@ class SayInstruction extends Instruction:
 			return Result.ERROR
 		if not _node.narrator.visible:
 			_node.narrator.show()
-		GatoTextToSpeech.read(value)
-		_node.narrator.set_text(value)
+		var localized_text: String = tr(value)
+		GatoTextToSpeech.read(localized_text)
+		_node.narrator.set_text(localized_text)
 		return Result.CONTINUE
 
 class StopInstruction extends Instruction:

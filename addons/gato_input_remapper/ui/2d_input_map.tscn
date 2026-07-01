@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dbhxpwpye5w7h" path="res://addons/gato_input_remapper/ui/2d_input_map.gd" id="1_uo2cf"]
 [ext_resource type="Script" uid="uid://cth8aq3xd04di" path="res://addons/gato_input_remapper/ui/joystick_selector.gd" id="2_a6iv7"]
 [ext_resource type="Texture2D" uid="uid://cpw2wmvyeqeyq" path="res://addons/gato_input_remapper/ui/sprites/arrow.svg" id="3_4v8tm"]
-[ext_resource type="Script" uid="uid://ciu2ae46ncvtp" path="res://addons/gato_input_remapper/ui/action2d_container.gd" id="3_tb1qo"]
+[ext_resource type="Script" uid="uid://ciu2ae46ncvtp" path="res://addons/gato_input_remapper/ui/keysaction2d_container.gd" id="3_tb1qo"]
 [ext_resource type="Texture2D" uid="uid://cd6wh68uu2enj" path="res://addons/gato_input_remapper/ui/sprites/arrow_hover.svg" id="4_nyq3o"]
 [ext_resource type="Script" uid="uid://bg4knulolkblw" path="res://addons/gato_input_remapper/ui/invert_joystick_direction.gd" id="5_o01t1"]
 [ext_resource type="PackedScene" uid="uid://cxhsaoc5088pf" path="res://addons/gato_input_remapper/ui/row_navigation_container.tscn" id="6_vkcyi"]

@@ -1,19 +1,33 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## This Control is a menu used to configure the voice used for the
+## `GatoTextToSpeech` addon. It allows selecting language, voice and
+## reading speed.
+##
+## Voices are selected manually to do some work for the developers,
+## so if your language doesn't have a voice, feel free to open a PR!
 extends Control
 
 ## First node that will be selected when the menu grabs focus.
 @export var first_item: Control
 
+## Reference to the language selector node.
 @onready var language_selector = %LanguageSelector
+## Reference to the voice selector node.
 @onready var voice_selector = %VoiceSelector
+## Reference to the reading speed selector node.
 @onready var speed_selector = %SpeedSelector
 
 @onready var _accept_audio: AudioStreamPlayer = $AcceptAudioStreamPlayer
 
+## Default language used in the GatoTextToSpeech addon. This can be
+## changed by calling the `GatoTTS.set_language` method.
 const DEFAULT_LANGUAGE: StringName = "ES"
+## List of supported languages in the `GatoTextToSpeech` addon.
 const LANGUAGE_OPTIONS: Array[StringName] = ["ES", "EN"]
+## List of pre-defined reading speeds in the `GatoTextToSpeech` addon.
 const VOICE_SPEED_OPTIONS: Array[StringName] = ["1.0", "1.5", "2.0", "0.5", "0.75"]
 
 var _current_voices: Array[GatoTTSVoiceID] = []
@@ -26,6 +40,8 @@ func _ready() -> void:
 	speed_selector.selection_changed.connect(_on_speed_changed)
 	_on_language_changed(DEFAULT_LANGUAGE)
 
+## Method used when the node grabs focus from a controller. It
+## gives focus to the first element in the menu.
 func grab_focus(hide_focus: bool = false) -> void:
 	first_item.grab_focus(hide_focus)
 

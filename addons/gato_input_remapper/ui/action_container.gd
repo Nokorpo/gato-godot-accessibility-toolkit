@@ -1,28 +1,43 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## This Control node creates buttons for a set of `InputActionButton` configurations in the
+## selected control scheme. These buttons can be used to update the triggering InputEvent
+## for this action.
 extends VBoxContainer
 
+## Emitted when two `InputAction` objects use the same triggering `InputEvent`.
+## The parameter `input_action_list` includes the 2 or more conflicting `InputAction` objects.
 signal detected_conflicting_inputs(input_action_list: Array[InputAction])
 
+## Reference to the InputRemapperUI Control node.
 @export var input_remapper_ui: InputRemapperUI
+## Reference to the dialog that shows up when listening for `InputEvents`.
 @export var press_key_dialog: Control
 
 @onready var _accept_audio: AudioStreamPlayer =  get_node_or_null("%AcceptAudioStreamPlayer")
 @onready var _cancel_audio: AudioStreamPlayer = get_node_or_null("%CancelAudioStreamPlayer")
 
+## List of `InputAction` elements that this element has created buttons for. Element 0 on this list
+## has a button representation in element 0 of the `input_action_nodes` list.
 var input_actions: Array[InputActionButton] = []
-var use_right_joystick := false
+## List of control nodes representing the configuration for the `InputAction` elements on the
+## `input_actions` list. Element 0 on this list is the button representing the `InputAction` 0 in
+## the `input_actions` list.
 var input_action_nodes: Array[Control] = []
 
+## Reference to the `RowNavigationContainer` scene.
 var row_scene: PackedScene = load("res://addons/gato_input_remapper/ui/row_navigation_container.tscn")
+## Reference to the scene with the InputAction button and functionality to change the trigger InputEvent.
 var input_action_scene: PackedScene = load("res://addons/gato_input_remapper/ui/input_action.tscn")
 
 func _ready() -> void:
-
 	if input_remapper_ui:
 		input_remapper_ui.detected_conflicting_inputs.connect(_on_detected_conflicting_inputs)
 
+## Reacts to the `GatoInputRemapper.control_scheme_changed` signal to populate the UI with the
+## loaded control scheme and propagates it down to its descendants so they can do the same.
 func update_ui(_input_actions: Array[InputActionButton]) -> void:
 	input_actions = _input_actions
 	input_action_nodes = []
@@ -42,6 +57,7 @@ func update_ui(_input_actions: Array[InputActionButton]) -> void:
 
 		add_child(row_ui)
 
+## Given an InputAction's name, it returns the button that represents it.
 func get_button_for_action(action_name: String) -> Button:
 	return _get_button_for_action_recursive(action_name, self)
 

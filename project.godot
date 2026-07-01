@@ -47,7 +47,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/gato_input_remapper/plugin.cfg", "res://addons/gato_screen_filters/plugin.cfg", "res://addons/gato_tts/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/input_remapper/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/gato_input_remapper/plugin.cfg", "res://addons/gato_screen_filters/plugin.cfg", "res://addons/gato_tts/plugin.cfg", "res://addons/gut/plugin.cfg")
 
 [global_group]
 

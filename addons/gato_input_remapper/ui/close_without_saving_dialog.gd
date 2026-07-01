@@ -1,14 +1,21 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## A Control node to use when a user tries to close the Input Remapper with
+## unsaved changes. It lets the user decide whether they want to go back,
+## save the changes or discard them.
 extends Control
 
+## Reference to the InputRemapperUI Control node.
 @onready var input_remapper_ui: InputRemapperUI
 
 @onready var _accept_audio: AudioStreamPlayer = $AcceptAudioStreamPlayer
 @onready var _cancel_audio: AudioStreamPlayer = $CancelAudioStreamPlayer
 
+## Emitted when this dialog appears.
 signal appeared
+## Emitted when this dialog is closed.
 signal disappeared
 
 func _ready() -> void:

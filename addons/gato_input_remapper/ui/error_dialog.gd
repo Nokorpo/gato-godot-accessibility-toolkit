@@ -1,9 +1,15 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## A Control node to use when a user tries to close the Input Remapper with
+## errors (like multiple `InputAction` objects using the same `InputEvent` as a
+## trigger. It notifies the user of the error and lets them go back to the menu.
 extends Control
 
+## Emitted when this dialog appears.
 signal appeared
+## Emitted when this dialog is closed.
 signal disappeared
 
 func _ready() -> void:

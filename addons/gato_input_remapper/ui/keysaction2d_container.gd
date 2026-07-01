@@ -1,12 +1,17 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## A Control that lets the user configure the keys or controller buttons used
+## for a `KeysInputAction2D`.
 extends VBoxContainer
 
 @onready var _accept_audio: AudioStreamPlayer = %AcceptAudioStreamPlayer
 @onready var _cancel_audio: AudioStreamPlayer = %CancelAudioStreamPlayer
 
+## Reference to the InputRemapperUI Control node.
 var input_remapper_ui: InputRemapperUI
+## Name of the action this Control represents.
 var action_name: StringName:
 	set(value):
 		action_name = value
@@ -15,13 +20,18 @@ var action_name: StringName:
 			# action name, we don't know before input_action creation and it
 			# needs to be set up now
 			input_action.name = value
+## Reference to the InputAction this node represents
 var input_action: KeysInputAction2D
+## Whether or not the control is currently waiting for an input (true) or not (false).
 var reading_input: bool = false
+## Reference to the dialog that shows up when listening for `InputEvents`.
 var press_key_dialog: Control
 
 func _ready() -> void:
 	input_action = KeysInputAction2D.new()
 
+## Reacts to the `GatoInputRemapper.control_scheme_changed` signal to populate the UI with the
+## loaded control scheme and propagates it down to its descendants so they can do the same.
 func update_ui(_input_action: KeysInputAction2D) -> void:
 	input_action = _input_action
 

@@ -86,7 +86,7 @@ class TestInputRemapper extends GutTest:
 
 	const ACTION_NAME := "act"
 	const TEMP_FILE := "user://temp.txt"
-	const FILE_CONTENT := '{"control_schemes":[{"input_actions":[],"name":"one","toggle_joystick":false,"type":"control_scheme"},{"input_actions":[],"name":"two","toggle_joystick":false,"type":"control_scheme"},{"input_actions":[],"name":"three","toggle_joystick":false,"type":"control_scheme"}]}'
+	const FILE_CONTENT := '{"control_schemes":[{"input_actions":[],"name":"one","type":"control_scheme"},{"input_actions":[],"name":"two","type":"control_scheme"},{"input_actions":[],"name":"three","type":"control_scheme"}]}'
 	func test_reset_changes() -> void:
 		# GIVEN
 		InputMap.add_action(ACTION_NAME)

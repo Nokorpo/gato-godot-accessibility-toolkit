@@ -1,9 +1,17 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## This node is an abstraction to handle controller navigation in menus.
+## It highlights the node that currently has focus and exposes signals
+## that are emitted when the user interacts with it.
 extends MarginContainer
 
+## Emitted when this node has focus and `ui_confirm` is pressed
 signal pressed
+## This signal is emitted when this node receives input. It is currently
+## used to propagate the input down to the original button. That way, we
+## can filter input events based on what `RowNavigationContainer` has focus.
 signal input(event: InputEvent)
 
 var _just_released: bool = true

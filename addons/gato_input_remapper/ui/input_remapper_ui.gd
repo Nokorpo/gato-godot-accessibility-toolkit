@@ -1,10 +1,18 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## This is an example implementation of an Input Remapper UI with the GatoInputRemapper API. It uses
+## the model classes and the GatoInputRemapper autoload to get the loaded control scheme data and to
+## set the input configuration defined there.
 class_name InputRemapperUI
 extends Control
 
+## Emitted when trying to save the current changes and the same InputEvent trigger was used with
+## more than one action. For instance, it will be emitted if you try to save and you set jump and
+## attack to the same key.
 signal detected_conflicting_inputs(input_action_list: Array[InputAction])
+## Emitted when the UI is closed (ie. set to invisible).
 signal closed
 
 @export var _control_scheme_selector: Control
@@ -14,6 +22,8 @@ signal closed
 @onready var _accept_audio: AudioStreamPlayer = %AcceptAudioStreamPlayer
 @onready var _cancel_audio: AudioStreamPlayer = %CancelAudioStreamPlayer
 
+## Reference to the Control node with the dialog that shows up when trying to
+## close the menu with unsaved changes.
 @onready var close_without_saving_dialog := $CloseWithoutSavingDialog
 
 var _schemes: Array[GatoControlScheme] = []
@@ -29,10 +39,11 @@ func _ready() -> void:
 	populate_ui(_schemes[InputRemapper.current_control_scheme_index])
 	grab_focus.call_deferred()
 
+## When the menu grabs focus, it tells the first interactable element on the UI to grab focus instead.
 func grab_focus(hide_focus: bool = false) -> void:
 	_control_scheme_selector.grab_focus.call_deferred(hide_focus)
-	#$PanelContainer/MarginContainer/ScrollContainer.scroll_vertical = 0
 
+## Returns true if the parameter InputEvent is one of the buttons used to go back on menus.
 func _is_back_input(event: InputEvent) -> bool:
 	return (
 		event is InputEventKey and event.keycode == KEY_ESCAPE \
@@ -58,6 +69,8 @@ func _get_scheme_index(scheme: GatoControlScheme) -> int:
 		func (it: GatoControlScheme): return it.name == scheme.name
 	)
 
+## Reacts to the `GatoInputRemapper.control_scheme_changed` signal to populate the UI with the
+## loaded control scheme and propagates it down to its descendants so they can do the same.
 func populate_ui(scheme: GatoControlScheme) -> void:
 	if scheme == null:
 		push_error("Tried to initialize Input Remapper with empty scheme")
@@ -73,6 +86,8 @@ func populate_ui(scheme: GatoControlScheme) -> void:
 			inputs.append(input)
 	_interactions_action_container.update_ui(inputs)
 
+## Updates the control schemes in memory with a new InputEvent trigger for a
+## single button action (ie. `InputActionButton`).
 func set_action(action_name: StringName, event: InputEvent) -> void:
 	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]
 	var action_index := current_scheme.input_actions.find_custom(
@@ -80,6 +95,8 @@ func set_action(action_name: StringName, event: InputEvent) -> void:
 	)
 	current_scheme.input_actions[action_index].input = event
 
+## Updates the control schemes in memory with a new configuration for a 2D action.
+## The action could be based on buttons (ie. `KeysInputAction2D`) or a joystick (ie. JoystickInputAction2D).
 func set_action2d(action_name: StringName, new_input_action2d: InputAction) -> void:
 	if new_input_action2d is not KeysInputAction2D and new_input_action2d is not JoystickInputAction2D:
 		push_error("Error: tried to set action \"%s\" with an InputAction object that isn't an Input Action 2D." % action_name)
@@ -129,6 +146,7 @@ func _has_unsaved_changes() -> bool:
 	var current_scheme := _schemes[index]
 	return not current_scheme.equals(InputRemapper.get_stored_config()[index])
 
+## Saves the current changes to the `input.data` file.
 func save_changes() -> void:
 	InputRemapper.control_schemes = _schemes
 	var current_scheme := _schemes[_get_scheme_index(InputRemapper.get_current_scheme())]
@@ -140,6 +158,7 @@ func save_changes() -> void:
 	InputRemapper.save_changes()
 	_accept_audio.play()
 
+## Closes the menu and alerts anyone listening to `closed` events.
 func close() -> void:
 	visible = false
 	closed.emit()

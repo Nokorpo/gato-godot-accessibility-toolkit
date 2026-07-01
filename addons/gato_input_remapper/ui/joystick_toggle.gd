@@ -1,15 +1,23 @@
 ## This Source Code Form is subject to the terms of the Mozilla Public
 ## License, v. 2.0. If a copy of the MPL was not distributed with this
 ## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+## A selector that lets the user choose whether to use a joystick (JoystickInputAction2D)
+## or keys/controller buttons (KeysInputAction2D) for an input action 2D.
 extends HBoxContainer
-## Lets the user choose whether to use a joystick or keyboard keys for an input action 2D
 
+## Emitted when the user changes from Joystick to Keys or viceversa.
 signal toggle_changed(use_joystick: bool)
 
+## The sound played when a change is made on the selection.
 @export var accept_sound: AudioStreamPlayer
 
+## Timer that limits the speed of this selector when using a joystick. This is used
+## because otherwise Godot logs dozens of joystick motion events every second and it's
+## impossible to select the value you want.
 @onready var joystick_cooldown: Timer = $JoystickCooldownTimer
 
+## Whether the InputAction will use JoystickInputAction2D (true) or KeysInputAction2D (false).
 var use_joystick := false
 
 func _on_button_pressed() -> void:
@@ -23,6 +31,8 @@ func _on_button_pressed() -> void:
 	else:
 		%ActionContainer.set_action()
 
+## Reacts to the `GatoInputRemapper.control_scheme_changed` signal to populate the UI with the
+## loaded control scheme and propagates it down to its descendants so they can do the same.
 func update_ui() ->void :
 	toggle_changed.emit(use_joystick)
 	if use_joystick:

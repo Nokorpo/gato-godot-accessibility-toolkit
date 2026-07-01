@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>addons_gato_input_remapper_service_storage_service.gd &mdash; GATO  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GATO
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Demos documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Input Remapper</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">GATO: Input Remapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class-ref.html">Class reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Screen Filters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../screen-filters/README.html">GATO: Screen Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../screen-filters/class-ref.html">Class reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Text-to-Speech</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tts/README.html">GATO: Text-to-Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/class-ref.html">Class list</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GATO</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">addons_gato_input_remapper_service_storage_service.gd</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="addons-gato-input-remapper-service-storage-service-gd">
+<span id="class-addons-gato-input-remapper-service-storage-service-gd"></span><h1>addons_gato_input_remapper_service_storage_service.gd<a class="headerlink" href="#addons-gato-input-remapper-service-storage-service-gd" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong> <code class="docutils literal notranslate"><span class="pre">RefCounted</span></code></p>
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <a class="reference external" href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p>
+<section class="classref-introduction-group" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>This class loads and stores control schemes and input configuration defined in InputRemapper. It stores all data in “user://input.data” by default.</p>
+<p>The format is a mix of custom JSON and Godot’s native to json conversion (for more information, see <a class="reference external" href="https://docs.godotengine.org/en/stable/classes/class_json.html#class-json-method-from-native">this link</a>).</p>
+</section>
+<section class="classref-reftable-group" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-property-settings-file"><span class="std std-ref">settings_file</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;user://input.data&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Script</span></code></p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-property-control-scheme-script"><span class="std std-ref">control_scheme_script</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">load(...)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Error</p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-verify-config-file"><span class="std std-ref">verify_config_file</span></a>(file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null)</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-initialized-file-with-input-map"><span class="std std-ref">initialized_file_with_input_map</span></a>(file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>]</p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-load-input-config-from-file"><span class="std std-ref">load_input_config_from_file</span></a>(file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>]</p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-load-input-config-from-json"><span class="std std-ref">load_input_config_from_json</span></a>(json: <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-store-input-config"><span class="std std-ref">store_input_config</span></a>(input_config: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>, file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Link to this heading"></a></h2>
+<p class="classref-constant" id="class-addons-gato-input-remapper-service-storage-service-gd-constant-default-events"><strong>DEFAULT_EVENTS</strong> = <code class="docutils literal notranslate"><span class="pre">[&quot;ui_accept&quot;,</span> <span class="pre">&quot;ui_select&quot;,</span> <span class="pre">&quot;ui_cancel&quot;,</span> <span class="pre">&quot;ui_focus_next&quot;,</span> <span class="pre">&quot;ui_focus_prev&quot;,</span> <span class="pre">&quot;ui_left&quot;,</span> <span class="pre">&quot;ui_right&quot;,</span> <span class="pre">&quot;ui_up&quot;,</span> <span class="pre">&quot;ui_down&quot;,</span> <span class="pre">&quot;ui_page_up&quot;,</span> <span class="pre">&quot;ui_page_down&quot;,</span> <span class="pre">&quot;ui_home&quot;,</span> <span class="pre">&quot;ui_end&quot;,</span> <span class="pre">&quot;ui_cut&quot;,</span> <span class="pre">&quot;ui_copy&quot;,</span> <span class="pre">&quot;ui_paste&quot;,</span> <span class="pre">&quot;ui_undo&quot;,</span> <span class="pre">&quot;ui_redo&quot;,</span> <span class="pre">&quot;ui_text_completion_query&quot;,</span> <span class="pre">&quot;ui_text_completion_accept&quot;,</span> <span class="pre">&quot;ui_text_completion_replace&quot;,</span> <span class="pre">&quot;ui_text_newline&quot;,</span> <span class="pre">&quot;ui_text_newline_blank&quot;,</span> <span class="pre">&quot;ui_text_newline_above&quot;,</span> <span class="pre">&quot;ui_text_indent&quot;,</span> <span class="pre">&quot;ui_text_dedent&quot;,</span> <span class="pre">&quot;ui_text_backspace&quot;,</span> <span class="pre">&quot;ui_text_backspace_word&quot;,</span> <span class="pre">&quot;ui_text_backspace_word.macos&quot;,</span> <span class="pre">&quot;ui_text_backspace_all_to_left&quot;,</span> <span class="pre">&quot;ui_text_backspace_all_to_left.macos&quot;,</span> <span class="pre">&quot;ui_text_delete&quot;,</span> <span class="pre">&quot;ui_text_delete_word&quot;,</span> <span class="pre">&quot;ui_text_delete_word.macos&quot;,</span> <span class="pre">&quot;ui_text_delete_all_to_right&quot;,</span> <span class="pre">&quot;ui_text_delete_all_to_right.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_left&quot;,</span> <span class="pre">&quot;ui_text_caret_word_left&quot;,</span> <span class="pre">&quot;ui_text_caret_word_left.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_right&quot;,</span> <span class="pre">&quot;ui_text_caret_word_right&quot;,</span> <span class="pre">&quot;ui_text_caret_word_right.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_up&quot;,</span> <span class="pre">&quot;ui_text_caret_down&quot;,</span> <span class="pre">&quot;ui_text_caret_line_start&quot;,</span> <span class="pre">&quot;ui_text_caret_line_start.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_line_end&quot;,</span> <span class="pre">&quot;ui_text_caret_line_end.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_page_up&quot;,</span> <span class="pre">&quot;ui_text_caret_page_down&quot;,</span> <span class="pre">&quot;ui_text_caret_document_start&quot;,</span> <span class="pre">&quot;ui_text_caret_document_start.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_document_end&quot;,</span> <span class="pre">&quot;ui_text_caret_document_end.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_add_below&quot;,</span> <span class="pre">&quot;ui_text_caret_add_below.macos&quot;,</span> <span class="pre">&quot;ui_text_caret_add_above&quot;,</span> <span class="pre">&quot;ui_text_caret_add_above.macos&quot;,</span> <span class="pre">&quot;ui_text_scroll_up&quot;,</span> <span class="pre">&quot;ui_text_scroll_up.macos&quot;,</span> <span class="pre">&quot;ui_text_scroll_down&quot;,</span> <span class="pre">&quot;ui_text_scroll_down.macos&quot;,</span> <span class="pre">&quot;ui_text_select_all&quot;,</span> <span class="pre">&quot;ui_text_select_word_under_caret&quot;,</span> <span class="pre">&quot;ui_text_select_word_under_caret.macos&quot;,</span> <span class="pre">&quot;ui_text_add_selection_for_next_occurrence&quot;,</span> <span class="pre">&quot;ui_text_skip_selection_for_next_occurrence&quot;,</span> <span class="pre">&quot;ui_text_clear_carets_and_selection&quot;,</span> <span class="pre">&quot;ui_text_toggle_insert_mode&quot;,</span> <span class="pre">&quot;ui_menu&quot;,</span> <span class="pre">&quot;ui_text_submit&quot;,</span> <span class="pre">&quot;ui_unicode_start&quot;,</span> <span class="pre">&quot;ui_graph_duplicate&quot;,</span> <span class="pre">&quot;ui_graph_delete&quot;,</span> <span class="pre">&quot;ui_filedialog_up_one_level&quot;,</span> <span class="pre">&quot;ui_filedialog_refresh&quot;,</span> <span class="pre">&quot;ui_filedialog_show_hidden&quot;,</span> <span class="pre">&quot;ui_swap_input_direction&quot;]</span></code> <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-constant-default-events"><span class="std std-ref">🔗</span></a></p>
+<p>Default events defined by Godot. We neither need nor want to re-define these in our custom input file, so we ignore them.</p>
+<p class="classref-constant" id="class-addons-gato-input-remapper-service-storage-service-gd-constant-default-file-envvar"><strong>DEFAULT_FILE_ENVVAR</strong> = <code class="docutils literal notranslate"><span class="pre">&quot;DEFAULT_INPUT_REMAPPER_FILE_PATH&quot;</span></code> <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-constant-default-file-envvar"><span class="std std-ref">🔗</span></a></p>
+<p>Defines the default settings file path environment variable name. If you need to change the path of the default settings file, use this environment variable or pass it to Godot when running it.</p>
+<p class="classref-constant" id="class-addons-gato-input-remapper-service-storage-service-gd-constant-default-file-path"><strong>DEFAULT_FILE_PATH</strong> = <code class="docutils literal notranslate"><span class="pre">&quot;res://addons/gato_input_remapper/default_input.data&quot;</span></code> <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-constant-default-file-path"><span class="std std-ref">🔗</span></a></p>
+<p>Defines the default settings file path. When the project/game is open for the first time, it will initialize the input with the data in this file. If you need to use a different file, pass the new path by setting the environment variable <code class="docutils literal notranslate"><span class="pre">&quot;DEFAULT_INPUT_REMAPPER_FILE_PATH&quot;</span></code>. See <span class="xref std std-ref">DEFAULT_FILE_ENVVAR</span>.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-property" id="class-addons-gato-input-remapper-service-storage-service-gd-property-settings-file"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>settings_file</strong> = <code class="docutils literal notranslate"><span class="pre">&quot;user://input.data&quot;</span></code> <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-property-settings-file"><span class="std std-ref">🔗</span></a></p>
+<p>Defines where the settings will be stored once changes are saved. This is also the path that will be used to reload the settings next time the game runs.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-addons-gato-input-remapper-service-storage-service-gd-property-control-scheme-script"><code class="docutils literal notranslate"><span class="pre">Script</span></code> <strong>control_scheme_script</strong> = <code class="docutils literal notranslate"><span class="pre">load(...)</span></code> <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-property-control-scheme-script"><span class="std std-ref">🔗</span></a></p>
+<p>Reference to the control scheme class script. Used to create new GatoControlScheme instances when loading the configuration from the <cite>input.data</cite> file.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-method" id="class-addons-gato-input-remapper-service-storage-service-gd-method-verify-config-file">Error <strong>verify_config_file</strong>(file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null) <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-verify-config-file"><span class="std std-ref">🔗</span></a></p>
+<p>Checks that the configuration file can be loaded correctly. If the file doesn’t exist, cannot be parsed into JSON or the reading results in an empty list of control schemes, it returns an error.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-addons-gato-input-remapper-service-storage-service-gd-method-initialized-file-with-input-map"><abbr title="No return value.">void</abbr> <strong>initialized_file_with_input_map</strong>(file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null) <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-initialized-file-with-input-map"><span class="std std-ref">🔗</span></a></p>
+<p>If the settings file is not found, it needs to be generated for the plugin to work. This method generated the settings file with the Input Map defined in the project.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-addons-gato-input-remapper-service-storage-service-gd-method-load-input-config-from-file"><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>] <strong>load_input_config_from_file</strong>(file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null) <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-load-input-config-from-file"><span class="std std-ref">🔗</span></a></p>
+<p>Loads the input map configuration from a file. If no argument is passed, it will load the configuration from “user://input.data”.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-addons-gato-input-remapper-service-storage-service-gd-method-load-input-config-from-json"><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>] <strong>load_input_config_from_json</strong>(json: <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>) <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-load-input-config-from-json"><span class="std std-ref">🔗</span></a></p>
+<p>Loads the input map configuration from a json dictionary.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-addons-gato-input-remapper-service-storage-service-gd-method-store-input-config"><abbr title="No return value.">void</abbr> <strong>store_input_config</strong>(input_config: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>, file_path: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null) <a class="reference internal" href="#class-addons-gato-input-remapper-service-storage-service-gd-method-store-input-config"><span class="std std-ref">🔗</span></a></p>
+<p>Stores the control schemes modified by the user in a file. If no argument for the file is passed, it will store the configuration in “user://input.data”.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Nokorpo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

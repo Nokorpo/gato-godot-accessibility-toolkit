@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InputRemapper &mdash; GATO  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="InputRemapperUI" href="class_inputremapperui.html" />
+    <link rel="prev" title="InputConfig" href="class_inputconfig.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GATO
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Demos documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Input Remapper</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">GATO: Input Remapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class-ref.html">Class reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Screen Filters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../screen-filters/README.html">GATO: Screen Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../screen-filters/class-ref.html">Class reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Text-to-Speech</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tts/README.html">GATO: Text-to-Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/class-ref.html">Class list</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GATO</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="class-ref.html">Class reference</a></li>
+      <li class="breadcrumb-item active">InputRemapper</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="inputremapper">
+<span id="class-inputremapper"></span><h1>InputRemapper<a class="headerlink" href="#inputremapper" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong> <code class="docutils literal notranslate"><span class="pre">Node</span></code></p>
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <a class="reference external" href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p>
+<section class="classref-introduction-group" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>This autoload is the main point of interaction from your code to the addon. It let’s you do things like get the current control scheme, change to a different control scheme, load/save the configuration and react to the controls updating or being saved from a central point.  You can use the methods and signals in this autoload to programatically create a UI for the input remapper in your game. You have an example of that in <cite>res://addons/gato_input_remapper/ui/input_remapper_ui.tscn</cite>.</p>
+</section>
+<section class="classref-reftable-group" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Variant</span></code></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-property-storage-service"><span class="std std-ref">storage_service</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>]</p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-property-control-schemes"><span class="std std-ref">control_schemes</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-property-current-control-scheme-index"><span class="std std-ref">current_control_scheme_index</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-method-get-current-scheme"><span class="std std-ref">get_current_scheme</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-method-load-next-scheme"><span class="std std-ref">load_next_scheme</span></a>()</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-method-load-previous-scheme"><span class="std std-ref">load_previous_scheme</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-method-apply-control-scheme"><span class="std std-ref">apply_control_scheme</span></a>(control_scheme: <a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-method-save-changes"><span class="std std-ref">save_changes</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>]</p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-method-get-stored-config"><span class="std std-ref">get_stored_config</span></a>()</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-inputremapper-method-reset-changes"><span class="std std-ref">reset_changes</span></a>()</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Link to this heading"></a></h2>
+<p class="classref-signal" id="class-inputremapper-signal-control-scheme-saved-to-file"><strong>control_scheme_saved_to_file</strong>() <a class="reference internal" href="#class-inputremapper-signal-control-scheme-saved-to-file"><span class="std std-ref">🔗</span></a></p>
+<p>Emitted when the current control schemes configuratin is saved to the <cite>input.data</cite> file.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-signal" id="class-inputremapper-signal-control-scheme-changed"><strong>control_scheme_changed</strong>(new_scheme: <a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>) <a class="reference internal" href="#class-inputremapper-signal-control-scheme-changed"><span class="std std-ref">🔗</span></a></p>
+<p>Emitted when the current control scheme changes to a different one. The parameter is the newly loaded control scheme.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-property" id="class-inputremapper-property-storage-service"><code class="docutils literal notranslate"><span class="pre">Variant</span></code> <strong>storage_service</strong> <a class="reference internal" href="#class-inputremapper-property-storage-service"><span class="std std-ref">🔗</span></a></p>
+<p>Reference to the storage service that handles config file saving and loading. See <cite>res://addons/gato_input_remapper/service/storage_service.gd</cite></p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-inputremapper-property-control-schemes"><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>] <strong>control_schemes</strong> = <code class="docutils literal notranslate"><span class="pre">[]</span></code> <a class="reference internal" href="#class-inputremapper-property-control-schemes"><span class="std std-ref">🔗</span></a></p>
+<p>List of currently loaded control schemes. The current control scheme can be accessed by using the <cite>current_control_scheme_index</cite> property.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-inputremapper-property-current-control-scheme-index"><code class="docutils literal notranslate"><span class="pre">int</span></code> <strong>current_control_scheme_index</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code> <a class="reference internal" href="#class-inputremapper-property-current-control-scheme-index"><span class="std std-ref">🔗</span></a></p>
+<p>Index of the currently selected control scheme. This index is based on the <cite>control_schemes</cite> property. So, if the first scheme from the <cite>control_schemes</cite> list is loaded, it will be <cite>control_schemes``0`</cite><a href="#id1"><span class="problematic" id="id2">`</span></a>.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-method" id="class-inputremapper-method-get-current-scheme"><a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a> <strong>get_current_scheme</strong>() <a class="reference internal" href="#class-inputremapper-method-get-current-scheme"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the currently selected control scheme.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-inputremapper-method-load-next-scheme"><abbr title="No return value.">void</abbr> <strong>load_next_scheme</strong>() <a class="reference internal" href="#class-inputremapper-method-load-next-scheme"><span class="std std-ref">🔗</span></a></p>
+<p>Loads and applies the next control scheme in the <cite>control_schemes</cite> list. If it reaches the end of the list, it loops back to the initial element.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-inputremapper-method-load-previous-scheme"><abbr title="No return value.">void</abbr> <strong>load_previous_scheme</strong>() <a class="reference internal" href="#class-inputremapper-method-load-previous-scheme"><span class="std std-ref">🔗</span></a></p>
+<p>Loads and applies the previous control scheme in the <cite>control_schemes</cite> list. If it reaches the beginning of the list, it loops back to the final element.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-inputremapper-method-apply-control-scheme"><abbr title="No return value.">void</abbr> <strong>apply_control_scheme</strong>(control_scheme: <a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>) <a class="reference internal" href="#class-inputremapper-method-apply-control-scheme"><span class="std std-ref">🔗</span></a></p>
+<p>Applies the configuration defined in the parameter control scheme.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-inputremapper-method-save-changes"><abbr title="No return value.">void</abbr> <strong>save_changes</strong>() <a class="reference internal" href="#class-inputremapper-method-save-changes"><span class="std std-ref">🔗</span></a></p>
+<p>Saves the changes on the control schemes list in memory to the <cite>input.data</cite> file.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-inputremapper-method-get-stored-config"><span class="xref std std-ref">Array</span>[<a class="reference internal" href="class_gatocontrolscheme.html#class-gatocontrolscheme"><span class="std std-ref">GatoControlScheme</span></a>] <strong>get_stored_config</strong>() <a class="reference internal" href="#class-inputremapper-method-get-stored-config"><span class="std std-ref">🔗</span></a></p>
+<p>Loads the control scheme list from the <cite>input.data</cite> file.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-inputremapper-method-reset-changes"><abbr title="No return value.">void</abbr> <strong>reset_changes</strong>() <a class="reference internal" href="#class-inputremapper-method-reset-changes"><span class="std std-ref">🔗</span></a></p>
+<p>Discards the changes to the control schemes in memory and reverts them back to the version in the <cite>input.data</cite> file.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_inputconfig.html" class="btn btn-neutral float-left" title="InputConfig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="class_inputremapperui.html" class="btn btn-neutral float-right" title="InputRemapperUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Nokorpo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

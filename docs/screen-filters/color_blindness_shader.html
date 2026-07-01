@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color blindness shader &mdash; GATO  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GATO: Text-to-Speech" href="../tts/README.html" />
+    <link rel="prev" title="addons_gato_screen_filters_view_ui.gd" href="class_addons_gato_screen_filters_view_ui.gd.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GATO
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Demos documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Input Remapper</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input-remapper/README.html">GATO: Input Remapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input-remapper/class-ref.html">Class reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Screen Filters</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">GATO: Screen Filters</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="class-ref.html">Class reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="class_gatoscreenfilters.html">GatoScreenFilters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_addons_gato_screen_filters_view_ui.gd.html">addons_gato_screen_filters_view_ui.gd</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Color blindness shader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#color-weight-matrix">Color weight matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-colors-on-screen">Changing colors on screen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Text-to-Speech</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tts/README.html">GATO: Text-to-Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/class-ref.html">Class list</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GATO</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="class-ref.html">Class reference</a></li>
+      <li class="breadcrumb-item active">Color blindness shader</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/screen-filters/color_blindness_shader.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="color-blindness-shader">
+<h1>Color blindness shader<a class="headerlink" href="#color-blindness-shader" title="Link to this heading"></a></h1>
+<p>We feels we need to make special mention of how the shader for color blindness works. Not because it’s complex - the idea is very simple: take some amount of red, some of green, some of blue, then mix them together and show it on sccreen - but because the huge matrix of values can be intimidating. By understanding how it works, you should be able to change it in case you want to change some values or try different effects. Or if you just want to understand how it works.</p>
+<section id="color-weight-matrix">
+<h2>Color weight matrix<a class="headerlink" href="#color-weight-matrix" title="Link to this heading"></a></h2>
+<p>If you open the shader, you will see an intimidating wall of numbers and parenthesis. It might seem complex at first, but this is just a table storing values.</p>
+<p>We defined a struct that represents how much each color weights in the final mix for each color channel. This struct contains three vec3 values: one for red, green and blue. Each of these vec3 tell how much of the original RGB colors (hence the vec3) will be on the final picture. This can be easily understood with an example:</p>
+<p>In normal vision we get 1 of red for each red pixel on the screen, 1-to-1 for green and 1-to-1 for blue. How does this look with code?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normal vision</span>
+<span class="n">ColorWeightForChannel</span><span class="p">(</span>
+<span class="c1"># original     r,   g,   b</span>
+        <span class="n">vec3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="c1"># final red</span>
+        <span class="n">vec3</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="c1"># final green</span>
+        <span class="n">vec3</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="c1"># final blue</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>But since the final red for protanopia is a mix of 56.67% red and 43.33% green, it will look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Protanopia</span>
+<span class="n">ColorWeightForChannel</span><span class="p">(</span>
+<span class="c1"># original        r,      g,   b</span>
+        <span class="n">vec3</span><span class="p">(</span><span class="mf">0.5667</span><span class="p">,</span> <span class="mf">0.4333</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="c1"># final red</span>
+        <span class="o">//</span> <span class="o">...</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="changing-colors-on-screen">
+<h2>Changing colors on screen<a class="headerlink" href="#changing-colors-on-screen" title="Link to this heading"></a></h2>
+<p>Now that we have this handy transaltion matrix, we just need to consult it to decide the final color on the screen. This is very simple and can be done with a couple of lines. First we need to get a reference to the ColorWeightForChannel struct we want to use. Let’s say we want to use the protanopia values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ColorWeightForChannel</span> <span class="n">protanopia_weights</span> <span class="o">=</span> <span class="n">ColorWeightForChannel</span><span class="p">(</span>
+        <span class="n">vec3</span><span class="p">(</span><span class="mf">0.5667</span><span class="p">,</span> <span class="mf">0.4333</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">vec3</span><span class="p">(</span><span class="mf">0.5583</span><span class="p">,</span> <span class="mf">0.4417</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">vec3</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2417</span><span class="p">,</span> <span class="mf">0.7583</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>After we have the reference, we just need to get the weight for each color and add it up. Then we can pass it to the final <code class="docutils literal notranslate"><span class="pre">COLOR</span></code> variable that will be rendered on screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">red</span> <span class="o">=</span> <span class="n">protanopia_weight</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">screen</span><span class="o">.</span><span class="n">r</span> <span class="o">+</span> <span class="n">protanopia_weight</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">g</span> <span class="o">*</span> <span class="n">screen</span><span class="o">.</span><span class="n">g</span> <span class="o">+</span> <span class="n">protanopia_weight</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">screen</span><span class="o">.</span><span class="n">b</span><span class="p">;</span>
+
+<span class="n">COLOR</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">red</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then we just repeat this for green and blue and we’re done!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_addons_gato_screen_filters_view_ui.gd.html" class="btn btn-neutral float-left" title="addons_gato_screen_filters_view_ui.gd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tts/README.html" class="btn btn-neutral float-right" title="GATO: Text-to-Speech" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Nokorpo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

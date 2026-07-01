@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>addons_gato_screen_filters_view_ui.gd &mdash; GATO  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Color blindness shader" href="color_blindness_shader.html" />
+    <link rel="prev" title="GatoScreenFilters" href="class_gatoscreenfilters.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GATO
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Demos documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Input Remapper</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input-remapper/README.html">GATO: Input Remapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input-remapper/class-ref.html">Class reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Screen Filters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">GATO: Screen Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class-ref.html">Class reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Text-to-Speech</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tts/README.html">GATO: Text-to-Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/class-ref.html">Class list</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GATO</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="class-ref.html">Class reference</a></li>
+      <li class="breadcrumb-item active">addons_gato_screen_filters_view_ui.gd</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="addons-gato-screen-filters-view-ui-gd">
+<span id="class-addons-gato-screen-filters-view-ui-gd"></span><h1>addons_gato_screen_filters_view_ui.gd<a class="headerlink" href="#addons-gato-screen-filters-view-ui-gd" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong> <code class="docutils literal notranslate"><span class="pre">CanvasLayer</span></code></p>
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <a class="reference external" href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p>
+<section class="classref-introduction-group" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>This is the Control that handles selecting the type of filter to use while playing the game. As of now, multiple types of color blindness and a black and white filter have been implemented. You can use the dropdown selector to choose the filter you want to use.</p>
+</section>
+<section class="classref-reftable-group" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OptionButton</span></code></p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-screen-filters-view-ui-gd-property-option-button"><span class="std std-ref">option_button</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;unknown&gt;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ShaderMaterial</span></code></p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-screen-filters-view-ui-gd-property-material"><span class="std std-ref">material</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;unknown&gt;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Key</p></td>
+<td><p><a class="reference internal" href="#class-addons-gato-screen-filters-view-ui-gd-property-keycode-to-toggle-visibility"><span class="std std-ref">keycode_to_toggle_visibility</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-property" id="class-addons-gato-screen-filters-view-ui-gd-property-option-button"><code class="docutils literal notranslate"><span class="pre">OptionButton</span></code> <strong>option_button</strong> = <code class="docutils literal notranslate"><span class="pre">&lt;unknown&gt;</span></code> <a class="reference internal" href="#class-addons-gato-screen-filters-view-ui-gd-property-option-button"><span class="std std-ref">🔗</span></a></p>
+<p>The dropdown selector that contains the options the user can choose from. Selecting an option here should enable that filter. The “normal vision” option disabled the filter altogether.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-addons-gato-screen-filters-view-ui-gd-property-material"><code class="docutils literal notranslate"><span class="pre">ShaderMaterial</span></code> <strong>material</strong> = <code class="docutils literal notranslate"><span class="pre">&lt;unknown&gt;</span></code> <a class="reference internal" href="#class-addons-gato-screen-filters-view-ui-gd-property-material"><span class="std std-ref">🔗</span></a></p>
+<p>A reference to the material that contains the shader used to modify the colors on screen.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-addons-gato-screen-filters-view-ui-gd-property-keycode-to-toggle-visibility">Key <strong>keycode_to_toggle_visibility</strong> <a class="reference internal" href="#class-addons-gato-screen-filters-view-ui-gd-property-keycode-to-toggle-visibility"><span class="std std-ref">🔗</span></a></p>
+<p>Key used to toggle visibility of this menu. Pressing this key shows or hides this menu.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_gatoscreenfilters.html" class="btn btn-neutral float-left" title="GatoScreenFilters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="color_blindness_shader.html" class="btn btn-neutral float-right" title="Color blindness shader" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Nokorpo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

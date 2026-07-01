@@ -9,6 +9,7 @@ author = 'Nokorpo'
 
 extensions = [
     'sphinx_tabs.tabs',
+    'myst_parser'
 ]
 
 templates_path = ['_templates']

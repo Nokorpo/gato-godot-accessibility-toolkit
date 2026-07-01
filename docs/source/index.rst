@@ -6,12 +6,36 @@
 GATO documentation
 ==================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+This is a collection of demos, documentation and plugins that aims to make implementing accessibility features easier for Godot games.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Demos documentation
+
+   demos
+
+=====================
+Addons documentation
+=====================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Input Remapper
+
+   input-remapper/README
+   input-remapper/class-ref
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Screen Filters
+
+   screen-filters/README
+   screen-filters/class-ref
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Text-to-Speech
+
+   tts/README
+   tts/class-ref
 

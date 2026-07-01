@@ -1,19 +1,22 @@
 ## GATO (Godot Accessibility TOolkit)
 
-> Note: Project still in early development!
+This is a collection of demos, documentation and plugins that aims to make implementing accessibility features easier for Godot games.
 
-This is a collection of demos and plugins to help you make your games more accessible.
+## Demos
 
-## Development notes
+Each demo contains a **minigame with accessibility issues**. They define the issue and explain what makes it inaccessible by **simulating the experience** of a person that suffers that inaccessibility. Each demo has a number of settings, which you will be able to tweak during the gameplay to try the limitations. That way you can build an intuition of how players feel while playing the game.
 
-### Update Godot versions
+Afterwards, a **solution** for that issue will be shown and explained: why does it help and how does it work? Also, this project will be **open sourced**, so our aim is for you to be able to copy and paste the code into your project. Re-using it makes it **easier for you to implement**!
 
-When a new version of Godot is released and you want to update the project to run in that version, you should follow these steps/checks:
+### List of demos
 
-1. Update the project in Godot.
-2. Update GUT to a version that is compatible with the new Godot version.
-3. Update and build the Docker image nokorpo/godot-tests. Publish the new version to DockerHub and update `./github/workflows/tests.yaml` to use it.
-4. Run everything and check that it works.
+The first version of this collection of demos contains 5 demos:
+
+* **Control Personalization:** Change how you control the characters with an input remapper and feed all the boards.
+* **HUD Personalization:** Move the HUD around until it's comfortable for you, then guide the boars to their enclosure.
+* **Text-to-Speech:** Overcome hard-to-read interfaces with the Text-to-Speech feature while you fight to get your acorns back!
+* **High Contrast:** Turn the High Contrast mode on to find and collect all the golden acorns.
+* **Color Blindness Filters:** Double check your gameplay doesn't depend on colors to work. Feed boars with theis favorite acorns.
 
 ## How to add a new demo
 
